@@ -15,7 +15,7 @@ namespace Azuli.Web.DAO
 
         #region IAgenda Members
 
-
+		//Alterei aqui	
         public listAgenda listaReservaByMorador(ApartamentoModel oAp, AgendaModel oAgenda)
         {
             string clausulaSQL = "RESERVA_MORADOR_CHURRAS";
