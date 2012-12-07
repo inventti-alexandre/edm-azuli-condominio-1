@@ -151,7 +151,7 @@
                                         <asp:Label ID="Label5" runat="server" Text='<%# Bind("dataAgendamento","{0:dd/MM/yyyy}") %>'></asp:Label>
                                     </td>
                                     <td>
-                                        <asp:Image ImageUrl="~/images/ok.jpg" Width="30px" runat="server" />
+                                        <asp:Image ID="Image1" ImageUrl="~/images/ok.jpg" Width="30px" runat="server" />
                                     </td>
                                 </tr>
                                 <br></br>

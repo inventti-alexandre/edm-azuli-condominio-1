@@ -56,15 +56,17 @@ namespace Azuli.Web.Portal
 
                     if (item.salaoChurrasco.Trim() == "S" & item.salaoFesta.Trim() == "N")
                     {
-                        e.Cell.BackColor = System.Drawing.Color.Yellow;
+                        e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#FFFF01");
                     }
                     else if (item.salaoChurrasco.Trim() == "N" & item.salaoFesta.Trim() == "S")
                     {
-                        e.Cell.BackColor = System.Drawing.Color.PowderBlue;
+                        e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#BADEF4");
+
                     }
                     else if (item.salaoChurrasco.Trim() == "S" & item.salaoFesta.Trim() == "S")
                     {
-                        e.Cell.BackColor = System.Drawing.Color.Red;
+
+                        e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#AA0708");
                         e.Day.IsSelectable = false;
                     }
                 }
