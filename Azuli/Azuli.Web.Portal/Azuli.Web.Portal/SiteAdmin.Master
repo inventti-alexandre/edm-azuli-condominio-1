@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteAdmin.master.cs" Inherits="Azuli.Web.Portal.SiteAdmin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/ScriptAzuli.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <div class="pageAdmin">
+        <div class="headerAdmin">
+            <div class="titleAdmin">
+                <h1>
+                    Sistema de agendamento spazio azulli - salão - área de churrasco
+                </h1>
+            </div>
+    </div>
+    <div class="clear hideSkiplinkAdmin">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
+                    EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" >
+                    
+                    <Items>
+                        <asp:MenuItem Text="Reserva ">
+                            <asp:MenuItem NavigateUrl="~/AreaAdministrativa.aspx" Text="Reserva p/ Morador - Administrador" 
+                                Value="Fazer Reserva"></asp:MenuItem>
+                            <asp:MenuItem Text="Consultar/Cancelar/Excluir Reservas Morador - Administrador" 
+                                Value="Consultar/Cancelar/Excluir Reservas Morador - Administrador">
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Serviços Condominio" Value="Mensagens">
+                            <asp:MenuItem Text="Publicar Circular - Administrador" Value="Enviar Mensagem">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Visualizar Circular" Value="Visualizar Circular">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Publicar Balancente" Value="Publicar Balancente">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Visualizar Balancete" Value="Visualizar Balancete">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Enviar mensagem p/ Morador" 
+                                Value="Enviar mensagem p/ Morador"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Ocorrência" Value="Ocorrência">
+                            <asp:MenuItem Text="Ler / Responder Ocorrência - Administrador" 
+                                Value="1"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Alterar Senha Administrador" 
+                            Value="Alterar Senha do Administrador"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/LoginAzulli.aspx" Text="Sair" Value="sair">
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </div>
+    <div class="footerAdmin">
+        
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+
+    </div>
+    </form>
+</body>
+</html>

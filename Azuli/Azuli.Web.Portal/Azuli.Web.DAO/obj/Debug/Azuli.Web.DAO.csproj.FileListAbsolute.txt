@@ -1,0 +1,7 @@
+C:\Users\edmilson.santos\documents\visual studio 2010\Projects\Azuli.Web.Portal\Azuli.Web.DAO\bin\Debug\Azuli.Web.DAO.dll
+C:\Users\edmilson.santos\documents\visual studio 2010\Projects\Azuli.Web.Portal\Azuli.Web.DAO\bin\Debug\Azuli.Web.DAO.pdb
+C:\Users\edmilson.santos\documents\visual studio 2010\Projects\Azuli.Web.Portal\Azuli.Web.DAO\bin\Debug\Azuli.Web.Model.dll
+C:\Users\edmilson.santos\documents\visual studio 2010\Projects\Azuli.Web.Portal\Azuli.Web.DAO\bin\Debug\Azuli.Web.Model.pdb
+C:\Users\edmilson.santos\documents\visual studio 2010\Projects\Azuli.Web.Portal\Azuli.Web.DAO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\edmilson.santos\documents\visual studio 2010\Projects\Azuli.Web.Portal\Azuli.Web.DAO\obj\Debug\Azuli.Web.DAO.dll
+C:\Users\edmilson.santos\documents\visual studio 2010\Projects\Azuli.Web.Portal\Azuli.Web.DAO\obj\Debug\Azuli.Web.DAO.pdb

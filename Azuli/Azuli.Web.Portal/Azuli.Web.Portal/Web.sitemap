@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+      
+  <siteMapNode url="" title="Reservas"  description="reservas">
+      <siteMapNode url="" title="Reservas" description="Reservas">
+      <siteMapNode url="~/telaAgendamento.aspx" title="Fazer Reservas" description="morador" />
+      <siteMapNode url="~/minhaReservas.aspx" title="Pesquisar minhas Reservas" description="morador" />
+  
+  </siteMapNode>
+
+
+    <siteMapNode url="" title="Livro de Ocorrência" description="Ocorrência">
+
+      <siteMapNode url="" title="Abrir Ocorrência" description="Open Ocorrencia" />
+      <siteMapNode url="" title="Minhas Ocorrências" description="Mine Ocorrencia" />
+
+    </siteMapNode>
+     
+    <siteMapNode url="" title="Mensagens" description="Consultas" roles="">
+      <siteMapNode url="" title="Caixa de Entrada" description="Consultar mensagem" />
+      
+    </siteMapNode>
+
+    <siteMapNode url="resetSenha.aspx" title="Alterar Senha" description="Senha" roles="">
+     
+    </siteMapNode>
+         
+     <siteMapNode url="LoginAzulli.aspx" title="Sair" description="Login">
+
+     </siteMapNode>
+
+   </siteMapNode>
+</siteMap>

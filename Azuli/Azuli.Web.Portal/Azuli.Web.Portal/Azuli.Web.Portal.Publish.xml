@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="http://localhost/AzulliPortal" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="images/azuli.jpg" publishTime="11/22/2012 09:44:29" />
+    <file relUrl="images/amarelo.jpg" publishTime="11/07/2012 16:33:36" />
+    <file relUrl="Global.asax" publishTime="11/07/2012 14:32:42" />
+    <file relUrl="images/festa.jpg" publishTime="11/07/2012 16:27:54" />
+    <file relUrl="Site.Master" publishTime="12/05/2012 15:28:00" />
+    <file relUrl="Styles/Site.css" publishTime="12/03/2012 17:39:33" />
+    <file relUrl="Account/ChangePassword.aspx" publishTime="11/07/2012 14:32:42" />
+    <file relUrl="telaAgendamento.aspx" publishTime="12/05/2012 16:52:07" />
+    <file relUrl="About.aspx" publishTime="11/07/2012 14:32:42" />
+    <file relUrl="Scripts/jquery-1.4.1.js" publishTime="11/07/2012 14:32:42" />
+    <file relUrl="images/vermelho.jpg" publishTime="11/07/2012 16:33:36" />
+    <file relUrl="bin/Azuli.Web.Model.dll" publishTime="11/22/2012 15:49:36" />
+    <file relUrl="bin/Azuli.Web.Portal.dll" publishTime="12/06/2012 09:56:45" />
+    <file relUrl="Web.sitemap" publishTime="12/05/2012 16:22:21" />
+    <file relUrl="Account/Web.config" publishTime="11/07/2012 14:32:42" />
+    <file relUrl="bin/Azuli.Web.Business.pdb" publishTime="12/06/2012 09:56:44" />
+    <file relUrl="WelcomeAdmin.aspx" publishTime="12/05/2012 17:19:59" />
+    <file relUrl="bin/Azuli.Web.DAO.pdb" publishTime="12/06/2012 09:56:43" />
+    <file relUrl="Scripts/jquery-1.4.1.min.js" publishTime="11/07/2012 14:32:42" />
+    <file relUrl="bin/AjaxControlToolkit.DLL" publishTime="10/26/2012 10:23:57" />
+    <file relUrl="AreaAdministrativa.aspx" publishTime="12/05/2012 15:27:06" />
+    <file relUrl="bin/Azuli.Web.Business.dll" publishTime="12/06/2012 09:56:44" />
+    <file relUrl="images/delete.png" publishTime="12/03/2012 18:16:38" />
+    <file relUrl="images/azul.jpg" publishTime="11/07/2012 16:32:23" />
+    <file relUrl="Default.aspx" publishTime="11/07/2012 14:32:42" />
+    <file relUrl="Account/ChangePasswordSuccess.aspx" publishTime="11/07/2012 14:32:42" />
+    <file relUrl="images/print.jpg" publishTime="11/22/2012 09:51:30" />
+    <file relUrl="Account/Register.aspx" publishTime="11/07/2012 14:32:42" />
+    <file relUrl="bin/Azuli.Web.Portal.pdb" publishTime="12/06/2012 09:56:44" />
+    <file relUrl="images/ok.jpg" publishTime="11/21/2012 16:16:07" />
+    <file relUrl="Scripts/ScriptAzuli.js" publishTime="12/05/2012 15:28:13" />
+    <file relUrl="LoginAzulli.aspx" publishTime="12/05/2012 15:28:54" />
+    <file relUrl="ErrorPage.aspx" publishTime="12/05/2012 14:30:40" />
+    <file relUrl="bin/Azuli.Web.DAO.dll" publishTime="12/06/2012 09:56:43" />
+    <file relUrl="TelaAgendamentoAdmin.aspx" publishTime="12/05/2012 16:57:45" />
+    <file relUrl="Web.config" publishTime="12/06/2012 10:59:03" />
+    <file relUrl="SiteAdmin.Master" publishTime="12/06/2012 10:58:44" />
+    <file relUrl="bin/Azuli.Web.Model.pdb" publishTime="11/22/2012 15:49:35" />
+    <file relUrl="resetSenha.aspx" publishTime="12/06/2012 09:59:13" />
+    <file relUrl="images/churrasco.jpg" publishTime="11/07/2012 16:28:58" />
+    <file relUrl="minhaReservas.aspx" publishTime="12/03/2012 18:19:02" />
+    <file relUrl="Scripts/jquery-1.4.1-vsdoc.js" publishTime="11/07/2012 14:32:42" />
+  </publishProfile>
+</publishData>
