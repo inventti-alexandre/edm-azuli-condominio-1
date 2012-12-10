@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Azuli.Web.Model
 {
-    class LancamentoOcorrenciaModel
+    public class LancamentoOcorrenciaModel
     {
 
         public string ocorrenciaLancamento {get;set;}
@@ -20,4 +20,7 @@ namespace Azuli.Web.Model
 
     }
 
+    public class listaLancamentoOcorrencia : List<LancamentoOcorrenciaModel> { }
+
+    
 }
