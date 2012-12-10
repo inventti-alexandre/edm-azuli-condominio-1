@@ -7,9 +7,9 @@
     <ProjectVersion>4.0</ProjectVersion>
     <ProjectGuid>{67cbc824-a49e-4e9b-a947-360f3dfe65c3}</ProjectGuid>
     <DSP>Microsoft.Data.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
-    <AllowServerObjects>True</AllowServerObjects>
+    <AllowServerObjects>False</AllowServerObjects>
     <AllowDatabaseObjects>True</AllowDatabaseObjects>
-    <DAC>true</DAC>
+    <DAC>False</DAC>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <ShowWizard>False</ShowWizard>
     <OutputType>Database</OutputType>
@@ -167,5 +167,10 @@
     <Build Include="Schema Objects\Schemas Azuli\dbo\Tables\PARAMETRO_OCORRENCIA.table.sql">
       <SubType>Code</SubType>
     </Build>
+  </ItemGroup>
+  <ItemGroup>
+    <NotInBuild Include="Schema Objects\Schemas Azuli\dbo\Programmability\Stored Procedures\CADASTRA_OCORRENCIA.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
   </ItemGroup>
 </Project>
