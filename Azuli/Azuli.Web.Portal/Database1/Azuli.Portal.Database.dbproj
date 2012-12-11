@@ -167,6 +167,9 @@
     <Build Include="Schema Objects\Schemas Azuli\dbo\Tables\PARAMETRO_OCORRENCIA.table.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas Azuli\dbo\Tables\Mensagem.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
   <ItemGroup>
     <NotInBuild Include="Schema Objects\Schemas Azuli\dbo\Programmability\Stored Procedures\CADASTRA_OCORRENCIA.sql">
