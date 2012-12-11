@@ -21,16 +21,16 @@ namespace Azuli.Web.Portal
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (oUtil.validateSession())
+            if (oUtil.validateSessionAdmin())
             {
              
                 if (!IsPostBack)
                 {
 
                     escondeControl();
-                    lblApartDesc.Text = Session["AP"].ToString();
-                    lblBlocoDesc.Text = Session["Bloco"].ToString();
-                    lblProprietarioDesc.Text = Session["Proprie1"] + " & " + Session["Proprie2"];
+                    lblApartDesc.Text = Session["MoradorSemInternetAP"].ToString();
+                    lblBlocoDesc.Text = Session["MoradorSemInternetBloco"].ToString();
+                    lblProprietarioDesc.Text = Session["MoradorSemInternetNome1"] + " & " + Session["MoradorSemInternetNome2"];
                     carregaAgendaMesAtual();
 
                 }

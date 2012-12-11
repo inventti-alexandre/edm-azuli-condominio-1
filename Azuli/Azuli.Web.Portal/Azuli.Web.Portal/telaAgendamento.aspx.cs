@@ -45,8 +45,17 @@ namespace Azuli.Web.Portal
             Literal litAlugado = new Literal();
             List<AgendaModel> listaAgenda = oAgenda.listaEventos();
 
+            if (e.Day.Date < (System.DateTime.Now.AddDays(-1)))
+            {
+               
+                e.Day.IsSelectable = false;
+                e.Cell.Font.Strikeout = true;
+                e.Cell.Font.Bold = true;
+               
+            }
             foreach (var item in listaAgenda)
             {
+               
                
                 if (e.Day.Date ==item.dataAgendamento)
                 {
@@ -66,6 +75,8 @@ namespace Azuli.Web.Portal
                            e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#AA0708");
                            e.Day.IsSelectable = false;
                    }
+                   
+                    
                 }
             }
         }
@@ -86,12 +97,7 @@ namespace Azuli.Web.Portal
 
             List<AgendaModel> oLista = validaData(Calendar1.SelectedDate);
             lblData.Text = Calendar1.SelectedDate.ToString("dd/MM/yyyy");
-            if (Calendar1.SelectedDate < DateTime.Today.Date)
-            {
-                lblMsgData.Text = "A data: " + lblData.Text + " não é válida para agendamento, favor escolher uma data maior ou igual a data atual: " + DateTime.Now.ToString("dd/MM/yyyy");
-            }
-            else
-            {
+            
                 foreach (var item in oLista)
                 {
                     if (item.salaoChurrasco.Trim() == "S" & item.salaoFesta.Trim() == "N")
@@ -118,8 +124,8 @@ namespace Azuli.Web.Portal
                 lblMsgData.Visible = false;
                 dvOpcao.Visible = true;
                 dvCalendar.Visible = false;
-            }
-        }
+           }
+        
 
 
         public List<AgendaModel> validaData(DateTime date)

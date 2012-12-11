@@ -286,6 +286,7 @@
             </table>
         </fieldset>
     </div>
+    <br /><br />
     <div id="DivConfirma" runat="server">
         <fieldset class="login">
             <legend class="style7">Reserva Efetuada com Sucesso Para o:</legend>

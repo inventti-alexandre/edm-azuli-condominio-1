@@ -14,7 +14,7 @@ namespace Azuli.Web.Portal
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (oUtil.validateSession())
+            if (oUtil.validateSessionAdmin())
             {
                 if (!IsPostBack)
                 {

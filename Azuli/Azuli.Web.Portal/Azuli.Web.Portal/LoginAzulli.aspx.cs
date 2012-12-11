@@ -61,7 +61,8 @@ namespace Azuli.Web.Portal.Account
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session.Clear();
+            Session.Abandon();
          
         }
 

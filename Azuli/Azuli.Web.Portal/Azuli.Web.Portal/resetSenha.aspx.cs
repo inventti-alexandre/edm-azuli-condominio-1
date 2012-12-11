@@ -47,7 +47,7 @@ namespace Azuli.Web.Portal
 
 
                                 StringBuilder sb = new StringBuilder();
-                                sb.Append("<b>A sua senha foi alterada com sucesso!</b>");
+                                sb.Append("<b>A sua senha foi alterada com sucesso! No próximo logon será necessário a usá-la!</b>");
 
                                 lblMensagem.Text = sb.ToString();
                     

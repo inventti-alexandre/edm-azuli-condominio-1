@@ -28,6 +28,37 @@ namespace Azuli.Web.Portal.Util
 
         }
 
+        public bool validateSessionAdmin()
+        {
+
+            bool retorno = false;
+
+
+            if (System.Web.HttpContext.Current.Session["AP"] == null && System.Web.HttpContext.Current.Session["Bloco"] == null &&
+                System.Web.HttpContext.Current.Session["Proprie1"] == null && System.Web.HttpContext.Current.Session["Proprie2"] == null)
+            {
+
+                retorno = false;
+                System.Web.HttpContext.Current.Session.Clear();
+                System.Web.HttpContext.Current.Response.Redirect("~/LoginAzulli.aspx");
+
+            }
+            if (System.Web.HttpContext.Current.Session["AP"].ToString() == "0" && System.Web.HttpContext.Current.Session["Bloco"].ToString() == "0")
+            {
+                retorno = true;
+            }
+            else
+            {
+                retorno = false;
+                System.Web.HttpContext.Current.Session.Clear();
+                System.Web.HttpContext.Current.Response.Redirect("~/LoginAzulli.aspx");
+            }
+
+            return retorno;
+        }
+
+
+
         public bool validateSession()
         {
              
@@ -39,9 +70,17 @@ namespace Azuli.Web.Portal.Util
             {
 
                 retorno = false;
+                System.Web.HttpContext.Current.Session.Clear();
                 System.Web.HttpContext.Current.Response.Redirect("~/LoginAzulli.aspx");
 
             }
+            else if (System.Web.HttpContext.Current.Session["AP"].ToString() == "0" && System.Web.HttpContext.Current.Session["Bloco"].ToString() == "0")
+            {
+                retorno = false;
+                System.Web.HttpContext.Current.Session.Clear();
+                System.Web.HttpContext.Current.Response.Redirect("~/LoginAzulli.aspx");
+            }
+            
             else
             {
                 retorno = true;
@@ -49,6 +88,9 @@ namespace Azuli.Web.Portal.Util
 
             return retorno;
         }
+
+
+
 
 
         public string GeraSenha()

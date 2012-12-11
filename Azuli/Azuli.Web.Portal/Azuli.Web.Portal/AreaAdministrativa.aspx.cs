@@ -20,10 +20,15 @@ namespace Azuli.Web.Portal
         {
             if (!IsPostBack)
             {
-                if (oUtil.validateSession())
+                if (oUtil.validateSessionAdmin())
                 {
 
                     hiddenControlDiv();
+                }
+                else
+                {
+                    
+                   
                 }
             }
         }
@@ -75,10 +80,16 @@ namespace Azuli.Web.Portal
                     lblBlocoDesc.Text = item.ap.bloco.ToString();
                     lblProprietarioDesc.Text = item.proprietario1.ToString();
 
+                    Session["MoradorSemInternetAP"] = item.ap.apartamento;
+                    Session["MoradorSemInternetBloco"] = item.ap.bloco;
+                    Session["MoradorSemInternetNome1"] = item.proprietario1.ToString();
+                    Session["MoradorSemInternetNome2"] = item.proprietario2.ToString();
+
+
                     Session["AP"] = item.ap.apartamento;
                     Session["Bloco"] = item.ap.bloco;
-                    Session["Proprie1"] = item.proprietario1.ToString();
-                    Session["Proprie2"] = item.proprietario2.ToString();
+                   // Session["MoradorSemInternetNome1"] = item.proprietario1.ToString();
+                    //Session["MoradorSemInternetNome2"] = item.proprietario2.ToString();
 
                 }
 
@@ -99,6 +110,8 @@ namespace Azuli.Web.Portal
      
         protected void btnOkPesquisa_Click(object sender, EventArgs e)
         {
+            
+         
             Response.Redirect("telaAgendamentoAdmin.aspx");
         }
 

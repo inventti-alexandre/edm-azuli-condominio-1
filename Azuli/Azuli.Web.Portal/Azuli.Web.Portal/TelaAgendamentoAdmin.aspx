@@ -177,8 +177,8 @@
     </div>
     <div id="dvOpcao" runat="server">
         <fieldset class="login">
-            <legend>Selecione abaixo a reserva disponivel na data escolhida:</legend>
-            <table style="width: 681px; height: 112px;">
+            <legend dir="ltr">O que deseja Alugar :</legend>
+            <table style="width: 743px; height: 104px;" dir="ltr">
                 <tr>
                     <td class="style5">
                         <div id="dvData" runat="server" style="border-width: thin; border-style: groove;
@@ -189,7 +189,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style5">
+                    <td class="style5" dir="ltr">
                         <asp:CheckBox ID="chkSalaoFesta" runat="server" Text="Salão de Festas" Font-Bold="True"
                             EnableTheming="True" />
                     </td>
