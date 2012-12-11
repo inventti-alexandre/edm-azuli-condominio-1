@@ -5,3 +5,10 @@ C:\Users\edmilson.santos\documents\visual studio 2010\Projects\Azuli.Web.Portal\
 C:\Users\edmilson.santos\documents\visual studio 2010\Projects\Azuli.Web.Portal\Azuli.Web.DAO\obj\Release\ResolveAssemblyReference.cache
 C:\Users\edmilson.santos\documents\visual studio 2010\Projects\Azuli.Web.Portal\Azuli.Web.DAO\obj\Release\Azuli.Web.DAO.dll
 C:\Users\edmilson.santos\documents\visual studio 2010\Projects\Azuli.Web.Portal\Azuli.Web.DAO\obj\Release\Azuli.Web.DAO.pdb
+C:\Meu Desenvolvimento\Azuli\Azuli.Web.DAO\bin\Release\Azuli.Web.DAO.dll
+C:\Meu Desenvolvimento\Azuli\Azuli.Web.DAO\bin\Release\Azuli.Web.DAO.pdb
+C:\Meu Desenvolvimento\Azuli\Azuli.Web.DAO\bin\Release\Azuli.Web.Model.dll
+C:\Meu Desenvolvimento\Azuli\Azuli.Web.DAO\bin\Release\Azuli.Web.Model.pdb
+C:\Meu Desenvolvimento\Azuli\Azuli.Web.DAO\obj\Release\ResolveAssemblyReference.cache
+C:\Meu Desenvolvimento\Azuli\Azuli.Web.DAO\obj\Release\Azuli.Web.DAO.dll
+C:\Meu Desenvolvimento\Azuli\Azuli.Web.DAO\obj\Release\Azuli.Web.DAO.pdb
