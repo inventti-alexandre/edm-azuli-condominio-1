@@ -281,6 +281,16 @@ namespace Azuli.Web.Portal
             }
 
         }
+
+        protected void frvSalaoFesta_ItemDeleted(object sender, FormViewDeletedEventArgs e)
+        {
+
+        }
+
+        protected void formVwChurrasco_ItemDeleting(object sender, FormViewDeleteEventArgs e)
+        {
+
+        }
         
     }
 }

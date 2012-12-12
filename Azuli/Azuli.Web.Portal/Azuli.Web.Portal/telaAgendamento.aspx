@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
-    CodeBehind="telaAgendamento.aspx.cs" Inherits="Azuli.Web.Portal.telaAgendamento" %>
+    CodeBehind="telaAgendamento.aspx.cs" Inherits="Azuli.Web.Portal.telaAgendamento" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
@@ -102,8 +102,9 @@
                     <br />
                     <asp:FormView ID="formVwChurrasco" runat="server" CellPadding="4" ForeColor="#333333"
                         Width="125px" CssClass="style3" AllowPaging="True" Height="76px" 
-                        EmptyDataText="Não existem Reservas da Churrasqueira neste mês!!" 
-                        onpageindexchanging="formVwChurrasco_PageIndexChanging">
+                        EmptyDataText="Você não tem Reservas para Churrasqueira neste mês!!" 
+                        onpageindexchanging="formVwChurrasco_PageIndexChanging" 
+                        onitemdeleting="formVwChurrasco_ItemDeleting">
                         <EditRowStyle BackColor="#2461BF" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                         <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -137,8 +138,9 @@
                 <td align="center" class="style12">
                     <asp:FormView ID="frvSalaoFesta" runat="server" CellPadding="4" ForeColor="#333333"
                         Width="128px" CssClass="style3" AllowPaging="True" Height="73px" 
-                        EmptyDataText="Não existem Reservas de salão de Festa neste mês!!" 
-                        onpageindexchanging="frvSalaoFesta_PageIndexChanging">
+                        EmptyDataText="Você não tem Reservas para o salão de Festa neste mês!!" 
+                        onpageindexchanging="frvSalaoFesta_PageIndexChanging" 
+                        onitemdeleted="frvSalaoFesta_ItemDeleted">
                         <EditRowStyle BackColor="#2461BF" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                         <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -235,7 +237,7 @@
                      
                      <ContentTemplate>
 
-                          <asp:Timer ID="UpdateTimer"  Interval="3000"  ontick="UpdateTimer_Tick1" 
+                          <asp:Timer ID="UpdateTimer"  Interval="5000"  ontick="UpdateTimer_Tick1" 
                               runat="server" />
                               
                         <asp:Calendar ID="Calendar1" runat="server" BackColor="White" OnSelectionChanged="Calendar1_SelectionChanged"

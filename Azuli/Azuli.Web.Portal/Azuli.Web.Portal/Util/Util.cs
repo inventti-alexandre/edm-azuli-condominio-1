@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 
 
+
 namespace Azuli.Web.Portal.Util
 {
     public class Util
@@ -32,7 +33,7 @@ namespace Azuli.Web.Portal.Util
         {
 
             bool retorno = false;
-
+            
 
             if (System.Web.HttpContext.Current.Session["AP"] == null && System.Web.HttpContext.Current.Session["Bloco"] == null &&
                 System.Web.HttpContext.Current.Session["Proprie1"] == null && System.Web.HttpContext.Current.Session["Proprie2"] == null)
@@ -43,7 +44,14 @@ namespace Azuli.Web.Portal.Util
                 System.Web.HttpContext.Current.Response.Redirect("~/LoginAzulli.aspx");
 
             }
-            if (System.Web.HttpContext.Current.Session["AP"].ToString() == "0" && System.Web.HttpContext.Current.Session["Bloco"].ToString() == "0")
+            else if (System.Web.HttpContext.Current.Session["AP"].ToString() == "0" && System.Web.HttpContext.Current.Session["Bloco"].ToString() == "0")
+            {
+               
+                System.Web.HttpContext.Current.Session["administrador"] = true;
+                retorno = true;
+            }
+
+            else if (System.Web.HttpContext.Current.Session["MoradorSemInternetAP"] != null && System.Web.HttpContext.Current.Session["MoradorSemInternetBloco"] != null)
             {
                 retorno = true;
             }

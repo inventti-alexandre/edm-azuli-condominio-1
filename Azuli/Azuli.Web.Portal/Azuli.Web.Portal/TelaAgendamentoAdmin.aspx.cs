@@ -92,12 +92,7 @@ namespace Azuli.Web.Portal
            
             List<AgendaModel> oLista = validaData(Calendar1.SelectedDate);
             lblData.Text = Calendar1.SelectedDate.ToString("dd/MM/yyyy");
-            if (Calendar1.SelectedDate < DateTime.Today.Date)
-            {
-                lblMsgData.Text = "A data: " + lblData.Text + " não é válida para agendamento, favor escolher uma data maior ou igual a data atual: " + DateTime.Now.ToString("dd/MM/yyyy");
-            }
-            else
-            {
+           
                 foreach (var item in oLista)
                 {
                     if (item.salaoChurrasco.Trim() == "S" & item.salaoFesta.Trim() == "N")
@@ -124,8 +119,7 @@ namespace Azuli.Web.Portal
                 lblMsgData.Visible = false;
                 dvOpcao.Visible = true;
                 dvCalendar.Visible = false;
-            }
-
+           
             }
             catch (Exception ex)
             {
