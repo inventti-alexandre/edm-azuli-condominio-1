@@ -30,7 +30,14 @@ namespace Azuli.Web.Portal
                     escondeControl();
                     lblApartDesc.Text = Session["AP"].ToString();
                     lblBlocoDesc.Text = Session["Bloco"].ToString();
-                    lblProprietarioDesc.Text = Session["Proprie1"] + " & " + Session["Proprie2"];
+                    if (Session["Proprie2"].ToString() != "")
+                    {
+                        lblProprietarioDesc.Text = Session["Proprie1"] + " & " + Session["Proprie2"];
+                    }
+                    else
+                    {
+                        lblProprietarioDesc.Text = Session["Proprie1"].ToString();
+                    }
                     carregaAgendaMesAtual();
 
                 }
@@ -53,6 +60,14 @@ namespace Azuli.Web.Portal
                 e.Cell.Font.Bold = true;
                
             }
+
+            if (e.Day.IsToday)
+            {
+                e.Cell.Font.Bold = true;
+                e.Cell.ForeColor = System.Drawing.Color.Black;
+
+            }
+
             foreach (var item in listaAgenda)
             {
                

@@ -30,7 +30,16 @@ namespace Azuli.Web.Portal
                     escondeControl();
                     lblApartDesc.Text = Session["MoradorSemInternetAP"].ToString();
                     lblBlocoDesc.Text = Session["MoradorSemInternetBloco"].ToString();
-                    lblProprietarioDesc.Text = Session["MoradorSemInternetNome1"] + " & " + Session["MoradorSemInternetNome2"];
+                    if (Session["MoradorSemInternetNome2"].ToString() != "")
+                    {
+                        lblProprietarioDesc.Text = Session["MoradorSemInternetNome1"] + " & " + Session["MoradorSemInternetNome2"];
+                    }
+                    else
+                    {
+                        lblProprietarioDesc.Text = Session["MoradorSemInternetNome1"].ToString() ;
+                    }
+
+                 
                     carregaAgendaMesAtual();
 
                 }
@@ -47,6 +56,22 @@ namespace Azuli.Web.Portal
         {
             Literal litAlugado = new Literal();
             List<AgendaModel> listaAgenda = oAgenda.listaEventos();
+
+            if (e.Day.Date < (System.DateTime.Now.AddDays(-1)))
+            {
+
+                e.Day.IsSelectable = false;
+                e.Cell.Font.Strikeout = true;
+                e.Cell.Font.Bold = true;
+
+            }
+
+            if (e.Day.IsToday)
+            {
+                e.Cell.Font.Bold = true;
+                e.Cell.ForeColor = System.Drawing.Color.Black;
+                
+            }
 
             foreach (var item in listaAgenda)
             {

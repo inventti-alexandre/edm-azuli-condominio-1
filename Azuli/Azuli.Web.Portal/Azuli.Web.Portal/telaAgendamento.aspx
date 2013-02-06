@@ -237,7 +237,7 @@
                      
                      <ContentTemplate>
 
-                          <asp:Timer ID="UpdateTimer"  Interval="5000"  ontick="UpdateTimer_Tick1" 
+                          <asp:Timer ID="UpdateTimer"  Interval="15000"  ontick="UpdateTimer_Tick1" 
                               runat="server" />
                               
                         <asp:Calendar ID="Calendar1" runat="server" BackColor="White" OnSelectionChanged="Calendar1_SelectionChanged"

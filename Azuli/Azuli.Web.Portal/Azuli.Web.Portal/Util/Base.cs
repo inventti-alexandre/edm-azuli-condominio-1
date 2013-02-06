@@ -17,7 +17,9 @@ namespace Azuli.Web.Portal.Util
             Thread.CurrentThread.CurrentCulture = CI;
             Thread.CurrentThread.CurrentUICulture = CI;
             base.InitializeCulture();
-         
+
+            string.CompareOrdinal("ç", "p");
+              
         }
                
             
