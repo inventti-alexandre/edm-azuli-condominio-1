@@ -24,6 +24,10 @@
     <siteMapNode url="resetSenha.aspx" title="Alterar Senha" description="Senha" roles="">
      
     </siteMapNode>
+
+    <siteMapNode url="paginaInicialMoradores.aspx" title="Página Principal" description="Home Page" roles="">
+
+    </siteMapNode>
          
      <siteMapNode url="LoginAzulli.aspx" title="Sair" description="Login">
 

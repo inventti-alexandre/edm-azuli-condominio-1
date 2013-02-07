@@ -63,13 +63,14 @@ namespace Azuli.Web.Portal.Account
         {
             Session.Clear();
             Session.Abandon();
+            
          
         }
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
             Session.Clear();
-
+            
             oAPmodel.apartamento = Convert.ToInt32(txtAP.Text);
             oAPmodel.bloco = Convert.ToInt32(drpBloco.Text);
             oProprietarioModel.senha = Password.Text;
@@ -98,7 +99,7 @@ namespace Azuli.Web.Portal.Account
                 }
                 else
                 {
-                    Response.Redirect("~/telaAgendamento.aspx");
+                    Response.Redirect("~/paginaInicialMoradores.aspx");
                 }
             }
             else
