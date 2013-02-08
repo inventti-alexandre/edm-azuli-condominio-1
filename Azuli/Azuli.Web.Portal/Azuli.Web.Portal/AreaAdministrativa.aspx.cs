@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Azuli.Web.Business;
 using Azuli.Web.Model;
 using Azuli.Web.Portal.Util;
+using System.Text;
 
 namespace Azuli.Web.Portal
 {
@@ -168,12 +169,34 @@ namespace Azuli.Web.Portal
 
                else
                {
+                  
                    lblMsgCadastro.Visible = true;
-                   lblMsgCadastro.Text = "Cadastro efetuado com sucesso para Morador: <br> <b> " + oProprietarioModel.proprietario1 + " & " + oProprietarioModel.proprietario2 + " <b> <br>" + "Bloco: " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento + "<br> Sua Senha é: " + oProprietarioModel.senha + "<br> <hr>";
+                   lblMsgCadastro.Text = "Cadastro efetuado com sucesso para Morador: <br> <b> " + oProprietarioModel.proprietario1 + " & " + oProprietarioModel.proprietario2 + " <b> <br>" + "Bloco: " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento + "<br> Sua Senha é: " + oProprietarioModel.senha + "<br><hr>";
+                
                    dvCadastro.Visible = false;
                    dvPesquisaMorador.Visible = false;
+                   
+                   SendMail enviaEmail = new SendMail();
+
+                   try
+                   {
+                       enviaEmail.enviaSenha(lblMsgCadastro.Text);
+                       clearControl();
+
+                   }
+                   catch (Exception)
+                   {
+
+                       lblMsgCadastro.Visible = true;
+                       lblMsgCadastro.Text = "Cadastro efetuado com sucesso para Morador: <br> <b> " + oProprietarioModel.proprietario1 + " & " + oProprietarioModel.proprietario2 + " <b> <br>" + "Bloco: " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento + "<br> Sua Senha é: " + oProprietarioModel.senha + "<br><hr>";
+
+                       dvCadastro.Visible = false;
+                       dvPesquisaMorador.Visible = false;
+                   }
+
                   
-                   clearControl();
+                  
+                  
                    
               
                }

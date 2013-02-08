@@ -210,6 +210,7 @@
     <Compile Include="Util\Base.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Util\SendMail.cs" />
     <Compile Include="Util\Util.cs" />
     <Compile Include="WelcomeAdmin.aspx.cs">
       <DependentUpon>WelcomeAdmin.aspx</DependentUpon>
