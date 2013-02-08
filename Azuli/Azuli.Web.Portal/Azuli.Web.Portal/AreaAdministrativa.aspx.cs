@@ -152,6 +152,7 @@ namespace Azuli.Web.Portal
             oProprietarioModel.ap.apartamento = Convert.ToInt32(txtApartamento.Text);
             oProprietarioModel.proprietario1 = txtMorador1.Text;
             oProprietarioModel.proprietario2 = txtMorador2.Text;
+            oProprietarioModel.email = txtEmail.Text;
             oProprietarioModel.senha = oUtil.GeraSenha();
 
         
@@ -180,7 +181,7 @@ namespace Azuli.Web.Portal
 
                    try
                    {
-                       enviaEmail.enviaSenha(lblMsgCadastro.Text);
+                       enviaEmail.enviaSenha(lblMsgCadastro.Text, oProprietarioModel.proprietario1, oProprietarioModel.email);
                        clearControl();
 
                    }

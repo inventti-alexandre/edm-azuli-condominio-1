@@ -29,6 +29,65 @@ namespace Azuli.Web.Portal.Util
 
         }
 
+
+      
+    /// <summary>
+    /// Este método, ordena a senha, pois a senha gravada no microsiga 
+    /// é por padrão para uma senha 123456, 246135.
+    /// </summary>
+    /// <returns></returns>
+        public string SNH(string senha)
+        {
+            try
+            {
+                //Definição dos Vetores
+                string[] VetorSenha = new string[8];
+                string retorno = "";
+
+
+                //Loop para preencher o Vetor de Senhas, vindo da string Senha
+                for (int i = 0; i < 1; i++)
+                {
+                    VetorSenha[i] = senha;
+                }
+
+                //Loop para percorrer os vetores
+                for (int i = 0; i < 1; i++)
+                {
+
+                    //Atribui valores para o Vetor
+                    VetorSenha[1] = senha[0].ToString();
+                    VetorSenha[3] = senha[1].ToString();
+                    VetorSenha[5] = senha[2].ToString();
+                    VetorSenha[0] = senha[3].ToString();
+                    VetorSenha[2] = senha[4].ToString();
+                    VetorSenha[4] = senha[5].ToString();
+                    VetorSenha[7] = senha[6].ToString();
+                    VetorSenha[6] = senha[7].ToString();
+           
+  
+    
+                }
+
+
+
+                foreach (string v in VetorSenha)
+                {
+                    retorno += v;
+
+                }
+
+                return retorno;
+            }
+            catch
+            {
+                throw new Exception("Usuário ou Senha inválido");
+            }
+        }
+    
+
+
+
         public bool validateSessionAdmin()
         {
 
@@ -64,7 +123,7 @@ namespace Azuli.Web.Portal.Util
 
             return retorno;
         }
-
+    
 
 
         public bool validateSession()

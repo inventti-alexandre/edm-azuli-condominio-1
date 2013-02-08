@@ -30,6 +30,16 @@
             left: -1px;
         }
                
+        .style7
+        {
+            width: 155px;
+            height: 21px;
+        }
+        .style8
+        {
+            height: 21px;
+        }
+               
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -173,6 +183,17 @@
                                  <asp:TextBox ID="txtMorador2" runat="server" Width="165px"></asp:TextBox>
                                  <asp:RequiredFieldValidator ID="rfvMorador2" runat="server" 
                                      ControlToValidate="txtMorador2" CssClass="failureNotification" ErrorMessage="*" 
+                                     ValidationGroup="cadastraMorador"></asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style7">
+                                <asp:Label ID="lblEmail" runat="server" Font-Bold="True" Text="E-mail"></asp:Label>
+                            </td>
+                            <td class="style8">
+                            <asp:TextBox ID="txtEmail" runat="server" Width="165px"></asp:TextBox>
+                                 <asp:RequiredFieldValidator ID="rqfEmail" runat="server" 
+                                     ControlToValidate="txtEmail" CssClass="failureNotification" ErrorMessage="*" 
                                      ValidationGroup="cadastraMorador"></asp:RequiredFieldValidator>
                             </td>
                         </tr>

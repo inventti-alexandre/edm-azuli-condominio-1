@@ -90,6 +90,9 @@ namespace Azuli.Web.Portal.Account
                     Session["Bloco"] = item.ap.bloco;
                     Session["Proprie1"] = item.proprietario1.ToString();
                     Session["Proprie2"] = item.proprietario2.ToString();
+                    if(item.email != null)
+                    Session["email"] = item.email.ToString();
+
                   //  Session["senha"] = item.senha.ToString();
                 }
 

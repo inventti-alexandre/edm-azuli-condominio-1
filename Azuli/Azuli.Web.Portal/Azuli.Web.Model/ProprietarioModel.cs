@@ -12,6 +12,7 @@ namespace Azuli.Web.Model
         public string proprietario2 { get; set; }
         public ApartamentoModel ap { get; set; }
         public string senha { get; set; }
+        public string email { get; set;}
 
      }
 
