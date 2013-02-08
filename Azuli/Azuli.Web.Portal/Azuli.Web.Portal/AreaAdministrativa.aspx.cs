@@ -181,13 +181,15 @@ namespace Azuli.Web.Portal
 
                    try
                    {
-                       enviaEmail.enviaSenha(lblMsgCadastro.Text, oProprietarioModel.proprietario1, oProprietarioModel.email);
+                       int status = 0; 
+
+                       enviaEmail.enviaSenha(lblMsgCadastro.Text, oProprietarioModel.proprietario1, oProprietarioModel.email, status);
                        clearControl();
 
                    }
                    catch (Exception)
                    {
-
+                       
                        lblMsgCadastro.Visible = true;
                        lblMsgCadastro.Text = "Cadastro efetuado com sucesso para Morador: <br> <b> " + oProprietarioModel.proprietario1 + " & " + oProprietarioModel.proprietario2 + " <b> <br>" + "Bloco: " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento + "<br> Sua Senha é: " + oProprietarioModel.senha + "<br><hr>";
 

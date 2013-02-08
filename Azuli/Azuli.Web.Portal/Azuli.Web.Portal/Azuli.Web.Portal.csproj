@@ -58,6 +58,7 @@
     <Content Include="Account\ChangePassword.aspx" />
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="AreaAdministrativa.aspx" />
+    <Content Include="consultaAgendasAdmin.aspx" />
     <Content Include="ErrorPage.aspx" />
     <Content Include="images\correio.jpg" />
     <Content Include="images\delete.png" />
@@ -120,6 +121,13 @@
     </Compile>
     <Compile Include="AreaAdministrativa.aspx.designer.cs">
       <DependentUpon>AreaAdministrativa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="consultaAgendasAdmin.aspx.cs">
+      <DependentUpon>consultaAgendasAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="consultaAgendasAdmin.aspx.designer.cs">
+      <DependentUpon>consultaAgendasAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="ErrorPage.aspx.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>

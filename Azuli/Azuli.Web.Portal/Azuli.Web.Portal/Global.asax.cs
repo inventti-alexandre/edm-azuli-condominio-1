@@ -27,6 +27,9 @@ namespace Azuli.Web.Portal
             Exception ex = Server.GetLastError().GetBaseException();
             if (ex.GetType() != typeof(HttpException))
             {
+                Util.SendMail logError = new Util.SendMail();
+
+                logError.enviaSenha(ex.Message.ToString(), "Log Error:", "Sistema", 1);
 
                 Server.Transfer("ErrorPage.aspx");
             }
