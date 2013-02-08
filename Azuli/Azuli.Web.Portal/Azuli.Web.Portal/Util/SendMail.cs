@@ -41,28 +41,49 @@ namespace Azuli.Web.Portal.Util
              if (status != 0)
              {
                   destinatario = new MailAddress(logError, "Sistema Azuli");
+                  MailMessage msgErr = new MailMessage(remetente, destinatario);
+                  msgErr.Bcc.Add("leandrolvilela@gmail.com");
+                  msgErr.IsBodyHtml = true;
+                  msgErr.Body = mensagem;
+                  msgErr.Subject = "Sistema Spazio Campo Azuli Azuli";
+                  
+                 try
+                  {
+                      cliente.Send(msgErr);
+
+                  }
+                  catch (Exception e)
+                  {
+
+                      throw e;
+                  }
+                
              }
              else
              {
                   destinatario = new MailAddress(emailMorador, nomeMorador);
+                  MailMessage msg = new MailMessage(remetente, destinatario);
+                  msg.IsBodyHtml = true;
+                  msg.Body = mensagem;
+                  msg.Subject = "Sistema Spazio Campo Azuli Azuli";
+
+                  try
+                  {
+                      cliente.Send(msg);
+
+                  }
+                  catch (Exception)
+                  {
+                      
+                      throw;
+                  }
              }
 
-            MailMessage msg = new MailMessage(remetente, destinatario);
+            
              
-            msg.IsBodyHtml = true;
-            msg.Body = mensagem;
-            msg.Subject = "Sistema Spazio Campo Azuli Azuli";
+          
 
-            try
-            {
-                cliente.Send(msg);
-
-            }
-            catch (Exception e)
-            {
-
-                throw e;
-            }
+           
         }
 
 

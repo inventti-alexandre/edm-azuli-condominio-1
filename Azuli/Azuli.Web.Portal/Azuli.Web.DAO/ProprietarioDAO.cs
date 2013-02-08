@@ -24,7 +24,7 @@ namespace Azuli.Web.DAO
             {
                 SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
                 comandoSQL.Parameters.AddWithValue("@PROPRIETARIO_AP", ap.apartamento);
-                comandoSQL.Parameters.AddWithValue("@PROPRIETARIO_BLOCOs", ap.bloco);
+                comandoSQL.Parameters.AddWithValue("@PROPRIETARIO_BLOCO", ap.bloco);
                 comandoSQL.Parameters.AddWithValue("@SENHA", apPro.senha);
                 SqlParameter retornoLogin = new SqlParameter("@RETORNO", SqlDbType.Int);
                 retornoLogin.Direction = ParameterDirection.Output;

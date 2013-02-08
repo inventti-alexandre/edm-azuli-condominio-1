@@ -74,6 +74,9 @@ namespace Azuli.Web.Portal.Account
             oAPmodel.apartamento = Convert.ToInt32(txtAP.Text);
             oAPmodel.bloco = Convert.ToInt32(drpBloco.Text);
             oProprietarioModel.senha = Password.Text;
+            
+            Session["AP"] = Convert.ToInt32(txtAP.Text);
+            Session["Bloco"] = Convert.ToInt32(drpBloco.Text);
 
             int valida = oProprietario.autenticaMorador(oAPmodel, oProprietarioModel);
 
