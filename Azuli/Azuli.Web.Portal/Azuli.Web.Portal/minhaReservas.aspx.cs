@@ -12,6 +12,7 @@ namespace Azuli.Web.Portal
     public partial class minhaReservas : Util.Base
     {
 
+        DateTime data = DateTime.Now;
         AgendaBLL oAgenda = new AgendaBLL();
         AgendaModel oAgendaModel = new AgendaModel();
         ApartamentoModel oAP = new ApartamentoModel();
@@ -35,16 +36,22 @@ namespace Azuli.Web.Portal
 
         public void preencheMeses()
         {
-
+            string mesCorrente = "";
             drpMeses.DataSource = Enum.GetNames(typeof(Util.Util.meses));
+
+
+            mesCorrente = System.Globalization.DateTimeFormatInfo.CurrentInfo.GetMonthName(data.Month);
+
+            drpMeses.Items.Add(mesCorrente); //drpMeses.Items.IndexOf(drpMeses.Items.FindByValue(data.Month.ToString()));
             drpMeses.DataBind();
         }
 
         public void preencheAno()
         {
-            for (int ano = 2012; ano < 2020; ano ++)
+
+            for (int ano = data.Year ; ano < 2020; ano ++)
             {
-                drpAno.Items.Add("" + ano);
+                drpAno.Items.Add(ano.ToString());
             }
 
         }
@@ -55,30 +62,70 @@ namespace Azuli.Web.Portal
             dvFesta.Visible = false;
         }
 
-        protected void btnPesquisar_Click(object sender, EventArgs e)
+        private void consultaReserva()
         {
-             oAgendaModel.dataAgendamento = Convert.ToDateTime(drpAno.SelectedItem.Value + "-" + drpMeses.SelectedItem.Value + "01");
-             oAP.bloco = Convert.ToInt32(Session["Bloco"]);
-             oAP.apartamento =   Convert.ToInt32(Session["AP"]);
+            oAgendaModel.dataAgendamento = Convert.ToDateTime(drpAno.SelectedItem.Value + "-" + drpMeses.SelectedItem.Value + "01");
+            oAP.bloco = Convert.ToInt32(Session["Bloco"]);
+            oAP.apartamento = Convert.ToInt32(Session["AP"]);
 
-             if (drpSalao.SelectedItem.Text == "Festa")
-             {
-                 dvFesta.Visible = true;
-                 dvChurrasco.Visible = false;
-                 grdAgendaMorador.DataSource = oAgenda.listaReservaByMoradorFesta(oAP, oAgendaModel);
-                 grdAgendaMorador.DataBind();
-             }
-             else if (drpSalao.SelectedItem.Text == "Churrasqueira")
-             {
-               
-                 grdChurras.DataSource = oAgenda.listaReservaByMorador(oAP, oAgendaModel);
-                 grdChurras.DataBind();
-                 dvChurrasco.Visible = true;
-                 dvFesta.Visible = false;
-             }
+            if (drpSalao.SelectedItem.Text == "Festa")
+            {
+                dvFesta.Visible = true;
+                dvChurrasco.Visible = false;
+                grdAgendaMorador.DataSource = oAgenda.listaReservaByMoradorFesta(oAP, oAgendaModel);
+                grdAgendaMorador.DataBind();
+            }
+            else if (drpSalao.SelectedItem.Text == "Churrasqueira")
+            {
+
+                grdChurras.DataSource = oAgenda.listaReservaByMorador(oAP, oAgendaModel);
+                grdChurras.DataBind();
+                dvChurrasco.Visible = true;
+                dvFesta.Visible = false;
+            }
+        }
+
+
+        protected void drpSalao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            consultaReserva();
+            
+        }
+
+        protected void drpMeses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            consultaReserva();
+        }
+
+        protected void drpAno_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            consultaReserva();
+
+        }
+
+        protected void grdAgendaMorador_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
 
             
 
+            if (e.CommandName == "Delete")
+            {
+                int index = int.Parse((string)e.CommandArgument);
+                DateTime dataAgendamento = Convert.ToDateTime(grdAgendaMorador.DataKeys[index]["dataAgendamento"]);
+                int bloco = Convert.ToInt32(Session["Bloco"]);
+                int ap = Convert.ToInt32(Session["Ap"]);
+
+
+            }
         }
+
+        protected void grdAgendaMorador_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
+        }
+
+        
+
+      
     }
 }

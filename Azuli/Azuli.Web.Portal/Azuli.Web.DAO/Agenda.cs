@@ -44,6 +44,29 @@ namespace Azuli.Web.DAO
             }
         }
 
+        public void cancelaAgendamentoMorador(DateTime dataAgendamento, ApartamentoModel ap)
+        {
+            string clausulaSQL = "CANCELA_RESERVA_MORADOR";
+
+            try
+            {
+                SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
+
+                comandoSQL.Parameters.AddWithValue("@DATA_AGENDA", dataAgendamento);
+                comandoSQL.Parameters.AddWithValue("@BLOCO", ap.bloco);
+                comandoSQL.Parameters.AddWithValue("@AP", ap.apartamento);
+               
+                ExecutaQuery(comandoSQL);
+
+            }
+            catch (Exception error)
+            {
+
+                throw error;
+            }
+
+
+        }
 
         public listAgenda listaReservaByMoradorFesta(ApartamentoModel oAp, AgendaModel oAgenda)
         {
@@ -157,6 +180,8 @@ namespace Azuli.Web.DAO
         }
 
 
+
+        
 
         private listAgenda carregaAgenda(DataTable dt)
         {

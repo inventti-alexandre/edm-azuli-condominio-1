@@ -112,10 +112,30 @@ namespace Azuli.Web.Business
                 throw error;
             }
 
-        #endregion
+
+
         }
 
-        #region IAgenda Members
+      
+
+        public void cancelaAgendamentoMorador(DateTime dataAgendamento, ApartamentoModel ap)
+        {
+            try
+            {
+                oAgendaDao.cancelaAgendamentoMorador(dataAgendamento, ap);
+
+            }
+            catch (Exception error)
+            {
+
+                throw error;
+            }
+        }
+
+        #endregion
+
+
+         #region IAgenda Members
 
         listAgenda Interfaces.IAgenda.listaEventos()
         {

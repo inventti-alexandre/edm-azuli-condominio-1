@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="AgendaModel.cs" />
     <Compile Include="ApartamentoModel.cs" />
+    <Compile Include="CancelamentoReservaMorador.cs" />
     <Compile Include="LancamentoOcorrenciaModel.cs" />
     <Compile Include="OcorrenciaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

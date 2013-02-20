@@ -13,6 +13,7 @@ namespace Azuli.Web.DAO.Interfaces
          void cadastrarAgenda(DateTime data,ApartamentoModel oAp, AgendaModel oAgenda);
          listAgenda listaReservaByMorador(ApartamentoModel oAp, AgendaModel oAgenda);
          listAgenda listaReservaByMoradorFesta(ApartamentoModel oAp, AgendaModel oAgenda);
+         void cancelaAgendamentoMorador(DateTime dataAgendamento, ApartamentoModel ap);
 
     }
 }

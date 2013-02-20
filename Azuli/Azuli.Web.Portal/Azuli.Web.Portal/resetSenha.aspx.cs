@@ -47,7 +47,7 @@ namespace Azuli.Web.Portal
 
 
                                 StringBuilder sb = new StringBuilder();
-                                sb.Append("<b>A sua senha foi alterada com sucesso! No próximo logon será necessário a usá-la!</b>");
+                                sb.Append("<b>A sua senha foi alterada com sucesso! No próximo logon será necessário  usá-la!</b>");
 
                                 lblMensagem.Text = sb.ToString();
                     
@@ -55,12 +55,12 @@ namespace Azuli.Web.Portal
                         }
                         else
                         {
-                            lblMensagem.Text = "Senhas digitadas divergem, favor verificar.";
+                            lblMensagem.Text = "Senhas digitadas estão diferentes, favor verificar.";
                         }
                     }
                     else
                     {
-                        lblMensagem.Text = "Senha precisa ter 6 caracteres";
+                        lblMensagem.Text = "Senha precisa ter no mínimo 6 caracteres";
                     }
 
                     }
