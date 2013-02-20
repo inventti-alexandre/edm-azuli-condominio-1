@@ -181,5 +181,11 @@
     <NotInBuild Include="Schema Objects\Schemas Azuli\dbo\Tables\AgendaArea.sql">
       <SubType>NotInBuild</SubType>
     </NotInBuild>
+    <NotInBuild Include="Schema Objects\Schemas Azuli\dbo\Programmability\Stored Procedures\CANCELA_RESERVA_MORADOR.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Schema Objects\Schemas Azuli\dbo\Tables\HISTORICO_CANCELAMENTO.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
   </ItemGroup>
 </Project>
