@@ -36,11 +36,11 @@ namespace Azuli.Web.Portal
                 corpoEmail.Append("<html>");
 				corpoEmail.Append("<head>");
 				corpoEmail.Append("<style type='text/css'>");
-				corpoEmail.Append("	A				{text-decoration:none;}");
-				corpoEmail.Append("	A.linkbranco	{text-decoration:none;color:white}");
-				corpoEmail.Append("	A.ind:hover		{text-decoration:underline}");
-				corpoEmail.Append("	.preto			{font-family:tahoma,sans-serif;font-size:12px;color:#000000;}");
-				corpoEmail.Append("	.pretog			{font-family:tahoma,sans-serif;font-size:13px;color:#000000;}");
+				corpoEmail.Append("	A{text-decoration:none;}");
+				corpoEmail.Append("	A.linkbranco{text-decoration:none;color:white}");
+				corpoEmail.Append("	A.ind:hover{text-decoration:underline}");
+				corpoEmail.Append("	.preto{font-family:tahoma,sans-serif;font-size:12px;color:#000000;}");
+				corpoEmail.Append("	.pretog	{font-family:tahoma,sans-serif;font-size:13px;color:#000000;}");
 				corpoEmail.Append(".sbd		{font-family:tahoma,sans-serif;font-size:11px;color:blue;line-height: 11px}");
 				corpoEmail.Append("</style>");
 				corpoEmail.Append("</head>");

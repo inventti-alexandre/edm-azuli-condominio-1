@@ -19,6 +19,8 @@ namespace Azuli.Web.Portal.Util
             base.InitializeCulture();
 
             string.CompareOrdinal("ç", "p");
+
+
               
         }
                
