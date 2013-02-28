@@ -62,12 +62,13 @@
      
         <div id="dvFesta" runat="server">
             &nbsp;
-            <asp:GridView ID="grdAgendaMorador" runat="server" EmptyDataText="Você não tem reserva de churrasqueira para esta data"
+            <asp:GridView ID="grdAgendaMorador" runat="server" EmptyDataText="Você não tem reserva para o salão de festa nesta data"
                 AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None"
                 BorderWidth="1px" CellPadding="3" GridLines="Vertical" Font-Bold="False" 
                 onrowcommand="grdAgendaMorador_RowCommand" 
                 DataKeyNames="dataAgendamento" 
-                onrowdeleting="grdAgendaMorador_RowDeleting" >
+                onrowdeleting="grdAgendaMorador_RowDeleting" 
+                onrowdatabound="grdAgendaMorador_RowDataBound" >
                 <AlternatingRowStyle BackColor="#DCDCDC" />
                 <Columns>
                     <asp:BoundField DataField="dataAgendamento" HeaderText="Data de Agendamento" DataFormatString="{0:dd/MM/yyyy}" />
@@ -108,7 +109,8 @@
         <div id="dvChurrasco" runat="server">
             &nbsp;<asp:GridView ID="grdChurras" runat="server" AutoGenerateColumns="False" BackColor="White"
                 BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical"
-                EmptyDataText="Você não tem reserva de churrasqueira para esta data">
+                EmptyDataText="Você não tem reserva de churrasqueira para esta data" 
+                onrowcommand="grdChurras_RowCommand" onrowdeleting="grdChurras_RowDeleting" DataKeyNames="dataAgendamento">
                 <AlternatingRowStyle BackColor="#DCDCDC" />
                 <Columns>
                     <asp:BoundField DataField="dataAgendamento" HeaderText="Data de Agendamento" DataFormatString="{0:dd/MM/yyyy}" />

@@ -104,7 +104,7 @@
                         Width="125px" CssClass="style3" AllowPaging="True" Height="76px" 
                         EmptyDataText="Você não tem Reservas para Churrasqueira neste mês!!" 
                         onpageindexchanging="formVwChurrasco_PageIndexChanging" 
-                        onitemdeleting="formVwChurrasco_ItemDeleting">
+                        onitemdeleting="formVwChurrasco_ItemDeleting" DataKeyNames=dataAgendamento>
                         <EditRowStyle BackColor="#2461BF" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                         <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -123,7 +123,7 @@
                                 <br></br>
                             </table>
                             <br />
-                            <asp:Button ID="btnDel" runat="server" CssClass="botao" CausesValidation="True" CommandName="Insert"
+                            <asp:Button ID="btnDel" runat="server" CssClass="botao" CausesValidation="True" CommandName="Delete"
                                 Text="Cancelar" />
                         </ItemTemplate>
                         <FooterTemplate>
@@ -140,7 +140,8 @@
                         Width="128px" CssClass="style3" AllowPaging="True" Height="73px" 
                         EmptyDataText="Você não tem Reservas para o salão de Festa neste mês!!" 
                         onpageindexchanging="frvSalaoFesta_PageIndexChanging" 
-                        onitemdeleted="frvSalaoFesta_ItemDeleted">
+                        onitemdeleted="frvSalaoFesta_ItemDeleted" DataKeyNames=dataAgendamento 
+                        onitemdeleting="frvSalaoFesta_ItemDeleting">
                         <EditRowStyle BackColor="#2461BF" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                         <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -159,8 +160,7 @@
                                 <br></br>
                             </table>
                             <br />
-                            <asp:Button ID="btnDel" runat="server" CssClass="botao" CausesValidation="True" CommandName="Insert"
-                                Text="Cancelar" />
+                            <asp:Button ID="btnDel" runat="server" CssClass="botao" CausesValidation="True" CommandName="Delete"                                Text="Cancelar" />
                         </ItemTemplate>
                         <FooterTemplate>
                         </FooterTemplate>

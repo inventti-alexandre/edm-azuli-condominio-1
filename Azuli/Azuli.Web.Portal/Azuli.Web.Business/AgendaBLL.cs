@@ -118,11 +118,11 @@ namespace Azuli.Web.Business
 
       
 
-        public void cancelaAgendamentoMorador(DateTime dataAgendamento, ApartamentoModel ap)
+        public void cancelaAgendamentoMorador(DateTime dataAgendamento, ApartamentoModel ap, string festa, string churras)
         {
             try
             {
-                oAgendaDao.cancelaAgendamentoMorador(dataAgendamento, ap);
+                oAgendaDao.cancelaAgendamentoMorador(dataAgendamento, ap, festa, churras);
 
             }
             catch (Exception error)

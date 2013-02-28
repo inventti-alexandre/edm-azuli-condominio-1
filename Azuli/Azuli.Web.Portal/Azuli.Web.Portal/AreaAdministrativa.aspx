@@ -136,6 +136,7 @@
                                 <asp:Label ID="lblApartDesc" runat="server" Text="301"></asp:Label>
                             </td>
                         </tr>
+                        <td></td>
                         <tr>
                             <td class="style6">
                                 <asp:Label ID="lblBloco" runat="server" Font-Bold="True" Text="Bloco:"></asp:Label>

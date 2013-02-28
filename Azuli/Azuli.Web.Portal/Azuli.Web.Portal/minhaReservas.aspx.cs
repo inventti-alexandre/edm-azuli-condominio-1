@@ -105,16 +105,38 @@ namespace Azuli.Web.Portal
 
         protected void grdAgendaMorador_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            
+            const string  salaoFesta = "S";
+            const string churrasqueira = "N";
+            DateTime dataAgendamento = new DateTime();
+            string bloco = "";
+            string ap = "";
 
             
 
             if (e.CommandName == "Delete")
             {
-                int index = int.Parse((string)e.CommandArgument);
-                DateTime dataAgendamento = Convert.ToDateTime(grdAgendaMorador.DataKeys[index]["dataAgendamento"]);
-                int bloco = Convert.ToInt32(Session["Bloco"]);
-                int ap = Convert.ToInt32(Session["Ap"]);
+                
 
+                int index = int.Parse((string)e.CommandArgument);
+                dataAgendamento = Convert.ToDateTime(grdAgendaMorador.DataKeys[index]["dataAgendamento"]);
+                bloco = Session["Bloco"].ToString();
+                ap =Session["Ap"].ToString();
+                oAP.apartamento = Convert.ToInt32(ap);
+                oAP.bloco = Convert.ToInt32(bloco);
+
+
+                try
+                {
+                    oAgenda.cancelaAgendamentoMorador(dataAgendamento, oAP, salaoFesta, churrasqueira);
+                    grdAgendaMorador.DataBind();
+                }
+                catch (Exception)
+                {
+                    
+                    throw;
+                }
+             
 
             }
         }
@@ -122,6 +144,52 @@ namespace Azuli.Web.Portal
         protected void grdAgendaMorador_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
 
+        }
+
+        protected void grdAgendaMorador_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            
+        }
+
+        protected void grdChurras_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            
+
+
+            }
+
+        protected void grdChurras_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            const string salaoFesta = "N";
+            const string churrasqueira = "S";
+            DateTime dataAgendamento = new DateTime();
+            string bloco = "";
+            string ap = "";
+
+
+            if (e.CommandName == "Delete")
+            {
+
+
+                int index = int.Parse((string)e.CommandArgument);
+                dataAgendamento = Convert.ToDateTime(grdChurras.DataKeys[index]["dataAgendamento"]);
+                bloco = Session["Bloco"].ToString();
+                ap = Session["Ap"].ToString();
+                oAP.apartamento = Convert.ToInt32(ap);
+                oAP.bloco = Convert.ToInt32(bloco);
+
+
+                try
+                {
+                    oAgenda.cancelaAgendamentoMorador(dataAgendamento, oAP, salaoFesta, churrasqueira);
+                    grdChurras.DataBind();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+        }
         }
 
         

@@ -44,7 +44,8 @@ namespace Azuli.Web.DAO
             }
         }
 
-        public void cancelaAgendamentoMorador(DateTime dataAgendamento, ApartamentoModel ap)
+        
+        public void cancelaAgendamentoMorador(DateTime dataAgendamento, ApartamentoModel ap, string festa, string churras)
         {
             string clausulaSQL = "CANCELA_RESERVA_MORADOR";
 
@@ -55,6 +56,8 @@ namespace Azuli.Web.DAO
                 comandoSQL.Parameters.AddWithValue("@DATA_AGENDA", dataAgendamento);
                 comandoSQL.Parameters.AddWithValue("@BLOCO", ap.bloco);
                 comandoSQL.Parameters.AddWithValue("@AP", ap.apartamento);
+                comandoSQL.Parameters.AddWithValue("@FESTA", festa);
+                comandoSQL.Parameters.AddWithValue("@CHURRAS", churras);
                
                 ExecutaQuery(comandoSQL);
 

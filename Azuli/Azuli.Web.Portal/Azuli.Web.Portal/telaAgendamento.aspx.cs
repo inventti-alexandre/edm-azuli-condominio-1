@@ -305,6 +305,63 @@ namespace Azuli.Web.Portal
         protected void formVwChurrasco_ItemDeleting(object sender, FormViewDeleteEventArgs e)
         {
 
+
+
+            const string salaoFesta = "N";
+            const string churrasqueira = "S";
+            DateTime dataAgendamento = new DateTime();
+            string bloco = "";
+            string ap = "";
+            DataKey key = formVwChurrasco.DataKey;
+            dataAgendamento = Convert.ToDateTime(key.Value);
+            bloco = Session["Bloco"].ToString();
+            ap = Session["Ap"].ToString();
+            oAP.apartamento = Convert.ToInt32(ap);
+            oAP.bloco = Convert.ToInt32(bloco);
+
+
+            try
+            {
+                oAgenda.cancelaAgendamentoMorador(dataAgendamento, oAP, salaoFesta, churrasqueira);
+                formVwChurrasco.DataBind();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+         
+
+        }
+
+        protected void frvSalaoFesta_ItemDeleting(object sender, FormViewDeleteEventArgs e)
+        {
+           
+
+
+                const string  salaoFesta = "S";
+                const string churrasqueira = "N";
+                DateTime dataAgendamento = new DateTime();
+                string bloco = "";
+                string ap = "";
+                DataKey key = frvSalaoFesta.DataKey;
+                dataAgendamento = Convert.ToDateTime(key.Value);
+                bloco = Session["Bloco"].ToString();
+                ap =Session["Ap"].ToString();
+                oAP.apartamento = Convert.ToInt32(ap);
+                oAP.bloco = Convert.ToInt32(bloco);
+
+
+                try
+                {
+                    oAgenda.cancelaAgendamentoMorador(dataAgendamento, oAP, salaoFesta, churrasqueira);
+                    frvSalaoFesta.DataBind();
+                }
+                catch (Exception)
+                {
+                    
+                    throw;
+                }
         }
         
     }
