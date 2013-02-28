@@ -346,22 +346,42 @@ namespace Azuli.Web.Portal
                 string ap = "";
                 DataKey key = frvSalaoFesta.DataKey;
                 dataAgendamento = Convert.ToDateTime(key.Value);
-                bloco = Session["Bloco"].ToString();
-                ap =Session["Ap"].ToString();
-                oAP.apartamento = Convert.ToInt32(ap);
-                oAP.bloco = Convert.ToInt32(bloco);
+                
+                if (validaCancelamento(dataAgendamento))
+                {
+                    bloco = Session["Bloco"].ToString();
+                    ap = Session["Ap"].ToString();
+                    oAP.apartamento = Convert.ToInt32(ap);
+                    oAP.bloco = Convert.ToInt32(bloco);
 
 
-                try
-                {
-                    oAgenda.cancelaAgendamentoMorador(dataAgendamento, oAP, salaoFesta, churrasqueira);
-                    frvSalaoFesta.DataBind();
+                    try
+                    {
+                        oAgenda.cancelaAgendamentoMorador(dataAgendamento, oAP, salaoFesta, churrasqueira);
+                        frvSalaoFesta.DataBind();
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
                 }
-                catch (Exception)
-                {
-                    
-                    throw;
-                }
+        }
+
+        public bool validaCancelamento(DateTime dataAgendamento)
+        {
+
+            TimeSpan diasAgendado ;
+            diasAgendado =  DateTime.Now - dataAgendamento;
+            if (diasAgendado.Days > 15)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
         }
         
     }

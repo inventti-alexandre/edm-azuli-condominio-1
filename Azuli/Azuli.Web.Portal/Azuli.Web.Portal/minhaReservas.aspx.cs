@@ -173,23 +173,45 @@ namespace Azuli.Web.Portal
 
                 int index = int.Parse((string)e.CommandArgument);
                 dataAgendamento = Convert.ToDateTime(grdChurras.DataKeys[index]["dataAgendamento"]);
-                bloco = Session["Bloco"].ToString();
-                ap = Session["Ap"].ToString();
-                oAP.apartamento = Convert.ToInt32(ap);
-                oAP.bloco = Convert.ToInt32(bloco);
 
-
-                try
+                if (validaCancelamento(dataAgendamento))
                 {
-                    oAgenda.cancelaAgendamentoMorador(dataAgendamento, oAP, salaoFesta, churrasqueira);
-                    grdChurras.DataBind();
-                }
-                catch (Exception)
-                {
+                    bloco = Session["Bloco"].ToString();
+                    ap = Session["Ap"].ToString();
+                    oAP.apartamento = Convert.ToInt32(ap);
+                    oAP.bloco = Convert.ToInt32(bloco);
 
-                    throw;
+
+                    try
+                    {
+                        oAgenda.cancelaAgendamentoMorador(dataAgendamento, oAP, salaoFesta, churrasqueira);
+                        grdChurras.DataBind();
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
                 }
         }
+        }
+
+        public bool validaCancelamento(DateTime dataAgendamento)
+        {
+
+            TimeSpan diasAgendado;
+            diasAgendado = dataAgendamento -  DateTime.Now;
+            if (diasAgendado.Days > 15)
+            {
+                return true;
+            }
+
+            else
+            {
+                lblMsg.Text = "Já excedeu o tempo permitido para cancelamento já passaram mais de " + diasAgendado.Days + " dias";
+                lblMsg.Visible = true;
+                return false;
+            }
         }
 
         

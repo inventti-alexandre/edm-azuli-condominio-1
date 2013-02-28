@@ -61,8 +61,9 @@
 
      
         <div id="dvFesta" runat="server">
-            &nbsp;
-            <asp:GridView ID="grdAgendaMorador" runat="server" EmptyDataText="Você não tem reserva para o salão de festa nesta data"
+            <asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#CC0000"></asp:Label>
+            &nbsp;<br />
+&nbsp;<asp:GridView ID="grdAgendaMorador" runat="server" EmptyDataText="Você não tem reserva para o salão de festa nesta data"
                 AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None"
                 BorderWidth="1px" CellPadding="3" GridLines="Vertical" Font-Bold="False" 
                 onrowcommand="grdAgendaMorador_RowCommand" 
