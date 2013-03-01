@@ -11,7 +11,7 @@
 
     <siteMapNode url="" title="Livro de Ocorrência" description="Ocorrência">
 
-      <siteMapNode url="" title="Abrir Ocorrência" description="Open Ocorrencia" />
+      <siteMapNode url="~/OcorrenciaMorador.aspx" title="Abrir Ocorrência" description="Open Ocorrencia" />
       <siteMapNode url="" title="Minhas Ocorrências" description="Mine Ocorrencia" />
 
     </siteMapNode>

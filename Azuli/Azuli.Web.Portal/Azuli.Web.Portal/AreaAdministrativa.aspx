@@ -237,7 +237,7 @@
       <br />
       <br />
      </center><br />
-    </div></fieldset>
+    </div>
     <br />
  <br />
 

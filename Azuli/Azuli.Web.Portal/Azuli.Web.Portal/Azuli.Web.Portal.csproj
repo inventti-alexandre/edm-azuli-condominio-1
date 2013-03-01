@@ -73,6 +73,7 @@
     <Content Include="images\print.jpg" />
     <Content Include="images\vermelho.jpg" />
     <Content Include="minhaReservas.aspx" />
+    <Content Include="OcorrenciaMorador.aspx" />
     <Content Include="paginaInicialMoradores.aspx" />
     <Content Include="resetSenha.aspx" />
     <Content Include="Scripts\ScriptAzuli.js" />
@@ -166,6 +167,13 @@
     </Compile>
     <Compile Include="minhaReservas.aspx.designer.cs">
       <DependentUpon>minhaReservas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OcorrenciaMorador.aspx.cs">
+      <DependentUpon>OcorrenciaMorador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OcorrenciaMorador.aspx.designer.cs">
+      <DependentUpon>OcorrenciaMorador.aspx</DependentUpon>
     </Compile>
     <Compile Include="paginaInicialMoradores.aspx.cs">
       <DependentUpon>paginaInicialMoradores.aspx</DependentUpon>

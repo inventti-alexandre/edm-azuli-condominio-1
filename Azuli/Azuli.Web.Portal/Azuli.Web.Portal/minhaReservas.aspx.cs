@@ -200,6 +200,14 @@ namespace Azuli.Web.Portal
         }
         }
 
+        /// <summary>
+        /// Regras para validar cancelamento de reservas de Apartamento
+        /// </summary>
+        /// <remarks>Autor: Edmilson
+        /// data: 01/03/2013
+        /// </remarks>
+        /// <param name="dataAgendamento">dataAgendamento</param>
+        /// <returns>True or false</returns>
         public bool validaCancelamento(DateTime dataAgendamento)
         {
 
