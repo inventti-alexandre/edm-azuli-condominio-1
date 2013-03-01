@@ -74,6 +74,7 @@ namespace Azuli.Web.Portal
                 dvChurrasco.Visible = false;
                 grdAgendaMorador.DataSource = oAgenda.listaReservaByMoradorFesta(oAP, oAgendaModel);
                 grdAgendaMorador.DataBind();
+                lblMsg.Visible = false;
             }
             else if (drpSalao.SelectedItem.Text == "Churrasqueira")
             {
@@ -82,6 +83,7 @@ namespace Azuli.Web.Portal
                 grdChurras.DataBind();
                 dvChurrasco.Visible = true;
                 dvFesta.Visible = false;
+                lblMsg.Visible = false;
             }
         }
 
@@ -120,23 +122,25 @@ namespace Azuli.Web.Portal
 
                 int index = int.Parse((string)e.CommandArgument);
                 dataAgendamento = Convert.ToDateTime(grdAgendaMorador.DataKeys[index]["dataAgendamento"]);
-                bloco = Session["Bloco"].ToString();
-                ap =Session["Ap"].ToString();
-                oAP.apartamento = Convert.ToInt32(ap);
-                oAP.bloco = Convert.ToInt32(bloco);
+                if (validaCancelamento(dataAgendamento))
+                {
+                    bloco = Session["Bloco"].ToString();
+                    ap = Session["Ap"].ToString();
+                    oAP.apartamento = Convert.ToInt32(ap);
+                    oAP.bloco = Convert.ToInt32(bloco);
 
 
-                try
-                {
-                    oAgenda.cancelaAgendamentoMorador(dataAgendamento, oAP, salaoFesta, churrasqueira);
-                    grdAgendaMorador.DataBind();
+                    try
+                    {
+                        oAgenda.cancelaAgendamentoMorador(dataAgendamento, oAP, salaoFesta, churrasqueira);
+                        grdAgendaMorador.DataBind();
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
                 }
-                catch (Exception)
-                {
-                    
-                    throw;
-                }
-             
 
             }
         }
@@ -208,8 +212,9 @@ namespace Azuli.Web.Portal
 
             else
             {
-                lblMsg.Text = "Já excedeu o tempo permitido para cancelamento já passaram mais de " + diasAgendado.Days + " dias";
                 lblMsg.Visible = true;
+                lblMsg.Text = "Só é permitido o cancelamento com 15 dias de antecedência e hoje faltam " + diasAgendado.Days + " dias para reserva, excessões procure o síndico, do seu interfone- ramal 94";
+                
                 return false;
             }
         }

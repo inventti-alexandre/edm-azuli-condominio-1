@@ -61,7 +61,7 @@
 
      
         <div id="dvFesta" runat="server">
-            <asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#CC0000"></asp:Label>
+            
             &nbsp;<br />
 &nbsp;<asp:GridView ID="grdAgendaMorador" runat="server" EmptyDataText="Você não tem reserva para o salão de festa nesta data"
                 AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None"
@@ -148,5 +148,6 @@
             <br />
             <br />
         </div>
+        <asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#CC0000"></asp:Label>
     </center>
 </asp:Content>

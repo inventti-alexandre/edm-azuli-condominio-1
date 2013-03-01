@@ -314,21 +314,25 @@ namespace Azuli.Web.Portal
             string ap = "";
             DataKey key = formVwChurrasco.DataKey;
             dataAgendamento = Convert.ToDateTime(key.Value);
-            bloco = Session["Bloco"].ToString();
-            ap = Session["Ap"].ToString();
-            oAP.apartamento = Convert.ToInt32(ap);
-            oAP.bloco = Convert.ToInt32(bloco);
-
-
-            try
+            
+            if (validaCancelamento(dataAgendamento))
             {
-                oAgenda.cancelaAgendamentoMorador(dataAgendamento, oAP, salaoFesta, churrasqueira);
-                formVwChurrasco.DataBind();
-            }
-            catch (Exception)
-            {
+                bloco = Session["Bloco"].ToString();
+                ap = Session["Ap"].ToString();
+                oAP.apartamento = Convert.ToInt32(ap);
+                oAP.bloco = Convert.ToInt32(bloco);
 
-                throw;
+
+                try
+                {
+                    oAgenda.cancelaAgendamentoMorador(dataAgendamento, oAP, salaoFesta, churrasqueira);
+                    formVwChurrasco.DataBind();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
             }
          
 
@@ -371,8 +375,8 @@ namespace Azuli.Web.Portal
         public bool validaCancelamento(DateTime dataAgendamento)
         {
 
-            TimeSpan diasAgendado ;
-            diasAgendado =  DateTime.Now - dataAgendamento;
+            TimeSpan diasAgendado;
+            diasAgendado = dataAgendamento - DateTime.Now;
             if (diasAgendado.Days > 15)
             {
                 return true;
@@ -380,6 +384,8 @@ namespace Azuli.Web.Portal
 
             else
             {
+                lblMgs.Text = "Só é permitido o cancelamento com 15 dias de antecedência e hoje faltam " + diasAgendado.Days + " dias para reserva, excessões procure o síndico ramal 94";
+               
                 return false;
             }
         }

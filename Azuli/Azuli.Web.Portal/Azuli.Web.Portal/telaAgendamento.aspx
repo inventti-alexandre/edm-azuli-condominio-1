@@ -134,7 +134,9 @@
                     </asp:FormView>
                     <br />
                     <br />
+                    
                 </td>
+          
                 <td align="center" class="style12">
                     <asp:FormView ID="frvSalaoFesta" runat="server" CellPadding="4" ForeColor="#333333"
                         Width="128px" CssClass="style3" AllowPaging="True" Height="73px" 
@@ -170,6 +172,8 @@
                     </asp:FormView>
                 </td>
             </tr>
+             <tr>  <td align="center" colspan="3">   <asp:Label ID="lblMgs" runat="server" 
+                     Font-Bold="True" ForeColor="Red"></asp:Label></td></tr>
         </table>
     </fieldset> </div>
     <div id="dvOpcao" runat="server">
