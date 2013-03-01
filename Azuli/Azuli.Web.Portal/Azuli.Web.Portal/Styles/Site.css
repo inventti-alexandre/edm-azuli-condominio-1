@@ -449,5 +449,59 @@ input.botao, .btGeral {
 	color: White;
 }
 
+/* Data Web Control Styles */
+
+.DataWebControlStyle
+{
+    font-size: 100%;
+}
+
+.HeaderStyle
+{
+    background-color:#ADD8E6;
+    color: white;
+    font-weight: bold;
+}
+
+.HeaderStyle a, .HeaderStyle a:visited
+{
+    color: white;
+}
+
+.FooterStyle
+{
+    background-color: #a33;
+    color: blue;
+    text-align: right;
+}
+
+.AlternatingRowStyle
+{
+    background-color: #ADD8E6;
+}
+
+.RowStyle
+{
+}
+
+.SelectedRowStyle
+{
+    background-color: Yellow;
+}
+
+.PagerRowStyle
+{
+    background-color: #ddd;
+    text-align: right;
+}
+
+.SortHeaderRowStyle
+{
+    background-color: #c00;
+    text-align: left;
+    font-weight: bold;
+    color: White;
+}
+
 
 

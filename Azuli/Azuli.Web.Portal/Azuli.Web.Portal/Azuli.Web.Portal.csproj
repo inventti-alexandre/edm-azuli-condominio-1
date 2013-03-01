@@ -62,6 +62,7 @@
     <Content Include="ErrorPage.aspx" />
     <Content Include="images\correio.jpg" />
     <Content Include="images\delete.png" />
+    <Content Include="listaOcorrenciaMorador.aspx" />
     <Content Include="LoginAzulli.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="images\amarelo.jpg" />
@@ -136,6 +137,13 @@
     </Compile>
     <Compile Include="ErrorPage.aspx.designer.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listaOcorrenciaMorador.aspx.cs">
+      <DependentUpon>listaOcorrenciaMorador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaOcorrenciaMorador.aspx.designer.cs">
+      <DependentUpon>listaOcorrenciaMorador.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoginAzulli.aspx.cs">
       <DependentUpon>LoginAzulli.aspx</DependentUpon>
@@ -263,6 +271,9 @@
     <Content Include="SiteAdmin.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\DataWebControls\DataList.skin" />
+    <Content Include="App_Themes\DataWebControls\DetailsView.skin" />
+    <Content Include="App_Themes\DataWebControls\GridView.skin" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
