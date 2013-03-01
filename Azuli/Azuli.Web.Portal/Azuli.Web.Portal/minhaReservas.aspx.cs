@@ -213,7 +213,7 @@ namespace Azuli.Web.Portal
             else
             {
                 lblMsg.Visible = true;
-                lblMsg.Text = "Só é permitido o cancelamento com 15 dias de antecedência e hoje faltam " + diasAgendado.Days + " dias para reserva, excessões procure o síndico, do seu interfone- ramal 94";
+                lblMsg.Text = "Só é permitido o cancelamento com 15 dias de antecedência e hoje faltam " + diasAgendado.Days + " dias para reserva.";
                 
                 return false;
             }
