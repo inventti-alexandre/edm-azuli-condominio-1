@@ -13,6 +13,24 @@ namespace Azuli.Web.Portal {
     public partial class listaOcorrenciaMorador {
         
         /// <summary>
+        /// hpProximo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hpProximo;
+        
+        /// <summary>
+        /// hpAnterior control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hpAnterior;
+        
+        /// <summary>
         /// lblMeses control.
         /// </summary>
         /// <remarks>
@@ -38,14 +56,5 @@ namespace Azuli.Web.Portal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DataList DataList1;
-        
-        /// <summary>
-        /// SqlDataSourceDataListOcorrencia control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceDataListOcorrencia;
     }
 }

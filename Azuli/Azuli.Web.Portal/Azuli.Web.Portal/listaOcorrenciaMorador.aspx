@@ -10,15 +10,20 @@
         <legend title="Abrir Ocorrência">Abrir Ocorrência </legend>
         <center>
 
+            <asp:HyperLink ID="hpProximo" runat="server">Próximo</asp:HyperLink>
+            <asp:HyperLink ID="hpAnterior" runat="server">Anterior</asp:HyperLink>
+
          <asp:Label ID="lblMeses" runat="server" CssClass="AlternatingRowStyle" 
         Text="Ocorrência no mês de:" Font-Bold="True" Font-Size="Medium"></asp:Label>
 &nbsp;<asp:DropDownList ID="drpMeses" runat="server" Height="30px" Width="243px" 
-                CssClass="menu">
+                CssClass="menu" AutoPostBack="True" 
+                onselectedindexchanged="drpMeses_SelectedIndexChanged">
     </asp:DropDownList>
             <br />
             <br />
-            <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSourceDataListOcorrencia"
-                EnableViewState="False" Style="margin-right: 1px" Width="508px" >
+            <asp:DataList ID="DataList1" runat="server"
+                EnableViewState="False" Style="margin-right: 1px" Width="508px" 
+                RepeatLayout="Flow" >
                 <HeaderTemplate>
                   <asp:Label ID="lblSemregistro" runat="server" Text="Ocorrências Abertas" Visible='<%#(DataList1.Items.Count > 0) %>'></asp:Label>
                 </HeaderTemplate>
@@ -26,33 +31,35 @@
                     OCORRENCIA:
                     
                     <asp:Label ID="OCORRENCIALabel" runat="server" 
-                        Text= '<%# Eval("OCORRENCIA") %>' />
+                        Text= '<%# Eval("oOcorrencia.codigoOcorencia") %>' />
                     <br />
                     DATA_OCORRENCIA:
                     <asp:Label ID="DATA_OCORRENCIALabel" runat="server" 
-                        Text='<%# Eval("DATA_OCORRENCIA") %>'/>
+                        Text='<%# Eval("dataOcorrencia") %>'/>
                     <br />
                     STATUS:
                     <asp:Label ID="STATUSLabel" runat="server" 
-                        Text='<%# Eval("STATUS") %>'/>
+                        Text='<%# Eval("statusOcorrencia") %>'/>
                     <br />
                     DESCRICAO:
-                    <asp:Label ID="DESCRICAOLabel" runat="server" Text='<%# Eval("DESCRICAO") %>'/>
+                    <asp:Label ID="DESCRICAOLabel" runat="server" Text='<%# Eval("ocorrenciaLancamento") %>'/>
                     <br />
                     DATA_FINALIZACAO:
                     <asp:Label ID="DATA_FINALIZACAOLabel" runat="server" 
-                        Text='<%# Eval("DATA_FINALIZACAO") %>'/>
+                        Text='<%# Eval("dataFinalizacao") %>'/>
                     <br />
                     DescricaoOcorrencia:
                     <asp:Label ID="DescricaoOcorrenciaLabel" runat="server" 
-                        Text='<%# Eval("DescricaoOcorrencia") %>'/>
+                        Text='<%# Eval("descricaoOcorrencia") %>'/>
                     <br />
                    
                     imagem:
-                    <asp:Label ID="imagemLabel" runat="server" Text='<%# Eval("imagem") %>'/>
+                    <asp:Label ID="imagemLabel" runat="server" Text='<%# Eval("imagemEvidencia") %>'/>
                     <br />
                     <br />
                 </ItemTemplate>
+                
+                
                 <SeparatorTemplate>
                     <hr />
                 </SeparatorTemplate>
@@ -60,16 +67,6 @@
                 <asp:Label ID="lblSemregistro" runat="server" Text="Você não possui ocorrência cadastrada" Visible='<%#(DataList1.Items.Count == 0) %>'></asp:Label>
                  </FooterTemplate>
             </asp:DataList>
-            <asp:SqlDataSource ID="SqlDataSourceDataListOcorrencia" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:azulli %>" 
-                SelectCommand="LISTA_OCORRENCIA_MORADOR" SelectCommandType="StoredProcedure">
-                <SelectParameters>
-                    <asp:SessionParameter Name="BLOCO" DefaultValue="06" SessionField="bloco" Type="Int32" />
-                    <asp:SessionParameter Name="AP" DefaultValue="301" SessionField="Ap" Type="Int32" />
-                    <asp:ControlParameter ControlID="drpMeses" DefaultValue="-1" Name="MES" 
-                        PropertyName="SelectedValue" Type="Int32" />
-                </SelectParameters>
-            </asp:SqlDataSource>
-    </fieldset>
+            </fieldset>
     </center>
 </asp:Content>

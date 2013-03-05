@@ -11,14 +11,14 @@ namespace Azuli.Web.Business
     {
 
         #region IProprietario Members
-
+        ProprietarioDAO oPropriDAO = new ProprietarioDAO();
         public int autenticaMorador(Model.ApartamentoModel ap, Model.ProprietarioModel apPro)
         {
             try
             {
-                ProprietarioDAO oProprietario = new ProprietarioDAO();
+               
 
-                return oProprietario.autenticaMorador(ap,apPro);
+                return oPropriDAO.autenticaMorador(ap, apPro);
 
             }
             catch (Exception)
@@ -32,7 +32,7 @@ namespace Azuli.Web.Business
         {
             try
             {
-                ProprietarioDAO oPropriDAO = new ProprietarioDAO();
+         
                 
                 return oPropriDAO.populaProprietario(ap, apPro);
 
@@ -49,7 +49,6 @@ namespace Azuli.Web.Business
         {
             try
             {
-                ProprietarioDAO oPropriDAO = new ProprietarioDAO();
 
                 return oPropriDAO.BuscaMoradorAdmin(ap);
 
@@ -74,7 +73,7 @@ namespace Azuli.Web.Business
 
             try
             {
-                ProprietarioDAO oPropriDAO = new ProprietarioDAO();
+               
 
                 oPropriDAO.alteraSenha(oProprietario);
 
@@ -92,7 +91,7 @@ namespace Azuli.Web.Business
         {
             try
             {
-                ProprietarioDAO oPropriDAO = new ProprietarioDAO();
+              
 
                 return oPropriDAO.CadastrarApartamentoMorador(ap);
 
@@ -115,7 +114,7 @@ namespace Azuli.Web.Business
         {
             try
             {
-                ProprietarioDAO oPropriDAO = new ProprietarioDAO();
+               
 
                 oPropriDAO.cadastraOcorrencia(olacamento);
 
