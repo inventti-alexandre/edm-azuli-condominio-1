@@ -435,7 +435,6 @@ input.botao, .btGeral {
 
 .MasterMenu
 {
-	width: 200px;
 	background-color: #ADD8E6;
 	border-top: Solid 3px #F5F5F5;
 	padding: 3px;
@@ -470,9 +469,9 @@ input.botao, .btGeral {
 
 .FooterStyle
 {
-    background-color: #a33;
+    background-color: #ADD8E6;
     color: blue;
-    text-align: right;
+    text-align: center;
 }
 
 .AlternatingRowStyle

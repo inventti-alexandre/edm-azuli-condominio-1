@@ -28,10 +28,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 <br /><br />
 <fieldset>
-<legend title="Abrir Ocorrência"> Abrir Ocorrência </legend>
-
+<center>
+   
+    <legend title="Abrir Ocorrência"> Abrir Ocorrência </legend></center>
+   <center><asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label> 
   <div id="dvCadastro" runat="server" align="center" > 
-      
+   
       <table style="border: thin solid #C0C0C0; height: 475px; width: 866px;" 
           class="MasterMenu">
             <tr>
@@ -58,7 +60,7 @@
                                 <asp:Label ID="lblAssunto" runat="server" Font-Bold="True" Text="Assunto:"></asp:Label>
                             </td>
                             <td class="style2">
-                                <asp:DropDownList ID="DropDownList1" runat="server" Height="29px" Width="609px" 
+                                <asp:DropDownList ID="drpListSubject" runat="server" Height="29px" Width="609px" 
                                     DataSourceID="SqlDataSourceTipoOcorrencia" DataTextField="DescricaoOcorrencia" 
                                     DataValueField="idTipoOcorrencia" CssClass="btGeral" 
                                     AppendDataBoundItems="True">
@@ -77,11 +79,14 @@
                                     Text="Descrição da Solicitação:"></asp:Label>
                             </td><br />
                             <td class="style4">
-                                 <asp:TextBox ID="TextBox1" runat="server" Height="153px" TextMode="MultiLine" 
+                                 <asp:TextBox ID="txtDescription" runat="server" Height="153px" TextMode="MultiLine" 
                                      Width="602px"></asp:TextBox>
                             </td>
                             <td class="style4">
-                                 &nbsp;</td>
+                                 <asp:RequiredFieldValidator ID="rfvDescription" runat="server" 
+                                     ControlToValidate="txtDescription" ErrorMessage="Favor descrever o problema!" 
+                                     Font-Bold="True" ForeColor="Red" ValidationGroup="validaDescricao"></asp:RequiredFieldValidator>
+                            </td>
                         </tr>
                         <tr>
                             <td class="style7">
@@ -101,7 +106,7 @@
                     <br />
                     <asp:Button ID="btnOcorrencia" runat="server" CssClass="botao" Text="Gerar ocorrência" 
                         Width="150px"  
-                        ValidationGroup="cadastraMorador" />
+                        ValidationGroup="validaDescricao" onclick="btnOcorrencia_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp; 
                     <asp:Button ID="btnLimpar" runat="server" CssClass="botao" 
                         Text="Limpar Campos" />

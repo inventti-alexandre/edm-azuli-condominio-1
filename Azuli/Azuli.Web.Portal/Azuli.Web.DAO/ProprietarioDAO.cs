@@ -192,6 +192,39 @@ namespace Azuli.Web.DAO
 
      
 
+        
+
+
+        public void cadastraOcorrencia(LancamentoOcorrenciaModel olacamento)
+        {
+             string clausulaSQL ="CADASTRA_OCORRENCIA";
+
+             try
+             {
+                 
+                 SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
+
+                 comandoSQL.Parameters.AddWithValue("@DATA_CADASTRO", olacamento.dataOcorrencia);
+                 comandoSQL.Parameters.AddWithValue("@STATUS", olacamento.statusOcorrencia);
+                 comandoSQL.Parameters.AddWithValue("@DESCRICAO", olacamento.descricaoOcorrencia);
+                 comandoSQL.Parameters.AddWithValue("@BLOCO", olacamento.oAp.bloco);
+                 comandoSQL.Parameters.AddWithValue("@AP", olacamento.oAp.apartamento);
+                 comandoSQL.Parameters.AddWithValue("@DATA_RESOLUCAO", olacamento.dataOcorrencia);
+                 comandoSQL.Parameters.AddWithValue("@DATA_CANCEL", olacamento.dataCancelamento);
+                 comandoSQL.Parameters.AddWithValue("@CAMINHO_IMAGEM_EVIDENCIA", olacamento.imagemEvidencia);
+                 comandoSQL.Parameters.AddWithValue("@TIPO_OCORRENCIA", olacamento.oOcorrencia.codigoOcorencia);
+                
+                 ExecutaComando(comandoSQL);
+
+             }
+             catch (Exception)
+             {
+                 
+                 throw;
+             }
+            
+        }
+
         #endregion
     }
 }

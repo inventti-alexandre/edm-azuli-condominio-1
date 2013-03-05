@@ -61,9 +61,7 @@ namespace Azuli.Web.Business
             }
         }
 
-        #endregion
-
-        #region IProprietario Members
+       
 
 
         public Model.listApartamento listaAP(System.Data.DataTable dt)
@@ -107,10 +105,28 @@ namespace Azuli.Web.Business
 
         }
 
-     
 
 
-       
+
+
+
+
+        public void cadastraOcorrencia(LancamentoOcorrenciaModel olacamento)
+        {
+            try
+            {
+                ProprietarioDAO oPropriDAO = new ProprietarioDAO();
+
+                oPropriDAO.cadastraOcorrencia(olacamento);
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+
+        }
 
         #endregion
     }

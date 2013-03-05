@@ -9,45 +9,56 @@
     <fieldset>
         <legend title="Abrir Ocorrência">Abrir Ocorrência </legend>
         <center>
+
+         <asp:Label ID="lblMeses" runat="server" CssClass="AlternatingRowStyle" 
+        Text="Ocorrência no mês de:" Font-Bold="True" Font-Size="Medium"></asp:Label>
+&nbsp;<asp:DropDownList ID="drpMeses" runat="server" Height="30px" Width="243px" 
+                CssClass="menu">
+    </asp:DropDownList>
+            <br />
+            <br />
             <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSourceDataListOcorrencia"
                 EnableViewState="False" Style="margin-right: 1px" Width="508px" >
                 <HeaderTemplate>
-                    <h2 class="passwordEntry" align="center" dir="ltr">
-                        Suas Ocorrências</h2>
+                  <asp:Label ID="lblSemregistro" runat="server" Text="Ocorrências Abertas" Visible='<%#(DataList1.Items.Count > 0) %>'></asp:Label>
                 </HeaderTemplate>
                 <ItemTemplate>
-                    <B>OCORRÊNCIA:</B>
+                    OCORRENCIA:
                     
                     <asp:Label ID="OCORRENCIALabel" runat="server" 
-                        Text= ' <%# Eval("OCORRENCIA") %> ' Font-Bold="True" ForeColor="#4B6C9E" />
+                        Text= '<%# Eval("OCORRENCIA") %>' />
                     <br />
-                    <B>ASSUNTO SOBRE:</B>
-                    <asp:Label ID="DescricaoOcorrenciaLabel" runat="server" 
-                        Text='<%# Eval("DescricaoOcorrencia") %>'  Font-Bold="True" ForeColor="#4B6C9E"/>
-                    <br />
-                    <B>DATA DE ABERTURA:</B>
+                    DATA_OCORRENCIA:
                     <asp:Label ID="DATA_OCORRENCIALabel" runat="server" 
-                        Text='<%# Eval("DATA_OCORRENCIA") %>'  Font-Bold="True" ForeColor="#4B6C9E"/>
+                        Text='<%# Eval("DATA_OCORRENCIA") %>'/>
                     <br />
-                   <B> STATUS:</B>
-                    <asp:Label ID="STATUSLabel" runat="server" Text='<%# Eval("STATUS") %>'  Font-Bold="True" ForeColor="#4B6C9E"/>
+                    STATUS:
+                    <asp:Label ID="STATUSLabel" runat="server" 
+                        Text='<%# Eval("STATUS") %>'/>
                     <br />
-                   <B> DESCRICÃO DA PROBLEMA:</B>
-                    <asp:Label ID="DESCRICAOLabel" runat="server" Text='<%# Eval("DESCRICAO") %>'  Font-Bold="True" ForeColor="#4B6C9E"/>
+                    DESCRICAO:
+                    <asp:Label ID="DESCRICAOLabel" runat="server" Text='<%# Eval("DESCRICAO") %>'/>
                     <br />
-                   <B> DATA DE TÉRMINO:</B>
+                    DATA_FINALIZACAO:
                     <asp:Label ID="DATA_FINALIZACAOLabel" runat="server" 
-                        Text='<%# Eval("DATA_FINALIZACAO") %>'  Font-Bold="True" ForeColor="#4B6C9E"/>
+                        Text='<%# Eval("DATA_FINALIZACAO") %>'/>
+                    <br />
+                    DescricaoOcorrencia:
+                    <asp:Label ID="DescricaoOcorrenciaLabel" runat="server" 
+                        Text='<%# Eval("DescricaoOcorrencia") %>'/>
                     <br />
                    
-                   <B> imagem:</B>
-                    <asp:Label ID="imagemLabel" runat="server" Text='<%# Eval("imagem") %>'  Font-Bold="True" ForeColor="#4B6C9E"/>
+                    imagem:
+                    <asp:Label ID="imagemLabel" runat="server" Text='<%# Eval("imagem") %>'/>
                     <br />
                     <br />
                 </ItemTemplate>
                 <SeparatorTemplate>
                     <hr />
                 </SeparatorTemplate>
+                <FooterTemplate>
+                <asp:Label ID="lblSemregistro" runat="server" Text="Você não possui ocorrência cadastrada" Visible='<%#(DataList1.Items.Count == 0) %>'></asp:Label>
+                 </FooterTemplate>
             </asp:DataList>
             <asp:SqlDataSource ID="SqlDataSourceDataListOcorrencia" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:azulli %>" 
@@ -55,6 +66,8 @@
                 <SelectParameters>
                     <asp:SessionParameter Name="BLOCO" DefaultValue="06" SessionField="bloco" Type="Int32" />
                     <asp:SessionParameter Name="AP" DefaultValue="301" SessionField="Ap" Type="Int32" />
+                    <asp:ControlParameter ControlID="drpMeses" DefaultValue="-1" Name="MES" 
+                        PropertyName="SelectedValue" Type="Int32" />
                 </SelectParameters>
             </asp:SqlDataSource>
     </fieldset>

@@ -13,6 +13,15 @@ namespace Azuli.Web.Portal {
     public partial class OcorrenciaMorador {
         
         /// <summary>
+        /// lblMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMsg;
+        
+        /// <summary>
         /// dvCadastro control.
         /// </summary>
         /// <remarks>
@@ -76,13 +85,13 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Label lblAssunto;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// drpListSubject control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList drpListSubject;
         
         /// <summary>
         /// SqlDataSourceTipoOcorrencia control.
@@ -103,13 +112,22 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Label lblDescricao;
         
         /// <summary>
-        /// TextBox1 control.
+        /// txtDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtDescription;
+        
+        /// <summary>
+        /// rfvDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDescription;
         
         /// <summary>
         /// lblEmail control.

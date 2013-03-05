@@ -15,6 +15,7 @@ namespace Azuli.Web.Business.Interfaces
         listProprietario BuscaMoradorAdmin(ApartamentoModel ap);
         int CadastrarApartamentoMorador(Model.ProprietarioModel ap);
         void alteraSenha(ProprietarioModel oProprietario);
+        void cadastraOcorrencia(LancamentoOcorrenciaModel olacamento);
 
     }
 

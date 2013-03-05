@@ -10,9 +10,6 @@ namespace Azuli.Web.Model
     {
         public int codigoOcorencia {get;set;}
         public string descricaoOcorrencia { get; set; }
-        public string statusOcorrencia { get; set;}
-        public DateTime dataCadastroOcorrencia { get; set; }
-
     }
 
     public class listaOcorrencia : List<OcorrenciaModel> { }

@@ -14,10 +14,10 @@ namespace Azuli.Web.Model
         public string statusOcorrencia { get; set; }
         public string descricaoOcorrencia { get; set; }
         public ApartamentoModel oAp { get; set; }
-        public OcorrenciaModel oOcorrencia { get; set; }
         public DateTime dataFinalizacao { get; set; }
         public DateTime dataCancelamento { get; set; }
-
+        public string imagemEvidencia { get;set; }
+        public OcorrenciaModel oOcorrencia { get; set; }
     }
 
     public class listaLancamentoOcorrencia : List<LancamentoOcorrenciaModel> { }

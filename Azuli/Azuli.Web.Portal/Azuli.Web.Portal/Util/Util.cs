@@ -30,6 +30,17 @@ namespace Azuli.Web.Portal.Util
         }
 
 
+        public enum statusChamado
+        {
+            aberto = 01,
+            fechado = 02,
+            analisando = 03,
+            cancelado = 04,
+            resolvido = 05
+            
+        }
+
+
       
     /// <summary>
     /// Este método, ordena a senha, pois a senha gravada no microsiga 

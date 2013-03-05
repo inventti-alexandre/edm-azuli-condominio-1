@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Azuli.Web.Portal
 {
-    public partial class paginaInicialMoradores : System.Web.UI.Page
+    public partial class paginaInicialMoradores : Util.Base
     {
         Util.Util oUtil = new Util.Util();
 

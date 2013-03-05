@@ -23,7 +23,7 @@ namespace Azuli.Web.Portal
             {
                 if (oUtil.validateSession())
                 {
-
+                    lblMsg.Visible = false;
                     lblDescApartamento.Text = Session["AP"].ToString();
                     lblDescBloco.Text = Session["Bloco"].ToString();
 
@@ -35,6 +35,51 @@ namespace Azuli.Web.Portal
 
                 }
             }
+        }
+
+        protected void btnOcorrencia_Click(object sender, EventArgs e)
+        {
+
+            if (drpListSubject.SelectedItem.Value != "-1")
+            {
+                LancamentoOcorrenciaModel oLancamento = new LancamentoOcorrenciaModel();
+                ApartamentoModel oApartamento = new ApartamentoModel();
+                OcorrenciaModel oOcorrencia = new OcorrenciaModel();
+
+                oLancamento.dataOcorrencia = DateTime.Now;
+                oLancamento.statusOcorrencia = Util.Util.statusChamado.aberto.ToString().ToUpper();
+                oLancamento.descricaoOcorrencia = txtDescription.Text;
+                oApartamento.bloco = Convert.ToInt32(Session["Bloco"]);
+                oApartamento.apartamento = Convert.ToInt32(Session["AP"].ToString());
+                oLancamento.oAp = oApartamento;
+                oLancamento.dataFinalizacao = DateTime.Now;
+                oLancamento.dataCancelamento = DateTime.Now;
+                oLancamento.imagemEvidencia = System.IO.Path.GetDirectoryName(fileImagem.FileName);
+                oOcorrencia.codigoOcorencia = Convert.ToInt32(drpListSubject.SelectedItem.Value);
+                oLancamento.oOcorrencia = oOcorrencia;
+
+
+                try
+                {
+                    oProprietario.cadastraOcorrencia(oLancamento);
+                    dvCadastro.Visible = false;
+                    lblMsg.Visible = true;
+                    lblMsg.Text = "Cadastro efeutado com sucesso!!";
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            else
+            {
+                lblMsg.Visible = true;
+                lblMsg.Text = "Por favor esolha um assunto!!";
+            }
+           
+            
+
         }
     }
 }
