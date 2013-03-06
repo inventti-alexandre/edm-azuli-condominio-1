@@ -100,7 +100,7 @@
                 <br /><br />
                 </fieldset>
               
-
+              <asp:Label ID="lblMsg" runat="server"></asp:Label>
                     
             </div>
               <div id="dvDadosMorador" runat="server">
@@ -177,7 +177,7 @@
         </table></center>
                  
     </div>
-     <asp:Label ID="lblMsg" runat="server"></asp:Label>
+     
                   <br />
         </LayoutTemplate>
    </center>
