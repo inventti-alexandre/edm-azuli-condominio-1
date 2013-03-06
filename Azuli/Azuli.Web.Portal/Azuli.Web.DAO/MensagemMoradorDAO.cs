@@ -56,6 +56,7 @@ namespace Azuli.Web.DAO
                 oMensagem.status = dr["STATUS"].ToString();
                 oMensagem.data_inicio = Convert.ToDateTime(dr["DATA_INICIO"]);
                 oMensagem.data_fim = Convert.ToDateTime(dr["DATA_FIM"]);
+                oMensagem.qtdMsg = Convert.ToInt32(dr["QTDMGS"]);
                 oMensagem.oAp = oPropri;
 
                 oListMensagemMorador.Add(oMensagem);
