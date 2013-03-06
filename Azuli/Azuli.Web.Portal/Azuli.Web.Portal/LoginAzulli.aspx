@@ -96,12 +96,88 @@
                     
                     <p>
                         &nbsp;</p>
+                    <asp:LinkButton ID="lnkBtnTeste" runat="server" onclick="lnkBtnTeste_Click" >Solicite aqui seu Acesso para teste!</asp:LinkButton>
                 <br /><br />
-                <asp:HyperLink ID="RegisterHyperLink" runat="server" EnableViewState="false">Clique aqui, se ainda não é cadastrado</asp:HyperLink> 
                 </fieldset>
               
+
                     
             </div>
+              <div id="dvDadosMorador" runat="server">
+    
+    
+      <center>  <table style="border: thin solid #C0C0C0; height: auto; width: auto;">
+            <tr>
+                <td class="style11" align="center" style="margin-left: 40px">
+                    <table class="style1" border='0'>
+                        <tr>
+                            <td class="style6">
+                                <asp:Label ID="lblProprietario" runat="server" Font-Bold="True" Text="Nome:"></asp:Label>
+                            </td>
+                            <td class="style6">
+                                <asp:TextBox ID="txtNome" runat="server"></asp:TextBox>
+                            </td>
+                            <td class="style9">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                    ControlToValidate="txtNome" ErrorMessage="*" Font-Bold="True" ForeColor="Red" 
+                                    ValidationGroup="solicitaAcesso"></asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style6">
+                                <asp:Label ID="Label2" runat="server" Font-Bold="True" Text="Apartamento: "></asp:Label>
+                            </td>
+                            <td class="style6">
+                                <asp:TextBox ID="txtSolicitaAP" runat="server"></asp:TextBox>
+                            </td>
+                            <td class="style9">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                                    ControlToValidate="txtSolicitaAP" ErrorMessage="*" Font-Bold="True" 
+                                    ForeColor="Red" ValidationGroup="solicitaAcesso"></asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style6">
+                                <asp:Label ID="lblBloco" runat="server" Font-Bold="True" Text="Bloco:"></asp:Label>
+                            </td>
+                            <td class="style6">
+                                <asp:TextBox ID="txtSolicitaBloco" runat="server"></asp:TextBox>
+                            </td>
+                            <td class="style9">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                                    ControlToValidate="txtSolicitaBloco" ErrorMessage="*" Font-Bold="True" 
+                                    ForeColor="Red" ValidationGroup="solicitaAcesso"></asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                            <tr>
+                            <td class="style6">
+                                  <asp:Label ID="lblEmail" runat="server" Font-Bold="True">E-mail</asp:Label></td>
+                            <td class="style6">
+                                  <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+                                </td>
+                            <td class="style9">
+                              
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                                    ControlToValidate="txtEmail" ErrorMessage="*" Font-Bold="True" ForeColor="Red" 
+                                    ValidationGroup="solicitaAcesso"></asp:RequiredFieldValidator>
+                              
+                            </td>
+                        </tr>
+                        </table>
+                    <br />
+                    <br />
+                    <asp:Button ID="btnOkSolicita" runat="server" CssClass="botao" Text="Ok" 
+                        Width="63px" onclick="btnOkPesquisa_Click" 
+                        ValidationGroup="solicitaAcesso" />
+&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <asp:Button ID="btnCancel0" runat="server" CssClass="botao" 
+                        Text="Cancelar" onclick="btnCancel0_Click1"  />
+                </td>
+            </tr>
+        </table></center>
+                  <asp:Label ID="lblMsg" runat="server"></asp:Label>
+                  <br />
+    </div>
         </LayoutTemplate>
    </center>
         </div>

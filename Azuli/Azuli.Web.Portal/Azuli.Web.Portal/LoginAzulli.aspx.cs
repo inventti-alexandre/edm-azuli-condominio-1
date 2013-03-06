@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Azuli.Web.Business;
 using Azuli.Web.Model;
 using System.Configuration;
+using Azuli.Web.Portal.Util;
 
 
 namespace Azuli.Web.Portal.Account
@@ -17,7 +18,7 @@ namespace Azuli.Web.Portal.Account
 
         protected override void OnLoad(EventArgs e)
         {
-
+            hiddenControl();
             string id = ConfigurationManager.AppSettings["GoogleAnalyticsId"];
 
             if (!string.IsNullOrEmpty(id))
@@ -61,6 +62,7 @@ namespace Azuli.Web.Portal.Account
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            hiddenControl();
             Session.Clear();
             Session.Abandon();
             
@@ -114,6 +116,43 @@ namespace Azuli.Web.Portal.Account
                 Session.Clear();
             }
 
+        }
+
+        protected void lnkBtnTeste_Click(object sender, EventArgs e)
+        {
+            dvDadosMorador.Visible = true;
+        }
+
+        protected void btnOkPesquisa_Click(object sender, EventArgs e)
+        {
+            SendMail enviaEmail = new SendMail();
+
+            try
+            {
+                int status = 0;
+                
+                string mensagem = "Solicitação de Acesso Ap: " + txtSolicitaAP.Text + " Bloco " + txtSolicitaBloco.Text;
+               
+                enviaEmail.enviaSenha(mensagem, txtNome.Text, txtEmail.Text, status);
+
+                lblMsg.Text = "<b> <font color=green>Solicitação enviada com sucesso, em breve você receberá seu acesso por e-mail </b></font>";
+               
+
+            }
+            catch (Exception ex)
+            {
+                lblMsg.Text = "<b> <font color=green>Erro ao solicitar acesso, tente novamente </b></font>" + ex.Message;
+            }
+        }
+
+        protected void btnCancel0_Click1(object sender, EventArgs e)
+        {
+            hiddenControl();
+        }
+
+        public void hiddenControl()
+        {
+            dvDadosMorador.Visible = false;
         }
     }
 }

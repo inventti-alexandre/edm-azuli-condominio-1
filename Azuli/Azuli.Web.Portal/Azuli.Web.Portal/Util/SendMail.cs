@@ -9,7 +9,7 @@ using System.Configuration;
 
 namespace Azuli.Web.Portal.Util
 {
-    public class SendMail
+    public class    SendMail
     {
 
         public void enviaSenha(string mensagem, string proprietario, string emailProprietario, int status)
@@ -87,5 +87,10 @@ namespace Azuli.Web.Portal.Util
         }
 
 
+
+        internal void enviaSenha(string p, string p_2, System.Web.UI.WebControls.TextBox txtEmail, int p_3)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
