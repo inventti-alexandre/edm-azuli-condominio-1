@@ -131,7 +131,7 @@ namespace Azuli.Web.Portal.Account
             {
                 int status = 0;
 
-                string mensagem = "Solicitação de Acesso Ap: " + txtSolicitaAP.Text + " Bloco " + txtSolicitaBloco.Text;
+                string mensagem = "Solicitação de Acesso Ap: " + txtSolicitaAP.Text + " Bloco " + txtSolicitaBloco.Text + "Email " + txtEmail.Text + " Nome " + txtNome.Text;
 
                 enviaEmail.enviaSenha(mensagem, txtNome.Text, txtEmail.Text, status);
 
@@ -141,7 +141,7 @@ namespace Azuli.Web.Portal.Account
             }
             catch (Exception ex)
             {
-                lblMsg.Text = "<b> <font color=green>Erro ao solicitar acesso, tente novamente </b></font>" + ex.Message;
+                lblMsg.Text = "<b> <font color=green>Erro ao solicitar acesso,verifique os dados e tente novamente </b></font> </br>" + ex.Message;
             }
             finally
             {
