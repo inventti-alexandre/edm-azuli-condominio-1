@@ -62,6 +62,7 @@
     <Content Include="ErrorPage.aspx" />
     <Content Include="images\correio.jpg" />
     <Content Include="images\delete.png" />
+    <Content Include="listaMensagemMorador.aspx" />
     <Content Include="listaOcorrenciaMorador.aspx" />
     <Content Include="LoginAzulli.aspx" />
     <Content Include="Account\Register.aspx" />
@@ -137,6 +138,13 @@
     </Compile>
     <Compile Include="ErrorPage.aspx.designer.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listaMensagemMorador.aspx.cs">
+      <DependentUpon>listaMensagemMorador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaMensagemMorador.aspx.designer.cs">
+      <DependentUpon>listaMensagemMorador.aspx</DependentUpon>
     </Compile>
     <Compile Include="listaOcorrenciaMorador.aspx.cs">
       <DependentUpon>listaOcorrenciaMorador.aspx</DependentUpon>

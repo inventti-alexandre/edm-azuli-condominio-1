@@ -2,6 +2,12 @@
     CodeBehind="listaOcorrenciaMorador.aspx.cs" Inherits="Azuli.Web.Portal.listaOcorrenciaMorador" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .newStyle1
+        {
+            color: #0000FF;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
@@ -9,9 +15,9 @@
     <fieldset>
         <legend title="Abrir Ocorrência">Abrir Ocorrência </legend>
         <center>
-
+        <!--
             <asp:HyperLink ID="hpProximo" runat="server">Próximo</asp:HyperLink>
-            <asp:HyperLink ID="hpAnterior" runat="server">Anterior</asp:HyperLink>
+            <asp:HyperLink ID="hpAnterior" runat="server">Anterior</asp:HyperLink> -->
 
          <asp:Label ID="lblMeses" runat="server" CssClass="AlternatingRowStyle" 
         Text="Ocorrência no mês de:" Font-Bold="True" Font-Size="Medium"></asp:Label>
@@ -23,39 +29,41 @@
             <br />
             <asp:DataList ID="DataList1" runat="server"
                 EnableViewState="False" Style="margin-right: 1px" Width="508px" 
-                RepeatLayout="Flow" >
+                CssClass="SelectedRowStyle" >
                 <HeaderTemplate>
                   <asp:Label ID="lblSemregistro" runat="server" Text="Ocorrências Abertas" Visible='<%#(DataList1.Items.Count > 0) %>'></asp:Label>
                 </HeaderTemplate>
                 <ItemTemplate>
-                    OCORRENCIA:
+                    Nº Ocorrência:
                     
                     <asp:Label ID="OCORRENCIALabel" runat="server" 
                         Text= '<%# Eval("oOcorrencia.codigoOcorencia") %>' />
                     <br />
-                    DATA_OCORRENCIA:
+                     Assunto sobre:
+                    <asp:Label ID="DescricaoOcorrenciaLabel" runat="server" 
+                        Text='<%# Eval("descricaoOcorrencia") %>'/>
+                    <br />
+                    Data de Abertura:
                     <asp:Label ID="DATA_OCORRENCIALabel" runat="server" 
                         Text='<%# Eval("dataOcorrencia") %>'/>
                     <br />
-                    STATUS:
+                    Status da Ocorrência:
                     <asp:Label ID="STATUSLabel" runat="server" 
                         Text='<%# Eval("statusOcorrencia") %>'/>
                     <br />
                     DESCRICAO:
                     <asp:Label ID="DESCRICAOLabel" runat="server" Text='<%# Eval("ocorrenciaLancamento") %>'/>
                     <br />
-                    DATA_FINALIZACAO:
+                   
+                    Evidência:
+                    <asp:Label ID="imagemLabel" runat="server" Text='<%# Eval("imagemEvidencia") %>'/>
+                    <br />
+                     Data prevista de Resposta:
                     <asp:Label ID="DATA_FINALIZACAOLabel" runat="server" 
                         Text='<%# Eval("dataFinalizacao") %>'/>
                     <br />
-                    DescricaoOcorrencia:
-                    <asp:Label ID="DescricaoOcorrenciaLabel" runat="server" 
-                        Text='<%# Eval("descricaoOcorrencia") %>'/>
-                    <br />
+                  
                    
-                    imagem:
-                    <asp:Label ID="imagemLabel" runat="server" Text='<%# Eval("imagemEvidencia") %>'/>
-                    <br />
                     <br />
                 </ItemTemplate>
                 

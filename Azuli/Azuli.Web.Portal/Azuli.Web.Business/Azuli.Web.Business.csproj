@@ -43,8 +43,10 @@
     <Compile Include="AgendaBLL.cs" />
     <Compile Include="Interfaces\IAgenda.cs" />
     <Compile Include="Interfaces\ILancamentoOcorrencia.cs" />
+    <Compile Include="Interfaces\IMensagemMorador.cs" />
     <Compile Include="Interfaces\IProprietario.cs" />
     <Compile Include="LancamentoOcorrencia.cs" />
+    <Compile Include="MensagemMoradorBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProprietarioBLL.cs" />
   </ItemGroup>
