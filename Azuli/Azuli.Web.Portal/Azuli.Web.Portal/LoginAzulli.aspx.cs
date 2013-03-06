@@ -130,18 +130,22 @@ namespace Azuli.Web.Portal.Account
             try
             {
                 int status = 0;
-                
+
                 string mensagem = "Solicitação de Acesso Ap: " + txtSolicitaAP.Text + " Bloco " + txtSolicitaBloco.Text;
-               
+
                 enviaEmail.enviaSenha(mensagem, txtNome.Text, txtEmail.Text, status);
 
                 lblMsg.Text = "<b> <font color=green>Solicitação enviada com sucesso, em breve você receberá seu acesso por e-mail </b></font>";
-               
+
 
             }
             catch (Exception ex)
             {
                 lblMsg.Text = "<b> <font color=green>Erro ao solicitar acesso, tente novamente </b></font>" + ex.Message;
+            }
+            finally
+            {
+                lblMsg.Visible = true;
             }
         }
 

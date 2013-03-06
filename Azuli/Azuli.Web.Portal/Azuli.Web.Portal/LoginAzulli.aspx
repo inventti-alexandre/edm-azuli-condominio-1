@@ -175,9 +175,10 @@
                 </td>
             </tr>
         </table></center>
-                  <asp:Label ID="lblMsg" runat="server"></asp:Label>
-                  <br />
+                 
     </div>
+     <asp:Label ID="lblMsg" runat="server"></asp:Label>
+                  <br />
         </LayoutTemplate>
    </center>
         </div>
