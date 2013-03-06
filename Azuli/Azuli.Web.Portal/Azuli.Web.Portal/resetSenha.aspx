@@ -10,7 +10,8 @@
         <table class="btGeral" dir="ltr" frame="border" style="width: 349px" >
             <tr>
                 <td>
-                    <asp:Label ID="Label2" runat="server" Text="Nova Senha:"></asp:Label>
+                    <asp:Label ID="Label2" runat="server" 
+                        Text="Escolha uma senha com até 4 digitos:"></asp:Label>
                 </td>
                 <td>
                     <asp:TextBox ID="txtNovaSenha" runat="server" Height="21px" TextMode="Password" 
@@ -22,7 +23,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="Label3" runat="server" Text="Repita nova Senha:"></asp:Label>
+                    <asp:Label ID="Label3" runat="server" Text="Confirme a senha:"></asp:Label>
                 </td>
                 <td>
                     <asp:TextBox ID="txtRepitaNovaSenha" runat="server" Height="21px" 
