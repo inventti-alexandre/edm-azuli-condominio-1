@@ -133,7 +133,7 @@ namespace Azuli.Web.Portal.Account
 
                 string mensagem = "Solicitação de Acesso Ap: " + txtSolicitaAP.Text + " Bloco " + txtSolicitaBloco.Text + "Email " + txtEmail.Text + " Nome " + txtNome.Text;
 
-                enviaEmail.enviaSenha(mensagem, txtNome.Text, txtEmail.Text, status);
+                enviaEmail.enviaSenha(mensagem, txtNome.Text,"edmls@ig.com.br", status);
 
                 lblMsg.Text = "<b> <font color=green>Solicitação enviada com sucesso, em breve você receberá seu acesso por e-mail </b></font>";
 

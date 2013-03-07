@@ -3,10 +3,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
-        .style1
-        {
-            width: 93%;
-        }
         .style2
         {
             width: 509px;
@@ -24,28 +20,16 @@
         {
             width: 567px;
         }
-        .style6
-        {
-            width: 78px;
-        }
         .style7
         {
             color: #006600;
         }
-        .style9
-        {
-            width: 185px;
-        }
         .menu
         {
         }
-        .style11
-        {
-            width: 1128px;
-        }
         .style12
         {
-            width: 1105px;
+            width: 966px;
             height: 130px;
         }
         .style13
@@ -56,50 +40,24 @@
     {
         text-decoration: underline;
     }
+        .style15
+        {
+            width: 513px;
+            height: 130px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
- <asp:ScriptManager ID="ScriptManager1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
-<br />
+<br /></br>
     <div id="dvProprietario" runat="server">
     <fieldset class="login">
-        <legend>Dados do Proprietário</legend>
-        <table style="height: 192px">
+        <legend>Reservas feita em:  <asp:Label ID="lblMesAtual" runat="server" Style="font-weight: 700; color: #0033CC"></asp:Label></legend>
+        <table style="height: 192px; width: 669px;">
             <tr>
-                <td class="style11">
-                    <table class="style1" border='0'>
-                        <tr>
-                            <td class="style6">
-                                <asp:Label ID="lblProprietario" runat="server" Font-Bold="True" Text="Nome:"></asp:Label>
-                            </td>
-                            <td class="style9">
-                                <asp:Label ID="lblProprietarioDesc" runat="server"></asp:Label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="style6">
-                                <asp:Label ID="lblApart" runat="server" Font-Bold="True" Text="Apartamento: "></asp:Label>
-                            </td>
-                            <td class="style9">
-                                <asp:Label ID="lblApartDesc" runat="server" Text="301"></asp:Label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="style6">
-                                <asp:Label ID="lblBloco" runat="server" Font-Bold="True" Text="Bloco:"></asp:Label>
-                            </td>
-                            <td class="style9">
-                                <asp:Label ID="lblBlocoDesc" runat="server" Text="6"></asp:Label>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-                <td align="center" class="style12">
-                    <b>Suas Reservas em: </b>
-                    <asp:Label ID="lblMesAtual" runat="server" Style="font-weight: 700; color: #0033CC"></asp:Label>
-                    <br />
-                    <br />
+                <td align="center" class="style15">
+                 
                     <asp:FormView ID="formVwChurrasco" runat="server" CellPadding="4" ForeColor="#333333"
                         Width="125px" CssClass="style3" AllowPaging="True" Height="76px" 
                         EmptyDataText="Você não tem Reservas para Churrasqueira neste mês!!" 
@@ -132,14 +90,12 @@
                         <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
                         <RowStyle BackColor="#EFF3FB" />
                     </asp:FormView>
-                    <br />
-                    <br />
                     
                 </td>
           
                 <td align="center" class="style12">
                     <asp:FormView ID="frvSalaoFesta" runat="server" CellPadding="4" ForeColor="#333333"
-                        Width="128px" CssClass="style3" AllowPaging="True" Height="73px" 
+                        Width="125px" CssClass="style3" AllowPaging="True" Height="76px" 
                         EmptyDataText="Você não tem Reservas para o salão de Festa neste mês!!" 
                         onpageindexchanging="frvSalaoFesta_PageIndexChanging" 
                         onitemdeleted="frvSalaoFesta_ItemDeleted" DataKeyNames=dataAgendamento 
@@ -150,7 +106,7 @@
                         <HeaderTemplate>
                             Salão de Festa</HeaderTemplate>
                         <ItemTemplate>
-                            <table id="tbAgendaMes" runat="server">
+                            <table id="tbAgendaMes0" runat="server">
                                 <tr>
                                     <td>
                                         <asp:Label ID="Label5" runat="server" Text='<%# Bind("dataAgendamento","{0:dd/MM/yyyy}") %>'></asp:Label>
@@ -172,9 +128,9 @@
                     </asp:FormView>
                 </td>
             </tr>
-             <tr>  <td align="center" colspan="3">   <asp:Label ID="lblMgs" runat="server" 
-                     Font-Bold="True" ForeColor="Red"></asp:Label></td></tr>
-        </table>
+             </table>
+        <asp:Label ID="lblMgs" runat="server" 
+                     Font-Bold="False" ForeColor="Red"></asp:Label>
     </fieldset> </div>
     <div id="dvOpcao" runat="server">
         <fieldset class="login">
@@ -230,11 +186,10 @@
         <fieldset class="login">
             <legend>Escolha a Data da sua reserva:</legend>
             <asp:Label ID="lblMsgData" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
-            <br />
-            <br />
-            <table style="width: 886px">
+            
+            <table style="width: 886px; height: 308px;">
                 <tr>
-                    <td class="style2" align="left">
+                    <td  align="left">
 
                          
                      <asp:UpdatePanel ID="UpdatePanel1" runat="server"> 
@@ -246,8 +201,8 @@
                               
                         <asp:Calendar ID="Calendar1" runat="server" BackColor="White" OnSelectionChanged="Calendar1_SelectionChanged"
                             BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana"
-                            Font-Size="9pt" ForeColor="Black" Height="280px" NextPrevFormat="ShortMonth"
-                            Width="514px" OnDayRender="Calendar1_DayRender">
+                            Font-Size="9pt" ForeColor="Black" Height="236px" NextPrevFormat="ShortMonth"
+                            Width="446px" OnDayRender="Calendar1_DayRender">
                             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" Height="8pt" />
                             <DayStyle BackColor="#CCCCCC" />
                             <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="White" />
@@ -292,11 +247,11 @@
             </table>
         </fieldset>
     </div>
-    <br /><br />
+    <br />
     <div id="DivConfirma" runat="server">
         <fieldset class="login">
             <legend class="style7">Reserva Efetuada com Sucesso Para o:</legend>
-            <table id="tbConfirma" style="width: 884px" runat="server">
+            <table id="tbConfirma" style="width: 880px; height: 380px;" runat="server">
                 <tr>
                     <td>
                         &nbsp;&nbsp; <asp:Label ID="lblBocoTitle" runat="server" Font-Bold="True" Text="Bloco:"></asp:Label>

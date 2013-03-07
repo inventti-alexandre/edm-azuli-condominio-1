@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-<br /><br /> <br /> <br /><br />
+    <br /><br /> <br /> <br /><br />
   <center> <h2><b>Alterar  Senha</b></h2></center><br />
   <center><div id="dvProprietario" runat="server" >
    

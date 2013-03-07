@@ -56,7 +56,8 @@ namespace Azuli.Web.DAO
                 oLancamento.dataOcorrencia = Convert.ToDateTime(itemOcorrencia["DATA_OCORRENCIA"]);
                 oLancamento.statusOcorrencia = itemOcorrencia["STATUS"].ToString();
                 oLancamento.ocorrenciaLancamento = itemOcorrencia["DESCRICAO"].ToString();
-                oLancamento.dataCancelamento = Convert.ToDateTime(itemOcorrencia["DATA_FINALIZACAO"]);
+                oLancamento.dataFinalizacao = Convert.ToDateTime(itemOcorrencia["DATA_FINALIZACAO"]);
+                oLancamento.dataCancelamento = Convert.ToDateTime(itemOcorrencia["DATA_CANCELAMENTO"]);
                 oLancamento.descricaoOcorrencia = itemOcorrencia["DescricaoOcorrencia"].ToString();
                 oLancamento.imagemEvidencia = itemOcorrencia["imagem"].ToString();
 

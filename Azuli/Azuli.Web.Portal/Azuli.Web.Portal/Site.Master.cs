@@ -12,6 +12,9 @@ namespace Azuli.Web.Portal
     {
         protected override void OnLoad(EventArgs e)
         {
+            lblApDesc.Text = Session["AP"].ToString();
+            lblBlocoMasterDesc.Text = Session["Bloco"].ToString();
+            lblProprietarioDesc.Text = Session["Proprie1"].ToString() ;
 
            string id = ConfigurationManager.AppSettings["GoogleAnalyticsId"];
 
@@ -51,7 +54,7 @@ namespace Azuli.Web.Portal
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+        
         }
     }
 }

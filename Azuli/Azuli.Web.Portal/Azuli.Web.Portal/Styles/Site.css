@@ -354,13 +354,14 @@ div.accountInfo
 
 .loginDisplay
 {
-    font-size: 1.1em;
-    display: block;
-    text-align: right;
-    padding: 10px;
-    color: White;
+    
+    
+    text-align: left;
+    padding: 30px;
+    color: black;
+    font-weight: bold;
     height: 1px;
-    width: 934px;
+    width: 534px;
 }
 
 .loginDisplay a:link

@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-<br /><br />
+    <br /><br />
 <fieldset class="login">
         <legend> Mensagens do Sindíco: </legend>
 <center>

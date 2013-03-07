@@ -54,7 +54,7 @@ namespace Azuli.Web.Portal
                 oLancamento.oAp = oApartamento;
                 oLancamento.dataFinalizacao = DateTime.Now;
                 oLancamento.dataCancelamento = DateTime.Now;
-                oLancamento.imagemEvidencia = System.IO.Path.GetDirectoryName(fileImagem.FileName);
+                oLancamento.imagemEvidencia = "Em desenvolvimento...";//System.IO.Path.GetFullPath(fileImagem.FileName);
                 oOcorrencia.codigoOcorencia = Convert.ToInt32(drpListSubject.SelectedItem.Value);
                 oLancamento.oOcorrencia = oOcorrencia;
 

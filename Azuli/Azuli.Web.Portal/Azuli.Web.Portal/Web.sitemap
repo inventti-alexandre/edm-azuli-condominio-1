@@ -23,15 +23,13 @@
 
     <siteMapNode url="resetSenha.aspx" title="Alterar Senha" description="Senha" roles="">
      
-    </siteMapNode>
+      </siteMapNode>
 
-    <siteMapNode url="paginaInicialMoradores.aspx" title="Página Principal" description="Home Page" roles="">
+      <siteMapNode url="LoginAzulli.aspx" title="Sair" description="Login">
 
-    </siteMapNode>
-         
-     <siteMapNode url="LoginAzulli.aspx" title="Sair" description="Login">
+      </siteMapNode>
+      <siteMapNode url="paginaInicialMoradores.aspx" title="Página Principal" description="Home Page" roles="">
 
-     </siteMapNode>
-
+      </siteMapNode>
    </siteMapNode>
 </siteMap>

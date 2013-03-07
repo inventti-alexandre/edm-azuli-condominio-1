@@ -15,10 +15,11 @@
         <div class="header">
             <div class="title">
                 <h1>
-                    Sistema de Gerenciamento de Condominio -  Spazio azuli 
+                    Sistema de Gerenciamento de Condominio -  Spazio azuli&nbsp;&nbsp;&nbsp;&nbsp;
+                   
                 </h1>
-            </div>
-            <div class="loginDisplay">
+                
+           
             </div>
             <div class="clear hideSkiplink">
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
@@ -35,6 +36,21 @@
                         </asp:MenuItem>
                     </Items>
                 </asp:Menu>
+            </div>
+             <div class="loginDisplay">
+             <asp:Label ID="lblProprietarioMaster" runat="server" Font-Size="Small" 
+                     Text="Condômino : "></asp:Label>
+                    <asp:Label ID="lblProprietarioDesc"  runat="server" Font-Size="Small"></asp:Label>
+
+
+                     <asp:Label ID="lblBlocoMaster" runat="server" Font-Size="Small" 
+                     Text="  Bloco: "></asp:Label>
+                    <asp:Label ID="lblBlocoMasterDesc"  runat="server" Font-Size="Small"></asp:Label>
+
+
+                    
+                     <asp:Label ID="lblApMaster" runat="server" Font-Size="Small" Text=" AP : "></asp:Label>
+                    <asp:Label ID="lblApDesc"  runat="server" Font-Size="Small"></asp:Label>
             </div>
         </div>
         <div class="main">

@@ -28,16 +28,16 @@ namespace Azuli.Web.Portal
                 {
 
                     escondeControl();
-                    lblApartDesc.Text = Session["AP"].ToString();
-                    lblBlocoDesc.Text = Session["Bloco"].ToString();
-                    if (Session["Proprie2"].ToString() != "")
-                    {
-                        lblProprietarioDesc.Text = Session["Proprie1"] + " & " + Session["Proprie2"];
-                    }
-                    else
-                    {
-                        lblProprietarioDesc.Text = Session["Proprie1"].ToString();
-                    }
+                   //// lblApartDesc.Text = Session["AP"].ToString();
+                   //// lblBlocoDesc.Text = Session["Bloco"].ToString();
+                   // if (Session["Proprie2"].ToString() != "")
+                   // {
+                   //     lblProprietarioDesc.Text = Session["Proprie1"] + " & " + Session["Proprie2"];
+                   // }
+                   // else
+                   // {
+                   //     lblProprietarioDesc.Text = Session["Proprie1"].ToString();
+                   // }
                     carregaAgendaMesAtual();
 
                 }
@@ -181,8 +181,8 @@ namespace Azuli.Web.Portal
 
                 oAgendaModel.salaoChurrasco = churrasco;
                 oAgendaModel.salaoFesta = salaoFesta;
-                oApModel.apartamento = int.Parse(lblApartDesc.Text);
-                oApModel.bloco = int.Parse(lblBlocoDesc.Text);
+                oApModel.apartamento = int.Parse(Session["AP"].ToString());
+                oApModel.bloco = int.Parse(Session["Bloco"].ToString());
 
 
 
@@ -198,8 +198,8 @@ namespace Azuli.Web.Portal
                     dvProprietario.Visible = false;
 
                     lblDataConfirma.Text = lblData.Text;
-                    lblBlocoConfirma.Text = lblBlocoDesc.Text;
-                    lblApConfirma.Text = lblApartDesc.Text;
+                    lblBlocoConfirma.Text = Session["Bloco"].ToString();
+                    lblApConfirma.Text = Session["AP"].ToString();
 
 
                 }
