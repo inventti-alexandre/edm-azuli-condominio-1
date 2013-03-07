@@ -78,7 +78,7 @@
                       </table>
                     <p>
                         <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password" 
-                            Font-Bold="True" Height="24px">Password:</asp:Label>
+                            Font-Bold="True" Height="24px">Senha:</asp:Label>
                         <asp:TextBox ID="Password" runat="server" CssClass="passwordEntry" TextMode="Password"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" 
                              CssClass="failureNotification" ErrorMessage="Favor digite sua senha!" ToolTip="Favor digite sua senha!" 

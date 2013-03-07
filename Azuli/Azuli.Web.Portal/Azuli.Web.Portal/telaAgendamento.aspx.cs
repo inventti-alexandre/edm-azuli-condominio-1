@@ -375,16 +375,17 @@ namespace Azuli.Web.Portal
         public bool validaCancelamento(DateTime dataAgendamento)
         {
 
-            TimeSpan diasAgendado;
-            diasAgendado = dataAgendamento - DateTime.Now;
-            if (diasAgendado.Days > 15)
+            int diasAgendado;
+          
+            diasAgendado = ((TimeSpan)(dataAgendamento - DateTime.Now)).Days;
+            if (diasAgendado >= 15)
             {
                 return true;
             }
 
             else
             {
-                lblMgs.Text = "Só é permitido o cancelamento com 15 dias de antecedência e hoje faltam " + diasAgendado.Days + " dias para reserva, excessões procure o síndico ramal 94";
+                lblMgs.Text = "Só é permitido o cancelamento com 15 dias de antecedência e hoje faltam " + diasAgendado + " dias para reserva, excessões procure o síndico ramal 94";
                
                 return false;
             }

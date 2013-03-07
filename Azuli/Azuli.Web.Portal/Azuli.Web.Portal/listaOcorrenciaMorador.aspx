@@ -43,6 +43,7 @@
                     <asp:Label ID="DescricaoOcorrenciaLabel" runat="server" 
                         Text='<%# Eval("descricaoOcorrencia") %>'/>
                     <br />
+
                     Data de Abertura:
                     <asp:Label ID="DATA_OCORRENCIALabel" runat="server" 
                         Text='<%# Eval("dataOcorrencia") %>'/>

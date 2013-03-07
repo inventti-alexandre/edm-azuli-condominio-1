@@ -62,7 +62,7 @@
                         Width="125px" CssClass="style3" AllowPaging="True" Height="76px" 
                         EmptyDataText="Você não tem Reservas para Churrasqueira neste mês!!" 
                         onpageindexchanging="formVwChurrasco_PageIndexChanging" 
-                        onitemdeleting="formVwChurrasco_ItemDeleting" DataKeyNames=dataAgendamento>
+                        onitemdeleting="formVwChurrasco_ItemDeleting" DataKeyNames="dataAgendamento">
                         <EditRowStyle BackColor="#2461BF" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                         <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -98,7 +98,7 @@
                         Width="125px" CssClass="style3" AllowPaging="True" Height="76px" 
                         EmptyDataText="Você não tem Reservas para o salão de Festa neste mês!!" 
                         onpageindexchanging="frvSalaoFesta_PageIndexChanging" 
-                        onitemdeleted="frvSalaoFesta_ItemDeleted" DataKeyNames=dataAgendamento 
+                        onitemdeleted="frvSalaoFesta_ItemDeleted" DataKeyNames="dataAgendamento" 
                         onitemdeleting="frvSalaoFesta_ItemDeleting">
                         <EditRowStyle BackColor="#2461BF" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

@@ -26,6 +26,7 @@ namespace Azuli.Web.Portal
                 {
                     hiddenControl();
                     preencheMeses();
+                    drpMeses.SelectedIndex = data.Month - 1;
                     preencheAno();
 
                 }
@@ -211,9 +212,9 @@ namespace Azuli.Web.Portal
         public bool validaCancelamento(DateTime dataAgendamento)
         {
 
-            TimeSpan diasAgendado;
-            diasAgendado = dataAgendamento -  DateTime.Now;
-            if (diasAgendado.Days > 15)
+            int diasAgendado;
+            diasAgendado = ((TimeSpan)(dataAgendamento - DateTime.Now)).Days;
+            if (diasAgendado >= 15)
             {
                 return true;
             }
@@ -221,7 +222,7 @@ namespace Azuli.Web.Portal
             else
             {
                 lblMsg.Visible = true;
-                lblMsg.Text = "Só é permitido o cancelamento com 15 dias de antecedência e hoje faltam " + diasAgendado.Days + " dias para reserva.";
+                lblMsg.Text = "Só é permitido o cancelamento com 15 dias de antecedência e hoje faltam " + diasAgendado + " dias para reserva.";
                 
                 return false;
             }

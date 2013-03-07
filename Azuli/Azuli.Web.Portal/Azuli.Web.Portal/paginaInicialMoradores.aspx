@@ -12,20 +12,12 @@
             font-size: medium;
             font-weight: bold;
         }
-        .style4
-        {
-            width: 442px;
-        }
         .style5
         {
             color: #0033CC;
             font-family: "Segoe UI";
             font-size: medium;
             text-decoration: underline;
-        }
-        .style6
-        {
-            width: 112px;
         }
         .style3
         {
@@ -46,17 +38,17 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server"><br /><br /><br />
- <table style="text-align: justify; height: 84px; width: 683px;">
+ <table style="text-align: justify; height: 93px;">
             <tr>
-                <td align="center" class="style6">
-                    <img src="images/azuli.jpg" style="width: 105%; height: 70px" />         
+                <td align="center">
+                    <img src="images/azuli.jpg" style="width: 89%; height: 97px" />         
                 </td>
-                <td class="style4">
+                <td align="center">
              <h1> &nbsp; Senhor(ª) <asp:Label ID="lblMorador" 
                         runat="server" ForeColor="Blue"></asp:Label>&nbsp;<span class="style7">- Você tem
+                 <asp:LinkButton ID="lnkBtnMsg" runat="server" Font-Bold="True" 
+                     Font-Size="Medium" ForeColor="#009900" onclick="lnkBtnMsg_Click1">0</asp:LinkButton>
                  <span class="style8">
-                        <asp:Label ID="lblMsg" runat="server" style="color: #000099" 
-                            Text="0"></asp:Label>
 &nbsp;mensagens&nbsp;
                         <img alt="" class="style3" src="images/correio.jpg" /></span></span></h1>
                 </td>

@@ -27,6 +27,7 @@ namespace Azuli.Web.Portal
                     Session["Bloco"].ToString();
                     Session["Proprie2"].ToString();
                     listaMensagemMoradorBLL();
+                    lnkBtnMsg.Text = Session["mensagem"].ToString();
 
                 }
             }
@@ -52,13 +53,37 @@ namespace Azuli.Web.Portal
 
                 foreach (var item in oMensagemBLL.listaMensagemMorador(oMensagemModel))
                 {
-                    lblMsg.Text = item.qtdMsg.ToString();  
-                } 
+                     
+                    Session["mensagem"] = item.qtdMsg.ToString(); 
+                }
+
+              
                 
             }
             catch (Exception ex)
             {
                 ex.ToString();
+            }
+
+        }
+
+        protected void lnkBtnMsg_Click(object sender, EventArgs e)
+        {
+            
+                
+
+        }
+
+        protected void lnkBtnMsg_Click1(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(Session["mensagem"]) >= 1)
+            {
+                Response.Redirect("listaMensagemMorador.aspx");
+
+            }
+            else
+            {
+                lnkBtnMsg.ForeColor = System.Drawing.Color.Red;
             }
 
         }
