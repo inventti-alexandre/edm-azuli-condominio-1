@@ -32,7 +32,8 @@
                             </asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Serviços Condominio" Value="Mensagens">
-                            <asp:MenuItem Text="Publicar Circular - Administrador" Value="Enviar Mensagem">
+                            <asp:MenuItem Text="Publicar Circular - Administrador" Value="Enviar Mensagem" 
+                                NavigateUrl="~/publicarCircular.aspx">
                             </asp:MenuItem>
                             <asp:MenuItem Text="Visualizar Circular" Value="Visualizar Circular">
                             </asp:MenuItem>

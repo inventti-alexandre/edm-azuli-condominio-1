@@ -52,7 +52,8 @@ h1
     font-size: 1.6em;
     padding-bottom: 0px;
     margin-bottom: 0px;
-    width: 941px;
+    width: 777px;
+    height: 32px;
 }
 
 h2
@@ -307,6 +308,7 @@ legend
     font-size: 1.1em;
     font-weight: 600;
     padding: 2px 4px 8px 4px;
+    width: 318px;
 }
 
 input.textEntry 

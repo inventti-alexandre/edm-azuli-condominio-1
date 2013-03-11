@@ -40,6 +40,13 @@ namespace Azuli.Web.Portal.Util
             
         }
 
+        public enum paginaPublicada
+        {
+            circular = 01,
+            balancete = 02,
+            evidenciaOcorrencia = 03
+        }
+
 
       
     /// <summary>

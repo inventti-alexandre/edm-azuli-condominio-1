@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgendaBLL.cs" />
+    <Compile Include="FileBLL.cs" />
     <Compile Include="Interfaces\IAgenda.cs" />
+    <Compile Include="Interfaces\IFile.cs" />
     <Compile Include="Interfaces\ILancamentoOcorrencia.cs" />
     <Compile Include="Interfaces\IMensagemMorador.cs" />
     <Compile Include="Interfaces\IProprietario.cs" />

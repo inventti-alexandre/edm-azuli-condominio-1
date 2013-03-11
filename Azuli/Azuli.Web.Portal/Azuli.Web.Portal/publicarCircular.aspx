@@ -1,14 +1,62 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteAdmin.Master" AutoEventWireup="true" CodeBehind="publicarCircular.aspx.cs" Inherits="Azuli.Web.Portal.circular" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
- <br />
-    <br /><br />
+    <br />
+    
     <fieldset class="login">
-        <legend>Consulta de Publicações de Circulares: </legend>
+        <legend align="left" class="AlternatingRowStyle">Publicações de Circulares: </legend>
+        <br />
         
-        
-        <h2>DESCULPE ESTÁ PÁGINA AINDA ESTÁ EM DESENVOLVIMENTO..</h2>
+        <table class="loginDisplay" align="center">
+            <tr>
+                <td>
+                    <asp:Label ID="lblMesDEsc" runat="server" Text="Mês de publicação:"></asp:Label>
+                </td>
+                <td>
+                    <asp:DropDownList ID="drpMes" runat="server">
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblAnoDesc" runat="server" Text="Ano da Publicação:"></asp:Label>
+                </td>
+                <td>
+                    <asp:DropDownList ID="drpAno" runat="server">
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblArquivo" runat="server" Text="Arquivo a ser publicado:"></asp:Label>
+                </td>
+                <td>
+                    <asp:FileUpload ID="fileWord" runat="server" 
+                        CssClass="AlternatingRowStyle" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                   <asp:Label ID="lblMsg" runat="server"></asp:Label></td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    <asp:Button ID="btnPublicar" runat="server" CssClass="AlternatingRowStyle" 
+                        Text="Publicar" onclick="btnPublicar_Click" />
+                </td>
+            </tr>
+        </table>
         
         
         </fieldset>
