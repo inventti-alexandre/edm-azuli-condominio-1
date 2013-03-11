@@ -1,35 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-      
+ 
   <siteMapNode url="" title="Reservas"  description="reservas">
       <siteMapNode url="" title="Reservas" description="Reservas">
       <siteMapNode url="~/telaAgendamento.aspx" title="Fazer Reservas" description="morador" />
       <siteMapNode url="~/minhaReservas.aspx" title="Pesquisar minhas Reservas" description="morador" />
-  
+      
   </siteMapNode>
 
-
+    
     <siteMapNode url="" title="Livro de Ocorrência" description="Ocorrência">
-
+    
       <siteMapNode url="~/OcorrenciaMorador.aspx" title="Abrir Ocorrência" description="Open Ocorrencia" />
       <siteMapNode url="~/listaOcorrenciaMorador.aspx" title="Minhas Ocorrências" description="Minhas Ocorrencia" />
 
     </siteMapNode>
-     
+    
     <siteMapNode url="" title="Mensagens" description="Consultas" roles="">
       <siteMapNode url="~/listaMensagemMorador.aspx" title="Caixa de Entrada" description="Consultar mensagem" />
       
     </siteMapNode>
 
+    <siteMapNode  url=""  title="Consultas Azuli" description="Consultas" roles="">
+      <siteMapNode url="~/consultaCircular.aspx" title="Circular" description="Circular" />
+      <siteMapNode url="~/consultaBalancete.aspx" title="Balancete" description="Balancetes" />
+
+    </siteMapNode>
+    
     <siteMapNode url="resetSenha.aspx" title="Alterar Senha" description="Senha" roles="">
      
       </siteMapNode>
 
+
+   
+      
       <siteMapNode url="LoginAzulli.aspx" title="Sair" description="Login">
-
+        <siteMapNode url="paginaInicialMoradores.aspx" title="Página Principal" description="Home Page" roles="">
       </siteMapNode>
-      <siteMapNode url="paginaInicialMoradores.aspx" title="Página Principal" description="Home Page" roles="">
-
       </siteMapNode>
    </siteMapNode>
 </siteMap>

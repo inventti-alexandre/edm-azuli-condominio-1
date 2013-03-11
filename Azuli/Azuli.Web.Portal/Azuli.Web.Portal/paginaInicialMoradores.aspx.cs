@@ -14,32 +14,36 @@ namespace Azuli.Web.Portal
         Util.Util oUtil = new Util.Util();
         MensagemMoradorModel oMensagemModel = new MensagemMoradorModel();
         MensagemMoradorBLL oMensagemBLL = new MensagemMoradorBLL();
-
+       
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (oUtil.validateSession())
             {
                 if (!IsPostBack)
                 {
                     lblMorador.Text = Session["Proprie1"].ToString();
-
                     Session["AP"].ToString();
                     Session["Bloco"].ToString();
                     Session["Proprie2"].ToString();
                     listaMensagemMoradorBLL();
-                    lnkBtnMsg.Text = Session["mensagem"].ToString();
 
+                    if (Session["mensagem"] != null)
+                    {
+                        lnkBtnMsg.Text = Session["mensagem"].ToString();
+                    }
+                    else
+                    {
+                        lnkBtnMsg.ForeColor = System.Drawing.Color.Red;
+                    }
                 }
             }
-
-
 
         }
 
 
         public void listaMensagemMoradorBLL()
         {
-
             try
             {
                 ApartamentoModel oApModel = new ApartamentoModel();
@@ -57,8 +61,6 @@ namespace Azuli.Web.Portal
                     Session["mensagem"] = item.qtdMsg.ToString(); 
                 }
 
-              
-                
             }
             catch (Exception ex)
             {
@@ -70,8 +72,6 @@ namespace Azuli.Web.Portal
         protected void lnkBtnMsg_Click(object sender, EventArgs e)
         {
             
-                
-
         }
 
         protected void lnkBtnMsg_Click1(object sender, EventArgs e)

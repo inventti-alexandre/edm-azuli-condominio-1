@@ -58,6 +58,9 @@
     <Content Include="Account\ChangePassword.aspx" />
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="AreaAdministrativa.aspx" />
+    <Content Include="consultaBalancete.aspx" />
+    <Content Include="consultaCircular.aspx" />
+    <Content Include="publicarCircular.aspx" />
     <Content Include="consultaAgendasAdmin.aspx" />
     <Content Include="ErrorPage.aspx" />
     <Content Include="images\correio.jpg" />
@@ -124,6 +127,27 @@
     </Compile>
     <Compile Include="AreaAdministrativa.aspx.designer.cs">
       <DependentUpon>AreaAdministrativa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="consultaBalancete.aspx.cs">
+      <DependentUpon>consultaBalancete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="consultaBalancete.aspx.designer.cs">
+      <DependentUpon>consultaBalancete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="consultaCircular.aspx.cs">
+      <DependentUpon>consultaCircular.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="consultaCircular.aspx.designer.cs">
+      <DependentUpon>consultaCircular.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="publicarCircular.aspx.cs">
+      <DependentUpon>publicarCircular.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="publicarCircular.aspx.designer.cs">
+      <DependentUpon>publicarCircular.aspx</DependentUpon>
     </Compile>
     <Compile Include="consultaAgendasAdmin.aspx.cs">
       <DependentUpon>consultaAgendasAdmin.aspx</DependentUpon>

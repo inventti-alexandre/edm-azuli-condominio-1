@@ -22,7 +22,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
-    <br />
+    <br /><br />
     <fieldset class="login">
         <legend>Consulta de Reservas: </legend>
         <table class="style1">
