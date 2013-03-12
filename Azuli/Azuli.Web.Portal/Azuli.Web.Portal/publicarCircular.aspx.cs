@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 using Azuli.Web.Model;
 using System.IO;
 using System.Collections;
-using Azuli.Web.Model;
 using Azuli.Web.Business;
 namespace Azuli.Web.Portal
 
@@ -108,7 +107,7 @@ namespace Azuli.Web.Portal
             oFile.ano = Convert.ToInt32(drpAno.SelectedItem.Value);
             oFile.areaPublicacao = (int)Util.Util.paginaPublicada.circular;
 
-            if (validaPublicacao(oFile) > 0)
+            if (validaPublicacao(oFile) <= 0)
             {
 
                 try
