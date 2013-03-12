@@ -7,15 +7,17 @@ using System.Web.UI.WebControls;
 using Azuli.Web.Model;
 using System.IO;
 using System.Collections;
-
+using Azuli.Web.Model;
+using Azuli.Web.Business;
 namespace Azuli.Web.Portal
+
 {
     public partial class circular : System.Web.UI.Page
     {
         DateTime data = DateTime.Now;
         Util.Util oUtil = new Util.Util();
         Azuli.Web.Model.File oFile = new Azuli.Web.Model.File();
-        Azuli.Web.Business.FileBLL oFileBLL = new Business.FileBLL(); 
+        FileBLL oFileBLL = new Business.FileBLL(); 
         protected void Page_Load(object sender, EventArgs e)
         {
           
