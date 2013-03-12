@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Azuli.Web.Model;
 using System.IO;
+using System.Collections;
 
 namespace Azuli.Web.Portal
 {
@@ -13,6 +14,8 @@ namespace Azuli.Web.Portal
     {
         DateTime data = DateTime.Now;
         Util.Util oUtil = new Util.Util();
+        Azuli.Web.Model.File oFile = new Azuli.Web.Model.File();
+        Azuli.Web.Business.FileBLL oFileBLL = new Business.FileBLL(); 
         protected void Page_Load(object sender, EventArgs e)
         {
           
@@ -55,37 +58,12 @@ namespace Azuli.Web.Portal
 
         }
 
-        protected void btnPublicar_Click(object sender, EventArgs e)
+        public int validaPublicacao( Azuli.Web.Model.File oFile)
         {
-
-            //PArei aqui
-            Azuli.Web.Model.File oFile = new Azuli.Web.Model.File();
-            Azuli.Web.Business.FileBLL oFileBLL = new Business.FileBLL(); 
-
-            string arq = fileWord.PostedFile.FileName;
-            string folder = System.Configuration.ConfigurationManager.AppSettings["ArquivosCondominio"]+"/"+arq;
-
-            oFile.nameFile = folder;
-
-             Array teste = Enum.GetValues(typeof(Util.Util.meses));
-
-            foreach (var item in  teste)
-            {
-                
-
-                
-            }
-
-            oFile.mes = Convert.ToInt32(drpMes.SelectedItem);
-            oFile.ano = Convert.ToInt32(drpAno.SelectedItem);
-            oFile.areaPublicacao = (int)Util.Util.paginaPublicada.circular;
-
+            int qtdPublicacao = 0; 
             try
             {
-
-                oFileBLL.publicarArquivo(oFile);
-
-                fileWord.PostedFile.SaveAs(Server.MapPath(folder));
+               qtdPublicacao = oFileBLL.validaCircular(oFile);
 
             }
             catch (Exception)
@@ -93,10 +71,73 @@ namespace Azuli.Web.Portal
                 
                 throw;
             }
-           
 
+            return qtdPublicacao;
+        }
+
+        protected void btnPublicar_Click(object sender, EventArgs e)
+        {
+
+            
+          
+            string arq = fileWord.PostedFile.FileName;
+            string folder = System.Configuration.ConfigurationManager.AppSettings["ArquivosCondominio"]+"/"+arq;
+
+            oFile.nameFile = folder;
+
+            List < Util.Util.meses> lista = Enum.GetValues(typeof(Util.Util.meses)).Cast<Util.Util.meses>().ToList();
+
+            string mesEscolhido = "";
+            foreach (var item in  lista)
+            {
+
+                mesEscolhido = item.ToString();
+
+                if (mesEscolhido == drpMes.SelectedItem.Value)
+                {
+                    oFile.mes = Convert.ToInt32(item);
+                }
+
+                
+            }
+
+            oFile.assunto = txtAssunto.Text;
+               
+            oFile.ano = Convert.ToInt32(drpAno.SelectedItem.Value);
+            oFile.areaPublicacao = (int)Util.Util.paginaPublicada.circular;
+
+            if (validaPublicacao(oFile) > 0)
+            {
+
+                try
+                {
+
+                    oFileBLL.publicarArquivo(oFile);
+
+                    fileWord.PostedFile.SaveAs(Server.MapPath(folder));
+
+                    lblMsg.Text = "Arquivo publicado com sucesso!!";
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+            }
+
+            else
+            {
+                lblMsg.Text = "Já existe Circular publicado o mês: " + oFile.mes + " e ano: " + oFile.ano;
+            }
            
            
         }
+       
+
+        
     }
+
+    
 }

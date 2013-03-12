@@ -17,6 +17,14 @@
         <table class="loginDisplay" align="center">
             <tr>
                 <td>
+                    <asp:Label ID="lblDesc" runat="server" Text="Assunto:"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtAssunto" runat="server" Height="23px" Width="334px"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
                     <asp:Label ID="lblMesDEsc" runat="server" Text="Mês de publicação:"></asp:Label>
                 </td>
                 <td>
@@ -34,17 +42,30 @@
                 </td>
             </tr>
             <tr>
-                <td>
+                <td><br />
                     <asp:Label ID="lblArquivo" runat="server" Text="Arquivo a ser publicado:"></asp:Label>
                 </td>
                 <td>
                     <asp:FileUpload ID="fileWord" runat="server" 
-                        CssClass="AlternatingRowStyle" />
+                        CssClass="AlternatingRowStyle" Height="23px" Width="341px" />
                 </td>
             </tr>
+          
             <tr>
                 <td colspan="2" align="center">
-                   <asp:Label ID="lblMsg" runat="server"></asp:Label></td>
+                 </td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+              <tr>
+                <td colspan="2" align="center">
+                   <asp:Label ID="lblMsg" runat="server" ForeColor="#006600"></asp:Label></td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+               <tr>
+                <td colspan="2" align="center">
+                 </td>
                 <td>
                     &nbsp;</td>
             </tr>

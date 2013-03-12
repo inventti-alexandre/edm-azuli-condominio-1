@@ -11,5 +11,6 @@ namespace Azuli.Web.Business.Interfaces
 
         void publicarArquivo(File oFile);
         ListFile consultaArquivo(File oFile);
+        int validaCircular(File oFile);
     }
 }

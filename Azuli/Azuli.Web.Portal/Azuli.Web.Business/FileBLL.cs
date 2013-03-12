@@ -31,6 +31,29 @@ namespace Azuli.Web.Business
             throw new NotImplementedException();
         }
 
+       
+
+        public int validaCircular(Model.File oFile)
+        {
+            int quantidade = 0;
+            FileDAO oFileDAO = new FileDAO();
+            
+            try
+            {
+
+                quantidade = oFileDAO.validaCircular(oFile);
+
+            }
+
+            catch (Exception)
+            {
+                
+                throw;
+            }
+
+            return quantidade;
+        }
+
         #endregion
     }
 }
