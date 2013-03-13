@@ -12,5 +12,7 @@ namespace Azuli.Web.DAO.Interfaces
         void publicarArquivo(File oFile);
         ListFile consultaArquivo(File oFile);
         int validaCircular(File oFile);
+        Dictionary<int, int> contaArquivoByMeses(File oFile);
+        ListFile listaArquivoCircular(File oFile);
     }
 }

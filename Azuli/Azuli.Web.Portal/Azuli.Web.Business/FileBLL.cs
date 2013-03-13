@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Azuli.Web.DAO;
+using Azuli.Web.Model;
 
 namespace Azuli.Web.Business
 {
@@ -52,6 +53,47 @@ namespace Azuli.Web.Business
             }
 
             return quantidade;
+        }
+
+
+
+        public Dictionary<int, int> contaArquivoByMeses(Model.File oFile)
+        {
+            Dictionary<int, int> mesQtd;
+            FileDAO oFileDAO = new FileDAO();
+
+            try
+            {
+
+                mesQtd = oFileDAO.contaArquivoByMeses(oFile);
+
+            }
+
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return mesQtd;
+        }
+
+       
+
+        public Model.ListFile listaArquivoCircular(Model.File oFile)
+        {
+            ListFile oListFile = new ListFile();
+            FileDAO oFileDAO = new FileDAO();
+            try
+            {
+                return oListFile = oFileDAO.listaArquivoCircular(oFile);
+
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
         }
 
         #endregion
