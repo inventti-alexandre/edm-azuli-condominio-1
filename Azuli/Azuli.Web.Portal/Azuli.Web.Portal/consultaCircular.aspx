@@ -111,4 +111,28 @@
         
         </fieldset>
 
+        <div id="dvArquivosPublicados" runat="server">
+        
+            <fieldset  class="login">
+        <legend class="AlternatingRowStyle">Arquivos publicado em: <asp:Label id="lblmesAno" runat="server"></asp:Label> </legend></fieldset>
+        
+            <asp:GridView ID="grdCircular" runat="server" AutoGenerateColumns="False" 
+                Height="61px" Width="924px" DataKeyNames="nameFile" 
+                onrowcommand="grdCircular_RowCommand">
+                <Columns>
+                    <asp:BoundField DataField="assunto" HeaderText="Assunto" />
+                    <asp:BoundField DataField="mes" HeaderText="Mês" />
+                    <asp:BoundField DataField="ano" HeaderText="Ano" />
+                    <asp:BoundField DataField="nomeAreaPublicacao" 
+                        HeaderText="Tipo de Publicação" />
+                    <asp:BoundField DataField="dataPublicacao" HeaderText="Data da Publicação" />
+                    <asp:ButtonField ButtonType="Image" DataTextField="nameFile" 
+                        HeaderText="Arquivos" ImageUrl="~/images/word.gif">
+                    <ControlStyle Height="25px" Width="25px" />
+                    </asp:ButtonField>
+                </Columns>
+            </asp:GridView>
+       
+        </div>
+
 </asp:Content>

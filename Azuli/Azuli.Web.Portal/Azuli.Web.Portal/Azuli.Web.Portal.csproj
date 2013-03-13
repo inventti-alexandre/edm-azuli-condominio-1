@@ -60,6 +60,7 @@
     <Content Include="AreaAdministrativa.aspx" />
     <Content Include="consultaBalancete.aspx" />
     <Content Include="consultaCircular.aspx" />
+    <Content Include="images\word.gif" />
     <Content Include="publicarCircular.aspx" />
     <Content Include="consultaAgendasAdmin.aspx" />
     <Content Include="ErrorPage.aspx" />

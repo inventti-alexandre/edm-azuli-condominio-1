@@ -506,5 +506,41 @@ input.botao, .btGeral {
     color: White;
 }
 
-
+.GridView
+{
+	background-color: White;
+	border: outset 2px;
+	font-family: Verdana;
+	font-size: 12px;
+	color: Black;
+}
+.GridView td
+{
+	padding: 3px;
+	color: Black;
+}
+.GridView td a
+{
+	color: Black;
+}
+.GridView th
+{
+	background-color: #ADD8E6;
+	padding: 3px;
+}
+.GridView th a
+{
+	font-weight: bold;
+	color: Black;
+}
+.GridViewEdit
+{
+	background-color: #999999;
+}
+.GridViewPager td
+{
+	font-family: Verdana;
+	font-size: 12px;
+	color: Black;
+}
 

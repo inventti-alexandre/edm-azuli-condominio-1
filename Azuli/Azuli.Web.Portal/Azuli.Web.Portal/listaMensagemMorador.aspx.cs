@@ -9,7 +9,7 @@ using Azuli.Web.Business;
 
 namespace Azuli.Web.Portal
 {
-    public partial class listaMensagemMorador : System.Web.UI.Page
+    public partial class listaMensagemMorador : Util.Base
     {
         Util.Util oUtil = new Util.Util();
         MensagemMoradorModel oMensagemModel = new MensagemMoradorModel();

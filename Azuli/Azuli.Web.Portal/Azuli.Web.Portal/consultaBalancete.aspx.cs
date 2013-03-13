@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Azuli.Web.Portal
 {
-    public partial class consultaBalancete : System.Web.UI.Page
+    public partial class consultaBalancete : Util.Base
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -11,7 +11,7 @@ using Azuli.Web.Business;
 namespace Azuli.Web.Portal
 
 {
-    public partial class circular : System.Web.UI.Page
+    public partial class circular : Util.Base
     {
         DateTime data = DateTime.Now;
         Util.Util oUtil = new Util.Util();
@@ -116,6 +116,7 @@ namespace Azuli.Web.Portal
                     oFileBLL.publicarArquivo(oFile);
 
                     fileWord.PostedFile.SaveAs(Server.MapPath(folder));
+                    
 
                     lblMsg.Text = "Arquivo publicado com sucesso!!";
 
