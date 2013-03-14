@@ -78,61 +78,103 @@ namespace Azuli.Web.Portal
 
         protected void btnPublicar_Click(object sender, EventArgs e)
         {
+           
+            double tamanhoArquivo = 0;
+            double permitido = 1000;
+            string erroRegra = "0";
+            string extensao = "";
+            string diretorio = "";
 
-            
-          
-            string arq = fileWord.PostedFile.FileName;
-            string folder = System.Configuration.ConfigurationManager.AppSettings["ArquivosCondominio"]+"/"+arq;
-
-            oFile.nameFile = folder;
-
-            List < Util.Util.meses> lista = Enum.GetValues(typeof(Util.Util.meses)).Cast<Util.Util.meses>().ToList();
-
-            string mesEscolhido = "";
-            foreach (var item in  lista)
+            if (fileWord.PostedFile.FileName != "")
             {
+                string arq = fileWord.PostedFile.FileName;
+                tamanhoArquivo = Convert.ToDouble(fileWord.PostedFile.ContentLength) / 1024;
 
-                mesEscolhido = item.ToString();
+                 extensao = arq.Substring(arq.Length - 4).ToLower();
 
-                if (mesEscolhido == drpMes.SelectedItem.Value)
+                if (tamanhoArquivo > permitido)
                 {
-                    oFile.mes = Convert.ToInt32(item);
+                    this.lblMsg.Text = "Tamanho Máximo permitido é de " + permitido + " kb!"; 
+                    erroRegra = "1";
+                }
+                if (extensao.Trim() != ".doc" && extensao.Trim() != ".xls" && extensao.Trim() != "docx" && extensao.Trim() != "xlsx")
+                {
+                    lblMsg.Text = "Extensão inválida, só são permitidas .doc, .docx, .xls,.xlsx";
+                    erroRegra = "2";
+                }
+              
+                string folder = System.Configuration.ConfigurationManager.AppSettings["ArquivosCondominio"] + "/" + arq;
+                diretorio = Server.MapPath(folder);
+                oFile.nameFile = arq;
+
+                List<Util.Util.meses> lista = Enum.GetValues(typeof(Util.Util.meses)).Cast<Util.Util.meses>().ToList();
+
+                string mesEscolhido = "";
+                foreach (var item in lista)
+                {
+
+                    mesEscolhido = item.ToString();
+
+                    if (mesEscolhido == drpMes.SelectedItem.Value)
+                    {
+                        oFile.mes = Convert.ToInt32(item);
+                    }
+
+
                 }
 
-                
+                oFile.assunto = txtAssunto.Text;
+
+                oFile.ano = Convert.ToInt32(drpAno.SelectedItem.Value);
+                oFile.areaPublicacao = (int)Util.Util.paginaPublicada.circular;
+
+                if (erroRegra == "0")
+                {
+
+
+                    try
+                    {
+
+                        if (!System.IO.File.Exists(diretorio))
+                        {
+
+
+
+                            oFileBLL.publicarArquivo(oFile);
+
+                            fileWord.PostedFile.SaveAs(Server.MapPath(folder));
+
+
+                            lblMsg.Text = "Arquivo publicado com sucesso!!";
+                        }
+                        else
+                        {
+                            lblMsg.Text = "Já existe um arquivo com esse nome!, por favor mude o nome do arquivo e tente novamente";
+                        }
+
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+                }
+                else
+                {
+
+                }
+
             }
-
-            oFile.assunto = txtAssunto.Text;
-               
-            oFile.ano = Convert.ToInt32(drpAno.SelectedItem.Value);
-            oFile.areaPublicacao = (int)Util.Util.paginaPublicada.circular;
-
-            if (validaPublicacao(oFile) <= 0)
-            {
-
-                try
-                {
-
-                    oFileBLL.publicarArquivo(oFile);
-
-                    fileWord.PostedFile.SaveAs(Server.MapPath(folder));
-                    
-
-                    lblMsg.Text = "Arquivo publicado com sucesso!!";
-
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
-
-            }
-
             else
             {
-                lblMsg.Text = "Já existe Circular publicado o mês: " + oFile.mes + " e ano: " + oFile.ano;
+                lblMsg.Text = "Não existe arquivo selecionado!!";
             }
+          
+
+            //else
+            //{
+            //    lblMsg.Text = "Já existe Circular publicado o mês: " + oFile.mes + " e ano: " + oFile.ano;
+            //}
            
            
         }

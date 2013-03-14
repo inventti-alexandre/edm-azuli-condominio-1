@@ -24,6 +24,7 @@ namespace Azuli.Web.Portal
                 if (!IsPostBack)
                 {
                     dvArquivosPublicados.Visible = false;
+                    btnOk.Visible = false;
                     CalculateQtdFile();
                     this.lbtMonth1.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(1).ToUpper();
                     this.lbtMonth2.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(2).ToUpper();
@@ -37,10 +38,10 @@ namespace Azuli.Web.Portal
                     this.lbtMonth10.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(10).ToUpper();
                     this.lbtMonth11.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(11).ToUpper();
                     this.lbtMonth12.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(12).ToUpper();
-                    
+
                 }
             }
-            
+
 
         }
 
@@ -50,12 +51,12 @@ namespace Azuli.Web.Portal
         protected void CalculateQtdFile()
         {
 
-           
+
             oFile.ano = ano;
 
             Dictionary<int, int> qtdPublicacao = new Dictionary<int, int>();
-            
-        
+
+
             try
             {
                 qtdPublicacao = oFileBLL.contaArquivoByMeses(oFile);
@@ -64,7 +65,9 @@ namespace Azuli.Web.Portal
                 {
                     if (item.Key == 1)
                     {
+
                         lblPercentage1.Text = item.Value.ToString();
+
                     }
                     else if (item.Key == 2)
                     {
@@ -114,7 +117,7 @@ namespace Azuli.Web.Portal
                 }
 
 
-               
+
 
             }
             catch (Exception)
@@ -123,12 +126,12 @@ namespace Azuli.Web.Portal
                 throw;
             }
 
-         
+
 
 
 
             //Business.Support.TimeSheet busTimeSheet = new Rhodia.Sahs.Business.Support.TimeSheet();
-           
+
         }
 
 
@@ -137,56 +140,68 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth_Click(object sender, EventArgs e)
         {
+            clearControl();
             preencheGridListaArquivo(1);
         }
 
         protected void lbtMonth2_Click(object sender, EventArgs e)
         {
+            clearControl();
             preencheGridListaArquivo(2);
         }
 
         protected void lbtMonth3_Click(object sender, EventArgs e)
         {
+            clearControl();
             preencheGridListaArquivo(3);
         }
 
         protected void lbtMonth4_Click(object sender, EventArgs e)
         {
+
             preencheGridListaArquivo(4);
         }
 
         protected void lbtMonth5_Click(object sender, EventArgs e)
         {
+
             preencheGridListaArquivo(5);
         }
 
         protected void lbtMonth6_Click(object sender, EventArgs e)
         {
+
             preencheGridListaArquivo(6);
         }
 
         protected void lbtMonth7_Click(object sender, EventArgs e)
         {
+
             preencheGridListaArquivo(7);
         }
-        protected void lbtMonth8_Click(object sender, EventArgs e)
+        protected void lbtMonth_Click8(object sender, EventArgs e)
         {
+
             preencheGridListaArquivo(8);
         }
-        protected void lbtMonth9_Click(object sender, EventArgs e)
+        protected void lbtMonth_Click9(object sender, EventArgs e)
         {
+
             preencheGridListaArquivo(9);
         }
-        protected void lbtMonth10_Click(object sender, EventArgs e)
+        protected void lbtMonth_Click10(object sender, EventArgs e)
         {
+
             preencheGridListaArquivo(10);
         }
-        protected void lbtMonth11_Click(object sender, EventArgs e)
+        protected void lbtMonth_Click11(object sender, EventArgs e)
         {
+
             preencheGridListaArquivo(11);
         }
-        protected void lbtMonth12_Click(object sender, EventArgs e)
+        protected void lbtMonth_Click12(object sender, EventArgs e)
         {
+
             preencheGridListaArquivo(12);
         }
 
@@ -194,15 +209,18 @@ namespace Azuli.Web.Portal
         {
             oFile.ano = ano;
             oFile.mes = mes;
+
+            lblmesAno.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(mes).ToUpper() + "/" + ano;
             try
             {
-               grdCircular.DataSource =  oFileBLL.listaArquivoCircular(oFile);
-               grdCircular.DataBind();
-               dvArquivosPublicados.Visible = true;
+                grdCircular.DataSource = oFileBLL.listaArquivoCircular(oFile);
+                grdCircular.DataBind();
+                dvArquivosPublicados.Visible = true;
+                btnOk.Visible = true;
             }
             catch (Exception)
             {
-                
+
                 throw;
             }
         }
@@ -213,29 +231,55 @@ namespace Azuli.Web.Portal
 
             int index = int.Parse((string)e.CommandArgument);
             caminhoDownload = grdCircular.DataKeys[index]["nameFile"].ToString();
-            listarArquivos(caminhoDownload);
-           
+
+            try
+            {
+                listarArquivos(caminhoDownload);
+            }
+            catch (FileNotFoundException ex)
+            {
+
+                throw ex;
+            }
+
+
         }
 
 
         private void listarArquivos(string caminhoArquivo)
         {
+
+            try
+            {
+
+
                 string folder = System.Configuration.ConfigurationManager.AppSettings["ArquivosCondominioDownload"];
 
                 FileInfo arquivo = new FileInfo(Server.MapPath(folder) + ("\\" + caminhoArquivo));
-               
+
                 Response.Clear();
-              
+
                 Response.ContentType = "application/octet-stream";
                 Response.AddHeader("Content-Disposition", ("attachment; filename=\""
                                 + (arquivo.Name + "\"")));
-             
+
                 Response.AddHeader("Content-Length", arquivo.Length.ToString());
                 Response.Flush();
                 Response.WriteFile(arquivo.FullName);
-            
+            }
+            catch (FileNotFoundException)
+            {
+
+                throw;
+            }
+
         }
-    
+
+        protected void btnOk_Click(object sender, EventArgs e)
+        {
+            dvArquivosPublicados.Visible = false;
+            btnOk.Visible = false;
+        }
 
     }
 }

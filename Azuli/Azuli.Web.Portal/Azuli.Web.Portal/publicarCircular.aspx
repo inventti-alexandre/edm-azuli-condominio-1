@@ -5,6 +5,8 @@
         {
             width: 100%;
         }
+        .register
+        {}
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -20,7 +22,8 @@
                     <asp:Label ID="lblDesc" runat="server" Text="Assunto:"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="txtAssunto" runat="server" Height="23px" Width="334px"></asp:TextBox>
+                    <asp:TextBox ID="txtAssunto" runat="server" 
+                        CssClass="register" Height="20px" Width="269px"></asp:TextBox>
                 </td>
             </tr>
             <tr>

@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
 <br />
-    <br /><br />
+    <br /><br /></br>
     <fieldset  class="login">
         <legend class="AlternatingRowStyle">Consulta de Publicações de Circulares: </legend>
         
@@ -48,19 +48,19 @@
                     onclick="lbtMonth7_Click">7</asp:LinkButton>
             </td>
             <td>
-                <asp:LinkButton ID="lbtMonth8" runat="server" CssClass="Text" onclick="lbtMonth_Click">8</asp:LinkButton>
+                <asp:LinkButton ID="lbtMonth8" runat="server" CssClass="Text" onclick="lbtMonth_Click8">8</asp:LinkButton>
             </td>
             <td>
-                <asp:LinkButton ID="lbtMonth9" runat="server" CssClass="Text" onclick="lbtMonth_Click">9</asp:LinkButton>
+                <asp:LinkButton ID="lbtMonth9" runat="server" CssClass="Text" onclick="lbtMonth_Click9">9</asp:LinkButton>
             </td>
             <td>
-                <asp:LinkButton ID="lbtMonth10" runat="server" CssClass="Text" onclick="lbtMonth_Click">10</asp:LinkButton>
+                <asp:LinkButton ID="lbtMonth10" runat="server" CssClass="Text" onclick="lbtMonth_Click10">10</asp:LinkButton>
             </td>
             <td>
-                <asp:LinkButton ID="lbtMonth11" runat="server" CssClass="Text" onclick="lbtMonth_Click">11</asp:LinkButton>
+                <asp:LinkButton ID="lbtMonth11" runat="server" CssClass="Text" onclick="lbtMonth_Click11">11</asp:LinkButton>
             </td>
             <td>
-                <asp:LinkButton ID="lbtMonth12" runat="server" CssClass="Text" onclick="lbtMonth_Click">12</asp:LinkButton>
+                <asp:LinkButton ID="lbtMonth12" runat="server" CssClass="Text" onclick="lbtMonth_Click12">12</asp:LinkButton>
             </td>
         </tr>
 
@@ -114,11 +114,11 @@
         <div id="dvArquivosPublicados" runat="server">
         
             <fieldset  class="login">
-        <legend class="AlternatingRowStyle">Arquivos publicado em: <asp:Label id="lblmesAno" runat="server"></asp:Label> </legend></fieldset>
+        <legend class="AlternatingRowStyle">Arquivos publicado em: <asp:Label id="lblmesAno" runat="server"></asp:Label> </legend>
         
             <asp:GridView ID="grdCircular" runat="server" AutoGenerateColumns="False" 
-                Height="61px" Width="924px" DataKeyNames="nameFile" 
-                onrowcommand="grdCircular_RowCommand">
+                Height="39px" Width="907px" DataKeyNames="nameFile" 
+                onrowcommand="grdCircular_RowCommand" CssClass="GridView" EmptyDataText="Não foram encontrados arquivos publicados!!">
                 <Columns>
                     <asp:BoundField DataField="assunto" HeaderText="Assunto" />
                     <asp:BoundField DataField="mes" HeaderText="Mês" />
@@ -133,6 +133,7 @@
                 </Columns>
             </asp:GridView>
        
-        </div>
-
+        </div></fieldset><br /><center>
+    <asp:Button ID="btnOk" runat="server" Text="Ok" Width="58px" CssClass="btGeral" 
+            onclick="btnOk_Click" /></center>
 </asp:Content>
