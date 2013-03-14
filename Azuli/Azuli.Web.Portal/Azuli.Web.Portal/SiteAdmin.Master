@@ -42,7 +42,8 @@
                             <asp:MenuItem Text="Visualizar Balancete" Value="Visualizar Balancete">
                             </asp:MenuItem>
                             <asp:MenuItem Text="Enviar mensagem p/ Morador" 
-                                Value="Enviar mensagem p/ Morador"></asp:MenuItem>
+                                Value="Enviar mensagem p/ Morador" 
+                                NavigateUrl="~/enviaMensagemMorador.aspx"></asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Ocorrência" Value="Ocorrência">
                             <asp:MenuItem Text="Ler / Responder Ocorrência - Administrador" 

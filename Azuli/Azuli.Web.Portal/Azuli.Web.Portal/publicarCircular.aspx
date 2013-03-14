@@ -5,8 +5,8 @@
         {
             width: 100%;
         }
-        .register
-        {}
+    .register
+    {}
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
