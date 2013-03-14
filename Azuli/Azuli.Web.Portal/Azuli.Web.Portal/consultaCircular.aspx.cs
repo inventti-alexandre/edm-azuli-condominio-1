@@ -140,19 +140,19 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth_Click(object sender, EventArgs e)
         {
-            clearControl();
+            
             preencheGridListaArquivo(1);
         }
 
         protected void lbtMonth2_Click(object sender, EventArgs e)
         {
-            clearControl();
+           
             preencheGridListaArquivo(2);
         }
 
         protected void lbtMonth3_Click(object sender, EventArgs e)
         {
-            clearControl();
+            
             preencheGridListaArquivo(3);
         }
 
@@ -258,10 +258,10 @@ namespace Azuli.Web.Portal
                 FileInfo arquivo = new FileInfo(Server.MapPath(folder) + ("\\" + caminhoArquivo));
 
                 Response.Clear();
-
+              
                 Response.ContentType = "application/octet-stream";
-                Response.AddHeader("Content-Disposition", ("attachment; filename=\""
-                                + (arquivo.Name + "\"")));
+                Response.AddHeader("Content-Disposition", ("attachment; filename=\"" +arquivo.Name));
+                             
 
                 Response.AddHeader("Content-Length", arquivo.Length.ToString());
                 Response.Flush();
