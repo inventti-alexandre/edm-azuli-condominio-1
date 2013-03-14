@@ -11,7 +11,7 @@
         }
         .style2
         {
-            width: 509px;
+            width: 445px;
         }
         .style3
         {
@@ -58,11 +58,7 @@
         {
             text-decoration: underline;
         }
-        .style15
-        {
-            width: 189px;
-        }
-    </style>
+        </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
@@ -71,7 +67,7 @@
     <div id="dvProprietario" runat="server">
         <fieldset class="login">
             <legend>Dados do Proprietário</legend>
-            <table style="height: 192px">
+            <table style="height: 170px; width: 934px;">
                 <tr>
                     <td class="style11">
                         <table class="style1" border='0'>
@@ -218,7 +214,6 @@
             <legend>Escolha a Data da sua reserva:</legend>
             <asp:Label ID="lblMsgData" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
             <br />
-            <br />
             <table style="width: 886px">
                 <tr>
                     <td class="style2" align="left">
@@ -235,8 +230,8 @@
                         
                             <asp:Calendar ID="Calendar1" runat="server"  BackColor="White" OnSelectionChanged="Calendar1_SelectionChanged"
                             BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana"
-                            Font-Size="9pt" ForeColor="Black" Height="280px" NextPrevFormat="ShortMonth"
-                            Width="514px" OnDayRender="Calendar1_DayRender">
+                            Font-Size="9pt" ForeColor="Black" Height="138px" NextPrevFormat="ShortMonth"
+                            Width="441px" OnDayRender="Calendar1_DayRender">
                             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" Height="8pt" />
                             <DayStyle BackColor="#CCCCCC" />
                             <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="White" />

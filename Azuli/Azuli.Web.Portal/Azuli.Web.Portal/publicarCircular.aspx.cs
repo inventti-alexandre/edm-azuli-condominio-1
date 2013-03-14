@@ -103,9 +103,9 @@ namespace Azuli.Web.Portal
                     erroRegra = "2";
                 }
               
-                string folder = System.Configuration.ConfigurationManager.AppSettings["ArquivosCondominio"] + "/" + arq;
+                string folder = System.Configuration.ConfigurationManager.AppSettings["ArquivosCondominio"] + "/" +tira_acentos(arq);
                 diretorio = Server.MapPath(folder);
-                oFile.nameFile = arq;
+                oFile.nameFile = tira_acentos(arq);
 
                 List<Util.Util.meses> lista = Enum.GetValues(typeof(Util.Util.meses)).Cast<Util.Util.meses>().ToList();
 
@@ -178,6 +178,29 @@ namespace Azuli.Web.Portal
            
            
         }
+
+        public static string tira_acentos(string texto)
+        {
+
+            string ComAcentos = "!@#$%¨&*()-?:{}][ÄÅÁÂÀÃäáâàãÉÊËÈéêëèÍÎÏÌíîïìÖÓÔÒÕöóôòõÜÚÛüúûùÇç ";
+
+            string SemAcentos = "_________________AAAAAAaaaaaEEEEeeeeIIIIiiiiOOOOOoooooUUUuuuuCc_";
+
+            for (int i = 0; i < ComAcentos.Length; i++)
+
+                texto = texto.Replace(ComAcentos[i].ToString(), SemAcentos[i].ToString()).Trim();
+
+
+
+            return texto;
+
+
+
+        }
+
+
+
+
        
 
         

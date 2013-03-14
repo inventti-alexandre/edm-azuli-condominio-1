@@ -258,14 +258,15 @@ namespace Azuli.Web.Portal
                 FileInfo arquivo = new FileInfo(Server.MapPath(folder) + ("\\" + caminhoArquivo));
 
                 Response.Clear();
-              
-                Response.ContentType = "application/octet-stream";
-                Response.AddHeader("Content-Disposition", ("attachment; filename=\"" +arquivo.Name));
-                             
 
+                
+                Response.AddHeader("Content-Disposition", ("attachment; filename=\"" +arquivo.Name));
+                Response.Charset = "utf8";
+                Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                Response.ContentType = "application/octet-stream";
                 Response.AddHeader("Content-Length", arquivo.Length.ToString());
-                Response.Flush();
                 Response.WriteFile(arquivo.FullName);
+                Response.Flush();
             }
             catch (FileNotFoundException)
             {
