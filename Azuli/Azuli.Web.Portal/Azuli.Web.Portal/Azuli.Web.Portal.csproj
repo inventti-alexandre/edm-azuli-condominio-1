@@ -262,6 +262,7 @@
     </Compile>
     <Compile Include="telaAgendamento.aspx.cs">
       <DependentUpon>telaAgendamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="telaAgendamento.aspx.designer.cs">
       <DependentUpon>telaAgendamento.aspx</DependentUpon>
