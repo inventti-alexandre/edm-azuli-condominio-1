@@ -63,7 +63,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
-    <br />
+    <br /><br />
     <div id="dvProprietario" runat="server">
         <fieldset class="login">
             <legend>Dados do Proprietário</legend>

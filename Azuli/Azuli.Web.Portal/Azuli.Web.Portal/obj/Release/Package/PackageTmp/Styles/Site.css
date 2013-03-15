@@ -52,6 +52,8 @@ h1
     font-size: 1.6em;
     padding-bottom: 0px;
     margin-bottom: 0px;
+    width: 777px;
+    height: 32px;
 }
 
 h2
@@ -239,7 +241,7 @@ div.menu ul
     width: auto;
 }
 
-div.menu ul li a, div.menu ul li a:visited
+div.menu a, div.menu a:visited
 {
     background-color: #465c71;
     border: 1px #4e667d solid;
@@ -251,7 +253,7 @@ div.menu ul li a, div.menu ul li a:visited
     white-space: nowrap;
 }
 
-div.menu ul li a:hover
+div.menu a:hover
 {
     background-color: #bfcbd6;
     color: #465c71;
@@ -306,6 +308,7 @@ legend
     font-size: 1.1em;
     font-weight: 600;
     padding: 2px 4px 8px 4px;
+    width: 318px;
 }
 
 input.textEntry 
@@ -354,13 +357,14 @@ div.accountInfo
 
 .loginDisplay
 {
-    font-size: 1.1em;
-    display: block;
-    text-align: right;
-    padding: 10px;
-    color: White;
+    
+    
+    text-align: left;
+    padding: 30px;
+    color: black;
+    font-weight: bold;
     height: 1px;
-    width: 934px;
+    width: 534px;
 }
 
 .loginDisplay a:link
@@ -435,7 +439,6 @@ input.botao, .btGeral {
 
 .MasterMenu
 {
-	width: 200px;
 	background-color: #ADD8E6;
 	border-top: Solid 3px #F5F5F5;
 	padding: 3px;
@@ -449,5 +452,95 @@ input.botao, .btGeral {
 	color: White;
 }
 
+/* Data Web Control Styles */
 
+.DataWebControlStyle
+{
+    font-size: 100%;
+}
+
+.HeaderStyle
+{
+    background-color:#ADD8E6;
+    color: white;
+    font-weight: bold;
+}
+
+.HeaderStyle a, .HeaderStyle a:visited
+{
+    color: white;
+}
+
+.FooterStyle
+{
+    background-color: #ADD8E6;
+    color: blue;
+    text-align: center;
+}
+
+.AlternatingRowStyle
+{
+    background-color: #ADD8E6;
+}
+
+.RowStyle
+{
+}
+
+.SelectedRowStyle
+{
+    background-color: #FFFFFF;
+}
+
+.PagerRowStyle
+{
+    background-color: #ddd;
+    text-align: right;
+}
+
+.SortHeaderRowStyle
+{
+    background-color: #c00;
+    text-align: left;
+    font-weight: bold;
+    color: White;
+}
+
+.GridView
+{
+	background-color: White;
+	border: outset 2px;
+	font-family: Verdana;
+	font-size: 12px;
+	color: Black;
+}
+.GridView td
+{
+	padding: 3px;
+	color: Black;
+}
+.GridView td a
+{
+	color: Black;
+}
+.GridView th
+{
+	background-color: #4B6C9E;
+	padding: 3px;
+}
+.GridView th a
+{
+	font-weight: bold;
+	color: Black;
+}
+.GridViewEdit
+{
+	background-color: #999999;
+}
+.GridViewPager td
+{
+	font-family: Verdana;
+	font-size: 12px;
+	color: Black;
+}
 

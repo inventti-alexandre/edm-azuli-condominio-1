@@ -8,3 +8,8 @@ C:\Users\Leandro\Documents\Azuli.Web.Portal\Google_code\Azuli\edm-azuli-condomin
 C:\Users\Leandro\Documents\Azuli.Web.Portal\Google_code\Azuli\edm-azuli-condominio\Azuli\Azuli.Web.Portal\Azuli.Web.Model\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Leandro\Documents\Azuli.Web.Portal\Google_code\Azuli\edm-azuli-condominio\Azuli\Azuli.Web.Portal\Azuli.Web.Model\obj\Debug\Azuli.Web.Model.dll
 C:\Users\Leandro\Documents\Azuli.Web.Portal\Google_code\Azuli\edm-azuli-condominio\Azuli\Azuli.Web.Portal\Azuli.Web.Model\obj\Debug\Azuli.Web.Model.pdb
+C:\Meu Desenvolvimento\Azuli\Azuli.Web.Model\bin\Debug\Azuli.Web.Model.dll
+C:\Meu Desenvolvimento\Azuli\Azuli.Web.Model\bin\Debug\Azuli.Web.Model.pdb
+C:\Meu Desenvolvimento\Azuli\Azuli.Web.Model\obj\Debug\ResolveAssemblyReference.cache
+C:\Meu Desenvolvimento\Azuli\Azuli.Web.Model\obj\Debug\Azuli.Web.Model.dll
+C:\Meu Desenvolvimento\Azuli\Azuli.Web.Model\obj\Debug\Azuli.Web.Model.pdb

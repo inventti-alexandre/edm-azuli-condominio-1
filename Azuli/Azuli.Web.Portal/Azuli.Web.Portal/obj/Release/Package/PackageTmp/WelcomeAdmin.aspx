@@ -1,13 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteAdmin.Master" AutoEventWireup="true" CodeBehind="WelcomeAdmin.aspx.cs" Inherits="Azuli.Web.Portal.WelcomeAdmin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .style1
+        {
+            width: 290px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <table style="text-align: justify;">
+
+    <table >
             <tr>
-                <td align="center">
-                    <img src="images/azuli.jpg" width="40%" />         
-                </td>
                 <td>
+                    <img src="images/azuli.jpg" style="height: 183px"  />         
+                </td>
+                <td colspan="3" dir="ltr" align="left">
              <h1> Senhor(ª) <asp:Label ID="lblAdmin" 
                         runat="server" ForeColor="Blue"></asp:Label></h1> <br /> Seja bem vindo ao módulo Administrativo: 
                 
@@ -24,9 +31,13 @@
        </p>
        
             <li style="color: #FF0000">Reservas de Salão de Festa e Churrasqueira</li>
+    
             <li style="color: #FF0000">Envio de mensagem aos Moradores</li>
+
             <li style="color: #FF0000">Cancelamento de reservas (Permitido com 2 dias de antecendecia)</li>
+  
             <li style="color: #FF0000">Livro de ocorrência</li>
+ 
             <li style="color: #FF0000">Solicitação de Serviços</li>
          
        

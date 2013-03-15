@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <br /><br />
+    <br /><br /> <br /><br />
 <fieldset class="login">
         <legend> Mensagens do Sindíco: </legend>
 <center>
@@ -20,6 +20,11 @@
                     <asp:Label ID="lblCodigo" runat="server" 
                         Text= '<%# Eval("codigoMsg") %>' />
                     <br />
+
+                     Assunto:
+                    <asp:Label ID="Label1" runat="server" 
+                        Text= '<%# Eval("assunto") %>' />
+                    <br />
                      Mensagem:
                     <asp:Label ID="lblMgs" runat="server" 
                         Text='<%# Eval("mensagem") %>'/>
@@ -28,7 +33,7 @@
                     <asp:Label ID="DATA_OCORRENCIALabel" runat="server" 
                         Text='<%# Eval("data_inicio") %>'/>
                     <br />
-                    Data de Expiração da Mensagem:
+                    Esta Mensagem Expira dia:
                     <asp:Label ID="STATUSLabel" runat="server" 
                         Text='<%# Eval("data_fim") %>'/>
                     <br />

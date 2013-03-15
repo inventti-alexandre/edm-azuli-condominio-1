@@ -15,7 +15,7 @@
         <div class="headerAdmin">
             <div class="titleAdmin">
                 <h1>
-                    Sistema de agendamento spazio azulli - salão - área de churrasco
+                       Sistema de Gerenciamento de Condominio -  Spazio azuli 
                 </h1>
             </div>
     </div>
@@ -24,19 +24,33 @@
                     EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" >
                     
                     <Items>
-                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Reserva ">
-                            <asp:MenuItem NavigateUrl="~/AreaAdministrativa.aspx" Text="Fazer Reserva - Administrador" 
+                        <asp:MenuItem Text="Reserva ">
+                            <asp:MenuItem NavigateUrl="~/AreaAdministrativa.aspx" Text="Reserva p/ Morador - Administrador" 
                                 Value="Fazer Reserva"></asp:MenuItem>
-                        </asp:MenuItem>
-                        <asp:MenuItem Text="Mensagens " Value="Mensagens">
-                            <asp:MenuItem Text="Enviar Mensagem - Administrador" Value="Enviar Mensagem">
+                            <asp:MenuItem Text="Consultar/Cancelar/Excluir Reservas Morador - Administrador" 
+                                Value="Consultar/Cancelar/Excluir Reservas Morador - Administrador">
                             </asp:MenuItem>
                         </asp:MenuItem>
-                        <asp:MenuItem Text="Ocorrência" Value="Ocorrência">
-                            <asp:MenuItem Text="Visualizar Ocorrência - Administrador" 
-                                Value="Visualizar Ocorrência"></asp:MenuItem>
+                        <asp:MenuItem Text="Serviços Condominio" Value="Mensagens">
+                            <asp:MenuItem Text="Publicar Circular - Administrador" Value="Enviar Mensagem" 
+                                NavigateUrl="~/publicarCircular.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Visualizar Circular" Value="Visualizar Circular">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Publicar Balancente" Value="Publicar Balancente">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Visualizar Balancete" Value="Visualizar Balancete">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Enviar mensagem p/ Morador" 
+                                Value="Enviar mensagem p/ Morador"></asp:MenuItem>
                         </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/LoginAzulli.aspx" Text="Sair" Value="sai">
+                        <asp:MenuItem Text="Ocorrência" Value="Ocorrência">
+                            <asp:MenuItem Text="Ler / Responder Ocorrência - Administrador" 
+                                Value="1"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Alterar Senha Administrador" 
+                            Value="Alterar Senha do Administrador"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/LoginAzulli.aspx" Text="Sair" Value="sair">
                         </asp:MenuItem>
                     </Items>
                 </asp:Menu>

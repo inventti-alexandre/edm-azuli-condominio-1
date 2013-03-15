@@ -54,11 +54,12 @@ namespace Azuli.Web.Portal
 
                 listaMensagemMorador listaQuantidade = new listaMensagemMorador();
 
-
+                int contador = 0;
                 foreach (var item in oMensagemBLL.listaMensagemMorador(oMensagemModel))
                 {
-                     
-                    Session["mensagem"] = item.qtdMsg.ToString(); 
+
+                    contador += Convert.ToInt32(item.qtdMsg);
+                    Session["mensagem"] = contador; 
                 }
 
             }

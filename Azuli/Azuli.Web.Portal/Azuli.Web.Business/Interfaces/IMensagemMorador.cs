@@ -9,5 +9,6 @@ namespace Azuli.Web.Business.Interfaces
     public interface IMensagemMorador
     {
         listaMensagemMorador listaMensagemMorador(Model.MensagemMoradorModel oAp);
+        void enviaMensagemMorador(Model.MensagemMoradorModel oMensagem);
     }
 }

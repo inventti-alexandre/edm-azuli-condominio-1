@@ -15,6 +15,8 @@ namespace Azuli.Web.Portal
         ProprietarioBLL oProprietario = new ProprietarioBLL();
         ProprietarioModel oProprietarioModel = new ProprietarioModel();
         ApartamentoModel oAPmodel = new ApartamentoModel();
+        MensagemMoradorBLL oMensagemBLL = new MensagemMoradorBLL();
+        MensagemMoradorModel oMsgModel = new MensagemMoradorModel();
         Util.Util oUtil = new Util.Util();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -67,6 +69,50 @@ namespace Azuli.Web.Portal
                     lblMorador.Text = "Não existe morador cadastrado!";
                 }
             }
+        }
+
+        protected void btnMensagem_Click(object sender, EventArgs e)
+        {
+            if (drpBloco.SelectedItem.Value != "-1" && drpMsg.SelectedItem.Value != "-1")
+            {
+
+                oAPmodel.apartamento = Convert.ToInt32(drpMsg.SelectedItem.Text);
+                oAPmodel.bloco = Convert.ToInt32(drpBloco.SelectedItem.Text);
+                if (oProprietario.BuscaMoradorAdmin(oAPmodel).Count > 0)
+                {
+                    ApartamentoModel oAp = new ApartamentoModel();
+                    oMsgModel.ativo = "S";
+                    oMsgModel.status = "NL";
+                    oMsgModel.mensagem = txtDescription.Text;
+                    oMsgModel.assunto = txtAssunto.Text;
+                    oAp.apartamento = Convert.ToInt32(drpMsg.SelectedItem.Value);
+                    oAp.bloco = Convert.ToInt32(drpBloco.SelectedItem.Value);
+                    oMsgModel.oAp = oAp;
+
+
+                    try
+                    {
+                        oMensagemBLL.enviaMensagemMorador(oMsgModel);
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+                }
+                else
+                {
+                    lblMsg.Text = "Não existem morador cadastrado para o Bloco/Apartamento!";
+
+                }
+
+            }
+            else
+            {
+                lblMsg.Text = "Para envio da mensagem escolher o bloco/Apartamento!";
+
+            }
+
         }
     }
 }

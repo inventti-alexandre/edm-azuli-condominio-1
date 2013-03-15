@@ -38,13 +38,13 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server"><br /><br /><br /><br /><br />
- <table style="text-align: justify; height: 93px;">
+ <table style="text-align: justify; height: 101px; width: 941px;">
             <tr>
                 <td align="center">
-                    <img src="images/azuli.jpg" style="width: 89%; height: 97px" />         
+                    <img src="images/azuli.jpg" style="width: 74%; height: 91px" />         
                 </td>
                 <td align="center">
-             <h1> &nbsp; Senhor(ª) <asp:Label ID="lblMorador" 
+             <h1 align="left"> &nbsp; Senhor(ª) <asp:Label ID="lblMorador" 
                         runat="server" ForeColor="Blue"></asp:Label>&nbsp;<span class="style7">- Você tem
                  <asp:LinkButton ID="lnkBtnMsg" runat="server" Font-Bold="True" 
                      Font-Size="Medium" ForeColor="#009900" onclick="lnkBtnMsg_Click1">0</asp:LinkButton>

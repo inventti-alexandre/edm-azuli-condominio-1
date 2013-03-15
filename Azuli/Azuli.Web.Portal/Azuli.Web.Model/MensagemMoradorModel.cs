@@ -8,6 +8,7 @@ namespace Azuli.Web.Model
     public class MensagemMoradorModel
     {
         public int codigoMsg {get;set;}
+        public string assunto { get; set; }
         public ApartamentoModel oAp;
         public string mensagem { get; set; }
         public string status { get; set;}

@@ -36,7 +36,7 @@
 
    
     
-   <center><asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label> </center>
+ 
    <fieldset class="login">
    <legend class="AlternatingRowStyle">Enviar mensagem para Morador:</legend>
    <br />
@@ -85,7 +85,7 @@
                                 <asp:Label ID="lblAssunto" runat="server" Font-Bold="True" Text="Assunto:"></asp:Label>
                             </td>
                             <td class="style3">
-                                <asp:TextBox ID="TextBox1" runat="server" Height="16px" Width="593px"></asp:TextBox>
+                                <asp:TextBox ID="txtAssunto" runat="server" Height="16px" Width="593px"></asp:TextBox>
                             </td>
                             <td class="style2">
                                 &nbsp;</td>
@@ -123,12 +123,13 @@
                                 <asp:SqlDataSource ID="SqlDataSourceBloco" runat="server" 
                                     ConnectionString="<%$ ConnectionStrings:azulli %>" SelectCommand="LISTA_BLOCO" 
                                     SelectCommandType="StoredProcedure"></asp:SqlDataSource>
-                    <asp:Button ID="btnMensagem" runat="server" CssClass="botao" Text="Enviar mensagem" 
+               <center>     
+                   <asp:Button ID="btnMensagem" runat="server" CssClass="botao" Text="Enviar mensagem" 
                         Width="150px"  
-                        ValidationGroup="validaDescricao" />
+                        ValidationGroup="validaDescricao" onclick="btnMensagem_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp; 
                     <asp:Button ID="btnLimpar" runat="server" CssClass="botao" 
-                        Text="Limpar Campos" />
+                        Text="Limpar Campos" /></center>
                 </td>
             </tr>
         </table>
@@ -136,7 +137,8 @@
       <br />
       <br />
      </center><br />
+      <asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label> 
     </div></fieldset>
 
-    
+      <center> </center>
 </asp:Content>

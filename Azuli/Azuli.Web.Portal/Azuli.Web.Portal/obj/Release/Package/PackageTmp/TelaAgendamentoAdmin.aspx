@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteAdmin.Master" AutoEventWireup="true"
-    CodeBehind="TelaAgendamentoAdmin.aspx.cs" Inherits="Azuli.Web.Portal.TelaAgendamentoAdmin" %>
+    CodeBehind="TelaAgendamentoAdmin.aspx.cs" Inherits="Azuli.Web.Portal.TelaAgendamentoAdmin" EnableEventValidation="false" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
@@ -107,7 +107,7 @@
                         <br />
                         <br />
                         <asp:FormView ID="formVwChurrasco" runat="server" CellPadding="4" ForeColor="#333333"
-                            Width="125px" CssClass="style3" AllowPaging="True" Height="76px" EmptyDataText="Não existem Reservas da Churrasqueira neste mês!!"
+                            Width="125px" CssClass="style3" AllowPaging="True" Height="76px" EmptyDataText="Você não tem Reservas para Churrasqueira neste mês!!"
                             OnPageIndexChanging="formVwChurrasco_PageIndexChanging">
                             <EditRowStyle BackColor="#2461BF" />
                             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -141,7 +141,7 @@
                     </td>
                     <td align="center" class="style12">
                         <asp:FormView ID="frvSalaoFesta" runat="server" CellPadding="4" ForeColor="#333333"
-                            Width="128px" CssClass="style3" AllowPaging="True" Height="73px" EmptyDataText="Não existem Reservas de salão de Festa neste mês!!"
+                            Width="128px" CssClass="style3" AllowPaging="True" Height="73px" EmptyDataText="Você não tem Reservas para o salão de Festa neste mês!!"
                             OnPageIndexChanging="frvSalaoFesta_PageIndexChanging">
                             <EditRowStyle BackColor="#2461BF" />
                             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -177,8 +177,8 @@
     </div>
     <div id="dvOpcao" runat="server">
         <fieldset class="login">
-            <legend>Selecione abaixo a reserva disponivel na data escolhida:</legend>
-            <table style="width: 496px">
+            <legend dir="ltr">O que deseja Alugar :</legend>
+            <table style="width: 743px; height: 104px;" dir="ltr">
                 <tr>
                     <td class="style5">
                         <div id="dvData" runat="server" style="border-width: thin; border-style: groove;
@@ -187,19 +187,22 @@
                             <asp:Label ID="lblData" runat="server" Font-Bold="True"></asp:Label></div>
                         &nbsp;
                     </td>
-                    <td class="style15">
-                        &nbsp;
+                </tr>
+                <tr>
+                    <td class="style5" dir="ltr">
+                        <asp:CheckBox ID="chkSalaoFesta" runat="server" Text="Salão de Festas" Font-Bold="True"
+                            EnableTheming="True" />
                     </td>
                 </tr>
                 <tr>
                     <td class="style5">
-                        <asp:CheckBox ID="chkSalaoFesta" runat="server" Text="Salão de Festas" Font-Bold="True"
-                            EnableTheming="True" />
                         <br />
                         <asp:CheckBox ID="chkChurrascaria" runat="server" Text="Área de churrasco" Font-Bold="True" />
                     </td>
-                    <td class="style15">
-                        &nbsp;
+                </tr>
+                <tr>
+                    <td class="style5" align="center">
+                       <center> <asp:Label ID="lblReserva" runat="server" CssClass="failureNotification"></asp:Label></center>
                     </td>
                 </tr>
             </table>
@@ -226,7 +229,7 @@
                      
                      <ContentTemplate>
 
-                          <asp:Timer ID="UpdateTimer"  Interval="3000"  ontick="UpdateTimer_Tick1" 
+                          <asp:Timer ID="UpdateTimer"  Interval="5000"  ontick="UpdateTimer_Tick1" 
                               runat="server" />
                               
                         

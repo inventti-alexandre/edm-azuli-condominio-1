@@ -39,6 +39,35 @@ namespace Azuli.Web.DAO
         }
 
 
+        public void enviaMensagemMorador(Model.MensagemMoradorModel oMensagem)
+        {
+            string clausulaSQL = "ENVIA_MENSAGEM_MORADOR";
+
+            try
+            {
+
+                SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
+               
+                comandoSQL.Parameters.AddWithValue("@BLOCO", oMensagem.oAp.bloco);
+                comandoSQL.Parameters.AddWithValue("@AP", oMensagem.oAp.apartamento);
+                comandoSQL.Parameters.AddWithValue("@MENSAGEM", oMensagem.mensagem);
+                comandoSQL.Parameters.AddWithValue("@STATUS", oMensagem.status);
+                comandoSQL.Parameters.AddWithValue("@ATIVO", oMensagem.ativo);
+                comandoSQL.Parameters.AddWithValue("@ASSUNTO", oMensagem.assunto);
+
+
+                 ExecutaComando(comandoSQL);
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
         public listaMensagemMorador listaMensagemMorador(DataTable dt)
         {
             listaMensagemMorador oListMensagemMorador = new listaMensagemMorador();
@@ -57,6 +86,7 @@ namespace Azuli.Web.DAO
                 oMensagem.data_inicio = Convert.ToDateTime(dr["DATA_INICIO"]);
                 oMensagem.data_fim = Convert.ToDateTime(dr["DATA_FIM"]);
                 oMensagem.qtdMsg = Convert.ToInt32(dr["QTDMGS"]);
+                oMensagem.assunto = dr["ASSUNTO"].ToString();
                 oMensagem.oAp = oPropri;
 
                 oListMensagemMorador.Add(oMensagem);
