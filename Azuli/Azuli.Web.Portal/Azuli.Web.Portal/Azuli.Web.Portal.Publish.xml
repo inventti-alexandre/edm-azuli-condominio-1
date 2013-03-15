@@ -2,8 +2,7 @@
 <publishData>
   <publishProfile publishUrl="http://localhost/AzulliPortal" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
     <file relUrl="images/azuli.jpg" publishTime="12/07/2012 10:16:45" />
-    <file relUrl="LoginAzulli.aspx" publishTime="12/11/2012 12:22:59" />
-    <file relUrl="images/amarelo.jpg" publishTime="12/07/2012 10:16:45" />
+    <file relUrl="TelaAgendamentoAdmin.aspx" publishTime="12/07/2012 12:33:52" />
     <file relUrl="Global.asax" publishTime="12/07/2012 10:16:49" />
     <file relUrl="images/festa.jpg" publishTime="12/07/2012 10:16:45" />
     <file relUrl="Site.Master" publishTime="12/11/2012 12:22:00" />
@@ -11,13 +10,13 @@
     <file relUrl="telaAgendamento.aspx" publishTime="12/07/2012 12:33:36" />
     <file relUrl="About.aspx" publishTime="12/07/2012 10:16:45" />
     <file relUrl="Scripts/jquery-1.4.1.js" publishTime="12/07/2012 10:16:49" />
-    <file relUrl="images/vermelho.jpg" publishTime="12/07/2012 10:16:45" />
+    <file relUrl="bin/Azuli.Web.Portal.pdb" publishTime="12/11/2012 12:22:11" />
     <file relUrl="bin/Azuli.Web.Model.dll" publishTime="12/11/2012 12:22:06" />
+    <file relUrl="minhaReservas.aspx" publishTime="12/07/2012 10:16:44" />
     <file relUrl="bin/Azuli.Web.Portal.dll" publishTime="12/11/2012 12:22:11" />
-    <file relUrl="Web.sitemap" publishTime="12/07/2012 10:16:53" />
+    <file relUrl="WelcomeAdmin.aspx" publishTime="12/07/2012 10:16:48" />
     <file relUrl="Account/Web.config" publishTime="12/07/2012 10:16:45" />
     <file relUrl="bin/Azuli.Web.Business.pdb" publishTime="12/11/2012 12:22:09" />
-    <file relUrl="WelcomeAdmin.aspx" publishTime="12/07/2012 10:16:48" />
     <file relUrl="bin/Azuli.Web.DAO.pdb" publishTime="12/11/2012 12:22:09" />
     <file relUrl="Scripts/jquery-1.4.1.min.js" publishTime="12/07/2012 10:16:49" />
     <file relUrl="bin/AjaxControlToolkit.DLL" publishTime="12/07/2012 10:16:47" />
@@ -28,20 +27,21 @@
     <file relUrl="Default.aspx" publishTime="12/07/2012 10:16:49" />
     <file relUrl="Account/ChangePasswordSuccess.aspx" publishTime="12/07/2012 10:16:45" />
     <file relUrl="images/print.jpg" publishTime="12/07/2012 10:16:45" />
-    <file relUrl="Account/Register.aspx" publishTime="12/07/2012 10:16:45" />
-    <file relUrl="bin/Azuli.Web.Portal.pdb" publishTime="12/11/2012 12:22:11" />
+    <file relUrl="images/vermelho.jpg" publishTime="12/07/2012 10:16:45" />
+    <file relUrl="Web.sitemap" publishTime="12/07/2012 10:16:53" />
     <file relUrl="images/ok.jpg" publishTime="12/07/2012 10:16:45" />
-    <file relUrl="Scripts/ScriptAzuli.js" publishTime="12/07/2012 10:16:49" />
+    <file relUrl="LoginAzulli.aspx" publishTime="12/11/2012 12:22:59" />
     <file relUrl="Account/ChangePassword.aspx" publishTime="12/07/2012 10:16:45" />
-    <file relUrl="ErrorPage.aspx" publishTime="12/07/2012 10:16:49" />
     <file relUrl="bin/Azuli.Web.DAO.dll" publishTime="12/11/2012 12:22:09" />
-    <file relUrl="TelaAgendamentoAdmin.aspx" publishTime="12/07/2012 12:33:52" />
     <file relUrl="Web.config" publishTime="12/11/2012 12:26:38" />
     <file relUrl="SiteAdmin.Master" publishTime="12/11/2012 12:20:54" />
     <file relUrl="bin/Azuli.Web.Model.pdb" publishTime="12/11/2012 12:22:05" />
     <file relUrl="resetSenha.aspx" publishTime="12/07/2012 10:16:48" />
     <file relUrl="images/churrasco.jpg" publishTime="12/07/2012 10:16:45" />
-    <file relUrl="minhaReservas.aspx" publishTime="12/07/2012 10:16:44" />
+    <file relUrl="ErrorPage.aspx" publishTime="12/07/2012 10:16:49" />
+    <file relUrl="Scripts/ScriptAzuli.js" publishTime="12/07/2012 10:16:49" />
+    <file relUrl="images/amarelo.jpg" publishTime="12/07/2012 10:16:45" />
+    <file relUrl="Account/Register.aspx" publishTime="12/07/2012 10:16:45" />
     <file relUrl="Scripts/jquery-1.4.1-vsdoc.js" publishTime="12/07/2012 10:16:49" />
   </publishProfile>
 </publishData>
