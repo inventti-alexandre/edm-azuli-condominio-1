@@ -8,6 +8,6 @@
         Sobre
     </h2>
     <p>
-        Sistema gerenciamento de condominio.
+        Sistema gerenciamento de condominio home.
     </p>
 </asp:Content>
