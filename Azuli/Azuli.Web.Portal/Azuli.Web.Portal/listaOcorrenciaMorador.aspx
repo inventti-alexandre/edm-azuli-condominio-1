@@ -29,7 +29,7 @@
             <br />
             <asp:DataList ID="DataList1" runat="server"
                 EnableViewState="False" Style="margin-right: 1px" Width="508px" 
-                CssClass="SelectedRowStyle" >
+                CssClass="GridView" >
                 <HeaderTemplate>
                   <asp:Label ID="lblSemregistro" runat="server" Text="Ocorrências Abertas" Visible='<%#(DataList1.Items.Count > 0) %>'></asp:Label>
                 </HeaderTemplate>

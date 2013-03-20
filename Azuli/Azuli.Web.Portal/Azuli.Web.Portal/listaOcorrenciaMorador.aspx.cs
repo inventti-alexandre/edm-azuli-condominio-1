@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Azuli.Web.Model;
 using Azuli.Web.Business;
+using System.Globalization;
 
 namespace Azuli.Web.Portal
 {
@@ -38,14 +39,31 @@ namespace Azuli.Web.Portal
         public void preencheMeses()
         {
             string mesCorrente = "";
-            drpMeses.DataSource = Enum.GetNames(typeof(Util.Util.meses));
+            //drpMeses.DataSource = Enum.GetNames(typeof(Util.Util.meses));
             DateTime data = DateTime.Now;
 
+            int meses = 0;
+
+            meses = data.Month;
+
+            
             mesCorrente = System.Globalization.DateTimeFormatInfo.CurrentInfo.GetMonthName(data.Month);
 
             drpMeses.Items.Add(mesCorrente); //drpMeses.Items.IndexOf(drpMeses.Items.FindByValue(data.Month.ToString()));
+
+            Dictionary<int, string> dicionarioMeses = new Dictionary<int, string>();
+
+            for (int i = 1 ; i <= meses; i++)
+            {
+                dicionarioMeses.Add(i, CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(i).ToUpper());
+            }
+            drpMeses.DataTextField = "Value";
+            drpMeses.DataValueField = "Key";
+            drpMeses.DataSource = dicionarioMeses;
             drpMeses.DataBind();
         }
+
+      
 
         public void listaOcorrenciaMes()
         {
@@ -60,39 +78,6 @@ namespace Azuli.Web.Portal
             try
             {
 
-
-                //PagedDataSource pg = new PagedDataSource();
-                //pg.AllowPaging = true;
-
-                //pg.PageSize = 12;
-
-                //int atual = 0;
-                //if (Request.QueryString["page"] != null)
-                //{
-                //    atual = Convert.ToInt32(Request.QueryString["page"]);
-                //}
-                //else
-                //{
-                //    atual = 1;
-                //    pg.CurrentPageIndex = atual - 1;
-
-                //}
-
-                //if (!pg.IsFirstPage)
-                //{
-                //    hpAnterior.NavigateUrl = Request.CurrentExecutionFilePath + "?page=" + Convert.ToString(atual - 1);
-                     
-                //}
-                //if (!pg.IsLastPage)
-                //{
-                //    hpProximo.NavigateUrl = Request.CurrentExecutionFilePath + "?page=" + Convert.ToString(atual + 1);
-                    
-                //}
-
-                //if (atual == 1)
-                //{
-                //    hpAnterior.Visible = false;
-                //}
 
 
 
