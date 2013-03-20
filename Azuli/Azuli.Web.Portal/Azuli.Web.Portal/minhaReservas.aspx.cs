@@ -109,8 +109,8 @@ namespace Azuli.Web.Portal
         protected void grdAgendaMorador_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             
-            const string  salaoFesta = "S";
-            const string churrasqueira = "N";
+            const bool  salaoFesta = true;
+            const bool churrasqueira = false;
             DateTime dataAgendamento = new DateTime();
             string bloco = "";
             string ap = "";
@@ -165,8 +165,8 @@ namespace Azuli.Web.Portal
 
         protected void grdChurras_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            const string salaoFesta = "N";
-            const string churrasqueira = "S";
+            const bool salaoFesta = false;
+            const bool churrasqueira = true;
             DateTime dataAgendamento = new DateTime();
             string bloco = "";
             string ap = "";

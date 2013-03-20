@@ -75,16 +75,16 @@ namespace Azuli.Web.Portal
                 if (e.Day.Date ==item.dataAgendamento)
                 {
 
-                    if (item.salaoChurrasco.Trim() == "S" & item.salaoFesta.Trim() == "N")
+                    if (item.salaoChurrasco == true & item.salaoFesta == false)
                     {
                         e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#FFFF01");
                     }
-                    else if (item.salaoChurrasco.Trim() == "N" & item.salaoFesta.Trim() == "S")
+                    else if (item.salaoChurrasco == false & item.salaoFesta == true)
                     {
                         e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#BADEF4");
                        
                     }
-                    else if (item.salaoChurrasco.Trim() == "S" & item.salaoFesta.Trim() == "S")
+                    else if (item.salaoChurrasco == true & item.salaoFesta == true)
                     {
 
                            e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#AA0708");
@@ -112,16 +112,19 @@ namespace Azuli.Web.Portal
 
             List<AgendaModel> oLista = validaData(Calendar1.SelectedDate);
             lblData.Text = Calendar1.SelectedDate.ToString("dd/MM/yyyy");
+
+            chkSalaoFesta.Visible = true;
+            chkChurrascaria.Visible = true;
             
                 foreach (var item in oLista)
                 {
-                    if (item.salaoChurrasco.Trim() == "S" & item.salaoFesta.Trim() == "N")
+                    if (item.salaoChurrasco == true & item.salaoFesta  == false)
                     {
                         chkChurrascaria.Visible = false;
                         chkSalaoFesta.Visible = true;
                         chkSalaoFesta.Checked = true;
                     }
-                    else if (item.salaoChurrasco.Trim() == "N" & item.salaoFesta.Trim() == "S")
+                    else if (item.salaoChurrasco == false & item.salaoFesta == true)
                     {
 
                         chkSalaoFesta.Visible = false;
@@ -129,7 +132,15 @@ namespace Azuli.Web.Portal
                         chkChurrascaria.Checked = true;
 
                     }
-                    else if (item.salaoChurrasco.Trim() == "S" & item.salaoFesta.Trim() == "S")
+                    else if (item.salaoChurrasco == false & item.salaoFesta == false)
+                    {
+
+                        chkSalaoFesta.Visible = false;
+                        chkChurrascaria.Visible = false;
+                        chkChurrascaria.Checked = false;
+
+                    }
+                    else if (item.salaoChurrasco == true & item.salaoFesta == true)
                     {
                         chkSalaoFesta.Visible = true;
                         chkSalaoFesta.Visible = true;
@@ -158,29 +169,30 @@ namespace Azuli.Web.Portal
             if (chkChurrascaria.Checked || chkSalaoFesta.Checked)
             {
 
-                string salaoFesta = "";
-                string churrasco = "";
+                //bool salaoFesta = false;
+                //bool churrasco = false;
 
-                if (chkSalaoFesta.Checked && chkChurrascaria.Checked)
-                {
-                    churrasco = "S";
-                    salaoFesta = "S";
-                }
-                else if (chkSalaoFesta.Checked && !chkChurrascaria.Checked)
-                {
-                    salaoFesta = "S";
-                    churrasco = "N";
-                }
+                //if (chkSalaoFesta.Checked && chkChurrascaria.Checked)
+                //{
+                //    churrasco = true;
+                //    salaoFesta = true;
+                //}
+                //else if (chkSalaoFesta.Checked && !chkChurrascaria.Checked)
+                //{
+                //    salaoFesta = true;
+                //    churrasco = false;
+                //}
 
-                else if (!chkSalaoFesta.Checked && chkChurrascaria.Checked)
-                {
-                    churrasco = "S";
-                    salaoFesta = "N";
-                }
+                //else if (!chkSalaoFesta.Checked && chkChurrascaria.Checked)
+                //{
+                //    churrasco = true;
+                //    salaoFesta = false;
+                //}
 
 
-                oAgendaModel.salaoChurrasco = churrasco;
-                oAgendaModel.salaoFesta = salaoFesta;
+
+                oAgendaModel.salaoChurrasco = chkChurrascaria.Checked;
+                oAgendaModel.salaoFesta = chkSalaoFesta.Checked;
                 oApModel.apartamento = int.Parse(Session["AP"].ToString());
                 oApModel.bloco = int.Parse(Session["Bloco"].ToString());
 
@@ -307,8 +319,8 @@ namespace Azuli.Web.Portal
 
 
 
-            const string salaoFesta = "N";
-            const string churrasqueira = "S";
+            const bool salaoFesta = false;
+            const bool churrasqueira = true;
             DateTime dataAgendamento = new DateTime();
             string bloco = "";
             string ap = "";
@@ -343,8 +355,8 @@ namespace Azuli.Web.Portal
            
 
 
-                const string  salaoFesta = "S";
-                const string churrasqueira = "N";
+                const bool  salaoFesta = true;
+                const bool churrasqueira = false;
                 DateTime dataAgendamento = new DateTime();
                 string bloco = "";
                 string ap = "";

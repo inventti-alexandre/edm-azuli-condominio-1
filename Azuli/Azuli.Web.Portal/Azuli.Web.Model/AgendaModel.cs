@@ -9,8 +9,8 @@ namespace Azuli.Web.Model
     {
         public DateTime dataAgendamento { get; set;}
         public ApartamentoModel ap { get; set;}
-        public string salaoFesta { get; set; }
-        public string salaoChurrasco { get; set;}
+        public bool salaoFesta { get; set; }
+        public bool salaoChurrasco { get; set;}
     }
 
     public class listAgenda : List<AgendaModel> { };

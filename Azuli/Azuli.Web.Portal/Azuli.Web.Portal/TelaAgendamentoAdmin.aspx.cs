@@ -79,16 +79,16 @@ namespace Azuli.Web.Portal
                 if (e.Day.Date ==item.dataAgendamento)
                 {
 
-                    if (item.salaoChurrasco.Trim() == "S" & item.salaoFesta.Trim() == "N")
+                    if (item.salaoChurrasco == true & item.salaoFesta == false)
                     {
                         e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#FFFF01");
                     }
-                    else if (item.salaoChurrasco.Trim() == "N" & item.salaoFesta.Trim() == "S")
+                    else if (item.salaoChurrasco == false & item.salaoFesta == true)
                     {
                         e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#BADEF4");
 
                     }
-                    else if (item.salaoChurrasco.Trim() == "S" & item.salaoFesta.Trim() == "S")
+                    else if (item.salaoChurrasco == true & item.salaoFesta  == true)
                     {
 
                         e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#AA0708");
@@ -120,13 +120,13 @@ namespace Azuli.Web.Portal
            
                 foreach (var item in oLista)
                 {
-                    if (item.salaoChurrasco.Trim() == "S" & item.salaoFesta.Trim() == "N")
+                    if (item.salaoChurrasco == true & item.salaoFesta == false)
                     {
                         chkChurrascaria.Visible = false;
                         chkSalaoFesta.Visible = true;
                         chkSalaoFesta.Checked = true;
                     }
-                    else if (item.salaoChurrasco.Trim() == "N" & item.salaoFesta.Trim() == "S")
+                    else if (item.salaoChurrasco  == false & item.salaoFesta == true)
                     {
 
                         chkSalaoFesta.Visible = false;
@@ -134,7 +134,7 @@ namespace Azuli.Web.Portal
                         chkChurrascaria.Checked = true;
 
                     }
-                    else if (item.salaoChurrasco.Trim() == "S" & item.salaoFesta.Trim() == "S")
+                    else if (item.salaoChurrasco == true & item.salaoFesta == true)
                     {
                         chkSalaoFesta.Visible = true;
                         chkSalaoFesta.Visible = true;
@@ -170,24 +170,24 @@ namespace Azuli.Web.Portal
             if (chkChurrascaria.Checked || chkSalaoFesta.Checked)
             {
 
-                string salaoFesta = "";
-                string churrasco = "";
+                bool salaoFesta = false;
+                bool churrasco = false;
 
                 if (chkSalaoFesta.Checked && chkChurrascaria.Checked)
                 {
-                    churrasco = "S";
-                    salaoFesta = "S";
+                    churrasco = true;
+                    salaoFesta = true;
                 }
                 else if (chkSalaoFesta.Checked && !chkChurrascaria.Checked)
                 {
-                    salaoFesta = "S";
-                    churrasco = "N";
+                    salaoFesta = true;
+                    churrasco = false; ;
                 }
 
                 else if (!chkSalaoFesta.Checked && chkChurrascaria.Checked)
                 {
-                    churrasco = "S";
-                    salaoFesta = "N";
+                    churrasco = true;
+                    salaoFesta = false;
                 }
 
 

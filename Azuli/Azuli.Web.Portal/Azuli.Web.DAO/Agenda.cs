@@ -45,10 +45,11 @@ namespace Azuli.Web.DAO
         }
 
         
-        public void cancelaAgendamentoMorador(DateTime dataAgendamento, ApartamentoModel ap, string festa, string churras)
+        public void cancelaAgendamentoMorador(DateTime dataAgendamento, ApartamentoModel ap, bool festa, bool churras)
         {
             string clausulaSQL = "CANCELA_RESERVA_MORADOR";
 
+           
             try
             {
                 SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
@@ -197,8 +198,8 @@ namespace Azuli.Web.DAO
                 AgendaModel oAgendaModel = new AgendaModel();
 
                 oAgendaModel.dataAgendamento = Convert.ToDateTime(dr["DATA_AGENDAMENTO"]);
-                oAgendaModel.salaoChurrasco = dr["SALAO_CHURRASCO"].ToString();
-                oAgendaModel.salaoFesta = dr["SALAO_FESTA"].ToString();
+                oAgendaModel.salaoChurrasco = Convert.ToBoolean(dr["SALAO_CHURRASCO"]);
+                oAgendaModel.salaoFesta = Convert.ToBoolean(dr["SALAO_FESTA"]);
                 oAgendaModel.ap = new ApartamentoModel();
 
                 if (dr.Table.Columns.Contains("PROPRIETARIO_AP")) 

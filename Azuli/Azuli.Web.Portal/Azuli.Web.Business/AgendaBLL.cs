@@ -118,7 +118,7 @@ namespace Azuli.Web.Business
 
       
 
-        public void cancelaAgendamentoMorador(DateTime dataAgendamento, ApartamentoModel ap, string festa, string churras)
+        public void cancelaAgendamentoMorador(DateTime dataAgendamento, ApartamentoModel ap, bool festa, bool churras)
         {
             try
             {
