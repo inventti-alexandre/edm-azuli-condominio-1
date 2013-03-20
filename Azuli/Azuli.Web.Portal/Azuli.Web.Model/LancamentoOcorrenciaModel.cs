@@ -18,6 +18,7 @@ namespace Azuli.Web.Model
         public DateTime dataCancelamento { get; set; }
         public string imagemEvidencia { get;set; }
         public OcorrenciaModel oOcorrencia { get; set; }
+        public int codigoOcorrencia { get; set; }
     }
 
     public class listaLancamentoOcorrencia : List<LancamentoOcorrenciaModel> { }
