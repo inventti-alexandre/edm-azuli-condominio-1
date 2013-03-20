@@ -118,33 +118,48 @@ namespace Azuli.Web.Portal
             
                 foreach (var item in oLista)
                 {
-                    if (item.salaoChurrasco == true & item.salaoFesta  == false)
-                    {
-                        chkChurrascaria.Visible = false;
-                        chkSalaoFesta.Visible = true;
-                        chkSalaoFesta.Checked = true;
-                    }
-                    else if (item.salaoChurrasco == false & item.salaoFesta == true)
-                    {
 
-                        chkSalaoFesta.Visible = false;
+                    if (item.salaoChurrasco == false && item.salaoFesta == false)
+                    {
+                        chkSalaoFesta.Visible = true;
                         chkChurrascaria.Visible = true;
-                        chkChurrascaria.Checked = true;
-
                     }
-                    else if (item.salaoChurrasco == false & item.salaoFesta == false)
+                    else
                     {
 
-                        chkSalaoFesta.Visible = false;
-                        chkChurrascaria.Visible = false;
-                        chkChurrascaria.Checked = false;
+                        chkChurrascaria.Visible = item.salaoFesta;
+                        chkSalaoFesta.Visible = item.salaoChurrasco; 
+                    }
 
-                    }
-                    else if (item.salaoChurrasco == true & item.salaoFesta == true)
-                    {
-                        chkSalaoFesta.Visible = true;
-                        chkSalaoFesta.Visible = true;
-                    }
+
+
+                    //if (item.salaoChurrasco == true & item.salaoFesta  == false)
+                    //{
+                    //    chkChurrascaria.Visible = false;
+                    //    chkSalaoFesta.Visible = true;
+                    //    chkSalaoFesta.Checked = true;
+                    //}
+                    //else if (item.salaoChurrasco == false & item.salaoFesta == true)
+                    //{
+
+                    //    chkSalaoFesta.Visible = false;
+                    //    chkChurrascaria.Visible = true;
+                    //    chkChurrascaria.Checked = true;
+
+                    //}
+                    //else if (item.salaoChurrasco == false & item.salaoFesta == false)
+                    //{
+
+                    //    chkSalaoFesta.Visible = false;
+                    //    chkChurrascaria.Visible = false;
+                    //    chkChurrascaria.Checked = false;
+
+                    //}
+                    //else if (item.salaoChurrasco == true & item.salaoFesta == true)
+                    //{
+                    //    chkSalaoFesta.Visible = true;
+                    //    chkSalaoFesta.Visible = true;
+                    //}
                 }
 
                 lblMsgData.Visible = false;
