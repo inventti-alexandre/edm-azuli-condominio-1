@@ -86,6 +86,23 @@ namespace Azuli.Web.Portal
                 dvFesta.Visible = false;
                 lblMsg.Visible = false;
             }
+            else if (drpSalao.SelectedItem.Value == "1")
+            {
+                grdChurras.DataSource = oAgenda.listaReservaByMorador(oAP, oAgendaModel);
+                grdChurras.DataBind();
+              
+                dvFesta.Visible = true;
+                lblMsg.Visible = false;
+
+            
+                dvChurrasco.Visible = true;
+                grdAgendaMorador.DataSource = oAgenda.listaReservaByMoradorFesta(oAP, oAgendaModel);
+                grdAgendaMorador.DataBind();
+                lblMsg.Visible = false;
+
+
+            }
+
         }
 
 
