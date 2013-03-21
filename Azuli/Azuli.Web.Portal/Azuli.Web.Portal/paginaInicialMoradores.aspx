@@ -41,7 +41,7 @@
  <table style="text-align: justify; height: 101px; width: 941px;">
             <tr>
                 <td align="center">
-                    <img src="images/azuli.jpg" style="width: 74%; height: 91px" />         
+                    <img src="images/azuli.jpg" style="width: 69%; height: 81px" />         
                 </td>
                 <td align="center">
              <h1 align="left"> &nbsp; Senhor(ª) <asp:Label ID="lblMorador" 

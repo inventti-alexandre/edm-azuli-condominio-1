@@ -358,13 +358,12 @@ div.accountInfo
 .loginDisplay
 {
     
-    
+       display: inherit;
     text-align: left;
-    padding: 30px;
-    color: black;
-    font-weight: bold;
-    height: 1px;
-    width: 534px;
+    padding: 1px;
+    color: #4884CD;
+    height: auto;
+    width: 310px;
 }
 
 .loginDisplay a:link
