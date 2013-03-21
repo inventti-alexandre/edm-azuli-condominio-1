@@ -51,8 +51,7 @@ namespace Azuli.Web.DAO
             {
                 LancamentoOcorrenciaModel oLancamento = new LancamentoOcorrenciaModel();
                 OcorrenciaModel oOcorrencia = new OcorrenciaModel();
-                oOcorrencia.codigoOcorencia = Convert.ToInt32(itemOcorrencia["OCORRENCIA"]);
-                oLancamento.oOcorrencia = oOcorrencia;
+                oLancamento.codigoOcorrencia = Convert.ToInt32(itemOcorrencia["OCORRENCIA"]);
                 oLancamento.dataOcorrencia = Convert.ToDateTime(itemOcorrencia["DATA_OCORRENCIA"]);
                 oLancamento.statusOcorrencia = itemOcorrencia["STATUS"].ToString();
                 oLancamento.ocorrenciaLancamento = itemOcorrencia["DESCRICAO"].ToString();

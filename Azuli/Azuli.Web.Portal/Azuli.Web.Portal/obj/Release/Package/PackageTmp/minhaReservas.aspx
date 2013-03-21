@@ -43,12 +43,13 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </td>
                 <td>
-                    <asp:Label ID="lbSalao" runat="server" Font-Bold="True" Text="Salão de:"></asp:Label>
+                    <asp:Label ID="lbSalao" runat="server" Font-Bold="True" Text="Área de:"></asp:Label>
                     <asp:DropDownList ID="drpSalao" runat="server" CssClass="btGeral" Font-Bold="True"
                         Height="19px" Width="127px" AutoPostBack="True" OnSelectedIndexChanged="drpSalao_SelectedIndexChanged">
                         <asp:ListItem Value="0">Selecione</asp:ListItem>
                         <asp:ListItem>Festa</asp:ListItem>
                         <asp:ListItem>Churrasqueira</asp:ListItem>
+                        <asp:ListItem Value="1">todos</asp:ListItem>
                     </asp:DropDownList>
                 </td>
                 <td>
@@ -63,14 +64,14 @@
         <div id="dvFesta" runat="server">
             
             &nbsp;<br />
+            <asp:Label ID="lblAreaFesta" runat="server" Text="Área de Festa Alugada" 
+                CssClass="btGeral"></asp:Label> <br />
 &nbsp;<asp:GridView ID="grdAgendaMorador" runat="server" EmptyDataText="Você não tem reserva para o salão de festa nesta data"
-                AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None"
-                BorderWidth="1px" CellPadding="3" GridLines="Vertical" Font-Bold="False" 
+                AutoGenerateColumns="False" Font-Bold="False" 
                 onrowcommand="grdAgendaMorador_RowCommand" 
                 DataKeyNames="dataAgendamento" 
                 onrowdeleting="grdAgendaMorador_RowDeleting" 
                 onrowdatabound="grdAgendaMorador_RowDataBound" CssClass="GridView" >
-                <AlternatingRowStyle BackColor="#DCDCDC" />
                 <Columns>
                     <asp:BoundField DataField="dataAgendamento" HeaderText="Data de Agendamento" DataFormatString="{0:dd/MM/yyyy}" />
                     <asp:TemplateField HeaderText="Bloco">
@@ -93,28 +94,21 @@
                     <asp:CommandField ShowDeleteButton="True" ButtonType="Image" DeleteImageUrl="~/images/delete.png" />
                 </Columns>
                 <EmptyDataRowStyle Font-Bold="True" ForeColor="#CC3300" />
-                <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-                <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-                <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
-                <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
-                <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                <SortedAscendingHeaderStyle BackColor="#0000A9" />
-                <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                <SortedDescendingHeaderStyle BackColor="#000065" />
             </asp:GridView>
+            <br />
             &nbsp;
+            <br />
         </div>
     </center>
     <center>
         <div id="dvChurrasco" runat="server">
-            &nbsp;<asp:GridView ID="grdChurras" runat="server" AutoGenerateColumns="False" BackColor="White"
-                BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical"
+        <asp:Label ID="Label3" runat="server" Text="Área de Churrasqueira Alugada" 
+                CssClass="btGeral"></asp:Label><br />
+            &nbsp;<asp:GridView ID="grdChurras" runat="server" AutoGenerateColumns="False"
                 EmptyDataText="Você não tem reserva de churrasqueira para esta data" 
                 onrowcommand="grdChurras_RowCommand" 
                 onrowdeleting="grdChurras_RowDeleting" DataKeyNames="dataAgendamento" 
                 CssClass="GridView">
-                <AlternatingRowStyle BackColor="#DCDCDC" />
                 <Columns>
                     <asp:BoundField DataField="dataAgendamento" HeaderText="Data de Agendamento" DataFormatString="{0:dd/MM/yyyy}" />
                     <asp:TemplateField HeaderText="Bloco">
@@ -137,15 +131,6 @@
                     <asp:CommandField ShowDeleteButton="True" ButtonType="Image" DeleteImageUrl="~/images/delete.png" />
                 </Columns>
                 <EmptyDataRowStyle Font-Bold="True" ForeColor="#CC3300" />
-                <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-                <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-                <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
-                <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
-                <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                <SortedAscendingHeaderStyle BackColor="#0000A9" />
-                <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                <SortedDescendingHeaderStyle BackColor="#000065" />
             </asp:GridView>
             <br />
             <br />

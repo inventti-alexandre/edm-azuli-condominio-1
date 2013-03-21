@@ -60,7 +60,9 @@
     <Content Include="AreaAdministrativa.aspx" />
     <Content Include="consultaBalancete.aspx" />
     <Content Include="consultaCircular.aspx" />
+    <Content Include="detalheOcorrencia.aspx" />
     <Content Include="enviaMensagemMorador.aspx" />
+    <Content Include="images\ico_search.gif" />
     <Content Include="images\word.gif" />
     <Content Include="publicarCircular.aspx" />
     <Content Include="consultaAgendasAdmin.aspx" />
@@ -145,6 +147,13 @@
     </Compile>
     <Compile Include="consultaCircular.aspx.designer.cs">
       <DependentUpon>consultaCircular.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="detalheOcorrencia.aspx.cs">
+      <DependentUpon>detalheOcorrencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="detalheOcorrencia.aspx.designer.cs">
+      <DependentUpon>detalheOcorrencia.aspx</DependentUpon>
     </Compile>
     <Compile Include="enviaMensagemMorador.aspx.cs">
       <DependentUpon>enviaMensagemMorador.aspx</DependentUpon>
