@@ -209,13 +209,13 @@ first child of the left and right table columns */
 
 div.hideSkiplink
 {
-    background-color:#3a4f63;
+    background-color:#4884CD;
     width:auto;
     height: 0;
     position:relative;
-    top: -3px;
+    top: -25px;
     vertical-align:middle;
-    right:-210px;
+    right:-160px;
 }
 
 div.hideSkiplinkAdmin
@@ -243,7 +243,7 @@ div.menu ul
 
 div.menu a, div.menu a:visited
 {
-    background-color: #465c71;
+    background-color: #00367E;
     border: 1px #4e667d solid;
     color: #dde4ec;
     display: block;
@@ -525,7 +525,7 @@ input.botao, .btGeral {
 }
 .GridView th
 {
-	background-color: #4B6C9E;
+	background-color: #4884CD;
 	padding: 3px;
 }
 .GridView th a
