@@ -14,7 +14,7 @@ namespace Azuli.Web.DAO
 
         #region ILancamentoOcorrencia Members
 
-        public listaLancamentoOcorrencia buscaOcorrenciaByMeses(LancamentoOcorrenciaModel olancamento, int mes)
+        public listaLancamentoOcorrencia buscaOcorrenciaByMeses(LancamentoOcorrenciaModel olancamento, int mes, int ano)
         {
             string clausulaSQL = "LISTA_OCORRENCIA_MORADOR";
 
@@ -25,6 +25,7 @@ namespace Azuli.Web.DAO
                 comandoSQL.Parameters.AddWithValue("@BLOCO", olancamento.oAp.bloco);
                 comandoSQL.Parameters.AddWithValue("@AP", olancamento.oAp.apartamento);
                 comandoSQL.Parameters.AddWithValue("@MES", mes);
+                comandoSQL.Parameters.AddWithValue("@ANO", ano);
 
                 DataTable tbLancamento = new DataTable();
 

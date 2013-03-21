@@ -14,23 +14,23 @@
     <div class="page">
         <div class="header">
             <div class="title">
-                <h1>
-                      Sistema de Gerenciamento de Condominio -  Spazio azuli 
-                </h1>
+                <div class="title">
+                
+                <img src="images/banner.jpg" style="height: 86px; width: 960px" />
+           
+            </div>
             </div>
 
               </div>
         <div class="main">
         <center> 
-        <h2>
-            &nbsp;</h2>
             <h2>
         Tela de Acesso
     </h2>
             <p>
                 &nbsp;</p>
             </center>
-    <center>
+    <center style="height: 526px; width: 914px">
         <LayoutTemplate>
             <span class="failureNotification">
                 <asp:Literal ID="FailureText" runat="server"></asp:Literal>
@@ -84,8 +84,6 @@
                              CssClass="failureNotification" ErrorMessage="Favor digite sua senha!" ToolTip="Favor digite sua senha!" 
                              ValidationGroup="LoginUserValidationGroup">*</asp:RequiredFieldValidator>
                     </p>
-                    <p>
-                        &nbsp;</p>
                     <p>
                         &nbsp;</p>
                     <p>
@@ -182,11 +180,13 @@
         </LayoutTemplate>
    </center>
         </div>
-        <div class="clear">
-        </div>
     </div>
-    <div class="footer">
-        
+  <div class="footer">
+   
+      © FernandesVilela Soluções de TI. INC 2013. Todos os direitos reservados 
+           <a href="mailto:edmls@ig.com.br">
+               <img src="images/correio.jpg" style="height: 17px; width: 29px" /></a> 
+
     </div>
     </form>
 </body>

@@ -4,16 +4,22 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
     <br /><br /> <br /><br />
-    <asp:Label ID="lblMeses" runat="server" CssClass="AlternatingRowStyle" 
-        Text="Ocorrência no mês de:" Font-Bold="True" Font-Size="Medium"></asp:Label>
-&nbsp;<asp:DropDownList ID="drpMeses" runat="server" Height="30px" Width="243px" 
-                CssClass="menu" AutoPostBack="True" 
-                onselectedindexchanged="drpMeses_SelectedIndexChanged">
-    </asp:DropDownList>
-            <br />
-            <br />
+   
  <fieldset>
-
+  <asp:Label ID="lblMeses" runat="server" CssClass="PagerRowStyle" 
+        Text="Ocorrência no mês de:" Font-Bold="True" Font-Size="Medium"></asp:Label>
+&nbsp;<asp:DropDownList ID="drpMeses" runat="server" Height="18px" Width="243px" 
+                CssClass="btGeral" AutoPostBack="True" 
+                onselectedindexchanged="drpMeses_SelectedIndexChanged" 
+         Font-Bold="True">
+    </asp:DropDownList>
+            &nbsp;<asp:Label ID="lblAno" runat="server" Font-Bold="True" Text="Ano:"></asp:Label>
+                    <asp:DropDownList ID="drpAno" runat="server" CssClass="btGeral" Font-Bold="True"
+                        Height="16px" Width="101px" AutoPostBack="True" onselectedindexchanged="drpAno_SelectedIndexChanged" 
+                        >
+                    </asp:DropDownList>
+            <br />
+            <br />
    
     <legend title="Abrir Ocorrência"> Abrir Ocorrência </legend>
     <asp:GridView ID="grdOcorrencias" runat="server" 

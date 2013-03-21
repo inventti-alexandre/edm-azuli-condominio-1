@@ -22,7 +22,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
-    <br /><br />
+    <br /><br />  <br /><br /><br />
     <fieldset class="login">
         <legend>Consulta de Reservas: </legend>
         <table class="style1">
@@ -43,13 +43,13 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </td>
                 <td>
-                    <asp:Label ID="lbSalao" runat="server" Font-Bold="True" Text="Área de:"></asp:Label>
+                    <asp:Label ID="lbSalao" runat="server" Font-Bold="True" Text="Área :"></asp:Label>
                     <asp:DropDownList ID="drpSalao" runat="server" CssClass="btGeral" Font-Bold="True"
                         Height="19px" Width="127px" AutoPostBack="True" OnSelectedIndexChanged="drpSalao_SelectedIndexChanged">
                         <asp:ListItem Value="0">Selecione</asp:ListItem>
                         <asp:ListItem>Festa</asp:ListItem>
                         <asp:ListItem>Churrasqueira</asp:ListItem>
-                        <asp:ListItem Value="1">todos</asp:ListItem>
+                        <asp:ListItem Value="1">todas</asp:ListItem>
                     </asp:DropDownList>
                 </td>
                 <td>
@@ -64,7 +64,7 @@
         <div id="dvFesta" runat="server">
             
             &nbsp;<br />
-            <asp:Label ID="lblAreaFesta" runat="server" Text="Área de Festa Alugada" 
+            <asp:Label ID="lblAreaFesta" runat="server" Text="Área de Festa " 
                 CssClass="btGeral"></asp:Label> <br />
 &nbsp;<asp:GridView ID="grdAgendaMorador" runat="server" EmptyDataText="Você não tem reserva para o salão de festa nesta data"
                 AutoGenerateColumns="False" Font-Bold="False" 
@@ -90,7 +90,6 @@
                             <asp:Label ID="Label2" runat="server" Text='<%# Bind("ap.apartamento") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:BoundField DataField="salaoFesta" HeaderText="Salão de Festa" />
                     <asp:CommandField ShowDeleteButton="True" ButtonType="Image" DeleteImageUrl="~/images/delete.png" />
                 </Columns>
                 <EmptyDataRowStyle Font-Bold="True" ForeColor="#CC3300" />
@@ -102,7 +101,7 @@
     </center>
     <center>
         <div id="dvChurrasco" runat="server">
-        <asp:Label ID="Label3" runat="server" Text="Área de Churrasqueira Alugada" 
+        <asp:Label ID="Label3" runat="server" Text="Área de Churrasqueira " 
                 CssClass="btGeral"></asp:Label><br />
             &nbsp;<asp:GridView ID="grdChurras" runat="server" AutoGenerateColumns="False"
                 EmptyDataText="Você não tem reserva de churrasqueira para esta data" 
@@ -127,7 +126,6 @@
                             <asp:Label ID="Label2" runat="server" Text='<%# Bind("ap.apartamento") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:BoundField DataField="salaoChurrasco" HeaderText="Churrasqueira" />
                     <asp:CommandField ShowDeleteButton="True" ButtonType="Image" DeleteImageUrl="~/images/delete.png" />
                 </Columns>
                 <EmptyDataRowStyle Font-Bold="True" ForeColor="#CC3300" />

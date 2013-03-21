@@ -94,30 +94,48 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Label lblMensagem;
         
         /// <summary>
-        /// DivAdmin control.
+        /// DivRespostaAutomatica control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivAdmin;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivRespostaAutomatica;
         
         /// <summary>
-        /// hpProximo control.
+        /// DivRespostaSindico control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hpProximo;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivRespostaSindico;
         
         /// <summary>
-        /// hpAnterior control.
+        /// DivRespostaSindico1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hpAnterior;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivRespostaSindico1;
+        
+        /// <summary>
+        /// lblMoradorResposta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMoradorResposta;
+        
+        /// <summary>
+        /// lblResposta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblResposta;
     }
 }

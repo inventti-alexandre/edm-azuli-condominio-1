@@ -25,6 +25,8 @@ namespace Azuli.Web.Portal
                 {
                     
                     listaOcorrenciaMes();
+                    DivRespostaSindico.Visible = false;
+                    DivRespostaSindico1.Visible = false;
 
 
                 }

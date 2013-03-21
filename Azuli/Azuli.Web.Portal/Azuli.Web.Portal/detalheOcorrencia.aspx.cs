@@ -24,9 +24,11 @@ namespace Azuli.Web.Portal
                 if (!IsPostBack)
                 {
                     preencheMeses();
+                    preencheAno();
                     drpMeses.SelectedIndex = data.Month - 1;
                     Session["mes"] = drpMeses.SelectedIndex = data.Month - 1;
                     listaOcorrenciaMes();
+                    
 
 
                 }
@@ -42,11 +44,13 @@ namespace Azuli.Web.Portal
             oAp.apartamento =  Convert.ToInt32(Session["AP"]);
             oAp.bloco      = Convert.ToInt32(Session["Bloco"]);
             olancamentoModel.oAp = oAp;
-
+            int ano = 0;
+            // ano = Convert.ToInt32(data.Year);
+             ano = Convert.ToInt32(drpAno.SelectedItem.Value);
             try
             {
 
-                grdOcorrencias.DataSource = olancamentoBLL.buscaOcorrenciaByMeses(olancamentoModel, mes);
+                grdOcorrencias.DataSource = olancamentoBLL.buscaOcorrenciaByMeses(olancamentoModel, mes ,ano);
                 grdOcorrencias.DataBind();
 
 
@@ -105,6 +109,23 @@ namespace Azuli.Web.Portal
                 
             }
 
+        }
+
+
+        public void preencheAno()
+        {
+
+            for (int ano = data.Year; ano < 2020; ano++)
+            {
+                drpAno.Items.Add(ano.ToString());
+            }
+
+        }
+
+        protected void drpAno_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listaOcorrenciaMes();
+           
         }
 
     }

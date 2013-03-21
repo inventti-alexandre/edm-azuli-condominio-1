@@ -4,8 +4,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
 <br />
-    <br /><br /></br>
+    <br /><br /></br>   <br /><br />
     <fieldset  class="login">
+  
         <legend class="AlternatingRowStyle">Consulta de Publicações de Circulares: </legend>
         
         <br />

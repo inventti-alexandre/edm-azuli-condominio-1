@@ -59,8 +59,14 @@
             </div>
 
                         
-		<div class="AlternatingRowStyle" id="DivAdmin" style="position:relative; " 
-            runat="server"></span>
+		
+
+                  
+
+
+    
+       <div class="AlternatingRowStyle" id="DivRespostaAutomatica" style="position:relative; " 
+            runat="server">
                 <h3>Atendimento Azuli Sindico </h3>
 			</div>
             
@@ -71,12 +77,18 @@
 
                   
 
-                  </div></div></div>
+                  </div></div>
+                  <div class="AlternatingRowStyle" id="DivRespostaSindico" style="position:relative; " 
+            runat="server">
+                <h3>Atendimento Azuli Sindico </h3>
+			</div>
+            
+			<div runat="server"  id="DivRespostaSindico1" style="border:1px solid #CCC; padding:20px; margin-bottom:20px;">
+            
+            	Prezado <asp:Label ID="lblMoradorResposta" runat="server" Text=""></asp:Label><br><br> 
+                <asp:Label ID="lblResposta" runat="server" Text=""></asp:Label>
+		<br><br>Att<br>Flávio</div>
 
-    
-        <!--
-            <asp:HyperLink ID="hpProximo" runat="server">Próximo</asp:HyperLink>
-            <asp:HyperLink ID="hpAnterior" runat="server">Anterior</asp:HyperLink> -->
 
 
             </fieldset>

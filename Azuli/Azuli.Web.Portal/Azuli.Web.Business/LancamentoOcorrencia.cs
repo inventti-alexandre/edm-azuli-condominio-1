@@ -10,13 +10,13 @@ namespace Azuli.Web.Business
     {
         #region ILancamentoOcorrencia Members
 
-        public Model.listaLancamentoOcorrencia buscaOcorrenciaByMeses( Model.LancamentoOcorrenciaModel olancamento, int mes)
+        public Model.listaLancamentoOcorrencia buscaOcorrenciaByMeses( Model.LancamentoOcorrenciaModel olancamento, int mes, int ano)
         {
             try
             {
                 Azuli.Web.DAO.LancamentoOcorrencia oLancamentoDAO = new Azuli.Web.DAO.LancamentoOcorrencia();
 
-                return oLancamentoDAO.buscaOcorrenciaByMeses(olancamento, mes);
+                return oLancamentoDAO.buscaOcorrenciaByMeses(olancamento, mes,ano);
                 
             }
             catch (Exception)

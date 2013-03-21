@@ -50,9 +50,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
-<br /></br> <br /><br />
+<br /></br> 
     <div id="dvProprietario" runat="server">
+    <br /><br /><br />
     <fieldset class="login">
+    
         <legend>Reservas feita em:  <asp:Label ID="lblMesAtual" runat="server" Style="font-weight: 700; color: #0033CC"></asp:Label></legend>
         <table style="height: 192px; width: 669px;">
             <tr>

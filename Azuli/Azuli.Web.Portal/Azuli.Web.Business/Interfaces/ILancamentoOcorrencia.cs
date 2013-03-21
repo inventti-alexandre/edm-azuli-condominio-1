@@ -10,7 +10,7 @@ namespace Azuli.Web.Business.Interfaces
 {
     public interface ILancamentoOcorrencia
     {
-        listaLancamentoOcorrencia buscaOcorrenciaByMeses(LancamentoOcorrenciaModel olancamento, int mes);
+        listaLancamentoOcorrencia buscaOcorrenciaByMeses(LancamentoOcorrenciaModel olancamento, int mes, int ano);
         listaLancamentoOcorrencia buscaOcorrenciaById(LancamentoOcorrenciaModel olancamento);
         
     }

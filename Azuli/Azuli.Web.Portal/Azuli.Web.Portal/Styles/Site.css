@@ -102,7 +102,7 @@ first child of the left and right table columns */
 {
     width: 960px;
     background-color: #fff;
-    margin: 20px auto 0px auto;
+    margin: 5px auto 0px auto;
     border: 1px solid #496077;
 }
 
@@ -325,8 +325,8 @@ input.passwordEntry
 
 div.accountInfo
 {
-    width: 95%;
-    height: 493px;
+    width: 71%;
+    height: 290px;
 }
 
 /* MISC  

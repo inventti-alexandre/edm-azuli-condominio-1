@@ -62,6 +62,7 @@
     <Content Include="consultaCircular.aspx" />
     <Content Include="detalheOcorrencia.aspx" />
     <Content Include="enviaMensagemMorador.aspx" />
+    <Content Include="images\banner.jpg" />
     <Content Include="images\ico_search.gif" />
     <Content Include="images\word.gif" />
     <Content Include="publicarCircular.aspx" />

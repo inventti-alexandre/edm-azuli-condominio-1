@@ -26,12 +26,13 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-<br /><br /><br />
+    <br /><br /><br /><br /><br />
 <fieldset>
-<center>
    
-    <legend title="Abrir Ocorrência"> Abrir Ocorrência </legend></center>
-   <center><asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label> 
+    <legend title="Abrir Ocorrência"> Abrir Ocorrência </legend></center><br />
+   <center><asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#006600"></asp:Label>
+       <br />
+   
   <div id="dvCadastro" runat="server" align="center" > 
    
       <table style="border: thin solid #C0C0C0; height: 475px; width: 866px;" 

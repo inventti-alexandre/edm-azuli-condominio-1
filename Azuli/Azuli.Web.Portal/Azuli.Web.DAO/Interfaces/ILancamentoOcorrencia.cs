@@ -9,7 +9,7 @@ namespace Azuli.Web.DAO.Interfaces
 {
     public interface ILancamentoOcorrencia
     {
-        listaLancamentoOcorrencia buscaOcorrenciaByMeses(LancamentoOcorrenciaModel olancamento, int mes);
+        listaLancamentoOcorrencia buscaOcorrenciaByMeses(LancamentoOcorrenciaModel olancamento, int mes, int ano);
         listaLancamentoOcorrencia populaOcorrencia(DataTable dt);
         listaLancamentoOcorrencia buscaOcorrenciaById(LancamentoOcorrenciaModel olancamento);
     }
