@@ -8,74 +8,77 @@
             color: #0000FF;
         }
     </style>
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
     <br /> <br /><br />
     <fieldset>
-        <legend title="Abrir Ocorrência">Abrir Ocorrência </legend>
-        <center>
+        <legend title="Abrir Ocorrência">Minhas Ocorrência </legend>
+        
+
+    <div  id="dvOcorrencia" runat="server">
+    <div  id="dvOconteudo" runat="server">
+        <div class="AlternatingRowStyle" id="dvCabecalho" style="position:relative; " 
+            runat="server">
+            
+            	Ocorrência
+                <asp:Label ID="lblOcorrencia" runat="server"></asp:Label></div>
+                <div style=" position:absolute; right:0px; top:5px; width:50px; font-size:14px"></div>
+                
+            <br>
+                        
+          <table width="100%" border="0" cellspacing="0" cellpadding="10" >
+            <tr>
+                <td width='100' valign="top" style="font-size:14px;">ASSUNTO:</td>
+                <td valign="top" style="font-size:14px;"><strong>
+                    <asp:Label ID="lblAssunto" runat="server" Text="Label"></asp:Label>
+                    </strong></td>
+            </tr>
+           
+            <tr>
+                <td valign="top" style="font-size:14px;">Data Abertura:</td>
+                <td valign="top" style="font-size:14px;">
+                    <asp:Label ID="lblDataAbertura" runat="server"></asp:Label>
+                </td>
+            </tr>
+            </table>
+            
+			            
+			<div class="AlternatingRowStyle" id="dvMorador" style="position:relative; " 
+            runat="server">
+            	<span class="icon-article"></span>
+                <h3>&nbsp;<asp:Label ID="lblMorador" runat="server"></asp:Label>
+                </h3>
+			</div>
+            
+			<div style="border:1px solid #CCC; padding:20px; margin-bottom:20px;">
+            
+                <asp:Label ID="lblMensagem" runat="server" Text="lblMensagem"></asp:Label>
+                                
+            </div>
+
+                        
+		<div class="AlternatingRowStyle" id="DivAdmin" style="position:relative; " 
+            runat="server"></span>
+                <h3>Atendimento Azuli Sindico </h3>
+			</div>
+            
+			<div style="border:1px solid #CCC; padding:20px; margin-bottom:20px;">
+            
+            	Prezado Morador<br><br> Seu assunto foi recebido, e em breve retornarei. Obrigado por entrar em contato.
+		<br><br>Att<br>Flávio</div>
+
+                  
+
+                  </div></div></div>
+
+    
         <!--
             <asp:HyperLink ID="hpProximo" runat="server">Próximo</asp:HyperLink>
             <asp:HyperLink ID="hpAnterior" runat="server">Anterior</asp:HyperLink> -->
 
-         <asp:Label ID="lblMeses" runat="server" CssClass="AlternatingRowStyle" 
-        Text="Ocorrência no mês de:" Font-Bold="True" Font-Size="Medium"></asp:Label>
-&nbsp;<asp:DropDownList ID="drpMeses" runat="server" Height="30px" Width="243px" 
-                CssClass="menu" AutoPostBack="True" 
-                onselectedindexchanged="drpMeses_SelectedIndexChanged">
-    </asp:DropDownList>
-            <br />
-            <br />
-            <asp:DataList ID="DataList1" runat="server"
-                EnableViewState="False" Style="margin-right: 1px" Width="508px" 
-                CssClass="GridView" >
-                <HeaderTemplate>
-                  <asp:Label ID="lblSemregistro" runat="server" Text="Ocorrências Abertas" Visible='<%#(DataList1.Items.Count > 0) %>'></asp:Label>
-                </HeaderTemplate>
-                <ItemTemplate>
-                    Nº Ocorrência:
-                    
-                    <asp:Label ID="OCORRENCIALabel" runat="server" 
-                        Text= '<%# Eval("oOcorrencia.codigoOcorencia") %>' />
-                    <br />
-                     Assunto sobre:
-                    <asp:Label ID="DescricaoOcorrenciaLabel" runat="server" 
-                        Text='<%# Eval("descricaoOcorrencia") %>'/>
-                    <br />
 
-                    Data de Abertura:
-                    <asp:Label ID="DATA_OCORRENCIALabel" runat="server" 
-                        Text='<%# Eval("dataOcorrencia") %>'/>
-                    <br />
-                    Status da Ocorrência:
-                    <asp:Label ID="STATUSLabel" runat="server" 
-                        Text='<%# Eval("statusOcorrencia") %>'/>
-                    <br />
-                    DESCRICAO:
-                    <asp:Label ID="DESCRICAOLabel" runat="server" Text='<%# Eval("ocorrenciaLancamento") %>'/>
-                    <br />
-                   
-                    Evidência:
-                    <asp:Label ID="imagemLabel" runat="server" Text='<%# Eval("imagemEvidencia") %>'/>
-                    <br />
-                     Data prevista de Resposta:
-                    <asp:Label ID="DATA_FINALIZACAOLabel" runat="server" 
-                        Text='<%# Eval("dataFinalizacao") %>'/>
-                    <br />
-                  
-                   
-                    <br />
-                </ItemTemplate>
-                
-                
-                <SeparatorTemplate>
-                    <hr />
-                </SeparatorTemplate>
-                <FooterTemplate>
-                <asp:Label ID="lblSemregistro" runat="server" Text="Você não possui ocorrência cadastrada" Visible='<%#(DataList1.Items.Count == 0) %>'></asp:Label>
-                 </FooterTemplate>
-            </asp:DataList>
             </fieldset>
-    </center>
+    
 </asp:Content>

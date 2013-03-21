@@ -11,5 +11,6 @@ namespace Azuli.Web.DAO.Interfaces
     {
         listaLancamentoOcorrencia buscaOcorrenciaByMeses(LancamentoOcorrenciaModel olancamento, int mes);
         listaLancamentoOcorrencia populaOcorrencia(DataTable dt);
+        listaLancamentoOcorrencia buscaOcorrenciaById(LancamentoOcorrenciaModel olancamento);
     }
 }

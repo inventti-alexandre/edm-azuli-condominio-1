@@ -68,6 +68,34 @@ namespace Azuli.Web.DAO
             return olist;
         }
 
+        
+
+
+        public listaLancamentoOcorrencia buscaOcorrenciaById(LancamentoOcorrenciaModel olancamento)
+        {
+            string clausulaSQL = "LISTA_OCORRENCIA_MORADOR_byID";
+
+            try
+            {
+                SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
+
+                comandoSQL.Parameters.AddWithValue("@CODIGO", olancamento.codigoOcorrencia);
+                DataTable tbLancamento = new DataTable();
+
+                tbLancamento = ExecutaQuery(comandoSQL);
+
+                return populaOcorrencia(tbLancamento);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        
+            
+        }
+
         #endregion
     }
 }

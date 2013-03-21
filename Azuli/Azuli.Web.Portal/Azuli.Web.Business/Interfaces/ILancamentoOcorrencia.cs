@@ -11,6 +11,7 @@ namespace Azuli.Web.Business.Interfaces
     public interface ILancamentoOcorrencia
     {
         listaLancamentoOcorrencia buscaOcorrenciaByMeses(LancamentoOcorrenciaModel olancamento, int mes);
+        listaLancamentoOcorrencia buscaOcorrenciaById(LancamentoOcorrenciaModel olancamento);
         
     }
 }

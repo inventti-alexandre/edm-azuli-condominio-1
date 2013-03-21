@@ -97,14 +97,12 @@ namespace Azuli.Web.Portal
             int index = int.Parse((string)e.CommandArgument);
             numberCode = Convert.ToInt32(grdOcorrencias.DataKeys[index]["codigoOcorrencia"]);
 
-            try
-            {
-                
-            }
-            catch (Exception ex)
-            {
+            Session["codigoOcorrencia"] = numberCode;
 
-                throw ex;
+            if (numberCode != 0)
+            {
+                Response.Redirect("~/listaOcorrenciaMorador.aspx");
+                
             }
 
         }

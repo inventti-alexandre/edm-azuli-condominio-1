@@ -27,6 +27,13 @@ namespace Azuli.Web.Business
         }
 
 
+        public Model.listaLancamentoOcorrencia buscaOcorrenciaById(Model.LancamentoOcorrenciaModel olancamento)
+        {
+            Azuli.Web.DAO.LancamentoOcorrencia oLancamentoDAO = new Azuli.Web.DAO.LancamentoOcorrencia();
+
+            return oLancamentoDAO.buscaOcorrenciaById(olancamento);
+        }
+
         #endregion
     }
 }
