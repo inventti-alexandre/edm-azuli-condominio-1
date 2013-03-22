@@ -26,7 +26,6 @@ namespace Azuli.Web.Portal
                 {
                     dvArquivosPublicados.Visible = false;
                     btnOk.Visible = false;
-                    CalculateQtdFile();
                     this.lbtMonth1.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(1).ToUpper();
                     this.lbtMonth2.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(2).ToUpper();
                     this.lbtMonth3.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(3).ToUpper();
@@ -40,6 +39,8 @@ namespace Azuli.Web.Portal
                     this.lbtMonth11.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(11).ToUpper();
                     this.lbtMonth12.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(12).ToUpper();
                     preencheAno();
+                    drpAno.SelectedItem.Text = data.Year.ToString();
+                    CalculateQtdFile();
 
                 }
             }
@@ -66,7 +67,7 @@ namespace Azuli.Web.Portal
         {
 
 
-            oFile.ano = ano;
+            oFile.ano =  Convert.ToInt32(drpAno.SelectedItem.Text);
 
             Dictionary<int, int> qtdPublicacao = new Dictionary<int, int>();
 
@@ -75,59 +76,80 @@ namespace Azuli.Web.Portal
             {
                 qtdPublicacao = oFileBLL.contaArquivoByMeses(oFile);
 
-                foreach (var item in qtdPublicacao)
+                if (qtdPublicacao.Count > 0)
                 {
-                    if (item.Key == 1)
-                    {
+                   
+                
+                    btnOk.Visible = true;
+                  
 
-                        lblPercentage1.Text = item.Value.ToString();
+                    foreach (var item in qtdPublicacao)
+                    {
+                        if (item.Key == 1)
+                        {
 
-                    }
-                    else if (item.Key == 2)
-                    {
-                        lblPercentage2.Text = item.Value.ToString();
-                    }
-                    else if (item.Key == 3)
-                    {
-                        lblPercentage3.Text = item.Value.ToString();
-                    }
-                    else if (item.Key == 4)
-                    {
-                        lblPercentage4.Text = item.Value.ToString();
-                    }
-                    else if (item.Key == 5)
-                    {
-                        lblPercentage5.Text = item.Value.ToString();
-                    }
-                    else if (item.Key == 6)
-                    {
-                        lblPercentage6.Text = item.Value.ToString();
-                    }
-                    else if (item.Key == 7)
-                    {
-                        lblPercentage7.Text = item.Value.ToString();
-                    }
-                    else if (item.Key == 8)
-                    {
-                        lblPercentage8.Text = item.Value.ToString();
-                    }
-                    else if (item.Key == 9)
-                    {
-                        lblPercentage9.Text = item.Value.ToString();
-                    }
-                    else if (item.Key == 10)
-                    {
-                        lblPercentage10.Text = item.Value.ToString();
-                    }
-                    else if (item.Key == 11)
-                    {
-                        lblPercentage11.Text = item.Value.ToString();
-                    }
-                    else if (item.Key == 12)
-                    {
-                        lblPercentage12.Text = item.Value.ToString();
-                    }
+                            lblPercentage1.Text = item.Value.ToString();
 
+                        }
+                        else if (item.Key == 2)
+                        {
+                            lblPercentage2.Text = item.Value.ToString();
+                        }
+                        else if (item.Key == 3)
+                        {
+                            lblPercentage3.Text = item.Value.ToString();
+                        }
+                        else if (item.Key == 4)
+                        {
+                            lblPercentage4.Text = item.Value.ToString();
+                        }
+                        else if (item.Key == 5)
+                        {
+                            lblPercentage5.Text = item.Value.ToString();
+                        }
+                        else if (item.Key == 6)
+                        {
+                            lblPercentage6.Text = item.Value.ToString();
+                        }
+                        else if (item.Key == 7)
+                        {
+                            lblPercentage7.Text = item.Value.ToString();
+                        }
+                        else if (item.Key == 8)
+                        {
+                            lblPercentage8.Text = item.Value.ToString();
+                        }
+                        else if (item.Key == 9)
+                        {
+                            lblPercentage9.Text = item.Value.ToString();
+                        }
+                        else if (item.Key == 10)
+                        {
+                            lblPercentage10.Text = item.Value.ToString();
+                        }
+                        else if (item.Key == 11)
+                        {
+                            lblPercentage11.Text = item.Value.ToString();
+                        }
+                        else if (item.Key == 12)
+                        {
+                            lblPercentage12.Text = item.Value.ToString();
+                        }
+
+                        dvPublicacao.Visible = true;
+                        btnOk.Visible = false;
+                        lblMsg.Visible = false;
+                    }
+                }
+
+                else
+                {
+                    btnOk.Visible = false;
+                    dvPublicacao.Visible = false;
+                    dvArquivosPublicados.Visible = false;
+                    lblMsg.Text = "Não existem arquivos publicados para este ano " + drpAno.SelectedItem.Text;
+                    lblMsg.Visible = true;
+                   
                 }
 
 
@@ -221,7 +243,7 @@ namespace Azuli.Web.Portal
 
         public void preencheGridListaArquivo(int mes)
         {
-            oFile.ano = ano;
+            oFile.ano = Convert.ToInt32(drpAno.SelectedValue);
             oFile.mes = mes;
 
             lblmesAno.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(mes).ToUpper() + "/" + ano;
@@ -294,6 +316,11 @@ namespace Azuli.Web.Portal
         {
             dvArquivosPublicados.Visible = false;
             btnOk.Visible = false;
+        }
+
+        protected void drpAno_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CalculateQtdFile();
         }
 
     }

@@ -14,9 +14,9 @@
     <div class="pageAdmin">
         <div class="headerAdmin">
             <div class="titleAdmin">
-                <h1>
-                       Sistema de Gerenciamento de Condominio -  Spazio azuli 
-                </h1>
+               
+                    <img src="images/banner.jpg" style="height: 103px; width: 972px" />
+               
             </div>
     </div>
     <div class="clear hideSkiplinkAdmin">
@@ -24,6 +24,8 @@
                     EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" >
                     
                     <Items>
+                        <asp:MenuItem NavigateUrl="~/WelcomeAdmin.aspx" Text="Home" Value="Home">
+                        </asp:MenuItem>
                         <asp:MenuItem Text="Reserva ">
                             <asp:MenuItem NavigateUrl="~/AreaAdministrativa.aspx" Text="Reserva p/ Morador - Administrador" 
                                 Value="Fazer Reserva"></asp:MenuItem>

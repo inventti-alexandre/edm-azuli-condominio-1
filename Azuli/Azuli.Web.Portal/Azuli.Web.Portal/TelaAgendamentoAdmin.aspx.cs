@@ -40,7 +40,7 @@ namespace Azuli.Web.Portal
                     }
 
                  
-                    carregaAgendaMesAtual();
+                    
 
                 }
 
@@ -101,7 +101,7 @@ namespace Azuli.Web.Portal
 
         public void escondeControl()
         {
-            dvOpcao.Visible = false;
+            dvAlugar.Visible = false;
             DivConfirma.Visible = false;
            
            
@@ -142,7 +142,7 @@ namespace Azuli.Web.Portal
                 }
 
                 lblMsgData.Visible = false;
-                dvOpcao.Visible = true;
+                dvAlugar.Visible = true;
                 dvCalendar.Visible = false;
            
             }
@@ -201,7 +201,7 @@ namespace Azuli.Web.Portal
                 {
                     oAgenda.cadastrarAgenda(Convert.ToDateTime(lblData.Text), oApModel, oAgendaModel);
 
-                    dvOpcao.Visible = false;
+                    dvAlugar.Visible = false;
                     DivConfirma.Visible = true;
                     dvProprietario.Visible = false;
 
@@ -216,7 +216,7 @@ namespace Azuli.Web.Portal
                 }
 
 
-                carregaAgendaMesAtual();
+              
 
             }
             else
@@ -233,23 +233,7 @@ namespace Azuli.Web.Portal
         }
 
 
-        public void carregaAgendaMesAtual()
-        {
-            oAgendaModel.dataAgendamento = DateTime.Now;
-            lblMesAtual.Text = (DateTime.Now.ToString("MMMM", new CultureInfo("pt-BR"))).ToUpper() + "/" + DateTime.Now.Year;
-            oAP.bloco = Convert.ToInt32(Session["Bloco"]);
-            oAP.apartamento = Convert.ToInt32(Session["AP"]);
-
-            
-
-                formVwChurrasco.DataSource = oAgenda.listaReservaByMorador(oAP, oAgendaModel);
-                formVwChurrasco.DataBind();
-
-                frvSalaoFesta.DataSource = oAgenda.listaReservaByMoradorFesta(oAP, oAgendaModel);
-                frvSalaoFesta.DataBind();
-           
-        }
-
+        
         protected void btnSair_Click(object sender, EventArgs e)
         {
           
@@ -263,7 +247,8 @@ namespace Azuli.Web.Portal
 
         protected void btnOKConfirma_Click1(object sender, EventArgs e)
         {
-            Response.Redirect("telaAgendamentoAdmin.aspx");
+            
+            Response.Redirect("WelcomeAdmin.aspx");
         }
 
         protected void ImageButton1_Click1(object sender, ImageClickEventArgs e)
@@ -273,18 +258,7 @@ namespace Azuli.Web.Portal
 
         }
 
-        protected void formVwChurrasco_PageIndexChanging(object sender, FormViewPageEventArgs e)
-        {
-            formVwChurrasco.PageIndex = e.NewPageIndex;
-            carregaAgendaMesAtual();
-        }
-
-        protected void frvSalaoFesta_PageIndexChanging(object sender, FormViewPageEventArgs e)
-        {
-            frvSalaoFesta.PageIndex = e.NewPageIndex;
-            carregaAgendaMesAtual();
-        }
-
+      
         protected void UpdateTimer_Tick(object sender, EventArgs e)
         {
            

@@ -66,7 +66,7 @@ namespace Azuli.Web.Portal
         protected void btnOk_Click(object sender, EventArgs e)
         {
 
-            Session.Clear();
+           
             oAPmodel.apartamento = Convert.ToInt32(txtAp.Text);
             oAPmodel.bloco = Convert.ToInt32(drpBloco.Text);
 
@@ -87,8 +87,8 @@ namespace Azuli.Web.Portal
                     Session["MoradorSemInternetNome2"] = item.proprietario2.ToString();
 
 
-                    Session["AP"] = item.ap.apartamento;
-                    Session["Bloco"] = item.ap.bloco;
+                    //Session["AP"] = item.ap.apartamento;
+                    //Session["Bloco"] = item.ap.bloco;
                    // Session["MoradorSemInternetNome1"] = item.proprietario1.ToString();
                     //Session["MoradorSemInternetNome2"] = item.proprietario2.ToString();
 
@@ -111,7 +111,7 @@ namespace Azuli.Web.Portal
      
         protected void btnOkPesquisa_Click(object sender, EventArgs e)
         {
-            
+           
          
             Response.Redirect("telaAgendamentoAdmin.aspx");
         }

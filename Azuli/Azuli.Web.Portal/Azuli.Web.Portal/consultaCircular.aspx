@@ -11,14 +11,18 @@
         
         <asp:Label ID="lblConsultaAno" runat="server" CssClass="footer" 
             Text="Mudar Ano de Consulta:"></asp:Label>
-        <asp:DropDownList ID="drpAno" runat="server" CssClass="btGeral" Height="26px" 
-            Width="123px">
+        <asp:DropDownList ID="drpAno" runat="server" CssClass="FooterStyle" Height="26px" 
+            Width="123px" AutoPostBack="True" 
+            onselectedindexchanged="drpAno_SelectedIndexChanged">
         </asp:DropDownList>
         <br />
+        <br />
+        
+         <center>   <asp:Label ID="lblMsg" runat="server" CssClass="failureNotification"></asp:Label></center>
         
         <br />
 
-
+        <div id="dvPublicacao" runat="server">
       <table width="100%" cellpadding="5" 
             style="background-color: White; border: Outset 2px Silver; text-align: center;" 
             class="btGeral">
@@ -115,7 +119,7 @@
             </td>
         </tr>
         </table>
-        
+        </div>
         
         </fieldset>
 
@@ -144,4 +148,5 @@
         </div></fieldset><br /><center>
     <asp:Button ID="btnOk" runat="server" Text="Ok" Width="58px" CssClass="btGeral" 
             onclick="btnOk_Click" /></center>
+        
 </asp:Content>

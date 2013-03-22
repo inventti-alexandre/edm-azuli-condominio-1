@@ -12,7 +12,7 @@
     <table >
             <tr>
                 <td>
-                    <img src="images/azuli.jpg" style="height: 183px"  />         
+                    <img src="images/azuli.jpg" style="height: 90px; width: 134px;"  />         
                 </td>
                 <td colspan="3" dir="ltr" align="left">
              <h1> Senhor(ª) <asp:Label ID="lblAdmin" 
@@ -34,11 +34,12 @@
     
             <li style="color: #FF0000">Envio de mensagem aos Moradores</li>
 
-            <li style="color: #FF0000">Cancelamento de reservas (Permitido com 2 dias de antecendecia)</li>
+            <li style="color: #FF0000">Cancelamento de reservas (Caso o não pagamento)</li>
   
             <li style="color: #FF0000">Livro de ocorrência</li>
  
-            <li style="color: #FF0000">Solicitação de Serviços</li>
+            <li style="color: #FF0000">Envio de Mensagem para moradores ou todos</li>
+            <li style="color: #FF0000">Publicações de Circulares e Balancete</li>
          
        
         <br /> <br /> <br />
