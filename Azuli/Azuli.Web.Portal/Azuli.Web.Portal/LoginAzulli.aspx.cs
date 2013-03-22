@@ -125,6 +125,17 @@ namespace Azuli.Web.Portal.Account
 
         protected void lnkBtnEsqueci_Click(object sender, EventArgs e)
         {
+
+            Session["AP"] = Convert.ToInt32(txtAP.Text);
+            Session["Bloco"] = Convert.ToInt32(drpBloco.Text);
+
+
+            if (txtAP.Text == string.Empty && drpBloco.Text == string.Empty)
+            {
+
+                lblMsg.Text = "Favor preencher Bloco/Apartamento para recuperar a sua senha!!";
+            }
+
             Response.Redirect("~/esqueciSenha.aspx");
         }
 
