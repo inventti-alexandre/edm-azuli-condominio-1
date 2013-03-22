@@ -84,6 +84,7 @@
                              CssClass="failureNotification" ErrorMessage="Favor digite sua senha!" ToolTip="Favor digite sua senha!" 
                              ValidationGroup="LoginUserValidationGroup">*</asp:RequiredFieldValidator>
                     </p>
+                    <asp:LinkButton ID="LinkBtnEsqueci" runat="server" onclick="lnkBtnEsqueci_Click" >Esqueci minha senha</asp:LinkButton>
                     <p>
                         &nbsp;</p>
                     <p>

@@ -123,6 +123,11 @@ namespace Azuli.Web.Portal.Account
             dvDadosMorador.Visible = true;
         }
 
+        protected void lnkBtnEsqueci_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/esqueciSenha.aspx");
+        }
+
         protected void btnOkPesquisa_Click(object sender, EventArgs e)
         {
             SendMail enviaEmail = new SendMail();

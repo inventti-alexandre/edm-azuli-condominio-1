@@ -139,6 +139,15 @@ namespace Azuli.Web.Portal.Account {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator PasswordRequired;
         
         /// <summary>
+        /// LinkBtnEsqueci control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkBtnEsqueci;
+        
+        /// <summary>
         /// LoginButton control.
         /// </summary>
         /// <remarks>
