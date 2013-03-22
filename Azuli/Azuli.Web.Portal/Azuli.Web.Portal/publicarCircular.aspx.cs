@@ -27,6 +27,7 @@ namespace Azuli.Web.Portal
                     
                     preencheMeses();
                     drpMes.SelectedIndex = data.Month - 1;
+                    drpMes.Enabled = false;
                     preencheAno();
 
                 }
