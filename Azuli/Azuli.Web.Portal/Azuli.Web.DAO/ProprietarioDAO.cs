@@ -232,7 +232,7 @@ namespace Azuli.Web.DAO
 
         public listProprietario recuperaSenhaMorador(ProprietarioModel ap)
         {
-            string clausulaSQL = "RECUPERA_SENHAMORADOR";
+            string clausulaSQL = "RECUPERA_SENHA_MORADOR";
 
             try
             {
@@ -240,7 +240,7 @@ namespace Azuli.Web.DAO
                 SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
                 comandoSQL.Parameters.AddWithValue("@PROPRIETARIO_AP", ap.ap.apartamento);
                 comandoSQL.Parameters.AddWithValue("@PROPRIETARIO_BLOCO", ap.ap.bloco);
-                comandoSQL.Parameters.AddWithValue("@SENHA", ap.email);
+                comandoSQL.Parameters.AddWithValue("@EMAIL", ap.email);
 
                 DataTable tbProprietario = new DataTable();
 
