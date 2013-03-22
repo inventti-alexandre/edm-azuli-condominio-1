@@ -18,6 +18,7 @@ namespace Azuli.Web.Portal
         MensagemMoradorBLL oMensagemBLL = new MensagemMoradorBLL();
         MensagemMoradorModel oMsgModel = new MensagemMoradorModel();
         Util.Util oUtil = new Util.Util();
+      
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -25,8 +26,8 @@ namespace Azuli.Web.Portal
             {
                 if (oUtil.validateSessionAdmin())
                 {
-
                   
+                   
                 }
                 else
                 {
@@ -46,11 +47,14 @@ namespace Azuli.Web.Portal
             buscaMorador();
         }
 
-        public void buscaMorador()
+        public string buscaMorador()
         {
+
+            string nomeMorador = "";
+            
             if (drpMsg.SelectedItem.Value != "-1" && drpBloco.SelectedItem.Value != "-1")
             {
-                Session.Clear();
+             
                 oAPmodel.apartamento = Convert.ToInt32(drpMsg.SelectedItem.Text);
                 oAPmodel.bloco = Convert.ToInt32(drpBloco.SelectedItem.Text);
 
@@ -61,14 +65,19 @@ namespace Azuli.Web.Portal
                     {
 
                         lblMorador.Text = item.proprietario1.ToString();
+                        nomeMorador = item.proprietario1.ToString();
+
 
                     }
                 }
                 else
                 {
+                    nomeMorador = "Não existe morador cadastrado!";
                     lblMorador.Text = "Não existe morador cadastrado!";
                 }
             }
+
+            return nomeMorador; 
         }
 
         protected void btnMensagem_Click(object sender, EventArgs e)

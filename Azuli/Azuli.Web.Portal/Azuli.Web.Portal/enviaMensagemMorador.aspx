@@ -47,7 +47,7 @@
    
   
       <center>
-          <table style="border: thin solid #C0C0C0; height: 368px; width: 938px;" 
+          <table style="border: thin solid #C0C0C0; height: 306px; width: 838px;" 
           class="HeaderStyle">
             <tr>
                 <td class="GridView">
@@ -96,8 +96,8 @@
                                     Text="Mensagem"></asp:Label>
                             </td><br />
                             <td class="style3">
-                                 <asp:TextBox ID="txtDescription" runat="server" Height="153px" TextMode="MultiLine" 
-                                     Width="602px"></asp:TextBox>
+                                 <asp:TextBox ID="txtDescription" runat="server" Height="112px" TextMode="MultiLine" 
+                                     Width="578px"></asp:TextBox>
                             </td>
                             <td class="style4">
                                  <asp:RequiredFieldValidator ID="rfvDescription" runat="server" 
