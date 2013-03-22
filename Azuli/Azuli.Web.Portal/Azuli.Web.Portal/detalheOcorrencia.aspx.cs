@@ -25,6 +25,7 @@ namespace Azuli.Web.Portal
                 {
                     preencheMeses();
                     preencheAno();
+                  
                     drpMeses.SelectedIndex = data.Month - 1;
                     Session["mes"] = drpMeses.SelectedIndex = data.Month - 1;
                     listaOcorrenciaMes();
@@ -115,11 +116,11 @@ namespace Azuli.Web.Portal
         public void preencheAno()
         {
 
-            for (int ano = 2009; ano < 2020; ano++)
+            for (int ano = 2009; ano <= 2016; ano++)
             {
                 drpAno.Items.Add(ano.ToString());
             }
-
+            drpAno.SelectedItem.Text = data.Year.ToString();
         }
 
         protected void drpAno_SelectedIndexChanged(object sender, EventArgs e)
