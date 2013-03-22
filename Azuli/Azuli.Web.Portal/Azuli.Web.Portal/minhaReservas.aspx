@@ -46,10 +46,9 @@
                     <asp:Label ID="lbSalao" runat="server" Font-Bold="True" Text="Área :"></asp:Label>
                     <asp:DropDownList ID="drpSalao" runat="server" CssClass="btGeral" Font-Bold="True"
                         Height="19px" Width="127px" AutoPostBack="True" OnSelectedIndexChanged="drpSalao_SelectedIndexChanged">
-                        <asp:ListItem Value="0">Selecione</asp:ListItem>
+                        <asp:ListItem Value="1">todas</asp:ListItem>
                         <asp:ListItem>Festa</asp:ListItem>
                         <asp:ListItem>Churrasqueira</asp:ListItem>
-                        <asp:ListItem Value="1">todas</asp:ListItem>
                     </asp:DropDownList>
                 </td>
                 <td>

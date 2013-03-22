@@ -24,10 +24,12 @@ namespace Azuli.Web.Portal
             {
                 if (!IsPostBack)
                 {
+                   
                     hiddenControl();
                     preencheMeses();
                     drpMeses.SelectedIndex = data.Month - 1;
                     preencheAno();
+                    consultaReserva();
 
                 }
             }
