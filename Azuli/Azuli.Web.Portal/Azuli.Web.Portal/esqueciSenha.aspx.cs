@@ -45,11 +45,11 @@ namespace Azuli.Web.Portal
                     vMail = item.senha;
                 }
 
-                if (vMail != "")
+                if (vMail != " ")
                 {
-                    oEnviaEmail.enviaSenha("A sua senha é " + vMail, oProprietarioModel.ap.apartamento.ToString(), oProprietarioModel.email, 1);
+                    oEnviaEmail.enviaSenha("A senha para o apartamento"+oProprietarioModel.ap.apartamento+" do bloco "+oProprietarioModel.ap.bloco+" é " + vMail, oProprietarioModel.ap.apartamento.ToString(), oProprietarioModel.email, 1);
 
-                    sbMsg.Append("<b>A sua senha foi enviado para o e-mail informado!</b>");
+                    sbMsg.Append("<b>A sua senha foi enviada para o e-mail informado!</b>");
                     
                 }
                 else
@@ -67,6 +67,11 @@ namespace Azuli.Web.Portal
                 throw ex;
             }
 
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/LoginAzulli.aspx");
         }
 
       

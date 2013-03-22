@@ -19,11 +19,13 @@
                 <img src="images/banner.jpg" style="height: 86px; width: 960px" />
            
             </div>
+             
             </div>
 
               </div>
         <div class="main">
-       
+       <p></p><asp:Button ID="btnHome" runat="server" CssClass="botao" 
+                        Text="Home" onclick="btnHome_Click" /></p>
     <br /><br /> <br /> <br /><br />
   <center> <h2><b>ESQUECI A SENHA</b></h2></center><br />
   <center>
@@ -56,6 +58,7 @@
             </tr>
             <tr>
                 <td>
+               
                     &nbsp;</td>
                 <td class="style1">
                     &nbsp;</td>
