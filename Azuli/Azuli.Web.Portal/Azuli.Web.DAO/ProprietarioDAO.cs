@@ -148,7 +148,9 @@ namespace Azuli.Web.DAO
                 if (dr.Table.Columns.Contains("email"))
                     oPropri.email = dr["email"].ToString();
 
-                oPropri.senha = dr["PASSWORD"].ToString();
+                if (dr.Table.Columns.Contains("PASSWORD"))
+                    oPropri.senha = dr["PASSWORD"].ToString();
+              
 
                 oListProprietario.Add(oPropri);
 
