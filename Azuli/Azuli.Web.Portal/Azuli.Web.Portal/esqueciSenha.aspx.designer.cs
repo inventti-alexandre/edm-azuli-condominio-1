@@ -10,34 +10,10 @@
 namespace Azuli.Web.Portal {
     
     
-    public partial class resetSenha {
+    public partial class esqueciSenha {
         
-        /// <summary>
-        /// dvProprietario control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvProprietario;
         
-        /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
-        /// txtEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtEm;
         
         /// <summary>
         /// rfvEsqueciSenha control.
@@ -58,12 +34,12 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Button btnEsqueciSenha;
         
         /// <summary>
-        /// lblMensagem control.
+        /// lblMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensagem;
+        protected global::System.Web.UI.WebControls.Label lblMsg;
     }
 }

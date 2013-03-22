@@ -62,6 +62,7 @@
     <Content Include="consultaCircular.aspx" />
     <Content Include="detalheOcorrencia.aspx" />
     <Content Include="enviaMensagemMorador.aspx" />
+    <Content Include="esqueciSenha.aspx" />
     <Content Include="images\banner.jpg" />
     <Content Include="images\ico_search.gif" />
     <Content Include="images\word.gif" />
@@ -162,6 +163,13 @@
     </Compile>
     <Compile Include="enviaMensagemMorador.aspx.designer.cs">
       <DependentUpon>enviaMensagemMorador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="esqueciSenha.aspx.cs">
+      <DependentUpon>esqueciSenha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="esqueciSenha.aspx.designer.cs">
+      <DependentUpon>esqueciSenha.aspx</DependentUpon>
     </Compile>
     <Compile Include="publicarCircular.aspx.cs">
       <DependentUpon>publicarCircular.aspx</DependentUpon>

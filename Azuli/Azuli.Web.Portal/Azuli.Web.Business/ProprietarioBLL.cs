@@ -127,6 +127,28 @@ namespace Azuli.Web.Business
 
         }
 
+      
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ap"></param>
+        /// <returns></returns>
+        public listProprietario recuperaSenhaMorador(ProprietarioModel ap)
+        {
+            try
+            {
+
+                return oPropriDAO.recuperaSenhaMorador(ap);
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
         #endregion
     }
 }

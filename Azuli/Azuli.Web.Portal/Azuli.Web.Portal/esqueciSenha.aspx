@@ -19,7 +19,8 @@
                     <asp:Label ID="Label2" runat="server" Text="Informe seu e-mail:"></asp:Label>
                 </td>
                 <td class="style1">
-                    <asp:TextBox ID="txtEmail" runat="server" Height="21px" Width="274px" style="margin-left: 0px"></asp:TextBox>
+                    <asp:TextBox ID="txtEm" runat="server" Height="21px" Width="274px" 
+                        style="margin-left: 0px"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEsqueciSenha" runat="server" CssClass="failureNotification" ErrorMessage="*" ValidationGroup="esqueciSenha" ControlToValidate="txtEmail"></asp:RequiredFieldValidator>
                 </td>
             </tr>
@@ -48,6 +49,6 @@
    <center>
        <br />
        <br />
-       <asp:Label ID="lblMensagem" runat="server" CssClass="failureNotification"></asp:Label></center> 
+       <asp:Label ID="lblMsg" runat="server" CssClass="failureNotification"></asp:Label></center> 
      
 </asp:Content>

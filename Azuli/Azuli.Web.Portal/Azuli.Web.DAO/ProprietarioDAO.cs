@@ -148,6 +148,8 @@ namespace Azuli.Web.DAO
                 if (dr.Table.Columns.Contains("email"))
                     oPropri.email = dr["email"].ToString();
 
+                oPropri.senha = dr["PASSWORD"].ToString();
+
                 oListProprietario.Add(oPropri);
 
             }
@@ -223,6 +225,36 @@ namespace Azuli.Web.DAO
                  throw;
              }
             
+        }
+
+       
+
+
+        public listProprietario recuperaSenhaMorador(ProprietarioModel ap)
+        {
+            string clausulaSQL = "RECUPERA_SENHAMORADOR";
+
+            try
+            {
+
+                SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
+                comandoSQL.Parameters.AddWithValue("@PROPRIETARIO_AP", ap.ap.apartamento);
+                comandoSQL.Parameters.AddWithValue("@PROPRIETARIO_BLOCO", ap.ap.bloco);
+                comandoSQL.Parameters.AddWithValue("@SENHA", ap.email);
+
+                DataTable tbProprietario = new DataTable();
+
+                tbProprietario = ExecutaQuery(comandoSQL);
+
+                return listaAp(tbProprietario);
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         #endregion

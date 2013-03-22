@@ -10,8 +10,10 @@ using System.Text;
 
 namespace Azuli.Web.Portal
 {
-    public partial class resetSenha : Util.Base
+    public partial class esqueciSenha : Util.Base
     {
+       
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -21,10 +23,11 @@ namespace Azuli.Web.Portal
 
         protected void btnEsqueciSenha_Click(object sender, EventArgs e)
         {
-
+            string vMail = " ";
 
             try
-            {           
+            {
+                Util.SendMail oEnviaEmail = new Util.SendMail();
 
                 ProprietarioBLL oProprietario = new ProprietarioBLL();
                 ProprietarioModel oProprietarioModel = new ProprietarioModel();
@@ -34,20 +37,25 @@ namespace Azuli.Web.Portal
                 
                 oProprietarioModel.ap.apartamento = (int)Session["AP"];
                 oProprietarioModel.ap.bloco = (int)Session["Bloco"];
-                
-                string vMail = " ";
-                vMail = oProprietarioModel.email;
+                oProprietarioModel.email = txtEm.Text;
 
-                if (vMail != txtEmail.Text)
+                foreach (var item in  oProprietario.recuperaSenhaMorador(oProprietarioModel))
+                {
+                    vMail =  item.senha;
+                }
+
+                if (vMail != txtEm.Text)
 	            {                    
                     sbMsg.Append("<b>E-mail não cadastrado em nossa base de dados!</b>");
 	            }
                 else
                 {
+                    oEnviaEmail.enviaSenha("A sua senha é " + vMail, oProprietarioModel.ap.apartamento.ToString(), oProprietarioModel.email, 1);
+
                     sbMsg.Append("<b>A sua senha foi enviado para o e-mail informado!</b>");
-                }         
-                
-                lblMensagem.Text = sbMsg.ToString();
+                }
+
+                lblMsg.Text = sbMsg.ToString();
                 
              }
 
