@@ -9,6 +9,13 @@
   
         <legend class="AlternatingRowStyle">Consulta de Publicações de Circulares: </legend>
         
+        <asp:Label ID="lblConsultaAno" runat="server" CssClass="footer" 
+            Text="Mudar Ano de Consulta:"></asp:Label>
+        <asp:DropDownList ID="drpAno" runat="server" CssClass="btGeral" Height="26px" 
+            Width="123px">
+        </asp:DropDownList>
+        <br />
+        
         <br />
 
 

@@ -16,6 +16,7 @@ namespace Azuli.Web.Portal
         FileBLL oFileBLL = new Business.FileBLL();
         Azuli.Web.Model.File oFile = new Azuli.Web.Model.File();
         int ano = DateTime.Now.Year;
+        DateTime data = DateTime.Now;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -38,10 +39,23 @@ namespace Azuli.Web.Portal
                     this.lbtMonth10.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(10).ToUpper();
                     this.lbtMonth11.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(11).ToUpper();
                     this.lbtMonth12.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(12).ToUpper();
+                    preencheAno();
 
                 }
             }
 
+
+        }
+
+
+        public void preencheAno()
+        {
+            int anoAuxiliar = 2010; // irá receber o ano do banco.
+            // Pegar o ano anterior de acordo com o ano do ultimo circular publicado, por enquanto está estático.
+            for (int ano = data.Year; ano >= anoAuxiliar; ano--)
+            {
+                drpAno.Items.Add(ano.ToString());
+            }
 
         }
 
