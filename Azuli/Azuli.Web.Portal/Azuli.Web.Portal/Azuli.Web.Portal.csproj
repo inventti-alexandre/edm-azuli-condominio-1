@@ -86,7 +86,6 @@
     <Content Include="minhaReservas.aspx" />
     <Content Include="OcorrenciaMorador.aspx" />
     <Content Include="paginaInicialMoradores.aspx" />
-    <Content Include="resetSenha.aspx" />
     <Content Include="Scripts\ScriptAzuli.js" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
@@ -256,13 +255,6 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="resetSenha.aspx.cs">
-      <DependentUpon>resetSenha.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="resetSenha.aspx.designer.cs">
-      <DependentUpon>resetSenha.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

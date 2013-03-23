@@ -19,3 +19,10 @@ C:\Desenvolvimento\AzuliPortal\Azuli.Web.DAO\bin\Release\Azuli.Web.Model.pdb
 C:\Desenvolvimento\AzuliPortal\Azuli.Web.DAO\obj\Release\Azuli.Web.DAO.csprojResolveAssemblyReference.cache
 C:\Desenvolvimento\AzuliPortal\Azuli.Web.DAO\obj\Release\Azuli.Web.DAO.dll
 C:\Desenvolvimento\AzuliPortal\Azuli.Web.DAO\obj\Release\Azuli.Web.DAO.pdb
+C:\Users\Leandro\Documents\Visual Studio 2010\Projects\Azuli.Web.Portal\Azuli\Azuli.Web.Portal\Azuli.Web.DAO\bin\Release\Azuli.Web.DAO.dll
+C:\Users\Leandro\Documents\Visual Studio 2010\Projects\Azuli.Web.Portal\Azuli\Azuli.Web.Portal\Azuli.Web.DAO\bin\Release\Azuli.Web.DAO.pdb
+C:\Users\Leandro\Documents\Visual Studio 2010\Projects\Azuli.Web.Portal\Azuli\Azuli.Web.Portal\Azuli.Web.DAO\bin\Release\Azuli.Web.Model.dll
+C:\Users\Leandro\Documents\Visual Studio 2010\Projects\Azuli.Web.Portal\Azuli\Azuli.Web.Portal\Azuli.Web.DAO\bin\Release\Azuli.Web.Model.pdb
+C:\Users\Leandro\Documents\Visual Studio 2010\Projects\Azuli.Web.Portal\Azuli\Azuli.Web.Portal\Azuli.Web.DAO\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Leandro\Documents\Visual Studio 2010\Projects\Azuli.Web.Portal\Azuli\Azuli.Web.Portal\Azuli.Web.DAO\obj\Release\Azuli.Web.DAO.dll
+C:\Users\Leandro\Documents\Visual Studio 2010\Projects\Azuli.Web.Portal\Azuli\Azuli.Web.Portal\Azuli.Web.DAO\obj\Release\Azuli.Web.DAO.pdb
