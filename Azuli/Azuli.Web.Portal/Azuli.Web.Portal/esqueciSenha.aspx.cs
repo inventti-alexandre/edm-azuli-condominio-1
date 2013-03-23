@@ -45,7 +45,7 @@ namespace Azuli.Web.Portal
                     vMail = item.senha;
                 }
 
-                if (vMail != " ")
+                if (vMail != "")
                 {
                     oEnviaEmail.enviaSenha("A senha para o apartamento"+oProprietarioModel.ap.apartamento+" do bloco "+oProprietarioModel.ap.bloco+" é " + vMail, oProprietarioModel.ap.apartamento.ToString(), oProprietarioModel.email, 1);
 
