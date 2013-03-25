@@ -96,6 +96,7 @@ namespace Azuli.Web.Portal
                     oMsgModel.assunto = txtAssunto.Text;
                     oAp.apartamento = Convert.ToInt32(drpMsg.SelectedItem.Value);
                     oAp.bloco = Convert.ToInt32(drpBloco.SelectedItem.Value);
+                    oMsgModel.deMsg = "Flávio - Sindico";
                     oMsgModel.oAp = oAp;
 
 
