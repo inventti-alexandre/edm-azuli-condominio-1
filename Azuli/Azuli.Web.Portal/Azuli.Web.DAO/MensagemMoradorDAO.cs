@@ -22,6 +22,7 @@ namespace Azuli.Web.DAO
                 SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
                 comandoSQL.Parameters.AddWithValue("@AP", oAp.oAp.apartamento);
                 comandoSQL.Parameters.AddWithValue("@BLOCO", oAp.oAp.bloco);
+                comandoSQL.Parameters.AddWithValue("@STATUS_PARAM",oAp.status);
                 
                 DataTable tbProprietario = new DataTable();
 
@@ -39,6 +40,38 @@ namespace Azuli.Web.DAO
         }
 
 
+        public listaMensagemMorador  listaMensagemMoradorByID(MensagemMoradorModel oAp)
+        {
+
+
+
+            string clausulaSQL = "SP_MENSAGEM_MORADOR_BY_ID"; 
+                    
+            try
+            {
+
+                SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
+                comandoSQL.Parameters.AddWithValue("@CODIGO_MSG", oAp.codigoMsg);
+               
+                
+                DataTable tbProprietario = new DataTable();
+
+                tbProprietario = ExecutaQuery(comandoSQL);
+
+                return listaMensagemMorador(tbProprietario);
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }   
+
+
+
+
         public void enviaMensagemMorador(Model.MensagemMoradorModel oMensagem)
         {
             string clausulaSQL = "ENVIA_MENSAGEM_MORADOR";
@@ -48,12 +81,15 @@ namespace Azuli.Web.DAO
 
                 SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
                
+                
+           
                 comandoSQL.Parameters.AddWithValue("@BLOCO", oMensagem.oAp.bloco);
                 comandoSQL.Parameters.AddWithValue("@AP", oMensagem.oAp.apartamento);
                 comandoSQL.Parameters.AddWithValue("@MENSAGEM", oMensagem.mensagem);
                 comandoSQL.Parameters.AddWithValue("@STATUS", oMensagem.status);
                 comandoSQL.Parameters.AddWithValue("@ATIVO", oMensagem.ativo);
                 comandoSQL.Parameters.AddWithValue("@ASSUNTO", oMensagem.assunto);
+                comandoSQL.Parameters.AddWithValue("@De", oMensagem.deMsg);
 
 
                  ExecutaComando(comandoSQL);
@@ -67,6 +103,7 @@ namespace Azuli.Web.DAO
             }
         }
 
+    
 
         public listaMensagemMorador listaMensagemMorador(DataTable dt)
         {
@@ -87,6 +124,7 @@ namespace Azuli.Web.DAO
                 oMensagem.data_fim = Convert.ToDateTime(dr["DATA_FIM"]);
                 oMensagem.qtdMsg = Convert.ToInt32(dr["QTDMGS"]);
                 oMensagem.assunto = dr["ASSUNTO"].ToString();
+                oMensagem.deMsg = dr["De"].ToString();
                 oMensagem.oAp = oPropri;
 
                 oListMensagemMorador.Add(oMensagem);
@@ -94,6 +132,27 @@ namespace Azuli.Web.DAO
             }
 
             return oListMensagemMorador;
+        }
+
+   
+
+        public void atualizaMSG(MensagemMoradorModel oAp)
+        {
+            string clausulaSQL = "SP_MENSAGEM_MORADOR_ATUALIZA_MSG";
+
+            try
+            {
+
+                SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
+                comandoSQL.Parameters.AddWithValue("@CODIGO_MSG", oAp.codigoMsg);
+                ExecutaComando(comandoSQL);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         #endregion

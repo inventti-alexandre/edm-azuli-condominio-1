@@ -5,12 +5,14 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Data;
 using Azuli.Web.Model;
+using System.Web;
+
 
 namespace Azuli.Web.DAO
 {
     public class ProprietarioDAO:AcessoDAO, Interfaces.IProprietario
     {
-
+      
         #region IProprietario Members
 
         public int autenticaMorador(Model.ApartamentoModel ap, Model.ProprietarioModel apPro)
@@ -34,10 +36,11 @@ namespace Azuli.Web.DAO
 
                 return int.Parse(comandoSQL.Parameters["@RETORNO"].Value.ToString());
             }
-            catch (Exception)
+            catch (Exception error)
             {
-                
-                throw;
+
+              
+                throw error;
             }
         }
 
