@@ -49,7 +49,7 @@ namespace Azuli.Web.Portal
                 ApartamentoModel oApModel = new ApartamentoModel();
                 oApModel.apartamento = Convert.ToInt32(Session["AP"]);
                 oApModel.bloco = Convert.ToInt32(Session["Bloco"]);
-
+                oMensagemModel.status ="1";
                 oMensagemModel.oAp = oApModel;
 
                 listaMensagemMorador listaQuantidade = new listaMensagemMorador();
@@ -79,7 +79,7 @@ namespace Azuli.Web.Portal
         {
             if (Convert.ToInt32(Session["mensagem"]) >= 1)
             {
-                Response.Redirect("listaMensagemMorador.aspx");
+                Response.Redirect("detalheMensagemMorador.aspx");
 
             }
             else
