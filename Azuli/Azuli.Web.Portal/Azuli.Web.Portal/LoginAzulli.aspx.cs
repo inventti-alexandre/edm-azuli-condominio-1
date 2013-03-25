@@ -8,6 +8,7 @@ using Azuli.Web.Business;
 using Azuli.Web.Model;
 using System.Configuration;
 using Azuli.Web.Portal.Util;
+using log4net;
 
 
 namespace Azuli.Web.Portal.Account
@@ -15,9 +16,11 @@ namespace Azuli.Web.Portal.Account
     public partial class LoginAzulli : Util.Base
     {
 
-
+       
         protected override void OnLoad(EventArgs e)
-        {
+        { 
+            
+            
             hiddenControl();
             string id = ConfigurationManager.AppSettings["GoogleAnalyticsId"];
 
@@ -49,22 +52,26 @@ namespace Azuli.Web.Portal.Account
                 //  "alert(\'" + "TEST" + "\');" + Environment.NewLine +
                 //  "</script>", false);
 
-
+               
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "MessageAlert", script, false);
+              
 
             }
         }
 
-
+      
         ProprietarioBLL oProprietario = new ProprietarioBLL();
         ProprietarioModel oProprietarioModel = new ProprietarioModel();
         ApartamentoModel oAPmodel = new ApartamentoModel();
 
         protected void Page_Load(object sender, EventArgs e)
         {
+         
             hiddenControl();
             Session.Clear();
             Session.Abandon();
+
+          
             
          
         }
@@ -108,6 +115,7 @@ namespace Azuli.Web.Portal.Account
                 else
                 {
                     Response.Redirect("~/paginaInicialMoradores.aspx");
+                   
                 }
             }
             else
@@ -162,6 +170,7 @@ namespace Azuli.Web.Portal.Account
             }
             catch (Exception ex)
             {
+          
                 lblMsg.Text = "<b> <font color=green>Erro ao solicitar acesso,verifique os dados e tente novamente </b></font> </br>" + ex.Message;
             }
             finally
