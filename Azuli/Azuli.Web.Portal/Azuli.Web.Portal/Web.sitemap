@@ -23,7 +23,7 @@
     </siteMapNode>
 
     <siteMapNode url="" title="Mensagens" description="Consultas" roles="">
-      <siteMapNode url="~/listaMensagemMorador.aspx" title="Caixa de Entrada" description="Consultar mensagem" />
+      <siteMapNode url="~/detalheMensagemMorador.aspx" title="Caixa de Entrada" description="Consultar mensagem" />
 
     </siteMapNode>
 
