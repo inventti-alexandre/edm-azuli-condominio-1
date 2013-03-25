@@ -8,7 +8,7 @@ using Azuli.Web.Business;
 using Azuli.Web.Model;
 using System.Configuration;
 using Azuli.Web.Portal.Util;
-using log4net;
+
 
 
 namespace Azuli.Web.Portal.Account

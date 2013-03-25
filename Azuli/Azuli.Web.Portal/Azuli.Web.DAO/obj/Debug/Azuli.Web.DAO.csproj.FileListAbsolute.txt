@@ -19,3 +19,5 @@ C:\Meu Desenvolvimento\Azuli\Azuli.Web.DAO\bin\Debug\Azuli.Web.Model.pdb
 C:\Meu Desenvolvimento\Azuli\Azuli.Web.DAO\obj\Debug\ResolveAssemblyReference.cache
 C:\Meu Desenvolvimento\Azuli\Azuli.Web.DAO\obj\Debug\Azuli.Web.DAO.dll
 C:\Meu Desenvolvimento\Azuli\Azuli.Web.DAO\obj\Debug\Azuli.Web.DAO.pdb
+C:\Meu Desenvolvimento\Azuli\Azuli.Web.DAO\bin\Debug\log4net.dll
+C:\Meu Desenvolvimento\Azuli\Azuli.Web.DAO\bin\Debug\log4net.xml

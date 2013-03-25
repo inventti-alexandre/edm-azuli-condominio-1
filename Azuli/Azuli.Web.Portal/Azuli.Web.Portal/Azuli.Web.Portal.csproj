@@ -60,6 +60,7 @@
     <Content Include="AreaAdministrativa.aspx" />
     <Content Include="consultaBalancete.aspx" />
     <Content Include="consultaCircular.aspx" />
+    <Content Include="detalheMensagemMorador.aspx" />
     <Content Include="detalheOcorrencia.aspx" />
     <Content Include="enviaMensagemMorador.aspx" />
     <Content Include="esqueciSenha.aspx" />
@@ -148,6 +149,13 @@
     </Compile>
     <Compile Include="consultaCircular.aspx.designer.cs">
       <DependentUpon>consultaCircular.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="detalheMensagemMorador.aspx.cs">
+      <DependentUpon>detalheMensagemMorador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="detalheMensagemMorador.aspx.designer.cs">
+      <DependentUpon>detalheMensagemMorador.aspx</DependentUpon>
     </Compile>
     <Compile Include="detalheOcorrencia.aspx.cs">
       <DependentUpon>detalheOcorrencia.aspx</DependentUpon>
@@ -299,12 +307,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="logsAzuli\" />
     <Folder Include="ServerFile\ArquivosCondominio\" />
     <Folder Include="ServerFile\Balancete\" />
     <Folder Include="ServerFile\EvidenciaMoradorOC\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Account\Web.config" />
+    <Content Include="Account\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>

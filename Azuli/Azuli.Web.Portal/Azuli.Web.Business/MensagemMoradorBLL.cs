@@ -42,6 +42,34 @@ namespace Azuli.Web.Business
             }
         }
 
+        public listaMensagemMorador listaMensagemMoradorByID(MensagemMoradorModel oAp)
+        {
+            try
+            {
+                return oMensagemDAO.listaMensagemMoradorByID(oAp);
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
+       
+
+        public void atualizaMSG(MensagemMoradorModel oAp)
+        {
+            try
+            {
+                oMensagemDAO.atualizaMSG(oAp);
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
         #endregion
     }
 }

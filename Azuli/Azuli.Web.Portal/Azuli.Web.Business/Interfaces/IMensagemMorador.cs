@@ -10,5 +10,8 @@ namespace Azuli.Web.Business.Interfaces
     {
         listaMensagemMorador listaMensagemMorador(Model.MensagemMoradorModel oAp);
         void enviaMensagemMorador(Model.MensagemMoradorModel oMensagem);
+        listaMensagemMorador listaMensagemMoradorByID(Model.MensagemMoradorModel oAp);
+        void atualizaMSG(MensagemMoradorModel oAp);
     }
+
 }

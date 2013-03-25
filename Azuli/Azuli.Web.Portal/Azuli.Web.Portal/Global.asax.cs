@@ -5,16 +5,16 @@ using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Text;
-using log4net;
+
 
 namespace Azuli.Web.Portal
 {
     public class Global : System.Web.HttpApplication
     {
-        log4net.ILog logger = log4net.LogManager.GetLogger(typeof(_Default));
+     
         void Application_Start(object sender, EventArgs e)
         {
-            log4net.Config.XmlConfigurator.Configure();
+           
            
 
         }
@@ -32,7 +32,7 @@ namespace Azuli.Web.Portal
             if (ex.GetType() != typeof(HttpException))
             {
 
-                logger.Error(ex.ToString());
+              
                 Util.SendMail logError = new Util.SendMail();
 
                 string paginaAtual = Request.CurrentExecutionFilePath;
