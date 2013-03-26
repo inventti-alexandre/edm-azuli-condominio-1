@@ -9,9 +9,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-   <br /><br /> <br /><br /><br /><br />
+    <br /><br /> <br /><br /><br /><br />
 <fieldset class="login">
-        <legend class="AlternatingRowStyle">Caixa de Entrada - Mensagem</legend>
+        <legend class="">Caixa de Entrada - Mensagem</legend>
           <br />
           <asp:Label ID="lblConsultaAno" runat="server" CssClass="footer" 
             Text="Status:  "></asp:Label>
@@ -46,12 +46,13 @@
             </asp:GridView>
             </div>
        
-       <div id="divGeralMsg" runat="server">
+       <div id="divGeralMsg" runat="server" class="bold">
        
-          <div class="AlternatingRowStyle" id="DivlerMsg" style="position:relative; " 
+          <div  id="DivlerMsg" style="position:relative; " 
             runat="server">
-                <h3 class="style1">De: 
-                    <asp:Label ID="lblDe" runat="server" Text=""></asp:Label> &nbsp; - Assunto:&nbsp;&nbsp; <asp:Label ID="lblAssunto" runat="server" Text=""></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Data:&nbsp;
+                <h3 class="AlternatingRowStyle">
+                    <asp:Label ID="lblDe" runat="server" Text=""></asp:Label> &nbsp; Assunto:&nbsp;&nbsp; <asp:Label ID="lblAssunto" runat="server" Text=""></asp:Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data:&nbsp;
                     <asp:Label ID="lblData" runat="server" Text=""></asp:Label>  </h3>
 			</div>
             

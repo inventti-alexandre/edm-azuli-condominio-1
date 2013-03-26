@@ -14,5 +14,6 @@ namespace Azuli.Web.Business.Interfaces
          listAgenda listaReservaByMorador(ApartamentoModel oAp, AgendaModel oAgenda);
          listAgenda listaReservaByMoradorFesta(ApartamentoModel oAp, AgendaModel oAgenda);
          void cancelaAgendamentoMorador(DateTime dataAgendamento, ApartamentoModel ap, bool festa, bool churras);
+         listAgenda validaAgendamento(DateTime data, ApartamentoModel oAp, AgendaModel oAgenda);
     }
 }

@@ -180,6 +180,8 @@ namespace Azuli.Web.Portal
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
+            int contadorChurras = 0;
+            int contadorFesta = 0;
 
             if (chkChurrascaria.Checked || chkSalaoFesta.Checked)
             {
@@ -216,19 +218,24 @@ namespace Azuli.Web.Portal
                 try
                 {
 
+                     foreach (var item in  oAgenda.validaAgendamento(Convert.ToDateTime(lblData.Text), oApModel, oAgendaModel))
+	                 {
+                         contadorChurras = item.contadorChurrasco;
+                         contadorFesta =  item.contadorFesta;
+	                 }
 
-               
-                    oAgenda.cadastrarAgenda(Convert.ToDateTime(lblData.Text), oApModel, oAgendaModel);
+                     if (chkChurrascaria.Checked && contadorChurras <= 0 || chkSalaoFesta.Checked && contadorFesta <= 0)
+                     {
 
-                    dvOpcao.Visible = false;
-                    DivConfirma.Visible = true;
-                    dvProprietario.Visible = false;
+                         oAgenda.cadastrarAgenda(Convert.ToDateTime(lblData.Text), oApModel, oAgendaModel);
+                         validaAreaCadastro();
+                     }
+                     else
+                     {
+                         lblReserva.Text = "Já existem reservas para esta data!!";
+                     }
 
-                    lblDataConfirma.Text = lblData.Text;
-                    lblBlocoConfirma.Text = Session["Bloco"].ToString();
-                    lblApConfirma.Text = Session["AP"].ToString();
-
-
+                   
                 }
 
                 catch (Exception error)
@@ -244,6 +251,17 @@ namespace Azuli.Web.Portal
             {
                 lblReserva.Text = "Favor escolher uma das opções !!";
             }
+        }
+
+        public void validaAreaCadastro()
+        {
+            dvOpcao.Visible = false;
+            DivConfirma.Visible = true;
+            dvProprietario.Visible = false;
+
+            lblDataConfirma.Text = lblData.Text;
+            lblBlocoConfirma.Text = Session["Bloco"].ToString();
+            lblApConfirma.Text = Session["AP"].ToString();
         }
 
         protected void btnOKConfirma_Click(object sender, EventArgs e)
@@ -329,75 +347,87 @@ namespace Azuli.Web.Portal
 
         }
 
-        protected void formVwChurrasco_ItemDeleting(object sender, FormViewDeleteEventArgs e)
-        {
+
+        /// <summary>
+        /// Desabilitado cancelamento direto pela tela.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        //protected void formVwChurrasco_ItemDeleting(object sender, FormViewDeleteEventArgs e)
+        //{
 
 
 
-            const bool salaoFesta = false;
-            const bool churrasqueira = true;
-            DateTime dataAgendamento = new DateTime();
-            string bloco = "";
-            string ap = "";
-            DataKey key = formVwChurrasco.DataKey;
-            dataAgendamento = Convert.ToDateTime(key.Value);
+        //    const bool salaoFesta = false;
+        //    const bool churrasqueira = true;
+        //    DateTime dataAgendamento = new DateTime();
+        //    string bloco = "";
+        //    string ap = "";
+        //    DataKey key = formVwChurrasco.DataKey;
+        //    dataAgendamento = Convert.ToDateTime(key.Value);
             
-            if (validaCancelamento(dataAgendamento))
-            {
-                bloco = Session["Bloco"].ToString();
-                ap = Session["Ap"].ToString();
-                oAP.apartamento = Convert.ToInt32(ap);
-                oAP.bloco = Convert.ToInt32(bloco);
+        //    if (validaCancelamento(dataAgendamento))
+        //    {
+        //        bloco = Session["Bloco"].ToString();
+        //        ap = Session["Ap"].ToString();
+        //        oAP.apartamento = Convert.ToInt32(ap);
+        //        oAP.bloco = Convert.ToInt32(bloco);
 
 
-                try
-                {
-                    oAgenda.cancelaAgendamentoMorador(dataAgendamento, oAP, salaoFesta, churrasqueira);
-                    formVwChurrasco.DataBind();
-                }
-                catch (Exception)
-                {
+        //        try
+        //        {
+        //            oAgenda.cancelaAgendamentoMorador(dataAgendamento, oAP, salaoFesta, churrasqueira);
+        //            formVwChurrasco.DataBind();
+        //        }
+        //        catch (Exception)
+        //        {
 
-                    throw;
-                }
-            }
+        //            throw;
+        //        }
+        //    }
          
 
-        }
+        //}
 
-        protected void frvSalaoFesta_ItemDeleting(object sender, FormViewDeleteEventArgs e)
-        {
+
+        /// <summary>
+        /// Desabilitado cancelamento direto pela tela.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        //protected void frvSalaoFesta_ItemDeleting(object sender, FormViewDeleteEventArgs e)
+        //{
            
 
 
-                const bool  salaoFesta = true;
-                const bool churrasqueira = false;
-                DateTime dataAgendamento = new DateTime();
-                string bloco = "";
-                string ap = "";
-                DataKey key = frvSalaoFesta.DataKey;
-                dataAgendamento = Convert.ToDateTime(key.Value);
+        //        const bool  salaoFesta = true;
+        //        const bool churrasqueira = false;
+        //        DateTime dataAgendamento = new DateTime();
+        //        string bloco = "";
+        //        string ap = "";
+        //        DataKey key = frvSalaoFesta.DataKey;
+        //        dataAgendamento = Convert.ToDateTime(key.Value);
                 
-                if (validaCancelamento(dataAgendamento))
-                {
-                    bloco = Session["Bloco"].ToString();
-                    ap = Session["Ap"].ToString();
-                    oAP.apartamento = Convert.ToInt32(ap);
-                    oAP.bloco = Convert.ToInt32(bloco);
+        //        if (validaCancelamento(dataAgendamento))
+        //        {
+        //            bloco = Session["Bloco"].ToString();
+        //            ap = Session["Ap"].ToString();
+        //            oAP.apartamento = Convert.ToInt32(ap);
+        //            oAP.bloco = Convert.ToInt32(bloco);
 
 
-                    try
-                    {
-                        oAgenda.cancelaAgendamentoMorador(dataAgendamento, oAP, salaoFesta, churrasqueira);
-                        frvSalaoFesta.DataBind();
-                    }
-                    catch (Exception)
-                    {
+        //            try
+        //            {
+        //                oAgenda.cancelaAgendamentoMorador(dataAgendamento, oAP, salaoFesta, churrasqueira);
+        //                frvSalaoFesta.DataBind();
+        //            }
+        //            catch (Exception)
+        //            {
 
-                        throw;
-                    }
-                }
-        }
+        //                throw;
+        //            }
+        //        }
+        //}
 
         public bool validaCancelamento(DateTime dataAgendamento)
         {
@@ -412,8 +442,15 @@ namespace Azuli.Web.Portal
 
             else
             {
-                lblMgs.Text = "Só é permitido o cancelamento com 15 dias de antecedência e hoje faltam " + diasAgendado + " dias para reserva, excessões procure o síndico ramal 94";
-               
+                if (diasAgendado == 0)
+                {
+                    lblMgs.Text = "Não é permitido o cancelamento! Para o mesmo dia da Reserva";
+
+                }
+                else
+                {
+                    lblMgs.Text = "Não é permitido o cancelamento! Permitido só com 15 dias de antecedência e hoje faltam " + diasAgendado + " dias para reserva, excessões procure o síndico ramal 94";
+                }
                 return false;
             }
         }

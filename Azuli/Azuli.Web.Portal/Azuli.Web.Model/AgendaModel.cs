@@ -11,6 +11,8 @@ namespace Azuli.Web.Model
         public ApartamentoModel ap { get; set;}
         public bool salaoFesta { get; set; }
         public bool salaoChurrasco { get; set;}
+        public int contadorChurrasco { get; set; }
+        public int contadorFesta { get; set; }
     }
 
     public class listAgenda : List<AgendaModel> { };

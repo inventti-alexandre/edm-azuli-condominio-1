@@ -3,10 +3,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
-        .style2
-        {
-            width: 509px;
-        }
         .style3
         {
             font-weight: 700;
@@ -32,11 +28,7 @@
             width: 966px;
             height: 130px;
         }
-        .style13
-        {
-            width: 536px;
-        }
-    .style14
+        .style14
     {
         text-decoration: underline;
     }
@@ -45,18 +37,30 @@
             width: 513px;
             height: 130px;
         }
+        .style16
+        {
+            width: 448px;
+        }
+        #dvCalendar
+        {
+            height: 364px;
+        }
+        .style17
+        {
+            width: 876px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
-<br /></br> 
+<br /><br /><br />
     <div id="dvProprietario" runat="server">
     <br /><br /><br />
     <fieldset class="login">
     
         <legend>Reservas feita em:  <asp:Label ID="lblMesAtual" runat="server" Style="font-weight: 700; color: #0033CC"></asp:Label></legend>
-        <table style="height: 192px; width: 669px;">
+        <table style="height: 150px; width: 649px;" class="loginDisplay">
             <tr>
                 <td align="center" class="style15">
                  
@@ -64,7 +68,6 @@
                         Width="125px" CssClass="btGeral" AllowPaging="True" Height="76px" 
                         EmptyDataText="Você não tem Reservas para Churrasqueira neste mês!!" 
                         onpageindexchanging="formVwChurrasco_PageIndexChanging" 
-                        onitemdeleting="formVwChurrasco_ItemDeleting" 
                         DataKeyNames="dataAgendamento">
                         <EditRowStyle BackColor="#2461BF" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -84,8 +87,7 @@
                                 <br></br>
                             </table>
                             <br />
-                            <asp:Button ID="btnDel" runat="server" CssClass="botao" CausesValidation="True" CommandName="Delete"
-                                Text="Cancelar" />
+                         
                         </ItemTemplate>
                         <FooterTemplate>
                         </FooterTemplate>
@@ -101,8 +103,8 @@
                         Width="125px" CssClass="btGeral" AllowPaging="True" Height="76px" 
                         EmptyDataText="Você não tem Reservas para o salão de Festa neste mês!!" 
                         onpageindexchanging="frvSalaoFesta_PageIndexChanging" 
-                        onitemdeleted="frvSalaoFesta_ItemDeleted" DataKeyNames="dataAgendamento" 
-                        onitemdeleting="frvSalaoFesta_ItemDeleting">
+                        DataKeyNames="dataAgendamento"> 
+                    
                         <EditRowStyle BackColor="#2461BF" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                         <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -121,7 +123,7 @@
                                 <br></br>
                             </table>
                             <br />
-                            <asp:Button ID="btnDel" runat="server" CssClass="botao" CausesValidation="True" CommandName="Delete"                                Text="Cancelar" />
+                     
                         </ItemTemplate>
                         <FooterTemplate>
                         </FooterTemplate>
@@ -132,12 +134,13 @@
                 </td>
             </tr>
              </table>
+
         <asp:Label ID="lblMgs" runat="server" 
                      Font-Bold="False" ForeColor="Red"></asp:Label>
     </fieldset> </div>
     <div id="dvOpcao" runat="server">
         <fieldset class="login">
-            <legend>Selecione abaixo a reserva disponivel na data escolhida:</legend>
+            <legend>Escolha a área de reserva: </legend>
             <table style="width: 643px; height: 152px;">
                 <tr>
                     <td class="style5">
@@ -187,12 +190,12 @@
     </div>
     <div id="dvCalendar" align="left" runat="server">
         <fieldset class="login">
-            <legend>Escolha a Data da sua reserva:</legend>
+           <legend>Faça sua reserva:</legend>
             <asp:Label ID="lblMsgData" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
             
-            <table style="width: 886px; height: 308px;">
+            <table>
                 <tr>
-                    <td  align="left">
+                    <td  align="left" class="style16">
 
                          
                      <asp:UpdatePanel ID="UpdatePanel1" runat="server"> 
@@ -204,8 +207,8 @@
                               
                         <asp:Calendar ID="Calendar1" runat="server" BackColor="White" OnSelectionChanged="Calendar1_SelectionChanged"
                             BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana"
-                            Font-Size="9pt" ForeColor="Black" Height="236px" NextPrevFormat="ShortMonth"
-                            Width="446px" OnDayRender="Calendar1_DayRender">
+                            Font-Size="9pt" ForeColor="Black" Height="216px" NextPrevFormat="ShortMonth"
+                            Width="410px" OnDayRender="Calendar1_DayRender">
                             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" Height="8pt" />
                             <DayStyle BackColor="#CCCCCC" />
                             <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="White" />
@@ -250,11 +253,11 @@
             </table>
         </fieldset>
     </div>
-    <br />
-    <div id="DivConfirma" runat="server">
+    <br /><br /> <br /> <br />
+    <div id="DivConfirma"  runat="server" class="botao">
         <fieldset class="login">
-            <legend class="style7">Reserva Efetuada com Sucesso Para o:</legend>
-            <table id="tbConfirma" style="width: 880px; height: 380px;" runat="server">
+            <legend class="style7">Reserva Efetuada com Sucesso!</legend>
+            <table id="tbConfirma" style="width: 921px; height: 380px;" runat="server">
                 <tr>
                     <td>
                         &nbsp;&nbsp; <asp:Label ID="lblBocoTitle" runat="server" Font-Bold="True" Text="Bloco:"></asp:Label>
@@ -267,8 +270,9 @@
             &nbsp;<asp:Label ID="lblConfirmaData" runat="server" Font-Bold="True"></asp:Label>
                     </td>
                 </tr>
-    </div>
-    <tr>
+                </fieldset>
+    
+    
         <td>
         <hr />
             <p style="color:#3A5FCD; font-weight: bold;">
@@ -278,52 +282,55 @@
     </p>
     <table style="text-align: justify;">
         <tr>
-            <td class="style13">
+            <td class="style17">
+            <ul  style="color:red 
+">
+                    <li style="font-size:medium">Para que sua reserva seja liberada efetivamente, favor acertar os valores da reserva, o pagamento terá que ser efetuado no mesmo 
+                        dia, caso não ocorra sua reserva será cancelada automáticamente!</li>
+                </ul>
                 <ul style="color:#3A5FCD
 ">
-                    <li>É permitido cancelar o agendamento somente com 2 dias de antencedencias </li>
+                    <li>É permitido cancelar o agendamento somente apenas com 15 dias de antencedencias </li>
+                </ul>
+                
+                <ul style="color:#3A5FCD 
+">
+                    <li>Proíbido colar ou colocar qualquer tipo de material na parede como: cola, durex, prego e entre mais..</li>
                 </ul>
                 
                 <ul style="color:#3A5FCD
 ">
-                    <li>Algumas regras</li>
+                    <li>Durante a reserva é proibido a utilização da Piscina</li>
                 </ul>
                 
                 <ul style="color:#3A5FCD
 ">
-                    <li>Algumas regras</li>
+                    <li>Após as 22:00 é permitido ficar nas áreas, porém não pode haver barulhos que incomodem os moradores</li>
                 </ul>
                 
                 <ul style="color:#3A5FCD
 ">
-                    <li>Algumas regras</li>
-                </ul>
-                
-                <ul style="color:#3A5FCD
-">
-                    <li>Algumas regras</li>
+                    <li>Morador será responsável por qualquer ato do seus visitantes, que quebrem as normas do condominio</li>
                 </ul>
                
               
                 <p>
                     &nbsp;</p>
                 <p>
-                    <asp:ImageButton ID="ImageButton1" runat="server" Height="27px" 
-                        ImageUrl="~/images/print.jpg" onclick="ImageButton1_Click1" />
-                </p>
-                <p>
                     &nbsp;</p>
                 <p>
                     <asp:Button ID="btnOKConfirma" runat="server" CssClass="botao" 
                         onclick="btnOKConfirma_Click1" Text="Ok" Width="63px" />
-                &nbsp;</p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:ImageButton ID="ImageButton1" runat="server" Height="27px" 
+                        ImageUrl="~/images/print.jpg" onclick="ImageButton1_Click1" />
+                </p>
             </td>
-            <td>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <img alt="" src="images/azuli.jpg" style="height: 146px; width: 161px;" /></td>
         </tr>
-    </table>
-            </td>
-    </tr>
-    </table> </fieldset></div>
+    </table></fieldset>
+            </td></tr>
+    
+            </table></div></table>
+
+    
 </asp:Content>

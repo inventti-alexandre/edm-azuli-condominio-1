@@ -15,7 +15,7 @@ namespace Azuli.Web.DAO
 
         #region IAgenda Members
 
-		//Alterei aqui	
+      
         public listAgenda listaReservaByMorador(ApartamentoModel oAp, AgendaModel oAgenda)
         {
             string clausulaSQL = "RESERVA_MORADOR_CHURRAS";
@@ -197,9 +197,15 @@ namespace Azuli.Web.DAO
                 
                 AgendaModel oAgendaModel = new AgendaModel();
 
+                if (dr.Table.Columns.Contains("DATA_AGENDAMENTO")) 
                 oAgendaModel.dataAgendamento = Convert.ToDateTime(dr["DATA_AGENDAMENTO"]);
+
+                if (dr.Table.Columns.Contains("SALAO_CHURRASCO")) 
                 oAgendaModel.salaoChurrasco = Convert.ToBoolean(dr["SALAO_CHURRASCO"]);
-                oAgendaModel.salaoFesta = Convert.ToBoolean(dr["SALAO_FESTA"]);
+
+                if (dr.Table.Columns.Contains("SALAO_FESTA")) 
+                    oAgendaModel.salaoFesta = Convert.ToBoolean(dr["SALAO_FESTA"]);
+                
                 oAgendaModel.ap = new ApartamentoModel();
 
                 if (dr.Table.Columns.Contains("PROPRIETARIO_AP")) 
@@ -207,6 +213,13 @@ namespace Azuli.Web.DAO
 
                 if (dr.Table.Columns.Contains("PROPRIETARIO_BLOCO")) 
                 oAgendaModel.ap.bloco = Convert.ToInt32(dr["PROPRIETARIO_BLOCO"]);
+
+
+                if (dr.Table.Columns.Contains("COUNT_FESTA"))
+                   oAgendaModel.contadorFesta = Convert.ToInt32(dr["COUNT_FESTA"]);
+
+                if (dr.Table.Columns.Contains("COUNT_CHURRAS"))
+                    oAgendaModel.contadorChurrasco = Convert.ToInt32(dr["COUNT_CHURRAS"]);
 
                 oListaEventos.Add(oAgendaModel);
                                
@@ -218,10 +231,35 @@ namespace Azuli.Web.DAO
 
 
 
+        public listAgenda validaAgendamento(DateTime data, ApartamentoModel oAp, AgendaModel oAgenda)
+        {
 
+            string clausulaSQL = "VALIDA_CADASTRO_AGENDA";
 
+            try
+            {
+                SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
 
-       
+                comandoSQL.Parameters.AddWithValue("@DATA_AGENDA", data);
+                comandoSQL.Parameters.AddWithValue("@BLOCO", oAp.bloco);
+                comandoSQL.Parameters.AddWithValue("@AP", oAp.apartamento);
+                comandoSQL.Parameters.AddWithValue("@FESTA", oAgenda.salaoFesta);
+                comandoSQL.Parameters.AddWithValue("@CHURRAS", oAgenda.salaoChurrasco);
+                
+                DataTable tbAgenda = new DataTable();
+
+                tbAgenda = ExecutaQuery(comandoSQL);
+
+                return carregaAgenda(tbAgenda);
+
+            }
+            catch (Exception error)
+            {
+
+                throw error;
+            }
+           
+        }
 
         #endregion
     }

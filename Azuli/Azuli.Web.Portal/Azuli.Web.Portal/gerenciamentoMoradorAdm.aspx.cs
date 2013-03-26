@@ -1,0 +1,117 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Azuli.Web.Business;
+using Azuli.Web.Model;
+using Azuli.Web.Portal.Util;
+using System.Text;
+
+namespace Azuli.Web.Portal
+{
+
+    public partial class gerenciamentoMoradorAdm :Util.Base
+    {
+
+
+        ProprietarioBLL oProprietario = new ProprietarioBLL();
+        ProprietarioModel oProprietarioModel = new ProprietarioModel();
+        ApartamentoModel oAPmodel = new ApartamentoModel();
+        Util.Util oUtil = new Util.Util();
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                if (oUtil.validateSessionAdmin())
+                {
+
+
+                }
+                else
+                {
+
+
+                }
+            }
+
+        }
+
+        protected void ibtAddSave_Click(object sender, ImageClickEventArgs e)
+        {
+
+            oProprietarioModel.ap = new ApartamentoModel();
+
+            oAPmodel.apartamento = Convert.ToInt32(txtAP.Text);
+            oAPmodel.bloco = Convert.ToInt32(txtBloco.Text);
+            oProprietarioModel.ap = oAPmodel;
+
+
+            if (oProprietario.BuscaMoradorAdmin(oAPmodel).Count == 0)
+            {
+
+                oProprietarioModel.proprietario1 = txtCond01.Text;
+                oProprietarioModel.proprietario2 = txtEmail.Text;
+                oProprietarioModel.email = txtEmail.Text;
+                oProprietarioModel.senha = oUtil.GeraSenha();
+
+                try
+                {
+                    int count = oProprietario.CadastrarApartamentoMorador(oProprietarioModel);
+
+                    if (count > 0)
+                    {
+
+                        lblMsg.Text = "Já existe cadastro para o Bloco: " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento;
+                        //SendMail enviaEmail = new SendMail();
+                        //int status = 0;
+
+                        //enviaEmail.enviaSenha(lblMsg.Text, oProprietarioModel.proprietario1, oProprietarioModel.email, status);
+                    }
+
+                    else
+                    {
+
+                        lblMsg.Text = "Cadastro efetuado com sucesso!! <br> <b> "  ;
+                        grdGerenciamentoMoradores.DataBind();
+                        hideControl();
+                    }
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            else
+            {
+                lblMsg.Text = "Já existe cadastro para o Bloco: " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento;
+            }
+          
+           }
+
+        public void hideControl()
+        {
+            txtBloco.Text = "";
+            txtCond01.Text = "";
+            txtCond02.Text = "";
+            txtAP.Text = "";
+            txtEmail.Text = "";
+
+        }
+
+
+        protected void ibtCancel_Click(object sender, ImageClickEventArgs e)
+        {
+            hideControl();
+
+        }
+
+        protected void ibtSearch_Click(object sender, ImageClickEventArgs e)
+        {
+
+        }
+    }
+}

@@ -132,8 +132,29 @@ namespace Azuli.Web.Business
             }
         }
 
-        #endregion
+  
 
+
+        public listAgenda validaAgendamento(DateTime data, ApartamentoModel oAp, AgendaModel oAgenda)
+        {
+            listAgenda oListAgenda = new listAgenda();
+
+            try
+            {
+                oListAgenda = oAgendaDao.validaAgendamento(data, oAp, oAgenda);
+
+                return oListAgenda;
+
+            }
+            catch (Exception error)
+            {
+
+                throw error;
+            }
+
+        }
+
+        #endregion
 
          #region IAgenda Members
 
@@ -163,5 +184,7 @@ namespace Azuli.Web.Business
         }
 
         #endregion
+
+      
     }
 }

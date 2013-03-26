@@ -15,7 +15,7 @@ namespace Azuli.Web.Portal
         protected void Page_Load(object sender, EventArgs e)
         {
 
-           
+
 
         }
 
@@ -26,44 +26,44 @@ namespace Azuli.Web.Portal
             try
             {
 
-           
-                    if (txtNovaSenha.Text.Length == 4)
+
+                if (txtNovaSenha.Text.Length == 4)
+                {
+                    ProprietarioBLL oProprietario = new ProprietarioBLL();
+                    ProprietarioModel oProprietarioModel = new ProprietarioModel();
+
+                    oProprietarioModel.ap = new ApartamentoModel();
+
+
+
+                    if (txtNovaSenha.Text == txtRepitaNovaSenha.Text)
                     {
-                        ProprietarioBLL oProprietario = new ProprietarioBLL();
-                        ProprietarioModel oProprietarioModel = new ProprietarioModel();
 
-                        oProprietarioModel.ap = new ApartamentoModel();
-              
-                       
+                        oProprietarioModel.ap.apartamento = (int)Session["AP"];
+                        oProprietarioModel.ap.bloco = (int)Session["Bloco"];
+                        oProprietarioModel.senha = txtNovaSenha.Text;
 
-                        if (txtNovaSenha.Text == txtRepitaNovaSenha.Text)
-                        {
-                    
-                            oProprietarioModel.ap.apartamento = (int)Session["AP"];
-                            oProprietarioModel.ap.bloco = (int)Session["Bloco"];
-                            oProprietarioModel.senha = txtNovaSenha.Text;
-
-                            oProprietario.alteraSenha(oProprietarioModel);
+                        oProprietario.alteraSenha(oProprietarioModel);
 
 
-                                StringBuilder sb = new StringBuilder();
-                                sb.Append("<b>A sua senha foi alterada com sucesso! No próximo logon será necessário  usá-la!</b>");
+                        StringBuilder sb = new StringBuilder();
+                        sb.Append("<b>A sua senha foi alterada com sucesso! No próximo logon será necessário  usá-la!</b>");
 
-                                lblMensagem.Text = sb.ToString();
-                    
+                        lblMensagem.Text = sb.ToString();
 
-                        }
-                        else
-                        {
-                            lblMensagem.Text = "Senhas digitadas estão diferentes, favor verificar.";
-                        }
+
                     }
                     else
                     {
-                        lblMensagem.Text = "Senha precisa ter no mínimo 4 caracteres";
+                        lblMensagem.Text = "Senhas digitadas estão diferentes, favor verificar.";
                     }
+                }
+                else
+                {
+                    lblMensagem.Text = "Senha precisa ter no mínimo 4 caracteres";
+                }
 
-                    }
+            }
 
             catch (Exception ex)
             {
@@ -72,6 +72,6 @@ namespace Azuli.Web.Portal
             }
 
         }
-      
+
     }
 }
