@@ -221,6 +221,7 @@ namespace Azuli.Web.DAO
                 if (dr.Table.Columns.Contains("COUNT_CHURRAS"))
                     oAgendaModel.contadorChurrasco = Convert.ToInt32(dr["COUNT_CHURRAS"]);
 
+
                 oListaEventos.Add(oAgendaModel);
                                
             }
