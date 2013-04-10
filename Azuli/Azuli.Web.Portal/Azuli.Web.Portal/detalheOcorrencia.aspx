@@ -27,8 +27,15 @@
          onrowcommand="grdOcorrencias_RowCommand" DataKeyNames="codigoOcorrencia" 
          EmptyDataText="Não existem ocorrência aberta neste mês !!"> 
         <Columns>
-            <asp:BoundField DataField="codigoOcorrencia" HeaderText="Ocorrência" />
-            <asp:BoundField DataField="dataOcorrencia" HeaderText="Data" />
+            <asp:BoundField  DataField="codigoOcorrencia" HeaderText="Ocorrência" />
+            <asp:TemplateField HeaderText="Data">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("dataOcorrencia") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label1" runat="server"  Text='<%# Eval("dataOcorrencia", "{0:dddd}") + " / " + Eval("dataOcorrencia","{0:dd/MM/yyyy}") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
             <asp:BoundField DataField="descricaoOcorrencia" HeaderText="Assunto" />
             <asp:BoundField DataField="statusOcorrencia" HeaderText="Status" />
             <asp:ButtonField ButtonType="Image" ImageUrl="~/images/ico_search.gif" 

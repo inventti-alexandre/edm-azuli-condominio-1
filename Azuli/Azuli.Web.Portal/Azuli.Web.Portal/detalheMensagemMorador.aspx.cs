@@ -83,6 +83,8 @@ namespace Azuli.Web.Portal
 
                 atualizaMensagemParaLida(oMensagemModel);
 
+                drpStatusMsg.Visible = false;
+                lblConsultaAno.Visible = false;
                 btnOk.Visible = true;
               
             }
@@ -99,6 +101,8 @@ namespace Azuli.Web.Portal
             listaMensagemMoradorBLL();
             divGeralMsg.Visible = false;
             grdMsg.Visible = true;
+            drpStatusMsg.Visible = true;
+            lblConsultaAno.Visible = true;
             btnOk.Visible = false;
         }
 

@@ -62,14 +62,15 @@
        <p class="style2">
             Informações importantes sobre o spazio Azuli no link abaixo:
        </p>
-      <li style="color:#000080"> <asp:LinkButton ID="link1"  runat="server">Baixar o Statuto do Condominio</asp:LinkButton></li>
+      <li style="color:#000080"> <asp:LinkButton ID="link1"  runat="server" 
+              onclick="link1_Click">Baixar o Statuto do Condominio</asp:LinkButton></li>
   <br />
         
-      <li style="color:#000080"> <asp:LinkButton ID="Link2" runat="server">Consultar Nomes e contatos: Sindico/Subsindico e Conselheiros</asp:LinkButton></li>
-    <br />
-      <li style="color:#000080"><asp:LinkButton ID="Link3" runat="server">Consultar prestação de contas do condominio (Balancete simplificado)</asp:LinkButton></li>
-    <br />
-      <li style="color:#000080"> <asp:LinkButton ID="link4" runat="server">Consultar Nomes e contatos/funções dos funcionários do Condominio</asp:LinkButton></li>
+      <li style="color:#000080"> <asp:LinkButton ID="Link2" runat="server" 
+              onclick="Link2_Click">Consultar Nomes e contatos: Sindico/Subsindico e Conselheiros</asp:LinkButton></li>
+          <br />
+      <li style="color:#000080"> <asp:LinkButton ID="link4" runat="server" 
+              onclick="link4_Click">Consultar Nomes e contatos/funções dos funcionários do Condominio</asp:LinkButton></li>
 
             
          <br />

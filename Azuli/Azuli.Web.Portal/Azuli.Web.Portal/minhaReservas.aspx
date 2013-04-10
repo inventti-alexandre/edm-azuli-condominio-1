@@ -72,7 +72,15 @@
                 onrowdeleting="grdAgendaMorador_RowDeleting" 
                 onrowdatabound="grdAgendaMorador_RowDataBound" CssClass="GridView" >
                 <Columns>
-                    <asp:BoundField DataField="dataAgendamento" HeaderText="Data de Agendamento" DataFormatString="{0:dd/MM/yyyy}" />
+                    <asp:TemplateField HeaderText="Data de Agendamento">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("dataAgendamento") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label3" runat="server" 
+                                Text='<%# Eval("dataAgendamento", "{0:dddd}") + " / " + Eval("dataAgendamento","{0:dd/MM/yyyy}") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:TemplateField HeaderText="Bloco">
                         <EditItemTemplate>
                             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
@@ -108,7 +116,15 @@
                 onrowdeleting="grdChurras_RowDeleting" DataKeyNames="dataAgendamento" 
                 CssClass="GridView">
                 <Columns>
-                    <asp:BoundField DataField="dataAgendamento" HeaderText="Data de Agendamento" DataFormatString="{0:dd/MM/yyyy}" />
+                    <asp:TemplateField HeaderText="Data de Agendamento">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("dataAgendamento") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label3" runat="server" 
+                                Text='<%# Eval("dataAgendamento", "{0:dddd}") + " / " + Eval("dataAgendamento","{0:dd/MM/yyyy}") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:TemplateField HeaderText="Bloco">
                         <EditItemTemplate>
                             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>

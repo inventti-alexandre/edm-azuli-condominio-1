@@ -26,15 +26,37 @@
                     <Items>
                         <asp:MenuItem NavigateUrl="~/WelcomeAdmin.aspx" Text="Home" Value="Home">
                         </asp:MenuItem>
-                        <asp:MenuItem Text="Gerenciamento do Site" Value="Gerenciamento do Site">
-                            <asp:MenuItem NavigateUrl="~/gerenciamentoMoradorAdm.aspx" Text="Moradores" 
-                                Value="Moradores"></asp:MenuItem>
-                            <asp:MenuItem Text="Ocorrência" 
+                        <asp:MenuItem Text="Consultar" Value="Gerenciamento do Site">
+                            <asp:MenuItem Text="Agendamentos" 
                                 Value="Ocorrência">
+                                <asp:MenuItem NavigateUrl="~/consultaAgendamentoAdmin.aspx" Text="Pendentes" 
+                                    Value="Pendentes"></asp:MenuItem>
+                                <asp:MenuItem Text="Confirmados" Value="Confirmados"></asp:MenuItem>
+                                <asp:MenuItem Text="Realizados" Value="Realizados"></asp:MenuItem>
                             </asp:MenuItem>
-                            <asp:MenuItem Text="Reservas " Value="Reserva "></asp:MenuItem>
-                            <asp:MenuItem NavigateUrl="~/enviaMensagemMorador.aspx" Text="Mensagem" 
-                                Value="Mensagem"></asp:MenuItem>
+                            <asp:MenuItem Text="Mensagem" 
+                                Value="Mensagem">
+                                <asp:MenuItem Text="Recebidas" Value="Recebidas"></asp:MenuItem>
+                                <asp:MenuItem Text="Enviadas" Value="Enviadas"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Circular" Value="Circular">
+                                <asp:MenuItem Text="Publicados" Value="Publicados"></asp:MenuItem>
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Agendar" Value="Agendar">
+                            <asp:MenuItem Text="Reservar" Value="Reservar"></asp:MenuItem>
+                            <asp:MenuItem Text="Cancelar" Value="Cancelar"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Mensagem" Value="Mensagem">
+                            <asp:MenuItem NavigateUrl="~/enviaMensagemMorador.aspx" Text="Enviar" 
+                                Value="Enviar"></asp:MenuItem>
+                            <asp:MenuItem Text="Cancelar" Value="Cancelar"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Morador" Value="Moradores">
+                            <asp:MenuItem NavigateUrl="~/gerenciamentoMoradorAdm.aspx" 
+                                Text="Cadastrar / Alterar" Value="Cadastrar / Alterar"></asp:MenuItem>
+                            <asp:MenuItem Text="Liberar" Value="Liberar"></asp:MenuItem>
+                            <asp:MenuItem Text="Bloquear" Value="Bloquear"></asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Publicações" Value="Publicações">
                             <asp:MenuItem Text="Publicar Circular " 
@@ -42,12 +64,12 @@
                             <asp:MenuItem Text="Publicar Balancente" Value="Publicar Balancente">
                             </asp:MenuItem>
                         </asp:MenuItem>
-                        <asp:MenuItem Text="Consultas Gerais" Value="Mensagens">
-                            <asp:MenuItem Text="Consultar Circular" Value="Visualizar Circular">
+                        <asp:MenuItem Text="Configurar" Value="Mensagens">
+                            <asp:MenuItem Text="Valor Reserva" Value="Visualizar Circular">
                             </asp:MenuItem>
-                            <asp:MenuItem Text="Consultar Balancete" Value="Visualizar Balancete">
+                            <asp:MenuItem Text="Mensagem Reserva" Value="Visualizar Balancete">
                             </asp:MenuItem>
-                            <asp:MenuItem Text="Consultar Agendamentos" Value="Consultar Agendamentos">
+                            <asp:MenuItem Text="Dias para Cancelamentos" Value="Consultar Agendamentos">
                             </asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Alterar Senha" 

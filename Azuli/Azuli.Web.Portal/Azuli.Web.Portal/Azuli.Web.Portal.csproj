@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AreaAdministrativa.aspx" />
+    <Content Include="consultaAgendamentoAdmin.aspx" />
     <Content Include="consultaBalancete.aspx" />
     <Content Include="consultaCircular.aspx" />
     <Content Include="detalheMensagemMorador.aspx" />
@@ -123,6 +124,13 @@
     </Compile>
     <Compile Include="AreaAdministrativa.aspx.designer.cs">
       <DependentUpon>AreaAdministrativa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="consultaAgendamentoAdmin.aspx.cs">
+      <DependentUpon>consultaAgendamentoAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="consultaAgendamentoAdmin.aspx.designer.cs">
+      <DependentUpon>consultaAgendamentoAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="consultaBalancete.aspx.cs">
       <DependentUpon>consultaBalancete.aspx</DependentUpon>

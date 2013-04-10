@@ -49,15 +49,6 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.LinkButton Link2;
         
         /// <summary>
-        /// Link3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Link3;
-        
-        /// <summary>
         /// link4 control.
         /// </summary>
         /// <remarks>

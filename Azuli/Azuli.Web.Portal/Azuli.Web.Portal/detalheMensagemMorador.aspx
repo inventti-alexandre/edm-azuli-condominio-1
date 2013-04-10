@@ -36,17 +36,25 @@
                 onrowcommand="grdMsg_RowCommand">
                 <Columns>
                     <asp:BoundField DataField="codigoMsg" HeaderText="Código Mensagem" 
-                        Visible="true" />
+                        Visible="false" />
                     <asp:BoundField HeaderText="De" DataField="deMsg" />
                     <asp:BoundField DataField="assunto" HeaderText="Assunto" />
-                    <asp:BoundField DataField="data_inicio" HeaderText="Data de Envio" />
+                    <asp:TemplateField HeaderText="Data de Envio">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("data_inicio") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("data_inicio", "{0:dddd}") + " / " + Eval("data_inicio","{0:dd/MM/yyyy}") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:ButtonField ButtonType="Image" ImageUrl="~/images/ico_search.gif" 
                         Text="Button" DataTextField="data_inicio" />
                 </Columns>
             </asp:GridView>
+           
             </div>
        
-       <div id="divGeralMsg" runat="server" class="bold">
+       <div id="divGeralMsg" runat="server" class="">
        
           <div  id="DivlerMsg" style="position:relative; " 
             runat="server">

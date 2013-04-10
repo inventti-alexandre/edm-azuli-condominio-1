@@ -64,14 +64,15 @@ namespace Azuli.Web.Portal
                     {
 
                         lblMsg.Text = "Já existe cadastro para o Bloco: " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento;
-                        //SendMail enviaEmail = new SendMail();
-                        //int status = 0;
-
-                        //enviaEmail.enviaSenha(lblMsg.Text, oProprietarioModel.proprietario1, oProprietarioModel.email, status);
+                       
                     }
 
                     else
                     {
+                        SendMail enviaEmail = new SendMail();
+                        int status = 0;
+
+                        enviaEmail.enviaSenha(lblMsg.Text, oProprietarioModel.proprietario1, oProprietarioModel.email, status);
 
                         lblMsg.Text = "Cadastro efetuado com sucesso!! <br> <b> "  ;
                         grdGerenciamentoMoradores.DataBind();

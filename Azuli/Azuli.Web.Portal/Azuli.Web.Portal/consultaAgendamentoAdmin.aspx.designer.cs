@@ -10,105 +10,114 @@
 namespace Azuli.Web.Portal {
     
     
-    public partial class WelcomeAdmin {
+    public partial class consultaAgendamentoAdmin {
         
         /// <summary>
-        /// lblAdmin control.
+        /// lblMes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAdmin;
+        protected global::System.Web.UI.WebControls.Label lblMes;
         
         /// <summary>
-        /// lblPendente control.
+        /// drpMeses control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPendente;
+        protected global::System.Web.UI.WebControls.DropDownList drpMeses;
         
         /// <summary>
-        /// Label1 control.
+        /// lblAno control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lblAno;
         
         /// <summary>
-        /// lblLiberarMorador control.
+        /// drpAno control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLiberarMorador;
+        protected global::System.Web.UI.WebControls.DropDownList drpAno;
         
         /// <summary>
-        /// lnkLiberaMorador control.
+        /// lbSalao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkLiberaMorador;
+        protected global::System.Web.UI.WebControls.Label lbSalao;
         
         /// <summary>
-        /// lblReservaDesc control.
+        /// drpSalao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblReservaDesc;
+        protected global::System.Web.UI.WebControls.DropDownList drpSalao;
         
         /// <summary>
-        /// lblLiberarReserva control.
+        /// dvFesta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLiberarReserva;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvFesta;
         
         /// <summary>
-        /// linkLiberaReserva control.
+        /// grdFesta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton linkLiberaReserva;
+        protected global::System.Web.UI.WebControls.GridView grdFesta;
         
         /// <summary>
-        /// lblMsgRecDesc control.
+        /// SqlDataSourceConsultaAgenda control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMsgRecDesc;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceConsultaAgenda;
         
         /// <summary>
-        /// lblMsgRecebida control.
+        /// divChurrasco control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMsgRecebida;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divChurrasco;
         
         /// <summary>
-        /// lnkMsgRecebida control.
+        /// grdChurrasco control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkMsgRecebida;
+        protected global::System.Web.UI.WebControls.GridView grdChurrasco;
+        
+        /// <summary>
+        /// SqlDataSource1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }

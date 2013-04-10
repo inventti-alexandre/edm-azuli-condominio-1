@@ -37,10 +37,11 @@
    
     
  
-   <fieldset class="login">
+   <fieldset >
    <legend class="AlternatingRowStyle">Enviar mensagem para Morador:</legend>
    <br />
-  <div id="dvMsg" runat="server" class="accountInfo"> 
+  <div id="dvMsg"  runat="server" class="accountInfo" dir="ltr" 
+           style="position: static; z-index: auto; top: -1110px;"> 
   
 
 
@@ -126,10 +127,11 @@
                <center>     
                    <asp:Button ID="btnMensagem" runat="server" CssClass="botao" Text="Enviar mensagem" 
                         Width="150px"  
-                        ValidationGroup="validaDescricao" onclick="btnMensagem_Click" />
+                        ValidationGroup="validaDescricao" onclick="btnMensagem_Click" 
+                       Height="17px" />
 &nbsp;&nbsp;&nbsp;&nbsp; 
                     <asp:Button ID="btnLimpar" runat="server" CssClass="botao" 
-                        Text="Limpar Campos" /></center>
+                        Text="Limpar Campos" Height="19px" Width="121px" /></center>
                 </td>
             </tr>
         </table>

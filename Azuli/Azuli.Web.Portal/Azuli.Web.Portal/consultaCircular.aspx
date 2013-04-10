@@ -137,7 +137,14 @@
                     <asp:BoundField DataField="ano" HeaderText="Ano" />
                     <asp:BoundField DataField="nomeAreaPublicacao" 
                         HeaderText="Tipo de Publicação" />
-                    <asp:BoundField DataField="dataPublicacao" HeaderText="Data da Publicação" />
+                    <asp:TemplateField HeaderText="Data da Publicação">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("dataPublicacao") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("dataPublicacao", "{0:dddd}") + " - " + Eval("dataPublicacao","{0:dd/MM/yyyy hh:mm:ss}") %>'>></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:ButtonField ButtonType="Image" DataTextField="nameFile" 
                         HeaderText="Arquivos" ImageUrl="~/images/word.gif">
                     <ControlStyle Height="25px" Width="25px" />
