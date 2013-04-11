@@ -24,7 +24,7 @@ namespace Azuli.Web.Portal
       
         protected void btnEsqueci_Click(object sender, EventArgs e)
         {
-            string vMail = " ";
+            string vMail = string.Empty;
 
             try
             {
@@ -45,7 +45,7 @@ namespace Azuli.Web.Portal
                     vMail = item.senha;
                 }
 
-                if (vMail != "")
+                if (vMail != string.Empty)
                 {
                     oEnviaEmail.enviaSenha("A senha para o apartamento"+oProprietarioModel.ap.apartamento+" do bloco "+oProprietarioModel.ap.bloco+" é " + vMail, oProprietarioModel.ap.apartamento.ToString(), oProprietarioModel.email, 1);
 

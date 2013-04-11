@@ -12,6 +12,7 @@
     <siteMapNode url="" title="Reservas" description="Reservas">
       <siteMapNode url="~/telaAgendamento.aspx" title="Fazer Reservas" description="morador" />
       <siteMapNode url="~/minhaReservas.aspx" title="Pesquisar minhas Reservas" description="morador" />
+      <siteMapNode url="" title="Rerservas do Mês detalhada" description="morador" />
 
     </siteMapNode>
 
@@ -27,9 +28,9 @@
 
     </siteMapNode>
 
-    <siteMapNode  url=""  title="Consultas Azuli" description="Consultas" roles="">
-      <siteMapNode url="~/consultaCircular.aspx" title="Circular" description="Circular" />
-      <siteMapNode url="~/consultaBalancete.aspx" title="Balancete" description="Balancetes" />
+    <siteMapNode  url=""  title="Circulares" description="Circular" roles="">
+      <siteMapNode url="~/consultaCircular.aspx" title="Consulta Circular" description="Circular" />
+    <!--  <siteMapNode url="~/consultaBalancete.aspx" title="Balancete" description="Balancetes" /> -->
 
     </siteMapNode>
 

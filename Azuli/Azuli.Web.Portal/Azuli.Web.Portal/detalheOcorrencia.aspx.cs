@@ -23,6 +23,16 @@ namespace Azuli.Web.Portal
             {
                 if (!IsPostBack)
                 {
+
+                    if (Convert.ToBoolean(Session["MensagemCadastro"]))
+                    {
+                        const string scriptString = "<script type='text/javascript'> alert('Cadastro Efetuado com sucesso!');</script>";
+                        ClientScriptManager script = Page.ClientScript;
+                        script.RegisterClientScriptBlock(GetType(), "randomName", scriptString);
+                        Session.Remove("MensagemCadastro");
+                        
+                    }
+
                     preencheMeses();
                     preencheAno();
                   
@@ -119,8 +129,9 @@ namespace Azuli.Web.Portal
             for (int ano = 2009; ano <= 2016; ano++)
             {
                 drpAno.Items.Add(ano.ToString());
+                
             }
-            drpAno.SelectedItem.Text = data.Year.ToString();
+            drpAno.SelectedValue = data.Year.ToString();
         }
 
         protected void drpAno_SelectedIndexChanged(object sender, EventArgs e)

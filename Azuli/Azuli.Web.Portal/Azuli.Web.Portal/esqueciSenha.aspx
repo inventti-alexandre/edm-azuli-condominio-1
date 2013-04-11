@@ -24,8 +24,9 @@
 
               </div>
         <div class="main">
-       <p></p><asp:Button ID="btnHome" runat="server" CssClass="botao" 
-                        Text="Home" onclick="btnHome_Click" /></p>
+       <p></p>
+            <asp:Button ID="btnHome" runat="server" CssClass="botao" 
+                        Text="Home" onclick="btnHome_Click" Height="27px" Width="67px" /></p>
     <br /><br /> <br /> <br /><br />
   <center> <h2><b>ESQUECI A SENHA</b></h2></center><br />
   <center>

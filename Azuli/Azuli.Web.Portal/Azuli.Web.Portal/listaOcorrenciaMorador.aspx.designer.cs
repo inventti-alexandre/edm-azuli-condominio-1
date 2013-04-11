@@ -31,15 +31,6 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvOconteudo;
         
         /// <summary>
-        /// dvCabecalho control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvCabecalho;
-        
-        /// <summary>
         /// lblOcorrencia control.
         /// </summary>
         /// <remarks>
@@ -47,6 +38,15 @@ namespace Azuli.Web.Portal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblOcorrencia;
+        
+        /// <summary>
+        /// lnkVoltar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkVoltar;
         
         /// <summary>
         /// lblAssunto control.
@@ -67,6 +67,15 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Label lblDataAbertura;
         
         /// <summary>
+        /// dvCabecalho control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvCabecalho;
+        
+        /// <summary>
         /// dvMorador control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,24 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Label lblMorador;
         
         /// <summary>
+        /// lblBlocoMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBlocoMsg;
+        
+        /// <summary>
+        /// lblApartamento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblApartamento;
+        
+        /// <summary>
         /// lblMensagem control.
         /// </summary>
         /// <remarks>
@@ -92,6 +119,24 @@ namespace Azuli.Web.Portal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMensagem;
+        
+        /// <summary>
+        /// ImageButton1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
+        
+        /// <summary>
+        /// lnkDonwloadEvidencia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkDonwloadEvidencia;
         
         /// <summary>
         /// DivRespostaAutomatica control.

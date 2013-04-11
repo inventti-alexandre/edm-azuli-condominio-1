@@ -27,9 +27,8 @@ namespace Azuli.Web.Portal
                    
                     hiddenControl();
                     preencheMeses();
-                    drpMeses.SelectedIndex = data.Month - 1;
+                  
                     preencheAno();
-                    drpAno.SelectedItem.Text = data.Year.ToString() ;
                     consultaReserva();
 
                 }
@@ -47,17 +46,19 @@ namespace Azuli.Web.Portal
             mesCorrente = System.Globalization.DateTimeFormatInfo.CurrentInfo.GetMonthName(data.Month);
 
             drpMeses.Items.Add(mesCorrente); //drpMeses.Items.IndexOf(drpMeses.Items.FindByValue(data.Month.ToString()));
+            drpMeses.SelectedIndex = data.Month - 1;
             drpMeses.DataBind();
         }
 
         public void preencheAno()
         {
 
-            for (int ano = data.Year -4  ; ano < 2020; ano ++)
+            for (int ano = data.Year -4  ; ano < 2015; ano ++)
             {
                 drpAno.Items.Add(ano.ToString());
+             
             }
-
+            drpAno.SelectedValue = data.Year.ToString();
         }
 
         public void hiddenControl()
