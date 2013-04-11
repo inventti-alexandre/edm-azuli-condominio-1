@@ -1,184 +1,66 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteAdmin.Master" AutoEventWireup="true"
-    CodeBehind="TelaAgendamentoAdmin.aspx.cs" Inherits="Azuli.Web.Portal.TelaAgendamentoAdmin" %>
+    CodeBehind="TelaAgendamentoAdmin.aspx.cs" Inherits="Azuli.Web.Portal.TelaAgendamentoAdmin" EnableEventValidation="false" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    
     <style type="text/css">
         .style1
         {
-            width: 93%;
+            background-color: #ADD8E6;
+            font-style: italic;
         }
         .style2
         {
-            width: 509px;
-        }
-        .style3
-        {
-            font-weight: 700;
-        }
-        .style4
-        {
-            width: 15px;
-            font-weight: bold;
-        }
-        .style5
-        {
-            width: 169px;
-        }
-        .style6
-        {
-            width: 78px;
-        }
-        .style7
-        {
-            color: #006600;
-        }
-        .style9
-        {
-            width: 185px;
-        }
-        .menu
-        {
-        }
-        .style11
-        {
-            width: 1128px;
-        }
-        .style12
-        {
-            width: 1105px;
-            height: 130px;
-        }
-        .style13
-        {
-            width: 536px;
-        }
-        .style14
-        {
-            text-decoration: underline;
-        }
-        .style15
-        {
-            width: 189px;
+            background-color: #ADD8E6;
+            font-style: normal;
         }
     </style>
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
-    <br />
-    <div id="dvProprietario" runat="server">
-        <fieldset class="login">
-            <legend>Dados do Proprietário</legend>
-            <table style="height: 192px">
-                <tr>
-                    <td class="style11">
-                        <table class="style1" border='0'>
-                            <tr>
-                                <td class="style6">
-                                    <asp:Label ID="lblProprietario" runat="server" Font-Bold="True" Text="Nome:"></asp:Label>
-                                </td>
-                                <td class="style9">
-                                    <asp:Label ID="lblProprietarioDesc" runat="server"></asp:Label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="style6">
-                                    <asp:Label ID="lblApart" runat="server" Font-Bold="True" Text="Apartamento: "></asp:Label>
-                                </td>
-                                <td class="style9">
-                                    <asp:Label ID="lblApartDesc" runat="server" Text="301"></asp:Label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="style6">
-                                    <asp:Label ID="lblBloco" runat="server" Font-Bold="True" Text="Bloco:"></asp:Label>
-                                </td>
-                                <td class="style9">
-                                    <asp:Label ID="lblBlocoDesc" runat="server" Text="6"></asp:Label>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td align="center" class="style12">
-                        <b>Suas Reservas em: </b>
-                        <asp:Label ID="lblMesAtual" runat="server" Style="font-weight: 700; color: #0033CC"></asp:Label>
-                        <br />
-                        <br />
-                        <asp:FormView ID="formVwChurrasco" runat="server" CellPadding="4" ForeColor="#333333"
-                            Width="125px" CssClass="style3" AllowPaging="True" Height="76px" EmptyDataText="Não existem Reservas da Churrasqueira neste mês!!"
-                            OnPageIndexChanging="formVwChurrasco_PageIndexChanging">
-                            <EditRowStyle BackColor="#2461BF" />
-                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                            <HeaderTemplate>
-                                Churrasqueira</HeaderTemplate>
-                            <ItemTemplate>
-                                <table id="tbAgendaMes" runat="server">
-                                    <tr>
-                                        <td>
-                                            <asp:Label ID="Label5" runat="server" Text='<%# Bind("dataAgendamento","{0:dd/MM/yyyy}") %>'></asp:Label>
-                                        </td>
-                                        <td>
-                                            <asp:Image ID="Image1" ImageUrl="~/images/ok.jpg" Width="30px" runat="server" />
-                                        </td>
-                                    </tr>
-                                    <br></br>
-                                </table>
-                                <br />
-                                <asp:Button ID="btnDel" runat="server" CssClass="botao" CausesValidation="True" CommandName="Insert"
-                                    Text="Cancelar" />
-                            </ItemTemplate>
-                            <FooterTemplate>
-                            </FooterTemplate>
-                            <PagerSettings PageButtonCount="6" />
-                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                            <RowStyle BackColor="#EFF3FB" />
-                        </asp:FormView>
-                        <br />
-                        <br />
-                    </td>
-                    <td align="center" class="style12">
-                        <asp:FormView ID="frvSalaoFesta" runat="server" CellPadding="4" ForeColor="#333333"
-                            Width="128px" CssClass="style3" AllowPaging="True" Height="73px" EmptyDataText="Não existem Reservas de salão de Festa neste mês!!"
-                            OnPageIndexChanging="frvSalaoFesta_PageIndexChanging">
-                            <EditRowStyle BackColor="#2461BF" />
-                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                            <HeaderTemplate>
-                                Salão de Festa</HeaderTemplate>
-                            <ItemTemplate>
-                                <table id="tbAgendaMes" runat="server">
-                                    <tr>
-                                        <td>
-                                            <asp:Label ID="Label5" runat="server" Text='<%# Bind("dataAgendamento","{0:dd/MM/yyyy}") %>'></asp:Label>
-                                        </td>
-                                        <td>
-                                            <asp:Image ID="Image1" ImageUrl="~/images/ok.jpg" Width="30px" runat="server" />
-                                        </td>
-                                    </tr>
-                                    <br></br>
-                                </table>
-                                <br />
-                                <asp:Button ID="btnDel" runat="server" CssClass="botao" CausesValidation="True" CommandName="Insert"
-                                    Text="Cancelar" />
-                            </ItemTemplate>
-                            <FooterTemplate>
-                            </FooterTemplate>
-                            <PagerSettings PageButtonCount="6" />
-                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                            <RowStyle BackColor="#EFF3FB" />
-                        </asp:FormView>
-                    </td>
-                </tr>
-            </table>
+    <br /><br />
+
+    
+      
+    <div id="dvProprietario" runat="server" class="GridViewPager">
+        <fieldset>
+         <div class="style2" id="DivRespostaAutomatica" style="position:relative; " 
+            runat="server">
+                <h3>RESERVAS PARA MORADORES </h3>
+			</div>
+            
+			<div style="border:1px solid #CCC; padding:20px; margin-bottom:20px;" 
+                align="left" dir="ltr">
+            
+            	Reserva para o Morador: 
+                <asp:Label ID="lblProprietarioDesc" runat="server" 
+                    CssClass="bold"></asp:Label><br><br>  
+                Bloco:    
+                <asp:Label ID="lblBlocoDesc" runat="server" 
+                    CssClass="bold"></asp:Label> <br /><br />
+                Apartamento:   
+                <asp:Label ID="lblApartDesc" runat="server" 
+                    CssClass="bold"></asp:Label>
+                            
+
+		</div>
         </fieldset>
+
+        
     </div>
-    <div id="dvOpcao" runat="server">
-        <fieldset class="login">
-            <legend>Selecione abaixo a reserva disponivel na data escolhida:</legend>
-            <table style="width: 681px; height: 112px;">
+     <div id="dvAlugar" runat="server" class="GridViewPager">
+        <fieldset>
+         <div class="style2" id="Div1" style="position:relative; " runat="server"> 
+             <h2>Escolha a opção desejada e clique em Finalizar Reserva!</h2>
+            </div>
+            <div style="border:1px solid #CCC; padding:20px; margin-bottom:20px;" 
+                align="left" dir="ltr">
+            
+            <table style="width: 878px; height: 104px;">
                 <tr>
                     <td class="style5">
                         <div id="dvData" runat="server" style="border-width: thin; border-style: groove;
@@ -189,7 +71,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style5">
+                    <td class="style5" dir="ltr">
                         <asp:CheckBox ID="chkSalaoFesta" runat="server" Text="Salão de Festas" Font-Bold="True"
                             EnableTheming="True" />
                     </td>
@@ -211,17 +93,18 @@
                 <asp:Button ID="LoginButton" runat="server" Text="Finalizar Reserva" CssClass="botao"
                     Font-Bold="True" Height="28px" OnClick="LoginButton_Click" />
             </p>
-        </fieldset>
-    </div>
+      </div>  </div></fieldset>
+   
+
+    
     <div id="dvCalendar" align="left" runat="server">
         <fieldset class="login">
             <legend>Escolha a Data da sua reserva:</legend>
             <asp:Label ID="lblMsgData" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
             <br />
-            <br />
             <table style="width: 886px">
                 <tr>
-                    <td class="style2" align="left">
+                    <td class="" align="left">
                   
                        
                      
@@ -229,14 +112,14 @@
                      
                      <ContentTemplate>
 
-                          <asp:Timer ID="UpdateTimer"  Interval="3000"  ontick="UpdateTimer_Tick1" 
+                          <asp:Timer ID="UpdateTimer"  Interval="5000"  ontick="UpdateTimer_Tick1" 
                               runat="server" />
                               
                         
                             <asp:Calendar ID="Calendar1" runat="server"  BackColor="White" OnSelectionChanged="Calendar1_SelectionChanged"
                             BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana"
-                            Font-Size="9pt" ForeColor="Black" Height="280px" NextPrevFormat="ShortMonth"
-                            Width="514px" OnDayRender="Calendar1_DayRender">
+                            Font-Size="9pt" ForeColor="Black" Height="258px" NextPrevFormat="ShortMonth"
+                            Width="440px" OnDayRender="Calendar1_DayRender">
                             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" Height="8pt" />
                             <DayStyle BackColor="#CCCCCC" />
                             <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="White" />

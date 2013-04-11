@@ -100,6 +100,36 @@ namespace Azuli.Web.DAO
             }
         }
 
+        public listAgenda listaReservaByMoradorAdmin(AgendaModel oAgenda)
+        {
+            string clausulaSQL = "CONSULTA_RESERVA_MORADOR";
+
+            try
+            {
+                SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
+
+               
+                comandoSQL.Parameters.AddWithValue("@ANO", oAgenda.dataAgendamento.Year);
+                comandoSQL.Parameters.AddWithValue("@MES", oAgenda.dataAgendamento.Month);
+                comandoSQL.Parameters.AddWithValue("@AREA_CHURRAS", oAgenda.salaoChurrasco);
+                comandoSQL.Parameters.AddWithValue("@AREA_FESTA", oAgenda.salaoFesta);
+
+                DataTable tbAgenda = new DataTable();
+
+                tbAgenda = ExecutaQuery(comandoSQL);
+
+                return carregaAgenda(tbAgenda);
+
+            }
+            catch (Exception error)
+            {
+
+                throw error;
+            }
+        }
+
+
+
         
         public void cadastrarAgenda(DateTime data,ApartamentoModel oAp, AgendaModel oAgenda)
         {

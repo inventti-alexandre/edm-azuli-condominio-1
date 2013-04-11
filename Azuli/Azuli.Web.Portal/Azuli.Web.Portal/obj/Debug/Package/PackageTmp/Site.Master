@@ -14,11 +14,9 @@
     <div class="page">
         <div class="header">
             <div class="title">
-                <h1>
-                    Sistema de Gerenciamento de Condominio -  Spazio azuli 
-                </h1>
-            </div>
-            <div class="loginDisplay">
+                
+                <img src="images/banner.jpg" style="height: 86px; width: 960px" />
+           
             </div>
             <div class="clear hideSkiplink">
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
@@ -36,6 +34,21 @@
                     </Items>
                 </asp:Menu>
             </div>
+             <div class="loginDisplay">
+             <asp:Label ID="lblProprietarioMaster" runat="server" Font-Size="Small" 
+                     Text="Condômino : "></asp:Label>
+                    <asp:Label ID="lblProprietarioDesc"  runat="server" Font-Size="Small"></asp:Label>
+
+
+                     <asp:Label ID="lblBlocoMaster" runat="server" Font-Size="Small" 
+                     Text="  Bloco: "></asp:Label>
+                    <asp:Label ID="lblBlocoMasterDesc"  runat="server" Font-Size="Small"></asp:Label>
+
+
+                    
+                     <asp:Label ID="lblApMaster" runat="server" Font-Size="Small" Text=" AP : "></asp:Label>
+                    <asp:Label ID="lblApDesc"  runat="server" Font-Size="Small"></asp:Label>
+            </div>
         </div>
         <div class="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
@@ -44,11 +57,14 @@
             <asp:SiteMapDataSource ID="SiteMapDataSourceMenu" runat="server" 
                 ShowStartingNode="False" />
         </div>
-         <center>  <b> Desenvolvido por Edmilson Lopes e-mail  
-           <a href="mailto:edmls@ig.com.br">edmls@ig.com.br</a> </b > 
-    </div></center>
+         
+    </div>
     <div class="footer">
-     
+   
+      © FernandesVilela Soluções de TI. INC 2013. Todos os direitos reservados 
+           <a href="mailto:edmls@ig.com.br">
+               <img src="images/correio.jpg" style="height: 17px; width: 24px" /></a> 
+
     </div>
     </form>
 </body>

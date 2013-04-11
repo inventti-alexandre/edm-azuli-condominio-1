@@ -154,6 +154,28 @@ namespace Azuli.Web.Business
 
         }
 
+
+
+        public listAgenda listaReservaByMoradorAdmin(AgendaModel oAgenda)
+        {
+            listAgenda oListAgenda = new listAgenda();
+
+            try
+            {
+                oListAgenda = oAgendaDao.listaReservaByMoradorAdmin(oAgenda);
+
+                return oListAgenda;
+
+            }
+            catch (Exception error)
+            {
+
+                throw error;
+            }
+        }
+
+
+
         #endregion
 
          #region IAgenda Members
@@ -183,8 +205,13 @@ namespace Azuli.Web.Business
             throw new NotImplementedException();
         }
 
-        #endregion
+   
 
-      
+
+
+    
+
+
+        #endregion
     }
 }
