@@ -71,14 +71,15 @@ namespace Azuli.Web.Portal
 
         private void consultaReserva()
         {
-            oAgendaModel.dataAgendamento = Convert.ToDateTime(drpAno.SelectedItem.Value + "-" + drpMeses.SelectedItem.Value + "01");
+              int ano=  Convert.ToInt32(drpAno.SelectedItem.Value);
+              int mes = Convert.ToInt32(drpMeses.SelectedIndex + 1);
             
 
             if (drpSalao.SelectedItem.Text == "Festa")
             {
                 dvFesta.Visible = true;
                 dvChurrasco.Visible = false;
-                grdAgendaMorador.DataSource = oAgenda.listaReservaDetalhadaFesta(oAgendaModel);
+                grdAgendaMorador.DataSource = oAgenda.listaReservaDetalhadaFesta(ano,  mes);
                 grdAgendaMorador.DataBind();
                
                 lblMesAnoFesta.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
@@ -86,7 +87,7 @@ namespace Azuli.Web.Portal
             else if (drpSalao.SelectedItem.Text == "Churrasqueira")
             {
 
-                grdChurras.DataSource = oAgenda.listaReservaDetalhadaChurrasco(oAgendaModel);
+                grdChurras.DataSource = oAgenda.listaReservaDetalhadaChurrasco(ano, mes);
                 grdChurras.DataBind();
                 dvChurrasco.Visible = true;
                 dvFesta.Visible = false;
@@ -95,7 +96,7 @@ namespace Azuli.Web.Portal
             }
             else if (drpSalao.SelectedItem.Value == "1")
             {
-                grdChurras.DataSource = oAgenda.listaReservaDetalhadaChurrasco(oAgendaModel);
+                grdChurras.DataSource = oAgenda.listaReservaDetalhadaChurrasco(ano, mes);
                 grdChurras.DataBind();
               
                 dvFesta.Visible = true;
@@ -103,7 +104,7 @@ namespace Azuli.Web.Portal
                 lblMesAnoFesta.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
             
                 dvChurrasco.Visible = true;
-                grdAgendaMorador.DataSource = oAgenda.listaReservaDetalhadaFesta( oAgendaModel);
+                grdAgendaMorador.DataSource = oAgenda.listaReservaDetalhadaFesta( ano, mes);
                 grdAgendaMorador.DataBind();
                 
                 lbMesAnoChurras.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;

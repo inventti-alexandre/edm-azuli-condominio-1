@@ -16,8 +16,8 @@ namespace Azuli.Web.DAO.Interfaces
          void cancelaAgendamentoMorador(DateTime dataAgendamento, ApartamentoModel ap,bool festa,bool churras);
          listAgenda validaAgendamento(DateTime data, ApartamentoModel oAp, AgendaModel oAgenda);
          listAgenda listaReservaByMoradorAdmin(AgendaModel oAgenda);
-         listAgenda listaReservaDetalhadaChurrasco(AgendaModel oAgenda);
-         listAgenda listaReservaDetalhadaFesta(AgendaModel oAgenda);
+         listAgenda listaReservaDetalhadaChurrasco(int ano, int mes );
+         listAgenda listaReservaDetalhadaFesta(int ano, int mes);
 
     }
 }

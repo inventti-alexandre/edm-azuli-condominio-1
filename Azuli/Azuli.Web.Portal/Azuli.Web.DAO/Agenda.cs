@@ -100,7 +100,7 @@ namespace Azuli.Web.DAO
             }
         }
 
-        public listAgenda listaReservaDetalhadaChurrasco(AgendaModel oAgenda)
+        public listAgenda listaReservaDetalhadaChurrasco(int ano, int mes)
         {
             string clausulaSQL = "RESERVA_MORADOR_CHURRAS_DETALHADA";
 
@@ -108,8 +108,8 @@ namespace Azuli.Web.DAO
             {
                 SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
 
-                comandoSQL.Parameters.AddWithValue("@ANO", oAgenda.dataAgendamento.Year);
-                comandoSQL.Parameters.AddWithValue("@MES", oAgenda.dataAgendamento.Month);
+                comandoSQL.Parameters.AddWithValue("@ANO", ano);
+                comandoSQL.Parameters.AddWithValue("@MES", mes);
 
 
                 DataTable tbAgenda = new DataTable();
@@ -126,7 +126,7 @@ namespace Azuli.Web.DAO
             }
         }
 
-        public listAgenda listaReservaDetalhadaFesta(AgendaModel oAgenda)
+        public listAgenda listaReservaDetalhadaFesta(int ano, int mes)
         {
             string clausulaSQL = "RESERVA_MORADOR_FESTA_DETALHADA";
 
@@ -135,8 +135,8 @@ namespace Azuli.Web.DAO
                 SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
 
              
-                comandoSQL.Parameters.AddWithValue("@ANO", oAgenda.dataAgendamento.Year);
-                comandoSQL.Parameters.AddWithValue("@MES", oAgenda.dataAgendamento.Month);
+                comandoSQL.Parameters.AddWithValue("@ANO", ano);
+                comandoSQL.Parameters.AddWithValue("@MES", mes);
 
 
                 DataTable tbAgenda = new DataTable();

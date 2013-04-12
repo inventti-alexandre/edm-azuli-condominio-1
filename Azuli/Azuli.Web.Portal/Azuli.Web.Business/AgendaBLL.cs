@@ -94,13 +94,13 @@ namespace Azuli.Web.Business
             }
         }
 
-        public listAgenda listaReservaDetalhadaChurrasco(AgendaModel oAgenda)
+        public listAgenda listaReservaDetalhadaChurrasco(int ano, int mes) 
         {
             listAgenda oListAgenda = new listAgenda();
 
             try
             {
-                oListAgenda = oAgendaDao.listaReservaDetalhadaChurrasco(oAgenda);
+                oListAgenda = oAgendaDao.listaReservaDetalhadaChurrasco(ano, mes);
 
                 return oListAgenda;
 
@@ -113,13 +113,13 @@ namespace Azuli.Web.Business
 
         }
 
-        public listAgenda listaReservaDetalhadaFesta(AgendaModel oAgenda)
+        public listAgenda listaReservaDetalhadaFesta(int ano, int mes)
         {
             listAgenda oListAgenda = new listAgenda();
 
             try
             {
-                oListAgenda = oAgendaDao.listaReservaDetalhadaFesta( oAgenda);
+                oListAgenda = oAgendaDao.listaReservaDetalhadaFesta( ano, mes);
 
                 return oListAgenda;
 
