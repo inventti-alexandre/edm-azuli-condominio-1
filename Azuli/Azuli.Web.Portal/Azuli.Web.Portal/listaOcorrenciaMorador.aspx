@@ -89,7 +89,7 @@
     
        <div class="AlternatingRowStyle" id="DivRespostaAutomatica" style="position:relative; " 
             runat="server">
-                <h3>Atendimento Azuli Sindico </h3>
+                <h3>Atendimento Administrador do Condomínio</h3>
 			</div>
             
 			<div style="border:1px solid #CCC; padding:20px; margin-bottom:20px;">

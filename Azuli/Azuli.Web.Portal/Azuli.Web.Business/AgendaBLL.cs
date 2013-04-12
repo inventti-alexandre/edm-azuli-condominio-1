@@ -94,6 +94,44 @@ namespace Azuli.Web.Business
             }
         }
 
+        public listAgenda listaReservaDetalhadaChurrasco(AgendaModel oAgenda)
+        {
+            listAgenda oListAgenda = new listAgenda();
+
+            try
+            {
+                oListAgenda = oAgendaDao.listaReservaDetalhadaChurrasco(oAgenda);
+
+                return oListAgenda;
+
+            }
+            catch (Exception error)
+            {
+
+                throw error;
+            }
+
+        }
+
+        public listAgenda listaReservaDetalhadaFesta(AgendaModel oAgenda)
+        {
+            listAgenda oListAgenda = new listAgenda();
+
+            try
+            {
+                oListAgenda = oAgendaDao.listaReservaDetalhadaFesta( oAgenda);
+
+                return oListAgenda;
+
+            }
+            catch (Exception error)
+            {
+
+                throw error;
+            }
+
+        }
+
 
         public listAgenda listaReservaByMoradorFesta(ApartamentoModel oAp, AgendaModel oAgenda)
         {
@@ -205,13 +243,7 @@ namespace Azuli.Web.Business
             throw new NotImplementedException();
         }
 
-   
-
-
-
-    
-
-
+      
         #endregion
     }
 }

@@ -100,6 +100,59 @@ namespace Azuli.Web.DAO
             }
         }
 
+        public listAgenda listaReservaDetalhadaChurrasco(AgendaModel oAgenda)
+        {
+            string clausulaSQL = "RESERVA_MORADOR_CHURRAS_DETALHADA";
+
+            try
+            {
+                SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
+
+                comandoSQL.Parameters.AddWithValue("@ANO", oAgenda.dataAgendamento.Year);
+                comandoSQL.Parameters.AddWithValue("@MES", oAgenda.dataAgendamento.Month);
+
+
+                DataTable tbAgenda = new DataTable();
+
+                tbAgenda = ExecutaQuery(comandoSQL);
+
+                return carregaAgenda(tbAgenda);
+
+            }
+            catch (Exception error)
+            {
+
+                throw error;
+            }
+        }
+
+        public listAgenda listaReservaDetalhadaFesta(AgendaModel oAgenda)
+        {
+            string clausulaSQL = "RESERVA_MORADOR_FESTA_DETALHADA";
+
+            try
+            {
+                SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
+
+             
+                comandoSQL.Parameters.AddWithValue("@ANO", oAgenda.dataAgendamento.Year);
+                comandoSQL.Parameters.AddWithValue("@MES", oAgenda.dataAgendamento.Month);
+
+
+                DataTable tbAgenda = new DataTable();
+
+                tbAgenda = ExecutaQuery(comandoSQL);
+
+                return carregaAgenda(tbAgenda);
+
+            }
+            catch (Exception error)
+            {
+
+                throw error;
+            }
+        }
+
         public listAgenda listaReservaByMoradorAdmin(AgendaModel oAgenda)
         {
             string clausulaSQL = "CONSULTA_RESERVA_MORADOR";
@@ -127,6 +180,8 @@ namespace Azuli.Web.DAO
                 throw error;
             }
         }
+
+
 
 
 
@@ -291,6 +346,9 @@ namespace Azuli.Web.DAO
             }
            
         }
+
+      
+       
 
         #endregion
     }

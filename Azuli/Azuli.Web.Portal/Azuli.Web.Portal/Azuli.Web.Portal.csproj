@@ -42,6 +42,9 @@
       <HintPath>bin\AjaxControlToolkit.DLL</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NPOI">
+      <HintPath>..\..\SistemaApontamento\SistemaApontamento\bin\NPOI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -72,6 +75,7 @@
     <Content Include="images\banner.jpg" />
     <Content Include="images\cancel.png" />
     <Content Include="images\edit.png" />
+    <Content Include="images\excel.png" />
     <Content Include="images\ico_search.gif" />
     <Content Include="images\save.png" />
     <Content Include="images\search.png" />
@@ -96,6 +100,7 @@
     <Content Include="minhaReservas.aspx" />
     <Content Include="OcorrenciaMorador.aspx" />
     <Content Include="paginaInicialMoradores.aspx" />
+    <Content Include="ReservaDetalhadaMoradores.aspx" />
     <Content Include="resetSenha.aspx" />
     <Content Include="Scripts\ScriptAzuli.js" />
     <Content Include="Styles\Site.css" />
@@ -174,6 +179,11 @@
     <Compile Include="esqueciSenha.aspx.designer.cs">
       <DependentUpon>esqueciSenha.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ExcelExport\BaseManagement.cs" />
+    <Compile Include="ExcelExport\ExcelDataGrid.cs" />
+    <Compile Include="ExcelExport\ExcelManagement.cs" />
+    <Compile Include="ExcelExport\ExportExcel.cs" />
+    <Compile Include="ExcelExport\IDataGrid.cs" />
     <Compile Include="gerenciamentoMoradorAdm.aspx.cs">
       <DependentUpon>gerenciamentoMoradorAdm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -259,6 +269,13 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ReservaDetalhadaMoradores.aspx.cs">
+      <DependentUpon>ReservaDetalhadaMoradores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReservaDetalhadaMoradores.aspx.designer.cs">
+      <DependentUpon>ReservaDetalhadaMoradores.aspx</DependentUpon>
     </Compile>
     <Compile Include="resetSenha.aspx.cs">
       <DependentUpon>resetSenha.aspx</DependentUpon>
@@ -352,7 +369,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>62359</DevelopmentServerPort>
+          <DevelopmentServerPort>64679</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

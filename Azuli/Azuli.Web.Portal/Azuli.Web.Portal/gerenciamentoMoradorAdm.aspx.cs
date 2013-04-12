@@ -52,7 +52,7 @@ namespace Azuli.Web.Portal
             {
 
                 oProprietarioModel.proprietario1 = txtCond01.Text;
-                oProprietarioModel.proprietario2 = txtEmail.Text;
+                oProprietarioModel.proprietario2 = txtCond02.Text;
                 oProprietarioModel.email = txtEmail.Text;
                 oProprietarioModel.senha = oUtil.GeraSenha();
 
@@ -71,8 +71,9 @@ namespace Azuli.Web.Portal
                     {
                         SendMail enviaEmail = new SendMail();
                         int status = 0;
-
-                        enviaEmail.enviaSenha(lblMsg.Text, oProprietarioModel.proprietario1, oProprietarioModel.email, status);
+                        string msgCredencial = "";
+                        msgCredencial = "Cadastro efetuado com sucesso para Morador: <br> <b> " + oProprietarioModel.proprietario1 + " & " + oProprietarioModel.proprietario2 + " <b> <br>" + " Bloco:  " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento + "<br> Sua Senha é: " + oProprietarioModel.senha + "<br><hr>";
+                        enviaEmail.enviaSenha(msgCredencial, oProprietarioModel.proprietario1, oProprietarioModel.email, status);
 
                         lblMsg.Text = "Cadastro efetuado com sucesso!! <br> <b> "  ;
                         grdGerenciamentoMoradores.DataBind();
