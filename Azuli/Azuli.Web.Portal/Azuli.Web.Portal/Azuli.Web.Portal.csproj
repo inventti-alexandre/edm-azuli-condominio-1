@@ -179,11 +179,6 @@
     <Compile Include="esqueciSenha.aspx.designer.cs">
       <DependentUpon>esqueciSenha.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ExcelExport\BaseManagement.cs" />
-    <Compile Include="ExcelExport\ExcelDataGrid.cs" />
-    <Compile Include="ExcelExport\ExcelManagement.cs" />
-    <Compile Include="ExcelExport\ExportExcel.cs" />
-    <Compile Include="ExcelExport\IDataGrid.cs" />
     <Compile Include="gerenciamentoMoradorAdm.aspx.cs">
       <DependentUpon>gerenciamentoMoradorAdm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
