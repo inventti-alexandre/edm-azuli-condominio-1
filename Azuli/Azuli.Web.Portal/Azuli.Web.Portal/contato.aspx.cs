@@ -16,7 +16,11 @@ namespace Azuli.Web.Portal
         {
             if (!IsPostBack)
             {
-                oUtil.validateSession();
+                if (oUtil.validateSession())
+                {
+                    lblBloco.Text = Session["Bloco"].ToString();
+                    lblAp.Text = Session["AP"].ToString();
+                }
                 
             }
 
