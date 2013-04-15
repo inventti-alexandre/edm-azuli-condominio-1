@@ -7,17 +7,9 @@
         {
             width: 567px;
         }
-        .style7
-        {
-            color: #006600;
-        }
         .menu
         {
         }
-        .style14
-    {
-        text-decoration: underline;
-    }
         .style16
         {
             width: 892px;
@@ -25,10 +17,6 @@
         #dvCalendar
         {
             height: 364px;
-        }
-        .style17
-        {
-            width: 876px;
         }
         </style>
 </asp:Content>
@@ -185,7 +173,7 @@
     <!-- Calendario para reserva -->
     <div id="dvCalendar" align="left" runat="server">
         <fieldset class="login">
-           <legend>Faça sua reserva:</legend>
+           <legend>Faça sua reserva, clicando 2 vezes na data escolhida:</legend>
             <asp:Label ID="lblMsgData" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
            <center>
             <table>
