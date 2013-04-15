@@ -103,6 +103,9 @@ namespace Azuli.Web.Portal
                     try
                     {
                         oMensagemBLL.enviaMensagemMorador(oMsgModel);
+                        lblMsg.Text = "Mensagem enviada com sucesso!!";
+                        txtAssunto.Text = "";
+                        txtDescription.Text = "";
                     }
                     catch (Exception)
                     {

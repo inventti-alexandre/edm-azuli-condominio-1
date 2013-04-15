@@ -454,6 +454,11 @@ namespace Azuli.Web.Portal
                 return false;
             }
         }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("telaAgendamento.aspx");
+        }
         
     }
 }

@@ -12,5 +12,6 @@ namespace Azuli.Web.DAO.Interfaces
          void enviaMensagemMorador(Model.MensagemMoradorModel oMensagem);
          listaMensagemMorador listaMensagemMoradorByID(Model.MensagemMoradorModel oAp);
          void atualizaMSG(Model.MensagemMoradorModel oAp);
+         void cadastraContato(string assunto, string descricao, int bloco, int ap);
     }
 }

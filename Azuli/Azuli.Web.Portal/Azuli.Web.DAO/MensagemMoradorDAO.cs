@@ -67,8 +67,33 @@ namespace Azuli.Web.DAO
 
                 throw;
             }
-        }   
+        }
 
+
+        public void cadastraContato(string assunto, string descricao, int bloco, int ap)
+        {
+            string clausulaSQL = "CADASTRA_CONTATO";
+
+            try
+            {
+
+                SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
+
+
+                comandoSQL.Parameters.AddWithValue("@ASSUNTO", assunto);
+                comandoSQL.Parameters.AddWithValue("@DESCRICAO", descricao);
+                comandoSQL.Parameters.AddWithValue("@BLOCO", bloco);
+                comandoSQL.Parameters.AddWithValue("@AP", ap);
+             
+                ExecutaComando(comandoSQL);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
 
 
@@ -155,6 +180,7 @@ namespace Azuli.Web.DAO
             }
         }
 
+      
         #endregion
     }
 }

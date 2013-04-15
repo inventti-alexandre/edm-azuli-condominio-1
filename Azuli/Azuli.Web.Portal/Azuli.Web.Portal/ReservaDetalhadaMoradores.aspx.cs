@@ -10,7 +10,7 @@ using System.Text;
 
 namespace Azuli.Web.Portal
 {
-    public partial class ReservaDetalhadaMoradores : System.Web.UI.Page
+    public partial class ReservaDetalhadaMoradores : Util.Base
     {
         
         DateTime data = DateTime.Now;

@@ -99,7 +99,7 @@
                 <br /><br />
                 </fieldset>
               
-              <asp:Label ID="lblMsg" runat="server" ForeColor="#FF3300"></asp:Label>
+              <asp:Label ID="lblMsg" runat="server" ForeColor="#FF3300" Font-Size="Medium"></asp:Label>
                     
             </div>
               <div id="dvDadosMorador" runat="server">

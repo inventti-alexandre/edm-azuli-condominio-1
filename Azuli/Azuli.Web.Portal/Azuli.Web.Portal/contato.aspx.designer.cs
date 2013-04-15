@@ -10,34 +10,25 @@
 namespace Azuli.Web.Portal {
     
     
-    public partial class esqueciSenha {
+    public partial class contato {
         
         /// <summary>
-        /// Head1 control.
+        /// dvCadastro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvCadastro;
         
         /// <summary>
-        /// Form1 control.
+        /// lblOcorrencia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
-        
-        /// <summary>
-        /// btnHome control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnHome;
+        protected global::System.Web.UI.WebControls.Label lblOcorrencia;
         
         /// <summary>
         /// lblBloco control.
@@ -49,6 +40,15 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Label lblBloco;
         
         /// <summary>
+        /// lblDescBloco control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDescBloco;
+        
+        /// <summary>
         /// lblAp control.
         /// </summary>
         /// <remarks>
@@ -58,40 +58,76 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Label lblAp;
         
         /// <summary>
-        /// Label2 control.
+        /// lblDescApartamento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label lblDescApartamento;
         
         /// <summary>
-        /// txtEm control.
+        /// lblAssunto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEm;
+        protected global::System.Web.UI.WebControls.Label lblAssunto;
         
         /// <summary>
-        /// rfvEsqueciSenha control.
+        /// drpListSubject control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEsqueciSenha;
+        protected global::System.Web.UI.WebControls.DropDownList drpListSubject;
         
         /// <summary>
-        /// btnEsqueci control.
+        /// lblDescricao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEsqueci;
+        protected global::System.Web.UI.WebControls.Label lblDescricao;
+        
+        /// <summary>
+        /// txtDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDescription;
+        
+        /// <summary>
+        /// btnCadastro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCadastro;
+        
+        /// <summary>
+        /// btnLimpar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLimpar;
+        
+        /// <summary>
+        /// rfvDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDescription;
         
         /// <summary>
         /// lblMsg control.

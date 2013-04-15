@@ -124,7 +124,8 @@
                                 <asp:SqlDataSource ID="SqlDataSourceBloco" runat="server" 
                                     ConnectionString="<%$ ConnectionStrings:azulli %>" SelectCommand="LISTA_BLOCO" 
                                     SelectCommandType="StoredProcedure"></asp:SqlDataSource>
-               <center>     
+               <center>    
+                
                    <asp:Button ID="btnMensagem" runat="server" CssClass="botao" Text="Enviar mensagem" 
                         Width="150px"  
                         ValidationGroup="validaDescricao" onclick="btnMensagem_Click" 
@@ -135,11 +136,12 @@
                 </td>
             </tr>
         </table>
+           <asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#006600"></asp:Label> 
       <br />
       <br />
       <br />
      </center><br />
-      <asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label> 
+   
     </div></fieldset>
 
       <center> </center>

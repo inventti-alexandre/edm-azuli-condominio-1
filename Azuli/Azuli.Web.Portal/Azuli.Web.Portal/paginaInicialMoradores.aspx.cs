@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Azuli.Web.Model;
 using Azuli.Web.Business;
 using System.Text;
+using System.IO;
 
 namespace Azuli.Web.Portal
 {
@@ -120,6 +121,41 @@ namespace Azuli.Web.Portal
             script.RegisterClientScriptBlock(GetType(), "randomName", scriptString);
         }
 
+        protected void lnkDonwload_Click(object sender, EventArgs e)
+        {
+            listarArquivos();
+        }
+
+
+        private void listarArquivos()
+        {
+
+            try
+            {
+
+
+                string folder = System.Configuration.ConfigurationManager.AppSettings["ArquivosCondominioDownload"];
+
+                FileInfo arquivo = new FileInfo(Server.MapPath(folder) + ("\\sgcFernandesVilela.pps"));
+
+                Response.Clear();
+
+
+                Response.AddHeader("Content-Disposition", ("attachment; filename=\"" + arquivo.Name));
+                Response.Charset = "utf8";
+                Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                Response.ContentType = "application/octet-stream";
+                Response.AddHeader("Content-Length", arquivo.Length.ToString());
+                Response.WriteFile(arquivo.FullName);
+                Response.Flush();
+            }
+            catch (FileNotFoundException)
+            {
+
+                throw;
+            }
+
+        }
 
         
     }

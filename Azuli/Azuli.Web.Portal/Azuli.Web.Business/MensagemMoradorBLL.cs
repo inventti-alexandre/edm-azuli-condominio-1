@@ -26,20 +26,23 @@ namespace Azuli.Web.Business
             }
         }
 
-      
-
-
-        public void enviaMensagemMorador(MensagemMoradorModel oMensagem)
+        public void cadastraContato(string assunto, string descricao, int bloco, int ap)
         {
             try
             {
-                oMensagemDAO.enviaMensagemMorador(oMensagem);
+                oMensagemDAO.cadastraContato(assunto, descricao, bloco, ap);
             }
             catch (Exception e)
             {
 
                 throw e;
             }
+        }
+
+
+        public void enviaMensagemMorador(MensagemMoradorModel oMensagem)
+        {
+        
         }
 
         public listaMensagemMorador listaMensagemMoradorByID(MensagemMoradorModel oAp)
@@ -69,6 +72,10 @@ namespace Azuli.Web.Business
                 throw e;
             }
         }
+
+     
+
+      
 
         #endregion
     }

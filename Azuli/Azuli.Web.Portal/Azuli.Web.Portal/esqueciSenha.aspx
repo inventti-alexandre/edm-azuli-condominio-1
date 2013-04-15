@@ -8,6 +8,14 @@
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
     <script src="Scripts/ScriptAzuli.js" type="text/javascript"></script>
  
+    <style type="text/css">
+        .style1
+        {
+            color: #4884CD;
+            font-weight: bold;
+        }
+    </style>
+ 
 </head>
 <body>
     <form id="Form1" runat="server">
@@ -26,18 +34,31 @@
         <div class="main">
        <p></p>
             <asp:Button ID="btnHome" runat="server" CssClass="botao" 
-                        Text="Home" onclick="btnHome_Click" Height="27px" Width="67px" /></p>
-    <br /><br /> <br /> <br /><br />
+                        Text="Login" onclick="btnHome_Click" Height="27px" Width="67px" />
+    <br /><br /><br />
+ 
+<fieldset>
+   
+    <legend title="Abrir Ocorrência"> Solicitação de senha para: <span class="style1">&nbsp;Bloco:
+        <asp:Label ID="lblBloco" runat="server"></asp:Label>
+&nbsp;Apartamento:
+        <asp:Label ID="lblAp" runat="server"></asp:Label>
+        </span></legend><br />
+   
+      
   <center> <h2><b>ESQUECI A SENHA</b></h2></center><br />
   <center>
    
         
-        <table class="btGeral" dir="ltr" frame="border" style="width: 432px" >
+        <table class="btGeral" dir="ltr" frame="border" 
+            style="width: 432px; height: 101px;" >
             <tr>
                 <td>
+                    <br />
                     <asp:Label ID="Label2" runat="server" Text="Informe seu e-mail:"></asp:Label>
                 </td>
                 <td class="style1">
+                    <br />
                     <asp:TextBox ID="txtEm" runat="server" Height="21px" Width="274px" 
                         style="margin-left: 0px" ValidationGroup="esqueciSenha"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEsqueciSenha" runat="server" 
@@ -78,6 +99,7 @@
                   <br />
       
         </div>
+ </fieldset>
  
   <div class="footer">
    

@@ -44,7 +44,8 @@
                             </asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Agendar" Value="Agendar">
-                            <asp:MenuItem Text="Reservar" Value="Reservar"></asp:MenuItem>
+                            <asp:MenuItem Text="Reservar" Value="Reservar" 
+                                NavigateUrl="~/AreaAdministrativa.aspx"></asp:MenuItem>
                             <asp:MenuItem Text="Cancelar" Value="Cancelar"></asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Mensagem" Value="Mensagem">

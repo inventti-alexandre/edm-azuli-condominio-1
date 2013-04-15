@@ -3,15 +3,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
-        .style3
-        {
-            font-weight: 700;
-        }
-        .style4
-        {
-            width: 15px;
-            font-weight: bold;
-        }
         .style5
         {
             width: 567px;
@@ -23,23 +14,13 @@
         .menu
         {
         }
-        .style12
-        {
-            width: 966px;
-            height: 130px;
-        }
         .style14
     {
         text-decoration: underline;
     }
-        .style15
-        {
-            width: 513px;
-            height: 130px;
-        }
         .style16
         {
-            width: 448px;
+            width: 892px;
         }
         #dvCalendar
         {
@@ -49,7 +30,7 @@
         {
             width: 876px;
         }
-    </style>
+        </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
@@ -60,10 +41,12 @@
     <fieldset class="login">
     
         <legend>Reservas feita em:  <asp:Label ID="lblMesAtual" runat="server" Style="font-weight: 700; color: #0033CC"></asp:Label></legend>
-        <table style="height: 150px; width: 649px;" class="loginDisplay">
-            <tr>
-                <td align="center" class="style15">
+        <table style="height: 150px; width: 903px;" class="loginDisplay">
+            <tr align="center">
+          
+                <td >
                  
+                    <div style="position: absolute; top: 285px; left: 396px;">
                     <asp:FormView ID="formVwChurrasco" runat="server" CellPadding="4"
                         Width="125px" CssClass="btGeral" AllowPaging="True" Height="76px" 
                         EmptyDataText="Você não tem Reservas para Churrasqueira neste mês!!" 
@@ -94,11 +77,10 @@
                         <PagerSettings PageButtonCount="6" />
                         <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
                         <RowStyle BackColor="#EFF3FB" />
-                    </asp:FormView>
-                    
-                </td>
-          
-                <td align="center" class="style12">
+                    </asp:FormView>  
+                    </div>                  
+                                       
+                 <div style="position: absolute; top: 285px; left: 699px;">
                     <asp:FormView ID="frvSalaoFesta" runat="server" CellPadding="4" 
                         Width="125px" CssClass="btGeral" AllowPaging="True" Height="76px" 
                         EmptyDataText="Você não tem Reservas para o salão de Festa neste mês!!" 
@@ -131,16 +113,20 @@
                         <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
                         <RowStyle BackColor="#EFF3FB" />
                     </asp:FormView>
+                    </div>
+                 
                 </td>
             </tr>
              </table>
+
+        <br />
 
         <asp:Label ID="lblMgs" runat="server" 
                      Font-Bold="False" ForeColor="Red"></asp:Label>
     </fieldset> </div>
     <div id="dvOpcao" runat="server">
         <fieldset class="login">
-            <legend>Escolha a área de reserva: </legend>
+            <legend>Escolha a área de reserva: Escolha a área de reserva: </legend>
             <table style="width: 643px; height: 152px;">
                 <tr>
                     <td class="style5">
@@ -185,6 +171,10 @@
                 <asp:Button ID="LoginButton" runat="server" Text="Finalizar Reserva" CssClass="botao"
                     Font-Bold="True" Height="28px" OnClick="LoginButton_Click" 
                     ValidationGroup="finalizaReserva" />
+            &nbsp;
+                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="botao"
+                    Font-Bold="True" Height="28px" OnClick="btnCancelar_Click" 
+                    ValidationGroup="finalizaReserva" />
             </p>
         </fieldset>
     </div>
@@ -192,10 +182,10 @@
         <fieldset class="login">
            <legend>Faça sua reserva:</legend>
             <asp:Label ID="lblMsgData" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
-            
+           <center>
             <table>
                 <tr>
-                    <td  align="left" class="style16">
+                    <td  align="center" class="style16">
 
                          
                      <asp:UpdatePanel ID="UpdatePanel1" runat="server"> 
@@ -218,6 +208,7 @@
                                 ForeColor="White" Height="12pt" />
                             <TodayDayStyle ForeColor="White" />
                         </asp:Calendar>
+                          <br />
                           </ContentTemplate>
                             <Triggers>
                             <asp:AsyncPostBackTrigger ControlID="UpdateTimer" EventName="Tick" />
@@ -225,32 +216,23 @@
                             </Triggers>
                         </asp:UpdatePanel>
                     </td>
-                    <td class="style4">
-                        &nbsp;<br />
-                    </td>
-                    <td class="style3">
-                        <asp:ImageButton ID="imgFesta" runat="server" Height="16px" ImageUrl="~/images/azul.jpg"
-                            Width="27px" />
-                        <br />
-                        <br />
-                        <asp:ImageButton ID="imgFesta0" runat="server" Height="16px" ImageUrl="~/images/amarelo.jpg"
-                            Width="27px" />
-                        <br />
-                        <br />
-                        <asp:ImageButton ID="imgFesta1" runat="server" Height="16px" ImageUrl="~/images/vermelho.jpg"
-                            Width="27px" />
-                        <td align="left">
-                            <b>Salão de Festa Locado </b>
-                            <br />
-                            <br />
-                            <b>Área de Churraco Locada </b>
-                            <br />
-                            <br />
-                            <b>Salão de Festa e Área de churrasco Locado</b>
-                        </td>
                     </td>
                 </tr>
-            </table>
+                <tr>
+                    <td  align="left" class="style16">
+
+                         
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                         
+                            <asp:ImageButton ID="imgFesta" runat="server" Height="16px" ImageUrl="~/images/azul.jpg"
+                            Width="27px" /> <b>&nbsp;Salão de Festa Locado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:ImageButton ID="imgFesta0" runat="server" Height="16px" ImageUrl="~/images/amarelo.jpg"
+                            Width="27px" /> &nbsp;&nbsp; Área de Churrasco Locada&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:ImageButton ID="imgFesta1" runat="server" Height="16px" ImageUrl="~/images/vermelho.jpg"
+                            Width="27px" />&nbsp;&nbsp;&nbsp;&nbsp; Salão de Festa e Área de churrasco Locado </b>
+
+                    </td>
+                </tr>
+            </table></center> 
         </fieldset>
     </div>
     <br /><br /> <br /> <br />

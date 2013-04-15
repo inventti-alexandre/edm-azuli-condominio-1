@@ -216,7 +216,7 @@ div.hideSkiplink
     position:relative;
     top: -25px;
     vertical-align:middle;
-    right:-160px;
+    right:-110px;
 }
 
 div.hideSkiplinkAdmin
@@ -310,7 +310,7 @@ legend
     font-size: 1.1em;
     font-weight: 600;
     padding: 2px 4px 8px 4px;
-    width: 325px;
+    width: 459px;
 }
 
 input.textEntry 
@@ -570,7 +570,6 @@ input.botao, .btGeral {
 
 input, textarea {
 	border: 1px solid #999999;
-	height: 15px;
 	background-color: #f0f0f0;
 	color: #666666;
 	font-family: Verdana;
@@ -578,7 +577,9 @@ input, textarea {
 	font-weight: normal;
 	text-align: left;
 	padding: 0px 2px 0px 2px;
-	margin: 0px 0px 0px 3px;
+	margin-left: 3px;
+    margin-right: 0px;
+    margin-top: 0px;
 }
 
 select {

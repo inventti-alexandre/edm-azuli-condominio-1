@@ -16,8 +16,12 @@ namespace Azuli.Web.Portal
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
 
-           
+                lblBloco.Text = Session["Bloco"].ToString();
+                lblAp.Text = Session["AP"].ToString();
+            }
 
         }
 

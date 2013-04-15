@@ -17,8 +17,7 @@
             color: #0033CC;
             font-family: "Segoe UI";
             font-size: medium;
-            text-decoration: underline;
-        }
+            }
         .style3
         {
             width: 33px;
@@ -51,6 +50,10 @@
                  <span class="style8">
 &nbsp;mensagens&nbsp;
                         <img alt="" class="style3" src="images/correio.jpg" /></span></span></h1>
+                    <h1 align="left"> 
+                        <asp:LinkButton ID="lnkDonwload" runat="server" Font-Size="Smaller" 
+                            onclick="lnkDonwload_Click">Clique aqui e faça donwload da apresentação das funcionalidades do sistema SGC!</asp:LinkButton>
+                    </h1>
                 </td>
             </tr>
        </table>  
