@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Azuli.Web.Business;
 using Azuli.Web.Model;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Azuli.Web.Portal
 {
@@ -30,45 +31,60 @@ namespace Azuli.Web.Portal
         {
             string vMail = string.Empty;
 
-            try
+
+            vMail = txtEm.Text;
+            
+            Regex rg= new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
+            
+            if (rg.IsMatch(vMail))
             {
-                Util.SendMail oEnviaEmail = new Util.SendMail();
 
-                ProprietarioBLL oProprietario = new ProprietarioBLL();
-                ProprietarioModel oProprietarioModel = new ProprietarioModel();
-                StringBuilder sbMsg = new StringBuilder();
 
-                oProprietarioModel.ap = new ApartamentoModel();
 
-                oProprietarioModel.ap.apartamento = (int)Session["AP"];
-                oProprietarioModel.ap.bloco = (int)Session["Bloco"];
-                oProprietarioModel.email = txtEm.Text;
-
-                foreach (var item in oProprietario.recuperaSenhaMorador(oProprietarioModel))
+                try
                 {
-                    vMail = item.senha;
+                    Util.SendMail oEnviaEmail = new Util.SendMail();
+
+                    ProprietarioBLL oProprietario = new ProprietarioBLL();
+                    ProprietarioModel oProprietarioModel = new ProprietarioModel();
+                    StringBuilder sbMsg = new StringBuilder();
+
+                    oProprietarioModel.ap = new ApartamentoModel();
+
+                    oProprietarioModel.ap.apartamento = (int)Session["AP"];
+                    oProprietarioModel.ap.bloco = (int)Session["Bloco"];
+                    oProprietarioModel.email = txtEm.Text;
+
+                    foreach (var item in oProprietario.recuperaSenhaMorador(oProprietarioModel))
+                    {
+                        vMail = item.senha;
+                    }
+
+                    if (vMail != string.Empty)
+                    {
+                        oEnviaEmail.enviaSenha("A senha para o apartamento" + oProprietarioModel.ap.apartamento + " do bloco " + oProprietarioModel.ap.bloco + " é " + vMail, oProprietarioModel.ap.apartamento.ToString(), oProprietarioModel.email, 1);
+
+                        sbMsg.Append("<b>A sua senha foi enviada para o e-mail informado!</b>");
+
+                    }
+                    else
+                    {
+                        sbMsg.Append("<b>E-mail não cadastrado em nossa base de dados / Ou e-mail não corresponde com o Bloco e apartamento cadastrado</b>");
+                    }
+
+                    lblMsg.Text = sbMsg.ToString();
+
                 }
 
-                if (vMail != string.Empty)
+                catch (Exception ex)
                 {
-                    oEnviaEmail.enviaSenha("A senha para o apartamento"+oProprietarioModel.ap.apartamento+" do bloco "+oProprietarioModel.ap.bloco+" é " + vMail, oProprietarioModel.ap.apartamento.ToString(), oProprietarioModel.email, 1);
 
-                    sbMsg.Append("<b>A sua senha foi enviada para o e-mail informado!</b>");
-                    
+                    throw ex;
                 }
-                else
-                {
-                    sbMsg.Append("<b>E-mail não cadastrado em nossa base de dados!</b>");
-                }
-
-                lblMsg.Text = sbMsg.ToString();
-
             }
-
-            catch (Exception ex)
+            else
             {
-
-                throw ex;
+                lblMsg.Text = "Emáil inválido";
             }
 
         }

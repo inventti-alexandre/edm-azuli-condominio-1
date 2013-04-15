@@ -146,7 +146,7 @@ namespace Azuli.Web.Portal.Account
             }
             else
             {
-                lblMsg.Text = "Favor preencher <b><font color='#4884CD'> Bloco e Apartamento </font> para recuperar a sua senha!!";
+                lblMsg.Text = "Favor preencher <b><font color='#4884CD'> Bloco e Apartamento </font> e clique novamente 'Esqueci minha Senha'!!";
             }
 
          

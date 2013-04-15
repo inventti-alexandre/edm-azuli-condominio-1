@@ -100,8 +100,7 @@ namespace Azuli.Web.Portal
         public void escondeControl()
         {
             dvOpcao.Visible = false;
-            DivConfirma.Visible = false;
-           
+              
            
         
         }
@@ -228,7 +227,9 @@ namespace Azuli.Web.Portal
                      {
 
                          oAgenda.cadastrarAgenda(Convert.ToDateTime(lblData.Text), oApModel, oAgendaModel);
-                         validaAreaCadastro();
+                         Session["DataConfirmacao"] = lblData.Text;
+                         Response.Redirect("TelaConfirmacaoAgendamento.aspx");
+                        
                      }
                      else
                      {
@@ -253,17 +254,7 @@ namespace Azuli.Web.Portal
             }
         }
 
-        public void validaAreaCadastro()
-        {
-            dvOpcao.Visible = false;
-            DivConfirma.Visible = true;
-            dvProprietario.Visible = false;
-
-            lblDataConfirma.Text = lblData.Text;
-            lblBlocoConfirma.Text = Session["Bloco"].ToString();
-            lblApConfirma.Text = Session["AP"].ToString();
-        }
-
+       
         protected void btnOKConfirma_Click(object sender, EventArgs e)
         {
             Response.Redirect("telaAgendamento.aspx");
@@ -303,12 +294,7 @@ namespace Azuli.Web.Portal
             Response.Redirect("telaAgendamento.aspx");
         }
 
-        protected void ImageButton1_Click1(object sender, ImageClickEventArgs e)
-        {
-
-            HttpContext.Current.Response.Write("<script>window.print();</script>");
-
-        }
+       
 
         protected void formVwChurrasco_PageIndexChanging(object sender, FormViewPageEventArgs e)
         {

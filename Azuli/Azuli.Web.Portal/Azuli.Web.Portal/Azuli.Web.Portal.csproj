@@ -109,6 +109,7 @@
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="telaAgendamento.aspx" />
     <Content Include="TelaAgendamentoAdmin.aspx" />
+    <Content Include="TelaConfirmacaoAgendamento.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -311,6 +312,13 @@
     </Compile>
     <Compile Include="TelaAgendamentoAdmin.aspx.designer.cs">
       <DependentUpon>TelaAgendamentoAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TelaConfirmacaoAgendamento.aspx.cs">
+      <DependentUpon>TelaConfirmacaoAgendamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TelaConfirmacaoAgendamento.aspx.designer.cs">
+      <DependentUpon>TelaConfirmacaoAgendamento.aspx</DependentUpon>
     </Compile>
     <Compile Include="Util\Base.cs">
       <SubType>ASPXCodeBehind</SubType>

@@ -75,7 +75,8 @@
             <tr>
                 <td colspan="2">
                     <asp:Button ID="btnEsqueci" runat="server" CssClass="botao" 
-                        Text="Solicitar Senha" onclick="btnEsqueci_Click" />
+                        Text="Solicitar Senha" onclick="btnEsqueci_Click" 
+                        ValidationGroup="esqueciSenha" />
                 </td>
             </tr>
             <tr>
