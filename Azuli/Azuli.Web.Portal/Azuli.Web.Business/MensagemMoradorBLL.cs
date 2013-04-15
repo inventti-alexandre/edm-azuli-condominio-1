@@ -42,6 +42,15 @@ namespace Azuli.Web.Business
 
         public void enviaMensagemMorador(MensagemMoradorModel oMensagem)
         {
+            try
+            {
+                oMensagemDAO.enviaMensagemMorador(oMensagem);
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
         
         }
 
