@@ -18,8 +18,8 @@ namespace Azuli.Web.Portal
             {
                 if (oUtil.validateSession())
                 {
-                    lblBloco.Text = Session["Bloco"].ToString();
-                    lblAp.Text = Session["AP"].ToString();
+                    lblDescBloco.Text = Session["Bloco"].ToString();
+                    lblDescApartamento.Text = Session["AP"].ToString();
                 }
                 
             }
