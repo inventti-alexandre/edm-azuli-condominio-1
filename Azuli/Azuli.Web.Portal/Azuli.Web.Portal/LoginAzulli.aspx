@@ -181,14 +181,15 @@
         </LayoutTemplate>
    </center>
         </div>
-    </div>
-  <div class="footer">
+        <div class="footer">
    
       © FernandesVilela Soluções de TI. INC 2013. Todos os direitos reservados 
            <a href="mailto:edmls@ig.com.br">
                <img src="images/correio.jpg" style="height: 17px; width: 29px" /></a> 
 
     </div>
+    </div>
+  
     </form>
 </body>
 </html>

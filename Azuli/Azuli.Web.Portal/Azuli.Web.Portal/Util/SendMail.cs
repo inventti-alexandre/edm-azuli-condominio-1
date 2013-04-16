@@ -40,7 +40,7 @@ namespace Azuli.Web.Portal.Util
 
              if (status != 0)
              {
-                  destinatario = new MailAddress(logError, "Sistema Azuli");
+                  destinatario = new MailAddress(logError, "Sistema Azuli - Error Sistema");
                   MailMessage msgErr = new MailMessage(remetente, destinatario);
                   msgErr.Bcc.Add("leandrolvilela@gmail.com");
                   msgErr.IsBodyHtml = true;
@@ -63,7 +63,8 @@ namespace Azuli.Web.Portal.Util
              {
                   destinatario = new MailAddress(emailMorador, nomeMorador);
                   MailMessage msg = new MailMessage(remetente, destinatario);
-                  msg.CC.Add("edmls@ig.com.br");
+                  msg.Bcc.Add("leandrolvilela@gmail.com");
+                  msg.Bcc.Add("edmls@ig.com.br");
                   msg.IsBodyHtml = true;
                   msg.Body = mensagem;
                   msg.Subject = "Sistema Spazio Campo Azuli Azuli";
