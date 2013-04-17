@@ -27,7 +27,7 @@ namespace Azuli.Web.Portal
             {
 
 
-                if (txtNovaSenha.Text.Length == 4)
+                if (txtNovaSenha.Text.Length == 6)
                 {
                     ProprietarioBLL oProprietario = new ProprietarioBLL();
                     ProprietarioModel oProprietarioModel = new ProprietarioModel();
@@ -60,7 +60,7 @@ namespace Azuli.Web.Portal
                 }
                 else
                 {
-                    lblMensagem.Text = "Senha precisa ter no mínimo 4 caracteres";
+                    lblMensagem.Text = "Senha precisa ter 6 caracteres, por motivo de segurança";
                 }
 
             }

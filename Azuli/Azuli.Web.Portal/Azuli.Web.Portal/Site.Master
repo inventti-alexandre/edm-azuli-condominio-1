@@ -13,6 +13,7 @@
         {
             font-family: "Times New Roman", Times, serif;
             font-weight: bold;
+            color:#4884CD;
         }
     </style>
 </head>
@@ -32,7 +33,7 @@
                     
                 </asp:Menu>
             </div>
-             <div class="loginDisplay" style="position: absolute; left: 654px;">
+             <div class="loginDisplay" style="position: absolute; left: 632px;">
              <asp:Label ID="lblProprietarioMaster" runat="server" Font-Size="Small" 
                      Text="Seja Bem vindo: "></asp:Label>
                     <asp:Label ID="lblProprietarioDesc"  runat="server" Font-Size="Small" 

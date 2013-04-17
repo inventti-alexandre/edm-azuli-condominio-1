@@ -22,13 +22,12 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <br /><br /><br /><br /><br />
+    <br />
 <fieldset>
    
-    <legend title="Abrir Ocorrência"> Abrir Ocorrência </legend><br />
+    <legend title="Abrir Ocorrência" class="accordionContent"> Abrir Ocorrência </legend><br />
    <center><asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#006600"></asp:Label>
-       <br />
-       <br />
+      
    
   <div id="dvCadastro" runat="server" align="center" > 
    
@@ -97,7 +96,7 @@
                 </td>
             </tr>
         </table>
-                                 <br /></div>
+                                 </div>
                                  <asp:RequiredFieldValidator ID="rfvDescription" runat="server" 
                                      ControlToValidate="txtDescription" ErrorMessage="Favor descrever a Ocorrência" 
                                      Font-Bold="True" ForeColor="Red" 
@@ -105,10 +104,8 @@
                                 <asp:SqlDataSource ID="SqlDataSourceTipoOcorrencia" runat="server" 
                                     ConnectionString="<%$ ConnectionStrings:azulli %>" 
                                     SelectCommand="SELECT * FROM [TIPO_OCORRENCIA]"></asp:SqlDataSource>
-      <br />
-      <br />
-      <br />
-     </center><br />
+      
+     </center>
   
 
     </fieldset>  

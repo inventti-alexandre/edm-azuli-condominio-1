@@ -7,6 +7,7 @@
         {
             font-family: "Segoe UI";
             font-size: medium;
+            color:black;
         }
         .style2
         {
@@ -39,15 +40,12 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+   
+   
     <table style="text-align: justify; height: 101px; width: 941px;">
         <tr>
             <td align="center">
-                <img  alt="1" src="images/azuli.jpg" style="width: 69%; height: 81px" />
+                <img  alt="1" src="images/azuli.jpg" style="width: 96%; height: 119px" />
             </td>
             <td align="center">
                 <h1 align="left">
@@ -66,10 +64,9 @@
     </table>
     <fieldset>
         <legend class="style5">Seja bem vindo ao Sistema de Gerenciamento de Condominio</legend>
-        <p class="style1">
-            Através do menu acima, é permitido fazer reservas do salão de festa / Churrasqueira
-            e abrir ocorrências, e consultar informações referente ao condominio, como balancete
-            do mês, estatuto e entre mais informações importantes.</p>
+       
+        <p>    Através do menu acima, é permitido fazer reservas do salão de festa / Churrasqueira
+            e abrir ocorrências, e consultar informações referente ao condominio, como estatuto do condominio e entre mais informações importantes. </p>
         <li style="color: #000080">
             <asp:LinkButton ID="link1" runat="server" OnClick="link1_Click">Baixar o Statuto do Condominio</asp:LinkButton></li>
         <br />

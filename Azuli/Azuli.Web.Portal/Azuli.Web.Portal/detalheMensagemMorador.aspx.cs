@@ -69,6 +69,7 @@ namespace Azuli.Web.Portal
             try
             {
                 divGeralMsg.Visible = true;
+               
                 grdMsg.Visible = false;
 
 

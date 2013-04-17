@@ -4,11 +4,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
 <br />
-    <br /><br /></br>   <br /><br />
+
     <fieldset  class="login">
   
-        <legend class="AlternatingRowStyle">Consulta de Publicações de Circulares: </legend>
-        
+        <legend class="accordionContent">Consulta de Publicações de Circulares: </legend>
+        <br />
         <asp:Label ID="lblConsultaAno" runat="server" CssClass="footer" 
             Text="Mudar Ano de Consulta:"></asp:Label>
         <asp:DropDownList ID="drpAno" runat="server" CssClass="FooterStyle" Height="26px" 
@@ -126,8 +126,8 @@
         <div id="dvArquivosPublicados" runat="server">
         
             <fieldset  class="login">
-        <legend class="AlternatingRowStyle">Arquivos publicado em: <asp:Label id="lblmesAno" runat="server"></asp:Label> </legend>
-        
+        <legend class="accordionContent">Arquivos publicado em: <asp:Label id="lblmesAno" runat="server"></asp:Label> </legend>
+        <br />
             <asp:GridView ID="grdCircular" runat="server" AutoGenerateColumns="False" 
                 Height="39px" Width="907px" DataKeyNames="nameFile" 
                 onrowcommand="grdCircular_RowCommand" CssClass="GridView" EmptyDataText="Não foram encontrados arquivos publicados!!">

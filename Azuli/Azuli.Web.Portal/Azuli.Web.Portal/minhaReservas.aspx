@@ -22,9 +22,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
-    <br /><br />  <br /><br /><br />
+   
     <fieldset class="login">
-        <legend>Consulta de Reservas: </legend>
+        <legend class="accordionContent">Consulta de Reservas: </legend>
+        <br />
         <table class="style1">
             <tr>
                 <td class="style2">
@@ -145,9 +146,9 @@
                 </Columns>
                 <EmptyDataRowStyle Font-Bold="True" ForeColor="#CC3300" />
             </asp:GridView>
-            <br />
-            <br />
+        
         </div>
+        <br />
         <asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#CC0000"></asp:Label>
     </center>
 </asp:Content>

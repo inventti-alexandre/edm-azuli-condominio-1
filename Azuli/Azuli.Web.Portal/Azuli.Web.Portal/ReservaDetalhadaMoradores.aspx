@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
   <br />
-    <br /><br />  <br /><br /><br />
+   
     <fieldset class="login">
         <legend>Reserva do Mês Geral: </legend>
         <table class="style1">

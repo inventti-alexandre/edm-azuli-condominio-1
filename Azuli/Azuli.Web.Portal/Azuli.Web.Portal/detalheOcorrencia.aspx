@@ -3,11 +3,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
-    <br /><br /> <br /><br />
+   
    
  <fieldset>
-  <asp:Label ID="lblMeses" runat="server" CssClass="PagerRowStyle" 
-        Text="Ocorrência no mês de:" Font-Bold="True" Font-Size="Medium"></asp:Label>
+  <asp:Label ID="lblMeses" runat="server" 
+        Text="Ocorrência no mês de:" Font-Bold="True"></asp:Label>
 &nbsp;<asp:DropDownList ID="drpMeses" runat="server" Height="18px" Width="243px" 
                 CssClass="btGeral" AutoPostBack="True" 
                 onselectedindexchanged="drpMeses_SelectedIndexChanged" 
@@ -21,7 +21,8 @@
             <br />
             <br />
    
-    <legend title="Abrir Ocorrência"> Abrir Ocorrência </legend>
+    <legend title="Abrir Ocorrência" class="accordionContent"> Abrir Ocorrência </legend>
+    <br />
     <asp:GridView ID="grdOcorrencias" runat="server" 
                 CssClass="GridView" Width="809px" AutoGenerateColumns="False" 
          onrowcommand="grdOcorrencias_RowCommand" DataKeyNames="codigoOcorrencia" 

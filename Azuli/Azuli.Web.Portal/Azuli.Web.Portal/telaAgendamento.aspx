@@ -23,18 +23,18 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
-<br /><br /><br />
+
     <div id="dvProprietario" runat="server">
     <br /><br /><br />
     <fieldset class="login">
     
-        <legend>Reservas feita em:  <asp:Label ID="lblMesAtual" runat="server" Style="font-weight: 700; color: #0033CC"></asp:Label></legend>
+        <legend class="accordionContent">Reservas feita em:  <asp:Label ID="lblMesAtual" runat="server" Style="font-weight: 700; color: #0033CC"></asp:Label></legend>
         <table style="height: 150px; width: 903px;" class="loginDisplay">
             <tr align="center">
           
                 <td >
                  
-                    <div style="position: absolute; top: 285px; left: 396px;">
+                    <div style="position: absolute; top: 223px; left: 398px;">
                     <asp:FormView ID="formVwChurrasco" runat="server" CellPadding="4"
                         Width="125px" CssClass="btGeral" AllowPaging="True" Height="76px" 
                         EmptyDataText="Você não tem Reservas para Churrasqueira neste mês!!" 
@@ -68,7 +68,7 @@
                     </asp:FormView>  
                     </div>                  
                                        
-                 <div style="position: absolute; top: 285px; left: 699px;">
+                 <div style="position: absolute; top: 224px; left: 701px;">
                     <asp:FormView ID="frvSalaoFesta" runat="server" CellPadding="4" 
                         Width="125px" CssClass="btGeral" AllowPaging="True" Height="76px" 
                         EmptyDataText="Você não tem Reservas para o salão de Festa neste mês!!" 
@@ -116,7 +116,7 @@
     <!-- Opção para churrasqueira / Salão de Festa -->
     <div id="dvOpcao" runat="server">
         <fieldset class="login">
-            <legend>Escolha a área de reserva: Escolha a área de reserva: </legend>
+            <legend class="accordionContent">Escolha a área a reservar: </legend>
             <table style="width: 643px; height: 152px;">
                 <tr>
                     <td class="style5">
@@ -173,7 +173,7 @@
     <!-- Calendario para reserva -->
     <div id="dvCalendar" align="left" runat="server">
         <fieldset class="login">
-           <legend>Faça sua reserva, clicando 2 vezes na data escolhida:</legend>
+           <legend class="accordionContent">Faça sua reserva, clicando 2 vezes na data escolhida:</legend>
             <asp:Label ID="lblMsgData" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
            <center>
             <table>

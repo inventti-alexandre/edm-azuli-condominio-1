@@ -9,9 +9,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <br /><br /> <br /><br /><br /><br />
+    <br />
 <fieldset class="login">
-        <legend class="">Caixa de Entrada - Mensagem</legend>
+        <legend class="accordionContent">Caixa de Entrada - Mensagem</legend>
           <br />
           <asp:Label ID="lblConsultaAno" runat="server" CssClass="footer" 
             Text="Status:  "></asp:Label>
@@ -71,9 +71,10 @@
 		</div>
        
         </div>     
-        
+
+
        </fieldset>
     <center><asp:Button  ID="btnOk" runat="server" Text="Ok" Width="58px" 
             CssClass="btGeral" onclick="btnOk_Click" /></center> 
             
-</asp:Content>
+            </asp:Content>

@@ -22,7 +22,7 @@
             </div>
 
               </div>
-        <div class="main">
+        <div class="main"><br />
         <center> 
             <h2>
         Tela de Acesso
@@ -31,7 +31,7 @@
                 &nbsp;</p>
             </center>
     <center style="height: 526px; width: 914px">
-        <LayoutTemplate>
+
             <span class="failureNotification">
                 <asp:Literal ID="FailureText" runat="server"></asp:Literal>
             </span>
@@ -40,7 +40,7 @@
             Width="427px"/>
             <div class="accountInfo">
                 <fieldset class="login">
-                    <legend>Entre com seu Bloco/AP e Senha por favor:</legend>
+                    <legend class="accordionContent">Entre com seu Bloco/Apartamento e Senha:</legend>
                     <table id="tbPassword" runat="server">
                     <tr>
                     <td>
@@ -178,7 +178,7 @@
     </div>
      
                   <br />
-        </LayoutTemplate>
+   
    </center>
         </div>
         <div class="footer">
