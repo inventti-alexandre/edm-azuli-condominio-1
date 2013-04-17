@@ -25,7 +25,7 @@
     <br /><br /><br /><br /><br />
 <fieldset>
    
-    <legend title="Abrir Ocorrência"> Abrir Ocorrência </legend></center><br />
+    <legend title="Abrir Ocorrência"> Abrir Ocorrência </legend><br />
    <center><asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#006600"></asp:Label>
        <br />
        <br />
@@ -97,7 +97,7 @@
                 </td>
             </tr>
         </table>
-                                 <br />
+                                 <br /></div>
                                  <asp:RequiredFieldValidator ID="rfvDescription" runat="server" 
                                      ControlToValidate="txtDescription" ErrorMessage="Favor descrever a Ocorrência" 
                                      Font-Bold="True" ForeColor="Red" 
@@ -109,7 +109,7 @@
       <br />
       <br />
      </center><br />
-    </div>
+  
 
-    </fieldset>
+    </fieldset>  
 </asp:Content>

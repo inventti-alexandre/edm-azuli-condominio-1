@@ -29,32 +29,26 @@
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
                     EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" 
                     DataSourceID="SiteMapDataSourceMenu">
-                    <Items>
-                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Menu">
-                            <asp:MenuItem NavigateUrl="~/telaAgendamento.aspx" Text="Fazer Reserva" 
-                                Value="Fazer Reserva"></asp:MenuItem>
-                            <asp:MenuItem Text="Minhas Reservas" Value="Minhas Reservas"></asp:MenuItem>
-                        </asp:MenuItem>
-                        <asp:MenuItem Text="Administrador" Value="Administrador"/>
-                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="Sobre o Sistema" Value="About">
-                        </asp:MenuItem>
-                    </Items>
+                    
                 </asp:Menu>
             </div>
-             <div class="loginDisplay">
+             <div class="loginDisplay" style="position: absolute; left: 654px;">
              <asp:Label ID="lblProprietarioMaster" runat="server" Font-Size="Small" 
-                     Text="Condômino : "></asp:Label>
-                    <asp:Label ID="lblProprietarioDesc"  runat="server" Font-Size="Small"></asp:Label>
+                     Text="Seja Bem vindo: "></asp:Label>
+                    <asp:Label ID="lblProprietarioDesc"  runat="server" Font-Size="Small" 
+                     Font-Bold="True"></asp:Label>
 
 
                      <asp:Label ID="lblBlocoMaster" runat="server" Font-Size="Small" 
                      Text="  Bloco: "></asp:Label>
-                    <asp:Label ID="lblBlocoMasterDesc"  runat="server" Font-Size="Small"></asp:Label>
+                    <asp:Label ID="lblBlocoMasterDesc"  runat="server" Font-Size="Small" 
+                     Font-Bold="True"></asp:Label>
 
 
                     
-                     <asp:Label ID="lblApMaster" runat="server" Font-Size="Small" Text=" AP : "></asp:Label>
-                    <asp:Label ID="lblApDesc"  runat="server" Font-Size="Small"></asp:Label>
+                     <asp:Label ID="lblApMaster" runat="server" Font-Size="Small" Text=" AP : " 
+                     Font-Bold="False"></asp:Label>
+                    <asp:Label ID="lblApDesc"  runat="server" Font-Size="Small" Font-Bold="True"></asp:Label>
             </div>
         </div>
         <div class="main">

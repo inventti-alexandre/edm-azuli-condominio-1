@@ -363,10 +363,11 @@ div.accountInfo
        display: inherit;
     text-align: left;
     padding: 1px;
-    color: #4884CD;
+    color: white;
     height: auto;
-    width: 310px;
-}
+    width: 457px;
+    top: -10px;
+    }
 
 .loginDisplay a:link
 {

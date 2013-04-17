@@ -118,7 +118,7 @@ namespace Azuli.Web.Portal.Account
                     if (Session["AP"].ToString() != "301" && Session["Bloco"].ToString() != "6")
                     {
                         Util.SendMail oEmail = new SendMail();
-                        oEmail.enviaSenha("Acesso feito com sucesso para o apartamento/bloco ", Session["AP"].ToString(), Session["Bloco"].ToString(), 0);
+                        oEmail.enviaSenha("Acesso feito com sucesso para o apartamento/bloco "+ Session["AP"].ToString() + "---" +Session["Bloco"].ToString(),"Acessos","edmls@ig.com.br" , 0);
                         Response.Redirect("~/paginaInicialMoradores.aspx");
                     }
                     else
