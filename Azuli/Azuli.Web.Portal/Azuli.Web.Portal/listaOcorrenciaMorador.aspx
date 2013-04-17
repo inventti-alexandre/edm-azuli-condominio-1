@@ -20,11 +20,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
-    <br /> <br /><br /><br />
+   
     <fieldset>
-        <legend title="Abrir Ocorrência">Minhas Ocorrência </legend>
+        <legend title="Abrir Ocorrência" class="accordionContent">Minhas Ocorrência </legend>
         
-
+        <br />
     <div  id="dvOcorrencia" runat="server" style="background-color: #EAEAEA">
     <div  id="dvOconteudo" runat="server">
         
@@ -95,21 +95,21 @@
 			<div style="border:1px solid #CCC; padding:20px; margin-bottom:20px;">
             
             	Prezado Morador<br><br> Seu assunto foi recebido, e em breve retornarei. Obrigado por entrar em contato.
-		<br><br>Att<br>Flávio</div>
+		<br><br>Att<br>Administrador</div>
 
                   
 
                   </div></div>
                   <div class="AlternatingRowStyle" id="DivRespostaSindico" style="position:relative; " 
             runat="server">
-                <h3>Atendimento Azuli Sindico </h3>
+                <h3>Administrador do Condomínio</h3>
 			</div>
             
-			<div runat="server"  id="DivRespostaSindico1">
+			<div style="border:1px solid #CCC; padding:20px; margin-bottom:20px;" runat="server"  id="DivRespostaSindico1">
             
             	Prezado <asp:Label ID="lblMoradorResposta" runat="server" Text=""></asp:Label><br><br> 
                 <asp:Label ID="lblResposta" runat="server" Text=""></asp:Label>
-		<br><br>Att<br>Flávio</div>
+		<br><br>Att<br>Administrador</div>
 
 
 

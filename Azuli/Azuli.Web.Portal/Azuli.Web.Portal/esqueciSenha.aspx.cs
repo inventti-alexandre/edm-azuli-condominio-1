@@ -84,7 +84,7 @@ namespace Azuli.Web.Portal
             }
             else
             {
-                lblMsg.Text = "Emáil inválido";
+                lblMsg.Text = "E-mail inválido ou não cadastrado";
             }
 
         }

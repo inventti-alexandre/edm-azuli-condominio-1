@@ -12,7 +12,7 @@
         .style1
         {
             font-family: "Times New Roman", Times, serif;
-            font-weight: bold;
+            font-weight: normal;
             color:#4884CD;
         }
     </style>
@@ -61,12 +61,7 @@
         </div>
          <div class="footer">
    
-             <span class="style1">© FernandesVilela Soluções de TI. INC 2013. 
-             e-mail -  Versão 1.5 Beta   
-           <a href="mailto:edmls@ig.com.br">
-               <img src="images/correio.jpg" style="height: 12px; width: 19px" /></a></span> 
-
-    </div>
+             <span class="style1">© FernandesVilela Soluções de TI. INC 2013.&nbsp;  Versão 1.5 Beta </span>&nbsp;</div>
     </div>
     
     </form>

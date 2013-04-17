@@ -34,19 +34,19 @@
         <div class="main">
        <p></p>
             <asp:Button ID="btnHome" runat="server" CssClass="botao" 
-                        Text="Login" onclick="btnHome_Click" Height="27px" Width="67px" />
+                        Text="Voltar" onclick="btnHome_Click" Height="18px" Width="67px" />
     <br /><br /><br />
  
 <fieldset>
    
-    <legend title="Abrir Ocorrência"> Solicitação de senha para: <span class="style1">&nbsp;Bloco:
+    <legend title="Abrir Ocorrência" class="accordionContent"> Solicitação de senha para: <span class="style1">&nbsp;Bloco:
         <asp:Label ID="lblBloco" runat="server"></asp:Label>
 &nbsp;Apartamento:
         <asp:Label ID="lblAp" runat="server"></asp:Label>
         </span></legend><br />
    
       
-  <center> <h2><b>ESQUECI A SENHA</b></h2></center><br />
+  <center> <h3>ESQUECI A SENHA</h3></center><br />
   <center>
    
         
@@ -97,19 +97,19 @@
                  
     </div>
      
-                  <br />
-      
-        </div>
- </fieldset>
- 
-  <div class="footer">
+       <div class="footer">
    
       © FernandesVilela Soluções de TI. INC 2013. Todos os direitos reservados 
            <a href="mailto:edmls@ig.com.br">
                <img src="images/correio.jpg" style="height: 17px; width: 29px" /></a> 
 
     </div>
+        </div>
+         </fieldset>
+ 
     </form>
+
+ 
 </body>
 </html>
 

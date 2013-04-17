@@ -4,11 +4,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-<br /> <br /> <br /> <br /> <br />
+    <br /> <br />
     <div id="DivConfirma" runat="server" class="botao">
         <fieldset class="login">
-            <legend class="style7">Reserva Efetuada com Sucesso!</legend>
-            <table id="tbConfirma" style="width: 921px; height: 380px;" runat="server">
+            <legend class="accordionContent">Reserva Efetuada com Sucesso!</legend>
+            <br />
+            <table id="tbConfirma" style="width: 899px; height: 380px;" runat="server">
                 <tr>
                     <td>
                         &nbsp;&nbsp;
@@ -22,7 +23,7 @@
                         &nbsp;<asp:Label ID="lblConfirmaData" runat="server" Font-Bold="True"></asp:Label>
                     </td>
                 </tr>
-        </fieldset>
+        
         <td>
             <hr />
             <p style="color: #3A5FCD; font-weight: bold;">
@@ -72,6 +73,8 @@
                 </tr>
             </table>
         
-        </td>
-        </tr> </table></div>    </fieldset>
+      
+      
+            </table> </fieldset> </div> 
+
 </asp:Content>
