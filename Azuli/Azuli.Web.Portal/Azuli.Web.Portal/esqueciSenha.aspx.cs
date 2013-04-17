@@ -32,11 +32,11 @@ namespace Azuli.Web.Portal
             string vMail = string.Empty;
 
 
-            vMail = txtEm.Text;
+            
             
             Regex rg= new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
             
-            if (rg.IsMatch(vMail))
+            if (rg.IsMatch(txtEm.Text))
             {
 
 
@@ -63,12 +63,13 @@ namespace Azuli.Web.Portal
                     if (vMail != string.Empty)
                     {
                         oEnviaEmail.enviaSenha("A senha para o apartamento" + oProprietarioModel.ap.apartamento + " do bloco " + oProprietarioModel.ap.bloco + " é " + vMail, oProprietarioModel.ap.apartamento.ToString(), oProprietarioModel.email, 1);
-
+                        
                         sbMsg.Append("<b>A sua senha foi enviada para o e-mail informado!</b>");
 
                     }
                     else
                     {
+                       
                         sbMsg.Append("<b>E-mail não cadastrado em nossa base de dados / Ou e-mail não corresponde com o Bloco e apartamento cadastrado</b>");
                     }
 
@@ -84,6 +85,7 @@ namespace Azuli.Web.Portal
             }
             else
             {
+                lblMsg.Visible = true;
                 lblMsg.Text = "E-mail inválido ou não cadastrado";
             }
 

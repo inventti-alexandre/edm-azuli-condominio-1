@@ -92,7 +92,7 @@
    <center>
        <br />
        <br />
-       <asp:Label ID="lblMsg" runat="server" CssClass="failureNotification"></asp:Label></center> 
+       <asp:Label ID="lblMsg" runat="server" CssClass="modalHeader" Visible="False"></asp:Label></center> 
      
                  
     </div>
