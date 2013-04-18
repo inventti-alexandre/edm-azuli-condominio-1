@@ -115,6 +115,7 @@ namespace Azuli.Web.DAO
                 comandoSQL.Parameters.AddWithValue("@ATIVO", oMensagem.ativo);
                 comandoSQL.Parameters.AddWithValue("@ASSUNTO", oMensagem.assunto);
                 comandoSQL.Parameters.AddWithValue("@De", oMensagem.deMsg);
+                comandoSQL.Parameters.AddWithValue("@TodosUser", oMensagem.todosMoradores);
 
 
                  ExecutaComando(comandoSQL);

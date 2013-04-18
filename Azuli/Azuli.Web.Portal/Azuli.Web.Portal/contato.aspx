@@ -53,7 +53,7 @@
                             </td>
                             <td class="style14">
                                  <asp:TextBox ID="txtDescription" runat="server" Height="88px" TextMode="MultiLine" 
-                                     Width="602px"></asp:TextBox>
+                                     Width="602px" ValidationGroup="validaDescricao"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -71,7 +71,7 @@
                         ValidationGroup="validaDescricao" onclick="btnCadastro_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp; 
                     <asp:Button ID="btnLimpar" runat="server" CssClass="botao" 
-                        Text="Limpar Campos" />
+                        Text="Limpar Campos" ValidationGroup="validaDescricao" />
                 </td>
             </tr>
         </table>
@@ -86,6 +86,24 @@
       <br /> </div>
      </center><br />
    
+ <center>
+ <form method="get"
+      action="http://groups.yahoo.com/subscribe/azuli_sjc"
+      style="background-color: #ffc; width: 254px; padding: 2px 4px">
+  <h6 style="font-weight: bold; margin-bottom: 5px; text-align: center">
+      Cadastre seu e-mail no Grupo Azuli:</h6>
+  <input style="vertical-align: top; height: 17px; width: 203px;"
+      type="text"
+      name="user"
+      value="digite o endereço de email"
+      size="20" />
+  <input type="image" alt="Clique aqui para cadastrar-se azuli_sjc"
+      name="Clique aqui para cadastrar-se azuli_sjc"
+      src="http://us.i1.yimg.com/us.yimg.com/i/yg/img/i/br/ui/join.gif" 
+      style="height: 25px; width: 75px" />
+ 
 
+</form>
+</center>
     </fieldset>
 </asp:Content>

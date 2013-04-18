@@ -1,17 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteAdmin.Master" AutoEventWireup="true" CodeBehind="enviaMensagemMorador.aspx.cs" Inherits="Azuli.Web.Portal.enviaMensagemMorador" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
-    .style1
+        .style1
     {
-        width: 618px;
-    }
+        width: 908px;
+            height: 193px;
+        }
     .style2
     {
         width: 621px;
-    }
-    .style3
-    {
-        width: 662px;
     }
     .style4
     {
@@ -29,7 +26,15 @@
     {
         width: 647px;
     }
-</style>
+        .style8
+        {
+            width: 664px;
+        }
+        .style9
+        {
+            width: 780px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
   
@@ -48,8 +53,8 @@
    
   
       <center>
-          <table style="border: thin solid #C0C0C0; height: 306px; width: 838px;" 
-          class="HeaderStyle">
+          <table  class="HeaderStyle">
+          
             <tr>
                 <td class="GridView">
                     <table class="style1" border='0'>
@@ -58,58 +63,58 @@
                                 <asp:Label ID="lblPara" runat="server" style="font-weight: 700" 
                                     Text="Para:"></asp:Label>
                             </td>
-                            <td class="style7" align="left">
+                            <td class="style9" align="left" colspan="2">
                                 <asp:Label ID="lblBloco" runat="server" CssClass="style5" Text="Bloco:"></asp:Label>
 &nbsp;<asp:DropDownList ID="drpBloco" runat="server" DataSourceID="SqlDataSourceBloco" 
                                     DataTextField="BLOCO" DataValueField="BLOCO" Height="25px" 
                                     CssClass="AlternatingRowStyle" Width="108px"  AppendDataBoundItems="True" 
                                     AutoPostBack="True" onselectedindexchanged="drpBloco_SelectedIndexChanged">
-                                      <asp:ListItem Value="-1">Selecione ..</asp:ListItem>
+                                      <asp:ListItem Value="T">Todos</asp:ListItem>
                                 </asp:DropDownList>
-&nbsp;-
+                                &nbsp;
                                 <asp:Label ID="lblAp" runat="server" CssClass="style6" style="font-weight: 700" 
                                     Text="Apartamento:"></asp:Label>
 &nbsp;<asp:DropDownList ID="drpMsg" runat="server" DataSourceID="SqlDataSourceAP" 
                                     DataTextField="APARTAMENTO" DataValueField="APARTAMENTO" Height="25px" 
                                     CssClass="AlternatingRowStyle" Width="103px"  AppendDataBoundItems="True" 
                                     AutoPostBack="True" onselectedindexchanged="drpMsg_SelectedIndexChanged">
-                                      <asp:ListItem Value="-1">Selecione ..</asp:ListItem>
+                                      <asp:ListItem Value="T">Todos</asp:ListItem>
                                 </asp:DropDownList>
-                            &nbsp;&nbsp;
                                 <asp:Label ID="lblMorador" runat="server"></asp:Label>
                             </td>
-                            <td class="style2">
-                                &nbsp;</td>
                         </tr>
                         <tr>
                             <td class="style7">
                                 <asp:Label ID="lblAssunto" runat="server" Font-Bold="True" Text="Assunto:"></asp:Label>
                             </td>
-                            <td class="style3">
+                            <td class="style9">
                                 <asp:TextBox ID="txtAssunto" runat="server" Height="16px" Width="593px"></asp:TextBox>
                             </td>
                             <td class="style2">
-                                &nbsp;</td>
+                                 <asp:RequiredFieldValidator ID="rfvDescription0" runat="server" 
+                                     ControlToValidate="txtAssunto" ErrorMessage="*" 
+                                     Font-Bold="True" ForeColor="Red" ValidationGroup="validaDescricao"></asp:RequiredFieldValidator>
+                            </td>
                         </tr>
                         <tr>
                             <td class="style7">
                                 <asp:Label ID="lblMensagem" runat="server" Font-Bold="True" 
                                     Text="Mensagem"></asp:Label>
                             </td><br />
-                            <td class="style3">
-                                 <asp:TextBox ID="txtDescription" runat="server" Height="112px" TextMode="MultiLine" 
-                                     Width="578px"></asp:TextBox>
+                            <td class="style9">
+                                 <asp:TextBox ID="txtDescription" runat="server" Height="95px" TextMode="MultiLine" 
+                                     Width="593px"></asp:TextBox>
                             </td>
                             <td class="style4">
                                  <asp:RequiredFieldValidator ID="rfvDescription" runat="server" 
-                                     ControlToValidate="txtDescription" ErrorMessage="Favor descrever o problema!" 
+                                     ControlToValidate="txtDescription" ErrorMessage="*" 
                                      Font-Bold="True" ForeColor="Red" ValidationGroup="validaDescricao"></asp:RequiredFieldValidator>
                             </td>
                         </tr>
                         <tr>
                             <td class="style7">
                                 &nbsp;</td>
-                            <td class="style3">
+                            <td class="style9">
                                 &nbsp;</td>
                             <td class="style8">
                                 &nbsp;</td>
@@ -135,7 +140,7 @@
                         Text="Limpar Campos" Height="19px" Width="121px" /></center>
                 </td>
             </tr>
-        </table>
+        </table><br /><br />
            <asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#006600"></asp:Label> 
       <br />
       <br />

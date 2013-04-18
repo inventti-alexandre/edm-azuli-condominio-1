@@ -305,6 +305,9 @@ fieldset label.inline
     display: inline;
 }
 
+
+
+
 legend 
 {
     font-size: 1.1em;
@@ -327,7 +330,7 @@ input.passwordEntry
 
 div.accountInfo
 {
-    width: 87%;
+    width: 99%;
     height: 299px;
 }
 
@@ -467,6 +470,7 @@ input.botao, .btGeral {
     background-color:#ADD8E6;
     color: white;
     font-weight: bold;
+    width: 943px;
 }
 
 .HeaderStyle a, .HeaderStyle a:visited
@@ -566,7 +570,7 @@ input.botao, .btGeral {
 	margin: 0px 0px 0px 0px;
 	padding: 0px 0px 0px 0px;
 	overflow: hidden !important;
-}
+
 
 
 

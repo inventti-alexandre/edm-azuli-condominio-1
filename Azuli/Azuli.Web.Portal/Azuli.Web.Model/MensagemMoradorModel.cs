@@ -17,6 +17,7 @@ namespace Azuli.Web.Model
         public DateTime data_inicio { get; set; }
         public DateTime data_fim { get; set; }
         public int qtdMsg { get; set; }
+        public string todosMoradores { get; set; }
 
     }
 

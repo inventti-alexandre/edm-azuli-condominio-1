@@ -26,7 +26,7 @@ namespace Azuli.Web.Portal
             {
                 if (oUtil.validateSessionAdmin())
                 {
-                  
+                    buscaMorador();
                    
                 }
                 else
@@ -51,10 +51,23 @@ namespace Azuli.Web.Portal
         {
 
             string nomeMorador = "";
-            
-            if (drpMsg.SelectedItem.Value != "-1" && drpBloco.SelectedItem.Value != "-1")
+
+            if (drpBloco.SelectedItem.Value == "T")
+            {
+                drpMsg.SelectedIndex = -1;
+                drpMsg.Visible = false;
+                lblAp.Visible = false;
+            }
+            else
             {
              
+                drpMsg.Visible = true;
+                lblAp.Visible = true;
+            }
+
+            if (drpMsg.SelectedItem.Value != "T" && drpBloco.SelectedItem.Value != "T")
+            {
+
                 oAPmodel.apartamento = Convert.ToInt32(drpMsg.SelectedItem.Text);
                 oAPmodel.bloco = Convert.ToInt32(drpBloco.SelectedItem.Text);
 
@@ -76,13 +89,22 @@ namespace Azuli.Web.Portal
                     lblMorador.Text = "Não existe morador cadastrado!";
                 }
             }
+            else if (drpMsg.SelectedItem.Value == "T" && drpBloco.SelectedItem.Value != "T")
+                {
+                    lblMorador.Text = "";
+                }
+            else
+            {
+                nomeMorador = "Enviar para todos os moradores!!";
+                lblMorador.Text = "Enviar para todos os moradores!!";
+            }
 
             return nomeMorador; 
         }
 
         protected void btnMensagem_Click(object sender, EventArgs e)
         {
-            if (drpBloco.SelectedItem.Value != "-1" && drpMsg.SelectedItem.Value != "-1")
+            if (drpBloco.SelectedItem.Value != "T" && drpMsg.SelectedItem.Value != "T")
             {
 
                 oAPmodel.apartamento = Convert.ToInt32(drpMsg.SelectedItem.Text);
@@ -96,7 +118,8 @@ namespace Azuli.Web.Portal
                     oMsgModel.assunto = txtAssunto.Text;
                     oAp.apartamento = Convert.ToInt32(drpMsg.SelectedItem.Value);
                     oAp.bloco = Convert.ToInt32(drpBloco.SelectedItem.Value);
-                    oMsgModel.deMsg = "Mensagem Automática - Administrador do Condominio";
+                    oMsgModel.deMsg = "Administrador do Condominio";
+                    oMsgModel.todosMoradores = "";
                     oMsgModel.oAp = oAp;
 
 
@@ -106,6 +129,7 @@ namespace Azuli.Web.Portal
                         lblMsg.Text = "Mensagem enviada com sucesso!!";
                         txtAssunto.Text = "";
                         txtDescription.Text = "";
+                        lblMorador.Text = "";
                     }
                     catch (Exception)
                     {
@@ -120,9 +144,37 @@ namespace Azuli.Web.Portal
                 }
 
             }
-            else
+           
+
+            else if (drpBloco.SelectedItem.Value == "T" && drpMsg.SelectedItem.Value == "T")
             {
-                lblMsg.Text = "Para envio da mensagem escolher o bloco/Apartamento!";
+              
+                    ApartamentoModel oAp = new ApartamentoModel();
+                    oMsgModel.ativo = "S";
+                    oMsgModel.status = "NL";
+                    oMsgModel.mensagem = txtDescription.Text;
+                    oMsgModel.assunto = txtAssunto.Text;
+                    oAp.apartamento = 0;
+                    oAp.bloco = 0;
+                    oMsgModel.todosMoradores = "T";
+                    oMsgModel.deMsg = "Administrador do Condominio";
+                    oMsgModel.oAp = oAp;
+
+
+                    try
+                    {
+                        oMensagemBLL.enviaMensagemMorador(oMsgModel);
+                        lblMsg.Text = "Mensagem enviada com sucesso!!";
+                        txtAssunto.Text = "";
+                        txtDescription.Text = "";
+                        lblMorador.Text = "";
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+              
 
             }
 

@@ -94,6 +94,15 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.TextBox txtAssunto;
         
         /// <summary>
+        /// rfvDescription0 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDescription0;
+        
+        /// <summary>
         /// lblMensagem control.
         /// </summary>
         /// <remarks>
