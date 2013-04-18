@@ -72,6 +72,7 @@
     <Content Include="images\add.png" />
     <Content Include="images\banner.jpg" />
     <Content Include="images\cancel.png" />
+    <Content Include="images\download.jpg" />
     <Content Include="images\edit.png" />
     <Content Include="images\excel.png" />
     <Content Include="images\ico_search.gif" />

@@ -29,7 +29,7 @@
    <center><asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#006600"></asp:Label>
       
    
-  <div id="dvCadastro" runat="server" align="center" > 
+  <div id="dvCadastro" runat="server" align="left" > 
    
       <table 
           class="MasterMenu">
@@ -96,7 +96,7 @@
                 </td>
             </tr>
         </table>
-                                 </div>
+                                 </div>   
                                  <asp:RequiredFieldValidator ID="rfvDescription" runat="server" 
                                      ControlToValidate="txtDescription" ErrorMessage="Favor descrever a Ocorrência" 
                                      Font-Bold="True" ForeColor="Red" 
@@ -105,8 +105,8 @@
                                     ConnectionString="<%$ ConnectionStrings:azulli %>" 
                                     SelectCommand="SELECT * FROM [TIPO_OCORRENCIA]"></asp:SqlDataSource>
       
-     </center>
+    
   
+  </fieldset>
 
-    </fieldset>  
 </asp:Content>

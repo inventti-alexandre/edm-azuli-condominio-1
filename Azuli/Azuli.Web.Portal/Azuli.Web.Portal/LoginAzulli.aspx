@@ -8,6 +8,13 @@
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
     <script src="Scripts/ScriptAzuli.js" type="text/javascript"></script>
  
+    <style type="text/css">
+        .style1
+        {
+            text-align: center;
+        }
+    </style>
+ 
 </head>
 <body>
     <form id="Form1" runat="server">
@@ -181,7 +188,11 @@
    
    </center>
         </div>
-
+         <div class="style1">
+             <b></b>
+        </div>
+      <center>  <b>Utilize o navegador Chrome para melhor visualização do site! 
+        <img src="images/download.jpg" style="height: 20px; width: 21px" /></b></center>
         <div class="footer">
    
       © FernandesVilela Soluções de TI. INC 2013. Todos os direitos reservados 
