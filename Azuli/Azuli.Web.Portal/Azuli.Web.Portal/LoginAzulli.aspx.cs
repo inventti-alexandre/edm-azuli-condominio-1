@@ -15,7 +15,13 @@ namespace Azuli.Web.Portal.Account
 {
     public partial class LoginAzulli : Util.Base
     {
-
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            if (Page.Request.ServerVariables["http_user_agent"].ToLower().Contains("safari"))
+            {
+                Page.ClientTarget = "uplevel";
+            }
+        }
        
         protected override void OnLoad(EventArgs e)
         { 

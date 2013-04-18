@@ -23,7 +23,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
-<fieldset>
+<fieldset class="loginDisplayLegend">
    
     <legend title="Abrir Ocorrência" class="accordionContent"> Abrir Ocorrência </legend><br />
    <center><asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#006600"></asp:Label>

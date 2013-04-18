@@ -5,7 +5,7 @@
 
     <br />
 
-    <fieldset  class="login">
+    <fieldset  class="loginDisplayLegend">
   
         <legend class="accordionContent">Consulta de Publicações de Circulares: </legend>
         <br />

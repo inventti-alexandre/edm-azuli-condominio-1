@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
-<fieldset>
+<fieldset class="loginDisplayLegend">
    
     <legend title="Abrir Ocorrência" class="accordionContent"> Deixe aqui seu comentário, opinião e sugestão:</legend><br />
    

@@ -5,15 +5,16 @@
     <br />
    
    
- <fieldset>
+ <fieldset class="loginDisplayLegend">
   <asp:Label ID="lblMeses" runat="server" 
-        Text="Ocorrência no mês de:" Font-Bold="True"></asp:Label>
+        Text="Ocorrência no mês de:" Font-Bold="True" ForeColor="Black"></asp:Label>
 &nbsp;<asp:DropDownList ID="drpMeses" runat="server" Height="18px" Width="243px" 
                 CssClass="btGeral" AutoPostBack="True" 
                 onselectedindexchanged="drpMeses_SelectedIndexChanged" 
          Font-Bold="True">
     </asp:DropDownList>
-            &nbsp;<asp:Label ID="lblAno" runat="server" Font-Bold="True" Text="Ano:"></asp:Label>
+            &nbsp;<asp:Label ID="lblAno" runat="server" Font-Bold="True" Text="Ano:" 
+         ForeColor="Black"></asp:Label>
                     <asp:DropDownList ID="drpAno" runat="server" CssClass="btGeral" Font-Bold="True"
                         Height="16px" Width="101px" AutoPostBack="True" onselectedindexchanged="drpAno_SelectedIndexChanged" 
                         >

@@ -10,7 +10,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <br />
-<fieldset class="login">
+<fieldset class="loginDisplayLegend">
         <legend class="accordionContent">Caixa de Entrada - Mensagem</legend>
           <br />
           <asp:Label ID="lblConsultaAno" runat="server" CssClass="footer" 

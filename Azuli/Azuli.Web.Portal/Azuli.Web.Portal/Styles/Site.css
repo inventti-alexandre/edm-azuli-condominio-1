@@ -370,6 +370,17 @@ div.accountInfo
     top: 7px;
     }
 
+.loginDisplayLegend
+{
+    
+     display: block;
+    text-align: left;
+    padding: 29px;
+    height: auto;
+    width: 860px;
+    top: 2px;
+    }
+
 .loginDisplay a:link
 {
     color: white;

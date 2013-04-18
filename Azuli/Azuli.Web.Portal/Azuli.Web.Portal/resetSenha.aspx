@@ -3,12 +3,12 @@
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
-<fieldset class="login">
+<fieldset class="loginDisplayLegend">
         <legend class="accordionContent">Alterar sua Senha:</legend>
- 
+ <br />
   <center><div id="dvProprietario" runat="server" >
    
-        
+        <br />
         <table class="btGeral" dir="ltr" frame="border" style="width: 349px" >
             <tr>
                 <td>
