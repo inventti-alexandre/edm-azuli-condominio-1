@@ -181,6 +181,7 @@
    
    </center>
         </div>
+
         <div class="footer">
    
       © FernandesVilela Soluções de TI. INC 2013. Todos os direitos reservados 
@@ -188,6 +189,7 @@
                <img src="images/correio.jpg" style="height: 17px; width: 29px" /></a> 
 
     </div>
+    
     </div>
   
     </form>

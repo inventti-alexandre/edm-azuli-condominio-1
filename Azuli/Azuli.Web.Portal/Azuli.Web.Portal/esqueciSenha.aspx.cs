@@ -73,6 +73,7 @@ namespace Azuli.Web.Portal
                         sbMsg.Append("<b>E-mail não cadastrado em nossa base de dados / Ou e-mail não corresponde com o Bloco e apartamento cadastrado</b>");
                     }
 
+                    lblMsg.Visible = true;
                     lblMsg.Text = sbMsg.ToString();
 
                 }
