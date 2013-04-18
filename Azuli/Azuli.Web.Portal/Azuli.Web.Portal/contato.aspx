@@ -81,29 +81,21 @@
                                      Font-Bold="True" ForeColor="Red" 
           ValidationGroup="validaDescricao"></asp:RequiredFieldValidator>
       <br />
-      <center><asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#006600"></asp:Label></center>
+      <center>
+          <br />
+          <asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#006600"></asp:Label></center>
       <br />
       <br /> </div>
      </center><br />
    
- <center>
- <form method="get"
-      action="http://groups.yahoo.com/subscribe/azuli_sjc"
-      style="background-color: #ffc; width: 254px; padding: 2px 4px">
-  <h6 style="font-weight: bold; margin-bottom: 5px; text-align: center">
-      Cadastre seu e-mail no Grupo Azuli:</h6>
-  <input style="vertical-align: top; height: 17px; width: 203px;"
-      type="text"
-      name="user"
-      value="digite o endereço de email"
-      size="20" />
-  <input type="image" alt="Clique aqui para cadastrar-se azuli_sjc"
-      name="Clique aqui para cadastrar-se azuli_sjc"
-      src="http://us.i1.yimg.com/us.yimg.com/i/yg/img/i/br/ui/join.gif" 
-      style="height: 25px; width: 75px" />
+ </fieldset>&nbsp;&nbsp; 
  
-
-</form>
+ <center><a href="http://groups.yahoo.com/group/azuli_sjc/join">
+  <img src="http://us.i1.yimg.com/us.yimg.com/i/yg/img/i/br/ui/join.gif"
+       style="border-style: none; border-color: inherit; border-width: 0px; height: 34px; width: 79px;"
+       alt="Clique aqui para cadastrar-se azuli_sjc"/>
+  <p>Clique aqui e cadastra-se no Grupo azuli_sjc</p>
+</a>
 </center>
-    </fieldset>
+    
 </asp:Content>
