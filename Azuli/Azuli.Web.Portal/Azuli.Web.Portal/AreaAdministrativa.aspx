@@ -1,62 +1,18 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteAdmin.Master" AutoEventWireup="true" CodeBehind="AreaAdministrativa.aspx.cs" Inherits="Azuli.Web.Portal.AreaAdministrativa" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <style type="text/css">
-       
-        .style1
-        {
-            width: 349px;
-        }
-        .style2
-        {
-            width: 191px;
-        }
-       
-        #dvPesquisaMorador
-        {
-            width: 541px;
-        }
-       
-        .style5
-        {
-            width: 189px;
-        }
-        .style6
-        {
-            width: 155px;
-        }
-               
-        #dvCadastro
-        {
-            left: -1px;
-        }
-               
-        .style7
-        {
-            width: 155px;
-            height: 21px;
-        }
-        .style8
-        {
-            height: 21px;
-        }
-               
-    </style>
+   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-     
-     <div id="dvTitle" runat="server"><h1>&nbsp;Agenda para Moradores</h1>
-         <hr />
-     </div>
-     <asp:Label ID="lblMsgCadastro" runat="server" CssClass="failureNotification" 
-         ForeColor="#0066FF"></asp:Label>
-     <br />
-    <div id="dvPesquisaMorador" runat="server">
-           
-      
+    
+    
+     <div id="dvPesquisaMorador" runat="server">
+    
+      <fieldset class="loginDisplayLegend">
+     <legend align="left" class="accordionContent">Agenda para Moradores</legend>
    
-        
-                <td class="style11">
-                <center>  <table class="style1" border='0' style="border: thin solid #C0C0C0"  height: auto; width: auto;>
+        <br /><br />
+            <center>
+             <table  style="border: thin solid #C0C0C0;">
                         <tr>
                             <td class="style2">
                                 <asp:Label ID="lblSelecioneBloco" runat="server" Font-Bold="True" 
@@ -94,12 +50,18 @@
 &nbsp;</td>
                         </tr>
                
-        </table></center> 
-   </div>
- <br />
+        </table></center>
+  </fieldset> </div> 
+  
+  <asp:Label ID="lblMsgCadastro" runat="server" CssClass="failureNotification" 
+         ForeColor="#0066FF"></asp:Label>
+
+ 
     <div id="dvNewUser" runat="server">
-      <center>  
-   <br /> <br />
+    <fieldset class="loginDisplayLegend">
+      <legend align="left" class="accordionContent">Novo Cadastro</legend>
+   
+  <center> <br /> <br />
      <asp:Label ID="lblMsg" runat="server" CssClass="failureNotification" 
          Text="Label"></asp:Label>
    <br /><br />
@@ -112,9 +74,13 @@
           <br />
           <br />
    <br /> 
-     <br /></div>
-     <div id="dvDadosMorador" runat="server">
-    
+     <br /></center></fieldset></div>
+
+        <div id="dvDadosMorador" runat="server">
+     <fieldset class="loginDisplayLegend">
+     <legend align="left" class="accordionContent">Dados do Morador</legend>
+  
+    <br /> <br />
     
       <center>  <table style="border: thin solid #C0C0C0; height: auto; width: auto;">
             <tr>
@@ -136,7 +102,7 @@
                                 <asp:Label ID="lblApartDesc" runat="server" Text="301"></asp:Label>
                             </td>
                         </tr>
-                        <td></td>
+                       
                         <tr>
                             <td class="style6">
                                 <asp:Label ID="lblBloco" runat="server" Font-Bold="True" Text="Bloco:"></asp:Label>
@@ -156,12 +122,15 @@
                 </td>
             </tr>
         </table></center><br />
-    </div>
+   </fieldset> </div>
     <br />
  <br />
-  <div id="dvCadastro" runat="server" align="center" 
-         style="position: relative; z-index: auto; width: auto; top: -147px; bottom: 147px;">
-      <table style="border: thin solid #C0C0C0; height: auto; width: auto;">
+ 
+  <div id="dvCadastro" runat="server" align="center" >
+ <fieldset class="loginDisplayLegend"> 
+ <legend class="accordionContent">Cadastrar Moradores</legend>
+ 
+      <table>
             <tr>
                 <td class="style11" align="center">
                     <table class="style1" border='0'>
@@ -233,13 +202,8 @@
                 </td>
             </tr>
         </table>
-      <br />
-      <br />
-      <br />
-     </center><br />
-    </div>
-    <br />
- <br />
+      
+  </fieldset>   </div>
 
 
 </asp:Content>

@@ -44,6 +44,7 @@ namespace Azuli.Web.Portal
             btnCadastrar.Visible = false;
             btnCancelar.Visible = false;
             dvCadastro.Visible = false;
+            dvNewUser.Visible = false;
 
         }
 
