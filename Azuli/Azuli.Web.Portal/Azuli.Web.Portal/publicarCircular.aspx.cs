@@ -27,7 +27,7 @@ namespace Azuli.Web.Portal
                     
                     preencheMeses();
                     drpMes.SelectedIndex = data.Month - 1;
-                    drpMes.Enabled = false;
+                    //drpMes.Enabled = false;
                     preencheAno();
 
                 }
@@ -89,7 +89,7 @@ namespace Azuli.Web.Portal
             if (fileWord.PostedFile.FileName != "")
             {
                 string arq = fileWord.PostedFile.FileName;
-                tamanhoArquivo = Convert.ToDouble(fileWord.PostedFile.ContentLength) / 1024;
+                tamanhoArquivo = Convert.ToDouble(fileWord.PostedFile.ContentLength) / 2048;
 
                  extensao = arq.Substring(arq.Length - 4).ToLower();
 
@@ -98,9 +98,9 @@ namespace Azuli.Web.Portal
                     this.lblMsg.Text = "Tamanho Máximo permitido é de " + permitido + " kb!"; 
                     erroRegra = "1";
                 }
-                if (extensao.Trim() != ".doc" && extensao.Trim() != ".xls" && extensao.Trim() != "docx" && extensao.Trim() != "xlsx")
+                if (extensao.Trim() != ".doc" && extensao.Trim() != ".xls" && extensao.Trim() != "docx" && extensao.Trim() != "xlsx" && extensao.Trim() != ".pdf")
                 {
-                    lblMsg.Text = "Extensão inválida, só são permitidas .doc, .docx, .xls,.xlsx";
+                    lblMsg.Text = "Extensão inválida, só são permitidas .doc, .docx, .xls,.xlsx, pdf";
                     erroRegra = "2";
                 }
               

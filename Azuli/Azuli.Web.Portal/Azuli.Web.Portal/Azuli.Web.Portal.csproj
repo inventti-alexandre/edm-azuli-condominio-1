@@ -76,6 +76,7 @@
     <Content Include="images\edit.png" />
     <Content Include="images\excel.png" />
     <Content Include="images\ico_search.gif" />
+    <Content Include="images\pdf.jpg" />
     <Content Include="images\save.png" />
     <Content Include="images\search.png" />
     <Content Include="images\select.png" />

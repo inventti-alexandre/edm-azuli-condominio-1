@@ -16,7 +16,7 @@
         <legend align="left" class="AlternatingRowStyle">Publicações de Circulares: </legend>
         <br />
         
-        <table class="loginDisplay" align="center">
+        <table class="loginDisplayLegend" align="center">
             <tr>
                 <td>
                     <asp:Label ID="lblDesc" runat="server" Text="Assunto:"></asp:Label>

@@ -146,8 +146,9 @@
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:ButtonField ButtonType="Image" DataTextField="nameFile" 
-                        HeaderText="Arquivos" ImageUrl="~/images/word.gif">
+                        HeaderText="Arquivos" ImageUrl="~/images/pdf.jpg">
                     <ControlStyle Height="25px" Width="25px" />
+                    <ItemStyle HorizontalAlign="Center" />
                     </asp:ButtonField>
                 </Columns>
             </asp:GridView>
