@@ -369,6 +369,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="ServerFile\ArquivosCondominio\RegimentoInternoAzuli.pdf" />
     <None Include="ServerFile\ArquivosCondominio\sgcFernandesVilela.pps" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

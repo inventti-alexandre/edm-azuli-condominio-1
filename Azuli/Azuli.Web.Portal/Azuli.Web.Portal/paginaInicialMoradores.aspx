@@ -9,12 +9,6 @@
             font-size: medium;
             color:black;
         }
-        .style2
-        {
-            font-family: "Segoe UI";
-            font-size: medium;
-            font-weight: bold;
-        }
         .style5
         {
             color: #0033CC;
@@ -37,7 +31,7 @@
         {
             font-weight: normal;
         }
-    </style>
+        </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
    
@@ -67,9 +61,11 @@
        
         <p>    Através do menu acima, é permitido fazer reservas do salão de festa / Churrasqueira
             e abrir ocorrências, e consultar informações referente ao condominio, como estatuto do condominio e entre mais informações importantes. </p>
+        
+        
         <li style="color: #000080">
-            <asp:LinkButton ID="link1" runat="server" OnClick="link1_Click">Baixar o Statuto do Condominio</asp:LinkButton></li>
-        <br />
+            <asp:LinkButton ID="link1" runat="server" OnClick="link1_Click"> Baixar o Regimento Interno do Condominio - &nbsp;<img alt=""  src="images/pdf.jpg" style="height: 24px; width: 24px" /></asp:LinkButton></li>
+       <br />
         <li style="color: #000080">
             <asp:LinkButton ID="Link2" runat="server" OnClick="Link2_Click">Consultar Nomes e contatos: Sindico/Subsindico e Conselheiros</asp:LinkButton></li>
         <br />

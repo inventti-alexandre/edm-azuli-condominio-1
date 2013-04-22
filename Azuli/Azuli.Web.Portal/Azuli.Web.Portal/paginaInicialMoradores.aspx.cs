@@ -101,9 +101,7 @@ namespace Azuli.Web.Portal
 
         protected void link1_Click(object sender, EventArgs e)
         {
-            const string scriptString = "<script type='text/javascript'> alert('Desculpe em breve teremos estas informações, acesse o menu acima, obrigado!');</script>";
-            ClientScriptManager script = Page.ClientScript;
-            script.RegisterClientScriptBlock(GetType(), "randomName", scriptString);
+            listarArquivos("RegimentoInternoAzuli.pdf");
         }
 
         protected void Link2_Click(object sender, EventArgs e)
@@ -123,11 +121,11 @@ namespace Azuli.Web.Portal
 
         protected void lnkDonwload_Click(object sender, EventArgs e)
         {
-            listarArquivos();
+            listarArquivos("sgcFernandesVilela.pps");
         }
 
 
-        private void listarArquivos()
+        private void listarArquivos(string nameArquivo)
         {
 
             try
@@ -136,7 +134,7 @@ namespace Azuli.Web.Portal
 
                 string folder = System.Configuration.ConfigurationManager.AppSettings["ArquivosCondominioDownload"];
 
-                FileInfo arquivo = new FileInfo(Server.MapPath(folder) + ("\\sgcFernandesVilela.pps"));
+                FileInfo arquivo = new FileInfo(Server.MapPath(folder) + ("\\" + nameArquivo));
 
                 Response.Clear();
 

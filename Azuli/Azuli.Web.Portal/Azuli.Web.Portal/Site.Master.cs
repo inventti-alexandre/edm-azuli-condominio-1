@@ -5,13 +5,37 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Configuration;
+using System.Reflection;
 
 namespace Azuli.Web.Portal
 {
     public partial class SiteMaster : System.Web.UI.MasterPage
     {
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+          
+
+        }
+
         protected override void OnLoad(EventArgs e)
         {
+
+            if (!IsPostBack)
+            {
+                System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+
+                Attribute title = AssemblyTitleAttribute.GetCustomAttribute(assembly, typeof(AssemblyTitleAttribute));
+                if (title != null)
+                    Page.Title = ((AssemblyTitleAttribute)title).Title;
+
+                Attribute copyright = AssemblyCopyrightAttribute.GetCustomAttribute(assembly, typeof(AssemblyCopyrightAttribute));
+                if (copyright != null)
+                    this.lblCopyright.Text = ((AssemblyCopyrightAttribute)copyright).Copyright;
+
+                this.lblVersion.Text = string.Format(assembly.GetName().Version.ToString());
+            }
             lblApDesc.Text = Session["AP"].ToString();
             lblBlocoMasterDesc.Text = Session["Bloco"].ToString();
             lblProprietarioDesc.Text = Session["Proprie1"].ToString() ;
@@ -52,9 +76,6 @@ namespace Azuli.Web.Portal
             }
         }
         
-        protected void Page_Load(object sender, EventArgs e)
-        {
-        
-        }
+       
     }
 }
