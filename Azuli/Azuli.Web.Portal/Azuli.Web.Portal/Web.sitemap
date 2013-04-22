@@ -12,7 +12,7 @@
     <siteMapNode url="" title="Reservas" description="Reservas">
       <siteMapNode url="~/telaAgendamento.aspx" title="Fazer Reservas" description="morador" />
       <siteMapNode url="~/minhaReservas.aspx" title="Pesquisar minhas Reservas" description="morador" />
-      <siteMapNode url="ReservaDetalhadaMoradores.aspx" title="Rerservas do Mês detalhada" description="morador" />
+      <siteMapNode url="ReservaDetalhadaMoradores.aspx" title="Reservas do Mês detalhada" description="morador" />
 
     </siteMapNode>
 
