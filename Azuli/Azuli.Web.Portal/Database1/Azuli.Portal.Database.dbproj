@@ -78,6 +78,9 @@
     </PropertiesFile>
     <DacPropertiesFile Include="Properties\ServerSelection.sqlpolicy">
     </DacPropertiesFile>
+    <PropertiesFile Include="Properties\Database.sqlcmdvars">
+      <SubType>PropertiesFile</SubType>
+    </PropertiesFile>
   </ItemGroup>
   <ItemGroup>
     <BuildContributorArgument Include="OutDir=$(OutDir)" />

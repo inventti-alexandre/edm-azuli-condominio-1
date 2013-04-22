@@ -5,6 +5,18 @@
         {
             color: #FFFFFF;
         }
+        .style2
+        {
+            text-align: right;
+        }
+        .style3
+        {
+            width: 400px;
+        }
+        .style4
+        {
+            width: 183px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -24,6 +36,35 @@
                 <asp:ListItem Value="0">Mensagem Lidas</asp:ListItem>
         </asp:DropDownList>
         <br />
+        <br />
+        <table style="width:100%;">
+            <tr>
+                <td colspan="3" style="text-align: center">
+                    Filtro de Pesquisas&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style2">
+                    Assunto</td>
+                <td class="style3">
+                    Mensagem</td>
+                <td class="style4">
+                    Data</td>
+            </tr>
+            <tr>
+                <td class="style2">
+                    <input id="TxtPsqAssunto" type="text" /></td>
+                <td class="style3">
+                    <input id="TxtPsqMsg" type="text" /></td>
+                <td class="style4">
+                    <input id="TxtPsqData" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="style2" colspan="3">
+                    <asp:Button ID="BtnPesquisar" runat="server" onclick="BtnPesquisar_Click" 
+                        Text="Pesquisar" />
+                </td>
+            </tr>
+        </table>
         <br />
 
          <div id="dvNaoLida" runat="server">

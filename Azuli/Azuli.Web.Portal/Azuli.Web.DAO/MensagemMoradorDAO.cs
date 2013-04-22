@@ -39,6 +39,34 @@ namespace Azuli.Web.DAO
             }
         }
 
+        public listaMensagemMorador pesquisaMensagemMorador(Model.MensagemMoradorModel oAp)
+        {
+            string clausulaSQL = "SP_PESQUISA_MENSAGEM_MORADOR";
+
+            try
+            {
+
+                SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
+                comandoSQL.Parameters.AddWithValue("@AP", oAp.oAp.apartamento);
+                comandoSQL.Parameters.AddWithValue("@BLOCO", oAp.oAp.bloco);
+                comandoSQL.Parameters.AddWithValue("@STATUS", oAp.status);
+                comandoSQL.Parameters.AddWithValue("@ASSUNTO",  oAp.assunto);
+                comandoSQL.Parameters.AddWithValue("@MENSAGEM", oAp.mensagem);
+                comandoSQL.Parameters.AddWithValue("@DATA_INICIO", oAp.data_inicio);
+                DataTable tbProprietario = new DataTable();
+
+                tbProprietario = ExecutaQuery(comandoSQL);
+
+                return listaMensagemMorador(tbProprietario);
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
         public listaMensagemMorador  listaMensagemMoradorByID(MensagemMoradorModel oAp)
         {

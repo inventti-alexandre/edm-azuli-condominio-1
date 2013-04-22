@@ -117,5 +117,12 @@ namespace Azuli.Web.Portal
         {
             oMensagemBLL.atualizaMSG(codigoMsg);
         }
+
+        protected void BtnPesquisar_Click(object sender, EventArgs e)
+        {
+            pesquisaMensagemMorador();
+        }
+
+
     }
 }

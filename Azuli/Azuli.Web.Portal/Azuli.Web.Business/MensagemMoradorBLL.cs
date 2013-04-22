@@ -26,6 +26,18 @@ namespace Azuli.Web.Business
             }
         }
 
+        public Model.listaMensagemMorador pesquisaMensagemMorador(MensagemMoradorModel oAP)
+        {
+            try
+            {
+                return oMensagemDAO.pesquisaMensagemMorador(oAP);
+            }
+            catch (Exception e)
+            {                
+                throw e;
+            }
+        }
+
         public void cadastraContato(string assunto, string descricao, int bloco, int ap)
         {
             try
