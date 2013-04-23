@@ -730,8 +730,6 @@ input.btLogin {
 	width: 500px;	
 	border: 0px;	
 	height: 470px;
-	overflow-x: hidden;
-	overflow-y: auto;	
 	font-family: Verdana;
 	font-size: 9pt;
 	color: #000000;
@@ -743,8 +741,7 @@ input.btLogin {
 	width: 100%;	
 	border: 1px solid #999999;
 	min-height: 437px;	
-	overflow-x: auto;
-	overflow-y: auto;
+	
 }
 
 
@@ -770,9 +767,9 @@ input.btLogin {
 .ajax__tab_default .ajax__tab_tab  {
 	height: 25px;
 	padding: 4px 0px 0px 0px;
-	#padding: 4px 0px 0px 0px;
+	
 	margin: 0px 0px 0px 0px;
-	#margin: 0px 0px -4px 0px;
+	
 	background:url("../images/bgAbas.gif") repeat-x;
 	color: #666666;
 }
@@ -907,7 +904,7 @@ a.ContextMenuItem
 	margin: 1px 0 1px 0;
 	display: block;
 	color: #666666;
-	font-
+}	
 
 a.ContextMenuItem
 {
@@ -923,11 +920,7 @@ a.ContextMenuItem
 	white-space: nowrap;
 }
 
-round-color: #CCCCCC;
-	color: #990000;
-	border: 0px;
-	padding: 0px 2px 0px 2px;
-}
+
 
 .controleCalendario {
 	background-image: url(../images/superpag-header.gif);
