@@ -120,7 +120,7 @@ namespace Azuli.Web.Portal
 
         protected void BtnPesquisar_Click(object sender, EventArgs e)
         {
-            pesquisaMensagemMorador();
+            
         }
 
 

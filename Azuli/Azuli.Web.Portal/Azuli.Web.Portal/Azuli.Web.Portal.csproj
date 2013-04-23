@@ -127,102 +127,119 @@
   <ItemGroup>
     <Compile Include="AreaAdministrativa.aspx.cs">
       <DependentUpon>AreaAdministrativa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AreaAdministrativa.aspx.designer.cs">
       <DependentUpon>AreaAdministrativa.aspx</DependentUpon>
     </Compile>
     <Compile Include="consultaAgendamentoAdmin.aspx.cs">
       <DependentUpon>consultaAgendamentoAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="consultaAgendamentoAdmin.aspx.designer.cs">
       <DependentUpon>consultaAgendamentoAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="consultaBalancete.aspx.cs">
       <DependentUpon>consultaBalancete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="consultaBalancete.aspx.designer.cs">
       <DependentUpon>consultaBalancete.aspx</DependentUpon>
     </Compile>
     <Compile Include="consultaCircular.aspx.cs">
       <DependentUpon>consultaCircular.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="consultaCircular.aspx.designer.cs">
       <DependentUpon>consultaCircular.aspx</DependentUpon>
     </Compile>
     <Compile Include="contato.aspx.cs">
       <DependentUpon>contato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="contato.aspx.designer.cs">
       <DependentUpon>contato.aspx</DependentUpon>
     </Compile>
     <Compile Include="detalheMensagemMorador.aspx.cs">
       <DependentUpon>detalheMensagemMorador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="detalheMensagemMorador.aspx.designer.cs">
       <DependentUpon>detalheMensagemMorador.aspx</DependentUpon>
     </Compile>
     <Compile Include="detalheOcorrencia.aspx.cs">
       <DependentUpon>detalheOcorrencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="detalheOcorrencia.aspx.designer.cs">
       <DependentUpon>detalheOcorrencia.aspx</DependentUpon>
     </Compile>
     <Compile Include="enviaMensagemMorador.aspx.cs">
       <DependentUpon>enviaMensagemMorador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="enviaMensagemMorador.aspx.designer.cs">
       <DependentUpon>enviaMensagemMorador.aspx</DependentUpon>
     </Compile>
     <Compile Include="esqueciSenha.aspx.cs">
       <DependentUpon>esqueciSenha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="esqueciSenha.aspx.designer.cs">
       <DependentUpon>esqueciSenha.aspx</DependentUpon>
     </Compile>
     <Compile Include="gerenciamentoMoradorAdm.aspx.cs">
       <DependentUpon>gerenciamentoMoradorAdm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="gerenciamentoMoradorAdm.aspx.designer.cs">
       <DependentUpon>gerenciamentoMoradorAdm.aspx</DependentUpon>
     </Compile>
     <Compile Include="publicarCircular.aspx.cs">
       <DependentUpon>publicarCircular.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="publicarCircular.aspx.designer.cs">
       <DependentUpon>publicarCircular.aspx</DependentUpon>
     </Compile>
     <Compile Include="consultaAgendasAdmin.aspx.cs">
       <DependentUpon>consultaAgendasAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="consultaAgendasAdmin.aspx.designer.cs">
       <DependentUpon>consultaAgendasAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="ErrorPage.aspx.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ErrorPage.aspx.designer.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="listaMensagemMorador.aspx.cs">
       <DependentUpon>listaMensagemMorador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="listaMensagemMorador.aspx.designer.cs">
       <DependentUpon>listaMensagemMorador.aspx</DependentUpon>
     </Compile>
     <Compile Include="listaOcorrenciaMorador.aspx.cs">
       <DependentUpon>listaOcorrenciaMorador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="listaOcorrenciaMorador.aspx.designer.cs">
       <DependentUpon>listaOcorrenciaMorador.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoginAzulli.aspx.cs">
       <DependentUpon>LoginAzulli.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LoginAzulli.aspx.designer.cs">
       <DependentUpon>LoginAzulli.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -232,18 +249,21 @@
     </Compile>
     <Compile Include="minhaReservas.aspx.cs">
       <DependentUpon>minhaReservas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="minhaReservas.aspx.designer.cs">
       <DependentUpon>minhaReservas.aspx</DependentUpon>
     </Compile>
     <Compile Include="OcorrenciaMorador.aspx.cs">
       <DependentUpon>OcorrenciaMorador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="OcorrenciaMorador.aspx.designer.cs">
       <DependentUpon>OcorrenciaMorador.aspx</DependentUpon>
     </Compile>
     <Compile Include="paginaInicialMoradores.aspx.cs">
       <DependentUpon>paginaInicialMoradores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="paginaInicialMoradores.aspx.designer.cs">
       <DependentUpon>paginaInicialMoradores.aspx</DependentUpon>
@@ -256,47 +276,56 @@
     </Compile>
     <Compile Include="ReservaDetalhadaMoradores.aspx.cs">
       <DependentUpon>ReservaDetalhadaMoradores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ReservaDetalhadaMoradores.aspx.designer.cs">
       <DependentUpon>ReservaDetalhadaMoradores.aspx</DependentUpon>
     </Compile>
     <Compile Include="resetSenha.aspx.cs">
       <DependentUpon>resetSenha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="resetSenha.aspx.designer.cs">
       <DependentUpon>resetSenha.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="SiteAdmin.Master.cs">
       <DependentUpon>SiteAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SiteAdmin.Master.designer.cs">
       <DependentUpon>SiteAdmin.Master</DependentUpon>
     </Compile>
     <Compile Include="telaAgendamento.aspx.cs">
       <DependentUpon>telaAgendamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="telaAgendamento.aspx.designer.cs">
       <DependentUpon>telaAgendamento.aspx</DependentUpon>
     </Compile>
     <Compile Include="TelaAgendamentoAdmin.aspx.cs">
       <DependentUpon>TelaAgendamentoAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="TelaAgendamentoAdmin.aspx.designer.cs">
       <DependentUpon>TelaAgendamentoAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="TelaConfirmacaoAgendamento.aspx.cs">
       <DependentUpon>TelaConfirmacaoAgendamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="TelaConfirmacaoAgendamento.aspx.designer.cs">
       <DependentUpon>TelaConfirmacaoAgendamento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Util\Base.cs" />
+    <Compile Include="Util\Base.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Util\SendMail.cs" />
     <Compile Include="Util\Util.cs" />
     <Compile Include="videoajuda.aspx.cs">
@@ -308,6 +337,7 @@
     </Compile>
     <Compile Include="WelcomeAdmin.aspx.cs">
       <DependentUpon>WelcomeAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WelcomeAdmin.aspx.designer.cs">
       <DependentUpon>WelcomeAdmin.aspx</DependentUpon>
