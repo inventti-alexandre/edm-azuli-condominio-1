@@ -20,7 +20,6 @@ C:\Users\Leandro\Documents\Azuli.Web.Portal\Google_code\Azuli\edm-azuli-condomin
 C:\Users\Leandro\Documents\Azuli.Web.Portal\Google_code\Azuli\edm-azuli-condominio\Azuli\Azuli.Web.Portal\Azuli.Web.Portal\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Leandro\Documents\Azuli.Web.Portal\Google_code\Azuli\edm-azuli-condominio\Azuli\Azuli.Web.Portal\Azuli.Web.Portal\obj\Debug\Azuli.Web.Portal.dll
 C:\Users\Leandro\Documents\Azuli.Web.Portal\Google_code\Azuli\edm-azuli-condominio\Azuli\Azuli.Web.Portal\Azuli.Web.Portal\obj\Debug\Azuli.Web.Portal.pdb
-C:\Meu Desenvolvimento\Azuli\Azuli.Web.Portal\obj\Debug\ResolveAssemblyReference.cache
 C:\Meu Desenvolvimento\Azuli\Azuli.Web.Portal\bin\Azuli.Web.Portal.dll
 C:\Meu Desenvolvimento\Azuli\Azuli.Web.Portal\bin\Azuli.Web.Portal.pdb
 C:\Meu Desenvolvimento\Azuli\Azuli.Web.Portal\bin\Azuli.Web.Business.dll
@@ -29,5 +28,6 @@ C:\Meu Desenvolvimento\Azuli\Azuli.Web.Portal\bin\Azuli.Web.DAO.dll
 C:\Meu Desenvolvimento\Azuli\Azuli.Web.Portal\bin\Azuli.Web.Business.pdb
 C:\Meu Desenvolvimento\Azuli\Azuli.Web.Portal\bin\Azuli.Web.Model.pdb
 C:\Meu Desenvolvimento\Azuli\Azuli.Web.Portal\bin\Azuli.Web.DAO.pdb
+C:\Meu Desenvolvimento\Azuli\Azuli.Web.Portal\obj\Debug\ResolveAssemblyReference.cache
 C:\Meu Desenvolvimento\Azuli\Azuli.Web.Portal\obj\Debug\Azuli.Web.Portal.dll
 C:\Meu Desenvolvimento\Azuli\Azuli.Web.Portal\obj\Debug\Azuli.Web.Portal.pdb

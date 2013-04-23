@@ -112,6 +112,7 @@
     <Content Include="telaAgendamento.aspx" />
     <Content Include="TelaAgendamentoAdmin.aspx" />
     <Content Include="TelaConfirmacaoAgendamento.aspx" />
+    <Content Include="videoajuda.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -298,6 +299,13 @@
     <Compile Include="Util\Base.cs" />
     <Compile Include="Util\SendMail.cs" />
     <Compile Include="Util\Util.cs" />
+    <Compile Include="videoajuda.aspx.cs">
+      <DependentUpon>videoajuda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="videoajuda.aspx.designer.cs">
+      <DependentUpon>videoajuda.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WelcomeAdmin.aspx.cs">
       <DependentUpon>WelcomeAdmin.aspx</DependentUpon>
     </Compile>

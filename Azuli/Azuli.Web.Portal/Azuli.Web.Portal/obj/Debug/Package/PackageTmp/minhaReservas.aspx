@@ -2,29 +2,11 @@
     CodeBehind="minhaReservas.aspx.cs" Inherits="Azuli.Web.Portal.minhaReservas" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <style type="text/css">
-        .style1
-        {
-            width: 100%;
-        }
-        .style2
-        {
-            width: 221px;
-        }
-        .menu
-        {
-        }
-        .style3
-        {
-            width: 202px;
-        }
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <br />
-    <br /><br />  <br /><br /><br />
-    <fieldset class="login">
-        <legend>Consulta de Reservas: </legend>
+  
+    <fieldset class="loginDisplayLegend">
+        <legend align="left" class="accordionContent">Reserva do Mês Geral: </legend>
         <table class="style1">
             <tr>
                 <td class="style2">
@@ -57,97 +39,102 @@
             </tr>
         </table>
     </fieldset>
-    <center>
 
-     
-        <div id="dvFesta" runat="server">
-            
-            &nbsp;<br />
-            <asp:Label ID="lblAreaFesta" runat="server" Text="Área de Festa " 
-                CssClass="btGeral"></asp:Label> <br />
-&nbsp;<asp:GridView ID="grdAgendaMorador" runat="server" EmptyDataText="Você não tem reserva para o salão de festa nesta data"
-                AutoGenerateColumns="False" Font-Bold="False" 
-                onrowcommand="grdAgendaMorador_RowCommand" 
-                DataKeyNames="dataAgendamento" 
-                onrowdeleting="grdAgendaMorador_RowDeleting" 
-                onrowdatabound="grdAgendaMorador_RowDataBound" CssClass="GridView" >
-                <Columns>
-                    <asp:TemplateField HeaderText="Data de Agendamento">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("dataAgendamento") %>'></asp:TextBox>
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="Label3" runat="server" 
-                                Text='<%# Eval("dataAgendamento", "{0:dddd}") + " / " + Eval("dataAgendamento","{0:dd/MM/yyyy}") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Bloco">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("ap.bloco") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Apartamento">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="Label2" runat="server" Text='<%# Bind("ap.apartamento") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:CommandField ShowDeleteButton="True" ButtonType="Image" DeleteImageUrl="~/images/delete.png" />
-                </Columns>
-                <EmptyDataRowStyle Font-Bold="True" ForeColor="#CC3300" />
-            </asp:GridView>
-            <br />
-            &nbsp;
-            <br />
-        </div>
-    </center>
+
+
+    <div id="dvFesta" runat="server" align="left" dir="ltr">
+        <fieldset class="login">
+            <legend class="accordionContent">São de Festas - <asp:Label ID="lblMesAnoFesta" runat="server" CssClass="FooterStyle"></asp:Label></legend>
+               
+            <center>
+                <br />
+                &nbsp;<br />
+                <asp:Label ID="lblAreaFesta" runat="server" Text="Área de Festa " CssClass="btGeral"></asp:Label>
+                <br />
+                &nbsp;<asp:GridView ID="grdAgendaMorador" runat="server" EmptyDataText="Você não tem reserva para o salão de festa nesta data"
+                    AutoGenerateColumns="False" Font-Bold="False" OnRowCommand="grdAgendaMorador_RowCommand"
+                    DataKeyNames="dataAgendamento" OnRowDeleting="grdAgendaMorador_RowDeleting" OnRowDataBound="grdAgendaMorador_RowDataBound"
+                    CssClass="GridView">
+                    <Columns>
+                        <asp:TemplateField HeaderText="Data de Agendamento">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("dataAgendamento") %>'></asp:TextBox>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="Label3" runat="server" Text='<%# Eval("dataAgendamento", "{0:dddd}") + " / " + Eval("dataAgendamento","{0:dd/MM/yyyy}") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Bloco">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="Label1" runat="server" Text='<%# Bind("ap.bloco") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Apartamento">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="Label2" runat="server" Text='<%# Bind("ap.apartamento") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:CommandField ShowDeleteButton="True" ButtonType="Image" DeleteImageUrl="~/images/delete.png" />
+                    </Columns>
+                    <EmptyDataRowStyle Font-Bold="True" ForeColor="#CC3300" />
+                </asp:GridView></center>
+                <br />
+                &nbsp;
+                <br />
+        </fieldset>
+    </div>
+
+
+    <div id="dvChurrasco" runat="server">
+        <fieldset class="login">
+            <legend class="accordionContent">Área de Churrasco -
+                <asp:Label ID="lbMesAnoChurras" runat="server" CssClass="FooterStyle"></asp:Label></legend>
+            <center>
+                <br />
+                <asp:Label ID="Label3" runat="server" Text="Área de Churrasqueira " CssClass="btGeral"></asp:Label><br />
+                &nbsp;<asp:GridView ID="grdChurras" runat="server" AutoGenerateColumns="False" EmptyDataText="Você não tem reserva de churrasqueira para esta data"
+                    OnRowCommand="grdChurras_RowCommand" OnRowDeleting="grdChurras_RowDeleting" DataKeyNames="dataAgendamento"
+                    CssClass="GridView">
+                    <Columns>
+                        <asp:TemplateField HeaderText="Data de Agendamento">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("dataAgendamento") %>'></asp:TextBox>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="Label3" runat="server" Text='<%# Eval("dataAgendamento", "{0:dddd}") + " / " + Eval("dataAgendamento","{0:dd/MM/yyyy}") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Bloco">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="Label1" runat="server" Text='<%# Bind("ap.bloco") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Apartamento">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="Label2" runat="server" Text='<%# Bind("ap.apartamento") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:CommandField ShowDeleteButton="True" ButtonType="Image" DeleteImageUrl="~/images/delete.png" />
+                    </Columns>
+                    <EmptyDataRowStyle Font-Bold="True" ForeColor="#CC3300" />
+                </asp:GridView></center>
+        </fieldset>
+    </div>
+  
     <center>
-        <div id="dvChurrasco" runat="server">
-        <asp:Label ID="Label3" runat="server" Text="Área de Churrasqueira " 
-                CssClass="btGeral"></asp:Label><br />
-            &nbsp;<asp:GridView ID="grdChurras" runat="server" AutoGenerateColumns="False"
-                EmptyDataText="Você não tem reserva de churrasqueira para esta data" 
-                onrowcommand="grdChurras_RowCommand" 
-                onrowdeleting="grdChurras_RowDeleting" DataKeyNames="dataAgendamento" 
-                CssClass="GridView">
-                <Columns>
-                    <asp:TemplateField HeaderText="Data de Agendamento">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("dataAgendamento") %>'></asp:TextBox>
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="Label3" runat="server" 
-                                Text='<%# Eval("dataAgendamento", "{0:dddd}") + " / " + Eval("dataAgendamento","{0:dd/MM/yyyy}") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Bloco">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("ap.bloco") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Apartamento">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="Label2" runat="server" Text='<%# Bind("ap.apartamento") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:CommandField ShowDeleteButton="True" ButtonType="Image" DeleteImageUrl="~/images/delete.png" />
-                </Columns>
-                <EmptyDataRowStyle Font-Bold="True" ForeColor="#CC3300" />
-            </asp:GridView>
-            <br />
-            <br />
-        </div>
+        <br />
         <asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#CC0000"></asp:Label>
     </center>
 </asp:Content>

@@ -214,9 +214,9 @@ div.hideSkiplink
     width:auto;
     height: 0;
     position:relative;
-    top: -25px;
+    top: -24px;
     vertical-align:middle;
-    right:-160px;
+    right:-40px;
 }
 
 div.hideSkiplinkAdmin
@@ -279,6 +279,7 @@ fieldset
     border: 1px solid #ccc;
     width: auto;
     height: auto;
+    
 }
 
 fieldsetReservas
@@ -310,7 +311,7 @@ legend
     font-size: 1.1em;
     font-weight: 600;
     padding: 2px 4px 8px 4px;
-    width: 325px;
+    width: 459px;
 }
 
 input.textEntry 
@@ -363,10 +364,22 @@ div.accountInfo
        display: inherit;
     text-align: left;
     padding: 1px;
-    color: #4884CD;
+    color: white;
     height: auto;
-    width: 310px;
-}
+    width: 457px;
+    top: 7px;
+    }
+
+.loginDisplayLegend
+{
+    
+     display: block;
+    text-align: left;
+    padding: 29px;
+    height: auto;
+    width: 860px;
+    top: 2px;
+    }
 
 .loginDisplay a:link
 {
@@ -436,7 +449,8 @@ input.botao, .btGeral {
 	text-align: center;
 	border: 1px solid #4B6C9E;
 	cursor: pointer;
-    }
+    margin-top: 0px;
+}
 
 .MasterMenu
 {
@@ -570,7 +584,6 @@ input.botao, .btGeral {
 
 input, textarea {
 	border: 1px solid #999999;
-	height: 15px;
 	background-color: #f0f0f0;
 	color: #666666;
 	font-family: Verdana;
@@ -578,7 +591,9 @@ input, textarea {
 	font-weight: normal;
 	text-align: left;
 	padding: 0px 2px 0px 2px;
-	margin: 0px 0px 0px 3px;
+	margin-left: 3px;
+    margin-right: 0px;
+    margin-top: 0px;
 }
 
 select {
@@ -892,6 +907,13 @@ a.ContextMenuItem
 	margin: 1px 0 1px 0;
 	display: block;
 	color: #666666;
+	font-
+
+a.ContextMenuItem
+{
+	margin: 1px 0 1px 0;
+	display: block;
+	color: #666666;
 	font-family: Verdana;
 	font-size: 8pt;
 	font-weight: normal;
@@ -901,14 +923,7 @@ a.ContextMenuItem
 	white-space: nowrap;
 }
 
-a.ContextMenuItem-Selected
-{
-	font-weight: bold;
-}
-
-a.ContextMenuItem:hover
-{
-	background-color: #CCCCCC;
+round-color: #CCCCCC;
 	color: #990000;
 	border: 0px;
 	padding: 0px 2px 0px 2px;

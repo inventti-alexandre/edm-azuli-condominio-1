@@ -61,7 +61,7 @@
         </div>
          <div class="footer">
    
-             <span class="style1">© FernandesVilela Soluções de TI. <asp:Label ID="lblCopyright" runat="server"></asp:Label> &nbsp;- <asp:Label ID="lblVersion" runat="server"></asp:Label></span>&nbsp;</div>
+             <span class="style1">&nbsp;<asp:Label ID="lblCopyright" runat="server"></asp:Label> &nbsp;- <asp:Label ID="lblVersion" runat="server"></asp:Label></span>&nbsp;</div>
     </div>
     
     </form>

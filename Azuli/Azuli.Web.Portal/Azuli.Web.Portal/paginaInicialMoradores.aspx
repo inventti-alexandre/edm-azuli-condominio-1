@@ -64,7 +64,7 @@
         
         
         <li style="color: #000080">
-            <asp:LinkButton ID="link1" runat="server" OnClick="link1_Click"> Baixar o Regimento Interno do Condominio - &nbsp;<img alt=""  src="images/pdf.jpg" style="height: 24px; width: 24px" /></asp:LinkButton></li>
+            <asp:LinkButton ID="link1" runat="server" OnClick="link1_Click">Donwload Regimento Interno do Condominio  Spazio Campo Azuli &nbsp;<img alt=""  src="images/pdf.jpg" style="height: 24px; width: 24px" /></asp:LinkButton></li>
        <br />
         <li style="color: #000080">
             <asp:LinkButton ID="Link2" runat="server" OnClick="Link2_Click">Consultar Nomes e contatos: Sindico/Subsindico e Conselheiros</asp:LinkButton></li>

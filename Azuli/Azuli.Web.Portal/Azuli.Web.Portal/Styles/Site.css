@@ -214,9 +214,9 @@ div.hideSkiplink
     width:auto;
     height: 0;
     position:relative;
-    top: -25px;
+    top: -24px;
     vertical-align:middle;
-    right:-110px;
+    right:-40px;
 }
 
 div.hideSkiplinkAdmin

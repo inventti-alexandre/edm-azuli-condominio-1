@@ -11,16 +11,9 @@ namespace Azuli.Web.Portal
 {
     public partial class SiteMaster : System.Web.UI.MasterPage
     {
-
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-          
-
-        }
-
         protected override void OnLoad(EventArgs e)
         {
+
 
             if (!IsPostBack)
             {
@@ -76,6 +69,11 @@ namespace Azuli.Web.Portal
             }
         }
         
-       
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+           
+        
+        }
     }
 }

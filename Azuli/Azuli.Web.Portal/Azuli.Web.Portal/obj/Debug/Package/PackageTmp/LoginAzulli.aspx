@@ -8,6 +8,13 @@
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
     <script src="Scripts/ScriptAzuli.js" type="text/javascript"></script>
  
+    <style type="text/css">
+        .style1
+        {
+            text-align: center;
+        }
+    </style>
+ 
 </head>
 <body>
     <form id="Form1" runat="server">
@@ -22,7 +29,7 @@
             </div>
 
               </div>
-        <div class="main">
+        <div class="main"><br />
         <center> 
             <h2>
         Tela de Acesso
@@ -31,7 +38,7 @@
                 &nbsp;</p>
             </center>
     <center style="height: 526px; width: 914px">
-        <LayoutTemplate>
+
             <span class="failureNotification">
                 <asp:Literal ID="FailureText" runat="server"></asp:Literal>
             </span>
@@ -40,7 +47,7 @@
             Width="427px"/>
             <div class="accountInfo">
                 <fieldset class="login">
-                    <legend>Entre com seu Bloco/AP e Senha por favor:</legend>
+                    <legend class="accordionContent">Entre com seu Bloco/Apartamento e Senha:</legend>
                     <table id="tbPassword" runat="server">
                     <tr>
                     <td>
@@ -99,7 +106,7 @@
                 <br /><br />
                 </fieldset>
               
-              <asp:Label ID="lblMsg" runat="server" ForeColor="#FF3300"></asp:Label>
+              <asp:Label ID="lblMsg" runat="server" ForeColor="#FF3300" Font-Size="Medium"></asp:Label>
                     
             </div>
               <div id="dvDadosMorador" runat="server">
@@ -178,17 +185,24 @@
     </div>
      
                   <br />
-        </LayoutTemplate>
+   
    </center>
         </div>
-    </div>
-  <div class="footer">
+         <div class="style1">
+             <b></b>
+        </div>
+      <center>  <b>Utilize o navegador Chrome para melhor visualização do site! 
+        <img src="images/download.jpg" style="height: 20px; width: 21px" /></b></center>
+        <div class="footer">
    
       © FernandesVilela Soluções de TI. INC 2013. Todos os direitos reservados 
            <a href="mailto:edmls@ig.com.br">
                <img src="images/correio.jpg" style="height: 17px; width: 29px" /></a> 
 
     </div>
+    
+    </div>
+  
     </form>
 </body>
 </html>
