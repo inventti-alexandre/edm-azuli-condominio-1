@@ -26,44 +26,32 @@
                     <Items>
                         <asp:MenuItem NavigateUrl="~/WelcomeAdmin.aspx" Text="Home" Value="Home">
                         </asp:MenuItem>
-                        <asp:MenuItem Text="Consultar" Value="Gerenciamento do Site">
-                            <asp:MenuItem Text="Agendamentos" 
-                                Value="Ocorrência">
-                                <asp:MenuItem NavigateUrl="~/consultaAgendamentoAdmin.aspx" Text="Pendentes" 
-                                    Value="Pendentes"></asp:MenuItem>
-                                <asp:MenuItem Text="Confirmados" Value="Confirmados"></asp:MenuItem>
-                                <asp:MenuItem Text="Realizados" Value="Realizados"></asp:MenuItem>
+                        <asp:MenuItem Text="Agendamentos" Value="Ocorrência">
+                            <asp:MenuItem NavigateUrl="~/AreaAdministrativa.aspx" 
+                                Text="Fazer Reserva" Value="Fazer Reserva"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/consultaAgendamentoAdmin.aspx" 
+                                Text="Consulta Reservas Realizadas" Value="Realizados"></asp:MenuItem>
+                            <asp:MenuItem Text="Consultar Reservas Pendente de Pagamento" 
+                                Value="Pendentes" NavigateUrl="~/consultaAgendamentoAdmin.aspx">
                             </asp:MenuItem>
-                            <asp:MenuItem Text="Mensagem" 
-                                Value="Mensagem">
-                                <asp:MenuItem Text="Recebidas" Value="Recebidas"></asp:MenuItem>
-                                <asp:MenuItem Text="Enviadas" Value="Enviadas"></asp:MenuItem>
+                            <asp:MenuItem Text="Reservas Confirmadas com Pagamento" Value="Confirmados">
                             </asp:MenuItem>
-                            <asp:MenuItem Text="Circular" Value="Circular">
-                                <asp:MenuItem Text="Publicados" Value="Publicados"></asp:MenuItem>
-                            </asp:MenuItem>
-                        </asp:MenuItem>
-                        <asp:MenuItem Text="Agendar" Value="Agendar">
-                            <asp:MenuItem Text="Reservar" Value="Reservar" 
-                                NavigateUrl="~/AreaAdministrativa.aspx"></asp:MenuItem>
-                            <asp:MenuItem Text="Cancelar" Value="Cancelar"></asp:MenuItem>
+                            <asp:MenuItem Text="Cancelar Agendamento" Value="Cancelar Agendamento"></asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Mensagem" Value="Mensagem">
+                            <asp:MenuItem Text="Caixa de Entrada" Value="Caixa de Entrada"></asp:MenuItem>
                             <asp:MenuItem NavigateUrl="~/enviaMensagemMorador.aspx" Text="Enviar" 
                                 Value="Enviar"></asp:MenuItem>
                             <asp:MenuItem Text="Cancelar" Value="Cancelar"></asp:MenuItem>
                         </asp:MenuItem>
-                        <asp:MenuItem Text="Morador" Value="Moradores">
-                            <asp:MenuItem NavigateUrl="~/gerenciamentoMoradorAdm.aspx" 
-                                Text="Cadastrar / Alterar" Value="Cadastrar / Alterar"></asp:MenuItem>
-                            <asp:MenuItem Text="Liberar" Value="Liberar"></asp:MenuItem>
-                            <asp:MenuItem Text="Bloquear" Value="Bloquear"></asp:MenuItem>
-                        </asp:MenuItem>
-                        <asp:MenuItem Text="Publicações" Value="Publicações">
+                        <asp:MenuItem Text="Circular" Value="Moradores">
                             <asp:MenuItem Text="Publicar Circular " 
-                                Value="Enviar Mensagem" NavigateUrl="~/publicarCircular.aspx"></asp:MenuItem>
-                            <asp:MenuItem Text="Publicar Balancente" Value="Publicar Balancente">
+                                Value="Enviar Mensagem" NavigateUrl="~/publicarCircular.aspx">
                             </asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Moradores" Value="Publicações">
+                            <asp:MenuItem Text="Cadastrar/Alterar/Desativar Morador" 
+                                Value="Cadastrar / Alterar" NavigateUrl="~/gerenciamentoMoradorAdm.aspx"></asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Configurar" Value="Mensagens">
                             <asp:MenuItem Text="Valor Reserva" Value="Visualizar Circular">
