@@ -19,6 +19,8 @@ namespace Azuli.Web.Portal
         ApartamentoModel oAP = new ApartamentoModel();
         Util.Util oUtil = new Util.Util();
         bool exportando = false;
+        Label lblarea = new Label();
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -167,7 +169,8 @@ namespace Azuli.Web.Portal
         {
             if (grdAgendaMorador.Rows.Count > 0)
             {
-
+                lblarea.Text = "Reserva do Salão de Festa - " + drpMeses.SelectedItem.Text + "/" + drpAno.Text;
+                exportando = true;
                 exportando = true;
 
                 Response.ClearContent();
@@ -184,15 +187,16 @@ namespace Azuli.Web.Portal
 
                 Response.ContentType = "application/ms-excel";
 
-                Response.ContentEncoding = Encoding.UTF8;
-                Response.Charset = "UTF-8";
+                Response.ContentEncoding = System.Text.Encoding.GetEncoding("Windows-1252");
+                Response.Charset = "ISO-8859-1";
+                EnableViewState = false;
 
 
                 System.IO.StringWriter stringWrite = new System.IO.StringWriter();
 
                 System.Web.UI.HtmlTextWriter htmlWrite = new HtmlTextWriter(stringWrite);
 
-
+                lblarea.RenderControl(htmlWrite);
                 grdAgendaMorador.RenderControl(htmlWrite);
                 Response.Write(stringWrite.ToString());
                 Response.End();
@@ -207,7 +211,7 @@ namespace Azuli.Web.Portal
 
             if (grdChurras.Rows.Count > 0)
             {
-
+                lblarea.Text = "Reserva da Churrasqueira - " + drpMeses.SelectedItem.Text + "/" + drpAno.Text;
                 exportando = true;
 
                 Response.ClearContent();
@@ -219,8 +223,9 @@ namespace Azuli.Web.Portal
                 // If you want the option to open the Excel file without saving than
 
                 // comment out the line below
-               Response.ContentEncoding = Encoding.UTF8;
-                Response.Charset = "UTF-8";
+                Response.ContentEncoding = System.Text.Encoding.GetEncoding("Windows-1252");
+                Response.Charset = "ISO-8859-1";
+                EnableViewState = false;
 
                 Response.Cache.SetCacheability(HttpCacheability.NoCache);
 
@@ -229,8 +234,7 @@ namespace Azuli.Web.Portal
                 System.IO.StringWriter stringWrite = new System.IO.StringWriter();
 
                 System.Web.UI.HtmlTextWriter htmlWrite = new HtmlTextWriter(stringWrite);
-
-
+                lblarea.RenderControl(htmlWrite);
                 grdChurras.RenderControl(htmlWrite);
                 Response.Write(stringWrite.ToString());
                 Response.End();
