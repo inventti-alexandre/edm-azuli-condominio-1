@@ -42,22 +42,21 @@
    
     
  
-   <fieldset >
-   <legend class="AlternatingRowStyle">Enviar mensagem para Morador:</legend>
-   <br />
-  <div id="dvMsg"  runat="server" class="accountInfo" dir="ltr" 
-           style="position: static; z-index: auto; top: -1110px;"> 
+   <br /><br />
+  <div id="dvMsg" align="center"  runat="server"> 
   
 
-
+  <fieldset class="loginDisplayLegend" >
+   <legend class="accordionContent">Enviar mensagem para Morador:</legend>
+   <br />
    
   
       <center>
-          <table  class="HeaderStyle">
+          <table>
           
             <tr>
                 <td class="GridView">
-                    <table class="style1" border='0'>
+                    <table border='0'>
                         <tr>
                             <td class="style7">
                                 <asp:Label ID="lblPara" runat="server" style="font-weight: 700" 
@@ -140,14 +139,13 @@
                         Text="Limpar Campos" Height="19px" Width="121px" /></center>
                 </td>
             </tr>
-        </table><br /><br />
+        </table><br /><br /><br />
            <asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#006600"></asp:Label> 
-      <br />
-      <br />
+     
       <br />
      </center><br />
    
-    </div></fieldset>
+  </fieldset>  </div>
 
-      <center> </center>
+     
 </asp:Content>
