@@ -168,7 +168,9 @@ namespace Azuli.Web.DAO
                 MensagemMoradorModel oMensagem = new MensagemMoradorModel();
                 ApartamentoModel oPropri = new ApartamentoModel();
 
-                oMensagem.codigoMsg = Convert.ToInt32(dr["ID_MSG"]);
+                if (dr.Table.Columns.Contains("ID_MSG"))
+                    oMensagem.codigoMsg = Convert.ToInt32(dr["ID_MSG"]);
+
                 oMensagem.mensagem = dr["MENSAGEM"].ToString();
                 oPropri.apartamento = Convert.ToInt32(dr["APARTAMENTO"]);
                 oPropri.bloco = Convert.ToInt32(dr["BLOCO"]);
