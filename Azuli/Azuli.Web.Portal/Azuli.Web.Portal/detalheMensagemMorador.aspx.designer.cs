@@ -13,6 +13,15 @@ namespace Azuli.Web.Portal {
     public partial class detalheMensagemMorador {
         
         /// <summary>
+        /// dvCaixa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvCaixa;
+        
+        /// <summary>
         /// lblConsultaAno control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,60 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.DropDownList drpStatusMsg;
         
         /// <summary>
+        /// btnBusca control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBusca;
+        
+        /// <summary>
+        /// dvAvancada control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvAvancada;
+        
+        /// <summary>
+        /// txtAssunto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAssunto;
+        
+        /// <summary>
+        /// txtMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMsg;
+        
+        /// <summary>
+        /// txtData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtData;
+        
+        /// <summary>
+        /// drpMsgStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpMsgStatus;
+        
+        /// <summary>
         /// BtnPesquisar control.
         /// </summary>
         /// <remarks>
@@ -40,22 +103,22 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Button BtnPesquisar;
         
         /// <summary>
-        /// dvNaoLida control.
+        /// btnLimpar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvNaoLida;
+        protected global::System.Web.UI.WebControls.Button btnLimpar;
         
         /// <summary>
-        /// grdMsg control.
+        /// btnCancelar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdMsg;
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
         
         /// <summary>
         /// divGeralMsg control.
@@ -119,5 +182,59 @@ namespace Azuli.Web.Portal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnOk;
+        
+        /// <summary>
+        /// dvNaoLida control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvNaoLida;
+        
+        /// <summary>
+        /// lblLidNL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLidNL;
+        
+        /// <summary>
+        /// grdMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdMsg;
+        
+        /// <summary>
+        /// DvPesquisa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DvPesquisa;
+        
+        /// <summary>
+        /// lblCondintion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCondintion;
+        
+        /// <summary>
+        /// grdPesquisa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdPesquisa;
     }
 }
