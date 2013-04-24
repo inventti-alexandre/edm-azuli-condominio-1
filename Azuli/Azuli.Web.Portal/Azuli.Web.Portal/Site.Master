@@ -15,6 +15,7 @@
             font-weight: normal;
             color:#4884CD;
         }
+   
     </style>
 </head>
 <body>
@@ -23,8 +24,8 @@
         <div class="header">
             <div class="title">
                 
-                <img src="images/banner.jpg" style="height: 86px; width: 960px" />
-           
+                <img alt=""src="images/banner.jpg" style="height: 86px; width: 960px" />
+              
             </div>
             <div class="clear hideSkiplink">
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
@@ -51,6 +52,12 @@
                      Font-Bold="False"></asp:Label>
                     <asp:Label ID="lblApDesc"  runat="server" Font-Size="Small" Font-Bold="True"></asp:Label>
             </div>
+
+            <div class="siteMap" style="position:absolute; left: 661px;">
+             <asp:SiteMapPath id="smpWeb" runat="server" CssClass="DataWebControlStyle" 
+                    RenderCurrentNodeAsLink="True" Font-Size="X-Small">
+                </asp:SiteMapPath>
+            </div>
         </div>
         <div class="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
@@ -58,9 +65,11 @@
         <div class="clear">
             <asp:SiteMapDataSource ID="SiteMapDataSourceMenu" runat="server" 
                 ShowStartingNode="False" />
+            <asp:XmlDataSource ID="XmlDataSource1" runat="server" datafile="Web.sitemap">
+            </asp:XmlDataSource>
         </div>
-         <div class="footer">
-   
+         &nbsp;<div class="footer">
+  
              <span class="style1">&nbsp;<asp:Label ID="lblCopyright" runat="server"></asp:Label> &nbsp;- <asp:Label ID="lblVersion" runat="server"></asp:Label></span>&nbsp;</div>
     </div>
     
