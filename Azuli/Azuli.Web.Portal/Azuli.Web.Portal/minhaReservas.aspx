@@ -4,9 +4,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-  
+    <br />
     <fieldset class="loginDisplayLegend">
-        <legend align="left" class="accordionContent">Reserva do Mês Geral: </legend>
+        <legend  class="accordionContent">Reserva do Mês Geral: </legend><br />
         <table class="style1">
             <tr>
                 <td class="style2">
