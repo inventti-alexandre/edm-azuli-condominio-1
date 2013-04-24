@@ -44,5 +44,13 @@ namespace Azuli.Web.Portal
             }
             
         }
+
+        protected void btnLimpar_Click(object sender, EventArgs e)
+        {
+            drpListSubject.SelectedIndex = -1;
+            txtDescription.Text = "";
+
+
+        }
     }
 }

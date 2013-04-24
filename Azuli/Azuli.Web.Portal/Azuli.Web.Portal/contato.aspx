@@ -13,7 +13,7 @@
   <div id="dvCadastro" runat="server" align="center" > 
    
       <table 
-          class="MasterMenu">
+          class="GridView">
             <tr>
                 <td class="" align="center">
                     <table class="style1" border='0'>
@@ -71,7 +71,8 @@
                         ValidationGroup="validaDescricao" onclick="btnCadastro_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp; 
                     <asp:Button ID="btnLimpar" runat="server" CssClass="botao" 
-                        Text="Limpar Campos" ValidationGroup="validaDescricao" />
+                        Text="Limpar Campos" ValidationGroup="validaDescricao" 
+                        onclick="btnLimpar_Click" />
                 </td>
             </tr>
         </table>
