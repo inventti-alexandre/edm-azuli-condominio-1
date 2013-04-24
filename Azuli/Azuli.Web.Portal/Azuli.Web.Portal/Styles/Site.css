@@ -4,6 +4,7 @@
 body   
 {
     background: #b6b7bc;
+   
     font-size: .80em;
     font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
     margin: 0px;
@@ -101,6 +102,7 @@ first child of the left and right table columns */
 
 .page
 {
+    
     width: 960px;
     background-color: #fff;
     margin: 5px auto 0px auto;
@@ -369,6 +371,23 @@ div.accountInfo
     width: 457px;
     top: 7px;
     }
+    
+    
+.siteMap
+{
+    
+     display: inherit;
+    text-align:left;
+    
+    color:black;
+    height: 28%;
+    width: 57%;
+    top: 210%;
+   
+    
+    }
+    
+    
 
 .loginDisplayLegend
 {
@@ -450,6 +469,7 @@ input.botao, .btGeral {
 	border: 1px solid #4B6C9E;
 	cursor: pointer;
     margin-top: 0px;
+    height: 19px;
 }
 
 .MasterMenu
