@@ -4,9 +4,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br /><br /> 
- 
- <fieldset>  
-   <legend class="AlternatingRowStyle">Cadastrar Moradores</legend>
+ <div id="dvCadastro" align="center" runat="server" >
+ <fieldset class="loginDisplayLegend">  
+   <legend class="accordionContent">Cadastrar Moradores</legend>
    <center> 
    <br />
 
@@ -71,7 +71,7 @@
             <td>
                 &nbsp;</td>
         </tr>
-    </table>
+    </table><br />
     <asp:ImageButton ID="ibtAddSave" runat="server" ImageUrl="~/images/add.png" 
         ValidationGroup="InputValidationGroup" onclick="ibtAddSave_Click" />
     &nbsp;&nbsp;&nbsp;
@@ -83,8 +83,10 @@
        <br />
        <br />
        <asp:Label ID="lblMsg" runat="server" Font-Bold="True"></asp:Label>
-       <center><hr />
-   <legend class="AlternatingRowStyle">Gerenciamento de Moradores</legend>
+       </fieldset>  </div>
+       <div id="dvManager" align="center" runat="server">
+       <fieldset class="loginDisplayLegend">
+   <legend class="accordionContent">Gerenciamento de Moradores</legend>
    <br />
   
        <asp:GridView ID="grdGerenciamentoMoradores" runat="server" AllowPaging="True" 
@@ -107,7 +109,7 @@
                    DeleteImageUrl="~/images/delete.png" EditImageUrl="~/images/edit.png" ShowEditButton="True" 
                    UpdateImageUrl="~/images/save.png" />
            </Columns>
-       </asp:GridView>
+       </asp:GridView></center></fieldset></div> 
        <asp:SqlDataSource ID="SqlDataSourceGerenciamentoUser" runat="server" 
            ConnectionString="<%$ ConnectionStrings:azulli %>" 
            DeleteCommand="DELETE FROM [PROPRIETARIO] WHERE [PROPRIETARIO_BLOCO] = @PROPRIETARIO_BLOCO AND [PROPRIETARIO_AP] = @PROPRIETARIO_AP" 
@@ -137,6 +139,6 @@
                <asp:Parameter Name="PROPRIETARIO_AP" Type="Int32" />
            </UpdateParameters>
        </asp:SqlDataSource>
-     </center>
-   </fieldset>  
+    
+ 
 </asp:Content>

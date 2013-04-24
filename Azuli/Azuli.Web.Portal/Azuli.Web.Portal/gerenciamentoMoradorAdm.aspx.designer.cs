@@ -13,6 +13,15 @@ namespace Azuli.Web.Portal {
     public partial class gerenciamentoMoradorAdm {
         
         /// <summary>
+        /// dvCadastro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvCadastro;
+        
+        /// <summary>
         /// lblcond01 control.
         /// </summary>
         /// <remarks>
@@ -182,6 +191,15 @@ namespace Azuli.Web.Portal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMsg;
+        
+        /// <summary>
+        /// dvManager control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvManager;
         
         /// <summary>
         /// grdGerenciamentoMoradores control.
