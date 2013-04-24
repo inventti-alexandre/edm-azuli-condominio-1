@@ -48,6 +48,8 @@
                             <asp:MenuItem Text="Publicar Circular " 
                                 Value="Enviar Mensagem" NavigateUrl="~/publicarCircular.aspx">
                             </asp:MenuItem>
+                            <asp:MenuItem Text="Consultar Circular" Value="Consultar Circular">
+                            </asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Moradores" Value="Publicações">
                             <asp:MenuItem Text="Cadastrar/Alterar/Desativar Morador" 
@@ -62,12 +64,33 @@
                             </asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Alterar Senha" 
-                            Value="Alterar Senha do Administrador"></asp:MenuItem>
+                            Value="Alterar Senha do Administrador" 
+                            NavigateUrl="~/alteraSenhaSindico.aspx"></asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/LoginAzulli.aspx" Text="Sair" Value="sair">
                         </asp:MenuItem>
                     </Items>
+
                 </asp:Menu>
+               <div class="loginDisplayAdmin" style="position: absolute; left: -35px;">
+             <asp:Label ID="lblProprietarioMaster" runat="server" Font-Size="Small" 
+                     Text="Seja Bem vindo: "></asp:Label>
+                    <asp:Label ID="lblProprietarioDesc"  runat="server" Font-Size="Small" 
+                     Font-Bold="True"></asp:Label>
+
+
+                     <asp:Label ID="lblBlocoMaster" runat="server" Font-Size="Small" 
+                     Text="  Bloco: "></asp:Label>
+                    <asp:Label ID="lblBlocoMasterDesc"  runat="server" Font-Size="Small" 
+                     Font-Bold="True"></asp:Label>
+
+
+                    
+                     <asp:Label ID="lblApMaster" runat="server" Font-Size="Small" Text=" AP : " 
+                     Font-Bold="False"></asp:Label>
+                    <asp:Label ID="lblApDesc"  runat="server" Font-Size="Small" Font-Bold="True"></asp:Label>
             </div>
+            </div>
+           
     <div class="footerAdmin">
         
             <asp:ContentPlaceHolder ID="MainContent" runat="server"/>

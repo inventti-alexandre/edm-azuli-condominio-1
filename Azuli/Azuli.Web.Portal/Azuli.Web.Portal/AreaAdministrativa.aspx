@@ -5,10 +5,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     
     
-     <div id="dvPesquisaMorador" runat="server">
+     <div id="dvPesquisaMorador" align="center" runat="server">
     
       <fieldset class="loginDisplayLegend">
-     <legend align="left" class="accordionContent">Agenda para Moradores</legend>
+     <legend align="left" class="accordionContent">Agendar para Moradores</legend>
    
         <br /><br />
             <center>
@@ -57,7 +57,7 @@
          ForeColor="#0066FF"></asp:Label>
 
  
-    <div id="dvNewUser" runat="server">
+    <div id="dvNewUser" align="center" runat="server">
     <fieldset class="loginDisplayLegend">
       <legend align="left" class="accordionContent">Novo Cadastro</legend>
    
@@ -76,7 +76,7 @@
    <br /> 
      <br /></center></fieldset></div>
 
-        <div id="dvDadosMorador" runat="server">
+        <div id="dvDadosMorador" align="center" runat="server">
      <fieldset class="loginDisplayLegend">
      <legend align="left" class="accordionContent">Dados do Morador</legend>
   
@@ -126,7 +126,7 @@
     <br />
  <br />
  
-  <div id="dvCadastro" runat="server" align="center" >
+  <div id="dvCadastro"  runat="server" align="center" >
  <fieldset class="loginDisplayLegend"> 
  <legend class="accordionContent">Cadastrar Moradores</legend>
  

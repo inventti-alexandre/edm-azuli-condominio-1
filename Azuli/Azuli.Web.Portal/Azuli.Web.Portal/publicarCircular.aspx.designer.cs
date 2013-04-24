@@ -13,6 +13,15 @@ namespace Azuli.Web.Portal {
     public partial class circular {
         
         /// <summary>
+        /// dvPublicar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvPublicar;
+        
+        /// <summary>
         /// lblDesc control.
         /// </summary>
         /// <remarks>
@@ -85,15 +94,6 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.FileUpload fileWord;
         
         /// <summary>
-        /// lblMsg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMsg;
-        
-        /// <summary>
         /// btnPublicar control.
         /// </summary>
         /// <remarks>
@@ -101,5 +101,14 @@ namespace Azuli.Web.Portal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnPublicar;
+        
+        /// <summary>
+        /// lblMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMsg;
     }
 }

@@ -15,6 +15,11 @@ namespace Azuli.Web.Portal
 
             string id = ConfigurationManager.AppSettings["GoogleAnalyticsId"];
 
+
+            lblApDesc.Text = Session["AP"].ToString();
+            lblBlocoMasterDesc.Text = Session["Bloco"].ToString();
+            lblProprietarioDesc.Text = Session["Proprie1"].ToString();
+
             if (!string.IsNullOrEmpty(id))
             {
                 string script = "";

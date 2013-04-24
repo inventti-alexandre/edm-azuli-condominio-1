@@ -59,6 +59,7 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="alteraSenhaSindico.aspx" />
     <Content Include="AreaAdministrativa.aspx" />
     <Content Include="consultaAgendamentoAdmin.aspx" />
     <Content Include="consultaBalancete.aspx" />
@@ -125,6 +126,13 @@
     <Content Include="WelcomeAdmin.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="alteraSenhaSindico.aspx.cs">
+      <DependentUpon>alteraSenhaSindico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="alteraSenhaSindico.aspx.designer.cs">
+      <DependentUpon>alteraSenhaSindico.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AreaAdministrativa.aspx.cs">
       <DependentUpon>AreaAdministrativa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

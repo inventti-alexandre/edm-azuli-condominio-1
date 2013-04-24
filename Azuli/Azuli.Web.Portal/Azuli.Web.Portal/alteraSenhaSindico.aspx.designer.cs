@@ -10,105 +10,87 @@
 namespace Azuli.Web.Portal {
     
     
-    public partial class SiteAdmin {
+    public partial class alteraSenhaSindico {
         
         /// <summary>
-        /// Head1 control.
+        /// dvProprietario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvProprietario;
         
         /// <summary>
-        /// HeadContent control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Form1 control.
+        /// txtNovaSenha control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
+        protected global::System.Web.UI.WebControls.TextBox txtNovaSenha;
         
         /// <summary>
-        /// NavigationMenu control.
+        /// rfvNovaSenha control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu NavigationMenu;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNovaSenha;
         
         /// <summary>
-        /// lblProprietarioMaster control.
+        /// Label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProprietarioMaster;
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// lblProprietarioDesc control.
+        /// txtRepitaNovaSenha control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProprietarioDesc;
+        protected global::System.Web.UI.WebControls.TextBox txtRepitaNovaSenha;
         
         /// <summary>
-        /// lblBlocoMaster control.
+        /// rfvRepitaNovaSenha control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBlocoMaster;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvRepitaNovaSenha;
         
         /// <summary>
-        /// lblBlocoMasterDesc control.
+        /// btnAlteraSenha control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBlocoMasterDesc;
+        protected global::System.Web.UI.WebControls.Button btnAlteraSenha;
         
         /// <summary>
-        /// lblApMaster control.
+        /// lblMensagem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblApMaster;
-        
-        /// <summary>
-        /// lblApDesc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblApDesc;
-        
-        /// <summary>
-        /// MainContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Label lblMensagem;
     }
 }

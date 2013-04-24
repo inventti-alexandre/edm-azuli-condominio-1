@@ -11,12 +11,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
-    
-    <fieldset class="login">
-        <legend align="left" class="AlternatingRowStyle">Publicações de Circulares: </legend>
+    <div id="dvPublicar" runat="server" align="center">
+    <fieldset class="loginDisplayLegend">
+        <legend  class="accordionContent">Publicações de Circulares: </legend>
         <br />
         
-        <table class="loginDisplayLegend" align="center">
+        <table class="GridView" align="center">
             <tr>
                 <td>
                     <asp:Label ID="lblDesc" runat="server" Text="Assunto:"></asp:Label>
@@ -49,39 +49,29 @@
                     <asp:Label ID="lblArquivo" runat="server" Text="Arquivo a ser publicado:"></asp:Label>
                 </td>
                 <td>
-                    <asp:FileUpload ID="fileWord" runat="server" 
-                        CssClass="AlternatingRowStyle" Height="23px" Width="341px" />
+                    <asp:FileUpload ID="fileWord" runat="server" Height="23px" Width="341px" />
                 </td>
             </tr>
           
             <tr>
                 <td colspan="2" align="center">
+                    <br />
+                    <asp:Button ID="btnPublicar" runat="server" CssClass="btGeral" 
+                        Text="Publicar" onclick="btnPublicar_Click" Font-Bold="True" Height="24px" 
+                        Width="84px" />
                  </td>
-                <td>
-                    &nbsp;</td>
             </tr>
               <tr>
                 <td colspan="2" align="center">
-                   <asp:Label ID="lblMsg" runat="server" ForeColor="#006600"></asp:Label></td>
-                <td>
                     &nbsp;</td>
             </tr>
                <tr>
                 <td colspan="2" align="center">
+                   <asp:Label ID="lblMsg" runat="server" ForeColor="#006600"></asp:Label>
                  </td>
-                <td>
-                    &nbsp;</td>
             </tr>
-            <tr>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    <asp:Button ID="btnPublicar" runat="server" CssClass="AlternatingRowStyle" 
-                        Text="Publicar" onclick="btnPublicar_Click" />
-                </td>
-            </tr>
-        </table>
+            </table>
         
         
-        </fieldset>
+        </fieldset></div>
 </asp:Content>

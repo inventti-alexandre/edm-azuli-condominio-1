@@ -372,6 +372,18 @@ div.accountInfo
     top: 7px;
     }
     
+    .loginDisplayAdmin
+{
+    
+       display: inherit;
+    text-align: left;
+    padding: 1px;
+    color: white;
+    height: auto;
+    width: 457px;
+    top: -99px;
+    }
+    
     
 .siteMap
 {
@@ -387,6 +399,8 @@ div.accountInfo
     
     }
     
+        
+
     
 
 .loginDisplayLegend
@@ -468,9 +482,8 @@ input.botao, .btGeral {
 	text-align: center;
 	border: 1px solid #4B6C9E;
 	cursor: pointer;
-    margin-top: 0px;
-    height: 19px;
-}
+    margin-top: 9px;
+    }
 
 .MasterMenu
 {

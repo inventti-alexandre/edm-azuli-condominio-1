@@ -10,21 +10,18 @@ using System.Text;
 
 namespace Azuli.Web.Portal
 {
-    public partial class resetSenha : Util.Base
+    public partial class alteraSenhaSindico : System.Web.UI.Page
     {
         Util.Util oUtil = new Util.Util();
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            oUtil.validateSession();
-
+            oUtil.validateSessionAdmin();
         }
 
         protected void btnAlteraSenha_Click(object sender, EventArgs e)
         {
 
-
-            try
+              try
             {
 
 
@@ -73,6 +70,6 @@ namespace Azuli.Web.Portal
             }
 
         }
-
+        
     }
 }
