@@ -15,7 +15,7 @@
         <div class="headerAdmin">
             <div class="titleAdmin">
                
-                    <img src="images/banner.jpg" style="height: 103px; width: 972px" />
+                    <img alt="" src="images/banner.jpg" style="height: 103px; width: 972px" />
                
             </div>
     </div>
@@ -29,14 +29,14 @@
                         <asp:MenuItem Text="Agendamentos" Value="Ocorrência">
                             <asp:MenuItem NavigateUrl="~/AreaAdministrativa.aspx" 
                                 Text="Fazer Reserva" Value="Fazer Reserva"></asp:MenuItem>
+                            <asp:MenuItem Text="Cancelar Agendamento" Value="Cancelar Agendamento"></asp:MenuItem>
+                            <asp:MenuItem Text="Reservas Confirmadas com Pagamento" Value="Confirmados">
+                            </asp:MenuItem>
                             <asp:MenuItem NavigateUrl="~/consultaAgendamentoAdmin.aspx" 
                                 Text="Consulta Reservas Realizadas" Value="Realizados"></asp:MenuItem>
                             <asp:MenuItem Text="Consultar Reservas Pendente de Pagamento" 
                                 Value="Pendentes" NavigateUrl="~/consultaAgendamentoAdmin.aspx">
                             </asp:MenuItem>
-                            <asp:MenuItem Text="Reservas Confirmadas com Pagamento" Value="Confirmados">
-                            </asp:MenuItem>
-                            <asp:MenuItem Text="Cancelar Agendamento" Value="Cancelar Agendamento"></asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Mensagem" Value="Mensagem">
                             <asp:MenuItem Text="Caixa de Entrada" Value="Caixa de Entrada"></asp:MenuItem>
@@ -72,7 +72,7 @@
         
             <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
 
-    </div>
+    </div></div>
     </form>
 </body>
 </html>
