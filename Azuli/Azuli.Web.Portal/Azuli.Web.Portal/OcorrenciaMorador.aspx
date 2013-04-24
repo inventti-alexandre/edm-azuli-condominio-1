@@ -26,16 +26,15 @@
 <fieldset class="loginDisplayLegend">
    
     <legend title="Abrir Ocorrência" class="accordionContent"> Abrir Ocorrência </legend><br />
-   <center><asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#006600"></asp:Label>
+   <center><asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#006600"></asp:Label></center>
       
    
   <div id="dvCadastro" runat="server" align="left" > 
    
-      <table 
-          class="MasterMenu">
+      <table>
             <tr>
                 <td class="" align="center">
-                    <table class="style1" border='0'>
+                    <table border='0' class="GridView">
                         <tr>
                             <td class="">
                                 <asp:Label ID="lblOcorrencia" runat="server" style="font-weight: 700" 
@@ -96,14 +95,14 @@
                 </td>
             </tr>
         </table>
-                                 </div>   
-                                 <asp:RequiredFieldValidator ID="rfvDescription" runat="server" 
+                                 </div>   <br />
+                             <center><asp:RequiredFieldValidator ID="rfvDescription" runat="server" 
                                      ControlToValidate="txtDescription" ErrorMessage="Favor descrever a Ocorrência" 
                                      Font-Bold="True" ForeColor="Red" 
           ValidationGroup="validaDescricao"></asp:RequiredFieldValidator>
                                 <asp:SqlDataSource ID="SqlDataSourceTipoOcorrencia" runat="server" 
                                     ConnectionString="<%$ ConnectionStrings:azulli %>" 
-                                    SelectCommand="SELECT * FROM [TIPO_OCORRENCIA]"></asp:SqlDataSource>
+                                    SelectCommand="SELECT * FROM [TIPO_OCORRENCIA]"></asp:SqlDataSource></center>
       
     
   
