@@ -46,44 +46,51 @@
         
 
  <fieldset class="loginDisplayLegend">
-        <legend class="style3">Como entrar no Sistema : </legend>
+      
+        <legend class="style3">Aprenda entrar no Sistema e Ler mensagem </legend>
         <br />
         <table class="style1">
             <tr>
                 
-                <td>
-                  <iframe width="400" height="215" src="http://www.youtube.com/embed/3ocxBCM9AbE" frameborder="0" allowfullscreen></iframe>
+                  <td align="center">
+                  <iframe width="400" height="215" src="http://www.youtube.com/embed/3ocxBCM9AbE" frameborder="0" allowfullscreen></iframe><br />
+                <b>Entrar no Sistema</b>
                 </td>
+
+                <td align="center">
+              
+                  <iframe width="400" height="215" src="http://www.youtube.com/embed/jsUEq46q7ls" frameborder="0" allowfullscreen></iframe><br />
+                    <b>Lendo Mensagem</b>
+                </td>
+           
             </tr>
+           
+                
+                
         </table>
     </fieldset>
    
 
    <fieldset class="loginDisplayLegend">
-        <legend class="accordionContent"><span class="style4">Como Ler as mensagen :</span> </legend>
+        <legend class="accordionContent"><span class="style4">Aprenda Consultar Circular e Reservar Área :</span> </legend>
         <br />
         <table class="style1">
             <tr>
                 
-                <td>
-                 <iframe width="400" height="215" src="http://www.youtube.com/embed/jsUEq46q7ls" frameborder="0" allowfullscreen></iframe>
+                <td align="center">
+                 <iframe width="400" height="215" src="http://www.youtube.com/embed/tWf4YHsPZ2w" frameborder="0" allowfullscreen></iframe><br />
+                <b>Consultar Circulares</b>
+                </td>
+                <td align="center">
+              
+                  <iframe width="400" height="215" src="http://www.youtube.com/embed/_hXyYDnq2ag" frameborder="0" allowfullscreen></iframe><br />
+                    <b>Fazer reservas das áreas</b>
                 </td>
             </tr>
         </table>
     </fieldset>
 
-    <fieldset class="loginDisplayLegend">
-        <legend class="style5">Como fazer reserva das Áreas: </legend>
-        <br />
-        <table class="style1">
-            <tr>
-                
-                <td>
-                 <iframe width="400" height="215" src="http://www.youtube.com/embed/_hXyYDnq2ag" frameborder="0" allowfullscreen></iframe>
-                </td>
-            </tr>
-        </table>
-    </fieldset>
+   
     
 </asp:Content>
 
