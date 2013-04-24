@@ -4,7 +4,7 @@
 
 
 
-  <siteMapNode url="" title="Principal"  description="Principal">
+  <siteMapNode url="" title="Página Principal"  description="Principal">
 
     <siteMapNode url="paginaInicialMoradores.aspx" title="Home" description="Home Page">
     </siteMapNode>
