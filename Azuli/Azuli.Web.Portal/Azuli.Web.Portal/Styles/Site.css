@@ -212,7 +212,7 @@ first child of the left and right table columns */
 
 div.hideSkiplink
 {
-    background-color:#4884CD;
+    background-color:#0092D2;
     width:auto;
     height: 0;
     position:relative;
@@ -247,9 +247,9 @@ div.menu ul
 
 div.menu a, div.menu a:visited
 {
-    background-color: #00367E;
-    border: 1px #4e667d solid;
-    color: #dde4ec;
+    background-color: #3BA4CB;
+    border: 1px #0093D4 solid;
+    color: #FFFFFF;
     display: block;
     line-height: 1.35em;
     padding: 4px 20px;
@@ -366,10 +366,10 @@ div.accountInfo
        display: inherit;
     text-align: left;
     padding: 1px;
-    color: white;
+    color: #006AB2;
     height: auto;
-    width: 457px;
-    top: 7px;
+    width: 501px;
+    top: 11px;
     }
     
     .loginDisplayAdmin
@@ -1070,7 +1070,7 @@ a.ContextMenuItem
 
 .accordionContent
 {
-    background-color: #f0f0f0;
+    background-color: #BFCBD6;
     border-left: 1px dotted #999999;
     border-right: 1px dotted #999999;
     border-bottom: 1px dotted #999999;

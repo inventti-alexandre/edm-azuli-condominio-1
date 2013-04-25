@@ -24,7 +24,7 @@
         <div class="header">
             <div class="title">
                 
-                <img alt=""src="images/banner.jpg" style="height: 86px; width: 960px" />
+                <img alt=""src="images/sgc.jpg" style="height: 86px; width: 960px" />
               
             </div>
             <div class="clear hideSkiplink">
@@ -34,7 +34,7 @@
                     
                 </asp:Menu>
             </div>
-             <div class="loginDisplay" style="position: absolute; left: 632px;">
+             <div class="loginDisplay" style="position: absolute; left: 38px;">
              <asp:Label ID="lblProprietarioMaster" runat="server" Font-Size="Small" 
                      Text="Seja Bem vindo: "></asp:Label>
                     <asp:Label ID="lblProprietarioDesc"  runat="server" Font-Size="Small" 

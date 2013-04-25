@@ -71,6 +71,7 @@
     <Content Include="esqueciSenha.aspx" />
     <Content Include="gerenciamentoMoradorAdm.aspx" />
     <Content Include="images\add.png" />
+    <Content Include="images\sgc.jpg" />
     <Content Include="images\banner.jpg" />
     <Content Include="images\cancel.png" />
     <Content Include="images\download.jpg" />
@@ -81,6 +82,8 @@
     <Content Include="images\save.png" />
     <Content Include="images\search.png" />
     <Content Include="images\select.png" />
+    <Content Include="images\sgc1.jpg" />
+    <Content Include="images\sgc2.jpg" />
     <Content Include="images\word.gif" />
     <Content Include="publicarCircular.aspx" />
     <Content Include="consultaAgendasAdmin.aspx" />

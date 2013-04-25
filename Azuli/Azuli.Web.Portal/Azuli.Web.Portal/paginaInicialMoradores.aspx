@@ -11,7 +11,7 @@
         }
         .style5
         {
-            color: #0033CC;
+            color: #0080C6;
             font-family: "Segoe UI";
             font-size: small;
         }
