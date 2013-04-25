@@ -106,7 +106,16 @@ first child of the left and right table columns */
     width: 960px;
     background-color: #fff;
     margin: 5px auto 0px auto;
-    border: 1px solid #496077;
+    border: 1px solid #4884CD;
+}
+
+.pageLogin
+{
+    
+    width: 960px;
+    background-color: #fff;
+    margin: 5px auto 0px auto;
+    border: 1px solid #4884CD;
 }
 
 .header
@@ -213,7 +222,7 @@ first child of the left and right table columns */
 div.hideSkiplink
 {
     background-color:#0092D2;
-    width:auto;
+    width:918px;
     height: 0;
     position:relative;
     top: -24px;
@@ -393,8 +402,8 @@ div.accountInfo
     
     color:black;
     height: 28%;
-    width: 57%;
-    top: 210%;
+    width: 40%;
+    top: 211%;
    
     
     }

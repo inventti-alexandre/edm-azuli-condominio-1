@@ -16,14 +16,14 @@
     </style>
  
 </head>
-<body>
+<body >
     <form id="Form1" runat="server">
-    <div class="page">
+    <div class="pageLogin">
         <div class="header">
             <div class="title">
                 <div class="title">
                 
-                <img src="images/banner.jpg" style="height: 86px; width: 960px" />
+                <img src="images/sgc.jpg" style="height: 86px; width: 960px" />
            
             </div>
             </div>

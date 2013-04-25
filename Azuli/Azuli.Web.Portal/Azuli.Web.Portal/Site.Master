@@ -16,6 +16,12 @@
             color:#4884CD;
         }
    
+        .style2
+        {
+            width: 37px;
+            height: 30px;
+        }
+   
     </style>
 </head>
 <body>
@@ -30,7 +36,7 @@
             <div class="clear hideSkiplink">
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
                     EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" 
-                    DataSourceID="SiteMapDataSourceMenu">
+                    DataSourceID="SiteMapDataSourceMenu" StaticPopOutImageUrl="~/images/home.png" DynamicPopOutImageUrl="~/images/home.png">
                     
                 </asp:Menu>
             </div>
@@ -53,14 +59,19 @@
                     <asp:Label ID="lblApDesc"  runat="server" Font-Size="Small" Font-Bold="True"></asp:Label>
             </div>
 
-            <div class="siteMap" style="position:absolute; left: 661px;">
+            <div class="siteMap" style="position:absolute; left: 625px;">
              <asp:SiteMapPath id="smpWeb" runat="server" CssClass="DataWebControlStyle" 
                     RenderCurrentNodeAsLink="True" Font-Size="X-Small">
                 </asp:SiteMapPath>
             </div>
         </div>
+        <div id="dvHome" 
+            style="position:absolute; top: 78px; left: 173px; height: 55px; width: 59px;"> <p>
+                    <img alt="" class="style2" src="images/home3.jpg" /></p></div>
         <div class="main">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+               
+            </asp:ContentPlaceHolder>
         </div>
         <div class="clear">
             <asp:SiteMapDataSource ID="SiteMapDataSourceMenu" runat="server" 

@@ -4,9 +4,9 @@
 
 
 
-  <siteMapNode url="" title="Página Principal"  description="Principal">
+  <siteMapNode url="" title="Página Principal"  description="Principal" imageurl="images/home.png">
 
-    <siteMapNode url="paginaInicialMoradores.aspx" title="Home" description="Home Page">
+    <siteMapNode url="paginaInicialMoradores.aspx" title="Home" description="Home Page" >
     </siteMapNode>
     
     <siteMapNode url="" title="Reservas" description="Reservas">
