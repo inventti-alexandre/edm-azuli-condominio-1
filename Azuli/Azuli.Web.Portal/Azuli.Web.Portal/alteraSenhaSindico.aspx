@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <br />
+    <br /><br />
 <fieldset class="loginDisplayLegend">
         <legend class="accordionContent">Alterar sua Senha: Administrador</legend>
  <br />

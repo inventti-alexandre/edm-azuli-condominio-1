@@ -23,7 +23,7 @@
             <div class="title">
                 <div class="title">
                 
-                <img src="images/sgc.jpg" style="height: 86px; width: 960px" />
+                <img src="images/sgcv3.jpg" style="height: 86px; width: 960px" />
            
             </div>
             </div>
@@ -33,6 +33,8 @@
         <center> 
             <h2>
         Tela de Acesso
+                <asp:Image ID="Image1" runat="server" Height="25px" 
+                    ImageUrl="~/images/seguranca.jpg" Width="33px" />
     </h2>
             <p>
                 &nbsp;</p>

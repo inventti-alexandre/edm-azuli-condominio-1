@@ -8,6 +8,13 @@
     <script src="Scripts/ScriptAzuli.js" type="text/javascript"></script>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style2
+        {
+            height: 28px;
+            width: 29px;
+        }
+    </style>
 </head>
 <body>
     <form id="Form1" runat="server">
@@ -15,7 +22,7 @@
         <div class="headerAdmin">
             <div class="titleAdmin">
                
-                    <img alt="" src="images/banner.jpg" style="height: 103px; width: 972px" />
+                    <img alt="" src="images/sgcv3.jpg" style="height: 86px; width: 960px" />
                
             </div>
     </div>
@@ -71,7 +78,8 @@
                     </Items>
 
                 </asp:Menu>
-               <div class="loginDisplayAdmin" style="position: absolute; left: -35px;">
+               <div class="loginDisplayAdmin" 
+                    style="position: absolute; left: -5px; top: -62px; margin-top: 0px;">
              <asp:Label ID="lblProprietarioMaster" runat="server" Font-Size="Small" 
                      Text="Seja Bem vindo: "></asp:Label>
                     <asp:Label ID="lblProprietarioDesc"  runat="server" Font-Size="Small" 
@@ -89,6 +97,9 @@
                      Font-Bold="False"></asp:Label>
                     <asp:Label ID="lblApDesc"  runat="server" Font-Size="Small" Font-Bold="True"></asp:Label>
             </div>
+               <div id="dvHome" 
+            style="position:absolute; top: -9px; left: -27px; height: 28px; width: 30px;"> <p>
+                    <img alt="" class="style2" src="images/home3.jpg" /></p></div>
             </div>
            
     <div class="footerAdmin">

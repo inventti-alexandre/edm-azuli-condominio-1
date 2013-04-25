@@ -10,27 +10,20 @@
             background-color: #ADD8E6;
             font-style: normal;
         }
-         .style1
-        {
-            color: #4884CD;
-        }
-        
+                 
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
-   
-    
+   <br /><br />
+    <br />
     <div id="dvProprietario" align="center" runat="server" class="GridViewPager">
         <fieldset class="loginDisplayLegend">
-            <div class="style2" id="DivRespostaAutomatica" style="position:inherit;" runat="server">
-                <h3>
-                    RESERVANDO PARA:
-                </h3>
-            </div>
-            <div style="border: 1px solid #CCC; padding: 20px; margin-bottom: 20px;" align="left"
-                dir="ltr">
+           <legend class="accordionContent"> RESERVANDO PARA:</legend>
+                   
+             
+            
                  Morador:
                 <asp:Label ID="lblProprietarioDesc" runat="server" CssClass="bold"></asp:Label><br />
                 <br />
@@ -40,37 +33,34 @@
                 <br />
                 Apartamento:
                 <asp:Label ID="lblApartDesc" runat="server" CssClass="bold"></asp:Label>
-            </div>
+          
         </fieldset>
     </div>
-    <div id="dvAlugar" runat="server" class="GridViewPager">
-        <fieldset>
-            <div class="style2" id="Div1" style="position: inherit;" runat="server">
-                <h3>
-                    Escolha a opção desejada e clique em Finalizar Reserva!</h3>
-            </div>
-            <div style="border: 1px solid #CCC; padding: 20px; margin-bottom: 20px;" align="left"
-                dir="ltr">
+    <div id="dvAlugar" runat="server" align="center">
+        <fieldset class="loginDisplayLegend">
+           <legend class="accordionContent"> Escolha a opção desejada e clique em Finalizar Reserva:</legend>
+                   
+            
+            
                 <table style="width: 878px; height: 104px;">
                     <tr>
-                        <td class="style5">
-                            <div id="dvData" runat="server" style="border-width: thin; border-style: groove;
-                                width: 205px;">
+                        <td class="">
+                            
                                 <asp:Label ID="Label1" runat="server" Font-Bold="True" Text="Data: "></asp:Label>
-                                <asp:Label ID="lblData" runat="server" Font-Bold="True"></asp:Label></div>
+                                <asp:Label ID="lblData" runat="server" Font-Bold="True" style="color: #0000FF"></asp:Label>
                             &nbsp;
+                                <br />
                         </td>
                     </tr>
                     <tr>
                         <td class="style5" dir="ltr">
-                            <asp:CheckBox ID="chkSalaoFesta" runat="server" Text="Salão de Festas" Font-Bold="True"
+                            <asp:CheckBox ID="chkSalaoFesta" runat="server" Text=" Salão de Festas" Font-Bold="True"
                                 EnableTheming="True" />
                         </td>
                     </tr>
                     <tr>
                         <td class="style5">
-                            <br />
-                            <asp:CheckBox ID="chkChurrascaria" runat="server" Text="Área de churrasco" Font-Bold="True" />
+                            <asp:CheckBox ID="chkChurrascaria" runat="server" Text=" Área de churrasco" Font-Bold="True" />
                         </td>
                     </tr>
                     <tr>
@@ -85,7 +75,7 @@
                     <asp:Button ID="LoginButton" runat="server" Text="Finalizar Reserva" CssClass="botao"
                         Font-Bold="True" Height="28px" OnClick="LoginButton_Click" />
                 </p>
-            </div>
+           
         </fieldset>
     </div>
     <div id="dvCalendar" align="center" runat="server">

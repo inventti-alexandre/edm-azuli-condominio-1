@@ -92,9 +92,9 @@ first child of the left and right table columns */
 
 .pageAdmin
 {
-    width: 970px;
+    width: 960px;
     background-color: #fff;
-    margin: 20px auto 0px auto;
+    margin: 5px auto 0px auto;
     border: 1px solid #496077;
 }
 
@@ -147,14 +147,14 @@ first child of the left and right table columns */
 
 .headerAdmin
 {
-    position: relative;
+     position: relative;
     margin: 0px;
     padding: 0px;
     background: #4b6c9e;
-    width: 959px;
-    top: -1px;
-    left: -2px;
-    height: 102px;
+    width: 960px;
+    top: 0px;
+    left: 0px;
+    height: 54px;
 }
 
 .headerAdmin h1
@@ -232,14 +232,16 @@ div.hideSkiplink
 
 div.hideSkiplinkAdmin
 {
-    background-color:#4884CD;
-    width:auto;
+    background-color:#0092D2;
+    width:918px;
     height: 0;
     position:relative;
-    top: -12px;
+    top: -4px;
     vertical-align:middle;
-    right:-45px;
+    right:-40px;
+    left: 40px;
 }
+
 
 div.menu
 {
@@ -350,7 +352,7 @@ div.accountInfo
 {
     clear: both;
     height: 105px;
-    width: 968px;
+    width: 981px;
 }
 
 .title
@@ -372,7 +374,7 @@ div.accountInfo
 .loginDisplay
 {
     
-       display: inherit;
+     display: inherit;
     text-align: left;
     padding: 1px;
     color: #006AB2;
@@ -380,19 +382,6 @@ div.accountInfo
     width: 501px;
     top: 11px;
     }
-    
-    .loginDisplayAdmin
-{
-    
-       display: inherit;
-    text-align: left;
-    padding: 1px;
-    color: white;
-    height: auto;
-    width: 457px;
-    top: -99px;
-    }
-    
     
 .siteMap
 {
@@ -441,13 +430,13 @@ div.accountInfo
 
 .loginDisplayAdmin
 {
-    font-size: 1.1em;
-    display: block;
-    text-align: right;
-    padding: 10px;
-    color: White;
-    height: 1px;
-    width: 934px;
+    display: inherit;
+    text-align: left;
+    padding: 1px;
+    color: #006AB2;
+    height: auto;
+    width: 501px;
+    top: 11px;
 }
 
 .loginDisplayAdmin a:link
@@ -573,6 +562,8 @@ input.botao, .btGeral {
 	font-size: 12px;
 	color: Black;
     margin-top: 0px;
+    width: 676px;
+    height: 113px;
 }
 .GridView td
 {
@@ -1087,6 +1078,7 @@ a.ContextMenuItem
     font-family: Verdana;
     font-size: 8pt;
     color: #666666;
+    border-radius: 1em;
 }
 
 .accordionContent a:link, .accordionContent a:active, .accordionContent a:visited

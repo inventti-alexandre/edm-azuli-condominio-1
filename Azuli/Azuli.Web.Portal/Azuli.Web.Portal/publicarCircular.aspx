@@ -10,7 +10,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <br />
+    <br /><br />
     <div id="dvPublicar" runat="server" align="center">
     <fieldset class="loginDisplayLegend">
         <legend  class="accordionContent">Publicações de Circulares: </legend>
