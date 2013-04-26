@@ -67,7 +67,7 @@
         </div>
         <div id="dvHome" 
             
-            style="position:absolute; top: 79px; left: 208px; height: 31px; width: 32px;"> <p>
+            style="position:absolute; top: 79px; left: 187px; height: 31px; width: 32px;"> <p>
                     <img alt="" class="style2" src="images/home3.jpg" /></p></div>
         <div class="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">

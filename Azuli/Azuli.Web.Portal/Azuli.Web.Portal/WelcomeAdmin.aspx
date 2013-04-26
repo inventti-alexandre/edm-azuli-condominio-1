@@ -64,7 +64,7 @@
                
     <br /><br /><br /><br />
             <div id="dvPendencia" 
-                        style="position:absolute; top: 199px; left: 765px; height: 201px;">
+                        style="position:absolute; top: 200px; left: 712px; height: 201px;">
       
                 <table style="border-spacing: 10px 10px; width: 450px;">
                     <tr>
@@ -142,7 +142,7 @@
             
         </fieldset></div>
     
-    <div id="dvLegend" runat="server" style="position: absolute; top: 435px; left: 236px;
+    <div id="dvLegend" runat="server" style="position: absolute; top: 432px; left: 197px;
         height: 77px; width: 246px;">
         <table runat="server" align="center" style="width: 227px" class="btGeral">
             <tr>

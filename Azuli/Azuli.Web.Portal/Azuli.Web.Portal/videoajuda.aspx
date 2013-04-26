@@ -47,7 +47,7 @@
 
  <fieldset class="loginDisplayLegend">
       
-        <legend class="style3">Aprenda entrar no Sistema e Ler mensagem </legend>
+        <legend class="accordionContent">Aprenda entrar no Sistema e Ler mensagem </legend>
         <br />
         <table class="style1">
             <tr>

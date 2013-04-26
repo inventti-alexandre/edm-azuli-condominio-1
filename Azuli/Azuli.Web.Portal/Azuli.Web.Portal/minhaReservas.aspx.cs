@@ -88,6 +88,7 @@ namespace Azuli.Web.Portal
                 grdAgendaMorador.DataSource = oAgenda.listaReservaByMoradorFesta(oAP, oAgendaModel);
                 grdAgendaMorador.DataBind();
                 lblMsg.Visible = false;
+                lblMesAnoFesta.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
             }
             else if (drpSalao.SelectedItem.Text == "Churrasqueira")
             {
@@ -97,6 +98,7 @@ namespace Azuli.Web.Portal
                 dvChurrasco.Visible = true;
                 dvFesta.Visible = false;
                 lblMsg.Visible = false;
+                lbMesAnoChurras.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
             }
             else if (drpSalao.SelectedItem.Value == "1")
             {
@@ -105,8 +107,8 @@ namespace Azuli.Web.Portal
               
                 dvFesta.Visible = true;
                 lblMsg.Visible = false;
-
-            
+                lblMesAnoFesta.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
+                lbMesAnoChurras.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
                 dvChurrasco.Visible = true;
                 grdAgendaMorador.DataSource = oAgenda.listaReservaByMoradorFesta(oAP, oAgendaModel);
                 grdAgendaMorador.DataBind();

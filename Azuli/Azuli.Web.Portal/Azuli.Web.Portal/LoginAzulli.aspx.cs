@@ -69,6 +69,7 @@ namespace Azuli.Web.Portal.Account
         ProprietarioBLL oProprietario = new ProprietarioBLL();
         ProprietarioModel oProprietarioModel = new ProprietarioModel();
         ApartamentoModel oAPmodel = new ApartamentoModel();
+        Util.Util oUtil = new Util.Util();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -145,6 +146,7 @@ namespace Azuli.Web.Portal.Account
 
         protected void lnkBtnTeste_Click(object sender, EventArgs e)
         {
+            dvLogin.Visible = false;
             dvDadosMorador.Visible = true;
         }
 
@@ -169,8 +171,9 @@ namespace Azuli.Web.Portal.Account
          
         }
 
-        protected void btnOkPesquisa_Click(object sender, EventArgs e)
+        public void enviaMail()
         {
+            
             SendMail enviaEmail = new SendMail();
 
             try
@@ -196,9 +199,70 @@ namespace Azuli.Web.Portal.Account
             }
         }
 
+        protected void btnOkPesquisa_Click(object sender, EventArgs e)
+        {
+           
+
+             oProprietarioModel.ap = new ApartamentoModel();
+
+            oAPmodel.apartamento = Convert.ToInt32(txtSolicitaAP.Text);
+            oAPmodel.bloco = Convert.ToInt32(txtSolicitaBloco.Text);
+            oProprietarioModel.ap = oAPmodel;
+
+
+            if (oProprietario.BuscaMoradorAdmin(oAPmodel).Count == 0)
+            {
+
+                oProprietarioModel.proprietario1 = txtNome.Text;
+                oProprietarioModel.proprietario2 = "";
+                oProprietarioModel.email = txtEmail.Text;
+                oProprietarioModel.senha = oUtil.GeraSenha();
+
+                try
+                {
+                    int count = oProprietario.CadastrarApartamentoMorador(oProprietarioModel);
+
+                    if (count > 0)
+                    {
+
+                        lblMsg.Text = "Já existe cadastro para o Bloco: " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento;
+                       
+                    }
+
+                    else
+                    {
+                        enviaMail();
+                        //SendMail enviaEmail = new SendMail();
+                        //int status = 0;
+                        //string msgCredencial = "";
+                        //msgCredencial = "Cadastro efetuado com sucesso para Morador: <br> <b> " + oProprietarioModel.proprietario1 + " <b> <br>" + " Bloco:  " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento + "<br> Sua Senha é: " + oProprietarioModel.senha + "<br><hr> acesse: http://www.condominioazuli.somee.com/";
+                        //enviaEmail.enviaSenha(msgCredencial, oProprietarioModel.proprietario1, oProprietarioModel.email, status);
+
+                        lblMsg.Text = "Cadastro efetuado com sucesso!! <br> <b> "  ;
+                        
+                    }
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            else
+            {
+                lblMsg.Text = "Já existe cadastro para o Bloco: " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento;
+            }
+          
+            
+            
+        }
+
         protected void btnCancel0_Click1(object sender, EventArgs e)
         {
+            
             hiddenControl();
+            Response.Redirect("LoginAzulli.aspx");
         }
 
         public void hiddenControl()

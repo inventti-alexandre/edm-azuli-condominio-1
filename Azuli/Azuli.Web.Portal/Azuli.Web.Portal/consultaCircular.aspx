@@ -153,7 +153,7 @@
                 </Columns>
             </asp:GridView>
        
-        </div></fieldset><br /><center>
+     </fieldset>   </div><br /><center>
     <asp:Button ID="btnOk" runat="server" Text="Ok" Width="58px" CssClass="btGeral" 
             onclick="btnOk_Click" /></center>
         

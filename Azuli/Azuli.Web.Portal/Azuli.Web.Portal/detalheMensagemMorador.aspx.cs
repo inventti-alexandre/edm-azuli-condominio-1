@@ -51,7 +51,7 @@ namespace Azuli.Web.Portal
                 {
                     lblLidNL.Text = "Mensagens Não Lidas";
                 }
-                else
+                else if (drpMsgStatus.SelectedItem.Value == "0")
                 {
                     lblLidNL.Text = "Mensagens já Lidas";
                 }

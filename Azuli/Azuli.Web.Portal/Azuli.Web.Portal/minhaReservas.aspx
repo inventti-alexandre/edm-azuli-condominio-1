@@ -2,27 +2,28 @@
     CodeBehind="minhaReservas.aspx.cs" Inherits="Azuli.Web.Portal.minhaReservas" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-</asp:Content>
+    </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
     <fieldset class="loginDisplayLegend">
         <legend  class="accordionContent">Reserva do Mês Geral: </legend><br />
-        <table class="style1">
+        <table style="width: 565px">
             <tr>
-                <td class="style2">
+                <td >
                     <asp:Label ID="lblMes" runat="server" Font-Bold="True" Text="Mês:"></asp:Label>
                     &nbsp;<asp:DropDownList ID="drpMeses" runat="server" CssClass="btGeral" Font-Bold="True"
                         Height="16px" Width="101px" AutoPostBack="True" 
                         onselectedindexchanged="drpMeses_SelectedIndexChanged">
                     </asp:DropDownList>
                 </td>
-                <td class="style3">
+                <td  >
                     <asp:Label ID="lblAno" runat="server" Font-Bold="True" Text="Ano:"></asp:Label>
+                    &nbsp;&nbsp;
                     <asp:DropDownList ID="drpAno" runat="server" CssClass="btGeral" Font-Bold="True"
-                        Height="16px" Width="101px" AutoPostBack="True" 
+                        Height="16px" Width="111px" AutoPostBack="True" 
                         onselectedindexchanged="drpAno_SelectedIndexChanged">
                     </asp:DropDownList>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </td>
                 <td>
                     <asp:Label ID="lbSalao" runat="server" Font-Bold="True" Text="Área :"></asp:Label>
@@ -33,9 +34,6 @@
                         <asp:ListItem>Churrasqueira</asp:ListItem>
                     </asp:DropDownList>
                 </td>
-                <td>
-                    &nbsp;
-                </td>
             </tr>
         </table>
     </fieldset>
@@ -43,14 +41,12 @@
 
 
     <div id="dvFesta" runat="server" align="left" dir="ltr">
-        <fieldset class="login">
+        <fieldset class="loginDisplayLegend">
             <legend class="accordionContent">São de Festas - <asp:Label ID="lblMesAnoFesta" runat="server" CssClass="FooterStyle"></asp:Label></legend>
                
             <center>
                 <br />
                 &nbsp;<br />
-                <asp:Label ID="lblAreaFesta" runat="server" Text="Área de Festa " CssClass="btGeral"></asp:Label>
-                <br />
                 &nbsp;<asp:GridView ID="grdAgendaMorador" runat="server" EmptyDataText="Você não tem reserva para o salão de festa nesta data"
                     AutoGenerateColumns="False" Font-Bold="False" OnRowCommand="grdAgendaMorador_RowCommand"
                     DataKeyNames="dataAgendamento" OnRowDeleting="grdAgendaMorador_RowDeleting" OnRowDataBound="grdAgendaMorador_RowDataBound"
@@ -92,12 +88,11 @@
 
 
     <div id="dvChurrasco" runat="server">
-        <fieldset class="login">
+        <fieldset class="loginDisplayLegend">
             <legend class="accordionContent">Área de Churrasco -
                 <asp:Label ID="lbMesAnoChurras" runat="server" CssClass="FooterStyle"></asp:Label></legend>
             <center>
                 <br />
-                <asp:Label ID="Label3" runat="server" Text="Área de Churrasqueira " CssClass="btGeral"></asp:Label><br />
                 &nbsp;<asp:GridView ID="grdChurras" runat="server" AutoGenerateColumns="False" EmptyDataText="Você não tem reserva de churrasqueira para esta data"
                     OnRowCommand="grdChurras_RowCommand" OnRowDeleting="grdChurras_RowDeleting" DataKeyNames="dataAgendamento"
                     CssClass="GridView">
