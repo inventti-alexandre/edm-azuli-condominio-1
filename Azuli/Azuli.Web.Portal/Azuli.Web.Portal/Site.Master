@@ -18,8 +18,8 @@
    
         .style2
         {
-            width: 37px;
-            height: 30px;
+            width: 32px;
+            height: 29px;
         }
    
     </style>
@@ -66,7 +66,8 @@
             </div>
         </div>
         <div id="dvHome" 
-            style="position:absolute; top: 78px; left: 173px; height: 55px; width: 59px;"> <p>
+            
+            style="position:absolute; top: 79px; left: 208px; height: 31px; width: 32px;"> <p>
                     <img alt="" class="style2" src="images/home3.jpg" /></p></div>
         <div class="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">

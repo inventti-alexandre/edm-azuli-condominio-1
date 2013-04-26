@@ -9,7 +9,7 @@
         }
         .style4
         {
-            width: 49px;
+            width: 22px;
         }
         .style5
         {
@@ -18,7 +18,7 @@
         }
         .style6
         {
-            width: 49px;
+            width: 22px;
             height: 28px;
         }
         .style7
@@ -34,48 +34,23 @@
         }
         .style9
         {
-            width: 293px;
+            font-size: small;
         }
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
     <br />
-    <div id="dvLegend" runat="server" style="position: absolute; top: 264px; left: 416px;
-        height: 76px; width: 209px;">
-        <table runat="server" align="center" style="width: 238px">
-            <tr>
-                <td align="justify">
-                    <asp:ImageButton ID="imgFesta" runat="server" Height="8px" ImageUrl="~/images/azul.jpg"
-                        Width="8px" />
-                <span class="style8">&nbsp;Salão de Festa Locado&nbsp;
-                        </span>
-                </td>
-            </tr>
-            <tr>
-                <td align="justify">
-                  
-                    <asp:ImageButton ID="ImageButton2" runat="server" Height="8px" ImageUrl="~/images/amarelo.jpg"
-                        Width="8px" />
-                   <span class="style8">&nbsp;Área de Churrasco Locada&nbsp;</span>
-                </td>
-            </tr>
-            <tr>
-                <td align="justify">
+
+   <div id="Div1" runat="server" align="center">
+                <fieldset class="loginDisplayLegend">
+                    <legend class="accordionContent">Gerenciador de Tarefas</legend>
                    
-                    <asp:ImageButton ID="imgFesta1" runat="server" Height="8px" ImageUrl="~/images/vermelho.jpg"
-                        Width="8px" />
-                  <span class="style8"> &nbsp; Festa e Churrasqueira reservada</span>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <table style="width: 889px">
-        <tr>
-            <td dir="ltr" align="left" class="style9">
-                <fieldset>
-                    <legend class="accordionContentAdmin">Agenda</legend>
-                    <asp:Calendar ID="Calendar1" runat="server" BackColor="White" Font-Names="Verdana"
+                        
+                            <asp:Label ID="Label4" runat="server" Text="Gerenciamento de Reservas" CssClass="accordionContent"
+                                Font-Bold="True"></asp:Label>
+                          <br /> <br />
+                    <asp:Calendar ID="Calendar2" runat="server" BackColor="White" Font-Names="Verdana"
                         Font-Size="8pt" ForeColor="Black" Height="200px" Width="220px" BorderWidth="1px"
                         OnDayRender="Calendar1_DayRender" ShowGridLines="True">
                         <DayHeaderStyle Font-Bold="True" Height="1px" BackColor="#CCCCCC" />
@@ -86,19 +61,15 @@
                         <TitleStyle BackColor="#E0E0E0" Font-Bold="True" Font-Size="9pt" ForeColor="Black" />
                         <TodayDayStyle ForeColor="#009900" />
                     </asp:Calendar>
-                </fieldset></td>
-            <td align="center">
-                &nbsp;</td>
-        </tr>
-    </table>
-    <div id="dvPainelAdministrativo" align="center" runat="server">
-        <fieldset class="loginDisplayLegend">
-            <legend class="accordionContent">Painel de Tarefas </legend>
-            <center>
-                <table style="border: thin groove #0092D2; border-spacing: 15px 15px; width: 450px;">
+               
+    <br /><br /><br /><br />
+            <div id="dvPendencia" 
+                        style="position:absolute; top: 199px; left: 765px; height: 201px;">
+      
+                <table style="border-spacing: 10px 10px; width: 450px;">
                     <tr>
                         <td colspan="3" align="center">
-                            <asp:Label ID="lblPendente" runat="server" Text="Pendências" CssClass="accordionContent"
+                            <asp:Label ID="lblPendente" runat="server" Text="Tarefas Pendentes" CssClass="accordionContent"
                                 Font-Bold="True"></asp:Label>
                             <br />
                         </td>
@@ -167,8 +138,42 @@
                             <asp:ImageButton ID="ImageButton1" CssClass="Border" runat="server" ImageUrl="~/images/cliqueAqui.jpg" />
                         </td>
                     </tr>
-                </table>
-            </center>
-        </fieldset>
+                </table></div>
+            
+        </fieldset></div>
+    
+    <div id="dvLegend" runat="server" style="position: absolute; top: 435px; left: 236px;
+        height: 77px; width: 246px;">
+        <table runat="server" align="center" style="width: 227px" class="btGeral">
+            <tr>
+                <td align="justify">
+                    <asp:ImageButton ID="imgFesta" runat="server" Height="8px" ImageUrl="~/images/azul.jpg"
+                        Width="8px" />
+                <span class="style8"><span class="style8">&nbsp;Salão de Festa Locado&nbsp;</span>
+                        </span>
+                </td>
+            </tr>
+            <tr>
+                <td align="justify">
+                  
+                    <asp:ImageButton ID="ImageButton2" runat="server" Height="8px" ImageUrl="~/images/amarelo.jpg"
+                        Width="8px" />
+                   <span class="style8">&nbsp;Área de Churrasco Locada&nbsp;</span>
+                </td>
+            </tr>
+            <tr>
+                <td align="justify">
+                   
+                    <asp:ImageButton ID="imgFesta1" runat="server" Height="8px" ImageUrl="~/images/vermelho.jpg"
+                        Width="8px" />
+                  <span class="style8"> &nbsp; Festa e Churrasqueira reservada</span>
+                </td>
+            </tr>
+        </table>
     </div>
+
+    <br /></br>
+    
+   
+    
 </asp:Content>

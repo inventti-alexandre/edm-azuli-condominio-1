@@ -103,10 +103,11 @@
             </div>
            
     <div class="footerAdmin">
-        
+
+        </div>
             <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
 
-    </div></div>
+    </div>
     </form>
 </body>
 </html>
