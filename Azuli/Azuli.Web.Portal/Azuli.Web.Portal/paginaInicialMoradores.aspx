@@ -57,7 +57,7 @@
         </tr>
     </table>
     <fieldset>
-        <legend class="style5">Seja bem vindo ao Sistema de Gerenciamento de Condominio</legend>
+        <legend class="accordionContent">Seja bem vindo ao Sistema de Gerenciamento de Condominio</legend>
        
         <p>    Através do menu acima, é permitido fazer reservas do salão de festa / Churrasqueira
             e abrir ocorrências, e consultar informações referente ao condominio, como estatuto do condominio e entre mais informações importantes. </p>
@@ -76,6 +76,8 @@
             A Solução permite gerenciar, de modo on-line, todas as funcionalidades, em um ambiente
             seguro e robusto.
         </p>
+
+       
        
     </fieldset>
 </asp:Content>
