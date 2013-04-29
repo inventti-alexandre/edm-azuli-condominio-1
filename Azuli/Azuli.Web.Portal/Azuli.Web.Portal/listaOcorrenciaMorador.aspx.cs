@@ -18,7 +18,7 @@ namespace Azuli.Web.Portal
         LancamentoOcorrenciaModel olancamentoModel = new LancamentoOcorrenciaModel();
         LancamentoOcorrencia olancamentoBLL = new LancamentoOcorrencia();
         ApartamentoModel oAp = new ApartamentoModel();
-        
+
         string folder = System.Configuration.ConfigurationManager.AppSettings["EvidenciaMoradorOC"];
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,10 +26,10 @@ namespace Azuli.Web.Portal
             {
                 if (!IsPostBack)
                 {
-                   
+
 
                     listaOcorrenciaMes();
-                    DivRespostaSindico.Visible = false;
+                    //DivRespostaSindico.Visible = false;
                     DivRespostaSindico1.Visible = false;
 
 
@@ -40,7 +40,7 @@ namespace Azuli.Web.Portal
 
         public void listaOcorrenciaMes()
         {
-            
+
 
             try
             {
@@ -49,28 +49,28 @@ namespace Azuli.Web.Portal
                 foreach (var item in olancamentoBLL.buscaOcorrenciaById(olancamentoModel))
                 {
                     lblAssunto.Text = item.descricaoOcorrencia;
-                    lblDataAbertura.Text =  item.dataOcorrencia.ToString();
-                    lblMensagem.Text = item.ocorrenciaLancamento; 
+                    lblDataAbertura.Text = item.dataOcorrencia.ToString();
+                    lblMensagem.Text = "Descrição da Ocorrência: " + item.ocorrenciaLancamento;
                     lblOcorrencia.Text = item.codigoOcorrencia.ToString();
                     lblMorador.Text = Session["Proprie1"].ToString();
                     lblBlocoMsg.Text = Session["Bloco"].ToString();
-                    lblApartamento.Text=  Session["AP"].ToString();
+                    lblApartamento.Text = Session["AP"].ToString();
 
                     if (item.imagemEvidencia != "")
                     {
                         lnkDonwloadEvidencia.Visible = true;
                         ImageButton1.Visible = true;
-                        ImageButton1.ImageUrl = folder+("/" + item.imagemEvidencia);
-                    
+                        ImageButton1.ImageUrl = folder + ("/" + item.imagemEvidencia);
+
                         Session["NomeImagem"] = item.imagemEvidencia.ToString();
-                        
+
                     }
                     else
                     {
                         lnkDonwloadEvidencia.Visible = false;
                         ImageButton1.Visible = false;
                     }
-                    
+
                 }
 
 
@@ -95,7 +95,7 @@ namespace Azuli.Web.Portal
             {
 
 
-              
+
 
                 FileInfo arquivo = new FileInfo(Server.MapPath(folder) + ("\\" + caminhoArquivo));
 
