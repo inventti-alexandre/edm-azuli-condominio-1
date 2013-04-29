@@ -87,7 +87,7 @@
        <div id="dvManager" align="center" runat="server">
        <fieldset class="loginDisplayLegend">
    <legend class="accordionContent">Gerenciamento de Moradores</legend>
-   <br />
+   <br /></br>
   
        <asp:GridView ID="grdGerenciamentoMoradores" runat="server" AllowPaging="True" 
            AllowSorting="True" AutoGenerateColumns="False" CssClass="GridView" 
