@@ -4,10 +4,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <br /><br />
-<fieldset class="loginDisplayLegend">
+<center><fieldset class="loginDisplayLegend">
         <legend class="accordionContent">Alterar sua Senha: Administrador</legend>
  <br />
-  <center><div id="dvProprietario" runat="server" >
+  <center><div id="dvProprietario" align="center" runat="server" >
    
         <br />
         <table class="btGeral" dir="ltr" frame="border" style="width: 349px" >
@@ -45,6 +45,6 @@
                 </td>  </tr>
               
         </table>
-    </div></center><br /><center><asp:Label ID="lblMensagem" runat="server" CssClass="failureNotification"></asp:Label></center> </fieldset>
+    </div></center><br /><center><asp:Label ID="lblMensagem" runat="server" CssClass="failureNotification"></asp:Label></center> </fieldset></center>
     
 </asp:Content>
