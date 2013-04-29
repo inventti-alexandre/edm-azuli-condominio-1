@@ -142,9 +142,9 @@
             
         </fieldset></div>
     
-    <div id="dvLegend" runat="server" style="position: absolute; top: 432px; left: 197px;
-        height: 77px; width: 246px;">
-        <table runat="server" align="center" style="width: 227px" class="btGeral">
+    <div id="dvLegend" runat="server" style="position: absolute; top: 435px; left: 245px;
+        height: 77px; width: 238px;">
+        <table id="Table1" runat="server" align="center" style="width: 227px" class="btGeral">
             <tr>
                 <td align="justify">
                     <asp:ImageButton ID="imgFesta" runat="server" Height="8px" ImageUrl="~/images/azul.jpg"
