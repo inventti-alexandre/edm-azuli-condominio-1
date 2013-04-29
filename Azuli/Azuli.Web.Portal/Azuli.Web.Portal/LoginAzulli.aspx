@@ -105,9 +105,17 @@
                         </p>
                         <asp:LinkButton ID="lnkBtnTeste" runat="server" OnClick="lnkBtnTeste_Click">Solicite aqui seu Acesso para teste!</asp:LinkButton>
                         <br />
-                    <asp:Label ID="lblMsg" runat="server" ForeColor="#FF3300" Font-Size="Medium"></asp:Label>
+                   
                         <br />
                     </fieldset>
+                    <asp:Label ID="lblEsqueciSenha" runat="server" ForeColor="Red"></asp:Label>
+                    <br />
+                    <br />
+                    <div id='dvCurtir' runat="server" 
+                        style="position:absolute; top: 422px; left: 881px;">
+                    
+                    <iframe src="http://www.facebook.com/plugins/like.php?href=www.facebook.com/Sgcondominio&;layout=standard&<br> show_faces=false&width=380&action=like&colorscheme=light&height=25&locale=pt_BR" scrolling="no" frameborder="0" style="border:none; overflow:hidden;width:250px; height:25px;" allowTransparency="true"></iframe>
+                    </div>
                     </div>
                 <div id="dvDadosMorador" style="position:absolute; top: 170px; left: 395px;" 
                      runat="server">
@@ -173,12 +181,13 @@
                                     <asp:Button ID="btnOkSolicita" runat="server" CssClass="botao" Text="Ok" Width="63px"
                                         OnClick="btnOkPesquisa_Click" ValidationGroup="solicitaAcesso" />
                                     &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <asp:Button ID="btnCancel0" runat="server" CssClass="botao" Text="Cancelar" OnClick="btnCancel0_Click1" />
+                                    <asp:Button ID="btnCancel0" runat="server" CssClass="botao" Text="Voltar" 
+                                        OnClick="btnCancel0_Click1" />
                                 </td>
                             </tr>
                         </table> 
                   
-               </fieldset> </div></center>
+               </fieldset>  <asp:Label ID="lblMsg" runat="server" ForeColor="#003300" Font-Size="Medium"></asp:Label></div></center>
              
            
         </div>
@@ -190,6 +199,8 @@
              </span><span class="style2"><span class="style4">© FernandesVilela Soluções de TI. INC 2013. Todos os direitos reservados</span>
             </span> &nbsp;<asp:Image ID="Image2" runat="server" Height="29px" 
                 ImageUrl="~/images/logoteste.png" Width="73px" />
+        &nbsp;<asp:ImageButton ID="ImageButton1" runat="server" CssClass="Border" 
+                ImageUrl="~/images/ico_facebook.png" onclick="ImageButton1_Click" />
         </div></center>
     </div>
     </form>

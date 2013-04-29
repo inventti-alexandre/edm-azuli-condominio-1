@@ -22,11 +22,11 @@ namespace Azuli.Web.Portal.Account
                 Page.ClientTarget = "uplevel";
             }
         }
-       
+
         protected override void OnLoad(EventArgs e)
-        { 
-            
-            
+        {
+
+
             hiddenControl();
             string id = ConfigurationManager.AppSettings["GoogleAnalyticsId"];
 
@@ -58,14 +58,14 @@ namespace Azuli.Web.Portal.Account
                 //  "alert(\'" + "TEST" + "\');" + Environment.NewLine +
                 //  "</script>", false);
 
-               
+
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "MessageAlert", script, false);
-              
+
 
             }
         }
 
-      
+
         ProprietarioBLL oProprietario = new ProprietarioBLL();
         ProprietarioModel oProprietarioModel = new ProprietarioModel();
         ApartamentoModel oAPmodel = new ApartamentoModel();
@@ -73,24 +73,24 @@ namespace Azuli.Web.Portal.Account
 
         protected void Page_Load(object sender, EventArgs e)
         {
-         
+
             hiddenControl();
             Session.Clear();
             Session.Abandon();
 
-          
-            
-         
+
+
+
         }
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
             Session.Clear();
-            
+
             oAPmodel.apartamento = Convert.ToInt32(txtAP.Text);
             oAPmodel.bloco = Convert.ToInt32(drpBloco.Text);
             oProprietarioModel.senha = Password.Text;
-            
+
             Session["AP"] = Convert.ToInt32(txtAP.Text);
             Session["Bloco"] = Convert.ToInt32(drpBloco.Text);
 
@@ -109,10 +109,10 @@ namespace Azuli.Web.Portal.Account
                     Session["Bloco"] = item.ap.bloco;
                     Session["Proprie1"] = item.proprietario1.ToString();
                     Session["Proprie2"] = item.proprietario2.ToString();
-                    if(item.email != null)
-                    Session["email"] = item.email.ToString();
+                    if (item.email != null)
+                        Session["email"] = item.email.ToString();
 
-                  //  Session["senha"] = item.senha.ToString();
+                    //  Session["senha"] = item.senha.ToString();
                 }
 
                 if (Session["AP"].ToString() == "0" && Session["Bloco"].ToString() == "0")
@@ -125,15 +125,15 @@ namespace Azuli.Web.Portal.Account
                     if (Session["AP"].ToString() != "301" && Session["Bloco"].ToString() != "6")
                     {
                         Util.SendMail oEmail = new SendMail();
-                        oEmail.enviaSenha("Acesso feito com sucesso para o apartamento/bloco "+ Session["AP"].ToString() + "---" +Session["Bloco"].ToString(),"Acessos","edmls@ig.com.br" , 0);
+                        oEmail.enviaSenha("Acesso feito com sucesso para o apartamento/bloco " + Session["AP"].ToString() + "---" + Session["Bloco"].ToString(), "Acessos", "edmls@ig.com.br", 0);
                         Response.Redirect("~/paginaInicialMoradores.aspx");
                     }
                     else
                     {
                         Response.Redirect("~/paginaInicialMoradores.aspx");
                     }
-                   
-                   
+
+
                 }
             }
             else
@@ -165,15 +165,15 @@ namespace Azuli.Web.Portal.Account
             }
             else
             {
-                lblMsg.Text = "Favor preencher <b><font color='#4884CD'> Bloco e Apartamento </font> e clique novamente 'Esqueci minha Senha'!!";
+                lblEsqueciSenha.Text = "Favor preencher <b><font color='#4884CD'> Bloco e Apartamento </font> e clique novamente 'Esqueci minha Senha'!!";
             }
 
-         
+
         }
 
         public void enviaMail()
         {
-            
+
             SendMail enviaEmail = new SendMail();
 
             try
@@ -182,7 +182,7 @@ namespace Azuli.Web.Portal.Account
 
                 string mensagem = "Solicitação de Acesso Ap: " + txtSolicitaAP.Text + " Bloco " + txtSolicitaBloco.Text + "Email " + txtEmail.Text + " Nome " + txtNome.Text;
 
-                enviaEmail.enviaSenha(mensagem, txtNome.Text,"edmls@ig.com.br", status);
+                enviaEmail.enviaSenha(mensagem, txtNome.Text, "edmls@ig.com.br", status);
 
                 lblMsg.Text = "<b> <font color=green>Solicitação enviada com sucesso, no prazo de algumas horas você receberá seu acesso por e-mail </b></font>";
 
@@ -190,7 +190,7 @@ namespace Azuli.Web.Portal.Account
             }
             catch (Exception ex)
             {
-          
+
                 lblMsg.Text = "<b> <font color=green>Erro ao solicitar acesso,verifique os dados e tente novamente </b></font> </br>" + ex.Message;
             }
             finally
@@ -201,10 +201,9 @@ namespace Azuli.Web.Portal.Account
 
         protected void btnOkPesquisa_Click(object sender, EventArgs e)
         {
-           
 
-             oProprietarioModel.ap = new ApartamentoModel();
 
+            oProprietarioModel.ap = new ApartamentoModel();
             oAPmodel.apartamento = Convert.ToInt32(txtSolicitaAP.Text);
             oAPmodel.bloco = Convert.ToInt32(txtSolicitaBloco.Text);
             oProprietarioModel.ap = oAPmodel;
@@ -226,7 +225,7 @@ namespace Azuli.Web.Portal.Account
                     {
 
                         lblMsg.Text = "Já existe cadastro para o Bloco: " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento;
-                       
+
                     }
 
                     else
@@ -237,9 +236,11 @@ namespace Azuli.Web.Portal.Account
                         //string msgCredencial = "";
                         //msgCredencial = "Cadastro efetuado com sucesso para Morador: <br> <b> " + oProprietarioModel.proprietario1 + " <b> <br>" + " Bloco:  " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento + "<br> Sua Senha é: " + oProprietarioModel.senha + "<br><hr> acesse: http://www.condominioazuli.somee.com/";
                         //enviaEmail.enviaSenha(msgCredencial, oProprietarioModel.proprietario1, oProprietarioModel.email, status);
+                        dvDadosMorador.Visible = true;
+                        lblMsg.Text = "Solicitação efetuada com sucesso!! Em breve você irá receber sua senha no e-mail informado <br> <b> ";
 
-                        lblMsg.Text = "Cadastro efetuado com sucesso!! <br> <b> "  ;
-                        
+
+
                     }
 
                 }
@@ -251,23 +252,33 @@ namespace Azuli.Web.Portal.Account
             }
             else
             {
+                dvDadosMorador.Visible = true;
                 lblMsg.Text = "Já existe cadastro para o Bloco: " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento;
             }
-          
-            
-            
+
+
+
         }
 
         protected void btnCancel0_Click1(object sender, EventArgs e)
         {
-            
+
             hiddenControl();
+            txtSolicitaAP.Text = "";
+            txtSolicitaBloco.Text = "";
+            txtEmail.Text = "";
             Response.Redirect("LoginAzulli.aspx");
         }
 
         public void hiddenControl()
         {
             dvDadosMorador.Visible = false;
+
+        }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("https://www.facebook.com/Sgcondominio");
         }
     }
 }
