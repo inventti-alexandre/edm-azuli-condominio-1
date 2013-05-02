@@ -25,7 +25,7 @@
     <br />
 <fieldset class="loginDisplayLegend">
    
-    <legend title="Abrir Ocorrência" class="accordionContent"> Abrir Ocorrência </legend><br />
+    <legend title="Abrir Ocorrência" class="accordionContent"> Abrir Reclamação</legend><br />
    <center><asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#006600"></asp:Label></center>
       
    
@@ -38,7 +38,7 @@
                         <tr>
                             <td class="">
                                 <asp:Label ID="lblOcorrencia" runat="server" style="font-weight: 700" 
-                                    Text="Ocorrência aberta será para:"></asp:Label>
+                                    Text="Reclamação aberta será para:"></asp:Label>
                             </td>
                             <td class="" align="left">
                                 <asp:Label ID="lblBloco" runat="server" CssClass="style5" Text="Bloco:"></asp:Label>
@@ -65,7 +65,7 @@
                         <tr>
                             <td class="style14">
                                 <asp:Label ID="lblDescricao" runat="server" Font-Bold="True" 
-                                    Text="Descrição da Ocorrência:"></asp:Label>
+                                    Text="Descrição da Reclamação:"></asp:Label>
                             </td>
                             <td class="style14">
                                  <asp:TextBox ID="txtDescription" runat="server" Height="88px" TextMode="MultiLine" 
