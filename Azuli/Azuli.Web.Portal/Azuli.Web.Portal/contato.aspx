@@ -85,15 +85,14 @@
       <center>
           <br />
           <asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#006600"></asp:Label></center>
-      <br />
-      <br /> </div>
-     </center><br />
+    </div>
+     </center>
    
- </fieldset>&nbsp;&nbsp; 
+ </fieldset> 
  
  <center><a href="http://groups.yahoo.com/group/azuli_sjc/join">
   <img src="http://us.i1.yimg.com/us.yimg.com/i/yg/img/i/br/ui/join.gif"
-       style="border-style: none; border-color: inherit; border-width: 0px; height: 34px; width: 79px;"
+       style="border-style: none; border-color: inherit; border-width: 0px; height: 30px; width: 30px;"
        alt="Clique aqui para cadastrar-se azuli_sjc"/>
   <p>Clique aqui e cadastra-se no Grupo azuli_sjc</p>
 </a>
