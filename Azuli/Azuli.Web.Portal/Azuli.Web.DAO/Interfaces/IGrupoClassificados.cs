@@ -11,6 +11,7 @@ namespace Azuli.Web.DAO.Interfaces
 
         void cadastrarGrupoClassificados(GrupoClassificados OgrupoClassifica);
         void alteraGrupoClassificados(GrupoClassificados oGrupoClassifica);
+        listaGrupoClassificado listaGrupoClassificado(GrupoClassificados oGrupoClassifica);
 
 
 
