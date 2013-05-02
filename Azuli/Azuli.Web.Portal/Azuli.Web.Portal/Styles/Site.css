@@ -215,6 +215,7 @@ first child of the left and right table columns */
     padding: 0px 12px;
     margin: 12px 8px 8px 8px;
     min-height: 420px;
+    font-size: medium;
 }
 
 .leftCol
@@ -237,10 +238,10 @@ first child of the left and right table columns */
 .footer
 {
     color: #4e5766;
-    padding: 8px 0px 0px 0px;
+    padding: 2px 0px 0px 0px;
     margin: 0px auto;
     text-align: center;
-    line-height: normal;
+    line-height:  normal;
    
 }
 
@@ -251,12 +252,12 @@ first child of the left and right table columns */
 div.hideSkiplink
 {
     background-color:#0092D2;
-    width:921px;
+    width:984px;
     height: 0;
     position:relative;
     top: -24px;
     vertical-align:middle;
-    right:-40px;
+    right:9px;
 }
 
 div.hideSkiplinkAdmin
@@ -354,7 +355,15 @@ legend
     font-size: 1.1em;
     font-weight: 600;
     padding: 2px 4px 8px 4px;
-    width: 459px;
+    width: 416px;
+}
+
+legend1 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+    width: 426px;
 }
 
 input.textEntry 
@@ -382,7 +391,7 @@ div.accountInfo
 {
     clear: both;
     height: 105px;
-    width: 987px;
+    width: 1031px;
 }
 
 .title
@@ -422,12 +431,11 @@ div.accountInfo
     color:black;
     height: 28%;
     width: 40%;
-    top: 211%;
+    top: 209%;
    
     
     }
-    
-        
+ 
 
     
 
@@ -597,35 +605,41 @@ input.botao, .btGeral {
 	font-size: 12px;
 	color: Black;
     margin-top: 0px;
-}
+    }
 .GridView td
 {
 	padding: 3px;
 	color: Black;
+	
 }
 .GridView td a
 {
 	color: Black;
+	
 }
 .GridView th
 {   
 	background-color: #4884CD;
 	padding: 3px;
+	
 }
 .GridView th a
 {
 	font-weight: bold;
 	color: Black;
+	border-radius: 1em;
 }
 .GridViewEdit
 {
 	background-color: #999999;
+	border-radius: 1em;
 }
 .GridViewPager td
 {
 	font-family: Verdana;
 	font-size: 12px;
 	color: Black;
+	border-radius: 1em;
 }
 /*/////////////////////////*/
 
@@ -660,6 +674,8 @@ input, textarea {
     margin-right: 0px;
     margin-top: 0px;
 }
+
+
 
 select {
 	background-color: #f0f0f0;
@@ -928,15 +944,17 @@ input.btLogin {
 .watermarked
 {
 	border: 1px solid #999999;
-	height: 15px;
+	height: 272px;
 	background-color: #f0f0f0;
 	color: #666666;
 	font-family: Verdana;
-	font-size: 8pt;
+	font-size: 6pt;
 	font-weight: normal;
 	text-align: left;
 	padding: 0px 2px 0px 2px;
 	margin: 0px 15px 0px 3px;
+    width: 647px;
+     border-radius: 1em;
 }
 
 .ContextMenuPanel 
@@ -1024,11 +1042,16 @@ a.ContextMenuItem
 
 .sampleStyleB {
 	background-color:#FFFFFF;
-	padding: 2px 2px 2px 2px;
-	font-family: verdana;
-	font-size: 8pt;
-	font-weight: bold;
-	color: #666666;
+	padding: 1px 1px 1px 1px;
+	
+	border-style: double;
+    border-color: inherit;
+    border-width: 2px;
+     border-radius: 1em;
+	font-family: Verdana;
+	font-size: 10px;
+	color: Black;
+    margin-top: 0px;
 }
 
 .sampleStyleC {
@@ -1111,6 +1134,66 @@ a.ContextMenuItem
     font-size: 8pt;
     color: #666666;
     border-radius: 1em;
+    height: 15px;
+}
+
+
+.instruct
+{
+    background-color: #BFCBD6;
+    border-left: 1px dotted #999999;
+    border-right: 1px dotted #999999;
+    border-bottom: 1px dotted #999999;
+    padding: 2px 2px 2px 2px;
+    font-family: Verdana;
+    font-size: 8pt;
+    color: #666666;
+    border-radius: 1em;
+    height: 13px;
+}
+
+   
+.InstructionPhotoDisplay
+{
+    
+    display: block;
+    text-align: left;
+    padding: 9px;
+     font-size: 9pt;
+    height: auto;
+    width: 400px;
+    top: 1px;
+    }
+        
+
+.seuAnuncios
+{
+     background-color: #BFCBD6;
+        border-left: 1px dotted #999999;
+        border-right: 1px dotted #999999;
+        border-bottom: 1px dotted #999999;
+        padding: 3px 3px 3px 3px;
+        font-family: Verdana;
+        font-size: 8pt;
+        color: #0000FF;
+        border-radius: 1em;
+        width:520px;
+    
+}
+
+.seuAnunciosTst
+{
+     background-color: #BFCBD6;
+        border-left: 1px dotted #999999;
+        border-right: 1px dotted #999999;
+        border-bottom: 1px dotted #999999;
+        padding: 3px 3px 3px 3px;
+        font-family: Verdana;
+        font-size: 7px;
+        color: #0000FF;
+        border-radius: 1em;
+        width:420px;
+    height: 25px;
 }
 
 .accordionContent a:link, .accordionContent a:active, .accordionContent a:visited

@@ -26,7 +26,7 @@ namespace Azuli.Web.Model
         public string emailClassificadoContato { get; set; }
         public string classificadoTelefone1 { get; set; }
         public string classificadoTelefone2 { get; set; }
-        public DateTime classificadoDataVenda { get; set; }
+        public Nullable<DateTime> classificadoDataVenda { get; set; }
         public double valorVendaClassificado { get; set; }
 
         public Classificados()

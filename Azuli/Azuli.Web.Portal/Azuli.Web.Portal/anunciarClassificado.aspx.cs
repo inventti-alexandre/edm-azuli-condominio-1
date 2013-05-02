@@ -81,7 +81,7 @@ namespace Azuli.Web.Portal
                         case 11:
                             lblSport.Text = item.descricacaoGrupoClassificado;
                             break;
-                        case 13:
+                        case 12:
                             lblDiversos.Text = item.descricacaoGrupoClassificado;
                             break;
 
@@ -173,7 +173,7 @@ namespace Azuli.Web.Portal
 
         protected void imgDiversos_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("cadastrarClassificado.aspx?var="+13);
+            Response.Redirect("cadastrarClassificado.aspx?var="+12);
         }
 
 

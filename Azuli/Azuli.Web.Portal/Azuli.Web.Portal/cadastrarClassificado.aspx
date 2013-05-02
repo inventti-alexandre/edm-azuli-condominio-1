@@ -60,9 +60,13 @@
              <tr>
                  <td class="style3">
                    
+                     <asp:Label ID="Label10" runat="server" Text="Falar com:" CssClass="style4"></asp:Label>
+                   
                  </td>
                  <td align="center">
-                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblProPri" 
+                         runat="server" CssClass="bold" Text=""></asp:Label>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                      </td>
              </tr>
              <tr>
@@ -182,11 +186,13 @@
    </fieldset>   </div>
 
    <div id="dvInfo" 
-        style="position:absolute; top: 393px; left: 726px; width: 349px;" 
-        class="style7">
-   
-   <p>Tamanho de arquivo permitido é de <span class="style8">100kb</span> por imagem </p><p>e as extensões permitidas são: 
-       <span class="style8">.gif, .jpg, .bmp, .png e .ico!</span></p>
-   
+        style="position:absolute; top: 355px; left: 668px; width: 345px;" 
+        class="">
+   <fieldset class="InstructionPhotoDisplay"> 
+  <legend class="instruct">Instrução para Foto</legend>
+    <li> <p>Tamanho de arquivo permitido é de <span class="style8">100kb</span> por imagem </p></li><li><p>Extensões permitidas são: 
+       <span class="style8">.gif, .jpg, .bmp, .png e .ico!</span></p></li>
+   </fieldset>
+
    </div>
 </asp:Content>

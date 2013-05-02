@@ -13,6 +13,7 @@
         .style16
         {
             width: 892px;
+            font-size:12px;
         }
         #dvCalendar
         {
