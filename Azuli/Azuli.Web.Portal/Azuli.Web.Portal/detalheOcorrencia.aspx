@@ -22,7 +22,7 @@
             <br />
             <br />
    
-    <legend title="Abrir Ocorrência" class="accordionContent"> Abrir Ocorrência </legend>
+    <legend title="Abrir Ocorrência" class="accordionContent"> Abrir Reclamação</legend>
     <br />
     <asp:GridView ID="grdOcorrencias" runat="server" 
                 CssClass="GridView" Width="809px" AutoGenerateColumns="False" 
