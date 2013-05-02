@@ -157,6 +157,7 @@
     </Compile>
     <Compile Include="anunciarClassificado.aspx.cs">
       <DependentUpon>anunciarClassificado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="anunciarClassificado.aspx.designer.cs">
       <DependentUpon>anunciarClassificado.aspx</DependentUpon>
@@ -170,6 +171,7 @@
     </Compile>
     <Compile Include="cadastrarClassificado.aspx.cs">
       <DependentUpon>cadastrarClassificado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="cadastrarClassificado.aspx.designer.cs">
       <DependentUpon>cadastrarClassificado.aspx</DependentUpon>
@@ -204,6 +206,7 @@
     </Compile>
     <Compile Include="DetalheClassificado.aspx.cs">
       <DependentUpon>DetalheClassificado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DetalheClassificado.aspx.designer.cs">
       <DependentUpon>DetalheClassificado.aspx</DependentUpon>
