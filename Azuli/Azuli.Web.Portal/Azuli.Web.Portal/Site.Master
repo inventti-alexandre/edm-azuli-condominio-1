@@ -27,13 +27,7 @@
             color:#4884CD;
         }
    
-        .style2
-        {
-            width: 32px;
-            height: 29px;
-        }
-   
-    </style>
+        </style>
 </head>
 <body>
 
@@ -51,9 +45,9 @@
             </div>
             <div class="clear hideSkiplink">
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
-                    EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" 
+                    EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" StaticDisplayLevels="1"  
                     DataSourceID="SiteMapDataSourceMenu" StaticPopOutImageUrl="~/images/home.png" DynamicPopOutImageUrl="~/images/home.png">
-                    
+                   
                 </asp:Menu>
             </div>
              <div class="loginDisplay" style="position: absolute; left: 38px;">
@@ -75,16 +69,13 @@
                     <asp:Label ID="lblApDesc"  runat="server" Font-Size="Small" Font-Bold="True"></asp:Label>
             </div>
 
-            <div class="siteMap" style="position:absolute; left: 625px;">
+            <div class="siteMap" style="position:absolute; left: 636px; margin-left: 40px;">
              <asp:SiteMapPath id="smpWeb" runat="server" CssClass="DataWebControlStyle" 
                     RenderCurrentNodeAsLink="True" Font-Size="X-Small">
                 </asp:SiteMapPath>
             </div>
         </div>
-        <div id="dvHome" 
-            
-            style="position:absolute; top: 79px; left: 187px; height: 31px; width: 32px;"> <p>
-                    <img alt="" class="style2" src="images/home3.jpg" /></p></div>
+       
         <div class="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
                
@@ -96,12 +87,16 @@
             <asp:XmlDataSource ID="XmlDataSource1" runat="server" datafile="Web.sitemap">
             </asp:XmlDataSource>
         </div>
-         &nbsp;<div class="footer">
-   <iframe src="http://www.facebook.com/plugins/like.php?href=www.facebook.com/Sgcondominio&;layout=standard&<br> show_faces=false&width=380&action=like&colorscheme=light&height=25&locale=pt_BR" scrolling="no" frameborder="0" style="border:none; overflow:hidden;width:250px; height:25px;" allowTransparency="true"></iframe><br />
-             <span class="style1">&nbsp;<asp:Label ID="lblCopyright" runat="server"></asp:Label> &nbsp;- <asp:Label ID="lblVersion" runat="server"></asp:Label></span>&nbsp;</div>
-
+         <center><div class="footer">
+       <div  class="fb-like" data-href="https://www.facebook.com/Sgcondominio"  data-send="true" data-width="450" data-show-faces="false" data-font="arial">
+           
+             </div>
+                  <br />
   
-             <div class="fb-like" data-href="https://www.facebook.com/Sgcondominio" data-send="true" data-width="450" data-show-faces="false" data-font="arial"></div>
+             <span class="style1">&nbsp;<asp:Label ID="lblCopyright" runat="server"></asp:Label> &nbsp;- <asp:Label ID="lblVersion" runat="server"></asp:Label></span>&nbsp;</div>
+             </center>
+  
+             
     </div>
  
     </form>
