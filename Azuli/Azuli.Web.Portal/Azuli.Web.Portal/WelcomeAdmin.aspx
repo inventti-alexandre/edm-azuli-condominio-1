@@ -142,7 +142,7 @@
             
         </fieldset></div>
     
-    <div id="dvLegend" runat="server" style="position: absolute; top: 435px; left: 245px;
+    <div id="dvLegend" runat="server" style="position: absolute; top: 434px; left: 201px;
         height: 77px; width: 238px;">
         <table id="Table1" runat="server" align="center" style="width: 227px" class="btGeral">
             <tr>

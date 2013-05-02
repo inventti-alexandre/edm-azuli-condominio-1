@@ -55,7 +55,8 @@ namespace Azuli.Web.Portal.Util
                   catch (Exception e)
                   {
 
-                      throw e;
+                      
+throw e;
                   }
                 
              }

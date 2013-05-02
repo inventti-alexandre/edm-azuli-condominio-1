@@ -27,7 +27,7 @@
     <asp:GridView ID="grdOcorrencias" runat="server" 
                 CssClass="GridView" Width="809px" AutoGenerateColumns="False" 
          onrowcommand="grdOcorrencias_RowCommand" DataKeyNames="codigoOcorrencia" 
-         EmptyDataText="Não existem ocorrência aberta neste mês !!"> 
+         EmptyDataText="Não existem Reclamações aberta neste mês !!"> 
         <Columns>
             <asp:BoundField  DataField="codigoOcorrencia" HeaderText="Ocorrência" />
             <asp:TemplateField HeaderText="Data">
