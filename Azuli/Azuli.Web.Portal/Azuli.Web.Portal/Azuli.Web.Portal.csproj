@@ -67,6 +67,7 @@
     <Content Include="consultaBalancete.aspx" />
     <Content Include="consultaCircular.aspx" />
     <Content Include="contato.aspx" />
+    <Content Include="DetalheClassificado.aspx" />
     <Content Include="detalheMensagemMorador.aspx" />
     <Content Include="detalheOcorrencia.aspx" />
     <Content Include="enviaMensagemMorador.aspx" />
@@ -200,6 +201,12 @@
     </Compile>
     <Compile Include="contato.aspx.designer.cs">
       <DependentUpon>contato.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetalheClassificado.aspx.cs">
+      <DependentUpon>DetalheClassificado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetalheClassificado.aspx.designer.cs">
+      <DependentUpon>DetalheClassificado.aspx</DependentUpon>
     </Compile>
     <Compile Include="detalheMensagemMorador.aspx.cs">
       <DependentUpon>detalheMensagemMorador.aspx</DependentUpon>
