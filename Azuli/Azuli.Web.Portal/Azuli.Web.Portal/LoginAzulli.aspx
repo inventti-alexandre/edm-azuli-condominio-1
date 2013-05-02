@@ -6,6 +6,16 @@
     <title></title>
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
     <script src="Scripts/ScriptAzuli.js" type="text/javascript"></script>
+
+     <script>
+         (function (d, s, id) {
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) return;
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1";
+             fjs.parentNode.insertBefore(js, fjs);
+         } (document, 'script', 'facebook-jssdk'));
+</script>
     <style type="text/css">
         .style1
         {
@@ -27,6 +37,7 @@
     </style>
 </head>
 <body>
+<div id="fb-root"></div>
     <form id="Form1" runat="server">
     <div class="pageLogin">
         <div class="header">
@@ -111,11 +122,13 @@
                     <asp:Label ID="lblEsqueciSenha" runat="server" ForeColor="Red"></asp:Label>
                     <br />
                     <br />
-                    <div id='dvCurtir' runat="server" 
-                        style="position:absolute; top: 422px; left: 881px;">
+                   
+                  <center>  
+                      <div style="position:absolute; top: 563px; left: 594px; width: 138px;"  
+                 class="fb-like" data-href="https://www.facebook.com/Sgcondominio" 
+                 data-send="true" data-width="450" data-show-faces="false" data-font="arial"></div>  </center>
                     
-                    <iframe src="http://www.facebook.com/plugins/like.php?href=www.facebook.com/Sgcondominio&;layout=standard&<br> show_faces=false&width=380&action=like&colorscheme=light&height=25&locale=pt_BR" scrolling="no" frameborder="0" style="border:none; overflow:hidden;width:250px; height:25px;" allowTransparency="true"></iframe>
-                    </div>
+                   
                     </div>
                 <div id="dvDadosMorador" style="position:absolute; top: 170px; left: 395px;" 
                      runat="server">

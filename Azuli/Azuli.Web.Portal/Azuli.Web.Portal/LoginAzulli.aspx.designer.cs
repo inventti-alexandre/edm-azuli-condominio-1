@@ -195,15 +195,6 @@ namespace Azuli.Web.Portal.Account
         protected global::System.Web.UI.WebControls.Label lblEsqueciSenha;
 
         /// <summary>
-        /// dvCurtir control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvCurtir;
-
-        /// <summary>
         /// dvDadosMorador control.
         /// </summary>
         /// <remarks>
