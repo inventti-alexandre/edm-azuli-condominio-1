@@ -5,15 +5,20 @@ using System.Text;
 
 namespace Azuli.Web.Model
 {
+
+
     public class Classificados
     {
+        GrupoClassificados oGrp = new GrupoClassificados();
+        ApartamentoModel oAp = new ApartamentoModel();
+
         public int idClassificado { get; set; }
         public GrupoClassificados grpClassificado;
-        public DateTime dataClassificado { get; set; }
+        public Nullable<DateTime> dataClassificado { get; set; }
         public ApartamentoModel apartamentoClassificado;
         public string descricaoClassificado { get; set; }
         public string statusClassificado { get; set; }
-        public DateTime validadeClassificado{ get; set; }
+        public Nullable<DateTime> validadeClassificado { get; set; }
         public string classificadoimg1 { get; set; }
         public string classificadoimg2 { get; set; }
         public string classificadoimg3 { get; set; }
@@ -22,7 +27,21 @@ namespace Azuli.Web.Model
         public string classificadoTelefone1 { get; set; }
         public string classificadoTelefone2 { get; set; }
         public DateTime classificadoDataVenda { get; set; }
-        public double valorVendaClassificado { get; set;}
+        public double valorVendaClassificado { get; set; }
+
+        public Classificados()
+        {
+            idClassificado = 0;
+            oGrp.grupoClassificado = 0;
+            oAp.apartamento = 0;
+            oAp.bloco = 0;
+            dataClassificado = DateTime.Parse("01-01-1753");
+            grpClassificado = oGrp;
+            apartamentoClassificado = oAp;
+            descricaoClassificado = "";
+            statusClassificado = "";
+
+        }
 
 
 
