@@ -8,7 +8,7 @@ using System.Data;
 
 namespace Azuli.Web.DAO
 {
-    public class ClassificadoDAO:AcessoDAO, Interfaces.IClassificado
+    public class ClassificadoDAO : AcessoDAO, Interfaces.IClassificado
     {
         public void cadastraClassificado(Model.Classificados oClassificado)
         {
@@ -16,10 +16,12 @@ namespace Azuli.Web.DAO
 
             try
             {
+
+
                 SqlCommand comandoSql = new SqlCommand(clausulaSQL);
                 comandoSql.Parameters.AddWithValue("@Classificado_Grupo", oClassificado.grpClassificado.grupoClassificado);
                 comandoSql.Parameters.AddWithValue("@Classificado_Data", oClassificado.dataClassificado);
-               // comandoSql.Parameters.AddWithValue("@Classificado_Grupo", oClassificado.grpClassificado.grupoClassificado);
+                // comandoSql.Parameters.AddWithValue("@Classificado_Grupo", oClassificado.grpClassificado.grupoClassificado);
                 comandoSql.Parameters.AddWithValue("@Classificado_Bloco", oClassificado.apartamentoClassificado.bloco);
                 comandoSql.Parameters.AddWithValue("@Classificado_AP", oClassificado.apartamentoClassificado.apartamento);
                 comandoSql.Parameters.AddWithValue("@Classificado_Descricao", oClassificado.descricaoClassificado);
@@ -40,7 +42,7 @@ namespace Azuli.Web.DAO
             }
             catch (Exception e)
             {
-                
+
                 throw e;
             }
         }
@@ -48,37 +50,36 @@ namespace Azuli.Web.DAO
         public Model.listClassificados consultaClassificado(Model.Classificados oClassificado)
         {
 
-            string clausulaSql = "SP_CLASSIFICADO";
+            string clausulaSql = "SP_LISTA_CLASSIFICADO";
             try
             {
                 SqlCommand comandoSql = new SqlCommand(clausulaSql);
+                comandoSql.Parameters.AddWithValue("@Classificado_id", oClassificado.idClassificado);
                 comandoSql.Parameters.AddWithValue("@Classificado_Grupo", oClassificado.grpClassificado.grupoClassificado);
                 comandoSql.Parameters.AddWithValue("@Classificado_Data", oClassificado.dataClassificado);
-              //  comandoSql.Parameters.AddWithValue("@Classificado_Grupo", oClassificado.grpClassificado.grupoClassificado);
                 comandoSql.Parameters.AddWithValue("@Classificado_Bloco", oClassificado.apartamentoClassificado.bloco);
                 comandoSql.Parameters.AddWithValue("@Classificado_AP", oClassificado.apartamentoClassificado.apartamento);
                 comandoSql.Parameters.AddWithValue("@Classificado_Descricao", oClassificado.descricaoClassificado);
                 comandoSql.Parameters.AddWithValue("@Classificado_Status", oClassificado.statusClassificado);
-                comandoSql.Parameters.AddWithValue("@Classificado_Validade", oClassificado.validadeClassificado);
-                comandoSql.Parameters.AddWithValue("@Classificado_Img1", oClassificado.classificadoimg1);
-                comandoSql.Parameters.AddWithValue("@Classificado_Img2", oClassificado.classificadoimg2);
-                comandoSql.Parameters.AddWithValue("@Classificado_Img3", oClassificado.classificadoimg3);
-                comandoSql.Parameters.AddWithValue("@Classificado_Img4", oClassificado.classificadoimg4);
-                comandoSql.Parameters.AddWithValue("@Classificado_email_contato", oClassificado.emailClassificadoContato);
-                comandoSql.Parameters.AddWithValue("@Classificado_Tel1", oClassificado.classificadoTelefone1);
-                comandoSql.Parameters.AddWithValue("@Classificado_Tel2", oClassificado.classificadoTelefone2);
-                comandoSql.Parameters.AddWithValue("@Classificado_Data_Venda", oClassificado.classificadoDataVenda);
-                comandoSql.Parameters.AddWithValue("@Classificado_Valor", oClassificado.valorVendaClassificado);
+                //comandoSql.Parameters.AddWithValue("@Classificado_Img1", oClassificado.classificadoimg1);
+                //comandoSql.Parameters.AddWithValue("@Classificado_Img2", oClassificado.classificadoimg2);
+                //comandoSql.Parameters.AddWithValue("@Classificado_Img3", oClassificado.classificadoimg3);
+                //comandoSql.Parameters.AddWithValue("@Classificado_Img4", oClassificado.classificadoimg4);
+                //comandoSql.Parameters.AddWithValue("@Classificado_email_contato", oClassificado.emailClassificadoContato);
+                //comandoSql.Parameters.AddWithValue("@Classificado_Tel1", oClassificado.classificadoTelefone1);
+                //comandoSql.Parameters.AddWithValue("@Classificado_Tel2", oClassificado.classificadoTelefone2);
+                //comandoSql.Parameters.AddWithValue("@Classificado_Data_Venda", oClassificado.classificadoDataVenda);
+                //comandoSql.Parameters.AddWithValue("@Classificado_Valor", oClassificado.valorVendaClassificado);
 
                 DataTable tbClassificado = new DataTable();
 
-               tbClassificado = ExecutaQuery(comandoSql);
+                tbClassificado = ExecutaQuery(comandoSql);
 
-               return populaClassificados(tbClassificado);
+                return populaClassificados(tbClassificado);
             }
             catch (Exception)
             {
-                
+
                 throw;
             }
         }
@@ -118,6 +119,7 @@ namespace Azuli.Web.DAO
                 oClassificado.classificadoTelefone2 = itemOcorrencia["Classificado_Tel2"].ToString();
                 oClassificado.classificadoDataVenda = Convert.ToDateTime(itemOcorrencia["Classificado_Validade"]);
                 oClassificado.valorVendaClassificado = Convert.ToDouble(itemOcorrencia["Classificado_Valor"]);
+                oClassificado.dataClassificado = Convert.ToDateTime(itemOcorrencia["Classificado_Data"]);
 
                 olistClassificado.Add(oClassificado);
 
@@ -127,6 +129,6 @@ namespace Azuli.Web.DAO
             return olistClassificado;
         }
 
-        
+
     }
 }
