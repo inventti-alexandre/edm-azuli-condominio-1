@@ -108,6 +108,7 @@ h5, h6
     font-size: 1em;
 }
 
+
 /* this rule styles <h1> and <h2> tags that are the 
 first child of the left and right table columns */
 .rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
@@ -215,7 +216,7 @@ first child of the left and right table columns */
     padding: 0px 12px;
     margin: 12px 8px 8px 8px;
     min-height: 420px;
-    font-size: medium;
+    font-size: smal;
 }
 
 .leftCol
