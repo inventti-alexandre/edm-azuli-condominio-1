@@ -269,6 +269,30 @@ namespace Azuli.Web.DAO
         }
 
 
+        public listAgenda listaEventos_ByCalendar(DateTime date)
+        {
+            string clausulaSQL = "LISTA_EVENTOS_CALENDAR";
+
+            try
+            {
+                SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
+
+                comandoSQL.Parameters.AddWithValue("@DATA_AGENDA", date);
+
+                DataTable tbAgenda = new DataTable();
+
+                tbAgenda = ExecutaQuery(comandoSQL);
+
+                return carregaAgenda(tbAgenda);
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
 
         
 
@@ -298,6 +322,13 @@ namespace Azuli.Web.DAO
 
                 if (dr.Table.Columns.Contains("PROPRIETARIO_BLOCO")) 
                 oAgendaModel.ap.bloco = Convert.ToInt32(dr["PROPRIETARIO_BLOCO"]);
+
+                if (dr.Table.Columns.Contains("ap"))
+                    oAgendaModel.ap.apartamento = Convert.ToInt32(dr["ap"]);
+
+                if (dr.Table.Columns.Contains("bloco"))
+                    oAgendaModel.ap.bloco = Convert.ToInt32(dr["bloco"]);
+
 
 
                 if (dr.Table.Columns.Contains("COUNT_FESTA"))
@@ -348,6 +379,9 @@ namespace Azuli.Web.DAO
         }
 
       
+       
+
+
        
 
         #endregion

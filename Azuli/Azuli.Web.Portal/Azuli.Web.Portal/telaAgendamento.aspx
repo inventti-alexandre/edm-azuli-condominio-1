@@ -19,11 +19,30 @@
         {
             height: 364px;
         }
+        .style17
+        {
+            font-size: small;
+        }
         </style>
+
+        <script type="text/javascript">
+            function ShowInfo(id) {
+                var div = document.getElementById(id);
+                div.style.display = "block";
+            }
+            function HideInfo(id) {
+                var div = document.getElementById(id);
+                div.style.display = "none";
+            }
+     </script>
+
+      
+}
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
+    
 
     <div id="dvProprietario" runat="server">
     <br /><br /><br />
@@ -116,7 +135,7 @@
 
     <!-- Opção para churrasqueira / Salão de Festa -->
     <div id="dvOpcao" runat="server">
-        <fieldset class="login">
+        <fieldset class="loginDisplayLegend">
             <legend class="accordionContent">Escolha a área a reservar: </legend>
             <table style="width: 643px; height: 152px;">
                 <tr>
@@ -186,13 +205,15 @@
                      
                      <ContentTemplate>
 
+                        
+
                           <asp:Timer ID="UpdateTimer"  Interval="15000"  ontick="UpdateTimer_Tick1" 
                               runat="server" />
                               
                         <asp:Calendar ID="Calendar1" runat="server" BackColor="White" OnSelectionChanged="Calendar1_SelectionChanged"
                             BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana"
-                            Font-Size="9pt" ForeColor="Black" Height="216px" NextPrevFormat="ShortMonth"
-                            Width="410px" OnDayRender="Calendar1_DayRender">
+                            Font-Size="9pt" ForeColor="Black" Height="253px" NextPrevFormat="ShortMonth"
+                            Width="518px" OnDayRender="Calendar1_DayRender">
                             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" Height="8pt" />
                             <DayStyle BackColor="#CCCCCC" />
                             <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="White" />
@@ -229,7 +250,8 @@
             </table></center> 
         </fieldset>
     </div>
- <!-- Fim calendario -->
 
-    
+
+ <!-- Fim calendario -->
+  
 </asp:Content>

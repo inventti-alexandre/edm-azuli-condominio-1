@@ -10,6 +10,7 @@ namespace Azuli.Web.Business.Interfaces
     {
          listAgenda listaEventos();
          listAgenda listaEventosByData(DateTime date);
+         listAgenda listaEventos_ByCalendar(DateTime date);
          void cadastrarAgenda(DateTime data, ApartamentoModel oAp, AgendaModel oAgenda);
          listAgenda listaReservaByMorador(ApartamentoModel oAp, AgendaModel oAgenda);
          listAgenda listaReservaByMoradorFesta(ApartamentoModel oAp, AgendaModel oAgenda);

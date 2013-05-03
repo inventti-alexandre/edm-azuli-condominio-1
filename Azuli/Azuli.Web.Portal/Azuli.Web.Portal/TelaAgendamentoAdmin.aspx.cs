@@ -82,6 +82,7 @@ namespace Azuli.Web.Portal
                     if (item.salaoChurrasco == true & item.salaoFesta == false)
                     {
                         e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#FFFF01");
+                        e.Cell.Attributes.Add("onmouseover", "javascript:alert('Today')");
                     }
                     else if (item.salaoChurrasco == false & item.salaoFesta == true)
                     {

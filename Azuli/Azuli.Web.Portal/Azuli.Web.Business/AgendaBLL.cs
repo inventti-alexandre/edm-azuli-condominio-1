@@ -37,6 +37,24 @@ namespace Azuli.Web.Business
         }
 
 
+        public listAgenda listaEventos_ByCalendar(DateTime date)
+        {
+            listAgenda oListaAgenda = new listAgenda();
+
+            try
+            {
+                oListaAgenda = oAgendaDao.listaEventos_ByCalendar(date);
+
+                return oListaAgenda;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
 
 
         public listAgenda listaEventosByData(DateTime date)
@@ -245,5 +263,10 @@ namespace Azuli.Web.Business
 
       
         #endregion
+
+       
+
+
+      
     }
 }
