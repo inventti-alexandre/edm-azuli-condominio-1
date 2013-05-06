@@ -104,6 +104,7 @@
     <Content Include="images\sgcv3.jpg" />
     <Content Include="images\sgcv4.jpg" />
     <Content Include="images\sgcv5.jpg" />
+    <Content Include="images\tela-manutencao1.jpg" />
     <Content Include="images\word.gif" />
     <Content Include="MostraPdfCircular.aspx" />
     <Content Include="publicarCircular.aspx" />
@@ -159,6 +160,7 @@
     <Content Include="ServerFile\Classificados\semimg.jpg" />
     <Content Include="ServerFile\Classificados\sport.jpg" />
     <Content Include="ServerFile\Classificados\veiculo.jpg" />
+    <Content Include="sgcNotificacao.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -385,6 +387,13 @@
     </Compile>
     <Compile Include="resetSenha.aspx.designer.cs">
       <DependentUpon>resetSenha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sgcNotificacao.aspx.cs">
+      <DependentUpon>sgcNotificacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sgcNotificacao.aspx.designer.cs">
+      <DependentUpon>sgcNotificacao.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
