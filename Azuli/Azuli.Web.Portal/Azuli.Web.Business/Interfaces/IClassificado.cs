@@ -10,5 +10,6 @@ namespace Azuli.Web.Business.Interfaces
     {
         void cadastraClassificado(Classificados oClassificado);
         listClassificados consultaClassificado(Classificados oClassificado);
+        listClassificados contaGrupoClassificado(Classificados oClassificado);
     }
 }

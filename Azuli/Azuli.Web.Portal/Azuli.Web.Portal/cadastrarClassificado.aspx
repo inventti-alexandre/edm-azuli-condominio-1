@@ -94,7 +94,7 @@
                      <asp:Label ID="Label2" runat="server" Text="Imagem 1" CssClass="style4"></asp:Label>
                  </td>
                  <td>
-                     <asp:FileUpload ID="FileUpload1" runat="server" />
+                     <asp:FileUpload ID="FileUpload1" runat="server" Width="240px" />
                  </td>
              </tr>
              <tr>
@@ -102,7 +102,7 @@
                      <asp:Label ID="Label3" runat="server" Text="Imagem 2" CssClass="style4"></asp:Label>
                  </td>
                  <td>
-                     <asp:FileUpload ID="FileUpload2" runat="server" />
+                     <asp:FileUpload ID="FileUpload2" runat="server" Width="240px" />
                  </td>
              </tr>
              <tr>
@@ -110,7 +110,7 @@
                      <asp:Label ID="Label4" runat="server" Text="Imagem 3" CssClass="style4"></asp:Label>
                  </td>
                  <td>
-                     <asp:FileUpload ID="FileUpload3" runat="server" />
+                     <asp:FileUpload ID="FileUpload3" runat="server" Width="240px" />
                  </td>
              </tr>
              <tr>
@@ -118,7 +118,7 @@
                      <asp:Label ID="Label5" runat="server" Text="Imagem 4" CssClass="style4"></asp:Label>
                  </td>
                  <td>
-                     <asp:FileUpload ID="FileUpload4" runat="server" />
+                     <asp:FileUpload ID="FileUpload4" runat="server" Width="240px" />
                  </td>
              </tr>
              <tr>
@@ -197,7 +197,7 @@
     runat="server">  <center><asp:Label ID="lblAnuncio" runat="server" CssClass="main" ForeColor="#009900"></asp:Label></center></div>
 
    <div id="dvInfo" 
-        style="position:absolute; top: 424px; left: 714px; width: 345px;" 
+        style="position:absolute; top: 433px; left: 651px; width: 345px;" 
         class="">
    <fieldset class="InstructionPhotoDisplay"> 
   <legend class="instruct">Instrução para Foto</legend>

@@ -26,7 +26,7 @@ namespace Azuli.Web.DAO
                 comandoSql.Parameters.AddWithValue("@Classificado_AP", oClassificado.apartamentoClassificado.apartamento);
                 comandoSql.Parameters.AddWithValue("@Classificado_Descricao", oClassificado.descricaoClassificado);
                 comandoSql.Parameters.AddWithValue("@Classificado_Status", oClassificado.statusClassificado);
-                comandoSql.Parameters.AddWithValue("@Classificado_Validade", oClassificado.validadeClassificado);
+                // comandoSql.Parameters.AddWithValue("@Classificado_Validade", oClassificado.validadeClassificado);
                 comandoSql.Parameters.AddWithValue("@Classificado_Img1", oClassificado.classificadoimg1);
                 comandoSql.Parameters.AddWithValue("@Classificado_Img2", oClassificado.classificadoimg2);
                 comandoSql.Parameters.AddWithValue("@Classificado_Img3", oClassificado.classificadoimg3);
@@ -36,6 +36,9 @@ namespace Azuli.Web.DAO
                 comandoSql.Parameters.AddWithValue("@Classificado_Tel2", oClassificado.classificadoTelefone2);
                 comandoSql.Parameters.AddWithValue("@Classificado_Data_Venda", oClassificado.classificadoDataVenda);
                 comandoSql.Parameters.AddWithValue("@Classificado_Valor", oClassificado.valorVendaClassificado);
+                comandoSql.Parameters.AddWithValue("@Classificado_Contato", oClassificado.contato);
+                comandoSql.Parameters.AddWithValue("@Classificado_assunto", oClassificado.assuntoClassificado);
+
 
                 ExecutaComando(comandoSql);
 
@@ -44,6 +47,30 @@ namespace Azuli.Web.DAO
             {
 
                 throw e;
+            }
+        }
+
+
+        public listClassificados contaGrupoClassificado(Classificados oClassificado)
+        {
+            string clausulaSql = "SP_CLASSIFICADO_CONTA_GRUPO";
+            try
+            {
+                SqlCommand comandoSql = new SqlCommand(clausulaSql);
+
+                comandoSql.Parameters.AddWithValue("@Classificado_Grupo", oClassificado.grpClassificado.grupoClassificado);
+
+
+                DataTable tbClassificado = new DataTable();
+
+                tbClassificado = ExecutaQuery(comandoSql);
+
+                return populaClassificados(tbClassificado);
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 
@@ -98,28 +125,69 @@ namespace Azuli.Web.DAO
                 OcorrenciaModel oOcorrencia = new OcorrenciaModel();
 
 
-                oClassificado.idClassificado = Convert.ToInt32(itemOcorrencia["Classificado_id"]);
+                if (itemOcorrencia.Table.Columns.Contains("Classificado_id"))
+                    oClassificado.idClassificado = Convert.ToInt32(itemOcorrencia["Classificado_id"]);
 
-                oGrpClassificados.grupoClassificado = Convert.ToInt32(itemOcorrencia["Classificado_Grupo"]);
-                oApClassifica.apartamento = Convert.ToInt32(itemOcorrencia["Classificado_AP"]);
-                oApClassifica.bloco = Convert.ToInt32(itemOcorrencia["Classificado_Bloco"]);
+                if (itemOcorrencia.Table.Columns.Contains("Classificado_Grupo"))
+                    oGrpClassificados.grupoClassificado = Convert.ToInt32(itemOcorrencia["Classificado_Grupo"]);
+
+                if (itemOcorrencia.Table.Columns.Contains("Classificado_AP"))
+                    oApClassifica.apartamento = Convert.ToInt32(itemOcorrencia["Classificado_AP"]);
+
+                if (itemOcorrencia.Table.Columns.Contains("Classificado_Bloco"))
+                    oApClassifica.bloco = Convert.ToInt32(itemOcorrencia["Classificado_Bloco"]);
 
                 oClassificado.grpClassificado = oGrpClassificados;
                 oClassificado.apartamentoClassificado = oApClassifica;
 
-                oClassificado.descricaoClassificado = itemOcorrencia["Classificado_Descricao"].ToString();
-                oClassificado.statusClassificado = itemOcorrencia["Classificado_Status"].ToString();
-                oClassificado.validadeClassificado = Convert.ToDateTime(itemOcorrencia["Classificado_Validade"]);
-                oClassificado.classificadoimg1 = itemOcorrencia["Classificado_Img1"].ToString();
-                oClassificado.classificadoimg2 = itemOcorrencia["Classificado_Img2"].ToString();
-                oClassificado.classificadoimg3 = itemOcorrencia["Classificado_Img3"].ToString();
-                oClassificado.classificadoimg4 = itemOcorrencia["Classificado_Img4"].ToString();
-                oClassificado.emailClassificadoContato = itemOcorrencia["Classificado_email_contato"].ToString();
-                oClassificado.classificadoTelefone1 = itemOcorrencia["Classificado_Tel1"].ToString();
-                oClassificado.classificadoTelefone2 = itemOcorrencia["Classificado_Tel2"].ToString();
-                oClassificado.classificadoDataVenda = Convert.ToDateTime(itemOcorrencia["Classificado_Validade"]);
-                oClassificado.valorVendaClassificado = Convert.ToDouble(itemOcorrencia["Classificado_Valor"]);
-                oClassificado.dataClassificado = Convert.ToDateTime(itemOcorrencia["Classificado_Data"]);
+                if (itemOcorrencia.Table.Columns.Contains("Classificado_Descricao"))
+                    oClassificado.descricaoClassificado = itemOcorrencia["Classificado_Descricao"].ToString();
+
+                if (itemOcorrencia.Table.Columns.Contains("Classificado_Status"))
+                    oClassificado.statusClassificado = itemOcorrencia["Classificado_Status"].ToString();
+
+                if (itemOcorrencia.Table.Columns.Contains("Classificado_Validade"))
+                    oClassificado.validadeClassificado = Convert.ToDateTime(itemOcorrencia["Classificado_Validade"]);
+
+                if (itemOcorrencia.Table.Columns.Contains("Classificado_Img1"))
+                    oClassificado.classificadoimg1 = itemOcorrencia["Classificado_Img1"].ToString();
+
+
+                if (itemOcorrencia.Table.Columns.Contains("Classificado_Img2"))
+                    oClassificado.classificadoimg2 = itemOcorrencia["Classificado_Img2"].ToString();
+
+                if (itemOcorrencia.Table.Columns.Contains("Classificado_Img3"))
+                    oClassificado.classificadoimg3 = itemOcorrencia["Classificado_Img3"].ToString();
+
+                if (itemOcorrencia.Table.Columns.Contains("Classificado_Img4"))
+                    oClassificado.classificadoimg4 = itemOcorrencia["Classificado_Img4"].ToString();
+
+                if (itemOcorrencia.Table.Columns.Contains("Classificado_email_contato"))
+                    oClassificado.emailClassificadoContato = itemOcorrencia["Classificado_email_contato"].ToString();
+
+                if (itemOcorrencia.Table.Columns.Contains("Classificado_Tel1"))
+                    oClassificado.classificadoTelefone1 = itemOcorrencia["Classificado_Tel1"].ToString();
+
+                if (itemOcorrencia.Table.Columns.Contains("Classificado_Tel2"))
+                    oClassificado.classificadoTelefone2 = itemOcorrencia["Classificado_Tel2"].ToString();
+
+                if (itemOcorrencia.Table.Columns.Contains("Classificado_Validade"))
+                    oClassificado.classificadoDataVenda = Convert.ToDateTime(itemOcorrencia["Classificado_Validade"]);
+
+                if (itemOcorrencia.Table.Columns.Contains("Classificado_Valor"))
+                    oClassificado.valorVendaClassificado = Convert.ToDouble(itemOcorrencia["Classificado_Valor"]);
+
+                if (itemOcorrencia.Table.Columns.Contains("Classificado_Data"))
+                    oClassificado.dataClassificado = Convert.ToDateTime(itemOcorrencia["Classificado_Data"]);
+
+                if (itemOcorrencia.Table.Columns.Contains("CONTA_GRUPO"))
+                    oClassificado.contaGrupo = Convert.ToInt32(itemOcorrencia["CONTA_GRUPO"]);
+
+                if (itemOcorrencia.Table.Columns.Contains("Classificado_Contato"))
+                    oClassificado.contato = itemOcorrencia["Classificado_Contato"].ToString();
+
+                if (itemOcorrencia.Table.Columns.Contains("Classificado_assunto"))
+                    oClassificado.assuntoClassificado = itemOcorrencia["Classificado_assunto"].ToString();
 
                 olistClassificado.Add(oClassificado);
 
@@ -128,6 +196,21 @@ namespace Azuli.Web.DAO
 
             return olistClassificado;
         }
+
+
+
+        void Interfaces.IClassificado.cadastraClassificado(Classificados oClassificado)
+        {
+            throw new NotImplementedException();
+        }
+
+        listClassificados Interfaces.IClassificado.consultaClassificado(Classificados oClassificado)
+        {
+            throw new NotImplementedException();
+        }
+
+
+
 
 
     }

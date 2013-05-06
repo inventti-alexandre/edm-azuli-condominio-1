@@ -1,115 +1,182 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DetalheClassificado.aspx.cs" Inherits="Azuli.Web.Portal.DetalheClassificado" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+    CodeBehind="DetalheClassificado.aspx.cs" Inherits="Azuli.Web.Portal.DetalheClassificado" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
         .style2
         {
             width: 100%;
         }
+        .style3
+        {
+            height: 21px;
+        }
+        .style4
+        {
+            font-size: medium;
+        }
+        .style5
+        {
+            font-weight: bold;
+        }
     </style>
-</asp:Content>
+    <script src="Scripts/jquery-1.4.1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+//<![CDATA[
+        $(document).ready(function () {
+            $('<div id="mascara"></div>')
+		.css({
+		    opacity: 0.8,
+		    width: $(document).width(),
+		    height: $(document).height()
+		})
+		.appendTo('body').hide();
+            $('.foto').click(function (event) {
+                event.preventDefault();
+                $('#mascara').fadeIn(1000);
+                $('<img class="foto-ampliada" />')
+			.attr('src', $(this).attr('src'))
+			.css({
+			    left: ($(document).width() / 2 - 250),
+			    top: ($(document).height() / 2 - 186)
+			}).appendTo('body').click(function () {
+			    $(this).fadeOut(1000);
+			    $('#mascara').fadeOut(1500);
+			});
+            });
+        });
+   // ]]>
+    </script>
+    </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <br /><br />
+    
 
-<div  id="dvAnunciar"  runat="server" align="center" >
-       
-   <fieldset class="loginDisplayLegend">
-         <legend class="accordionContent" align="left"> Cadastrar Anúncio - Bloco:
-                    <asp:Label ID="lblDescBloco" runat="server" Text=""></asp:Label>
-                    - Apartamento:
-                    <asp:Label ID="lblDescApartamento" runat="server" Text=""></asp:Label></legend>
-            
-            
-            
-            <br />
-         <table class="style2">
-             <tr>
-                 <td>
-                     <asp:Label ID="Label1" runat="server" Text="Descrição: "></asp:Label>
-                 </td>
-                 <td>
-                     <asp:TextBox ID="txtDescricao" runat="server" Height="63px" 
-                         TextMode="MultiLine" Width="703px"></asp:TextBox>
-                 </td>
-             </tr>
-             <tr>
-                 <td>
-                     <asp:Label ID="Label2" runat="server" Text="Imagem 1"></asp:Label>
-                 </td>
-                 <td>
-                     <asp:FileUpload ID="FileUpload1" runat="server" />
-                 </td>
-             </tr>
-             <tr>
-                 <td>
-                     <asp:Label ID="Label3" runat="server" Text="Imagem 2"></asp:Label>
-                 </td>
-                 <td>
-                     <asp:FileUpload ID="FileUpload2" runat="server" />
-                 </td>
-             </tr>
-             <tr>
-                 <td>
-                     <asp:Label ID="Label4" runat="server" Text="Imagem 3"></asp:Label>
-                 </td>
-                 <td>
-                     <asp:FileUpload ID="FileUpload3" runat="server" />
-                 </td>
-             </tr>
-             <tr>
-                 <td>
-                     <asp:Label ID="Label5" runat="server" Text="Imagem 4"></asp:Label>
-                 </td>
-                 <td>
-                     <asp:FileUpload ID="FileUpload4" runat="server" />
-                 </td>
-             </tr>
-             <tr>
-                 <td>
-                     <asp:Label ID="Label6" runat="server" Text="E-mail contato"></asp:Label>
-                 </td>
-                 <td>
-                     <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
-                 </td>
-             </tr>
-             <tr>
-                 <td>
-                     <asp:Label ID="Label7" runat="server" Text="Tefone:"></asp:Label>
-                 </td>
-                 <td>
-                     <asp:TextBox ID="txtTel" runat="server"></asp:TextBox>
-                 </td>
-             </tr>
-             <tr>
-                 <td>
-                     <asp:Label ID="Label8" runat="server" Text="Celular"></asp:Label>
-                 </td>
-                 <td>
-                     <asp:TextBox ID="txtCel" runat="server"></asp:TextBox>
-                 </td>
-             </tr>
-             <tr>
-                 <td>
-                     <asp:Label ID="Label9" runat="server" Text="Valor"></asp:Label>
-                 </td>
-                 <td>
-                     <asp:TextBox ID="txtValor" runat="server"></asp:TextBox>
-                 </td>
-             </tr>
-             <tr>
-                 <td>
-                     &nbsp;</td>
-                 <td>
-                     &nbsp;</td>
-             </tr>
-         </table>
-            
-            
-            
-            <br />
-         
+    <div id="dvAnunciar" runat="server" align="center">
+
+        <fieldset class="loginDisplayLegend">
+            <legend class="controleCalendario">Detalhe do Classificado&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Image ID="imgGrupo" runat="server" Height="25px" Width="25px" />
+            </legend>
+            <table class="accordionContent" style="width: 798px">
+                <tr>
+                    <td>
+                        <asp:Label ID="lblAssunto" runat="server" 
+                            style="font-weight: 700; font-size: small; color: #0000FF;"></asp:Label>
+                    </td>
+                    <td align="left" class="btGeral">
+                        &nbsp;<strong><span class="style4">R$</span></strong>
+                        <asp:Label ID="lblValor" runat="server" 
+                            style="font-weight: 700; font-size: medium;"></asp:Label>
+                    </td>
+                </tr>
+                
+            </table>
       
-   </fieldset>   </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+      
+    
+    <div id="dvImagens" 
+        style="position:absolute; top: 279px; left: 241px; width: 548px;" 
+        runat="server">
+    
+    
+    
+    
+        <table class="style2">
+            <tr>
+                <td>
+                    <asp:ImageButton ID="ImageButton4" CssClass="foto left" runat="server" Height="70px" Width="70px" />
+                </td>
+                <td>
+                    <asp:ImageButton ID="ImageButton3" CssClass="foto left" runat="server" Height="70px" Width="70px" />
+                </td>
+                <td>
+                    <asp:ImageButton ID="ImageButton2" CssClass="foto left" runat="server" Height="70px" Width="70px" />
+                </td>
+                <td>
+                    <asp:ImageButton ID="ImageButton1" CssClass="foto left" runat="server" Height="70px" Width="70px" />
+                </td>
+            </tr>
+        </table>
+    
+    
+    
+    
+    </div>
 
-
-
+    <div id="dvDescricacao" 
+        
+                style="position:absolute; top: 391px; left: 236px; width: 569px;" > 
+               
+    
+    
+        <table class="ContextMenuPanel">
+            <tr>
+                <td colspan="2">
+                    <asp:Label ID="lblDescricao" runat="server" style="font-weight: 700"></asp:Label>
+                    <br />
+                    <br />
+                    <br />
+                    <hr />
+                </td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    Apartamento:
+                   <asp:Label ID="lblApartamento" runat="server" CssClass="style5"></asp:Label></td>
+                <td>
+                    Bloco:
+                    <asp:Label ID="lblBloco" runat="server" CssClass="style5"></asp:Label></td>
+            </tr>
+            <tr>
+                <td class="style3">
+                    Telefone:
+                    <asp:Label ID="lblTel" runat="server" CssClass="style5"></asp:Label></td>
+                <td class="style3">
+                    Celular:
+                    <asp:Label ID="lblCel" runat="server" CssClass="style5"></asp:Label></td>
+            </tr>
+            <tr>
+                <td>
+                    E-mail: <asp:Label ID="lblEmail" runat="server" CssClass="style5"></asp:Label></td>
+                <td>
+                    Data:
+                    <asp:Label ID="lblData" runat="server" CssClass="style5"></asp:Label></td>
+            </tr>
+        </table>
+    
+    
+    </div>
+           
+            <br />
+            <br />
+            <br />
+           
+  <center>  <asp:Button ID="Button1" runat="server" Text="Voltar" 
+        CssClass="btGeral" onclick="Button1_Click" Width="86px" /> </center>
+      </fieldset>
+    </div>
+    <div id="dvVeiculo" style="position: absolute; top: 159px; left: 431px; color: #0033CC;
+        height: 23px; width: 205px; font-weight: 700;">
+        <asp:Label ID="lblGrupo" runat="server"></asp:Label>
+    </div>
 </asp:Content>

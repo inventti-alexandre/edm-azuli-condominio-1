@@ -253,7 +253,7 @@ first child of the left and right table columns */
 div.hideSkiplink
 {
     background-color:#0092D2;
-    width:984px;
+    width:1005px;
     height: 0;
     position:relative;
     top: -24px;
@@ -520,7 +520,8 @@ input.botao, .btGeral {
 	border: 1px solid #4B6C9E;
 	cursor: pointer;
     margin-top: 9px;
-    }
+    width: 291px;
+}
 
 .MasterMenu
 {
@@ -673,8 +674,10 @@ input, textarea {
 	padding: 0px 2px 0px 2px;
 	margin-left: 3px;
     margin-right: 0px;
-    margin-top: 0px;
+    margin-top: 9px;
 }
+
+
 
 
 
@@ -892,8 +895,20 @@ input.btLogin {
 }
 
 .form {
-	margin: 10px 0px 0px 10px;
-	border: 0px;
+	border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    margin: 10px 0px 0px 10px;
+    width: 837px;
+}
+
+gn: left;
+	color: #333333;
+}
+
+.form td.btForm {
+	text-align: right;
+	padding: 5px 5px 10px 0px;
 }
 
 .form td {
@@ -966,12 +981,13 @@ input.btLogin {
 	background-color: #f0f0f0;
 	color: #666666;
 	font-family: Verdana;
-	font-size: 5pt;
+	font-size: 10pt;
 	font-weight: normal;
 	text-align: left;
 	padding: 0px 2px 0px 2px;
 	margin: 0px 5px 0px 3px;
 	border-radius: 1em;
+    width: 563px;
 }
 
 .ContextMenuBreak
@@ -1131,7 +1147,7 @@ a.ContextMenuItem
     background-color: #BFCBD6;
     border-left: 1px dotted #999999;
     border-right: 1px dotted #999999;
-    border-bottom: 1px dotted #999999;
+    border-botom: 1px dotted #999999;
     padding: 5px 5px 5px 5px;
     font-family: Verdana;
     font-size: 8pt;
@@ -1146,7 +1162,7 @@ a.ContextMenuItem
     background-color: #BFCBD6;
     border-left: 1px dotted #999999;
     border-right: 1px dotted #999999;
-    border-bottom: 1px dotted #999999;
+    border-bottom: 1px dottted #999999;
     padding: 2px 2px 2px 2px;
     font-family: Verdana;
     font-size: 8pt;

@@ -8,7 +8,8 @@ namespace Azuli.Web.DAO.Interfaces
 {
     public interface IClassificado
     {
-       void cadastraClassificado(Classificados oClassificado);
-       listClassificados consultaClassificado(Classificados oClassificado);
+        void cadastraClassificado(Classificados oClassificado);
+        listClassificados consultaClassificado(Classificados oClassificado);
+        listClassificados contaGrupoClassificado(Classificados oClassificado);
     }
 }

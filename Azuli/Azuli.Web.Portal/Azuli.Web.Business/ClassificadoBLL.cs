@@ -7,7 +7,7 @@ using Azuli.Web.DAO;
 
 namespace Azuli.Web.Business
 {
-    public class ClassificadoBLL:Interfaces.IClassificado
+    public class ClassificadoBLL : Interfaces.IClassificado
     {
         ClassificadoDAO oClassDao = new ClassificadoDAO();
 
@@ -19,14 +19,14 @@ namespace Azuli.Web.Business
             }
             catch (Exception)
             {
-                
+
                 throw;
             }
         }
 
         public listClassificados consultaClassificado(Model.Classificados oClassificado)
         {
-         
+
             listClassificados oListClassificado = new listClassificados();
 
             try
@@ -35,9 +35,27 @@ namespace Azuli.Web.Business
             }
             catch (Exception)
             {
-                
+
                 throw;
             }
+        }
+
+
+        public listClassificados contaGrupoClassificado(Classificados oClassificado)
+        {
+
+            listClassificados oListClassificado = new listClassificados();
+
+            try
+            {
+                return oClassDao.contaGrupoClassificado(oClassificado);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
     }
 }

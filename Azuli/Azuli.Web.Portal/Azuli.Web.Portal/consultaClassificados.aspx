@@ -1,31 +1,29 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
-    CodeBehind="anunciarClassificado.aspx.cs" Inherits="Azuli.Web.Portal.anunciarClassificado" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="consultaClassificados.aspx.cs" Inherits="Azuli.Web.Portal.consultaClassificados" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
         .style4
         {
-            height: 8px;
+            height: 3px;
         }
         .style5
         {
             font-size: x-small;
             font-weight: bold;
         }
+      .style6
+      {
+          font-size: x-small;
+      }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
     <br />
-    
-   
     
     
         <div id="dvGrupo" runat="server" align="left" dir="ltr">
           <center>  <fieldset class="loginDisplayLegend">
-                <legend title="Abrir Ocorrência" class="seuAnuncios"> O que deseja anunciar? - Bloco:
-                    <asp:Label ID="lblDescBloco" runat="server" Text="Label"></asp:Label>
-                    - Apartamento:
-                    <asp:Label ID="lblDescApartamento" runat="server" Text="Label"></asp:Label></legend>
+                <legend title="Abrir Ocorrência" class="seuAnuncios"> O que você está procurando?</legend>
                 <br />
 
            
@@ -34,10 +32,11 @@
                         <td align="center">
                             <br />
                             <asp:ImageButton ID="imgImoveis" runat="server" Height="30px" ImageUrl="~/ServerFile/Classificados/imoveis.jpg"
-                                Width="30px" CssClass="Border" onclick="imgImoveis_Click" />
+                                Width="30px" CssClass="Border" onclick="imgImoveis_Click1" />
                             &nbsp;
                             <br />
-                            <asp:Label ID="lblImoveis" runat="server" CssClass="style5"></asp:Label>
+                            <asp:Label ID="lblImoveis" runat="server" CssClass="style5" ></asp:Label>
+                                
                         </td>
                         <td align="center">
                             <br />
@@ -46,7 +45,7 @@
                             &nbsp;
                             <br />
                             <asp:Label ID="lblVeiculos" runat="server" CssClass="style5"></asp:Label>
-                        </td>
+                            <strong><span class="style6">&nbsp;</span></strong></td>
                         <td align="center">
                             <br />
                             <asp:ImageButton ID="imgNegocios" runat="server" Height="30px" ImageUrl="~/ServerFile/Classificados/neogico2.jpg"
@@ -62,21 +61,21 @@
                                 Width="30px" CssClass="Border" onclick="imgEletronicoCelulares_Click" />
                             &nbsp;<br />
                             <asp:Label ID="lbleletronico" runat="server" CssClass="style5"></asp:Label>
-                        </td>
+                        &nbsp;</td>
                         <td align="center">
                             <br />
                             <asp:ImageButton ID="imgCasa" runat="server" Height="30px" ImageUrl="~/ServerFile/Classificados/parasuacasa.jpg"
                                 Width="30px" CssClass="Border" onclick="imgCasa_Click" />
                             &nbsp;<br />
                             <asp:Label ID="lblParaSuaCasa" runat="server" CssClass="style5"></asp:Label>
-                        </td>
+                        &nbsp;</td>
                         <td align="center">
                             <br />
                             <asp:ImageButton ID="imgModaBeleza" runat="server" Height="30px" ImageUrl="~/ServerFile/Classificados/modabeleza2.jpg"
                                 Width="30px" CssClass="Border" onclick="imgModaBeleza_Click" />
                             &nbsp;<br />
                             <asp:Label ID="lblModa" runat="server" CssClass="style5"></asp:Label>
-                        </td>
+                        &nbsp;</td>
                     </tr>
                     
                     <tr>
@@ -93,14 +92,14 @@
                                 Width="30px" CssClass="Border" onclick="imgAnimaisAcessorios_Click" />
                             &nbsp;<br />
                             <asp:Label ID="lblAnimal" runat="server" CssClass="style5"></asp:Label>
-                        </td>
+                        &nbsp;</td>
                         <td align="center">
                             <br />
                             <asp:ImageButton ID="imgBebeCrianca" runat="server" Height="30px" ImageUrl="~/ServerFile/Classificados/bebeCrianca.jpg"
                                 Width="30px" CssClass="Border" onclick="imgBebeCrianca_Click" />
                             &nbsp;<br />
                             <asp:Label ID="lblCrianca" runat="server" CssClass="style5"></asp:Label>
-                        </td>
+                            <span class="style6">&nbsp;</span></td>
                     </tr>
                     <tr>
                         <td class="style4" align="center">
@@ -118,7 +117,7 @@
                                 Width="30px" CssClass="Border" onclick="imgSport_Click" />
                             &nbsp;<br />
                             <asp:Label ID="lblSport" runat="server" CssClass="style5"></asp:Label>
-                            <br />
+                            &nbsp;<br />
                             <br />
                             <br />
                         </td>
@@ -127,10 +126,8 @@
                                 Width="30px" CssClass="Border" onclick="imgDiversos_Click" />
                             &nbsp;<br />
                             <asp:Label ID="lblDiversos" runat="server" CssClass="style5"></asp:Label>
-                           <br />
                             <br />
-                            <br />
-                        </td>
+                        &nbsp;</td>
                         
                     </tr>
                   
@@ -140,11 +137,16 @@
 <center><div  id="dvAnunciar"  runat="server" align="center" dir="ltr">
        
    <center>  <fieldset class="loginDisplayLegend">
-         <legend class="seuAnuncios" align="left"><strong>Seus Classifcados Ativos</strong></legend>
-            <br />
+   <div id="dvVeiculo" 
+           style="position:absolute; top: 151px; left: 299px; color: #0033CC; font-weight: 700;"><asp:Label ID="lblGrupo" runat="server"></asp:Label></div>
+             
+         <legend class="seuAnunciosTst"> <asp:Image ID="imgGrupo" runat="server" 
+                    Height="25px" Width="25px" />  
+               </legend><br />
         <center>  
-            <asp:GridView ID="grdClassificado" runat="server" AutoGenerateColumns="False" 
-                CssClass="GridView" Width="756px">
+           
+            <asp:GridView ID="grdClassificado" runat="server" AutoGenerateColumns="False"  EmptyDataText="Não existem Anúncios para esta consulta"
+                CssClass="GridView">
                 <Columns>
                     <asp:TemplateField HeaderText="Código" Visible="False">
                         <EditItemTemplate>
@@ -157,7 +159,7 @@
                     </asp:TemplateField>
                     <asp:ImageField DataImageUrlField="classificadoimg1" HeaderText="Foto" 
                         DataImageUrlFormatString="~/ServerFile/Classificados/{0}">
-                        <ControlStyle Width="40px" />
+                        <ControlStyle Width="60px" />
                     </asp:ImageField>
                     <asp:TemplateField HeaderText="Descrição">
                         <EditItemTemplate>
@@ -168,7 +170,7 @@
                             <asp:Label ID="Label3" runat="server" 
                                 Text='<%# Bind("assuntoClassificado") %>'></asp:Label>
                         </ItemTemplate>
-                        <ItemStyle Font-Bold="True" Font-Size="X-Small" />
+                        <ItemStyle Font-Bold="True" ForeColor="Black" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Valor R$">
                         <EditItemTemplate>
@@ -177,7 +179,7 @@
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label4" runat="server" 
-                                Text='<%# Bind("valorVendaClassificado","{0:N2}") %>'></asp:Label>
+                                Text='<%# Bind("valorVendaClassificado","{0:N2}")%>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Data do anúncio">
@@ -193,10 +195,15 @@
                         DataNavigateUrlFormatString="~/detalheClassificado.aspx?codigo={0}" 
                         Text="Ver ...">
                     <HeaderStyle Font-Bold="False" />
-                    <ItemStyle ForeColor="#0033CC" />
+                    <ItemStyle ForeColor="Blue" Font-Bold="True" />
                     </asp:HyperLinkField>
                 </Columns>
             </asp:GridView> </center> 
        
-   </fieldset></center>   </div></center>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       
+    <asp:Button ID="Button1" runat="server" Text="Voltar" 
+        CssClass="btGeral" onclick="Button1_Click" Width="86px" /> </fieldset></center>  </div></center>
 </asp:Content>

@@ -16,7 +16,7 @@
 
     </siteMapNode>
 
-    <siteMapNode url="" title="Reclamações" description="Ocorrência">
+    <siteMapNode url="" title="Reclamações" description="Reclamação">
 
       <siteMapNode url="~/OcorrenciaMorador.aspx" title="Fazer Reclamações" description="Reclamações" />
       <siteMapNode url="~/detalheOcorrencia.aspx" title="Minhas Reclamações" description="Reclamações" />
@@ -28,7 +28,7 @@
 
     </siteMapNode>
     <siteMapNode  url=""  title="Classificados"  description="Classificados"  roles="">
-      <siteMapNode url="~/anunciarClassificado.aspx" title="Fazer Anúncios" description="Classificados" />
+      <siteMapNode url="~/anunciarClassificado.aspx" title="Anunciar" description="Classificados" />
       <siteMapNode url="~/consultaClassificados.aspx" title="Consultar Classificados" description="Classificados" />
       <siteMapNode url="gerenciaClassificado.aspx" title="Gerenciar Classificados" description="Classificados" />
 

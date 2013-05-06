@@ -66,6 +66,7 @@
     <Content Include="consultaAgendamentoAdmin.aspx" />
     <Content Include="consultaBalancete.aspx" />
     <Content Include="consultaCircular.aspx" />
+    <Content Include="consultaClassificados.aspx" />
     <Content Include="contato.aspx" />
     <Content Include="DetalheClassificado.aspx" />
     <Content Include="detalheMensagemMorador.aspx" />
@@ -228,6 +229,13 @@
     </Compile>
     <Compile Include="consultaCircular.aspx.designer.cs">
       <DependentUpon>consultaCircular.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="consultaClassificados.aspx.cs">
+      <DependentUpon>consultaClassificados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="consultaClassificados.aspx.designer.cs">
+      <DependentUpon>consultaClassificados.aspx</DependentUpon>
     </Compile>
     <Compile Include="contato.aspx.cs">
       <DependentUpon>contato.aspx</DependentUpon>
