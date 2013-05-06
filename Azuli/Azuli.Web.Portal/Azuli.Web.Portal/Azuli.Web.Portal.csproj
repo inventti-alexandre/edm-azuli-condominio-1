@@ -104,6 +104,7 @@
     <Content Include="images\sgcv4.jpg" />
     <Content Include="images\sgcv5.jpg" />
     <Content Include="images\word.gif" />
+    <Content Include="MostraPdfCircular.aspx" />
     <Content Include="publicarCircular.aspx" />
     <Content Include="consultaAgendasAdmin.aspx" />
     <Content Include="ErrorPage.aspx" />
@@ -276,6 +277,13 @@
     </Compile>
     <Compile Include="gerenciamentoMoradorAdm.aspx.designer.cs">
       <DependentUpon>gerenciamentoMoradorAdm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MostraPdfCircular.aspx.cs">
+      <DependentUpon>MostraPdfCircular.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MostraPdfCircular.aspx.designer.cs">
+      <DependentUpon>MostraPdfCircular.aspx</DependentUpon>
     </Compile>
     <Compile Include="publicarCircular.aspx.cs">
       <DependentUpon>publicarCircular.aspx</DependentUpon>

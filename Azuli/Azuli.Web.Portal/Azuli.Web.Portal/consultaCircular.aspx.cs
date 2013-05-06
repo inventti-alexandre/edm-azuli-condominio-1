@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Globalization;
 using Azuli.Web.Business;
 using System.IO;
+using System.Net;
 
 namespace Azuli.Web.Portal
 {
@@ -270,7 +271,12 @@ namespace Azuli.Web.Portal
 
             try
             {
-                listarArquivos(caminhoDownload);
+
+                string strScript = "window.open('MostraPdfCircular.aspx?static_document_id=" + caminhoDownload + "', 'Circular', 'width=900px,height=700px,left=100,top=50,status=1,toolbar=0,location=0,menubar=0,resizable=1,scrollbars=1');";
+
+                Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "Exemplo", strScript, true);
+                
+               
             }
             catch (FileNotFoundException ex)
             {
@@ -281,8 +287,10 @@ namespace Azuli.Web.Portal
 
         }
 
+  
 
-        private void listarArquivos(string caminhoArquivo)
+
+        public void listarArquivos(string caminhoArquivo)
         {
 
             try
@@ -292,17 +300,27 @@ namespace Azuli.Web.Portal
                 string folder = System.Configuration.ConfigurationManager.AppSettings["ArquivosCondominioDownload"];
 
                 FileInfo arquivo = new FileInfo(Server.MapPath(folder) + ("\\" + caminhoArquivo));
+                WebClient client = new WebClient();
+                Byte[] buffer = client.DownloadData(Server.MapPath(folder) + ("\\" + caminhoArquivo));
 
-                Response.Clear();
+                if (buffer != null)
+                {
 
-                
-                Response.AddHeader("Content-Disposition", ("attachment; filename=\"" +arquivo.Name));
-                Response.Charset = "utf8";
-                Response.Cache.SetCacheability(HttpCacheability.NoCache);
-                Response.ContentType = "application/octet-stream";
-                Response.AddHeader("Content-Length", arquivo.Length.ToString());
-                Response.WriteFile(arquivo.FullName);
-                Response.Flush();
+                    HttpContext.Current.Response.AddHeader("Content-Disposition", "inline;filename=file.pdf");
+
+                    HttpContext.Current.Response.ContentType = "application/pdf";
+
+                    HttpContext.Current.Response.BinaryWrite(buffer);
+
+                }
+
+                //Response.AddHeader("Content-Disposition", ("inline; filename=\"" + arquivo.Name));
+                //Response.Charset = "utf8";
+                //Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                //Response.ContentType = "application/octet-stream";
+                //Response.AddHeader("Content-Length", arquivo.Length.ToString());
+                //Response.WriteFile(arquivo.FullName);
+                //Response.Flush();
             }
             catch (FileNotFoundException)
             {
