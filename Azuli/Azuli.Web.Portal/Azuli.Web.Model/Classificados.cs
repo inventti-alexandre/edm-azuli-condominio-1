@@ -28,6 +28,9 @@ namespace Azuli.Web.Model
         public string classificadoTelefone2 { get; set; }
         public Nullable<DateTime> classificadoDataVenda { get; set; }
         public double valorVendaClassificado { get; set; }
+        public int contaGrupo { get; set; }
+        public string contato { get; set; }
+        public string assuntoClassificado { get; set; }
 
         public Classificados()
         {

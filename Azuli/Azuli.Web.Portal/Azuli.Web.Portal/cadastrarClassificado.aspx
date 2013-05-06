@@ -3,7 +3,7 @@
     <style type="text/css">
         .style3
         {
-            width: 144px;
+            width: 163px;
         }
     .style4
     {
@@ -11,25 +11,12 @@
     }
         .style5
         {
-            width: 144px;
+            width: 163px;
             height: 28px;
         }
         .style6
         {
             height: 28px;
-        }
-        .style7
-        {
-            background-color: #FFFFFF;
-            padding: 1px 1px 1px 1px;
-            border-style: double;
-            border-color: inherit;
-            border-width: 2px;
-            border-radius: 1em;
-            font-family: Verdana;
-            font-size: 11px;
-            color: #0000FF;
-            margin-top: 0px;
         }
         .style8
         {
@@ -39,7 +26,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<br /><br />
+    <br /><br />
 
 <div  id="dvAnunciar"  runat="server" align="center" >
        
@@ -64,9 +51,29 @@
                    
                  </td>
                  <td align="center">
-                     &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblProPri" 
-                         runat="server" CssClass="bold" Text=""></asp:Label>
-                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     <asp:TextBox ID="txtFalarCom" runat="server" 
+                         Width="202px"></asp:TextBox>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator ID="rfvFalaCom" runat="server" 
+                         CssClass="failureNotification" ErrorMessage="*" Font-Bold="True" 
+                         ForeColor="Red" ValidationGroup="validaClassificado" 
+                         ControlToValidate="txtFalarCom"></asp:RequiredFieldValidator>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     </td>
+             </tr>
+             <tr>
+                 <td class="style3">
+                   
+                     <asp:Label ID="Label11" runat="server" Text="Titúlo do Anúncio" 
+                         CssClass="style4"></asp:Label>
+                   
+                 </td>
+                 <td align="center">
+                     <asp:TextBox ID="txtTitulo" runat="server" 
+                         Width="257px"></asp:TextBox>
+                     &nbsp;<asp:RequiredFieldValidator ID="rfvTitulo" runat="server" 
+                         CssClass="failureNotification" ErrorMessage="*" Font-Bold="True" 
+                         ForeColor="Red" ValidationGroup="validaClassificado" 
+                         ControlToValidate="txtTitulo"></asp:RequiredFieldValidator>
                      </td>
              </tr>
              <tr>
@@ -78,7 +85,7 @@
                          TextMode="MultiLine" Width="472px"></asp:TextBox>
                      <asp:RequiredFieldValidator ID="rfvDescricao" runat="server" 
                          CssClass="failureNotification" ErrorMessage="*" Font-Bold="True" 
-                         ForeColor="Red" ValidationGroup="Campo Obrigatório" 
+                         ForeColor="Red" ValidationGroup="validaClassificado" 
                          ControlToValidate="txtDescricao"></asp:RequiredFieldValidator>
                  </td>
              </tr>
@@ -152,7 +159,8 @@
              </tr>
              <tr>
                  <td class="style3">
-                     <asp:Label ID="Label9" runat="server" Text="Valor" CssClass="style4"></asp:Label>
+                     <asp:Label ID="Label9" runat="server" Text="Preço (Sem Pontuação)" 
+                         CssClass="style4"></asp:Label>
                  </td>
                  <td>
                      <asp:TextBox ID="txtValor" runat="server" Width="61px"></asp:TextBox>
@@ -180,13 +188,16 @@
             <br />
          
       
-                     <center><asp:Label ID="lblAnuncio" runat="server" CssClass="main" ForeColor="#009900"></asp:Label></center>
+                   
          
       
    </fieldset>   </div>
 
+   <div id="dvGravou" style="position:absolute; top: 221px; left: 660px; font-weight: 700; font-size: small;" 
+    runat="server">  <center><asp:Label ID="lblAnuncio" runat="server" CssClass="main" ForeColor="#009900"></asp:Label></center></div>
+
    <div id="dvInfo" 
-        style="position:absolute; top: 355px; left: 668px; width: 345px;" 
+        style="position:absolute; top: 424px; left: 714px; width: 345px;" 
         class="">
    <fieldset class="InstructionPhotoDisplay"> 
   <legend class="instruct">Instrução para Foto</legend>

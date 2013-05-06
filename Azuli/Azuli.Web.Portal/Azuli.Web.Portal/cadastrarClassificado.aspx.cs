@@ -24,7 +24,7 @@ namespace Azuli.Web.Portal
         bool validaImagem3 = false;
         bool validaImagem4 = false;
         string folder = System.Configuration.ConfigurationManager.AppSettings["classificado"];
-        
+
         Dictionary<int, string> recebeValida = new Dictionary<int, string>();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -34,7 +34,7 @@ namespace Azuli.Web.Portal
                 {
                     lblDescBloco.Text = Session["Bloco"].ToString();
                     lblDescApartamento.Text = Session["AP"].ToString();
-                    lblProPri.Text = Session["Proprie1"].ToString();
+                    txtFalarCom.Text = Session["Proprie1"].ToString();
                     carregaGrupoClassificado(Convert.ToInt32(Request.QueryString["var"]));
                 }
 
@@ -69,9 +69,9 @@ namespace Azuli.Web.Portal
                 foreach (var item in query)
                 {
 
-                    imgGrupo.ImageUrl = caminho+item.imgGrupoClassificado;
+                    imgGrupo.ImageUrl = caminho + item.imgGrupoClassificado;
                     lblGrupo.Text = item.descricacaoGrupoClassificado;
-                   
+
                 }
 
             }
@@ -88,18 +88,18 @@ namespace Azuli.Web.Portal
         {
 
             Dictionary<int, string> valores = new Dictionary<int, string>();
-            double permitido = 100;
+            double permitido = 200;
 
             if (tamanhoArquivo > permitido)
             {
-                valores.Add(1,"Tamanho Máximo permitido é de " + permitido + " kb!");
-               
+                valores.Add(1, "Tamanho Máximo permitido é de " + permitido + " kb!");
+
 
             }
             else if (extensao.Trim() != ".jpg" && extensao.Trim() != ".png" && extensao.Trim() != ".bmp" && extensao.Trim() != ".gif" && extensao.Trim() != ".ico")
             {
-                valores.Add(2,"Extensão inválida, só são permitidas .jpg, .gif , .bmp, .png");
-               
+                valores.Add(2, "Extensão inválida, só são permitidas .jpg, .gif , .bmp, .png");
+
             }
             else
             {
@@ -107,12 +107,12 @@ namespace Azuli.Web.Portal
             }
 
             return valores;
-            
+
         }
 
-        
-        
-        
+
+
+
         public void publicarImagem1()
         {
 
@@ -130,7 +130,7 @@ namespace Azuli.Web.Portal
                     if (item.Key == 0)
                     {
                         diretorio = Server.MapPath(folder);
-                        oClassificadoModel.classificadoimg1 = tira_acentos(Session["Bloco"].ToString() + Session["Ap"].ToString() + arq + oUtil.GeraSenha());
+                        oClassificadoModel.classificadoimg1 = tira_acentos(Session["Bloco"].ToString() + Session["Ap"].ToString() + oUtil.GeraSenha() + arq);
 
                         if (!System.IO.File.Exists(diretorio))
                         {
@@ -173,7 +173,7 @@ namespace Azuli.Web.Portal
             {
                 string arq = FileUpload2.PostedFile.FileName;
                 tamanhoArquivo = Convert.ToDouble(FileUpload2.PostedFile.ContentLength) / 2048;
-              
+
                 extensao = arq.Substring(arq.Length - 4).ToLower();
 
                 recebeValida = verificaTamanho(tamanhoArquivo, extensao);
@@ -183,15 +183,15 @@ namespace Azuli.Web.Portal
                     if (item.Key == 0)
                     {
                         diretorio = Server.MapPath(folder);
-                        oClassificadoModel.classificadoimg2 = tira_acentos(Session["Bloco"].ToString() + Session["Ap"].ToString() + arq + oUtil.GeraSenha());
+                        oClassificadoModel.classificadoimg2 = tira_acentos(Session["Bloco"].ToString() + Session["Ap"].ToString() + oUtil.GeraSenha() + arq);
 
                         if (!System.IO.File.Exists(diretorio))
                         {
 
                             try
                             {
-                                validaImagem2 = false;
-                                FileUpload2.PostedFile.SaveAs(Server.MapPath(folder+"/"+oClassificadoModel.classificadoimg2));
+                                validaImagem2 = true;
+                                FileUpload2.PostedFile.SaveAs(Server.MapPath(folder + "/" + oClassificadoModel.classificadoimg2));
                             }
                             catch (Exception)
                             {
@@ -231,7 +231,7 @@ namespace Azuli.Web.Portal
             {
                 string arq = FileUpload3.PostedFile.FileName;
                 tamanhoArquivo = Convert.ToDouble(FileUpload3.PostedFile.ContentLength) / 2048;
-                
+
                 extensao = arq.Substring(arq.Length - 4).ToLower();
 
                 recebeValida = verificaTamanho(tamanhoArquivo, extensao);
@@ -241,7 +241,7 @@ namespace Azuli.Web.Portal
                     if (item.Key == 0)
                     {
                         diretorio = Server.MapPath(folder);
-                        oClassificadoModel.classificadoimg3 = tira_acentos(Session["Bloco"].ToString() + Session["Ap"].ToString() + arq + oUtil.GeraSenha());
+                        oClassificadoModel.classificadoimg3 = tira_acentos(Session["Bloco"].ToString() + Session["Ap"].ToString() + oUtil.GeraSenha() + arq);
 
                         if (!System.IO.File.Exists(diretorio))
                         {
@@ -249,7 +249,7 @@ namespace Azuli.Web.Portal
                             try
                             {
                                 validaImagem3 = true;
-                                FileUpload3.PostedFile.SaveAs(Server.MapPath(folder+"/"+oClassificadoModel.classificadoimg3));
+                                FileUpload3.PostedFile.SaveAs(Server.MapPath(folder + "/" + oClassificadoModel.classificadoimg3));
                             }
                             catch (Exception)
                             {
@@ -288,7 +288,7 @@ namespace Azuli.Web.Portal
             {
                 string arq = FileUpload4.PostedFile.FileName;
                 tamanhoArquivo = Convert.ToDouble(FileUpload4.PostedFile.ContentLength) / 2048;
-              
+
                 extensao = arq.Substring(arq.Length - 4).ToLower();
 
                 recebeValida = verificaTamanho(tamanhoArquivo, extensao);
@@ -298,7 +298,7 @@ namespace Azuli.Web.Portal
                     if (item.Key == 0)
                     {
                         diretorio = Server.MapPath(folder);
-                        oClassificadoModel.classificadoimg4 = tira_acentos(Session["Bloco"].ToString() + Session["Ap"].ToString()+arq+oUtil.GeraSenha());
+                        oClassificadoModel.classificadoimg4 = tira_acentos(Session["Bloco"].ToString() + Session["Ap"].ToString() + oUtil.GeraSenha() + arq);
 
                         if (!System.IO.File.Exists(diretorio))
                         {
@@ -306,7 +306,7 @@ namespace Azuli.Web.Portal
                             try
                             {
                                 validaImagem4 = true;
-                                FileUpload4.PostedFile.SaveAs(Server.MapPath(folder+"/"+ oClassificadoModel.classificadoimg4));
+                                FileUpload4.PostedFile.SaveAs(Server.MapPath(folder + "/" + oClassificadoModel.classificadoimg4));
                             }
                             catch (Exception)
                             {
@@ -327,7 +327,7 @@ namespace Azuli.Web.Portal
                     else
                     {
                         validaImagem4 = false;
-                        oClassificadoModel.classificadoimg4 = "semimg.jpg";       
+                        oClassificadoModel.classificadoimg4 = "semimg.jpg";
                     }
                 }
 
@@ -360,18 +360,22 @@ namespace Azuli.Web.Portal
                 oClassificadoModel.dataClassificado = DateTime.Now;
                 oClassificadoModel.valorVendaClassificado = Convert.ToDouble(txtValor.Text);
                 oClassificadoModel.classificadoDataVenda = DateTime.Now;
-                oClassificadoModel.validadeClassificado = DateTime.Now;
+                //oClassificadoModel.validadeClassificado = DateTime.Now;
+                oClassificadoModel.contato = txtFalarCom.Text;
+                oClassificadoModel.statusClassificado = "A";
+                oClassificadoModel.assuntoClassificado = txtTitulo.Text;
 
                 try
                 {
                     oClassificado.cadastraClassificado(oClassificadoModel);
+                    lblAnuncio.Text = "Anúncio feito com sucesso!!";
                     hiddenControl();
 
                 }
-                catch (Exception er)
+                catch (Exception err)
                 {
 
-                    er.Message.ToString();
+                    throw err;
 
                 }
             }
@@ -391,11 +395,11 @@ namespace Azuli.Web.Portal
             txtValor.Text = "";
             txtTel.Text = "";
         }
-            
 
 
 
-        
+
+
 
         public static string tira_acentos(string texto)
         {
