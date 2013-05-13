@@ -14,10 +14,11 @@
   
     <div class="page">
         <div class="header">
-            <div class="title">
-                <h1>
-                    Sistema de agendamento spazio azulli - salão - área de churrasco
-                </h1>
+            <div class="">
+             
+                     <img alt=""src="images/sgcv3.jpg" 
+                         style="height: 86px; width: 959px; margin-left: 0px;" />
+               
             </div>
 
               </div>

@@ -74,6 +74,7 @@
     <Content Include="enviaMensagemMorador.aspx" />
     <Content Include="esqueciSenha.aspx" />
     <Content Include="gerenciamentoMoradorAdm.aspx" />
+    <Content Include="GerenciarClassificadoMorador.aspx" />
     <Content Include="images\add.png" />
     <Content Include="images\clientes.jpg" />
     <Content Include="images\cliqueAqui.jpg" />
@@ -287,6 +288,13 @@
     </Compile>
     <Compile Include="gerenciamentoMoradorAdm.aspx.designer.cs">
       <DependentUpon>gerenciamentoMoradorAdm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GerenciarClassificadoMorador.aspx.cs">
+      <DependentUpon>GerenciarClassificadoMorador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GerenciarClassificadoMorador.aspx.designer.cs">
+      <DependentUpon>GerenciarClassificadoMorador.aspx</DependentUpon>
     </Compile>
     <Compile Include="MostraPdfCircular.aspx.cs">
       <DependentUpon>MostraPdfCircular.aspx</DependentUpon>

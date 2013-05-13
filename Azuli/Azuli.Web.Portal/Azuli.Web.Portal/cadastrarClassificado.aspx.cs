@@ -36,6 +36,7 @@ namespace Azuli.Web.Portal
                     lblDescApartamento.Text = Session["AP"].ToString();
                     txtFalarCom.Text = Session["Proprie1"].ToString();
                     carregaGrupoClassificado(Convert.ToInt32(Request.QueryString["var"]));
+                    txtValor.Attributes.Add("onKeyDown", "this, 10, this.event, 2");
                 }
 
             }
@@ -88,7 +89,7 @@ namespace Azuli.Web.Portal
         {
 
             Dictionary<int, string> valores = new Dictionary<int, string>();
-            double permitido = 200;
+            double permitido = 2000;
 
             if (tamanhoArquivo > permitido)
             {
@@ -375,13 +376,13 @@ namespace Azuli.Web.Portal
                 catch (Exception err)
                 {
 
-                    throw err;
+                    lblAnuncio.Text = "Ouve um erro a anunciar!" + err.ToString();
 
                 }
             }
             else
             {
-                lblAnuncio.Text = "Este nome de arquivo, já existe na base, por favor escolha outro arquivo ou troque o nome!";
+                lblAnuncio.Text = "O arquivo é maior do que o permitido!";
             }
 
 

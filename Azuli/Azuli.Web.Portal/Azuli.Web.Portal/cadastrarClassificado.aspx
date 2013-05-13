@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cadastrarClassificado.aspx.cs" Inherits="Azuli.Web.Portal.cadastrarClassificado" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
         .style3
@@ -23,9 +24,61 @@
             color: #FF0000;
         }
     </style>
+ 
+ <script type="text/javascript">
+     function Mascara(objeto) {
+         if (objeto.value.length == 0)
+             objeto.value = '(' + objeto.value;
+
+         if (objeto.value.length == 3)
+             objeto.value = objeto.value + ')';
+
+         if (objeto.value.length == 8)
+             objeto.value = objeto.value + '-';
+     }
+
+     function Formata(campo, tammax, teclapres, decimal) {
+         var tecla = teclapres.keyCode;
+         vr = Limpar(campo.value, "0123456789");
+         tam = vr.length;
+         dec = decimal
+
+         if (tam < tammax && tecla != 8) {
+             tam = vr.length + 1;
+         }
+         if (tecla == 8) {
+             tam = tam - 1;
+         }
+         if (tecla == 8 || tecla >= 48 && tecla <= 57 || tecla >= 96 && tecla <= 105) {
+             if (tam <= dec) {
+                 campo.value = vr;
+             }
+             if ((tam > dec) && (tam <= 5)) {
+                 campo.value = vr.substr(0, tam - 2) + "," + vr.substr(tam - dec, tam);
+             }
+             if ((tam >= 6) && (tam <= 8)) {
+                 campo.value = vr.substr(0, tam - 5) + "." + vr.substr(tam - 5, 3) + "," + vr.substr(tam - dec, tam);
+             }
+             if ((tam >= 9) && (tam <= 11)) {
+                 campo.value = vr.substr(0, tam - 8) + "." + vr.substr(tam - 8, 3) + "." + vr.substr(tam - 5, 3) + "," + vr.substr(tam - dec, tam);
+             }
+             if ((tam >= 12) && (tam <= 14)) {
+                 campo.value = vr.substr(0, tam - 11) + "." + vr.substr(tam - 11, 3) + "." + vr.substr(tam - 8, 3) + "." + vr.substr(tam - 5, 3) + "," + vr.substr(tam - dec, tam);
+             }
+             if ((tam >= 15) && (tam <= 17)) {
+                 campo.value = vr.substr(0, tam - 14) + "." + vr.substr(tam - 14, 3) + "." + vr.substr(tam - 11, 3) + "." + vr.substr(tam - 8, 3) + "." + vr.substr(tam - 5, 3) + "," + vr.substr(tam - 2, tam);
+             }
+         }
+     }
+
+
+</script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
+ 
+    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+    </asp:ToolkitScriptManager>
     <br /><br />
 
 <div  id="dvAnunciar"  runat="server" align="center" >
@@ -138,7 +191,7 @@
                      <asp:Label ID="Label7" runat="server" Text="Tefone:" CssClass="style4"></asp:Label>
                  </td>
                  <td>
-                     <asp:TextBox ID="txtTel" runat="server"></asp:TextBox>
+                     <asp:TextBox ID="txtTel" onkeyPress="Mascara(this);" runat="server"></asp:TextBox>
                  &nbsp;<asp:RequiredFieldValidator ID="rfvTelefone" runat="server" 
                          ControlToValidate="txtTel" CssClass="failureNotification" 
                          ErrorMessage="Campo Obrigatório" Font-Bold="True" ForeColor="Red" 
@@ -150,7 +203,7 @@
                      <asp:Label ID="Label8" runat="server" Text="Celular" CssClass="style4"></asp:Label>
                  </td>
                  <td>
-                     <asp:TextBox ID="txtCel" runat="server"></asp:TextBox>
+                     <asp:TextBox ID="txtCel" onkeyPress="Mascara(this);" runat="server"></asp:TextBox>
                  &nbsp;<asp:RequiredFieldValidator ID="rfvCelular" runat="server" 
                          ControlToValidate="txtCel" CssClass="failureNotification" 
                          ErrorMessage="Campo Obrigatório" Font-Bold="True" ForeColor="Red" 
@@ -164,6 +217,17 @@
                  </td>
                  <td>
                      <asp:TextBox ID="txtValor" runat="server" Width="61px"></asp:TextBox>
+                     <asp:MaskedEditExtender ID="txtValor_MaskedEditExtender" runat="server" 
+                         Mask="9,999,999.99" MessageValidatorTip="true"  OnFocusCssClass="MaskedEditFocus"
+                       OnInvalidCssClass="MaskedEditError"
+                         MaskType="Number"
+                         InputDirection="RightToLeft"
+                        AcceptNegative="Left"
+                        DisplayMoney="Left"
+                       ErrorTooltipEnabled="True"
+                       TargetControlID="txtValor" />
+
+                    
                  &nbsp;<asp:RequiredFieldValidator ID="rfvValor" runat="server" 
                          ControlToValidate="txtValor" CssClass="failureNotification" 
                          ErrorMessage="Campo Obrigatório" Font-Bold="True" ForeColor="Red" 

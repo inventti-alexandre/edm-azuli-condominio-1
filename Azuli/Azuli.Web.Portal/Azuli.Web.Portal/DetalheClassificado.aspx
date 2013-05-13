@@ -11,10 +11,6 @@
         {
             height: 21px;
         }
-        .style4
-        {
-            font-size: medium;
-        }
         .style5
         {
             font-weight: bold;
@@ -64,7 +60,7 @@
                             style="font-weight: 700; font-size: small; color: #0000FF;"></asp:Label>
                     </td>
                     <td align="left" class="btGeral">
-                        &nbsp;<strong><span class="style4">R$</span></strong>
+                        &nbsp;
                         <asp:Label ID="lblValor" runat="server" 
                             style="font-weight: 700; font-size: medium;"></asp:Label>
                     </td>

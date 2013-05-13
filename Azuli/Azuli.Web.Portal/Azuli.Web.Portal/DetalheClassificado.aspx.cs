@@ -52,7 +52,7 @@ namespace Azuli.Web.Portal
                 lblBloco.Text = item.apartamentoClassificado.bloco.ToString();
                 lblDescricao.Text = item.descricaoClassificado;
                 lblAssunto.Text = item.assuntoClassificado;
-                lblValor.Text = item.valorVendaClassificado.ToString();
+                lblValor.Text = string.Format("{0:C}",item.valorVendaClassificado);
                 ImageButton1.ImageUrl = folder + item.classificadoimg4;
                 ImageButton2.ImageUrl = folder + item.classificadoimg2;
                 ImageButton3.ImageUrl = folder + item.classificadoimg3;

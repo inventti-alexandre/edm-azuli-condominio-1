@@ -7,13 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Azuli.Web.Portal
-{
-
-
-    public partial class cadastrarClassificado
-    {
-
+namespace Azuli.Web.Portal {
+    
+    
+    public partial class cadastrarClassificado {
+        
+        /// <summary>
+        /// ToolkitScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ToolkitScriptManager ToolkitScriptManager1;
+        
         /// <summary>
         /// dvAnunciar control.
         /// </summary>
@@ -22,7 +29,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvAnunciar;
-
+        
         /// <summary>
         /// lblDescBloco control.
         /// </summary>
@@ -31,7 +38,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDescBloco;
-
+        
         /// <summary>
         /// lblDescApartamento control.
         /// </summary>
@@ -40,7 +47,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDescApartamento;
-
+        
         /// <summary>
         /// lblGrupo control.
         /// </summary>
@@ -49,7 +56,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblGrupo;
-
+        
         /// <summary>
         /// imgGrupo control.
         /// </summary>
@@ -58,7 +65,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgGrupo;
-
+        
         /// <summary>
         /// Label10 control.
         /// </summary>
@@ -67,7 +74,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label10;
-
+        
         /// <summary>
         /// txtFalarCom control.
         /// </summary>
@@ -76,7 +83,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFalarCom;
-
+        
         /// <summary>
         /// rfvFalaCom control.
         /// </summary>
@@ -85,7 +92,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFalaCom;
-
+        
         /// <summary>
         /// Label11 control.
         /// </summary>
@@ -94,7 +101,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label11;
-
+        
         /// <summary>
         /// txtTitulo control.
         /// </summary>
@@ -103,7 +110,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTitulo;
-
+        
         /// <summary>
         /// rfvTitulo control.
         /// </summary>
@@ -112,7 +119,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTitulo;
-
+        
         /// <summary>
         /// Label1 control.
         /// </summary>
@@ -121,7 +128,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-
+        
         /// <summary>
         /// txtDescricao control.
         /// </summary>
@@ -130,7 +137,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDescricao;
-
+        
         /// <summary>
         /// rfvDescricao control.
         /// </summary>
@@ -139,7 +146,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDescricao;
-
+        
         /// <summary>
         /// Label2 control.
         /// </summary>
@@ -148,7 +155,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
-
+        
         /// <summary>
         /// FileUpload1 control.
         /// </summary>
@@ -157,7 +164,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
-
+        
         /// <summary>
         /// Label3 control.
         /// </summary>
@@ -166,7 +173,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-
+        
         /// <summary>
         /// FileUpload2 control.
         /// </summary>
@@ -175,7 +182,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FileUpload2;
-
+        
         /// <summary>
         /// Label4 control.
         /// </summary>
@@ -184,7 +191,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label4;
-
+        
         /// <summary>
         /// FileUpload3 control.
         /// </summary>
@@ -193,7 +200,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FileUpload3;
-
+        
         /// <summary>
         /// Label5 control.
         /// </summary>
@@ -202,7 +209,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label5;
-
+        
         /// <summary>
         /// FileUpload4 control.
         /// </summary>
@@ -211,7 +218,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FileUpload4;
-
+        
         /// <summary>
         /// Label6 control.
         /// </summary>
@@ -220,7 +227,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label6;
-
+        
         /// <summary>
         /// txtEmail control.
         /// </summary>
@@ -229,7 +236,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
-
+        
         /// <summary>
         /// rfvEmail control.
         /// </summary>
@@ -238,7 +245,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail;
-
+        
         /// <summary>
         /// Label7 control.
         /// </summary>
@@ -247,7 +254,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label7;
-
+        
         /// <summary>
         /// txtTel control.
         /// </summary>
@@ -256,7 +263,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTel;
-
+        
         /// <summary>
         /// rfvTelefone control.
         /// </summary>
@@ -265,7 +272,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTelefone;
-
+        
         /// <summary>
         /// Label8 control.
         /// </summary>
@@ -274,7 +281,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label8;
-
+        
         /// <summary>
         /// txtCel control.
         /// </summary>
@@ -283,7 +290,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCel;
-
+        
         /// <summary>
         /// rfvCelular control.
         /// </summary>
@@ -292,7 +299,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCelular;
-
+        
         /// <summary>
         /// Label9 control.
         /// </summary>
@@ -301,7 +308,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label9;
-
+        
         /// <summary>
         /// txtValor control.
         /// </summary>
@@ -310,7 +317,16 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtValor;
-
+        
+        /// <summary>
+        /// txtValor_MaskedEditExtender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender txtValor_MaskedEditExtender;
+        
         /// <summary>
         /// rfvValor control.
         /// </summary>
@@ -319,7 +335,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvValor;
-
+        
         /// <summary>
         /// btnAnunciar control.
         /// </summary>
@@ -328,7 +344,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAnunciar;
-
+        
         /// <summary>
         /// btnCancelar control.
         /// </summary>
@@ -337,7 +353,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancelar;
-
+        
         /// <summary>
         /// dvGravou control.
         /// </summary>
@@ -346,7 +362,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvGravou;
-
+        
         /// <summary>
         /// lblAnuncio control.
         /// </summary>

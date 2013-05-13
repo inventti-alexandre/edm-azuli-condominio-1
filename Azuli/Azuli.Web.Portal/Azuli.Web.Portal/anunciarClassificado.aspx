@@ -190,7 +190,7 @@
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:HyperLinkField DataNavigateUrlFields="idClassificado" 
-                        DataNavigateUrlFormatString="~/detalheClassificado.aspx?codigo={0}" 
+                        DataNavigateUrlFormatString="~/GerenciarClassificadoMorador.aspx?codigo={0}" 
                         Text="Ver ...">
                     <HeaderStyle Font-Bold="False" />
                     <ItemStyle ForeColor="#0033CC" />
