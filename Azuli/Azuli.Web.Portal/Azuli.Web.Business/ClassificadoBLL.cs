@@ -57,5 +57,23 @@ namespace Azuli.Web.Business
             }
 
         }
+
+      
+
+
+        public void atualizaClassificado(Classificados oClassificado)
+        {
+            try
+            {
+                oClassDao.atualizaClassificado(oClassificado);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+       
     }
 }

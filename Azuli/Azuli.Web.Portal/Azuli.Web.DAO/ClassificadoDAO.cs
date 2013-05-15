@@ -10,6 +10,10 @@ namespace Azuli.Web.DAO
 {
     public class ClassificadoDAO : AcessoDAO, Interfaces.IClassificado
     {
+
+
+
+
         public void cadastraClassificado(Model.Classificados oClassificado)
         {
             string clausulaSQL = "SP_CLASSIFICADO";
@@ -49,6 +53,38 @@ namespace Azuli.Web.DAO
                 throw e;
             }
         }
+
+
+        public void atualizaClassificado(Classificados oClassificado)
+        {
+            string clausulaSQL = "SP_ATUALIZA_CLASSIFICADO";
+
+            try
+            {
+                SqlCommand comandoSql = new SqlCommand(clausulaSQL);
+                comandoSql.Parameters.AddWithValue("@Classificado_id", oClassificado.idClassificado);
+                comandoSql.Parameters.AddWithValue("@Classificado_Descricao", oClassificado.descricaoClassificado);
+                comandoSql.Parameters.AddWithValue("@Classificado_Status", oClassificado.statusClassificado);
+                comandoSql.Parameters.AddWithValue("@Classificado_email_contato", oClassificado.emailClassificadoContato);
+                comandoSql.Parameters.AddWithValue("@Classificado_Tel1", oClassificado.classificadoTelefone1);
+                comandoSql.Parameters.AddWithValue("@Classificado_Tel2", oClassificado.classificadoTelefone2);
+                comandoSql.Parameters.AddWithValue("@Classificado_Valor", oClassificado.valorVendaClassificado);
+                comandoSql.Parameters.AddWithValue("@Classificado_assunto", oClassificado.assuntoClassificado);
+
+
+                ExecutaComando(comandoSql);
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
+
+
+
 
 
         public listClassificados contaGrupoClassificado(Classificados oClassificado)
@@ -213,5 +249,8 @@ namespace Azuli.Web.DAO
 
 
 
+
+      
+       
     }
 }
