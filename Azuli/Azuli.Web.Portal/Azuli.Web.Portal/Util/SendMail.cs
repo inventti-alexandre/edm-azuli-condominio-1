@@ -37,11 +37,12 @@ namespace Azuli.Web.Portal.Util
              MailAddress remetente = new MailAddress(emailRemetente, "Administrador Azuli");
 
              MailAddress destinatario = null;
-
+            
              if (status != 0)
              {
-                  destinatario = new MailAddress(logError, "Sistema Azuli - Error Sistema");
+                  destinatario = new MailAddress(emailMorador, "Sistema Azuli - Error Sistema");
                   MailMessage msgErr = new MailMessage(remetente, destinatario);
+                  msgErr.Bcc.Add(logError);
                   msgErr.Bcc.Add("leandrolvilela@gmail.com");
                   msgErr.IsBodyHtml = true;
                   msgErr.Body = mensagem;

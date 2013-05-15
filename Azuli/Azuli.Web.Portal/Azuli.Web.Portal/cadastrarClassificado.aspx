@@ -217,15 +217,7 @@
                  </td>
                  <td>
                      <asp:TextBox ID="txtValor" runat="server" Width="61px"></asp:TextBox>
-                     <asp:MaskedEditExtender ID="txtValor_MaskedEditExtender" runat="server" 
-                         Mask="9,999,999.99" MessageValidatorTip="true"  OnFocusCssClass="MaskedEditFocus"
-                       OnInvalidCssClass="MaskedEditError"
-                         MaskType="Number"
-                         InputDirection="RightToLeft"
-                        AcceptNegative="Left"
-                        DisplayMoney="Left"
-                       ErrorTooltipEnabled="True"
-                       TargetControlID="txtValor" />
+                     
 
                     
                  &nbsp;<asp:RequiredFieldValidator ID="rfvValor" runat="server" 

@@ -7,35 +7,60 @@
     <br />
 <br />
 <br />
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
-        AutoGenerateColumns="False" DataKeyNames="Classificado_id" 
-        DataSourceID="SqlDataSourceEditClassificado">
-        <Columns>
-            <asp:BoundField DataField="Classificado_assunto" HeaderText="Assunto" 
-                SortExpression="Classificado_assunto" />
-            <asp:BoundField DataField="Classificado_Descricao" HeaderText="Descrição" 
-                SortExpression="Classificado_Descricao" />
-            <asp:BoundField DataField="Classificado_id" HeaderText="Classificado_id" 
-                InsertVisible="False" ReadOnly="True" SortExpression="Classificado_id" 
-                Visible="False" />
-            <asp:BoundField DataField="Classificado_Bloco" HeaderText="Bloco" 
-                SortExpression="Classificado_Bloco" />
-            <asp:BoundField DataField="Classificado_AP" HeaderText="Apartamento" 
-                SortExpression="Classificado_AP" />
-            <asp:BoundField DataField="Classificado_Status" HeaderText="Status" 
-                SortExpression="Classificado_Status" />
-            <asp:BoundField DataField="Classificado_email_contato" HeaderText="Email" 
-                SortExpression="Classificado_email_contato" />
-            <asp:BoundField DataField="Classificado_Tel1" HeaderText="Telefone" 
-                SortExpression="Classificado_Tel1" />
-            <asp:DynamicField DataField="Classificado_Tel2" HeaderText="Celular" />
-            <asp:BoundField DataField="Classificado_Valor" HeaderText="Preço" 
-                SortExpression="Classificado_Valor" />
-            <asp:BoundField DataField="Classificado_Contato" HeaderText="Contato" 
-                SortExpression="Classificado_Contato" />
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-        </Columns>
-    </asp:GridView>
+            <asp:GridView ID="grdClassificado" runat="server" AutoGenerateColumns="False" 
+                CssClass="GridView" Width="756px">
+                <Columns>
+                    <asp:TemplateField HeaderText="Código" Visible="False">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox1" runat="server" 
+                                Text='<%# Bind("idClassificado") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("idClassificado") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:ImageField DataImageUrlField="classificadoimg1" HeaderText="Foto" 
+                        DataImageUrlFormatString="~/ServerFile/Classificados/{0}">
+                        <ControlStyle Width="40px" />
+                    </asp:ImageField>
+                    <asp:TemplateField HeaderText="Descrição">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox3" runat="server" 
+                                Text='<%# Bind("assuntoClassificado") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label3" runat="server" 
+                                Text='<%# Bind("assuntoClassificado") %>'></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle Font-Bold="True" Font-Size="X-Small" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Valor R$">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox4" runat="server" 
+                                Text='<%# Bind("valorVendaClassificado") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label4" runat="server" 
+                                Text='<%# Bind("valorVendaClassificado","{0:N2}") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Data do anúncio">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox5" runat="server" 
+                                Text='<%# Eval("dataClassificado", "{0:dddd}") + " / " + Eval("dataClassificado","{0:dd/MM/yyyy}") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label5" runat="server"  Text='<%# Eval("dataClassificado", "{0:dddd}") + " - " + Eval("dataClassificado","{0:dd/MM/yyyy}") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:HyperLinkField DataNavigateUrlFields="idClassificado" 
+                        DataNavigateUrlFormatString="~/GerenciarClassificadoMorador.aspx?codigo={0}" 
+                        Text="Ver ...">
+                    <HeaderStyle Font-Bold="False" />
+                    <ItemStyle ForeColor="#0033CC" />
+                    </asp:HyperLinkField>
+                </Columns>
+            </asp:GridView> 
     <asp:SqlDataSource ID="SqlDataSourceEditClassificado" runat="server" 
         ConflictDetection="CompareAllValues" 
         ConnectionString="<%$ ConnectionStrings:azulli %>" 
