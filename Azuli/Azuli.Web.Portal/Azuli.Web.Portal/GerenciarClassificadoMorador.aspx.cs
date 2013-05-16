@@ -82,9 +82,7 @@ namespace Azuli.Web.Portal
             TextBox status = (TextBox)DetailsView1.FindControl("TextBox7");
             oClassificaModel.statusClassificado = status.Text;
 
-            //TextBox grupoClassificado = (TextBox)DetailsView1.FindControl("TextBox9");
-            //oGrupoModel.grupoClassificado = Convert.ToInt32(grupoClassificado.Text);
-            //oClassificaModel.grpClassificado = oGrupoModel;
+            
 
             TextBox img1 = (TextBox)DetailsView1.FindControl("TextBox10");
             oClassificaModel.classificadoimg1 = img1.Text;
@@ -97,8 +95,15 @@ namespace Azuli.Web.Portal
             TextBox img3 = (TextBox)DetailsView1.FindControl("TextBox12");
             oClassificaModel.classificadoimg3 = img3.Text;
 
+            TextBox dataVenda = (TextBox)DetailsView1.FindControl("TextBox14");
+            oClassificaModel.classificadoDataVenda = Convert.ToDateTime(dataVenda.Text);
+
             TextBox img4 = (TextBox)DetailsView1.FindControl("TextBox7");
             oClassificaModel.classificadoimg4 = img4.Text;
+
+            TextBox grupoClassificados = (TextBox)DetailsView1.FindControl("TextBox9");
+            oGrupoModel.grupoClassificado = Convert.ToInt32(grupoClassificados.Text);
+            oClassificaModel.grpClassificado = oGrupoModel;
 
             oClassificaModel.idClassificado = Convert.ToInt32(key.Value);
 
@@ -113,6 +118,11 @@ namespace Azuli.Web.Portal
             }
           
 
+
+        }
+
+        protected void DetailsView1_ItemUpdating(object sender, DetailsViewUpdateEventArgs e)
+        {
 
         }
     }

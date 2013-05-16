@@ -9,9 +9,10 @@
    <legend class="accordionContent">Editar classificados:</legend><br />
    <center><asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" 
         CssClass="GridView" Height="50px" Width="447px" 
-           onitemcommand="DetailsView1_ItemCommand" DataKeyNames="idClassificado">
+           onitemcommand="DetailsView1_ItemCommand" DataKeyNames="idClassificado" 
+           onitemupdating="DetailsView1_ItemUpdating">
         <Fields>
-            <asp:TemplateField HeaderText="Id Classificado" Visible="False">
+            <asp:TemplateField HeaderText="Id Classificado" Visible =" True">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox8" runat="server" Text='<%# Bind("idClassificado") %>'></asp:TextBox>
                 </EditItemTemplate>
@@ -119,19 +120,7 @@
                     <asp:Label ID="Label7" runat="server" Text='<%# Bind("statusClassificado") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField ShowHeader="False">
-                <EditItemTemplate>
-                    <asp:Button ID="Button1" runat="server" CausesValidation="True" 
-                        CommandName="Update" Text="Atualizar" />
-                    &nbsp;<asp:Button ID="Button2" runat="server" CausesValidation="False" 
-                        CommandName="Cancel" Text="Cancelar" />
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Button ID="Button1" runat="server" CausesValidation="False" 
-                        CommandName="Edit" Text="Edit" />
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="IMG1" Visible="False">
+            <asp:TemplateField HeaderText="IMG1" Visible =" True">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox10" runat="server" 
                         Text='<%# Bind("classificadoimg1") %>'></asp:TextBox>
@@ -144,7 +133,7 @@
                     <asp:Label ID="Label10" runat="server" Text='<%# Bind("classificadoimg1") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="IMG2" Visible="False">
+            <asp:TemplateField HeaderText="IMG2" Visible =" True">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox11" runat="server" 
                         Text='<%# Bind("classificadoimg2") %>'></asp:TextBox>
@@ -157,7 +146,7 @@
                     <asp:Label ID="Label11" runat="server" Text='<%# Bind("classificadoimg2") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="IMG3" Visible="False">
+            <asp:TemplateField HeaderText="IMG3" Visible =" True">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox12" runat="server" 
                         Text='<%# Bind("classificadoimg3") %>'></asp:TextBox>
@@ -170,7 +159,7 @@
                     <asp:Label ID="Label12" runat="server" Text='<%# Bind("classificadoimg3") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="IMG4" Visible="False">
+            <asp:TemplateField HeaderText="IMG4" Visible =" True">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox13" runat="server" 
                         Text='<%# Bind("classificadoimg4") %>'></asp:TextBox>
@@ -183,8 +172,43 @@
                     <asp:Label ID="Label13" runat="server" Text='<%# Bind("classificadoimg4") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:BoundField DataField="classificadoDataVenda" HeaderText="Data Venda" 
-                Visible="False" />
+            <asp:TemplateField HeaderText="Data Venda">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox14" runat="server" 
+                        Text='<%# Bind("classificadoDataVenda") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:TextBox ID="TextBox14" runat="server" 
+                        Text='<%# Bind("classificadoDataVenda") %>'></asp:TextBox>
+                </InsertItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label14" runat="server" 
+                        Text='<%# Bind("classificadoDataVenda") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Grupo Classificado" Visible =" True">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox9" runat="server" Text='<%# Bind("grpClassificado.grupoClassificado") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:TextBox ID="TextBox9" runat="server" Text='<%# Bind("grpClassificado.grupoClassificado") %>'></asp:TextBox>
+                </InsertItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label9" runat="server" Text='<%# Bind("grpClassificado.grupoClassificado") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField ShowHeader="False">
+                <EditItemTemplate>
+                    <asp:Button ID="Button1" runat="server" CausesValidation="True" 
+                        CommandName="Update" Text="Atualizar" />
+                    &nbsp;<asp:Button ID="Button2" runat="server" CausesValidation="False" 
+                        CommandName="Cancel" Text="Cancelar" />
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Button ID="Button1" runat="server" CausesValidation="False" 
+                        CommandName="Edit" Text="Edit" />
+                </ItemTemplate>
+            </asp:TemplateField>
         </Fields>
     </asp:DetailsView></center> 
     <br /></fieldset>
