@@ -13,15 +13,6 @@ namespace Azuli.Web.Portal {
     public partial class DetalheClassificado {
         
         /// <summary>
-        /// dvAnunciar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvAnunciar;
-        
-        /// <summary>
         /// imgGrupo control.
         /// </summary>
         /// <remarks>
@@ -29,6 +20,15 @@ namespace Azuli.Web.Portal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgGrupo;
+        
+        /// <summary>
+        /// dvAnunciar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvAnunciar;
         
         /// <summary>
         /// lblAssunto control.

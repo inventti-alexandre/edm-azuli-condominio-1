@@ -46,12 +46,15 @@
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     
-
+    <div id="imgAnuncio" style="position:absolute; top: 139px; left: 481px;">
+    
+    <asp:Image ID="imgGrupo" runat="server" Height="44px" Width="155px" />
+    </div>
     <div id="dvAnunciar" runat="server" align="center">
 
         <fieldset class="loginDisplayLegend">
             <legend class="controleCalendario">Detalhe do Classificado&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Image ID="imgGrupo" runat="server" Height="25px" Width="25px" />
+                
             </legend>
             <table class="accordionContent" style="width: 798px">
                 <tr>
@@ -171,7 +174,7 @@
         CssClass="btGeral" onclick="Button1_Click" Width="86px" /> </center>
       </fieldset>
     </div>
-    <div id="dvVeiculo" style="position: absolute; top: 159px; left: 431px; color: #0033CC;
+    <div id="dvVeiculo" style="position: absolute; top: 151px; left: 398px; color: #0033CC;
         height: 23px; width: 205px; font-weight: 700;">
         <asp:Label ID="lblGrupo" runat="server"></asp:Label>
     </div>

@@ -33,24 +33,24 @@
                     <tr>
                         <td align="center">
                             <br />
-                            <asp:ImageButton ID="imgImoveis" runat="server" Height="30px" ImageUrl="~/ServerFile/Classificados/imoveis.jpg"
-                                Width="30px" CssClass="Border" onclick="imgImoveis_Click" />
+                            <asp:ImageButton ID="imgImoveis" runat="server" Height="44px" ImageUrl="~/ServerFile/Classificados/imoveis.jpg"
+                                Width="155px" CssClass="Border" onclick="imgImoveis_Click" />
                             &nbsp;
                             <br />
                             <asp:Label ID="lblImoveis" runat="server" CssClass="style5"></asp:Label>
                         </td>
                         <td align="center">
                             <br />
-                            <asp:ImageButton ID="imgVeiculos" runat="server" Height="30px" ImageUrl="~/ServerFile/Classificados/veiculo.jpg"
-                                Width="30px" CssClass="Border" onclick="imgVeiculos_Click" />
+                            <asp:ImageButton ID="imgVeiculos" runat="server" Height="44px" ImageUrl="~/ServerFile/Classificados/veiculo.jpg"
+                                Width="155px" CssClass="Border" onclick="imgVeiculos_Click" />
                             &nbsp;
                             <br />
                             <asp:Label ID="lblVeiculos" runat="server" CssClass="style5"></asp:Label>
                         </td>
                         <td align="center">
                             <br />
-                            <asp:ImageButton ID="imgNegocios" runat="server" Height="30px" ImageUrl="~/ServerFile/Classificados/neogico2.jpg"
-                                Width="30px" CssClass="Border" onclick="imgNegocios_Click" />
+                            <asp:ImageButton ID="imgNegocios" runat="server" Height="44px" ImageUrl="~/ServerFile/Classificados/neogico2.jpg"
+                                Width="155px" CssClass="Border" onclick="imgNegocios_Click" />
                             &nbsp;<br />
                             <asp:Label ID="lblNegocio" runat="server" CssClass="style5"></asp:Label>
                         </td>
@@ -58,22 +58,22 @@
                    
                         <td align="center">
                             <br />
-                            <asp:ImageButton ID="imgEletronicoCelulares" runat="server" Height="30px" ImageUrl="~/ServerFile/Classificados/eletronico.jpg"
-                                Width="30px" CssClass="Border" onclick="imgEletronicoCelulares_Click" />
+                            <asp:ImageButton ID="imgEletronicoCelulares" runat="server" Height="44px" ImageUrl="~/ServerFile/Classificados/eletronico.jpg"
+                                Width="155px" CssClass="Border" onclick="imgEletronicoCelulares_Click" />
                             &nbsp;<br />
                             <asp:Label ID="lbleletronico" runat="server" CssClass="style5"></asp:Label>
                         </td>
                         <td align="center">
                             <br />
-                            <asp:ImageButton ID="imgCasa" runat="server" Height="30px" ImageUrl="~/ServerFile/Classificados/parasuacasa.jpg"
-                                Width="30px" CssClass="Border" onclick="imgCasa_Click" />
+                            <asp:ImageButton ID="imgCasa" runat="server" Height="44px" ImageUrl="~/ServerFile/Classificados/parasuacasa.jpg"
+                                Width="155px" CssClass="Border" onclick="imgCasa_Click" />
                             &nbsp;<br />
                             <asp:Label ID="lblParaSuaCasa" runat="server" CssClass="style5"></asp:Label>
                         </td>
                         <td align="center">
                             <br />
-                            <asp:ImageButton ID="imgModaBeleza" runat="server" Height="30px" ImageUrl="~/ServerFile/Classificados/modabeleza2.jpg"
-                                Width="30px" CssClass="Border" onclick="imgModaBeleza_Click" />
+                            <asp:ImageButton ID="imgModaBeleza" runat="server" Height="44px" ImageUrl="~/ServerFile/Classificados/modabeleza2.jpg"
+                                Width="155px" CssClass="Border" onclick="imgModaBeleza_Click" />
                             &nbsp;<br />
                             <asp:Label ID="lblModa" runat="server" CssClass="style5"></asp:Label>
                         </td>
@@ -82,22 +82,22 @@
                     <tr>
                         <td align="center">
                             <br />
-                            <asp:ImageButton ID="imgMusicaHobbie" runat="server" Height="30px" ImageUrl="~/ServerFile/Classificados/musicaHobie.jpg"
-                                Width="30px" CssClass="Border" onclick="imgMusicaHobbie_Click" />
+                            <asp:ImageButton ID="imgMusicaHobbie" runat="server" Height="44px" ImageUrl="~/ServerFile/Classificados/musicaHobie.jpg"
+                                Width="155px" CssClass="Border" onclick="imgMusicaHobbie_Click" />
                             &nbsp;<br />
                             <asp:Label ID="lblMusica" runat="server" CssClass="style5"></asp:Label>
                         </td>
                         <td align="center">
                             <br />
-                            <asp:ImageButton ID="imgAnimaisAcessorios" runat="server" Height="30px" ImageUrl="~/ServerFile/Classificados/animais.jpg"
-                                Width="30px" CssClass="Border" onclick="imgAnimaisAcessorios_Click" />
+                            <asp:ImageButton ID="imgAnimaisAcessorios" runat="server" Height="44px" ImageUrl="~/ServerFile/Classificados/animais.jpg"
+                                Width="155px" CssClass="Border" onclick="imgAnimaisAcessorios_Click" />
                             &nbsp;<br />
                             <asp:Label ID="lblAnimal" runat="server" CssClass="style5"></asp:Label>
                         </td>
                         <td align="center">
                             <br />
-                            <asp:ImageButton ID="imgBebeCrianca" runat="server" Height="30px" ImageUrl="~/ServerFile/Classificados/bebeCrianca.jpg"
-                                Width="30px" CssClass="Border" onclick="imgBebeCrianca_Click" />
+                            <asp:ImageButton ID="imgBebeCrianca" runat="server" Height="44px" ImageUrl="~/ServerFile/Classificados/bebeCrianca.jpg"
+                                Width="155px" CssClass="Border" onclick="imgBebeCrianca_Click" />
                             &nbsp;<br />
                             <asp:Label ID="lblCrianca" runat="server" CssClass="style5"></asp:Label>
                         </td>
@@ -114,8 +114,8 @@
                     </tr>
                     <tr>
                         <td align="center">
-                            <asp:ImageButton ID="imgSport" runat="server" Height="30px" ImageUrl="~/ServerFile/Classificados/sport.jpg"
-                                Width="30px" CssClass="Border" onclick="imgSport_Click" />
+                            <asp:ImageButton ID="imgSport" runat="server" Height="44px" ImageUrl="~/ServerFile/Classificados/sport.jpg"
+                                Width="155px" CssClass="Border" onclick="imgSport_Click" />
                             &nbsp;<br />
                             <asp:Label ID="lblSport" runat="server" CssClass="style5"></asp:Label>
                             <br />
@@ -123,8 +123,8 @@
                             <br />
                         </td>
                         <td align="center">
-                            <asp:ImageButton ID="imgDiversos" runat="server" Height="30px" ImageUrl="~/ServerFile/Classificados/diversos.jpg"
-                                Width="30px" CssClass="Border" onclick="imgDiversos_Click" />
+                            <asp:ImageButton ID="imgDiversos" runat="server" Height="44px" ImageUrl="~/ServerFile/Classificados/diversos.jpg"
+                                Width="155px" CssClass="Border" onclick="imgDiversos_Click" />
                             &nbsp;<br />
                             <asp:Label ID="lblDiversos" runat="server" CssClass="style5"></asp:Label>
                            <br />
