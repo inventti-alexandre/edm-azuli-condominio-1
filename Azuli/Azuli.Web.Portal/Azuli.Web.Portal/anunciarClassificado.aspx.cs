@@ -84,7 +84,9 @@ namespace Azuli.Web.Portal
                         case 12:
                             lblDiversos.Text = item.descricacaoGrupoClassificado;
                             break;
-
+                        case 13:
+                            lblDiversos.Text = item.descricacaoGrupoClassificado;
+                            break;
                     }
                     
                 }
@@ -112,8 +114,11 @@ namespace Azuli.Web.Portal
             //oClassificaModel.grpClassificado = oGrpModel;
             //oClassificaModel.dataClassificado = Convert.ToDateTime("17530101");
 
+             grdClassificado.DataSource = from listaClassificados in oClassificado.consultaClassificado(oClassificaModel)
+                                          where listaClassificados.statusClassificado == "A"
+                                          orderby listaClassificados.dataClassificado
+                                          select listaClassificados;
 
-             grdClassificado.DataSource = oClassificado.consultaClassificado(oClassificaModel);
              grdClassificado.DataBind();
 
         

@@ -30,7 +30,7 @@
     <siteMapNode  url=""  title="Classificados"  description="Classificados"  roles="">
       <siteMapNode url="~/anunciarClassificado.aspx" title="Anunciar" description="Classificados" />
       <siteMapNode url="~/consultaClassificados.aspx" title="Consultar Classificados" description="Classificados" />
-      <siteMapNode url="gerenciaClassificado.aspx" title="Gerenciar Classificados" description="Classificados" />
+      <siteMapNode url="meuClassificados.aspx" title="Gerenciar Classificados" description="Classificados" />
 
 
     </siteMapNode>

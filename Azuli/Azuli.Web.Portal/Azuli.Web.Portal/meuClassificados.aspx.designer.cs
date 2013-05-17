@@ -10,33 +10,24 @@
 namespace Azuli.Web.Portal {
     
     
-    public partial class GerenciarClassificadoMorador {
+    public partial class meuClassificados {
         
         /// <summary>
-        /// DetailsView1 control.
+        /// dvAnunciar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView DetailsView1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvAnunciar;
         
         /// <summary>
-        /// lblMsg control.
+        /// grdClassificado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMsg;
-        
-        /// <summary>
-        /// SqlDataSourceEditClassificado control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceEditClassificado;
+        protected global::System.Web.UI.WebControls.GridView grdClassificado;
     }
 }

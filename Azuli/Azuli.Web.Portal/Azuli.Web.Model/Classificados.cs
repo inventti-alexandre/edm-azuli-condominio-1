@@ -13,7 +13,7 @@ namespace Azuli.Web.Model
         ApartamentoModel oAp = new ApartamentoModel();
 
         public int idClassificado { get; set; }
-        public GrupoClassificados grpClassificado;
+        private GrupoClassificados _grpClassificado;
         public Nullable<DateTime> dataClassificado { get; set; }
         public ApartamentoModel apartamentoClassificado;
         public string descricaoClassificado { get; set; }
@@ -32,6 +32,19 @@ namespace Azuli.Web.Model
         public string contato { get; set; }
         public string assuntoClassificado { get; set; }
 
+        public GrupoClassificados grpClassificado
+        {
+            get
+            {
+                return _grpClassificado;
+            }
+
+            set
+            {
+                _grpClassificado = value;
+            }
+        }
+
         public Classificados()
         {
             idClassificado = 0;
@@ -43,7 +56,20 @@ namespace Azuli.Web.Model
             apartamentoClassificado = oAp;
             descricaoClassificado = "";
             statusClassificado = "";
+            classificadoimg1 = "";
+            classificadoimg2 = "";
+            classificadoimg3 = "";
+            classificadoimg4 = "";
+            contaGrupo = 0;
+            contato = "";
+            classificadoDataVenda = DateTime.Parse("01-01-1753");
+            emailClassificadoContato = "";
+            classificadoTelefone1 = "";
+            classificadoTelefone2 = "";
+            assuntoClassificado = "";
+            
 
+            
         }
 
 

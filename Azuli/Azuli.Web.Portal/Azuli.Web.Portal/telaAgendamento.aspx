@@ -152,7 +152,7 @@
                 </tr>
                 <tr>
                     <td class="style5">
-                        <asp:CheckBox ID="chkSalaoFesta" runat="server" Text="Salão de Festas" Font-Bold="True"
+                        <asp:CheckBox ID="chkSalaoFesta" runat="server" Text=" Salão de Festas" Font-Bold="True"
                             EnableTheming="True" />
                     </td>
                     <td>
@@ -161,7 +161,7 @@
                 <tr>
                     <td class="style5">
                         <br />
-                        <asp:CheckBox ID="chkChurrascaria" runat="server" Text="Área de churrasco" Font-Bold="True" />
+                        <asp:CheckBox ID="chkChurrascaria" runat="server" Text=" Área de churrasco" Font-Bold="True" />
                     </td>
                     <td>
                         &nbsp;</td>

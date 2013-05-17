@@ -513,14 +513,14 @@ div.accountInfo
 
 input.botao, .btGeral {
 	font-family: Verdana;
-	font-size: 8pt;
+	font-size: 9pt;
 	font-weight: normal;
 	color: #4B6C9E;
 	text-align: center;
 	border: 1px solid #4B6C9E;
-	cursor: pointer;
-    margin-top: 9px;
-    width: 291px;
+	cursor: auto;
+    margin-top: 16px;
+    width: 151px;
 }
 
 .MasterMenu

@@ -233,9 +233,14 @@ namespace Azuli.Web.Portal
              ApartamentoModel oAp = new ApartamentoModel();
 
              oClassificaModel.grpClassificado.grupoClassificado = idClassificado;
-             
 
-             grdClassificado.DataSource = oClassificadoBLL.consultaClassificado(oClassificaModel);
+
+             grdClassificado.DataSource = from listaClassificados in oClassificadoBLL.consultaClassificado(oClassificaModel)
+                                          where listaClassificados.statusClassificado == "A"
+                                          orderby listaClassificados.dataClassificado
+                                          select listaClassificados;
+
+       
              grdClassificado.DataBind();
 
         
