@@ -80,7 +80,10 @@
     <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
     </asp:ToolkitScriptManager>
     <br /><br />
-
+      <div id="imgAnuncio" 
+        style="position:absolute; top: 183px; left: 182px; color: #0033CC;">
+          <asp:Image ID="imgGrupo" runat="server" 
+                    Height="44px" Width="156px" />  </div>
 <div  id="dvAnunciar"  runat="server" align="center" >
        
    <fieldset class="loginDisplayLegend">
@@ -91,11 +94,8 @@
             
             
             
-            <br /><div id="dvVeiculo" 
-             style="position:absolute; top: 221px; left: 289px; color: #0033CC;"><asp:Label ID="lblGrupo" runat="server"></asp:Label></div>
-            <legend class="seuAnunciosTst">  <asp:Image ID="imgGrupo" runat="server" 
-                    Height="25px" Width="25px" />  
-               </legend>
+            <br />
+           
          <table class="form" cellspacing="9px">
              <tr>
                  <td class="style3">

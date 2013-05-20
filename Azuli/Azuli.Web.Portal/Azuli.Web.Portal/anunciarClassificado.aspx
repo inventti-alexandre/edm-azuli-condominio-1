@@ -33,7 +33,7 @@
                     <tr>
                         <td align="center">
                             <br />
-                            <asp:ImageButton ID="imgImoveis" runat="server" Height="44px" ImageUrl="~/ServerFile/Classificados/imoveis.jpg"
+                            <asp:ImageButton ID="imgImoveis"  runat="server" Height="44px" ImageUrl="~/ServerFile/Classificados/imoveis.jpg"
                                 Width="155px" CssClass="Border" onclick="imgImoveis_Click" />
                             &nbsp;
                             <br />
@@ -114,7 +114,7 @@
                     </tr>
                     <tr>
                         <td align="center">
-                            <asp:ImageButton ID="imgSport" runat="server" Height="44px" ImageUrl="~/ServerFile/Classificados/sport.jpg"
+                            <asp:ImageButton ID="imgSport" runat="server" Height="44px" ImageUrl="~/ServerFile/Classificados/doacao.gif"
                                 Width="155px" CssClass="Border" onclick="imgSport_Click" />
                             &nbsp;<br />
                             <asp:Label ID="lblSport" runat="server" CssClass="style5"></asp:Label>

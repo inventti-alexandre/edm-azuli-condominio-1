@@ -152,6 +152,7 @@
     <Content Include="ServerFile\Classificados\animais.jpg" />
     <Content Include="ServerFile\Classificados\bebeCrianca.jpg" />
     <Content Include="ServerFile\Classificados\diversos.jpg" />
+    <Content Include="ServerFile\Classificados\doacao.gif" />
     <Content Include="ServerFile\Classificados\eletronico.jpg" />
     <Content Include="ServerFile\Classificados\imoveis.jpg" />
     <Content Include="ServerFile\Classificados\modabeleza2.jpg" />

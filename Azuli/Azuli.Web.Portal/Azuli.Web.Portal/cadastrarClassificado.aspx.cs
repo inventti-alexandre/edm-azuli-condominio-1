@@ -71,7 +71,7 @@ namespace Azuli.Web.Portal
                 {
 
                     imgGrupo.ImageUrl = caminho + item.imgGrupoClassificado;
-                    lblGrupo.Text = item.descricacaoGrupoClassificado;
+                   // lblGrupo.Text = item.descricacaoGrupoClassificado;
 
                 }
 

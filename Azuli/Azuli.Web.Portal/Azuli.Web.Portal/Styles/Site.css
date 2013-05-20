@@ -594,7 +594,7 @@ input.botao, .btGeral {
 
 .Border
 {
-    border:none;
+  
 }
 
 .GridView
@@ -961,8 +961,7 @@ gn: left;
 {
 	border: 1px solid #999999;
 	height: 272px;
-	background-color: #f0f0f0;
-	color: #666666;
+	background-color: white;
 	font-family: Verdana;
 	font-size: 6pt;
 	font-weight: normal;
@@ -970,7 +969,7 @@ gn: left;
 	padding: 0px 2px 0px 2px;
 	margin: 0px 15px 0px 3px;
     width: 647px;
-     border-radius: 1em;
+    border-radius: 1em;
 }
 
 .ContextMenuPanel 

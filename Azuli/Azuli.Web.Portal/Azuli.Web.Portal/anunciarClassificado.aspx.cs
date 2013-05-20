@@ -22,7 +22,7 @@ namespace Azuli.Web.Portal
                 {
                     lblDescBloco.Text = Session["Bloco"].ToString();
                     lblDescApartamento.Text = Session["AP"].ToString();
-                    carregaGrupoClassificado();
+                  //  carregaGrupoClassificado();
                     preencheGrid();
                     //dvAnunciar.Visible = false;
                 }
@@ -31,74 +31,74 @@ namespace Azuli.Web.Portal
 
         }
 
-        public void carregaGrupoClassificado()
-        {
-            GrupoClassificadoBLL ogrpBll = new GrupoClassificadoBLL();
-            GrupoClassificados ogrpModel = new GrupoClassificados();
+        //public void carregaGrupoClassificado()
+        //{
+        //    GrupoClassificadoBLL ogrpBll = new GrupoClassificadoBLL();
+        //    GrupoClassificados ogrpModel = new GrupoClassificados();
 
-            ogrpModel.grupoClassificado = 0;
-            ogrpModel.descricacaoGrupoClassificado = "";
-            ogrpModel.statusClassificado = "";
-            ogrpModel.imgGrupoClassificado = "";
+        //    ogrpModel.grupoClassificado = 0;
+        //    ogrpModel.descricacaoGrupoClassificado = "";
+        //    ogrpModel.statusClassificado = "";
+        //    ogrpModel.imgGrupoClassificado = "";
 
 
-            try
-            {
+        //    try
+        //    {
             
-                var listaClassifica =    ogrpBll.listaGrupoClassificado(ogrpModel);
+        //        var listaClassifica =    ogrpBll.listaGrupoClassificado(ogrpModel);
 
-                foreach (var item in listaClassifica)
-                {
-                    switch (item.grupoClassificado)
-                    {
-                        case 1: // Imóveis
-                            lblImoveis.Text = item.descricacaoGrupoClassificado;
-                            break;
-                        case 2: // Veiculos
-                            lblVeiculos.Text = item.descricacaoGrupoClassificado;
-                            break;
-                        case 3: // Negocios
-                            lblNegocio.Text = item.descricacaoGrupoClassificado;
-                            break;
-                        case 5:
-                            lbleletronico.Text = item.descricacaoGrupoClassificado;
-                            break;
-                        case 6:
-                            lblParaSuaCasa.Text = item.descricacaoGrupoClassificado;
-                            break;
-                        case 7:
-                            lblModa.Text = item.descricacaoGrupoClassificado;
-                            break;
-                        case 8:
-                            lblMusica.Text = item.descricacaoGrupoClassificado;
-                            break;
-                        case 9:
-                            lblAnimal.Text = item.descricacaoGrupoClassificado;
-                            break;
-                        case 10:
-                            lblCrianca.Text = item.descricacaoGrupoClassificado;
-                            break;
-                        case 11:
-                            lblSport.Text = item.descricacaoGrupoClassificado;
-                            break;
-                        case 12:
-                            lblDiversos.Text = item.descricacaoGrupoClassificado;
-                            break;
-                        case 13:
-                            lblDiversos.Text = item.descricacaoGrupoClassificado;
-                            break;
-                    }
+        //        foreach (var item in listaClassifica)
+        //        {
+        //            switch (item.grupoClassificado)
+        //            {
+        //                case 1: // Imóveis
+        //                    lblImoveis.Text = item.descricacaoGrupoClassificado;
+        //                    break;
+        //                case 2: // Veiculos
+        //                    lblVeiculos.Text = item.descricacaoGrupoClassificado;
+        //                    break;
+        //                case 3: // Negocios
+        //                    lblNegocio.Text = item.descricacaoGrupoClassificado;
+        //                    break;
+        //                case 5:
+        //                    lbleletronico.Text = item.descricacaoGrupoClassificado;
+        //                    break;
+        //                case 6:
+        //                    lblParaSuaCasa.Text = item.descricacaoGrupoClassificado;
+        //                    break;
+        //                case 7:
+        //                    lblModa.Text = item.descricacaoGrupoClassificado;
+        //                    break;
+        //                case 8:
+        //                    lblMusica.Text = item.descricacaoGrupoClassificado;
+        //                    break;
+        //                case 9:
+        //                    lblAnimal.Text = item.descricacaoGrupoClassificado;
+        //                    break;
+        //                case 10:
+        //                    lblCrianca.Text = item.descricacaoGrupoClassificado;
+        //                    break;
+        //                case 11:
+        //                    lblSport.Text = item.descricacaoGrupoClassificado;
+        //                    break;
+        //                case 12:
+        //                    lblDiversos.Text = item.descricacaoGrupoClassificado;
+        //                    break;
+        //                case 13:
+        //                    lblDiversos.Text = item.descricacaoGrupoClassificado;
+        //                    break;
+        //            }
                     
-                }
+        //        }
             
-            }
-            catch (Exception e)
-            {
+        //    }
+        //    catch (Exception e)
+        //    {
                 
-                throw e;
-            }
+        //        throw e;
+        //    }
 
-        }
+        //}
 
         public void preencheGrid()
         {

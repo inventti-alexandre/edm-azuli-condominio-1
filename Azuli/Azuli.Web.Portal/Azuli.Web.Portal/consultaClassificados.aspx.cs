@@ -69,7 +69,7 @@ namespace Azuli.Web.Portal
                                 contaGrup = count.contaGrupo;
                             }
 
-                            lblImoveis.Text = item.descricacaoGrupoClassificado + "(" + contaGrup +")";   
+                            lblImoveis.Text = "(" + contaGrup + ")";   
 
                            
                             break;
@@ -86,7 +86,7 @@ namespace Azuli.Web.Portal
                                 
                             }
 
-                            lblVeiculos.Text = item.descricacaoGrupoClassificado + "(" + contaGrup + ")"; 
+                            lblVeiculos.Text = "(" + contaGrup + ")";   
                             break;
                         case 3: // Negocios
                             contaGrup = 0;  
@@ -100,7 +100,7 @@ namespace Azuli.Web.Portal
                                   
                             }
 
-                            lblNegocio.Text = item.descricacaoGrupoClassificado + "(" + contaGrup + ")";
+                            lblNegocio.Text = "(" + contaGrup + ")";   
                             break;
                         case 5:
                             contaGrup = 0;   
@@ -114,7 +114,7 @@ namespace Azuli.Web.Portal
                                
                             }
 
-                            lbleletronico.Text = item.descricacaoGrupoClassificado + "(" + contaGrup + ")";  
+                            lbleletronico.Text = "(" + contaGrup + ")";   
                             break;
                         case 6:
                             contaGrup = 0;
@@ -128,7 +128,7 @@ namespace Azuli.Web.Portal
                                
                             }
 
-                            lblParaSuaCasa.Text = item.descricacaoGrupoClassificado + "(" + contaGrup + ")";  
+                            lblParaSuaCasa.Text = "(" + contaGrup + ")";   
                             break;
                         case 7:
                             contaGrup = 0;   
@@ -141,7 +141,7 @@ namespace Azuli.Web.Portal
                                 contaGrup = count.contaGrupo;
                                  
                             }
-                            lblModa.Text = item.descricacaoGrupoClassificado + "(" + contaGrup + ")"; 
+                            lblModa.Text = "(" + contaGrup + ")";   
                             break;
                         case 8:
 
@@ -156,7 +156,7 @@ namespace Azuli.Web.Portal
                                 
                             }
 
-                            lblMusica.Text = item.descricacaoGrupoClassificado + "(" + contaGrup + ")"; ;
+                            lblMusica.Text = "(" + contaGrup + ")";   
                             break;
                         case 9:
                             contaGrup = 0;  
@@ -169,7 +169,7 @@ namespace Azuli.Web.Portal
                                 contaGrup = count.contaGrupo;
                                
                             }
-                            lblAnimal.Text = item.descricacaoGrupoClassificado + "(" + contaGrup + ")";  
+                            lblAnimal.Text = "(" + contaGrup + ")";   
                             break;
                         case 10:
                             contaGrup = 0;   
@@ -182,7 +182,7 @@ namespace Azuli.Web.Portal
                                 contaGrup = count.contaGrupo;
                                 
                             }
-                            lblCrianca.Text = item.descricacaoGrupoClassificado + "(" + contaGrup + ")";  
+                            lblCrianca.Text = "(" + contaGrup + ")";   
                             break;
                         case 11:
                             contaGrup = 0;  
@@ -195,9 +195,9 @@ namespace Azuli.Web.Portal
                                 contaGrup = count.contaGrupo;
                                 
                             }
-                            lblSport.Text = item.descricacaoGrupoClassificado + "(" + contaGrup + ")";  
+                            lblSport.Text = "(" + contaGrup + ")";   
                             break;
-                        case 13:
+                        case 12:
 
                             contaGrup = 0;
                             var query12 = from contadoGrupo in listaContaGrupo
@@ -209,7 +209,22 @@ namespace Azuli.Web.Portal
                                 contaGrup = count.contaGrupo;
                                 
                             }
-                            lblDiversos.Text = item.descricacaoGrupoClassificado + "(" + contaGrup + ")";
+                            lblDiversos.Text = "(" + contaGrup + ")";   
+                            break;
+
+                        case 13:
+
+                            contaGrup = 0;
+                            var query13 = from contadoGrupo in listaContaGrupo
+                                          where contadoGrupo.grpClassificado.grupoClassificado == item.grupoClassificado
+                                          select contadoGrupo;
+
+                            foreach (var count in query13)
+                            {
+                                contaGrup = count.contaGrupo;
+
+                            }
+                            lblDiversos.Text = "(" + contaGrup + ")";
                             break;
 
                     }

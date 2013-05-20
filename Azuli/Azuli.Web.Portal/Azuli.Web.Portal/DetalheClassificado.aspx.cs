@@ -26,7 +26,7 @@ namespace Azuli.Web.Portal
                     //carregaGrupoClassificado();
                     //preencheGrid();
                     //dvAnunciar.Visible = false;
-                    lblGrupo.Text = Session["lblGrupo"].ToString();
+                    //lblGrupo.Text = Session["lblGrupo"].ToString();
                     imgGrupo.ImageUrl = Session["imagemGrupo"].ToString();
                     codigoClassificado = Convert.ToInt32(Request.QueryString["codigo"]);
                     preencheClassificadoDetalhe(codigoClassificado);
@@ -94,7 +94,7 @@ namespace Azuli.Web.Portal
                 {
 
                     imgGrupo.ImageUrl = caminho + item.imgGrupoClassificado;
-                    lblGrupo.Text = item.descricacaoGrupoClassificado;
+                   // lblGrupo.Text = item.descricacaoGrupoClassificado;
 
                 }
 

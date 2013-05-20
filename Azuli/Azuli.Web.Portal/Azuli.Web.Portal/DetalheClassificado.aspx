@@ -46,14 +46,14 @@
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     
-    <div id="imgAnuncio" style="position:absolute; top: 139px; left: 481px;">
+    <div id="imgAnuncio" style="position:absolute; top: 138px; left: 638px;">
     
-    <asp:Image ID="imgGrupo" runat="server" Height="44px" Width="155px" />
+    <asp:Image ID="imgGrupo" runat="server" Height="44px" Width="153px" />
     </div>
     <div id="dvAnunciar" runat="server" align="center">
 
         <fieldset class="loginDisplayLegend">
-            <legend class="controleCalendario">Detalhe do Classificado&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <legend class="accordionContent">Detalhe do Classificado&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 
             </legend>
             <table class="accordionContent" style="width: 798px">
@@ -176,6 +176,5 @@
     </div>
     <div id="dvVeiculo" style="position: absolute; top: 151px; left: 398px; color: #0033CC;
         height: 23px; width: 205px; font-weight: 700;">
-        <asp:Label ID="lblGrupo" runat="server"></asp:Label>
     </div>
 </asp:Content>

@@ -22,6 +22,15 @@ namespace Azuli.Web.Portal {
         protected global::AjaxControlToolkit.ToolkitScriptManager ToolkitScriptManager1;
         
         /// <summary>
+        /// imgGrupo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgGrupo;
+        
+        /// <summary>
         /// dvAnunciar control.
         /// </summary>
         /// <remarks>
@@ -47,24 +56,6 @@ namespace Azuli.Web.Portal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDescApartamento;
-        
-        /// <summary>
-        /// lblGrupo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGrupo;
-        
-        /// <summary>
-        /// imgGrupo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgGrupo;
         
         /// <summary>
         /// Label10 control.

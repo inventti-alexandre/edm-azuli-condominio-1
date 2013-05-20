@@ -7,13 +7,28 @@
         }
         .style5
         {
-            font-size: x-small;
+            font-size: small;
             font-weight: bold;
+            color: #577EA7;
+           
         }
       .style6
       {
           font-size: x-small;
       }
+        .style7
+        {
+            background-color: #BFCBD6;
+            border-left: 1px dotted #999999;
+            border-right: 1px dotted #999999;
+            border-bottom: 1px dotted #999999;
+            padding: 3px 3px 3px 3px;
+            font-family: Verdana;
+            font-size: small;
+            color: #0000FF;
+            border-radius: 1em;
+            width: 520px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -23,7 +38,7 @@
     
         <div id="dvGrupo" runat="server" align="left" dir="ltr">
           <center>  <fieldset class="loginDisplayLegend">
-                <legend title="Abrir Ocorrência" class="seuAnuncios"> O que você está procurando?</legend>
+                <legend title="Abrir Ocorrência" class="style7"> O que você está procurando?</legend>
                 <br />
 
            
@@ -113,7 +128,7 @@
                     </tr>
                     <tr>
                         <td align="center">
-                            <asp:ImageButton ID="imgSport" runat="server" Height="44px" ImageUrl="~/ServerFile/Classificados/sport.jpg"
+                            <asp:ImageButton ID="imgSport" runat="server" Height="44px" ImageUrl="~/ServerFile/Classificados/doacao.gif"
                                 Width="155px" CssClass="Border" onclick="imgSport_Click" />
                             &nbsp;<br />
                             <asp:Label ID="lblSport" runat="server" CssClass="style5"></asp:Label>
@@ -140,8 +155,10 @@
    <div id="dvVeiculo" 
            style="position:absolute; top: 151px; left: 299px; color: #0033CC; font-weight: 700;"><asp:Label ID="lblGrupo" runat="server"></asp:Label></div>
              
-         <legend class="seuAnunciosTst"> <asp:Image ID="imgGrupo" runat="server" 
-                    Height="25px" Width="25px" />  
+         <legend class="seuAnunciosTst"> 
+            <div id="imgAnuncio"   
+                 style="position:absolute; top: 170px; left: 879px; color: #0033CC; font-weight: 700;"> <asp:Image ID="imgGrupo" runat="server" 
+                    Height="44px" Width="155px" />  </div>
                </legend><br />
         <center>  
            
