@@ -9,7 +9,7 @@ using Azuli.Web.Business;
 
 namespace Azuli.Web.Portal
 {
-    public partial class meuClassificados : System.Web.UI.Page
+    public partial class meuClassificados : Util.Base
     {
         Util.Util oUtil = new Util.Util();
         ClassificadoBLL oClassificado = new ClassificadoBLL();
