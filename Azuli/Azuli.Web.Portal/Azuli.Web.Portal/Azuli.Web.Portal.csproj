@@ -251,7 +251,6 @@
     </Compile>
     <Compile Include="DetalheClassificado.aspx.cs">
       <DependentUpon>DetalheClassificado.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DetalheClassificado.aspx.designer.cs">
       <DependentUpon>DetalheClassificado.aspx</DependentUpon>
