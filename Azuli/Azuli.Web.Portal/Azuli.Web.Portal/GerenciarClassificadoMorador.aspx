@@ -1,6 +1,96 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GerenciarClassificadoMorador.aspx.cs" Inherits="Azuli.Web.Portal.GerenciarClassificadoMorador" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+<script type="text/javascript" language="javascript">
+
+        function MascaraMoeda(objTextBox, SeparadorMilesimo, SeparadorDecimal, e) {
+
+            var sep = 0;
+
+            var key = '';
+
+            var i = j = 0;
+
+            var len = len2 = 0;
+
+            var strCheck = '0123456789';
+
+            var aux = aux2 = '';
+
+            var whichCode = (window.Event) ? e.which : e.keyCode;
+
+            if (whichCode == 13) return true;
+
+            key = String.fromCharCode(whichCode)
+
+            if (strCheck.indexOf(key) == -1) return false; // Chave invlida
+
+            len = objTextBox.value.length;
+
+            for (i = 0; i < len; i++)
+
+                if ((objTextBox.value.charAt(i) != '0') && (objTextBox.value.charAt(i) != SeparadorDecimal)) break;
+
+            aux =
+
+'';
+
+            for (; i < len; i++)
+
+                if (strCheck.indexOf(objTextBox.value.charAt(i)) != -1) aux += objTextBox.value.charAt(i);
+
+            aux += key;
+
+            len = aux.length;
+
+            if (len == 0) objTextBox.value = '';
+
+            if (len == 1) objTextBox.value = '0' + SeparadorDecimal + '0' + aux;
+
+            if (len == 2) objTextBox.value = '0' + SeparadorDecimal + aux;
+
+            if (len > 2) {
+
+                aux2 =
+
+'';
+
+                for (j = 0, i = len - 3; i >= 0; i--) {
+
+                    if (j == 3) {
+
+                        aux2 += SeparadorMilesimo;
+
+                        j = 0;
+
+                    }
+
+                    aux2 += aux.charAt(i);
+
+                    j++;
+
+                }
+
+                objTextBox.value =
+
+'';
+
+                len2 = aux2.length;
+
+                for (i = len2 - 1; i >= 0; i--)
+
+                    objTextBox.value += aux2.charAt(i);
+
+                objTextBox.value += SeparadorDecimal + aux.substr(len - 2, len);
+
+            }
+
+            return false;
+
+        }
+        </script>
 </asp:Content>
+
+
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
     <br />
@@ -108,16 +198,16 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Valor">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox6" Width="90px" runat="server" 
+                  <asp:Label id="lblReais" runat="server" Text="R$ "></asp:Label>  <asp:TextBox ID="TextBox6" Width="90px" onKeyPress="return(MascaraMoeda(this,'.',',',event))" runat="server" 
                         Text='<%# Bind("valorVendaClassificado") %>'></asp:TextBox>
                 </EditItemTemplate>
                 <InsertItemTemplate>
-                    <asp:TextBox ID="TextBox6" Width="30px" runat="server" 
+                    <asp:TextBox ID="TextBox6" Width="30px" onKeyPress="return(MascaraMoeda(this,'.',',',event))" runat="server" 
                         Text='<%# Bind("valorVendaClassificado") %>'></asp:TextBox>
                 </InsertItemTemplate>
                 <ItemTemplate>
-                    <asp:Label ID="Label6" runat="server" 
-                        Text='<%# Bind("valorVendaClassificado") %>'></asp:Label>
+                    <asp:Label ID="Label6" runat="server" onKeyPress="return(MascaraMoeda(this,'.',',',event))"  Text='<%# Bind("valorVendaClassificado") %>'></asp:Label>
+                       
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Status Classificado" Visible="False">

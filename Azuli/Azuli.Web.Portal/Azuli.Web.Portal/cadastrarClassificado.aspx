@@ -26,7 +26,7 @@
             color: #FF0000;
         }
     </style>
-    <script language="javascript">
+    <script type="text/javascript" language="javascript">
 
         function MascaraMoeda(objTextBox, SeparadorMilesimo, SeparadorDecimal, e) {
 
@@ -205,6 +205,7 @@
                         <asp:Label ID="Label9" runat="server" Text="Preço " CssClass="style4"></asp:Label>
                     </td>
                     <td>
+                        <asp:Label ID="Label12" runat="server" Font-Bold="True" Text="R$ "></asp:Label>
                         <asp:TextBox ID="txtValor" runat="server" onKeyPress="return(MascaraMoeda(this,'.',',',event))"
                             Width="61px"></asp:TextBox>
                         &nbsp;<asp:RequiredFieldValidator ID="rfvValor" runat="server" ControlToValidate="txtValor"
