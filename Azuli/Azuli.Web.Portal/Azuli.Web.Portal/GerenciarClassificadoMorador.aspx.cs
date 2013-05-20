@@ -9,7 +9,7 @@ using Azuli.Web.Model;
 
 namespace Azuli.Web.Portal
 {
-    public partial class GerenciarClassificadoMorador : System.Web.UI.Page
+    public partial class GerenciarClassificadoMorador : Util.Base
     {
 
         Util.Util oUtil = new Util.Util();
