@@ -62,7 +62,7 @@ namespace Azuli.Web.Portal
 
                     if (vMail != string.Empty)
                     {
-                        oEnviaEmail.enviaSenha("A senha para o apartamento" + oProprietarioModel.ap.apartamento + " do bloco " + oProprietarioModel.ap.bloco + " é " + vMail, oProprietarioModel.ap.apartamento.ToString(), oProprietarioModel.email, 1);
+                        oEnviaEmail.enviaSenha("A senha para o apartamento" + oProprietarioModel.ap.apartamento + " do bloco " + oProprietarioModel.ap.bloco + " é " + vMail, oProprietarioModel.ap.apartamento.ToString(), oProprietarioModel.email+Environment.NewLine+" www.condominioazuli.somee.com ", 1);
                         
                         sbMsg.Append("<b>A sua senha foi enviada para o e-mail informado!</b>");
 
