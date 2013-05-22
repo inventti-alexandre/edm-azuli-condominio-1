@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Azuli.Web.Business;
 using Azuli.Web.Model;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Azuli.Web.Portal
 {
@@ -366,19 +368,26 @@ namespace Azuli.Web.Portal
                 oClassificadoModel.statusClassificado = "A";
                 oClassificadoModel.assuntoClassificado = txtTitulo.Text;
 
-                try
+                Regex rg= new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
+
+                if (rg.IsMatch(txtEmail.Text) && txtEmail.Text != string.Empty)
                 {
-                    oClassificado.cadastraClassificado(oClassificadoModel);
-                    lblAnuncio.Text = "Anúncio feito com sucesso!!";
-                    hiddenControl();
-
+                    try
+                    {
+                        oClassificado.cadastraClassificado(oClassificadoModel);
+                        lblAnuncio.Text = "Anúncio feito com sucesso!!";
+                        hiddenControl();
+                    }
+                    catch (Exception err)
+                    {
+                        lblAnuncio.Text = "Ouve um erro a anunciar!" + err.ToString();
+                    }
                 }
-                catch (Exception err)
+                else
                 {
-
-                    lblAnuncio.Text = "Ouve um erro a anunciar!" + err.ToString();
-
+                    lblAnuncio.Text = "E-mail inválido!";
                 }
+                
             }
             else
             {
