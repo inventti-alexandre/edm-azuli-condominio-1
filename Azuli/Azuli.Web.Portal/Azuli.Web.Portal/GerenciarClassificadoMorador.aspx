@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GerenciarClassificadoMorador.aspx.cs" Inherits="Azuli.Web.Portal.GerenciarClassificadoMorador" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-<script type="text/javascript" language="javascript">
+    <script type="text/javascript" language="javascript">
 
         function MascaraMoeda(objTextBox, SeparadorMilesimo, SeparadorDecimal, e) {
 

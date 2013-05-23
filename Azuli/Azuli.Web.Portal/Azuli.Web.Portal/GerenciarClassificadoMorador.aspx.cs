@@ -6,10 +6,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Azuli.Web.Business;
 using Azuli.Web.Model;
+using System.Globalization;
+using System.Threading;
 
 namespace Azuli.Web.Portal
 {
-    public partial class GerenciarClassificadoMorador : Util.Base
+    public partial class GerenciarClassificadoMorador : System.Web.UI.Page
     {
 
         Util.Util oUtil = new Util.Util();
@@ -25,6 +27,12 @@ namespace Azuli.Web.Portal
                     DetailsView1.ChangeMode(DetailsViewMode.Edit);
                     preencheDetailsView();
                     //dvAnunciar.Visible = false;
+                    CultureInfo CI = new CultureInfo("pt-PT");
+                    CI.DateTimeFormat.ShortDatePattern = "dd-MM-yyyy";
+
+                    Thread.CurrentThread.CurrentCulture = CI;
+                    Thread.CurrentThread.CurrentUICulture = CI;
+                    base.InitializeCulture();
                 }
 
             }
@@ -82,7 +90,7 @@ namespace Azuli.Web.Portal
                 oClassificaModel.emailClassificadoContato = email.Text;
 
                 TextBox valor = (TextBox)DetailsView1.FindControl("TextBox6");
-                oClassificaModel.valorVendaClassificado = Convert.ToDouble(valor.Text);
+                oClassificaModel.valorVendaClassificado = Double.Parse(valor.Text, System.Globalization.CultureInfo.CurrentCulture);
 
                 //TextBox status = (TextBox)DetailsView1.FindControl("TextBox7");
                 //oClassificaModel.statusClassificado = status.Text;
@@ -106,7 +114,7 @@ namespace Azuli.Web.Portal
                 //TextBox img4 = (TextBox)DetailsView1.FindControl("TextBox7");
                 //oClassificaModel.classificadoimg4 = img4.Text;
 
-                TextBox grupoClassificados = (TextBox)DetailsView1.FindControl("TextBox9");
+                 //TextBox grupoClassificados = (TextBox)DetailsView1.FindControl("TextBox9");
                // oGrupoModel.grupoClassificado = Convert.ToInt32(grupoClassificados.Text);
                // oClassificaModel.grpClassificado = oGrupoModel;
 

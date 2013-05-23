@@ -6,10 +6,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Azuli.Web.Business;
 using Azuli.Web.Model;
+using System.Globalization;
+using System.Threading;
 
 namespace Azuli.Web.Portal
 {
-    public partial class consultaClassificados : Util.Base
+    public partial class consultaClassificados : System.Web.UI.Page
     {
         
         Util.Util oUtil = new Util.Util();
@@ -25,6 +27,12 @@ namespace Azuli.Web.Portal
                     carregaGrupoClassificado();
                     
                     dvAnunciar.Visible = false;
+                    CultureInfo CI = new CultureInfo("pt-PT");
+                    CI.DateTimeFormat.ShortDatePattern = "dd-MM-yyyy";
+
+                    Thread.CurrentThread.CurrentCulture = CI;
+                    Thread.CurrentThread.CurrentUICulture = CI;
+                    base.InitializeCulture();
                 }
                 
             }

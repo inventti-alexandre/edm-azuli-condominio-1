@@ -6,10 +6,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Azuli.Web.Model;
 using Azuli.Web.Business;
+using System.Globalization;
+using System.Threading;
 
 namespace Azuli.Web.Portal
 {
-    public partial class meuClassificados : Util.Base
+    public partial class meuClassificados : System.Web.UI.Page
     {
         Util.Util oUtil = new Util.Util();
         ClassificadoBLL oClassificado = new ClassificadoBLL();
@@ -21,6 +23,12 @@ namespace Azuli.Web.Portal
                 if (oUtil.validateSession())
                 {
                     preencheGrid();
+                    CultureInfo CI = new CultureInfo("pt-PT");
+                    CI.DateTimeFormat.ShortDatePattern = "dd-MM-yyyy";
+
+                    Thread.CurrentThread.CurrentCulture = CI;
+                    Thread.CurrentThread.CurrentUICulture = CI;
+                    base.InitializeCulture();
                 }
 
             }
