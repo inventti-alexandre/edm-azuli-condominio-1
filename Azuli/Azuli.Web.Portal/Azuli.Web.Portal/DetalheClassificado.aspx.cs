@@ -63,10 +63,57 @@ namespace Azuli.Web.Portal
                 lblDescricao.Text = item.descricaoClassificado;
                 lblAssunto.Text = item.assuntoClassificado;
                 lblValor.Text = string.Format("{0:C}",item.valorVendaClassificado);
-                ImageButton1.ImageUrl = folder + item.classificadoimg4;
-                ImageButton2.ImageUrl = folder + item.classificadoimg2;
-                ImageButton3.ImageUrl = folder + item.classificadoimg3;
-                ImageButton4.ImageUrl = folder + item.classificadoimg1;
+
+                if (item.classificadoimg4 == "semimg.jpg" && item.classificadoimg2 == "semimg.jpg" && item.classificadoimg3 == "semimg.jpg" && item.classificadoimg1 == "semimg.jpg")
+                {
+                    dvImagens.Visible = false;
+                }
+                else
+                {
+                    if (item.classificadoimg4 != "semimg.jpg")
+                    {
+                        dvImagens.Visible = true;
+                        ImageButton4.Visible = true;
+                        ImageButton1.ImageUrl = folder + item.classificadoimg4;
+                    }
+                    else
+                    {
+                        ImageButton4.Visible = false;
+                    }
+                    if (item.classificadoimg2 != "semimg.jpg")
+                    {
+                        dvImagens.Visible = true;
+                        ImageButton2.Visible = true;
+                        ImageButton2.ImageUrl = folder + item.classificadoimg2;
+                    }
+                    else
+                    {
+                        ImageButton2.Visible = false;
+                    }
+                    if (item.classificadoimg3 != "semimg.jpg")
+                    {
+                        dvImagens.Visible = true;
+                        ImageButton3.Visible = true;
+                        ImageButton3.ImageUrl = folder + item.classificadoimg3;
+                    }
+                    else
+                    {
+                        ImageButton3.Visible = false;
+                    }
+
+                    if (item.classificadoimg1 != "semimg.jpg")
+                    {
+                        dvImagens.Visible = true;
+                        ImageButton1.Visible = true;
+                        ImageButton1.ImageUrl = folder + item.classificadoimg1;
+                    }
+                    else
+                    {
+
+                        ImageButton1.Visible = false;
+                    }
+                }
+            
                 lblData.Text = item.dataClassificado.ToString();
                 lblEmail.Text = item.emailClassificadoContato;
 		 

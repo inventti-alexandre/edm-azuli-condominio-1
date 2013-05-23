@@ -200,7 +200,7 @@
                             </tr>
                         </table> 
                   
-               </fieldset>  <asp:Label ID="lblMsg" runat="server" ForeColor="#003300" Font-Size="Medium"></asp:Label></div></center>
+               </fieldset>  <asp:Label ID="lblMsg" runat="server" ForeColor="Blue" Font-Size="Medium"></asp:Label></div></center>
              
            
         </div>

@@ -1,12 +1,27 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="meuClassificados.aspx.cs" Inherits="Azuli.Web.Portal.meuClassificados" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .style2
+        {
+            background-color: #BFCBD6;
+            border-left: 1px dotted #999999;
+            border-right: 1px dotted #999999;
+            border-bottom: 1px dotted #999999;
+            padding: 3px 3px 3px 3px;
+            font-family: Verdana;
+            font-size: small;
+            color: #0000FF;
+            border-radius: 1em;
+            width: 520px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 <br />
 <center><div  id="dvAnunciar"  runat="server" align="center" dir="ltr">
        
    <center>  <fieldset class="loginDisplayLegend">
-         <legend class="seuAnuncios" align="left"><strong>Gerenciar seus Classifcados: </strong></legend>
+         <legend class="style2" align="left"><strong>Gerenciar seus Classifcados: </strong></legend>
             <br />
         <center>  
             <asp:GridView ID="grdClassificado" runat="server" AutoGenerateColumns="False" 

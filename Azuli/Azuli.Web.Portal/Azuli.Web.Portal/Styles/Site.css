@@ -259,6 +259,7 @@ div.hideSkiplink
     top: -24px;
     vertical-align:middle;
     right:9px;
+    z-index: 999999;
 }
 
 div.hideSkiplinkAdmin
@@ -277,6 +278,7 @@ div.hideSkiplinkAdmin
 div.menu
 {
     padding: 4px 0px 4px 8px;
+      display:block;
 }
 
 div.menu ul
@@ -285,6 +287,7 @@ div.menu ul
     margin: 0px;
     padding: 0px;
     width: auto;
+      display:block;
 }
 
 div.menu a, div.menu a:visited
@@ -297,6 +300,7 @@ div.menu a, div.menu a:visited
     padding: 4px 20px;
     text-decoration: none;
     white-space: nowrap;
+      display:block;
 }
 
 div.menu a:hover
@@ -304,6 +308,7 @@ div.menu a:hover
     background-color: #bfcbd6;
     color: #465c71;
     text-decoration: none;
+      display:block;
 }
 
 div.menu ul li a:active
@@ -311,6 +316,7 @@ div.menu ul li a:active
     background-color: #465c71;
     color: #cfdbe6;
     text-decoration: none;
+      display:block;
 }
 
 /* FORM ELEMENTS   
@@ -594,6 +600,7 @@ input.botao, .btGeral {
 
 .Border
 {
+   
   
 }
 

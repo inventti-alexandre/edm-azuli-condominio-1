@@ -208,54 +208,62 @@ namespace Azuli.Web.Portal.Account
             oAPmodel.bloco = Convert.ToInt32(txtSolicitaBloco.Text);
             oProprietarioModel.ap = oAPmodel;
 
-
-            if (oProprietario.BuscaMoradorAdmin(oAPmodel).Count == 0)
+            if (oUtil.validaEmail(txtEmail.Text))
             {
 
-                oProprietarioModel.proprietario1 = txtNome.Text;
-                oProprietarioModel.proprietario2 = "";
-                oProprietarioModel.email = txtEmail.Text;
-                oProprietarioModel.senha = oUtil.GeraSenha();
-
-                try
+                if (oProprietario.BuscaMoradorAdmin(oAPmodel).Count == 0)
                 {
-                    int count = oProprietario.CadastrarApartamentoMorador(oProprietarioModel);
 
-                    if (count > 0)
+                    oProprietarioModel.proprietario1 = txtNome.Text;
+                    oProprietarioModel.proprietario2 = "";
+
+                    oProprietarioModel.email = txtEmail.Text;
+                    oProprietarioModel.senha = oUtil.GeraSenha();
+
+                    try
                     {
+                        int count = oProprietario.CadastrarApartamentoMorador(oProprietarioModel);
 
-                        lblMsg.Text = "Já existe cadastro para o Bloco: " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento;
+                        if (count > 0)
+                        {
+
+                            lblMsg.Text = "Já existe cadastro para o Bloco: " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento;
+
+                        }
+
+                        else
+                        {
+                            enviaMail();
+                            //SendMail enviaEmail = new SendMail();
+                            //int status = 0;
+                            //string msgCredencial = "";
+                            //msgCredencial = "Cadastro efetuado com sucesso para Morador: <br> <b> " + oProprietarioModel.proprietario1 + " <b> <br>" + " Bloco:  " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento + "<br> Sua Senha é: " + oProprietarioModel.senha + "<br><hr> acesse: http://www.condominioazuli.somee.com/";
+                            //enviaEmail.enviaSenha(msgCredencial, oProprietarioModel.proprietario1, oProprietarioModel.email, status);
+                            dvDadosMorador.Visible = true;
+                            lblMsg.Text = "Solicitação efetuada com sucesso!! Em breve você irá receber sua senha no e-mail informado <br> <b> ";
+
+
+
+                        }
 
                     }
-
-                    else
+                    catch (Exception)
                     {
-                        enviaMail();
-                        //SendMail enviaEmail = new SendMail();
-                        //int status = 0;
-                        //string msgCredencial = "";
-                        //msgCredencial = "Cadastro efetuado com sucesso para Morador: <br> <b> " + oProprietarioModel.proprietario1 + " <b> <br>" + " Bloco:  " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento + "<br> Sua Senha é: " + oProprietarioModel.senha + "<br><hr> acesse: http://www.condominioazuli.somee.com/";
-                        //enviaEmail.enviaSenha(msgCredencial, oProprietarioModel.proprietario1, oProprietarioModel.email, status);
-                        dvDadosMorador.Visible = true;
-                        lblMsg.Text = "Solicitação efetuada com sucesso!! Em breve você irá receber sua senha no e-mail informado <br> <b> ";
 
-
-
+                        throw;
                     }
-
                 }
-                catch (Exception)
+                else
                 {
-
-                    throw;
+                    dvDadosMorador.Visible = true;
+                    lblMsg.Text = "Já existe cadastro para o Bloco: " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento;
                 }
             }
             else
             {
                 dvDadosMorador.Visible = true;
-                lblMsg.Text = "Já existe cadastro para o Bloco: " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento;
+                lblMsg.Text = "E-mail inválido, favor verificar";
             }
-
 
 
         }

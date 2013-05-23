@@ -12,6 +12,19 @@
             font-size: x-small;
             font-weight: bold;
         }
+        .style6
+        {
+            background-color: #BFCBD6;
+            border-left: 1px dotted #999999;
+            border-right: 1px dotted #999999;
+            border-bottom: 1px dotted #999999;
+            padding: 3px 3px 3px 3px;
+            font-family: Verdana;
+            font-size: small;
+            color: #0000FF;
+            border-radius: 1em;
+            width: 520px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -22,7 +35,7 @@
     
         <div id="dvGrupo" runat="server" align="left" dir="ltr">
           <center>  <fieldset class="loginDisplayLegend">
-                <legend title="Abrir Ocorrência" class="seuAnuncios"> O que deseja anunciar? - Bloco:
+                <legend title="Abrir Ocorrência" class="style6"> O que deseja anunciar? - Bloco:
                     <asp:Label ID="lblDescBloco" runat="server" Text="Label"></asp:Label>
                     - Apartamento:
                     <asp:Label ID="lblDescApartamento" runat="server" Text="Label"></asp:Label></legend>
@@ -140,7 +153,7 @@
 <center><div  id="dvAnunciar"  runat="server" align="center" dir="ltr">
        
    <center>  <fieldset class="loginDisplayLegend">
-         <legend class="seuAnuncios" align="left"><strong>Seus Classifcados Ativos</strong></legend>
+         <legend class="style6" align="left"><strong>Seus Classifcados Ativos</strong></legend>
             <br />
         <center>  
             <asp:GridView ID="grdClassificado" runat="server" AutoGenerateColumns="False" 

@@ -58,6 +58,15 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvImagens;
         
         /// <summary>
+        /// tbImagem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTable tbImagem;
+        
+        /// <summary>
         /// ImageButton4 control.
         /// </summary>
         /// <remarks>
