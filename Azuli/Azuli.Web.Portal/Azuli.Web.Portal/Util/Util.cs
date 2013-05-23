@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Text.RegularExpressions;
 
 
 
@@ -194,6 +195,19 @@ namespace Azuli.Web.Portal.Util
             return senha;
         }
 
+        public Boolean validaEmail(string email)
+        {
+            Regex rg= new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
+
+            if (rg.IsMatch(email) && email != string.Empty)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         
     }
 }
