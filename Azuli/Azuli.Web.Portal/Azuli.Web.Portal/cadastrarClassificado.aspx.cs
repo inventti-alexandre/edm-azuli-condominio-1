@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 using Azuli.Web.Business;
 using Azuli.Web.Model;
 using System.Text;
-using System.Text.RegularExpressions;
 
 namespace Azuli.Web.Portal
 {
@@ -368,9 +367,7 @@ namespace Azuli.Web.Portal
                 oClassificadoModel.statusClassificado = "A";
                 oClassificadoModel.assuntoClassificado = txtTitulo.Text;
 
-                Regex rg= new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
-
-                if (rg.IsMatch(txtEmail.Text) && txtEmail.Text != string.Empty)
+                if (oUtil.validaEmail(txtEmail.Text))
                 {
                     try
                     {
