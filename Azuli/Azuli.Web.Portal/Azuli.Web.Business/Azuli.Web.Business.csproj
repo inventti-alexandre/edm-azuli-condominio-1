@@ -45,10 +45,12 @@
   <ItemGroup>
     <Compile Include="AgendaBLL.cs" />
     <Compile Include="ClassificadoBLL.cs" />
+    <Compile Include="ClassificadoVisto.cs" />
     <Compile Include="FileBLL.cs" />
     <Compile Include="GrupoClassificadoBLL.cs" />
     <Compile Include="Interfaces\IAgenda.cs" />
     <Compile Include="Interfaces\IClassificado.cs" />
+    <Compile Include="Interfaces\IClassificadoVisto.cs" />
     <Compile Include="Interfaces\IFile.cs" />
     <Compile Include="Interfaces\IGrupoClassificados.cs" />
     <Compile Include="Interfaces\ILancamentoOcorrencia.cs" />

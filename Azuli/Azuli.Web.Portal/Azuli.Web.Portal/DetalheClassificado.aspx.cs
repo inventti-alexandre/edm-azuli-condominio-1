@@ -15,6 +15,11 @@ namespace Azuli.Web.Portal
     {
         Util.Util oUtil = new Util.Util();
         ClassificadoBLL oClassificado = new ClassificadoBLL();
+        Model.ClassificadoVisto oClassificadoVisto = new Model.ClassificadoVisto();
+        Business.ClassificadoVisto oClassViewBll = new Business.ClassificadoVisto();
+        Classificados oClassificaModel = new Classificados();
+        ApartamentoModel oApModel = new ApartamentoModel();
+
         int codigoClassificado = 0;
         string folder = System.Configuration.ConfigurationManager.AppSettings["classificado"];
         protected void Page_Load(object sender, EventArgs e)
@@ -38,6 +43,7 @@ namespace Azuli.Web.Portal
                     Thread.CurrentThread.CurrentCulture = CI;
                     Thread.CurrentThread.CurrentUICulture = CI;
                     base.InitializeCulture();
+                    atualizaListaContadorClassificado();
 
                    // string.CompareOrdinal("ç", "p");
                 }
@@ -46,9 +52,55 @@ namespace Azuli.Web.Portal
 
         }
 
+        public void atualizaListaContadorClassificado()
+        {
+            int contador = 0;
+            string data = "";
+            
+
+            oClassificaModel.idClassificado = codigoClassificado;
+            oClassificadoVisto.oClassificadoID = oClassificaModel;
+            data = DateTime.Now.ToString("dd/MM/yyyy");
+
+            oClassificadoVisto.dataVisto = Convert.ToDateTime(data);
+
+            oApModel.apartamento = Convert.ToInt32(Session["AP"]);
+            oApModel.bloco = Convert.ToInt32(Session["Bloco"]);
+
+            oClassificadoVisto.oApartamento = oApModel;
+
+
+
+            foreach (var item in oClassViewBll.validaClassificadoVisto(oClassificadoVisto))
+            {
+                contador = item.contadorClassificado;
+            }
+
+
+            if (contador == 0)
+            {
+                //Insere no classificados Visto
+                try
+                {
+                    oClassViewBll.contabilizaVistoClassificado(oClassificadoVisto);
+                }
+                catch (Exception err)
+                {
+                    err.ToString();
+
+                }
+            }
+
+            //Lista quantas vezes foi visto
+             foreach (var item in  oClassViewBll.listaClassificadoVisto(oClassificadoVisto))
+             {
+                 lblContador.Text = "Anúncio já visto " + item.contadorClassificado + " Vez(es)";
+             }
+        }
+
         public void preencheClassificadoDetalhe(int codigoClassificado)
         {
-            Classificados oClassificaModel = new Classificados();
+            
 
             //GrupoClassificados oGrpModel = new GrupoClassificados();
 

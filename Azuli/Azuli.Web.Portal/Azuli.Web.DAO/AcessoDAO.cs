@@ -52,6 +52,7 @@ namespace Azuli.Web.DAO
                 cmd.ExecuteNonQuery();
                 trans.Commit();
                 conn.Close();
+
             }
             catch (Exception e)
             {
@@ -60,6 +61,7 @@ namespace Azuli.Web.DAO
                 throw e;
 
             }
+           
         }
         /// <summary>
         /// Executa o comando de select passado e retorna um DataTable
@@ -69,6 +71,10 @@ namespace Azuli.Web.DAO
         {
             try
             {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
                 conn.Open();
                 cmd.Connection = conn;
                 cmd.CommandType = CommandType.StoredProcedure;

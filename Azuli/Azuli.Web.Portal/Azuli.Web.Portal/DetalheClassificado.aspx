@@ -77,9 +77,14 @@
             <br />
             <br />
             <br />
+            
              </fieldset>
       </div>
     
+    <div id="Div1" 
+        style="position:absolute; top: 346px; left: 939px; width: 157px;" 
+        runat="server"> <asp:Label ID="lblContador" runat="server" 
+            Text="Anúncio visto 0 veze(s)" Font-Bold="True"></asp:Label></div>
     <div id="dvImagens" 
         style="position:absolute; top: 244px; left: 244px; width: 548px;" 
         runat="server">
