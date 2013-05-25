@@ -94,7 +94,7 @@ namespace Azuli.Web.Portal
             //Lista quantas vezes foi visto
              foreach (var item in  oClassViewBll.listaClassificadoVisto(oClassificadoVisto))
              {
-                 lblContador.Text = "Anúncio já visto " + item.contadorClassificado + " Vez(es)";
+                 lblContador.Text = "Anúncio já visto " + item.contadorClassificado + " X ";
              }
         }
 
