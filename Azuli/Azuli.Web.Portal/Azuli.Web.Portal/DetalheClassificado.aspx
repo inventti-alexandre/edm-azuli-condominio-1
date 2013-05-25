@@ -46,9 +46,10 @@
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     
-    <div id="imgAnuncio" style="position:absolute;top: 138px; left: 638px;">
+    <div id="imgAnuncio" style="position:absolute;top: 138px; left: 696px;">
     
-    <asp:Image style='position:absolute; top:0px; left:6px;' ID="imgGrupo" runat="server" Height="44px" Width="153px" />
+    <asp:Image style='position:absolute; top:0px; left:4px;' ID="imgGrupo" 
+            runat="server" Height="44px" Width="153px" />
     </div>
     <div id="dvAnunciar" runat="server" align="center">
 
@@ -119,7 +120,7 @@
         
                 
         
-        style="position:absolute; top: 342px; left: 222px; width: 915px; height: 294px;" > 
+        style="position:absolute; top: 339px; left: 222px; width: 915px; height: 294px;" > 
                
     <fieldset class="loginDisplayLegend">
             <legend class="accordionContent">Descrição do Anúncio</legend>
