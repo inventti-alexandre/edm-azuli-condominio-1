@@ -126,7 +126,7 @@ namespace Azuli.Web.Portal
                     {
                         dvImagens.Visible = true;
                         ImageButton4.Visible = true;
-                        ImageButton1.ImageUrl = folder + item.classificadoimg4;
+                        ImageButton4.ImageUrl = folder + item.classificadoimg4;
                     }
                     else
                     {
