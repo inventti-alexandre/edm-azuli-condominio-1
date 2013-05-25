@@ -121,7 +121,8 @@
     </asp:ToolkitScriptManager>
     <br />
     <br />
-    <div id="imgAnuncio" style="position: absolute; top: 183px; left: 182px; color: #0033CC;">
+    <div id="imgAnuncio" 
+        style="position: absolute; top: 183px; left: 218px; color: #0033CC; width: 160px;">
         <asp:Image ID="imgGrupo" runat="server" Height="44px" Width="156px" />
     </div>
     <div id="dvAnunciar" runat="server" align="center">
@@ -264,7 +265,7 @@
         <center>
             <asp:Label ID="lblAnuncio" runat="server" CssClass="main" ForeColor="#009900"></asp:Label></center>
     </div>
-    <div id="dvInfo" style="position: absolute; top: 540px; left: 650px; width: 345px;"
+    <div id="dvInfo" style="position: absolute; top: 543px; left: 692px; width: 345px;"
         class="">
         <fieldset class="InstructionPhotoDisplay">
             <legend class="instruct">Instrução para Foto</legend>

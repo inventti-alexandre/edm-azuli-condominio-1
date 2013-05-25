@@ -120,7 +120,7 @@
         
                 
         
-        style="position:absolute; top: 339px; left: 222px; width: 915px; height: 294px;" > 
+        style="position:absolute; top: 339px; left: 220px; width: 915px; height: 294px;" > 
                
     <fieldset class="loginDisplayLegend">
             <legend class="accordionContent">Descrição do Anúncio</legend>
