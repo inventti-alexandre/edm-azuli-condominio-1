@@ -17,6 +17,7 @@ namespace Azuli.Web.Portal
         ApartamentoModel oApModel = new ApartamentoModel();
         Util.Util oUtil = new Util.Util();
         ApartamentoModel oAP = new ApartamentoModel();
+        PendenciaAdminBLL oPendenciaBLL = new PendenciaAdminBLL();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,7 +30,8 @@ namespace Azuli.Web.Portal
 
                      Session["AP"].ToString(); 
                      Session["Bloco"].ToString();
-                     Session["Proprie2"].ToString(); 
+                     Session["Proprie2"].ToString();
+                     preechePendencia();
                     
                 }
             }
@@ -85,6 +87,31 @@ namespace Azuli.Web.Portal
 
                 }
             }
+        }
+
+
+        public void preechePendencia()
+        {
+            try
+            {
+                foreach (var item in oPendenciaBLL.listaPendenciaAdmin())
+                {
+                    lblLiberarMorador.Text =  item.qtdMoradorPendente.ToString();
+                    lblLiberaOcorrencia.Text = item.qtdOcorrenciaPendente.ToString();
+                    lblMsgRecebida.Text = item.qtdMensagemPendente.ToString();
+                    lblLiberarReserva.Text = item.qtdAgendaNoPrazo.ToString();
+                    
+                }
+
+                
+
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+
         }
     }
 }

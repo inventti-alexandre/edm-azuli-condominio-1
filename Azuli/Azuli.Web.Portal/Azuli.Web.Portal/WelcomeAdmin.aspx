@@ -131,7 +131,7 @@
                         </td>
                         <td class="style4">
                             <br />
-                            <asp:Label ID="Label3" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lblLiberaOcorrencia" runat="server" Text="0"></asp:Label>
                         </td>
                         <td>
                             <br />

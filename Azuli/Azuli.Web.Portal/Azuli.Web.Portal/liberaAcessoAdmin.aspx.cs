@@ -63,7 +63,7 @@ namespace Azuli.Web.Portal
 
                StringBuilder msgMorador = new StringBuilder();
 
-               msgMorador.Append("Olá " + oProprietarioModel.proprietario1);
+               msgMorador.Append("Olá, " + oProprietarioModel.proprietario1);
                msgMorador.Append("<br> Segue abaixo seus dados para acesso <br>");
                msgMorador.Append(" Bloco: " + oProprietarioModel.ap.bloco);
                msgMorador.Append(" <br> Apartamento: " + oProprietarioModel.ap.apartamento);
@@ -72,8 +72,8 @@ namespace Azuli.Web.Portal
 
 
                oEnviaEmail.enviaSenha(msgMorador.ToString(),oProprietarioModel.proprietario1, oProprietarioModel.email, 0);
-                                    
-               
+               lblMsg.Text = "Acesso liberado com sucesso! Bloco: " + oProprietarioModel.ap.bloco + " Apartamento: " + oProprietarioModel.ap.apartamento;
+               grdGerenciamentoMoradores.DataBind();
             }
 
             catch (Exception err)

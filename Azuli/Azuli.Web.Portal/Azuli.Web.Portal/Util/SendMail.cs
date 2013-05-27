@@ -46,7 +46,7 @@ namespace Azuli.Web.Portal.Util
                   msgErr.Bcc.Add("leandrolvilela@gmail.com");
                   msgErr.IsBodyHtml = true;
                   msgErr.Body = mensagem;
-                  msgErr.Subject = "Sistema Spazio Campo Azuli Azuli";
+                  msgErr.Subject = "Sistema Spazio Campo Azuli";
                   
                  try
                   {

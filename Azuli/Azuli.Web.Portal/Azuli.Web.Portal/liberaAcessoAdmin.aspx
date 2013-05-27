@@ -6,6 +6,7 @@
     <div id="dvManager" align="center" runat="server">
        <fieldset class="loginDisplayLegend">
    <legend class="accordionContent">Liberação de Acessos:</legend>
+        <center>  <asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#006600"></asp:Label></center> 
    <br /><br />
   <center>
        <asp:GridView ID="grdGerenciamentoMoradores" runat="server" AllowPaging="True" 
