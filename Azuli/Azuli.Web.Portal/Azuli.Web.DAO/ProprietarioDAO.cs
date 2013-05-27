@@ -105,8 +105,52 @@ namespace Azuli.Web.DAO
                 throw;
             }
         }
+        public listProprietario enviaCrendencialAcesso(ApartamentoModel oPropri)
+        {
+            string clausulaSQL = "SP_ENVIA_SENHA_MORADOR";
+
+            try
+            {
+
+                SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
+                comandoSQL.Parameters.AddWithValue("@PROPRIETARIO_AP", oPropri.apartamento);
+                comandoSQL.Parameters.AddWithValue("@PROPRIETARIO_BLOCO", oPropri.bloco);
+
+                DataTable tbProprietario = new DataTable();
+
+                tbProprietario = ExecutaQuery(comandoSQL);
+
+                return listaAp(tbProprietario);
 
 
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+    
+        public void liberaAcesso(ApartamentoModel ap)
+        {
+            string clausulaSQL = "SP_LIBERA_ACESSO_MORADOR";
+
+            try
+            {
+
+                SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
+                comandoSQL.Parameters.AddWithValue("@PROPRIETARIO_AP", ap.apartamento);
+                comandoSQL.Parameters.AddWithValue("@PROPRIETARIO_BLOCO", ap.bloco);
+                ExecutaQuery(comandoSQL);
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
 
         public void alteraSenha(ProprietarioModel oProprietario)
         {
@@ -144,7 +188,10 @@ namespace Azuli.Web.DAO
                 oPropri.ap = new ApartamentoModel();
 
                 oPropri.proprietario1 = dr["NOME_PROPRIETARIO1"].ToString();
-                oPropri.proprietario2 = dr["NOME_PROPRIETARIO2"].ToString();
+               
+                if (dr.Table.Columns.Contains("NOME_PROPRIETARIO2"))
+                    oPropri.proprietario2 = dr["NOME_PROPRIETARIO2"].ToString();
+
                 oPropri.ap.bloco = int.Parse(dr["PROPRIETARIO_BLOCO"].ToString());
                 oPropri.ap.apartamento = int.Parse(dr["PROPRIETARIO_AP"].ToString());
 
@@ -262,6 +309,11 @@ namespace Azuli.Web.DAO
             }
         }
 
-        #endregion
-    }
+      
+     
+
+
+
+#endregion
+}
 }

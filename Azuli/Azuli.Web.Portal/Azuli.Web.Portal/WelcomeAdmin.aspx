@@ -87,7 +87,7 @@
                         </td>
                         <td class="style7">
                             <br />
-                            <asp:ImageButton ID="imgLiberarMorador" CssClass="Border" runat="server" ImageUrl="~/images/cliqueAqui.jpg" />
+                            <asp:ImageButton ID="imgLiberarMorador" CssClass="BorderAdministrador" runat="server" ImageUrl="~/images/cliqueAqui.jpg" />
                         </td>
                     </tr>
                     <tr>
@@ -103,7 +103,7 @@
                         </td>
                         <td>
                             <br />
-                            <asp:ImageButton ID="imgLiberarReserva" CssClass="Border" runat="server" ImageUrl="~/images/cliqueAqui.jpg" />
+                            <asp:ImageButton ID="imgLiberarReserva" CssClass="BorderAdministrador" runat="server" ImageUrl="~/images/cliqueAqui.jpg" />
                         </td>
                     </tr>
                     <tr>
@@ -119,7 +119,7 @@
                         </td>
                         <td>
                             <br />
-                            <asp:ImageButton ID="imgMsgRecebida" CssClass="Border" runat="server" ImageUrl="~/images/cliqueAqui.jpg" />
+                            <asp:ImageButton ID="imgMsgRecebida" CssClass="BorderAdministrador" runat="server" ImageUrl="~/images/cliqueAqui.jpg" />
                         </td>
                     </tr>
                     <tr>
@@ -135,15 +135,16 @@
                         </td>
                         <td>
                             <br />
-                            <asp:ImageButton ID="ImageButton1" CssClass="Border" runat="server" ImageUrl="~/images/cliqueAqui.jpg" />
+                            <asp:ImageButton ID="ImageButton1" CssClass="BorderAdministrador" runat="server" ImageUrl="~/images/cliqueAqui.jpg" />
                         </td>
                     </tr>
                 </table></div>
-            
+                 <br /><br /><br /><br />
         </fieldset></div>
-    
+   
     <div id="dvLegend" runat="server" style="position: absolute; top: 434px; left: 201px;
         height: 77px; width: 238px;">
+         <br />
         <table id="Table1" runat="server" align="center" style="width: 227px" class="btGeral">
             <tr>
                 <td align="justify">
@@ -166,13 +167,14 @@
                    
                     <asp:ImageButton ID="imgFesta1" runat="server" Height="8px" ImageUrl="~/images/vermelho.jpg"
                         Width="8px" />
-                  <span class="style8"> &nbsp; Festa e Churrasqueira reservada</span>
+                  <span class="style8">&nbsp;Festa/Churras reservada</span>
                 </td>
             </tr>
         </table>
+      
     </div>
 
-    <br /></br>
+ 
     
    
     

@@ -604,6 +604,14 @@ input.botao, .btGeral {
   
 }
 
+.BorderAdministrador
+{
+  
+  border:none; 
+  
+}
+
+
 .GridView
 {
 	border-style: outset;

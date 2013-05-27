@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head id="Head1" runat="server">
-    <title></title>
+    <title>Portal do Condominio</title>
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
     <script src="Scripts/ScriptAzuli.js" type="text/javascript"></script>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
@@ -61,6 +61,8 @@
                         <asp:MenuItem Text="Moradores" Value="Publicações">
                             <asp:MenuItem Text="Cadastrar/Alterar/Desativar Morador" 
                                 Value="Cadastrar / Alterar" NavigateUrl="~/gerenciamentoMoradorAdm.aspx"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/liberaAcessoAdmin.aspx" Text="Liberação de Acesso" 
+                                Value="Liberar Acessos"></asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Configurar" Value="Mensagens">
                             <asp:MenuItem Text="Valor Reserva" Value="Visualizar Circular">

@@ -17,7 +17,8 @@ namespace Azuli.Web.DAO.Interfaces
         void alteraSenha(ProprietarioModel oProprietario);
         void cadastraOcorrencia(LancamentoOcorrenciaModel olacamento);
         listProprietario recuperaSenhaMorador(ProprietarioModel ap);
-
+        void liberaAcesso(ApartamentoModel ap);
+        listProprietario enviaCrendencialAcesso(ApartamentoModel oPropri);
 
     }
 }

@@ -71,11 +71,17 @@ namespace Azuli.Web.Business
         public void alteraSenha(ProprietarioModel oProprietario)
         {
 
+           
+            
+        }
+
+        public void liberaAcesso(ApartamentoModel ap)
+        {
             try
             {
-               
 
-                oPropriDAO.alteraSenha(oProprietario);
+
+                oPropriDAO.liberaAcesso(ap);
 
             }
             catch (Exception e)
@@ -83,7 +89,6 @@ namespace Azuli.Web.Business
 
                 throw e;
             }
-            
         }
 
         
@@ -127,6 +132,20 @@ namespace Azuli.Web.Business
 
         }
 
+        public listProprietario enviaCrendencialAcesso(ApartamentoModel oPropri)
+        {
+            try
+            {
+
+                return oPropriDAO.enviaCrendencialAcesso(oPropri);
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
       
 
         /// <summary>
@@ -148,6 +167,14 @@ namespace Azuli.Web.Business
                 throw e;
             }
         }
+
+      
+
+      
+
+        
+
+      
 
         #endregion
     }

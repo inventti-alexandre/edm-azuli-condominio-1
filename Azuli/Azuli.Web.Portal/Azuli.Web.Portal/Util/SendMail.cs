@@ -57,7 +57,7 @@ namespace Azuli.Web.Portal.Util
                   {
 
                       
-throw e;
+                    throw e;
                   }
                 
              }
@@ -69,7 +69,7 @@ throw e;
                   msg.Bcc.Add("edmls@ig.com.br");
                   msg.IsBodyHtml = true;
                   msg.Body = mensagem;
-                  msg.Subject = "Sistema Spazio Campo Azuli Azuli";
+                  msg.Subject = "Sistema Spazio Campo Azuli Azuli - Sua Credencial";
 
                   try
                   {

@@ -107,6 +107,7 @@
     <Content Include="images\sgcv5.jpg" />
     <Content Include="images\tela-manutencao1.jpg" />
     <Content Include="images\word.gif" />
+    <Content Include="liberaAcessoAdmin.aspx" />
     <Content Include="meuClassificados.aspx" />
     <Content Include="MostraPdfCircular.aspx" />
     <Content Include="publicarCircular.aspx" />
@@ -297,6 +298,13 @@
     </Compile>
     <Compile Include="GerenciarClassificadoMorador.aspx.designer.cs">
       <DependentUpon>GerenciarClassificadoMorador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="liberaAcessoAdmin.aspx.cs">
+      <DependentUpon>liberaAcessoAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="liberaAcessoAdmin.aspx.designer.cs">
+      <DependentUpon>liberaAcessoAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="meuClassificados.aspx.cs">
       <DependentUpon>meuClassificados.aspx</DependentUpon>
