@@ -103,7 +103,6 @@ namespace Azuli.Web.Portal
                     
                 }
 
-                
 
             }
             catch (Exception)
@@ -112,6 +111,11 @@ namespace Azuli.Web.Portal
                 throw;
             }
 
+        }
+
+        protected void imgLiberarMorador_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("liberaAcessoAdmin.aspx");
         }
     }
 }

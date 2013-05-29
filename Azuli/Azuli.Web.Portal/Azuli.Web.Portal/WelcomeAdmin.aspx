@@ -83,11 +83,14 @@
                         </td>
                         <td class="style6">
                             <br />
-                            <asp:Label ID="lblLiberarMorador" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lblLiberarMorador" runat="server" Text="0" Font-Bold="True" 
+                                ForeColor="Blue"></asp:Label>
                         </td>
                         <td class="style7">
                             <br />
-                            <asp:ImageButton ID="imgLiberarMorador" CssClass="BorderAdministrador" runat="server" ImageUrl="~/images/cliqueAqui.jpg" />
+                            <asp:ImageButton ID="imgLiberarMorador" CssClass="BorderAdministrador" 
+                                runat="server" ImageUrl="~/images/cliqueAqui.jpg" 
+                                onclick="imgLiberarMorador_Click" />
                         </td>
                     </tr>
                     <tr>
@@ -99,7 +102,8 @@
                         </td>
                         <td class="style4">
                             <br />
-                            <asp:Label ID="lblLiberarReserva" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lblLiberarReserva" runat="server" Text="0" Font-Bold="True" 
+                                ForeColor="Blue"></asp:Label>
                         </td>
                         <td>
                             <br />
@@ -115,7 +119,8 @@
                         </td>
                         <td class="style4">
                             <br />
-                            <asp:Label ID="lblMsgRecebida" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lblMsgRecebida" runat="server" Text="0" Font-Bold="True" 
+                                ForeColor="Blue"></asp:Label>
                         </td>
                         <td>
                             <br />
@@ -131,7 +136,8 @@
                         </td>
                         <td class="style4">
                             <br />
-                            <asp:Label ID="lblLiberaOcorrencia" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lblLiberaOcorrencia" runat="server" Text="0" Font-Bold="True" 
+                                ForeColor="Blue"></asp:Label>
                         </td>
                         <td>
                             <br />
