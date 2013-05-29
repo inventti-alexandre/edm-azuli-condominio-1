@@ -168,13 +168,19 @@
                                             <td class="style6">
                                                 <asp:Label ID="lblBloco" runat="server" Font-Bold="True" Text="Bloco:"></asp:Label>
                                             </td>
-                                            <td class="style6">
-                                                <asp:TextBox ID="txtSolicitaBloco" runat="server"></asp:TextBox>
+                                            <td class="style6" align="left">
+                                                <asp:DropDownList ID="drpBlocoSolicita" runat="server" CssClass="conteudo" 
+                                                    Font-Bold="True" Font-Size="Small" ForeColor="Blue" Height="17px" Width="44px">
+                                                    <asp:ListItem>1</asp:ListItem>
+                                                    <asp:ListItem>2</asp:ListItem>
+                                                    <asp:ListItem>3</asp:ListItem>
+                                                    <asp:ListItem>4</asp:ListItem>
+                                                    <asp:ListItem>5</asp:ListItem>
+                                                    <asp:ListItem>6</asp:ListItem>
+                                                </asp:DropDownList>
                                             </td>
                                             <td class="style9">
-                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtSolicitaBloco"
-                                                    ErrorMessage="*" Font-Bold="True" ForeColor="Red" ValidationGroup="solicitaAcesso"></asp:RequiredFieldValidator>
-                                            </td>
+                                                &nbsp;</td>
                                         </tr>
                                         <tr>
                                             <td class="style6">

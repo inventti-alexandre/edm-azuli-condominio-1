@@ -180,7 +180,7 @@ namespace Azuli.Web.Portal.Account
             {
                 int status = 0;
 
-                string mensagem = "Solicitação de Acesso Ap: " + txtSolicitaAP.Text + " Bloco " + txtSolicitaBloco.Text + "Email " + txtEmail.Text + " Nome " + txtNome.Text;
+                string mensagem = "Solicitação de Acesso Ap: " + txtSolicitaAP.Text + " Bloco " + drpBlocoSolicita.SelectedItem.Text + "Email " + txtEmail.Text + " Nome " + txtNome.Text;
 
                 enviaEmail.enviaSenha(mensagem, txtNome.Text, "edmls@ig.com.br", status);
 
@@ -205,7 +205,7 @@ namespace Azuli.Web.Portal.Account
 
             oProprietarioModel.ap = new ApartamentoModel();
             oAPmodel.apartamento = Convert.ToInt32(txtSolicitaAP.Text);
-            oAPmodel.bloco = Convert.ToInt32(txtSolicitaBloco.Text);
+            oAPmodel.bloco = Convert.ToInt32(drpBlocoSolicita.SelectedItem.Text);//Convert.ToInt32(txtSolicitaBloco.Text);
             oProprietarioModel.ap = oAPmodel;
 
             if (oUtil.validaEmail(txtEmail.Text))
@@ -273,7 +273,7 @@ namespace Azuli.Web.Portal.Account
 
             hiddenControl();
             txtSolicitaAP.Text = "";
-            txtSolicitaBloco.Text = "";
+            drpBlocoSolicita.SelectedIndex = -1;
             txtEmail.Text = "";
             Response.Redirect("LoginAzulli.aspx");
         }
