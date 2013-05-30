@@ -9,9 +9,8 @@
 
         <table class="style1">
         <tr>
-            <td class="style2">
-                <asp:Label ID="lblMes" runat="server" Font-Bold="True" Text="Mês:"></asp:Label>
-&nbsp;<asp:DropDownList ID="drpMeses" runat="server" CssClass="btGeral" Font-Bold="True" 
+            <td class="style3">
+                <asp:Label ID="lblMes" runat="server" Font-Bold="True" Text="Mês:"></asp:Label><asp:DropDownList ID="drpMeses" runat="server" CssClass="btGeral" Font-Bold="True" 
                     Height="16px" Width="101px">
                 </asp:DropDownList>
             </td>
@@ -20,7 +19,6 @@
                 <asp:DropDownList ID="drpAno" runat="server" CssClass="btGeral" 
                     Font-Bold="True" Height="16px" Width="101px">
                 </asp:DropDownList>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </td>
             <td>
                 <asp:Label ID="lbSalao" runat="server" Font-Bold="True" Text="Salão de:"></asp:Label>
