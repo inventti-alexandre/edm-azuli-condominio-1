@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+﻿<%@ Page Title="Página Inicial Moradores" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
     CodeBehind="paginaInicialMoradores.aspx.cs" Inherits="Azuli.Web.Portal.paginaInicialMoradores" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
@@ -8,12 +8,6 @@
             font-family: "Segoe UI";
             font-size: medium;
             color:black;
-        }
-        .style5
-        {
-            color: #0080C6;
-            font-family: "Segoe UI";
-            font-size: small;
         }
         .style3
         {
@@ -30,6 +24,16 @@
         .style8
         {
             font-weight: normal;
+        }
+        .style9
+        {
+            font-weight: bold;
+            color: #0066FF;
+            font-size: small;
+        }
+        .GridViewPager
+        {
+            width: 177px;
         }
         </style>
 </asp:Content>
@@ -65,19 +69,45 @@
         
         <li style="color: #000080">
             <asp:LinkButton ID="link1" runat="server" OnClick="link1_Click">Download Regimento Interno do Condominio  Spazio Campo Azuli &nbsp;<img alt=""  src="images/pdf.jpg" style="height: 24px; width: 24px" /></asp:LinkButton></li>
-       <br />
-        <li style="color: #000080">
-            <asp:LinkButton ID="Link2" runat="server" OnClick="Link2_Click">Consultar Nomes e contatos: Sindico/Subsindico e Conselheiros</asp:LinkButton></li>
-        <br />
-        <li style="color: #000080">
-            <asp:LinkButton ID="link4" runat="server" OnClick="link4_Click">Consultar Nomes e contatos/funções dos funcionários do Condominio</asp:LinkButton></li>
-        <br />
-        <p>
-            A Solução permite gerenciar, de modo on-line, todas as funcionalidades, em um ambiente
-            seguro e robusto.
-        </p>
+       
+       </fieldset>   
 
+        <div id="dvClassificados" style="position:absolute;" runat="server">
+      
+      
+      </div>
        
+        <div  id="dvEnquete" style="position:absolute" class="container">
+            <div class="headerEnquete">
+                <span class="style9">Enquete - Condomínio Azuli</span>
+            </div>
+            <div class="mainbody">
+                <b style="color: #000000">Você julga importante a utilização de um
+                <br />
+                software de gestão/colaboração no condomínio?</b><br />
+                <br />
+                <table class="GridViewPager">
+                    <asp:RadioButtonList ID="rdlEnquete" runat="server" 
+                        DataSourceID="SqlDataSourceRadio" DataTextField="descricaoEnquete" DataValueField="idEnquete">
+                        <asp:ListItem Value="1"> Indispensável   </asp:ListItem>
+                        <asp:ListItem Value="2"> Muito importante</asp:ListItem>
+                        <asp:ListItem Value="3"> Importante</asp:ListItem>
+                        <asp:ListItem Value="4"> Pouco Importante</asp:ListItem>
+                        <asp:ListItem Value="5"> Dispensável</asp:ListItem>
+                       
+                    </asp:RadioButtonList>
+                    <asp:SqlDataSource ID="SqlDataSourceRadio" runat="server" 
+                        ConnectionString="<%$ ConnectionStrings:azulli %>" 
+                        SelectCommand="SELECT idEnquete, descricaoEnquete FROM [Enquete]"></asp:SqlDataSource>
+                </table>
+            </div>
+            <div class="FooterEnquete">
+                <asp:Button ID="btnVotar" Text="     VOTAR" runat="server" BackColor="#99CCFF" 
+                    CssClass="GridViewEdit" Font-Bold="True" ForeColor="Black" Width="82px"  />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:LinkButton ID="lnkResultado" runat="server">Ver Resultado</asp:LinkButton>
+            </div>
        
-    </fieldset>
+      </div>
+   <br /><br /> <br /><br /> <br /><br /> <br /><br /> <br /><br /> <br /><br /> <br /><br />
 </asp:Content>

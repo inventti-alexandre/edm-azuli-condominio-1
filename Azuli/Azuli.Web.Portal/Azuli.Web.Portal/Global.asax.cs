@@ -14,8 +14,8 @@ namespace Azuli.Web.Portal
      
         void Application_Start(object sender, EventArgs e)
         {
-           
-           
+
+            Application["ContadorAcessos"] = 0;
 
         }
 
@@ -70,23 +70,26 @@ namespace Azuli.Web.Portal
 				corpoEmail.Append("</html>");
 
 
+                logError.enviaSenha(corpoEmail.ToString(), "Log Error:", "edmls@ig.com.br", 1);
+
+                Session["ErrorDetails"] = ex.InnerException + " / " + ex.Message;
+                Response.Redirect("ErrorPage.aspx");
+
                 
-
-                logError.enviaSenha(corpoEmail.ToString() ,"Log Error:", "Sistema", 1);
-
-                Server.Transfer("ErrorPage.aspx");
             }
 
         }
 
         void Session_Start(object sender, EventArgs e)
         {
-            // Code that runs when a new session is started
+            Application["ContadorAcessos"] = (int)(Application["ContadorAcessos"]) + 1;
 
         }
 
         void Session_End(object sender, EventArgs e)
         {
+
+            Application["ContadorAcessos"] = (int)(Application["ContadorAcessos"]) - 1;
             // Code that runs when a session ends. 
             // Note: The Session_End event is raised only when the sessionstate mode
             // is set to InProc in the Web.config file. If session mode is set to StateServer 

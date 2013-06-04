@@ -76,6 +76,7 @@
     <Content Include="gerenciamentoMoradorAdm.aspx" />
     <Content Include="GerenciarClassificadoMorador.aspx" />
     <Content Include="images\add.png" />
+    <Content Include="images\boton_responder.gif" />
     <Content Include="images\clientes.jpg" />
     <Content Include="images\cliqueAqui.jpg" />
     <Content Include="images\esqueci.jpg" />
@@ -86,6 +87,7 @@
     <Content Include="images\logoteste.png" />
     <Content Include="images\mensagem.jpg" />
     <Content Include="images\ocoor.jpg" />
+    <Content Include="images\online.gif" />
     <Content Include="images\reserva.jpg" />
     <Content Include="images\seguranca.jpg" />
     <Content Include="images\sgc.jpg" />
@@ -106,8 +108,10 @@
     <Content Include="images\sgcv4.jpg" />
     <Content Include="images\sgcv5.jpg" />
     <Content Include="images\tela-manutencao1.jpg" />
+    <Content Include="images\votar.jpg" />
     <Content Include="images\word.gif" />
     <Content Include="liberaAcessoAdmin.aspx" />
+    <Content Include="ListaReclamacaoAbertaAdmin.aspx" />
     <Content Include="meuClassificados.aspx" />
     <Content Include="MostraPdfCircular.aspx" />
     <Content Include="publicarCircular.aspx" />
@@ -305,6 +309,13 @@
     </Compile>
     <Compile Include="liberaAcessoAdmin.aspx.designer.cs">
       <DependentUpon>liberaAcessoAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaReclamacaoAbertaAdmin.aspx.cs">
+      <DependentUpon>ListaReclamacaoAbertaAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaReclamacaoAbertaAdmin.aspx.designer.cs">
+      <DependentUpon>ListaReclamacaoAbertaAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="meuClassificados.aspx.cs">
       <DependentUpon>meuClassificados.aspx</DependentUpon>

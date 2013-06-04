@@ -49,21 +49,48 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.LinkButton link1;
         
         /// <summary>
-        /// Link2 control.
+        /// dvClassificados control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Link2;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvClassificados;
         
         /// <summary>
-        /// link4 control.
+        /// rdlEnquete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton link4;
+        protected global::System.Web.UI.WebControls.RadioButtonList rdlEnquete;
+        
+        /// <summary>
+        /// SqlDataSourceRadio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceRadio;
+        
+        /// <summary>
+        /// btnVotar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVotar;
+        
+        /// <summary>
+        /// lnkResultado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkResultado;
     }
 }

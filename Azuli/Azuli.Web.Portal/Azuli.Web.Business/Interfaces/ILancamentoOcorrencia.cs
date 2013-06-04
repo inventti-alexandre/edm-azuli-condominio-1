@@ -12,6 +12,7 @@ namespace Azuli.Web.Business.Interfaces
     {
         listaLancamentoOcorrencia buscaOcorrenciaByMeses(LancamentoOcorrenciaModel olancamento, int mes, int ano);
         listaLancamentoOcorrencia buscaOcorrenciaById(LancamentoOcorrenciaModel olancamento);
-        
+        listaLancamentoOcorrencia listaReclamacoesAbertas(LancamentoOcorrenciaModel oLancamento);
+
     }
 }
