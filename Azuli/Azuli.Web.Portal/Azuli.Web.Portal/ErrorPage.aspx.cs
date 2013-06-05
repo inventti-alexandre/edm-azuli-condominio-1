@@ -12,7 +12,6 @@ namespace Azuli.Web.Portal
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
             if (!IsPostBack)
             {
 
@@ -24,13 +23,13 @@ namespace Azuli.Web.Portal
 
             Exception ex = Server.GetLastError();
 
-            if (ex != null)
+            if (Session["ErrorDetails"] != null)
             {
-            
 
-                if (ex.InnerException != null)
+
+                if (Session["ErrorDetails"] != null)
                 {
-                    lblMessage.Text = ex.InnerException.Message;
+                    lblMessage.Text = Session["ErrorDetails"].ToString();
                 }
                 else
                 {
@@ -39,6 +38,7 @@ namespace Azuli.Web.Portal
             }
             else
             {
+                lblMessage.Text = "Erro não encontrado";
               
             }
 
