@@ -8,6 +8,7 @@ using Azuli.Web.Model;
 using Azuli.Web.Business;
 using System.Text;
 using System.IO;
+using System.Collections;
 
 namespace Azuli.Web.Portal
 {
@@ -16,6 +17,9 @@ namespace Azuli.Web.Portal
         Util.Util oUtil = new Util.Util();
         MensagemMoradorModel oMensagemModel = new MensagemMoradorModel();
         MensagemMoradorBLL oMensagemBLL = new MensagemMoradorBLL();
+        Enquete oEnqueteModel = new Enquete();
+        EnqueteBLL oEnqueteBLL = new EnqueteBLL();
+        ApartamentoModel oApEnquete = new ApartamentoModel();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,6 +33,12 @@ namespace Azuli.Web.Portal
                     Session["Bloco"].ToString();
                     Session["Proprie2"].ToString();
                     listaMensagemMoradorBLL();
+                    resultadoEnquete();
+                    preencheGrid();
+                    dvResultado.Visible = false;
+                    lblMsg.Visible = false;
+
+
 
                     if (Session["mensagem"] != null)
                     {
@@ -153,6 +163,185 @@ namespace Azuli.Web.Portal
                 throw;
             }
 
+        }
+
+        protected void btnVotar_Click(object sender, EventArgs e)
+        {
+
+            if (rdlEnquete.SelectedItem != null)
+            {
+                oEnqueteModel.idEnquete = Convert.ToInt32(rdlEnquete.SelectedValue);
+                oEnqueteModel.enqueteDescricao = rdlEnquete.SelectedItem.Text;
+                oEnqueteModel.resultadoEnquete = 1;
+                oApEnquete.apartamento = Convert.ToInt32(Session["AP"]);
+                oApEnquete.bloco = Convert.ToInt32(Session["bloco"]);
+                oEnqueteModel.oAP = oApEnquete;
+
+                try
+                {
+                    oEnqueteBLL.cadastraVotacao(oEnqueteModel);
+                    lblMsg.Visible = true;
+                    lblMsg.Text = "voto feito com sucesso!! Obrigado";
+
+                }
+                catch (Exception)
+                {
+                    lblMsg.Visible = true;
+                    lblMsg.Text = "Você já votou nesta Enquete, obrigado!";
+                }
+            }
+            else
+            {
+                lblMsg.Visible = true;
+                lblMsg.Text = "Favor escolher umas das opções acima!";
+            }
+
+        }
+
+        public void resultadoEnquete()
+        {
+
+            double total = 0;
+            try
+            {
+                //Pegar o total de votos
+                foreach (var item in oEnqueteBLL.resultadoEnquete())
+                {
+                    total += item.resultadoEnquete;
+                }
+
+                lblTotal.Text = Math.Round(total).ToString();
+                double perIndispensabel = 0;
+                double perdispensabel = 0;
+                double perMuitoImportante = 0;
+                double perImportante = 0;
+                double perPoucoImportante = 0;
+
+                //Faz o cálculo da votação
+                foreach (var item in oEnqueteBLL.resultadoEnquete())
+                {
+                    switch (item.idEnquete)
+                    {
+                        case 1: //Indispensável
+                            perIndispensabel = (item.resultadoEnquete / total * 100);
+                            lblIndispensavel.Text = item.resultadoEnquete + " voto(s), " + "(" +Math.Round(perIndispensabel) +")%";
+                            dvIndisp.Style["width"] = perIndispensabel + "px"; 
+                            break;
+
+                        case 2: //Muito importante
+                            perMuitoImportante = (item.resultadoEnquete / total * 100);
+                            lblMuitoImportante.Text = item.resultadoEnquete + " voto(s), " + "(" +Math.Round(perMuitoImportante) + ")%";
+                            dvMuitoImport.Style["width"] = perMuitoImportante + "px"; 
+                            break;
+
+                        case 3: //Importante
+                            perImportante = (item.resultadoEnquete / total * 100);
+                            lblImportante.Text = item.resultadoEnquete + " voto(s), " + "(" + Math.Round(perImportante) + ")%";
+                            dvImportante.Style["width"] = perImportante + "px"; 
+                            break;
+
+                        case 4: //Pouco Importante
+                            perPoucoImportante = (item.resultadoEnquete / total * 100);
+                            lblPoucoImportante.Text = item.resultadoEnquete + " voto(s), " + "("+ Math.Round(perPoucoImportante) + ")%";
+                            dvPoucoImpor.Style["width"] = perPoucoImportante + "px"; 
+                            break;
+
+                        case 5: //Dispensável
+                            perdispensabel = (item.resultadoEnquete / total * 100);
+                            lblDispensavel.Text = item.resultadoEnquete + " voto(s), " + "(" +  Math.Round(perdispensabel) + ")%";
+                            dvDispen.Style["width"] = perdispensabel + "px"; 
+                            break;
+
+                    }
+                    
+                }
+            }
+            catch (Exception err)
+            {
+                
+                throw err;
+            }
+            
+        }
+
+        protected void lnkResultado_Click(object sender, EventArgs e)
+        {
+            resultadoEnquete();
+            dvResultado.Visible = true;
+            dvEnquete.Visible = false;
+                
+        }
+
+        
+
+        protected void lnkVoltar_Click1(object sender, EventArgs e)
+        {
+            dvResultado.Visible = false;
+            dvEnquete.Visible = true;
+            lblMsg.Visible = false;
+            rdlEnquete.ClearSelection();
+            
+        }
+
+
+        public static int ArraySorter(ArrayList lista)
+        {
+            ArrayList arrinput = new ArrayList();
+            for (int i = 0; i < lista.Count; i++)
+            {
+                arrinput.Add(lista[i]);
+            }
+            Random rnd = new Random();
+            int num = rnd.Next(arrinput.Count);
+            return Convert.ToInt32(arrinput[num]);
+        }
+
+        public void preencheGrid()
+        {
+            ClassificadoBLL oClassificadoBLL = new ClassificadoBLL();
+            Classificados oClassificaModel = new Classificados();
+            ArrayList sorteioClassificado = new ArrayList();
+
+            //GrupoClassificados oGrpModel = new GrupoClassificados();
+            ApartamentoModel oAp = new ApartamentoModel();
+
+            oClassificaModel.grpClassificado.grupoClassificado = 0;
+            oClassificaModel.statusClassificado = "A";
+
+
+            foreach (var item in oClassificadoBLL.consultaClassificado(oClassificaModel))
+            {
+                
+                sorteioClassificado.Add(item.idClassificado);   
+            }
+
+            int[] numeroSorteado = new int[3];
+
+            for (int i = 0; i < 3; i++)
+            {
+               numeroSorteado[i] = paginaInicialMoradores.ArraySorter(sorteioClassificado);
+               sorteioClassificado.Remove(numeroSorteado[i]);
+            }
+           
+            
+
+            grdClassificado.DataSource = from listaClassificados in oClassificadoBLL.consultaClassificado(oClassificaModel)
+                                         where listaClassificados.statusClassificado == "A"
+                                         && listaClassificados.idClassificado == numeroSorteado[0] || listaClassificados.idClassificado == numeroSorteado[1]
+                                         || listaClassificados.idClassificado == numeroSorteado[2]
+                                         orderby listaClassificados.dataClassificado
+                                         select listaClassificados;
+
+
+            grdClassificado.DataBind();
+
+
+
+        }
+
+        protected void btnClassificados_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("consultaClassificados.aspx");
         }
 
         

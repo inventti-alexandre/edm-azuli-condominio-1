@@ -47,12 +47,14 @@
     <Compile Include="AcessoDAO.cs" />
     <Compile Include="Agenda.cs" />
     <Compile Include="ClassificadoVistoDAO.cs" />
+    <Compile Include="EnqueteDAO.cs" />
     <Compile Include="FileDAO.cs" />
     <Compile Include="ClassificadoDAO.cs" />
     <Compile Include="GrupoClassificadosDAO.cs" />
     <Compile Include="Interfaces\IAgenda.cs" />
     <Compile Include="Interfaces\IClassificado.cs" />
     <Compile Include="Interfaces\IClassificadoVisto.cs" />
+    <Compile Include="Interfaces\IEnquete.cs" />
     <Compile Include="Interfaces\IFile.cs" />
     <Compile Include="Interfaces\IGrupoClassificados.cs" />
     <Compile Include="Interfaces\ILancamentoOcorrencia.cs" />
