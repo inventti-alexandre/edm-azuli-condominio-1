@@ -9,6 +9,8 @@ using Azuli.Web.Business;
 using System.Text;
 using System.IO;
 using System.Collections;
+using System.Globalization;
+using System.Threading;
 
 namespace Azuli.Web.Portal
 {
@@ -37,7 +39,12 @@ namespace Azuli.Web.Portal
                     preencheGrid();
                     dvResultado.Visible = false;
                     lblMsg.Visible = false;
+                    CultureInfo CI = new CultureInfo("pt-PT");
+                    CI.DateTimeFormat.ShortDatePattern = "dd-MM-yyyy";
 
+                    Thread.CurrentThread.CurrentCulture = CI;
+                    Thread.CurrentThread.CurrentUICulture = CI;
+                    base.InitializeCulture();
 
 
                     if (Session["mensagem"] != null)
@@ -315,9 +322,9 @@ namespace Azuli.Web.Portal
                 sorteioClassificado.Add(item.idClassificado);   
             }
 
-            int[] numeroSorteado = new int[3];
+            int[] numeroSorteado = new int[4];
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 4; i++)
             {
                numeroSorteado[i] = paginaInicialMoradores.ArraySorter(sorteioClassificado);
                sorteioClassificado.Remove(numeroSorteado[i]);
@@ -328,7 +335,7 @@ namespace Azuli.Web.Portal
             grdClassificado.DataSource = from listaClassificados in oClassificadoBLL.consultaClassificado(oClassificaModel)
                                          where listaClassificados.statusClassificado == "A"
                                          && listaClassificados.idClassificado == numeroSorteado[0] || listaClassificados.idClassificado == numeroSorteado[1]
-                                         || listaClassificados.idClassificado == numeroSorteado[2]
+                                         || listaClassificados.idClassificado == numeroSorteado[2] || listaClassificados.idClassificado == numeroSorteado[3]
                                          orderby listaClassificados.dataClassificado
                                          select listaClassificados;
 

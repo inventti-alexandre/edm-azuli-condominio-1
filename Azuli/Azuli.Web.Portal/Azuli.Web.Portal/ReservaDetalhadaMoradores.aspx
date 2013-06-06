@@ -3,10 +3,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-  
+   <br /><br /> <br /><br />
    
-    <fieldset class="loginDisplayLegend">
+    <fieldset class="login" runat="server"> 
         <legend class="accordionContent">Reserva do Mês Geral: </legend>
+      <div id="dvReservaMes" runat="server" align="left">
+      
         <table class="style1">
             <tr>
                 <td class="style2">
@@ -37,8 +39,9 @@
                     &nbsp;
                 </td>
             </tr>
-        </table>
+        </table></div>
     </fieldset>
+   
    
     <div id="dvFesta" runat="server">
 

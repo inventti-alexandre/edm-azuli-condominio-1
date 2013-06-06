@@ -53,10 +53,11 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <br />
-    <div id="dvCaixa" runat="server">
-        <fieldset class="loginDisplayLegend">
-            <legend class="accordionContent">Caixa de Entrada - Mensagem</legend>
+    <br /><fieldset class="loginDisplayLegend">
+        <legend class="accordionContent">Caixa de Entrada - Mensagem</legend>
+    <div id="dvCaixa" runat="server" align="left">
+        
+        
             <br />
             <asp:Label ID="lblConsultaAno" runat="server" CssClass="footer" Text="Status:  "></asp:Label>
             &nbsp;&nbsp;
@@ -71,9 +72,9 @@
             <br />
             <br />
             <br />
-        </fieldset>
+       
     </div>
-
+     </fieldset>
      <div id="dvAvancada" align="center" runat="server">
         <fieldset class="loginDisplayLegend">
             <legend class="accordionContent">Deseja pesquisar por:</legend>

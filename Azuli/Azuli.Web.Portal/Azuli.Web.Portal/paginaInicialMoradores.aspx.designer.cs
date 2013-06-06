@@ -13,6 +13,15 @@ namespace Azuli.Web.Portal {
     public partial class paginaInicialMoradores {
         
         /// <summary>
+        /// dvMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvMsg;
+        
+        /// <summary>
         /// lblMorador control.
         /// </summary>
         /// <remarks>
@@ -31,13 +40,13 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.LinkButton lnkBtnMsg;
         
         /// <summary>
-        /// lnkDonwload control.
+        /// dvUteis control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkDonwload;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvUteis;
         
         /// <summary>
         /// link1 control.
@@ -47,6 +56,15 @@ namespace Azuli.Web.Portal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton link1;
+        
+        /// <summary>
+        /// lnkDonwload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkDonwload;
         
         /// <summary>
         /// dvEnquete control.
@@ -238,21 +256,12 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.GridView grdClassificado;
         
         /// <summary>
-        /// Button1 control.
+        /// btnClassificados control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
-        /// LinkButton1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        protected global::System.Web.UI.WebControls.Button btnClassificados;
     }
 }

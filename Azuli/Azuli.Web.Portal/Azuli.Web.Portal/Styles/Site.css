@@ -1255,6 +1255,69 @@ a.ContextMenuItem
     clear:both;
 }
 
+/* Css para o classificado*/
+.containerClass {
+    width:458px;
+    margin:10 auto;
+    border:0px solid #fff;
+    box-shadow:0px 2px 7px #292929;
+    -moz-box-shadow: 0px 2px 7px #292929;
+    -webkit-box-shadow: 0px 2px 7px #292929;
+    border-radius:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    background-color:#ffffff;
+    position:absolute;
+    left:48%;
+}
+
+.containerClass:before, .container:after {
+    display:table;
+    content:"";
+    zoom:1 /* ie fix */;
+}
+
+.containerClass:after {
+    clear:both;
+}
+
+.mainbodyClass {
+    border-left: 2 solid #eee;
+    border-right: 0px solid #eee;
+    border-top: 1px solid #eee;
+    border-bottom: 2px solid #eee;
+    height:250px;
+    width:457px;
+    background-color:#EAEAEA;
+    }
+
+
+.headerEnqueteClass, .FooterEnqueteClass {
+    height: 32px;
+    padding: 2px;
+    background-color: #E0E0E0;
+    width: 454px;
+    
+  
+  
+}
+
+
+.FooterEnqueteClass {
+    background-color: whiteSmoke; 
+     -webkit-border-bottom-right-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    -moz-border-radius-bottomright:5px;
+    -moz-border-radius-bottomleft:5px;
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius:5px;
+    
+   
+}
+
+
+
+/*fim*/
 .container {
     width:388px;
     margin:0 auto;
@@ -1268,13 +1331,16 @@ a.ContextMenuItem
     background-color:#ffffff;
 }
 
+
+
+
 .mainbody {
     border-left: 0 solid #eee;
     border-right: 0 solid #eee;
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
     height:250px;
-    width:393px;
+    width:389px;
     background-color:#EAEAEA;
     }
 
@@ -1283,7 +1349,7 @@ a.ContextMenuItem
     height: 32px;
     padding: 4px;
     background-color: #E0E0E0;
-    width: 383px;
+    width: 381px;
   
   
 }
@@ -1298,3 +1364,63 @@ a.ContextMenuItem
     border-bottom-right-radius:5px;
     border-bottom-left-radius:5px;
 }
+
+/* Telefones uteis - css */
+.containerTel {
+    width:258px;
+    margin:0 auto 0 0px;
+    border:1px solid #fff;
+    box-shadow:0px 2px 7px #292929;
+    -moz-box-shadow: 0px 2px 7px #292929;
+    -webkit-box-shadow: 0px 2px 7px #292929;
+    border-radius:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    background-color:#ffffff;
+    position:absolute;
+    left:70%;
+    top:45%;
+}
+
+
+
+
+.mainbodyTel {
+    border-left: 0 solid #eee;
+    border-right: 0 solid #eee;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    height:50px;
+    width:258px;
+    background-color:#EAEAEA;
+    }
+
+
+.headerEnqueteTel, .FooterEnqueteTel {
+    height: 22px;
+    padding: 2px;
+    background-color: #E0E0E0;
+    width:255px;
+    -webkit-border-bottom-right-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    -moz-border-radius-bottomright:5px;
+    -moz-border-radius-bottomleft:5px;
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius:5px;
+  
+  
+}
+
+
+.FooterEnqueteTel {
+    background-color: whiteSmoke; 
+    -webkit-border-bottom-right-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    -moz-border-radius-bottomright:5px;
+    -moz-border-radius-bottomleft:5px;
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius:5px;
+}
+
+
+

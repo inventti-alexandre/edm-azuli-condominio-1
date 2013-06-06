@@ -17,11 +17,13 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-<br />
-<center><div  id="dvAnunciar"  runat="server" align="center" dir="ltr">
-       
-   <center>  <fieldset class="loginDisplayLegend">
+<br /><br /><br />
+
+<fieldset class="loginDisplayLegend">
          <legend class="style2" align="left"><strong>Gerenciar seus Classifcados: </strong></legend>
+<div  id="dvAnunciar"  runat="server" align="center" dir="ltr">
+       
+   <center>  
             <br />
         <center>  
             <asp:GridView ID="grdClassificado" runat="server" AutoGenerateColumns="False" 
@@ -79,5 +81,5 @@
                 </Columns>
             </asp:GridView> </center> 
        
-   </fieldset></center>   </div></center>
+  </center>   </div> </fieldset>
 </asp:Content>

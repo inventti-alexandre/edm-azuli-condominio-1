@@ -35,10 +35,10 @@
 
     <br />
     
-    
-        <div id="dvGrupo" runat="server" align="left" dir="ltr">
-          <center>  <fieldset class="loginDisplayLegend">
+     <fieldset class="loginDisplayLegend">
                 <legend title="Abrir Ocorrência" class="style7"> O que você está procurando?</legend>
+        <div id="dvGrupo" runat="server" align="left" dir="ltr">
+          <center> 
                 <br />
 
            
@@ -148,7 +148,7 @@
                   
                 </table> </center>
                 
-            </fieldset></center></div>
+           </center></div> </fieldset>
 <center><div  id="dvAnunciar"  runat="server" align="center" dir="ltr">
        
    <center>  <fieldset class="loginDisplayLegend">

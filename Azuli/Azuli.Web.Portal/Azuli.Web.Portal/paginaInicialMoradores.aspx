@@ -25,12 +25,6 @@
         {
             font-weight: normal;
         }
-        .style9
-        {
-            font-weight: bold;
-            color: #0093D4;
-            font-size: small;
-        }
         .GridViewPager
         {
             width: 177px;
@@ -39,12 +33,24 @@
         {
             font-weight: bold;
         }
+        .style11
+        {
+            font-weight: bold;
+            color: #333333;
+            font-size: small;
+            align:center;
+        }
+        .style12
+        {
+            font-weight: bold;
+            color: #000000;
+        }
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
    
-   
-    <table style="text-align: justify; height: 101px; width: 941px;">
+   <div id="dvMsg" runat="server" style="position:relative;">
+    <table  style="text-align:justify;">
         <tr>
             <td align="center">
                 <img  alt="1" src="images/azuli.jpg" style="width: 96%; height: 119px" />
@@ -57,13 +63,31 @@
                         <asp:LinkButton ID="lnkBtnMsg" runat="server" Font-Bold="True" Font-Size="Medium"
                             ForeColor="#009900" OnClick="lnkBtnMsg_Click1">0</asp:LinkButton>
                         <span class="style8">&nbsp;mensagens&nbsp;
-                            <img alt="" class="style3" src="images/correio.jpg" /></span></span></h1>
-                <h1 align="left">
-                    <asp:LinkButton ID="lnkDonwload" runat="server" Font-Size="Smaller" OnClick="lnkDonwload_Click">Clique aqui e faça donwload da apresentação das funcionalidades do sistema SGC!</asp:LinkButton>
-                </h1>
+                            <img alt="" class="style3" src="images/correio.jpg" /></span></span> </h1>
+                          
+                        
+
             </td>
+
+          
         </tr>
-    </table>
+        <div  id="dvUteis"  class="containerTel" runat="server">
+            <div class="headerEnqueteTel">
+                <span class="style12"> Telefones Utéis <img src="images/tel.jpg"  alt="" width="20px" height="20px"/></span>
+            </div>
+            <div class="mainbodyTel">
+               Portaria - Ramal 94
+                <br />
+                Escritório Sindico - Ramal - 93<br />
+            </div>
+            <div class="FooterEnqueteTel">
+
+            </div>
+       
+      </div>
+       
+    </table></div>
+
     <fieldset>
         <legend class="accordionContent">Seja bem vindo ao Sistema de Gerenciamento de Condominio</legend>
        
@@ -73,13 +97,15 @@
         
         <li style="color: #000080">
             <asp:LinkButton ID="link1" runat="server" OnClick="link1_Click">Download Regimento Interno do Condominio  Spazio Campo Azuli &nbsp;<img alt=""  src="images/pdf.jpg" style="height: 24px; width: 24px" /></asp:LinkButton></li>
+         <li style="color: #000080">
+            <asp:LinkButton ID="lnkDonwload" runat="server"  OnClick="lnkDonwload_Click">Apresentação das funcionalidades do sistema SGC! &nbsp;<img alt=""  src="images/pdf.jpg" style="height: 24px; width: 24px" /></asp:LinkButton></li>
        
        </fieldset>   
 
        
         <div  id="dvEnquete" style="position:absolute" class="container" runat="server">
             <div class="headerEnquete">
-                <span class="style9">Enquete - Condomínio Azuli</span>
+                <span class="style12">         Enquete - Condomínio Azuli </span>
             </div>
             <div class="mainbody">
                 <b style="color: #000000">Você julga importante a utilização de um
@@ -118,7 +144,7 @@
       </div>
        <div  id="dvResultado" style="position:absolute" class="container" runat="server">
             <div class="headerEnquete">
-                <span class="style9">Enquete - Condomínio Azuli</span>
+                <span class="style12">Enquete - Condomínio Azuli</span>
             </div>
             <div class="mainbody">
                 <b style="color: #000000">Você julga importante a utilização de um
@@ -201,20 +227,20 @@
       </div>
 
       
-        <div  id="dvClassificado" 
-        style="position:absolute; top: 46%; left:52%;" class="container" 
+        <div  id="dvClassificado" class="containerClass" 
+         
         runat="server">
-            <div class="headerEnquete">
-                <span class="style9">Classificados Publicados pelos Moradores!</span>
+            <div class="headerEnqueteClass">
+                <span class="style11">Classificados Publicados pelos Moradores!</span>
             </div>
-            <div class="mainbody">
-            <br />
-              <center>  
+            <div class="mainbodyClass">
            
-            <asp:GridView ID="grdClassificado" runat="server" AutoGenerateColumns="False"  EmptyDataText="Não existem Anúncios para esta consulta"
-                CssClass="accordionContent">
+             
+          
+            <asp:GridView ID="grdClassificado" runat="server" AutoGenerateColumns="False"  EmptyDataText="Não existem Anúncios no momento"
+                CssClass="gridl" ShowHeader="false">
                 <Columns>
-                    <asp:TemplateField HeaderText="Código" Visible="False">
+                    <asp:TemplateField Visible="False">
                         <EditItemTemplate>
                             <asp:TextBox ID="TextBox1" runat="server" 
                                 Text='<%# Bind("idClassificado") %>'></asp:TextBox>
@@ -223,7 +249,7 @@
                             <asp:Label ID="Label1" runat="server" Text='<%# Bind("idClassificado") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:ImageField DataImageUrlField="classificadoimg1" HeaderText="Foto" 
+                    <asp:ImageField DataImageUrlField="classificadoimg1" 
                         DataImageUrlFormatString="~/ServerFile/Classificados/{0}">
                         <ControlStyle Width="45px" />
                     </asp:ImageField>
@@ -236,7 +262,7 @@
                             <asp:Label ID="Label3" runat="server" 
                                 Text='<%# Bind("assuntoClassificado") %>'></asp:Label>
                         </ItemTemplate>
-                        <ItemStyle Font-Bold="True" ForeColor="Black" />
+                        <ItemStyle Font-Bold="True" Font-Size="X-Small" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Preço">
                         <EditItemTemplate>
@@ -247,20 +273,12 @@
                             <asp:Label ID="Label4" runat="server" 
                                 Text='<%# Bind("valorVendaClassificado","{0:N2}")%>'></asp:Label>
                         </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Data">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="TextBox5" runat="server" 
-                                Text='<%# Eval("dataClassificado", "{0:dddd}") + " / " + Eval("dataClassificado","{0:dd/MM/yyyy}") %>'></asp:TextBox>
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="Label5" runat="server"  Text='<%# Eval("dataClassificado", "{0:dddd}") + " - " + Eval("dataClassificado","{0:dd/MM/yyyy}") %>'></asp:Label>
-                        </ItemTemplate>
+                        <ItemStyle Font-Bold="True" ForeColor="#333333" />
                     </asp:TemplateField>
                 </Columns>
-            </asp:GridView> </center> 
+            </asp:GridView> 
             </div>
-            <div class="FooterEnquete">
+            <div class="FooterEnqueteClass">
                <center> <asp:Button ID="btnClassificados" Text="            Clique aqui e veja mais ..." runat="server" BackColor="#99CCFF" 
                     CssClass="GridViewEdit" Font-Bold="True" ForeColor="Black" Width="250px" 
                     onclick="btnClassificados_OnClick"  /></center>

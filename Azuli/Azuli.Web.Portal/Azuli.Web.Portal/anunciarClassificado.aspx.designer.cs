@@ -13,15 +13,6 @@ namespace Azuli.Web.Portal {
     public partial class anunciarClassificado {
         
         /// <summary>
-        /// dvGrupo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvGrupo;
-        
-        /// <summary>
         /// lblDescBloco control.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace Azuli.Web.Portal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDescApartamento;
+        
+        /// <summary>
+        /// dvGrupo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvGrupo;
         
         /// <summary>
         /// imgImoveis control.

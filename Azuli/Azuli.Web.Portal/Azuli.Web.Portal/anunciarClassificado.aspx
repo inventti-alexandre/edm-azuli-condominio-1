@@ -31,14 +31,14 @@
     <br />
     
    
-    
-    
-        <div id="dvGrupo" runat="server" align="left" dir="ltr">
-          <center>  <fieldset class="loginDisplayLegend">
-                <legend title="Abrir Ocorrência" class="style6"> O que deseja anunciar? - Bloco:
+    <fieldset class="loginDisplayLegend">
+                <legend title="Abrir Ocorrência" class="style6" align="left"> O que deseja anunciar? - Bloco:
                     <asp:Label ID="lblDescBloco" runat="server" Text="Label"></asp:Label>
-                    - Apartamento:
+      - Apartamento:
                     <asp:Label ID="lblDescApartamento" runat="server" Text="Label"></asp:Label></legend>
+        <div id="dvGrupo" runat="server" align="left" dir="ltr">
+           
+                  
                 <br />
 
            
@@ -147,9 +147,9 @@
                         
                     </tr>
                   
-                </table> </center>
+                </table> </center></div>
                 
-            </fieldset></center></div>
+            </fieldset>
 <center><div  id="dvAnunciar"  runat="server" align="center" dir="ltr">
        
    <center>  <fieldset class="loginDisplayLegend">
