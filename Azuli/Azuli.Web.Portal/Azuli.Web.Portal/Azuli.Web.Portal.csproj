@@ -77,8 +77,11 @@
     <Content Include="GerenciarClassificadoMorador.aspx" />
     <Content Include="images\add.png" />
     <Content Include="images\boton_responder.gif" />
+    <Content Include="images\class.jpg" />
     <Content Include="images\clientes.jpg" />
     <Content Include="images\cliqueAqui.jpg" />
+    <Content Include="images\enquete.jpg" />
+    <Content Include="images\enquete1.jpg" />
     <Content Include="images\esqueci.jpg" />
     <Content Include="images\home.png" />
     <Content Include="images\home2.jpg" />

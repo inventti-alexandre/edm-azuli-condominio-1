@@ -136,15 +136,16 @@
             <div class="FooterEnquete">
                 <asp:Button ID="btnVotar" Text="     VOTAR" runat="server" BackColor="#99CCFF" 
                     CssClass="GridViewEdit" Font-Bold="True" ForeColor="Black" Width="82px" 
-                    onclick="btnVotar_Click"  />
+                    onclick="btnVotar_Click" Height="23px"  />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:LinkButton ID="lnkResultado" OnClick="lnkResultado_Click" runat="server">Ver Resultado</asp:LinkButton>
+                <asp:LinkButton ID="lnkResultado" OnClick="lnkResultado_Click" runat="server" 
+                    Font-Bold="True">Ver Resultado</asp:LinkButton>
             </div>
        
       </div>
        <div  id="dvResultado" style="position:absolute" class="container" runat="server">
             <div class="headerEnquete">
-                <span class="style12">Enquete - Condomínio Azuli</span>
+                <span class="style12">Enquete - Condomínio Azuli <img alt src="images/enquete1.jpg" /></span>
             </div>
             <div class="mainbody">
                 <b style="color: #000000">Você julga importante a utilização de um
@@ -231,7 +232,8 @@
          
         runat="server">
             <div class="headerEnqueteClass">
-                <span class="style11">Classificados Publicados pelos Moradores!</span>
+                <span class="style11">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <img alt="" src="images/class.jpg" style="height: 30px; width: 214px" /></span>
             </div>
             <div class="mainbodyClass">
            
@@ -279,9 +281,10 @@
             </asp:GridView> 
             </div>
             <div class="FooterEnqueteClass">
-               <center> <asp:Button ID="btnClassificados" Text="            Clique aqui e veja mais ..." runat="server" BackColor="#99CCFF" 
+               <center> <asp:Button ID="btnClassificados" 
+                       Text="            Clique aqui e veja mais ..." runat="server" BackColor="#99CCFF" 
                     CssClass="GridViewEdit" Font-Bold="True" ForeColor="Black" Width="250px" 
-                    onclick="btnClassificados_OnClick"  /></center>
+                    onclick="btnClassificados_OnClick" Height="24px"  /></center>
            
             </div>
        

@@ -39,6 +39,7 @@ namespace Azuli.Web.Portal
                     preencheGrid();
                     dvResultado.Visible = false;
                     lblMsg.Visible = false;
+                    
                     CultureInfo CI = new CultureInfo("pt-PT");
                     CI.DateTimeFormat.ShortDatePattern = "dd-MM-yyyy";
 
