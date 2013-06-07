@@ -13,6 +13,8 @@
     <RootNamespace>Azuli.Web.Portal</RootNamespace>
     <AssemblyName>Azuli.Web.Portal</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightApplicationList>{328F6C69-4E2B-49CF-8C9D-345DF3AE9AC0}|..\Azuli.Acess.Control\Azuli.Acess.Control.csproj|ClientBin|False</SilverlightApplicationList>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -62,7 +64,11 @@
     <Content Include="alteraSenhaSindico.aspx" />
     <Content Include="anunciarClassificado.aspx" />
     <Content Include="AreaAdministrativa.aspx" />
+    <Content Include="Azuli.Acess.ControlTestPage.aspx" />
+    <Content Include="Azuli.Acess.ControlTestPage.html" />
     <Content Include="cadastrarClassificado.aspx" />
+    <Content Include="CadastrarVisitante.aspx" />
+    <Content Include="ClientBin\Azuli.Acess.Control.xap" />
     <Content Include="consultaAgendamentoAdmin.aspx" />
     <Content Include="consultaBalancete.aspx" />
     <Content Include="consultaCircular.aspx" />
@@ -75,6 +81,7 @@
     <Content Include="esqueciSenha.aspx" />
     <Content Include="gerenciamentoMoradorAdm.aspx" />
     <Content Include="GerenciarClassificadoMorador.aspx" />
+    <Content Include="images\0ae1500.jpg" />
     <Content Include="images\add.png" />
     <Content Include="images\boton_responder.gif" />
     <Content Include="images\class.jpg" />
@@ -89,6 +96,7 @@
     <Content Include="images\logo8.jpg" />
     <Content Include="images\logoteste.png" />
     <Content Include="images\mensagem.jpg" />
+    <Content Include="images\novo_morador_visitante.png" />
     <Content Include="images\ocoor.jpg" />
     <Content Include="images\online.gif" />
     <Content Include="images\reserva.jpg" />
@@ -140,6 +148,7 @@
     <Content Include="ReservaDetalhadaMoradores.aspx" />
     <Content Include="resetSenha.aspx" />
     <Content Include="Scripts\ScriptAzuli.js" />
+    <Content Include="Scripts\Silverlight.js" />
     <Content Include="ServerFile\Classificados\630110_s.jpg" />
     <Content Include="ServerFile\Classificados\63011_s.jpg" />
     <Content Include="ServerFile\Classificados\63012_m.jpg" />
@@ -173,6 +182,7 @@
     <Content Include="ServerFile\Classificados\sport.jpg" />
     <Content Include="ServerFile\Classificados\veiculo.jpg" />
     <Content Include="sgcNotificacao.aspx" />
+    <Content Include="Silverlight.js" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -222,6 +232,13 @@
     </Compile>
     <Compile Include="cadastrarClassificado.aspx.designer.cs">
       <DependentUpon>cadastrarClassificado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastrarVisitante.aspx.cs">
+      <DependentUpon>CadastrarVisitante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastrarVisitante.aspx.designer.cs">
+      <DependentUpon>CadastrarVisitante.aspx</DependentUpon>
     </Compile>
     <Compile Include="consultaAgendamentoAdmin.aspx.cs">
       <DependentUpon>consultaAgendamentoAdmin.aspx</DependentUpon>
@@ -334,6 +351,13 @@
     </Compile>
     <Compile Include="MostraPdfCircular.aspx.designer.cs">
       <DependentUpon>MostraPdfCircular.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageAcessControl.Master.cs">
+      <DependentUpon>PageAcessControl.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageAcessControl.Master.designer.cs">
+      <DependentUpon>PageAcessControl.Master</DependentUpon>
     </Compile>
     <Compile Include="publicarCircular.aspx.cs">
       <DependentUpon>publicarCircular.aspx</DependentUpon>
@@ -520,6 +544,7 @@
     <Content Include="App_Themes\DataWebControls\DataList.skin" />
     <Content Include="App_Themes\DataWebControls\DetailsView.skin" />
     <Content Include="App_Themes\DataWebControls\GridView.skin" />
+    <Content Include="PageAcessControl.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -535,7 +560,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>55794</DevelopmentServerPort>
+          <DevelopmentServerPort>56614</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

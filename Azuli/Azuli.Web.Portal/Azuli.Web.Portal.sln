@@ -11,7 +11,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azuli.Web.DAO", "Azuli.Web.
 EndProject
 Project("{C8D11400-126E-41CD-887F-60BD40844F9E}") = "Azuli.Portal.Database", "Database1\Azuli.Portal.Database.dbproj", "{67CBC824-A49E-4E9B-A947-360F3DFE65C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azuli.Acess.Control", "Azuli.Acess.Control\Azuli.Acess.Control.csproj", "{328F6C69-4E2B-49CF-8C9D-345DF3AE9AC0}"
+EndProject
 Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -40,12 +46,12 @@ Global
 		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{328F6C69-4E2B-49CF-8C9D-345DF3AE9AC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{328F6C69-4E2B-49CF-8C9D-345DF3AE9AC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{328F6C69-4E2B-49CF-8C9D-345DF3AE9AC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{328F6C69-4E2B-49CF-8C9D-345DF3AE9AC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
 	EndGlobalSection
 EndGlobal

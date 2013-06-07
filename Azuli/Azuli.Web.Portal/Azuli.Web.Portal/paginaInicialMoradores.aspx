@@ -145,7 +145,7 @@
       </div>
        <div  id="dvResultado" style="position:absolute" class="container" runat="server">
             <div class="headerEnquete">
-                <span class="style12">Enquete - Condomínio Azuli <img alt src="images/enquete1.jpg" /></span>
+                <span class="style12">Enquete - Condomínio Azuli </span>
             </div>
             <div class="mainbody">
                 <b style="color: #000000">Você julga importante a utilização de um
