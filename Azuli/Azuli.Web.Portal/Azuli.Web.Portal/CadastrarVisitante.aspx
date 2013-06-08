@@ -58,6 +58,16 @@
             height: 332px;
             width: 362px;
         }
+        .style5
+        {
+            width: 138px;
+            height: 25px;
+        }
+        .style6
+        {
+            width: 424px;
+            height: 25px;
+        }
     </style>
 </asp:Content>
 
@@ -105,27 +115,28 @@
                        style="font-weight: 700"></asp:Label>
                    </td>
                 <td align="left" class="style4">
-                    <asp:DropDownList ID="drpTipoVisita" runat="server" Height="20px" Width="250px">
-                        <asp:ListItem>Visitante </asp:ListItem>
-                        <asp:ListItem>Prestador de Serviço</asp:ListItem>
-                    </asp:DropDownList>
+                    <asp:RadioButtonList ID="rblTipoVisita" runat="server" 
+                        RepeatDirection="Horizontal">
+                        <asp:ListItem Selected="True" Value="V">Visitante</asp:ListItem>
+                        <asp:ListItem Value="P">Prestador de Serviço</asp:ListItem>
+                    </asp:RadioButtonList>
                    </td>
                </tr>
                <tr>
                <td  align="left" class="style3">
-                   <asp:Label ID="lblNome" runat="server" Text="Nome:" 
-                       style="font-weight: 700"></asp:Label>
+                   <asp:Label ID="lblRG" runat="server" Text="RG:" style="font-weight: 700"></asp:Label>
                    </td>
                 <td align="left" class="style4">
-                    <asp:TextBox ID="txtBoxNome" runat="server" Width="257px"></asp:TextBox>
+                    <asp:TextBox ID="txtBoxRG" runat="server" Width="262px"></asp:TextBox>
                    </td>
                </tr>
                 <tr>
                <td align="left" class="style3">
-                   <asp:Label ID="lblRG" runat="server" Text="RG:" style="font-weight: 700"></asp:Label>
+                   <asp:Label ID="lblNome" runat="server" Text="Nome:" 
+                       style="font-weight: 700"></asp:Label>
                     </td>
                 <td align="left" class="style4">
-                    <asp:TextBox ID="txtBoxRG" runat="server" Width="262px"></asp:TextBox>
+                    <asp:TextBox ID="txtBoxNome" runat="server" Width="257px"></asp:TextBox>
                     </td>
                </tr>
                 <tr>
@@ -135,21 +146,24 @@
                 <td align="left" class="style4">
                     <asp:DropDownList ID="drpBloco" runat="server">
                     </asp:DropDownList>
-                    </td>
-               </tr>
-                <tr>
-               <td  align="left" class="style3">
                    <asp:Label ID="lblAp" runat="server" Text="Apartamento:" 
                        style="font-weight: 700"></asp:Label>
-                    </td>
-                <td align="left" class="style4">
                     <asp:DropDownList ID="drpApartamento" runat="server">
                     </asp:DropDownList>
                     </td>
                </tr>
                 <tr>
+               <td  align="left" class="style5">
+                   <asp:Label ID="Label1" runat="server" style="font-weight: 700" 
+                       Text="Autorizado por"></asp:Label>
+                    </td>
+                <td align="left" class="style6">
+                    <asp:TextBox ID="txtAutorizadoPor" runat="server" Width="236px"></asp:TextBox>
+                    </td>
+               </tr>
+                <tr>
                <td  align="left" class="style3">
-                   <asp:Label ID="lblNome3" runat="server" Text="Descrição da Visista:" 
+                   <asp:Label ID="lblObs" runat="server" Text="Descrição da Visita:" 
                        style="font-weight: 700"></asp:Label>
                     </td>
                 <td align="left" class="style4">
@@ -181,7 +195,8 @@
                <td  align="left" class="style3">
                    &nbsp;</td>
                 <td align="left" class="style4">
-                    <asp:Button ID="btnSalvar" runat="server" Text="Salvar Dados" />
+                    <asp:Button ID="btnSalvar" runat="server" Text="Salvar Dados" 
+                        onclick="btnSalvar_Click" />
 &nbsp;
                     <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" />
                     </td>
