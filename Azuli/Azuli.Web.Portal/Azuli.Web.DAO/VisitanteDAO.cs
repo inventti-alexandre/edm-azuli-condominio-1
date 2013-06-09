@@ -60,13 +60,15 @@ namespace Azuli.Web.DAO
         }
 
         /// <summary>
-        /// Procura o visitante pelo RG e retorna todas as informações do cadastro
+        /// Procura o visitante pelo RG e retorna todas as informações do cadastro em uma lista de visitantes
         /// --Autor: Leandro Vilela
         /// </summary>
         /// <param name="oVisitante"></param>
-        public void procuraVisitanteRG(Model.Visitante oVisitante)
+        public listaVisitante procuraVisitanteRG(Visitante oVisitante)
         {
+            
             string clausulaSQL = "SP_PROCURA_VISITANTE_RG";
+            
 
             try
             {
@@ -76,8 +78,9 @@ namespace Azuli.Web.DAO
                 comandoSql.Parameters.AddWithValue("@VisitanteRG", oVisitante.visitanteRG);
                 comandoSql.Parameters.AddWithValue("@VisitanteTipo", oVisitante.visitanteTipo);
 
-                ExecutaComando(comandoSql);
-
+                DataTable tbVisitante = new DataTable();
+                tbVisitante = ExecutaQuery(comandoSql);
+                return populaVisitante(tbVisitante);
             }
             catch (Exception e)
             {
@@ -111,6 +114,33 @@ namespace Azuli.Web.DAO
 
                 throw e;
             }
+        }
+
+        private listaVisitante populaVisitante(DataTable dt)
+        {
+            listaVisitante olistaVisitante = new listaVisitante();
+
+            foreach (DataRow itemVisitante in dt.Rows)
+            {
+                Visitante oVisitante = new Visitante();
+
+                if (itemVisitante.Table.Columns.Contains("Visitante_Id"))
+                    oVisitante.visitanteId = Convert.ToInt32(itemVisitante["Visitante_id"]);
+
+                if (itemVisitante.Table.Columns.Contains("Visitante_RG"))
+                    oVisitante.visitanteRG = Convert.ToString(itemVisitante["Visitante_RG"]);
+
+                if (itemVisitante.Table.Columns.Contains("Visitante_Nome"))
+                    oVisitante.visitanteNome = Convert.ToString(itemVisitante["Visitante_Nome"]);
+
+                if (itemVisitante.Table.Columns.Contains("VisitanteTipo"))
+                    oVisitante.visitanteTipo = itemVisitante["VisitanteTipo"].ToString();
+
+                olistaVisitante.Add(oVisitante);
+                
+            }
+
+            return olistClassificado;
         }
     }
 }
