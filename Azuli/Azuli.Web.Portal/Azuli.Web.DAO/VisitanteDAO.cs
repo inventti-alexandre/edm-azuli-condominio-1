@@ -94,7 +94,7 @@ namespace Azuli.Web.DAO
         /// --Auto: Leandro Vilela
         /// </summary>
         /// <param name="oVisitante"></param>
-        public void procuraVisitanteNome(Model.Visitante oVisitante)
+        public listaVisitante procuraVisitanteNome(Model.Visitante oVisitante)
         {
             string clausulaSQL = "SP_PROCURA_VISITANTE_NOME";
 
@@ -106,7 +106,9 @@ namespace Azuli.Web.DAO
                 comandoSql.Parameters.AddWithValue("@VisitanteRG", oVisitante.visitanteRG);
                 comandoSql.Parameters.AddWithValue("@VisitanteTipo", oVisitante.visitanteTipo);
 
-                ExecutaComando(comandoSql);
+                DataTable tbVisitante = new DataTable();
+                tbVisitante = ExecutaQuery(comandoSql);
+                return populaVisitante(tbVisitante);
 
             }
             catch (Exception e)
