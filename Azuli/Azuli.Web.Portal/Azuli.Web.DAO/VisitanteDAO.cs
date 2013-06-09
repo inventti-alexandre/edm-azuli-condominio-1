@@ -142,7 +142,7 @@ namespace Azuli.Web.DAO
                 
             }
 
-            return olistClassificado;
+            return olistaVisitante;
         }
     }
 }
