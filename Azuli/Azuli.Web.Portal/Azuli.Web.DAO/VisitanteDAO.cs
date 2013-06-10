@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace Azuli.Web.DAO
 {
-    public class VisitanteDAO: AcessoDAO
+    public class VisitanteDAO : AcessoDAO, Interfaces.IVisitante
     {
 
         public void cadastraVisitante(Model.Visitante oVisitante)
@@ -21,7 +21,8 @@ namespace Azuli.Web.DAO
                 comandoSql.Parameters.AddWithValue("@VisitanteNome", oVisitante.visitanteNome);
                 comandoSql.Parameters.AddWithValue("@VisitanteRG", oVisitante.visitanteRG);
                 comandoSql.Parameters.AddWithValue("@VisitanteTipo", oVisitante.visitanteTipo);
-                
+                comandoSql.Parameters.AddWithValue("@ID_FOTO", oVisitante.idFoto.idFoto);
+
                 ExecutaComando(comandoSql);
 
             }
@@ -60,15 +61,13 @@ namespace Azuli.Web.DAO
         }
 
         /// <summary>
-        /// Procura o visitante pelo RG e retorna todas as informações do cadastro em uma lista de visitantes
+        /// Procura o visitante pelo RG e retorna todas as informações do cadastro
         /// --Autor: Leandro Vilela
         /// </summary>
         /// <param name="oVisitante"></param>
-        public listaVisitante procuraVisitanteRG(Visitante oVisitante)
+        public listVisitante procuraVisitanteRG(Model.Visitante oVisitante)
         {
-            
             string clausulaSQL = "SP_PROCURA_VISITANTE_RG";
-            
 
             try
             {
@@ -78,9 +77,13 @@ namespace Azuli.Web.DAO
                 comandoSql.Parameters.AddWithValue("@VisitanteRG", oVisitante.visitanteRG);
                 comandoSql.Parameters.AddWithValue("@VisitanteTipo", oVisitante.visitanteTipo);
 
-                DataTable tbVisitante = new DataTable();
-                tbVisitante = ExecutaQuery(comandoSql);
-                return populaVisitante(tbVisitante);
+                DataTable dtVisitanteRG = new DataTable();
+
+                dtVisitanteRG = ExecutaQuery(comandoSql);
+
+                return populaVisitante(dtVisitanteRG);
+
+
             }
             catch (Exception e)
             {
@@ -94,7 +97,7 @@ namespace Azuli.Web.DAO
         /// --Auto: Leandro Vilela
         /// </summary>
         /// <param name="oVisitante"></param>
-        public listaVisitante procuraVisitanteNome(Model.Visitante oVisitante)
+        public listVisitante procuraVisitanteNome(Model.Visitante oVisitante)
         {
             string clausulaSQL = "SP_PROCURA_VISITANTE_NOME";
 
@@ -106,9 +109,11 @@ namespace Azuli.Web.DAO
                 comandoSql.Parameters.AddWithValue("@VisitanteRG", oVisitante.visitanteRG);
                 comandoSql.Parameters.AddWithValue("@VisitanteTipo", oVisitante.visitanteTipo);
 
-                DataTable tbVisitante = new DataTable();
-                tbVisitante = ExecutaQuery(comandoSql);
-                return populaVisitante(tbVisitante);
+                DataTable dtVisitanteNome = new DataTable();
+
+                dtVisitanteNome = ExecutaQuery(comandoSql);
+
+                return populaVisitante(dtVisitanteNome);
 
             }
             catch (Exception e)
@@ -118,37 +123,28 @@ namespace Azuli.Web.DAO
             }
         }
 
-        /// <summary>
-        /// Cria uma lista de visitante 
-        /// --Auto: Leandro Vilela
-        /// </summary>
-        /// <param name="dt">DataTable</param>
-        /// <returns></returns>
-        private listaVisitante populaVisitante(DataTable dt)
+        private listVisitante populaVisitante(DataTable dt)
         {
-            listaVisitante olistaVisitante = new listaVisitante();
+            listVisitante oListVisitante = new listVisitante();
 
-            foreach (DataRow itemVisitante in dt.Rows)
+            foreach (DataRow item in dt.Rows)
             {
-                Visitante oVisitante = new Visitante();
 
-                if (itemVisitante.Table.Columns.Contains("Visitante_Id"))
-                    oVisitante.visitanteId = Convert.ToInt32(itemVisitante["Visitante_id"]);
+                Visitante oVisitanteModel = new Visitante();
+                Foto oFotoModel = new Foto();
 
-                if (itemVisitante.Table.Columns.Contains("Visitante_RG"))
-                    oVisitante.visitanteRG = Convert.ToString(itemVisitante["Visitante_RG"]);
+                oVisitanteModel.visitanteId = Convert.ToInt32(item["VisitanteId"]);
+                oVisitanteModel.visitanteNome = item["VisitanteNome"].ToString();
+                oVisitanteModel.visitanteRG = item["VisitanteRG"].ToString();
+                oVisitanteModel.visitanteTipo = item["VisitanteTipo"].ToString();
+                oFotoModel.idFoto = Convert.ToInt32(item["ID_FOTO"]);
+                oVisitanteModel.idFoto = oFotoModel;
 
-                if (itemVisitante.Table.Columns.Contains("Visitante_Nome"))
-                    oVisitante.visitanteNome = Convert.ToString(itemVisitante["Visitante_Nome"]);
+                oListVisitante.Add(oVisitanteModel);
 
-                if (itemVisitante.Table.Columns.Contains("VisitanteTipo"))
-                    oVisitante.visitanteTipo = itemVisitante["VisitanteTipo"].ToString();
-
-                olistaVisitante.Add(oVisitante);
-                
             }
 
-            return olistaVisitante;
+            return oListVisitante;
         }
     }
 }

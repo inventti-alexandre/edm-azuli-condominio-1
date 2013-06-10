@@ -16,18 +16,18 @@ namespace Azuli.Web.DAO
 
             try
             {
-                SqlCommand comandoSql = new SqlCommand(clausulaSQL);
+             SqlCommand comandoSql = new SqlCommand(clausulaSQL);
                 
-                comandoSql.Parameters.AddWithValue("@VisitaData",oVisitas.VisitaData);
-                comandoSql.Parameters.AddWithValue("@VisitanteId",oVisitas.VisitanteId);
-                comandoSql.Parameters.AddWithValue("@Bloco",oVisitas.Bloco);
-                comandoSql.Parameters.AddWithValue("@Apartamento",oVisitas.Apartamento);
-                comandoSql.Parameters.AddWithValue("@VisitaPlacaCarro",oVisitas.VisitaPlacaCarro);
-                comandoSql.Parameters.AddWithValue("@VisitaModeloCarro",oVisitas.VistaModeloCarro);
-                comandoSql.Parameters.AddWithValue("@VisitaCorCarro",oVisitas.VisitaCorCarro);
-                comandoSql.Parameters.AddWithValue("@VisitaAutorizada",oVisitas.VisitaAutorizada);
-                comandoSql.Parameters.AddWithValue("@VisitaAutorizadaPo",oVisitas.VisitaAutorizadaPor);
-                comandoSql.Parameters.AddWithValue("@VisitaObs", oVisitas.VistaObs);
+            //    comandoSql.Parameters.AddWithValue("@VisitaData",oVisitas.VisitaData);
+            //    comandoSql.Parameters.AddWithValue("@VisitanteId",oVisitas.VisitanteId);
+            //    comandoSql.Parameters.AddWithValue("@Bloco",oVisitas.Bloco);
+            //    comandoSql.Parameters.AddWithValue("@Apartamento",oVisitas.Apartamento);
+            //    comandoSql.Parameters.AddWithValue("@VisitaPlacaCarro",oVisitas.VisitaPlacaCarro);
+            //    comandoSql.Parameters.AddWithValue("@VisitaModeloCarro",oVisitas.VistaModeloCarro);
+            //    comandoSql.Parameters.AddWithValue("@VisitaCorCarro",oVisitas.VisitaCorCarro);
+            //    comandoSql.Parameters.AddWithValue("@VisitaAutorizada",oVisitas.VisitaAutorizada);
+            //    comandoSql.Parameters.AddWithValue("@VisitaAutorizadaPo",oVisitas.VisitaAutorizadaPor);
+            //    comandoSql.Parameters.AddWithValue("@VisitaObs", oVisitas.VistaObs);
 
                 ExecutaComando(comandoSql);
 
@@ -39,7 +39,7 @@ namespace Azuli.Web.DAO
             }
         }
 
-        public listaVisitas consultaVisita(Visitas oVisitas)
+        public ListaVisitas consultaVisita(Visitas oVisitas)
         {
 
 
@@ -48,25 +48,25 @@ namespace Azuli.Web.DAO
 
             try
             {
-                SqlCommand comandoSql = new SqlCommand(clausulaSQL);
-                comandoSql.Parameters.AddWithValue("@VisitaData", oVisitas.VisitaData);
-                comandoSql.Parameters.AddWithValue("@VisitanteId", oVisitas.VisitanteId);
-                comandoSql.Parameters.AddWithValue("@Bloco", oVisitas.Bloco);
-                comandoSql.Parameters.AddWithValue("@Apartamento", oVisitas.Apartamento);
-                comandoSql.Parameters.AddWithValue("@VisitaPlacaCarro", oVisitas.VisitaPlacaCarro);
-                comandoSql.Parameters.AddWithValue("@VisitaModeloCarro", oVisitas.VistaModeloCarro);
-                comandoSql.Parameters.AddWithValue("@VisitaCorCarro", oVisitas.VisitaCorCarro);
-                comandoSql.Parameters.AddWithValue("@VisitaAutorizada", oVisitas.VisitaAutorizada);
-                comandoSql.Parameters.AddWithValue("@VisitaAutorizadaPo", oVisitas.VisitaAutorizadaPor);
-                comandoSql.Parameters.AddWithValue("@VisitaObs", oVisitas.VistaObs);
+                //SqlCommand comandoSql = new SqlCommand(clausulaSQL);
+                //comandoSql.Parameters.AddWithValue("@VisitaData", oVisitas.VisitaData);
+                //comandoSql.Parameters.AddWithValue("@VisitanteId", oVisitas.VisitanteId);
+                //comandoSql.Parameters.AddWithValue("@Bloco", oVisitas.Bloco);
+                //comandoSql.Parameters.AddWithValue("@Apartamento", oVisitas.Apartamento);
+                //comandoSql.Parameters.AddWithValue("@VisitaPlacaCarro", oVisitas.VisitaPlacaCarro);
+                //comandoSql.Parameters.AddWithValue("@VisitaModeloCarro", oVisitas.VistaModeloCarro);
+                //comandoSql.Parameters.AddWithValue("@VisitaCorCarro", oVisitas.VisitaCorCarro);
+                //comandoSql.Parameters.AddWithValue("@VisitaAutorizada", oVisitas.VisitaAutorizada);
+                //comandoSql.Parameters.AddWithValue("@VisitaAutorizadaPo", oVisitas.VisitaAutorizadaPor);
+                //comandoSql.Parameters.AddWithValue("@VisitaObs", oVisitas.VistaObs);
 
-                comandoSql.Parameters.AddWithValue("@VisitanteNome", oVisitas.VisitanteNome);
-                comandoSql.Parameters.AddWithValue("@VisitanteRG", oVisitas.VisitanteRG);
-                comandoSql.Parameters.AddWithValue("@VisitanteTipo", oVisitas.VisitanteTipo);
-                comandoSql.Parameters.AddWithValue("@Foto", oVisitas.Foto);
+                //comandoSql.Parameters.AddWithValue("@VisitanteNome", oVisitas.VisitanteNome);
+                //comandoSql.Parameters.AddWithValue("@VisitanteRG", oVisitas.VisitanteRG);
+                //comandoSql.Parameters.AddWithValue("@VisitanteTipo", oVisitas.VisitanteTipo);
+                //comandoSql.Parameters.AddWithValue("@Foto", oVisitas.Foto);
 
                 DataTable tbVisitas = new DataTable();
-                tbVisitas = ExecutaQuery(comandoSql);
+                //tbVisitas = ExecutaQuery(comandoSql);
                 return populaVisitas(tbVisitas);
             }
             catch (Exception e)
@@ -82,55 +82,55 @@ namespace Azuli.Web.DAO
         /// </summary>
         /// <param name="dt">DataTable</param>
         /// <returns></returns>
-        private listaVisitas populaVisitas(DataTable dt)
+        private ListaVisitas populaVisitas(DataTable dt)
         {
-            listaVisitas olistaVisitas = new listaVisitas();
+            ListaVisitas olistaVisitas = new ListaVisitas();
 
             foreach (DataRow itemVisitas in dt.Rows)
             {
                 Visitas oVisitas = new Visitas();
 
                 if (itemVisitas.Table.Columns.Contains("VisitaData"))
-                    oVisitas.VisitaData = Convert.ToDateTime(itemVisitas["VisitaData"]);
+                    oVisitas.dataVisita = Convert.ToDateTime(itemVisitas["VisitaData"]);
 
-                if (itemVisitas.Table.Columns.Contains("VisitanteId"))
-                    oVisitas.VisitanteId = Convert.ToInt32(itemVisitas["VisitanteId"]);
+                //if (itemVisitas.Table.Columns.Contains("VisitanteId"))
+                //    oVisitas.idVisitante = Convert.ToInt32(itemVisitas["VisitanteId"]);
 
-                if (itemVisitas.Table.Columns.Contains("Bloco"))
-                    oVisitas.Bloco = Convert.ToInt32(itemVisitas["Bloco"]);
+                //if (itemVisitas.Table.Columns.Contains("Bloco"))
+                //    oVisitas.Bloc = Convert.ToInt32(itemVisitas["Bloco"]);
 
-                if (itemVisitas.Table.Columns.Contains("Apartamento"))
-                    oVisitas.Apartamento = Convert.ToInt32(itemVisitas["Apartamento"]);
+                //if (itemVisitas.Table.Columns.Contains("Apartamento"))
+                //    oVisitas.Apartamento = Convert.ToInt32(itemVisitas["Apartamento"]);
 
                 if (itemVisitas.Table.Columns.Contains("VisitaPlacaCarro"))
-                    oVisitas.VisitaPlacaCarro = Convert.ToString(itemVisitas["VisitaPlacaCarro"]);
+                    oVisitas.visitaPlacaCarro = Convert.ToString(itemVisitas["VisitaPlacaCarro"]);
 
                 if (itemVisitas.Table.Columns.Contains("VistaModeloCarro"))
-                    oVisitas.VistaModeloCarro = Convert.ToString(itemVisitas["VistaModeloCarro"]);
+                    oVisitas.visitaModeloCarro = Convert.ToString(itemVisitas["VistaModeloCarro"]);
 
-                if (itemVisitas.Table.Columns.Contains("VisitaCorCarro"))
-                    oVisitas.VisitaCorCarro = Convert.ToString(itemVisitas["VisitaCorCarro"]);
+                //if (itemVisitas.Table.Columns.Contains("VisitaCorCarro"))
+                //    oVisitas.co = Convert.ToString(itemVisitas["VisitaCorCarro"]);
 
-                if (itemVisitas.Table.Columns.Contains("VisitaAutorizada"))
-                    oVisitas.VisitaAutorizada = Convert.ToString(itemVisitas["VisitaAutorizada"]);
+                //if (itemVisitas.Table.Columns.Contains("VisitaAutorizada"))
+                //    oVisitas.VisitaAutorizada = Convert.ToString(itemVisitas["VisitaAutorizada"]);
 
-                if (itemVisitas.Table.Columns.Contains("VisitaAutorizadaPor"))
-                    oVisitas.VisitaAutorizadaPor = Convert.ToString(itemVisitas["VisitaAutorizadaPor"]);
+                //if (itemVisitas.Table.Columns.Contains("VisitaAutorizadaPor"))
+                //    oVisitas.VisitaAutorizadaPor = Convert.ToString(itemVisitas["VisitaAutorizadaPor"]);
 
-                if (itemVisitas.Table.Columns.Contains("VistaObs"))
-                    oVisitas.VistaObs = Convert.ToString(itemVisitas["VistaObs"]);
+                //if (itemVisitas.Table.Columns.Contains("VistaObs"))
+                //    oVisitas.VistaObs = Convert.ToString(itemVisitas["VistaObs"]);
 
-                if (itemVisitas.Table.Columns.Contains("VisitanteNome"))
-                    oVisitas.VisitanteNome = Convert.ToString(itemVisitas["VisitanteNome"]);
+                //if (itemVisitas.Table.Columns.Contains("VisitanteNome"))
+                //    oVisitas.VisitanteNome = Convert.ToString(itemVisitas["VisitanteNome"]);
 
-                if (itemVisitas.Table.Columns.Contains("VisitanteRG"))
-                    oVisitas.VisitanteRG = Convert.ToString(itemVisitas["VisitanteRG"]);
+                //if (itemVisitas.Table.Columns.Contains("VisitanteRG"))
+                //    oVisitas.VisitanteRG = Convert.ToString(itemVisitas["VisitanteRG"]);
 
-                if (itemVisitas.Table.Columns.Contains("VisitanteTipo"))
-                    oVisitas.VisitanteTipo = Convert.ToString(itemVisitas["VisitanteTipo"]);
+                //if (itemVisitas.Table.Columns.Contains("VisitanteTipo"))
+                //    oVisitas.VisitanteTipo = Convert.ToString(itemVisitas["VisitanteTipo"]);
 
-                if (itemVisitas.Table.Columns.Contains("FOTO"))
-                    oVisitas.Foto = Convert.ToByte(itemVisitas["FOTO"]);
+                //if (itemVisitas.Table.Columns.Contains("FOTO"))
+                //    oVisitas.Foto = Convert.ToByte(itemVisitas["FOTO"]);
 
                 olistaVisitas.Add(oVisitas);
 
