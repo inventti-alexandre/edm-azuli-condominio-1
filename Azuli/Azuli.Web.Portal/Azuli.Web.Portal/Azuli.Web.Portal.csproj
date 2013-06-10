@@ -74,6 +74,7 @@
     <Content Include="consultaCircular.aspx" />
     <Content Include="consultaClassificados.aspx" />
     <Content Include="contato.aspx" />
+    <Content Include="controlePortaria.aspx" />
     <Content Include="DetalheClassificado.aspx" />
     <Content Include="detalheMensagemMorador.aspx" />
     <Content Include="detalheOcorrencia.aspx" />
@@ -124,6 +125,7 @@
     <Content Include="images\word.gif" />
     <Content Include="liberaAcessoAdmin.aspx" />
     <Content Include="ListaReclamacaoAbertaAdmin.aspx" />
+    <Content Include="LoginPortaria.aspx" />
     <Content Include="meuClassificados.aspx" />
     <Content Include="MostraPdfCircular.aspx" />
     <Content Include="publicarCircular.aspx" />
@@ -192,6 +194,7 @@
     <Content Include="telaAgendamento.aspx" />
     <Content Include="TelaAgendamentoAdmin.aspx" />
     <Content Include="TelaConfirmacaoAgendamento.aspx" />
+    <Content Include="TelaControlePortaria.aspx" />
     <Content Include="videoajuda.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -202,6 +205,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="WebServiceAzuli.asmx" />
     <Content Include="WelcomeAdmin.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -275,6 +279,13 @@
     <Compile Include="contato.aspx.designer.cs">
       <DependentUpon>contato.aspx</DependentUpon>
     </Compile>
+    <Compile Include="controlePortaria.aspx.cs">
+      <DependentUpon>controlePortaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controlePortaria.aspx.designer.cs">
+      <DependentUpon>controlePortaria.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DetalheClassificado.aspx.cs">
       <DependentUpon>DetalheClassificado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -338,12 +349,22 @@
     <Compile Include="ListaReclamacaoAbertaAdmin.aspx.designer.cs">
       <DependentUpon>ListaReclamacaoAbertaAdmin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LoginPortaria.aspx.cs">
+      <DependentUpon>LoginPortaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginPortaria.aspx.designer.cs">
+      <DependentUpon>LoginPortaria.aspx</DependentUpon>
+    </Compile>
     <Compile Include="meuClassificados.aspx.cs">
       <DependentUpon>meuClassificados.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="meuClassificados.aspx.designer.cs">
       <DependentUpon>meuClassificados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MostraFoto.ashx.cs">
+      <DependentUpon>MostraFoto.ashx</DependentUpon>
     </Compile>
     <Compile Include="MostraPdfCircular.aspx.cs">
       <DependentUpon>MostraPdfCircular.aspx</DependentUpon>
@@ -494,6 +515,13 @@
     <Compile Include="TelaConfirmacaoAgendamento.aspx.designer.cs">
       <DependentUpon>TelaConfirmacaoAgendamento.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TelaControlePortaria.aspx.cs">
+      <DependentUpon>TelaControlePortaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TelaControlePortaria.aspx.designer.cs">
+      <DependentUpon>TelaControlePortaria.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Util\Base.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -505,6 +533,10 @@
     </Compile>
     <Compile Include="videoajuda.aspx.designer.cs">
       <DependentUpon>videoajuda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebServiceAzuli.asmx.cs">
+      <DependentUpon>WebServiceAzuli.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="WelcomeAdmin.aspx.cs">
       <DependentUpon>WelcomeAdmin.aspx</DependentUpon>
@@ -545,6 +577,7 @@
     <Content Include="App_Themes\DataWebControls\DetailsView.skin" />
     <Content Include="App_Themes\DataWebControls\GridView.skin" />
     <Content Include="PageAcessControl.Master" />
+    <Content Include="MostraFoto.ashx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
