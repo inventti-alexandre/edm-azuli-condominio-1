@@ -147,7 +147,7 @@ namespace Azuli.Web.Portal.Util
 
         public bool validateSession()
         {
-             
+
             bool retorno = false;
 
 
@@ -166,13 +166,39 @@ namespace Azuli.Web.Portal.Util
                 System.Web.HttpContext.Current.Session.Clear();
                 System.Web.HttpContext.Current.Response.Redirect("~/LoginAzulli.aspx");
             }
-            
+
             else
             {
                 retorno = true;
             }
+           
 
             return retorno;
+        }
+
+        public bool validaAcessoPortaria()
+        {
+
+
+              bool retorno = false;
+
+
+              if (System.Web.HttpContext.Current.Session["AP"] == null && System.Web.HttpContext.Current.Session["Bloco"] == null && System.Web.HttpContext.Current.Session["Porteiro"] == null)
+              {
+                  
+                retorno = false;
+                System.Web.HttpContext.Current.Session.Clear();
+                System.Web.HttpContext.Current.Response.Redirect("~/LoginPortaria.aspx");
+              }
+
+              else
+              {
+                  retorno = true;
+              }
+                
+          
+        return retorno;
+
         }
 
 
