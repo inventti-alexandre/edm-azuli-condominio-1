@@ -12,6 +12,9 @@ EndProject
 Project("{C8D11400-126E-41CD-887F-60BD40844F9E}") = "Azuli.Portal.Database", "Database1\Azuli.Portal.Database.dbproj", "{67CBC824-A49E-4E9B-A947-360F3DFE65C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azuli.Acess.Control", "Azuli.Acess.Control\Azuli.Acess.Control.csproj", "{328F6C69-4E2B-49CF-8C9D-345DF3AE9AC0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D3EAAE17-F780-43B2-96D9-F884599E9E98} = {D3EAAE17-F780-43B2-96D9-F884599E9E98}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
