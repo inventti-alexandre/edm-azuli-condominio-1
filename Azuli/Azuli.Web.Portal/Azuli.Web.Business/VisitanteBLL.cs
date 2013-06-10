@@ -7,7 +7,7 @@ using Azuli.Web.Model;
 
 namespace Azuli.Web.Business
 {
-    public class VisitanteBLL
+    public class VisitanteBLL : Interfaces.IVisitante
     {
         VisitanteDAO oVisitanteDAO = new VisitanteDAO();
 
@@ -15,7 +15,7 @@ namespace Azuli.Web.Business
         {
             try
             {
-                oVisitanteDAO.cadastraVisitante(oVisitante);                
+                oVisitanteDAO.cadastraVisitante(oVisitante);
             }
             catch (Exception)
             {
@@ -24,11 +24,12 @@ namespace Azuli.Web.Business
             }
         }
 
-        public void procuraVisitanteRG(Model.Visitante oVisitante)
+        public listVisitante procuraVisitanteRG(Model.Visitante oVisitante)
         {
+            listVisitante oListVst = new listVisitante();
             try
             {
-                oVisitanteDAO.procuraVisitanteRG(oVisitante);
+                return oListVst = oVisitanteDAO.procuraVisitanteRG(oVisitante);
             }
             catch (Exception)
             {
@@ -37,11 +38,12 @@ namespace Azuli.Web.Business
             }
         }
 
-        public void procuraVisitanteNome(Model.Visitante oVisitante)
+        public listVisitante procuraVisitanteNome(Model.Visitante oVisitante)
         {
+            listVisitante oListVst = new listVisitante();
             try
             {
-                oVisitanteDAO.procuraVisitanteNome(oVisitante);
+                return oListVst = oVisitanteDAO.procuraVisitanteNome(oVisitante);
             }
             catch (Exception)
             {
@@ -50,5 +52,20 @@ namespace Azuli.Web.Business
             }
         }
 
+
+
+        public void atualizaVisitante(Visitante oVisitante)
+        {
+
+            try
+            {
+                oVisitanteDAO.atualizaVisitante(oVisitante);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
