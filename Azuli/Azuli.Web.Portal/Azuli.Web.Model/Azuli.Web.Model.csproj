@@ -55,6 +55,8 @@
     <Compile Include="PendenciaAdmin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProprietarioModel.cs" />
+    <Compile Include="Visitante.cs" />
+    <Compile Include="Visitas.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
