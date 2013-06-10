@@ -179,7 +179,7 @@ namespace Azuli.Web.Portal
             if (rdlEnquete.SelectedItem != null)
             {
                 oEnqueteModel.idEnquete = Convert.ToInt32(rdlEnquete.SelectedValue);
-                oEnqueteModel.enqueteDescricao = rdlEnquete.SelectedItem.Text;
+                oEnqueteModel.enqueteDescricao ="";
                 oEnqueteModel.resultadoEnquete = 1;
                 oApEnquete.apartamento = Convert.ToInt32(Session["AP"]);
                 oApEnquete.bloco = Convert.ToInt32(Session["bloco"]);
