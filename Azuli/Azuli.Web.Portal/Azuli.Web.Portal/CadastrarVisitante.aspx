@@ -43,49 +43,55 @@
     <style type="text/css">
         .style2
         {
-            width: 533px;
+            width: 660px;
         }
         .style3
         {
-            width: 138px;
+            width: 215px;
         }
         .style4
         {
-            width: 424px;
+            width: 409px;
         }
         #silverlightControlHost
         {
-            height: 332px;
-            width: 362px;
+            height: 373px;
+            width: 346px;
         }
         .style5
         {
-            width: 138px;
-            height: 25px;
+            width: 215px;
+            height: 85px;
         }
         .style6
         {
-            width: 424px;
+            width: 409px;
             height: 25px;
+        }
+        .style7
+        {
+            width: 409px;
+            height: 85px;
         }
     </style>
 </asp:Content>
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <br /><br />
 
-  <br /><br /><br />
   
-  <div id="dvMsg" align="center"  runat="server"> 
+
   <fieldset class="loginDisplayLegend">
-        <legend class="accordionContent">Alterar sua Senha: Administrador</legend>
-  <br />
-    <table class="">
+        <legend class="accordionContent">Cadastro e Autorização de Visita:</legend>
+
+    <table align="center" style="width: 477px; margin-left: 24px;" >
         <tr>
-            <td class="style2">
+            <td class="" align="center" dir="ltr">
     <div id="silverlightControlHost">
         <object data="data:application/x-silverlight-2," 
-            type="application/x-silverlight-2" style="height: 336px; width: 101%">
+            type="application/x-silverlight-2" 
+            style="height: 376px; width: 104%; margin-top: 0px;">
 		  <param name="source" value="ClientBin/Azuli.Acess.Control.xap"/>
 		  <param name="onError" value="onSilverlightError" />
 		  <param name="background" value="white" />
@@ -97,17 +103,27 @@
 	    </object><iframe id="_sl_historyFrame" style="visibility:hidden;height:0px;width:0px;border:0px"></iframe>
                 
                   
+                  <br />
+                
+                  
+                  <br /><br />
+                <br />
+        <br />
+                
+                  
                   
                 </div></td>
             <td>
-               <table align="center" style="width: 517px" class="accordionContent">
+ <table align="center" style="width: 477px; margin-left: 24px;" 
+                    class="accordionContent">
                <tr>
-               <td  align="left" class="style3">
-                   <asp:Image ID="imgVisitante" runat="server" 
-                       ImageUrl="~/images/novo_morador_visitante.png" />
+               <td  align="left" class="style5">
+                   <asp:Image ID="Image1" runat="server" Height="112px" Width="153px" />
                    </td>
-                <td align="left" class="style4">
-                    &nbsp;</td>
+                <td align="left" class="style7">
+                    <asp:Label ID="Label2" runat="server" CssClass="ContextMenuPanel" 
+                        Font-Bold="True" Text="Visitantes / Prestador de Serviços"></asp:Label>
+</td>
                </tr>
                <tr>
                <td  align="left" class="style3">
@@ -127,7 +143,7 @@
                    <asp:Label ID="lblRG" runat="server" Text="RG:" style="font-weight: 700"></asp:Label>
                    </td>
                 <td align="left" class="style4">
-                    <asp:TextBox ID="txtBoxRG" runat="server" Width="262px"></asp:TextBox>
+                    <asp:TextBox ID="txtBoxRG" runat="server" Width="151px"></asp:TextBox>
                    </td>
                </tr>
                 <tr>
@@ -144,16 +160,43 @@
                    <asp:Label ID="lblNome1" runat="server" Text="Bloco:" style="font-weight: 700"></asp:Label>
                     </td>
                 <td align="left" class="style4">
-                    <asp:DropDownList ID="drpBloco" runat="server">
-                    </asp:DropDownList>
+                    &nbsp;<asp:DropDownList ID="drpBloco" runat="server" DataSourceID="SqlDataSourceBloco" 
+                                    DataTextField="BLOCO" DataValueField="BLOCO" Height="20px" 
+                                    CssClass="AlternatingRowStyle" Width="58px"  AppendDataBoundItems="True" 
+                                    AutoPostBack="True" 
+                        onselectedindexchanged="drpBloco_SelectedIndexChanged" Font-Bold="True">
+                                      
+                                </asp:DropDownList>
+
                    <asp:Label ID="lblAp" runat="server" Text="Apartamento:" 
                        style="font-weight: 700"></asp:Label>
-                    <asp:DropDownList ID="drpApartamento" runat="server">
-                    </asp:DropDownList>
+                  <asp:DropDownList ID="drpMsg" runat="server" DataSourceID="SqlDataSourceAP" 
+                                    DataTextField="APARTAMENTO" DataValueField="APARTAMENTO" Height="20px" 
+                                    CssClass="AlternatingRowStyle" Width="60px"  AppendDataBoundItems="True" 
+                                    AutoPostBack="True" 
+                        onselectedindexchanged="drpMsg_SelectedIndexChanged" Font-Bold="True">
+                                     
+                                </asp:DropDownList>
                     </td>
+                     
                </tr>
                 <tr>
-               <td  align="left" class="style5">
+               <td  align="left" class="style3">
+                   <asp:Label ID="lblNome2" runat="server" Text="Morador:" 
+                       style="font-weight: 700"></asp:Label>
+                    </td>
+                <td align="justify" class="style4">
+                    <br />
+                    <asp:Label ID="lblMorador" runat="server" Font-Bold="True" ForeColor="Blue"></asp:Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="btnconsultar" runat="server" Font-Bold="True" ForeColor="Blue" 
+                        Text=" Consultar Info" Width="104px" Height="25px" />
+                    <br />
+                    </td>
+                     
+               </tr>
+                <tr>
+               <td  align="left" class="style3">
                    <asp:Label ID="Label1" runat="server" style="font-weight: 700" 
                        Text="Autorizado por"></asp:Label>
                     </td>
@@ -167,8 +210,8 @@
                        style="font-weight: 700"></asp:Label>
                     </td>
                 <td align="left" class="style4">
-                    <asp:TextBox ID="txtDescricao" runat="server" Height="59px" 
-                        TextMode="MultiLine" Width="338px"></asp:TextBox>
+                    <asp:TextBox ID="txtDescricao" runat="server" Height="35px" 
+                        TextMode="MultiLine" Width="298px"></asp:TextBox>
                     </td>
                </tr>
                 <tr>
@@ -188,6 +231,15 @@
                     &nbsp;&nbsp;&nbsp;
                    <asp:Label ID="lblCor" runat="server" Font-Bold="True" Text="Cor:"></asp:Label>
                     &nbsp;<asp:DropDownList ID="drpCor" runat="server">
+                        <asp:ListItem>Branco</asp:ListItem>
+                        <asp:ListItem>Preto</asp:ListItem>
+                        <asp:ListItem>Prata</asp:ListItem>
+                        <asp:ListItem>Cinza</asp:ListItem>
+                        <asp:ListItem>Marrom</asp:ListItem>
+                        <asp:ListItem>Verde</asp:ListItem>
+                        <asp:ListItem>Azul</asp:ListItem>
+                        <asp:ListItem>Amarelo</asp:ListItem>
+                        <asp:ListItem>Laranja</asp:ListItem>
                     </asp:DropDownList>
                     </td>
                </tr>
@@ -197,19 +249,27 @@
                 <td align="left" class="style4">
                     <asp:Button ID="btnSalvar" runat="server" Text="Salvar Dados" 
                         onclick="btnSalvar_Click" />
+                         
 &nbsp;
                     <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" />
                     </td>
                </tr>
                </table>
                
-               </td>
-           
+           </td>
         </tr>
+       
     </table>
+      <asp:SqlDataSource ID="SqlDataSourceAP" runat="server" 
+                                    ConnectionString="<%$ ConnectionStrings:azulli %>" 
+                                    SelectCommand="LISTA_APARTAMENTO" SelectCommandType="StoredProcedure">
+                                </asp:SqlDataSource>
+                                <asp:SqlDataSource ID="SqlDataSourceBloco" runat="server" 
+                                    ConnectionString="<%$ ConnectionStrings:azulli %>" SelectCommand="LISTA_BLOCO" 
+                                    SelectCommandType="StoredProcedure"></asp:SqlDataSource>
 
    </fieldset>
 
-   </div>
+   
 
    </asp:Content>
