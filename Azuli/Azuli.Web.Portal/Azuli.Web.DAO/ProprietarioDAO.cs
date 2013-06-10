@@ -44,6 +44,8 @@ namespace Azuli.Web.DAO
             }
         }
 
+        
+
 
         public int CadastrarApartamentoMorador(Model.ProprietarioModel ap)
         {

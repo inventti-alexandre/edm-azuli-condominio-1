@@ -80,6 +80,7 @@ namespace Azuli.Web.DAO
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
+                cmd.CommandTimeout = 150;
                 da.Fill(dt);
                 conn.Close();
                 return dt;
