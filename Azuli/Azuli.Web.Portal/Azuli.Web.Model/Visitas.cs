@@ -18,6 +18,11 @@ namespace Azuli.Web.Model
         public string VisitaAutorizadaPor {get;set;}
         public string VistaObs { get; set; }
 
+        public string VisitanteNome {get;set;}
+        public string VisitanteRG {get;set;}
+        public string VisitanteTipo {get;set;}
+        public byte   Foto {get;set;}
+        
         public Visitas()
         {
             VisitaData          = DateTime.Parse("01-01-1753");
@@ -30,6 +35,11 @@ namespace Azuli.Web.Model
             VisitaAutorizada    = "";
             VisitaAutorizadaPor = "";
             VistaObs            = "";
+
+            VisitanteNome       = "";
+            VisitanteRG         = "";
+            VisitanteTipo       = "V";
+            Foto                = 0;
         }
     }
 
