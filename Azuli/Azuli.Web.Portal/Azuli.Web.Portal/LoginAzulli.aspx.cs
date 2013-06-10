@@ -78,9 +78,6 @@ namespace Azuli.Web.Portal.Account
             Session.Clear();
             Session.Abandon();
 
-
-
-
         }
 
         protected void LoginButton_Click(object sender, EventArgs e)
