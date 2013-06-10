@@ -47,6 +47,7 @@
     <Compile Include="ClassificadoVisto.cs" />
     <Compile Include="Enquete.cs" />
     <Compile Include="File.cs" />
+    <Compile Include="Foto.cs" />
     <Compile Include="GrupoClassificados.cs" />
     <Compile Include="LancamentoOcorrenciaModel.cs" />
     <Compile Include="MensagemMoradorModel.cs" />
