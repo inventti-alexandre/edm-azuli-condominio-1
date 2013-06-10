@@ -21,12 +21,16 @@ namespace Azuli.Acess.Control
             this.Exit += this.Application_Exit;
             this.UnhandledException += this.Application_UnhandledException;
 
+
             InitializeComponent();
         }
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
+
+
             this.RootVisual = new MainPage();
+            
         }
 
         private void Application_Exit(object sender, EventArgs e)

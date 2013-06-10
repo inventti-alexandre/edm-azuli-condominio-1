@@ -11,11 +11,18 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Media.Imaging;
 using System.IO;
+using Azuli.Acess.Control.ServiceReference1;
+
 
 namespace Azuli.Acess.Control
 {
     public partial class MainPage : UserControl
     {
+
+
+
+
+
 
         WriteableBitmap lastSnapshot = null;
 
@@ -29,30 +36,60 @@ namespace Azuli.Acess.Control
             saveButton.Click += new RoutedEventHandler(saveButton_Click);
 
             // Setup Capture Source
+
+       
             cameraBrush.SetSource(src);
         }
 
         void saveButton_Click(object sender, RoutedEventArgs e)
         {
+
             if (lastSnapshot != null)
             {
-                var dlg = new SaveFileDialog();
-                dlg.DefaultExt = ".png";
-                dlg.Filter = "PNG File|*.png";
-                if (dlg.ShowDialog() == true)
-                {
-                    using (var pngStream = GetPngStream(lastSnapshot))
-                    using (var file = dlg.OpenFile())
-                    {
-                        byte[] binaryData = new Byte[pngStream.Length];
-                        long bytesRead = pngStream.Read(binaryData, 0, (int)pngStream.Length);
-                        file.Write(binaryData, 0, (int)pngStream.Length);
-                        file.Flush();
-                        file.Close();
-                    }
-                }
+                //var dlg = new SaveFileDialog();
+                //dlg.DefaultExt = ".png";
+                //dlg.Filter = "PNG File|*.png";
+                //if (dlg.ShowDialog() == true)
+                //{
+                var pngStream = GetPngStream(lastSnapshot);
+                //using (var file = dlg.OpenFile())
+                //{
+                byte[] binaryData = new Byte[pngStream.Length];
+                //long bytesRead = pngStream.Read(binaryData, 0, (int)pngStream.Length);
+                //file.Write(binaryData, 0, (int)pngStream.Length);
+
+                WebServiceAzuliSoapClient proxy = new WebServiceAzuliSoapClient();
+
+                proxy.cadastraFotoCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(proxy_cadastraFotoCompleted);
+
+                proxy.cadastraFotoAsync(binaryData);
+
+
+
+                // cliente.gravaTesteCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(cliente_gravaTesteCompleted);
+                //cliente.gravaTesteAsync(binaryData);
+
+
+                //file.Flush();
+                //file.Close();
             }
+
+
+
+                    
+                
+            
         }
+
+
+        void proxy_cadastraFotoCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+                throw new NotImplementedException();
+        }
+
+        
+
+
 
         void photoButton_Click(object sender, RoutedEventArgs e)
         {
@@ -64,6 +101,8 @@ namespace Azuli.Acess.Control
                 src.Stop();
             };
             src.CaptureImageAsync();
+
+            
         }
 
         CaptureSource src = new CaptureSource();
@@ -103,5 +142,7 @@ namespace Azuli.Acess.Control
 
             return imageData.GetStream();
         }
+
+
     }
 }
