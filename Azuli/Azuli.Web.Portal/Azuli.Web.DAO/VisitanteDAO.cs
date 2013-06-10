@@ -118,6 +118,12 @@ namespace Azuli.Web.DAO
             }
         }
 
+        /// <summary>
+        /// Cria uma lista de visitante 
+        /// --Auto: Leandro Vilela
+        /// </summary>
+        /// <param name="dt">DataTable</param>
+        /// <returns></returns>
         private listaVisitante populaVisitante(DataTable dt)
         {
             listaVisitante olistaVisitante = new listaVisitante();
