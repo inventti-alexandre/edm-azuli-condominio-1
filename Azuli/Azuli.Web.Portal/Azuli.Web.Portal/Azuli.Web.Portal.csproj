@@ -86,6 +86,7 @@
     <Content Include="images\add.png" />
     <Content Include="images\boton_responder.gif" />
     <Content Include="images\class.jpg" />
+    <Content Include="images\classificados.jpg" />
     <Content Include="images\clientes.jpg" />
     <Content Include="images\cliqueAqui.jpg" />
     <Content Include="images\enquete.jpg" />

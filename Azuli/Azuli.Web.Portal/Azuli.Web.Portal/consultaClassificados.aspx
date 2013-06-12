@@ -34,10 +34,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <br />
-    
+ <div id="dvGrupo" runat="server" align="left" dir="ltr">
      <fieldset class="loginDisplayLegend">
-                <legend title="Abrir Ocorrência" class="style7"> O que você está procurando?</legend>
-        <div id="dvGrupo" runat="server" align="left" dir="ltr">
+                <legend title="Abrir Ocorrência" class="accordionContent"> O que você está procurando?</legend>
+       
           <center> 
                 <br />
 
@@ -149,13 +149,19 @@
                 </table> </center>
                 
            </center></div> </fieldset>
-<center><div  id="dvAnunciar"  runat="server" align="center" dir="ltr">
+<center>
+
+
+
+<div  id="dvAnunciar"  runat="server" align="center" dir="ltr">
        
    <center>  <fieldset class="loginDisplayLegend">
    <div id="dvVeiculo" 
-           style="position:absolute; top: 151px; left: 299px; color: #0033CC; font-weight: 700;"><asp:Label ID="lblGrupo" runat="server"></asp:Label></div>
+           
+           
+           style="position:absolute; top: 154px; left: 231px; color: #0033CC; font-weight: 700; height: 20px;"><asp:Label ID="lblGrupo" runat="server"></asp:Label></div>
              
-         <legend class="seuAnunciosTst"> 
+         <legend class="accordionContent"> 
             <div id="imgAnuncio"   
                  style="position:absolute; top: 170px; left: 879px; color: #0033CC; font-weight: 700;"> <asp:Image ID="imgGrupo" runat="server" 
                     Height="44px" Width="155px" />  </div>

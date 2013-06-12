@@ -127,7 +127,7 @@
     </div>
     <div id="dvAnunciar" runat="server" align="center">
         <fieldset class="loginDisplayLegend">
-            <legend class="seuAnuncios" align="left">Cadastrar Anúncio - Bloco:
+            <legend class="accordionContent" align="left">Cadastrar Anúncio - Bloco:
                 <asp:Label ID="lblDescBloco" runat="server" Text=""></asp:Label>
                 - Ap:
                 <asp:Label ID="lblDescApartamento" runat="server" Text=""></asp:Label></legend>
@@ -265,13 +265,13 @@
         <center>
             <asp:Label ID="lblAnuncio" runat="server" CssClass="main" ForeColor="#009900"></asp:Label></center>
     </div>
-    <div id="dvInfo" style="position: absolute; top: 543px; left: 692px; width: 345px;"
+    <div id="dvInfo" style="position: absolute; top: 546px; left: 647px; width: 457px;"
         class="">
         <fieldset class="InstructionPhotoDisplay">
             <legend class="instruct">Instrução para Foto</legend>
             <li>
                 <p>
-                    Tamanho de arquivo permitido é de <span class="style8">300kb</span> por imagem
+                    Tamanho de arquivo permitido é de <span class="style8">1MB</span> por imagem
                 </p>
             </li>
             <li>

@@ -32,7 +32,7 @@
     
    
     <fieldset class="loginDisplayLegend">
-                <legend title="Abrir Ocorrência" class="style6" align="left"> O que deseja anunciar? - Bloco:
+                <legend title="Abrir Ocorrência" class="accordionContent" align="left"> O que deseja anunciar? - Bloco:
                     <asp:Label ID="lblDescBloco" runat="server" Text="Label"></asp:Label>
       - Apartamento:
                     <asp:Label ID="lblDescApartamento" runat="server" Text="Label"></asp:Label></legend>
@@ -153,7 +153,7 @@
 <center><div  id="dvAnunciar"  runat="server" align="center" dir="ltr">
        
    <center>  <fieldset class="loginDisplayLegend">
-         <legend class="style6" align="left"><strong>Seus Classifcados Ativos</strong></legend>
+         <legend class="accordionContent" align="left"><strong>Seus Classifcados Ativos</strong></legend>
             <br />
         <center>  
             <asp:GridView ID="grdClassificado" runat="server" AutoGenerateColumns="False" 

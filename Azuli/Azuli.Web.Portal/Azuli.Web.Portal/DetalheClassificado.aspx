@@ -51,6 +51,7 @@
     <asp:Image style='position:absolute; top:0px; left:4px;' ID="imgGrupo" 
             runat="server" Height="44px" Width="153px" />
     </div>
+    
     <div id="dvAnunciar" runat="server" align="center">
 
         <fieldset class="loginDisplayLegend">
@@ -116,11 +117,11 @@
     
     </div>
      
-    <div id="dvDescricacao" 
+    <div id="dvDescricacao"  > 
         
                 
         
-        style="position:absolute; top: 339px; left: 220px; width: 915px; height: 294px;" > 
+        
                
     <fieldset class="loginDisplayLegend">
             <legend class="accordionContent">Descrição do Anúncio</legend>

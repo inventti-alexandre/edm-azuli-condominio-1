@@ -20,7 +20,7 @@
 <br /><br /><br />
 
 <fieldset class="loginDisplayLegend">
-         <legend class="style2" align="left"><strong>Gerenciar seus Classifcados: </strong></legend>
+         <legend class="accordionContent" align="left"><strong>Gerenciar seus Classificados: </strong></legend>
 <div  id="dvAnunciar"  runat="server" align="center" dir="ltr">
        
    <center>  

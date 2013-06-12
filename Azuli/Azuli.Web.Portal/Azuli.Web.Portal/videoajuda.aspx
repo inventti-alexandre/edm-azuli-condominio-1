@@ -43,7 +43,7 @@
        <br />
 
        <span class="style2">Assista o video e veja como é fácil utilizar o SGC</span>
-        
+        <br />
 
  <fieldset class="loginDisplayLegend">
       
@@ -72,7 +72,7 @@
    
 
    <fieldset class="loginDisplayLegend">
-        <legend class="accordionContent"><span class="style4">Aprenda Consultar Circular e Reservar Área :</span> </legend>
+        <legend class="accordionContent">Aprenda Consultar Circular e Reservar Área: </legend>
         <br />
         <table class="style1">
             <tr>
