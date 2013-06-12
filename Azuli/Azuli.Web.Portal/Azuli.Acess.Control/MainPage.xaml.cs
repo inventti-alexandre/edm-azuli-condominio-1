@@ -46,11 +46,11 @@ namespace Azuli.Acess.Control
 
             if (lastSnapshot != null)
             {
-                //var dlg = new SaveFileDialog();
-                //dlg.DefaultExt = ".png";
-                //dlg.Filter = "PNG File|*.png";
-                //if (dlg.ShowDialog() == true)
-                //{
+                var dlg = new SaveFileDialog();
+                dlg.DefaultExt = ".png";
+                dlg.Filter = "PNG File|*.png";
+
+                 var teste = dlg.SafeFileName;
                 var pngStream = GetPngStream(lastSnapshot);
                 //using (var file = dlg.OpenFile())
                 //{

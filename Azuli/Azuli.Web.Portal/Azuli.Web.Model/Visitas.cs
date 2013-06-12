@@ -5,9 +5,7 @@ using System.Text;
 
 namespace Azuli.Web.Model
 {
-    public class Visitas
-    {
-
+   
 
         public class Visitas
         {
@@ -63,7 +61,7 @@ namespace Azuli.Web.Model
         //    VisitanteTipo       = "V";
         //    Foto                = 0;
         //}
-    }
+    
 
     
 }

@@ -189,7 +189,8 @@ namespace Azuli.Web.DAO
                 ProprietarioModel oPropri = new ProprietarioModel();
                 oPropri.ap = new ApartamentoModel();
 
-                oPropri.proprietario1 = dr["NOME_PROPRIETARIO1"].ToString();
+                if (dr.Table.Columns.Contains("NOME_PROPRIETARIO1"))
+                    oPropri.proprietario1 = dr["NOME_PROPRIETARIO1"].ToString();
                
                 if (dr.Table.Columns.Contains("NOME_PROPRIETARIO2"))
                     oPropri.proprietario2 = dr["NOME_PROPRIETARIO2"].ToString();

@@ -32,6 +32,7 @@ namespace Azuli.Web.Portal
             if (ex.GetType() != typeof(HttpException))
             {
 
+               
               
                 Util.SendMail logError = new Util.SendMail();
 
