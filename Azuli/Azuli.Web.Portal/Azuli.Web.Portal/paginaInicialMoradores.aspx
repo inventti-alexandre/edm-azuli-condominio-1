@@ -76,9 +76,9 @@
                 <span class="style12"> Telefones Utéis <img src="images/tel.jpg"  alt="" width="20px" height="20px"/></span>
             </div>
             <div class="mainbodyTel">
-               Portaria - Ramal 94
-                <br />
-                Escritório Sindico - Ramal - 93<br />
+          
+              <p><b>Portaria - Ramal 94 / Tel: 3302-5729 </b> </p>
+               <b> Sindico - Ramal 93 / Tel: 3027-7997</b>  <br />
             </div>
             <div class="FooterEnqueteTel">
 

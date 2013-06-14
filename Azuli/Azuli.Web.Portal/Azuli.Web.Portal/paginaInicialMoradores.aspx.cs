@@ -233,31 +233,31 @@ namespace Azuli.Web.Portal
                         case 1: //Indispensável
                             perIndispensabel = (item.resultadoEnquete / total * 100);
                             lblIndispensavel.Text = item.resultadoEnquete + " voto(s), " + "(" +Math.Round(perIndispensabel) +")%";
-                            dvIndisp.Style["width"] = perIndispensabel + "px"; 
+                            dvIndisp.Style["width"] = Math.Round(perIndispensabel) + "px"; 
                             break;
 
                         case 2: //Muito importante
                             perMuitoImportante = (item.resultadoEnquete / total * 100);
                             lblMuitoImportante.Text = item.resultadoEnquete + " voto(s), " + "(" +Math.Round(perMuitoImportante) + ")%";
-                            dvMuitoImport.Style["width"] = perMuitoImportante + "px"; 
+                            dvMuitoImport.Style["width"] = Math.Round(perMuitoImportante) + "px"; 
                             break;
 
                         case 3: //Importante
                             perImportante = (item.resultadoEnquete / total * 100);
                             lblImportante.Text = item.resultadoEnquete + " voto(s), " + "(" + Math.Round(perImportante) + ")%";
-                            dvImportante.Style["width"] = perImportante + "px"; 
+                            dvImportante.Style["width"] = Math.Round(perImportante) + "px"; 
                             break;
 
                         case 4: //Pouco Importante
                             perPoucoImportante = (item.resultadoEnquete / total * 100);
                             lblPoucoImportante.Text = item.resultadoEnquete + " voto(s), " + "("+ Math.Round(perPoucoImportante) + ")%";
-                            dvPoucoImpor.Style["width"] = perPoucoImportante + "px"; 
+                            dvPoucoImpor.Style["width"] = Math.Round(perPoucoImportante) + "px"; 
                             break;
 
                         case 5: //Dispensável
                             perdispensabel = (item.resultadoEnquete / total * 100);
-                            lblDispensavel.Text = item.resultadoEnquete + " voto(s), " + "(" +  Math.Round(perdispensabel) + ")%";
-                            dvDispen.Style["width"] = perdispensabel + "px"; 
+                            lblDispensavel.Text = item.resultadoEnquete + " voto(s), " + "(" + Math.Round(perPoucoImportante) + ")%";
+                            dvDispen.Style["width"] = Math.Round(perPoucoImportante) + "px"; 
                             break;
 
                     }
@@ -332,7 +332,7 @@ namespace Azuli.Web.Portal
             }
            
             
-
+            //Query que tras os dados através de um sorteio.. para mostrar dinamincamente os classificados na página principal;
             grdClassificado.DataSource = from listaClassificados in oClassificadoBLL.consultaClassificado(oClassificaModel)
                                          where listaClassificados.statusClassificado == "A"
                                          && listaClassificados.idClassificado == numeroSorteado[0] || listaClassificados.idClassificado == numeroSorteado[1]

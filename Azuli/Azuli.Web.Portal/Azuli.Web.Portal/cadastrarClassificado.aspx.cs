@@ -7,10 +7,12 @@ using System.Web.UI.WebControls;
 using Azuli.Web.Business;
 using Azuli.Web.Model;
 using System.Text;
+using System.Globalization;
+using System.Threading;
 
 namespace Azuli.Web.Portal
 {
-    public partial class cadastrarClassificado : Util.Base
+    public partial class cadastrarClassificado : System.Web.UI.Page
     {
         Util.Util oUtil = new Util.Util();
         ClassificadoBLL oClassificado = new ClassificadoBLL();
@@ -38,6 +40,12 @@ namespace Azuli.Web.Portal
                     txtFalarCom.Text = Session["Proprie1"].ToString();
                     carregaGrupoClassificado(Convert.ToInt32(Request.QueryString["var"]));
                     txtValor.Attributes.Add("onKeyDown", "this, 10, this.event, 2");
+                    CultureInfo CI = new CultureInfo("pt-PT");
+                    CI.DateTimeFormat.ShortDatePattern = "dd-MM-yyyy";
+
+                    Thread.CurrentThread.CurrentCulture = CI;
+                    Thread.CurrentThread.CurrentUICulture = CI;
+                    base.InitializeCulture();
                 }
 
             }

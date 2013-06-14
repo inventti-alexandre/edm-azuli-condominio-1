@@ -257,7 +257,7 @@ namespace Azuli.Web.Portal
 
              oClassificaModel.grpClassificado.grupoClassificado = idClassificado;
 
-
+            //Traz todos os classificados Ativos
              grdClassificado.DataSource = from listaClassificados in oClassificadoBLL.consultaClassificado(oClassificaModel)
                                           where listaClassificados.statusClassificado == "A"
                                           orderby listaClassificados.dataClassificado

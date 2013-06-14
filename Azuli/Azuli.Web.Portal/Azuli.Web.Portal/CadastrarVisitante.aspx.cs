@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Azuli.Web.Business;
 using Azuli.Web.Model;
+using System.IO;
 
 namespace Azuli.Web.Portal
 {
@@ -19,15 +20,78 @@ namespace Azuli.Web.Portal
         Foto ofotoModel = new Foto();
         FotoBLL oFotoBll = new FotoBLL();
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+
+            try
             {
+                // Image1.ImageUrl = "";
 
 
+                string Dir = HttpContext.Current.Server.MapPath("~/ServerFile/FotosWebCam/");
+                string FileName = String.Format("{0:ddMMyyyyhhmmss}.jpg", DateTime.Now);
+
+                string CompleteFileName = String.Format("{0}\\{1}", Dir, FileName);
+                byte[] buffer = null;
+
+
+                FileInfo informacaoArquivo = new FileInfo(CompleteFileName);
+
+
+
+
+                using (FileStream fs = informacaoArquivo.Open(FileMode.Create, FileAccess.Write, FileShare.None))
+                {
+                    buffer = new byte[HttpContext.Current.Request.InputStream.Length];
+                    if (buffer.Length != 0)
+                    {
+                        Request.InputStream.Read(buffer, 0, (int)HttpContext.Current.Request.InputStream.Length);
+                        fs.Write(buffer, 0, buffer.Length);
+                    }
+                }
+
+
+
+
+                if (buffer.Length != 0)
+                {
+                    // Image1.ImageUrl = "~/ServerFile/FotosWebCam/"+FileName;
+                    //Image1.Visible = true;
+                    Response.ContentType = ".jpg";
+                    Response.BinaryWrite(buffer);
+
+                    string URLSaida = String.Format("{0}://{1}{2}{3}", HttpContext.Current.Request.Url.Scheme, HttpContext.Current.Request.Url.GetComponents(UriComponents.HostAndPort, UriFormat.Unescaped), "/ServerFile/FotosWebCam/", FileName);
+                    HttpContext.Current.Response.Clear();
+                    HttpContext.Current.Response.Write(URLSaida);
+                }
+
+                // HttpContext.Current.Session["buffer"] = Dir+ FileName;
+
+                //   context.Response.ContentType = ".jpg";
+                //  context.Response.BinaryWrite(buffer);
+
+                //  HttpContext.Current.Response.Redirect("CadastrarVisitante.aspx");
 
 
             }
+
+            catch
+            {
+                //HttpContext.Current.Response.Clear();
+                Response.Write("ERROR: Erro ao salvar imagem\n");
+            }
+
+
+
+
+
+
+
+
+            //  Session["buffer"].ToString();
+
+
 
         }
 
@@ -98,7 +162,7 @@ namespace Azuli.Web.Portal
                 {
 
                     oVisitanteBLL.cadastraVisitante(oVisitanteModel);
-                    Image1.ImageUrl = "~/MostraFoto.ashx";
+                    //  Image1.ImageUrl = "~/MostraFoto.ashx";
                     Session.Remove("ID_ATUAL");
 
                 }

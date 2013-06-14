@@ -1,45 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PageAcessControl.Master" AutoEventWireup="true" CodeBehind="CadastrarVisitante.aspx.cs" Inherits="Azuli.Web.Portal.CadastrarVisitante" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     
- <script type="text/javascript" src="Silverlight.js"></script>
-
-    <script type="text/javascript">
-        function onSilverlightError(sender, args) {
-            var appSource = "";
-            if (sender != null && sender != 0) {
-                appSource = sender.getHost().Source;
-            }
-
-            var errorType = args.ErrorType;
-            var iErrorCode = args.ErrorCode;
-
-            if (errorType == "ImageError" || errorType == "MediaError") {
-                return;
-            }
-
-            var errMsg = "Unhandled Error in Silverlight Application " + appSource + "\n";
-
-            errMsg += "Code: " + iErrorCode + "    \n";
-            errMsg += "Category: " + errorType + "       \n";
-            errMsg += "Message: " + args.ErrorMessage + "     \n";
-
-            if (errorType == "ParserError") {
-                errMsg += "File: " + args.xamlFile + "     \n";
-                errMsg += "Line: " + args.lineNumber + "     \n";
-                errMsg += "Position: " + args.charPosition + "     \n";
-            }
-            else if (errorType == "RuntimeError") {
-                if (args.lineNumber != 0) {
-                    errMsg += "Line: " + args.lineNumber + "     \n";
-                    errMsg += "Position: " + args.charPosition + "     \n";
-                }
-                errMsg += "MethodName: " + args.methodName + "     \n";
-            }
-
-            throw new Error(errMsg);
-        }
-    </script>
-    
+     <script type="text/javascript" src="camutils/webcam.js"></script>
     <style type="text/css">
         .style2
         {
@@ -74,51 +36,70 @@
             height: 85px;
         }
     </style>
+
+     <script type="text/javascript">
+         webcam.set_hook('onComplete', 'my_completion_handler');
+
+         function take_snapshot() {
+             // Captura a imagem e submete ao servidor
+             //  document.getElementById('upload_results').innerHTML = '<h1>Realizando Upload da Foto...</h1>';
+             webcam.snap();
+         }
+
+         function my_completion_handler(msg) {
+             // Extrai a URL da imagem do retorno de Upload.aspx
+             if (msg.match(/(http\:\/\/\S+)/)) {
+                 var image_url = RegExp.$1;
+                 // show JPEG image in page
+                 document.getElementById('upload_results').innerHTML =
+					    '<img src="' + image_url + '" width="153px" height="112px">';
+
+                 // reset camera for another shot
+                 webcam.reset();
+             }
+             else alert("ASPNET Error: " + msg);
+         }
+        </script>
 </asp:Content>
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <br /><br />
-
-  
-
-  <fieldset class="loginDisplayLegend">
-        <legend class="accordionContent">Cadastro e Autorização de Visita:</legend>
-
-    <table align="center" style="width: 477px; margin-left: 24px;" >
+<table align="center" style="width: 477px; margin-left: 24px;" >
         <tr>
             <td class="" align="center" dir="ltr">
-    <div id="silverlightControlHost">
-        <object data="data:application/x-silverlight-2," 
-            type="application/x-silverlight-2" 
-            style="height: 376px; width: 104%; margin-top: 0px;">
-		  <param name="source" value="ClientBin/Azuli.Acess.Control.xap"/>
-		  <param name="onError" value="onSilverlightError" />
-		  <param name="background" value="white" />
-		  <param name="minRuntimeVersion" value="4.0.41108.0" />
-		  <param name="autoUpgrade" value="true" />
-		  <a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=4.0.41108.0" style="text-decoration:none">
- 			  <img src="http://go.microsoft.com/fwlink/?LinkId=161376" alt="Get Microsoft Silverlight" style="border-style:none"/>
-		  </a>
-	    </object><iframe id="_sl_historyFrame" style="visibility:hidden;height:0px;width:0px;border:0px"></iframe>
-                
-                  
-                  <br />
-                
-                  
-                  <br /><br />
-                <br />
-        <br />
-                
-                  
-                  
-                </div></td>
-            <td>
+
+                    <fieldset class="loginDisplayLegend">
+        <legend class="accordionContent">Cadastro e Autorização de Visita:</legend>
+    
+      <!-- Configura algumas opções -->
+	    <script type="text/javascript" language="JavaScript">
+	        webcam.set_api_url('CadastrarVisitante.aspx'); //Página de destino do arquivo capturado
+	        webcam.set_quality(100); // Qualidade do JPG (1 - 100)
+	        webcam.set_shutter_sound(true); // Toca o som de câmera (o arquivo shutter.mp3, que vem com os "utilitários" da câmera, deve estar no diretório raíz do site)
+	    </script>
+
+        <table style="width:100%;" cellpadding="0" cellspacing="0">
+            <tr>
+                <td style="width:320px;height:240px;text-align:center;" valign="top">
+                    <script type="text/javascript" language="JavaScript">
+                        document.write(webcam.get_html(320, 240));
+	                </script>
+                    <input type="button" value="Configurar" onclick="webcam.configure();" />
+                    <input type="button" value="Tirar foto" onclick="take_snapshot();" />
+                    <input type="button" value="Reiniciar" onclick="webcam.reset();" />
+                </td>
+                <td style="width:300px;height:220px;" valign="top">
+	                <!-- Desenha o HTML do Flash que faz a interface com a Webcam na resolução 320x240 -->
+                    <div id="upload_results" style="position:absolute;top:205px;right:578px;">
+</div>
+            
+            <div>
  <table align="center" style="width: 477px; margin-left: 24px;" 
                     class="accordionContent">
                <tr>
                <td  align="left" class="style5">
-                   <asp:Image ID="Image1" runat="server" Height="112px" Width="153px" />
+                   <asp:Image ID="Image1" runat="server" Height="112px" Width="153px" 
+                       />
                    </td>
                 <td align="left" class="style7">
                     <asp:Label ID="Label2" runat="server" CssClass="ContextMenuPanel" 
@@ -254,21 +235,34 @@
                     <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" />
                     </td>
                </tr>
-               </table>
-               
-           </td>
-        </tr>
-       
-    </table>
-      <asp:SqlDataSource ID="SqlDataSourceAP" runat="server" 
+                   <asp:SqlDataSource ID="SqlDataSourceAP" runat="server" 
                                     ConnectionString="<%$ ConnectionStrings:azulli %>" 
                                     SelectCommand="LISTA_APARTAMENTO" SelectCommandType="StoredProcedure">
                                 </asp:SqlDataSource>
                                 <asp:SqlDataSource ID="SqlDataSourceBloco" runat="server" 
                                     ConnectionString="<%$ ConnectionStrings:azulli %>" SelectCommand="LISTA_BLOCO" 
                                     SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+               </table></div>
+               
+           </td>
+        </tr>
+       
+    </table>
+    
+          </fieldset>
 
-   </fieldset>
+    
+                    
+                </td>
+            </tr>
+        </table>
+     
+	<br /><br />
+
+  
+
+  
+  
 
    
 

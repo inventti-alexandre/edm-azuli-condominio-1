@@ -68,6 +68,8 @@
     <Content Include="Azuli.Acess.ControlTestPage.html" />
     <Content Include="cadastrarClassificado.aspx" />
     <Content Include="CadastrarVisitante.aspx" />
+    <Content Include="camutils\webcam.js" />
+    <Content Include="camutils\webcam.swf" />
     <Content Include="ClientBin\Azuli.Acess.Control.xap" />
     <Content Include="consultaAgendamentoAdmin.aspx" />
     <Content Include="consultaBalancete.aspx" />
@@ -185,6 +187,7 @@
     <Content Include="ServerFile\Classificados\sport.jpg" />
     <Content Include="ServerFile\Classificados\veiculo.jpg" />
     <Content Include="sgcNotificacao.aspx" />
+    <Content Include="shutter.mp3" />
     <Content Include="Silverlight.js" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
