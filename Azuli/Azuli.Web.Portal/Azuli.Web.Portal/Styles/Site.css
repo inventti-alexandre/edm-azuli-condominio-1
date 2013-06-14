@@ -526,8 +526,7 @@ input.botao, .btGeral {
 	border: 1px solid #4B6C9E;
 	cursor: auto;
     margin-top: 16px;
-    width: 151px;
-}
+    }
 
 .btPortaria {
 	border-radius: 1em;

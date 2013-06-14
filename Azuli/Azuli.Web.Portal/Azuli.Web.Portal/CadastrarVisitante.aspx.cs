@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Azuli.Web.Business;
 using Azuli.Web.Model;
 using System.IO;
+using System.Configuration;
 
 namespace Azuli.Web.Portal
 {
@@ -19,7 +20,7 @@ namespace Azuli.Web.Portal
         VisitanteBLL oVisitanteBLL = new VisitanteBLL();
         Foto ofotoModel = new Foto();
         FotoBLL oFotoBll = new FotoBLL();
-
+        string path = ConfigurationManager.AppSettings["uploadFotoWebCam"].ToString();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,9 +28,9 @@ namespace Azuli.Web.Portal
             try
             {
                 // Image1.ImageUrl = "";
+            
 
-
-                string Dir = HttpContext.Current.Server.MapPath("~/ServerFile/FotosWebCam/");
+                string Dir = HttpContext.Current.Server.MapPath(path);
                 string FileName = String.Format("{0:ddMMyyyyhhmmss}.jpg", DateTime.Now);
 
                 string CompleteFileName = String.Format("{0}\\{1}", Dir, FileName);
@@ -130,6 +131,7 @@ namespace Azuli.Web.Portal
 
             else
             {
+               
                 nomeMorador = "Não existe morador cadastrado!";
                 lblMorador.Text = "Não existe morador cadastrado!";
             }
@@ -181,6 +183,11 @@ namespace Azuli.Web.Portal
         {
             cadastarVisitante();
 
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToLongTimeString();
         }
 
     }

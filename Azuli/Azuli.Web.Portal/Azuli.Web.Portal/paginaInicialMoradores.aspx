@@ -48,7 +48,9 @@
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-   
+    
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
    <div id="dvMsg" runat="server" style="position:relative;">
     <table  style="text-align:justify;">
         <tr>
@@ -70,7 +72,7 @@
             </td>
 
           
-        </tr>
+        </tr></table>
         <div  id="dvUteis"  class="containerTel" runat="server">
             <div class="headerEnqueteTel">
                 <span class="style12"> Telefones Utéis <img src="images/tel.jpg"  alt="" width="20px" height="20px"/></span>
@@ -86,7 +88,7 @@
        
       </div>
        
-    </table></div>
+    </div>
 
     <fieldset>
         <legend class="accordionContent">Seja bem vindo ao Sistema de Gerenciamento de Condominio</legend>
