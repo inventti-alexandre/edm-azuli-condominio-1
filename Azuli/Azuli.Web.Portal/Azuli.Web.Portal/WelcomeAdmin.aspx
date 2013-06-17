@@ -34,9 +34,31 @@
         }
         .style9
         {
-            font-size: small;
+            font-size: xx-small;
+        }
+        .style10
+        {
+            width: 369px;
+        }
+        .style12
+        {
+            width: 354px;
+        }
+        .style13
+        {
+            width: 325px;
         }
         </style>
+         <script type="text/javascript">
+             function ShowInfo(id) {
+                 var div = document.getElementById(id);
+                 div.style.display = "block";
+             }
+             function HideInfo(id) {
+                 var div = document.getElementById(id);
+                 div.style.display = "none";
+             }
+     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
@@ -51,7 +73,7 @@
                                 Font-Bold="True"></asp:Label>
                           <br /> <br />
                     <asp:Calendar ID="Calendar2" runat="server" BackColor="White" Font-Names="Verdana"
-                        Font-Size="8pt" ForeColor="Black" Height="200px" Width="220px" BorderWidth="1px"
+                        Font-Size="8pt" ForeColor="Black" Height="329px" Width="497px" BorderWidth="1px"
                         OnDayRender="Calendar1_DayRender" ShowGridLines="True">
                         <DayHeaderStyle Font-Bold="True" Height="1px" BackColor="#CCCCCC" />
                         <NextPrevStyle Font-Bold="True" Font-Size="9pt" ForeColor="#666666" />
@@ -64,7 +86,7 @@
                
     <br /><br /><br /><br />
             <div id="dvPendencia" 
-                        style="position:absolute; top: 200px; left: 712px; height: 201px;">
+                        style="position:absolute; top: 199px; left: 723px; height: 201px;">
       
                 <table style="border-spacing: 10px 10px; width: 450px;">
                     <tr>
@@ -147,36 +169,33 @@
                 </table></div>
                  <br /><br /><br /><br />
         </fieldset></div>
-   
-    <div id="dvLegend" runat="server" style="position: absolute; top: 434px; left: 201px;
-        height: 77px; width: 238px;">
-         <br />
-        <table id="Table1" runat="server" align="center" style="width: 227px" class="btGeral">
-            <tr>
-                <td align="justify">
-                    <asp:ImageButton ID="imgFesta" runat="server" Height="8px" ImageUrl="~/images/azul.jpg"
-                        Width="8px" />
-                <span class="style8"><span class="style8">&nbsp;Salão de Festa Locado&nbsp;</span>
+   <br />
+    <div id="dvLegend" runat="server" style="position: absolute; top: 536px; left: 183px;
+        height: 77px; width: 557px;" class="">
+         <br /><br />
+        <table id="Table1" runat="server" align="center" style="width: 536px" 
+             class="accordionContent">
+            <tr class="style9">
+                <td align="justify" class="style13">
+                    <asp:ImageButton ID="imgFesta" runat="server" Height="16px" ImageUrl="~/images/azul.jpg"
+                        Width="16px" />
+                <span class="style8">&nbsp;<b>Salão de Festa Locado</b>&nbsp;
                         </span>
                 </td>
-            </tr>
-            <tr>
-                <td align="justify">
+                <td align="justify" class="style10">
                   
-                    <asp:ImageButton ID="ImageButton2" runat="server" Height="8px" ImageUrl="~/images/amarelo.jpg"
-                        Width="8px" />
-                   <span class="style8">&nbsp;Área de Churrasco Locada&nbsp;</span>
+                    <asp:ImageButton ID="ImageButton2" runat="server" Height="16px" ImageUrl="~/images/amarelo.jpg"
+                        Width="18px" />
+                   <span class="style8">&nbsp;<b>Área de Churrasco Locada</b>&nbsp;</span>
                 </td>
-            </tr>
-            <tr>
-                <td align="justify">
+                <td align="justify" class="style12">
                    
-                    <asp:ImageButton ID="imgFesta1" runat="server" Height="8px" ImageUrl="~/images/vermelho.jpg"
-                        Width="8px" />
-                  <span class="style8">&nbsp;Festa/Churras reservada</span>
+                    <asp:ImageButton ID="imgFesta1" runat="server" Height="18px" ImageUrl="~/images/vermelho.jpg"
+                        Width="16px" />
+                    &nbsp;<b>Festa/Churras reservada</b>
                 </td>
             </tr>
-        </table>
+            </table>
       
     </div>
 

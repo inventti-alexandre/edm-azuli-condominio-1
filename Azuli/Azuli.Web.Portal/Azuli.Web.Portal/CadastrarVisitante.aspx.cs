@@ -182,7 +182,7 @@ namespace Azuli.Web.Portal
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
             cadastarVisitante();
-
+            
         }
 
         protected void Timer1_Tick(object sender, EventArgs e)
