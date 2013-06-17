@@ -369,7 +369,7 @@ namespace Azuli.Web.Portal
                 oClassificadoModel.apartamentoClassificado = oApModel;
                 oClassificadoModel.dataClassificado = DateTime.Now;
                 oClassificadoModel.valorVendaClassificado = Convert.ToDouble(txtValor.Text);
-                oClassificadoModel.classificadoDataVenda = DateTime.Now;
+                //oClassificadoModel.classificadoDataVenda = DateTime.Now;
                 //oClassificadoModel.validadeClassificado = DateTime.Now;
                 oClassificadoModel.contato = txtFalarCom.Text;
                 oClassificadoModel.statusClassificado = "A";

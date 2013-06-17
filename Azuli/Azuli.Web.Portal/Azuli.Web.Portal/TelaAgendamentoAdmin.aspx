@@ -12,6 +12,17 @@
         }
                  
     </style>
+
+     <script type="text/javascript">
+         function ShowInfo(id) {
+             var div = document.getElementById(id);
+             div.style.display = "block";
+         }
+         function HideInfo(id) {
+             var div = document.getElementById(id);
+             div.style.display = "none";
+         }
+     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">

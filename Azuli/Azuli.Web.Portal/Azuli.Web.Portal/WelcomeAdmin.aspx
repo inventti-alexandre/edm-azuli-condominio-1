@@ -74,7 +74,8 @@
                           <br /> <br />
                     <asp:Calendar ID="Calendar2" runat="server" BackColor="White" Font-Names="Verdana"
                         Font-Size="8pt" ForeColor="Black" Height="329px" Width="497px" BorderWidth="1px"
-                        OnDayRender="Calendar1_DayRender" ShowGridLines="True">
+                        OnDayRender="Calendar1_DayRender" ShowGridLines="True" 
+                        NextPrevFormat="FullMonth">
                         <DayHeaderStyle Font-Bold="True" Height="1px" BackColor="#CCCCCC" />
                         <NextPrevStyle Font-Bold="True" Font-Size="9pt" ForeColor="#666666" />
                         <OtherMonthDayStyle ForeColor="#CC9966" />

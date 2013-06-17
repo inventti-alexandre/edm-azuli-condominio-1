@@ -593,7 +593,7 @@ namespace Azuli.Web.Portal
             int diasAgendado;
           
             diasAgendado = ((TimeSpan)(dataAgendamento - DateTime.Now)).Days;
-            if (diasAgendado >= 15)
+            if (diasAgendado >= 8)
             {
                 return true;
             }

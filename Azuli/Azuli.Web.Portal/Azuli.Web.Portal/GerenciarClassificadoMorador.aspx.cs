@@ -23,7 +23,7 @@ namespace Azuli.Web.Portal
             {
                 if (oUtil.validateSession())
                 {
-                   
+                    DetailsView1.Visible = true;
                     DetailsView1.ChangeMode(DetailsViewMode.Edit);
                     preencheDetailsView();
                     //dvAnunciar.Visible = false;
@@ -141,7 +141,9 @@ namespace Azuli.Web.Portal
                 try
                 {
                     oClassificado.atualizaClassificado(oClassificaModel);
+                    DetailsView1.Visible = false;
                     lblMsg.Text = "Obrigador por utilizar o Classificado!";
+
                 }
                 catch (Exception)
                 {

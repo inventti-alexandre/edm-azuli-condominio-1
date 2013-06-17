@@ -101,7 +101,7 @@
        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" 
         CssClass="GridView" Height="50px" Width="675px" 
            onitemcommand="DetailsView1_ItemCommand" DataKeyNames="idClassificado" 
-           onitemupdating="DetailsView1_ItemUpdating">
+           onitemupdating="DetailsView1_ItemUpdating" EmptyDataText="Este classificado já não existe mais..">
         <Fields>
 
             <asp:TemplateField HeaderText="Grupo Classificado" Visible ="false">

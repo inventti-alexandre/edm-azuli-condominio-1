@@ -315,6 +315,7 @@ namespace Azuli.Web.Portal
 
             oClassificaModel.grpClassificado.grupoClassificado = 0;
             oClassificaModel.statusClassificado = "A";
+            
 
 
             foreach (var item in oClassificadoBLL.consultaClassificado(oClassificaModel))
@@ -323,24 +324,38 @@ namespace Azuli.Web.Portal
                 sorteioClassificado.Add(item.idClassificado);   
             }
 
+            int quantidade = sorteioClassificado.Count;
+
             int[] numeroSorteado = new int[4];
-
-            for (int i = 0; i < 4; i++)
+            if (quantidade < 4)
             {
-               numeroSorteado[i] = paginaInicialMoradores.ArraySorter(sorteioClassificado);
-               sorteioClassificado.Remove(numeroSorteado[i]);
+                
+                //Query que tras os dados através de um sorteio.. para mostrar dinamincamente os classificados na página principal;
+                grdClassificado.DataSource = from listaClassificados in oClassificadoBLL.consultaClassificado(oClassificaModel)
+                                             where listaClassificados.statusClassificado == "A"
+                                             orderby listaClassificados.dataClassificado
+                                             select listaClassificados;
+
             }
-           
-            
-            //Query que tras os dados através de um sorteio.. para mostrar dinamincamente os classificados na página principal;
-            grdClassificado.DataSource = from listaClassificados in oClassificadoBLL.consultaClassificado(oClassificaModel)
-                                         where listaClassificados.statusClassificado == "A"
-                                         && listaClassificados.idClassificado == numeroSorteado[0] || listaClassificados.idClassificado == numeroSorteado[1]
-                                         || listaClassificados.idClassificado == numeroSorteado[2] || listaClassificados.idClassificado == numeroSorteado[3]
-                                         orderby listaClassificados.dataClassificado
-                                         select listaClassificados;
+            else
+            {
+
+                for (int i = 0; i < 4; i++)
+                {
+                    numeroSorteado[i] = paginaInicialMoradores.ArraySorter(sorteioClassificado);
+                    sorteioClassificado.Remove(numeroSorteado[i]);
+                }
 
 
+                //Query que tras os dados através de um sorteio.. para mostrar dinamincamente os classificados na página principal;
+                grdClassificado.DataSource = from listaClassificados in oClassificadoBLL.consultaClassificado(oClassificaModel)
+                                             where listaClassificados.statusClassificado == "A"
+                                             && listaClassificados.idClassificado == numeroSorteado[0] || listaClassificados.idClassificado == numeroSorteado[1]
+                                             || listaClassificados.idClassificado == numeroSorteado[2] || listaClassificados.idClassificado == numeroSorteado[3]
+                                             orderby listaClassificados.dataClassificado
+                                             select listaClassificados;
+
+            }
             grdClassificado.DataBind();
 
 
