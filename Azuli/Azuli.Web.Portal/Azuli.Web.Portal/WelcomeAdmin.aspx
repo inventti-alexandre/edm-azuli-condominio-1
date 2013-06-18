@@ -164,7 +164,9 @@
                         </td>
                         <td>
                             <br />
-                            <asp:ImageButton ID="ImageButton1" CssClass="BorderAdministrador" runat="server" ImageUrl="~/images/cliqueAqui.jpg" />
+                            <asp:ImageButton ID="imgReclamacai" CssClass="BorderAdministrador" 
+                                runat="server" ImageUrl="~/images/cliqueAqui.jpg" 
+                                onclick="imgReclamacai_Click" />
                         </td>
                     </tr>
                 </table></div>

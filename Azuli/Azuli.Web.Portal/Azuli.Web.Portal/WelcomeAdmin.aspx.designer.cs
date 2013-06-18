@@ -184,13 +184,13 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Label lblLiberaOcorrencia;
         
         /// <summary>
-        /// ImageButton1 control.
+        /// imgReclamacai control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
+        protected global::System.Web.UI.WebControls.ImageButton imgReclamacai;
         
         /// <summary>
         /// dvLegend control.

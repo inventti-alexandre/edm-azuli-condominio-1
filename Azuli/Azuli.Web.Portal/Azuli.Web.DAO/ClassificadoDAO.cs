@@ -94,11 +94,6 @@ namespace Azuli.Web.DAO
             }
         }
 
-
-
-
-
-
         public listClassificados contaGrupoClassificado(Classificados oClassificado)
         {
             string clausulaSql = "SP_CLASSIFICADO_CONTA_GRUPO";

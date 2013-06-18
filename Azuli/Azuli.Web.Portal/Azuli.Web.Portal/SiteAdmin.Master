@@ -46,7 +46,8 @@
                             </asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Mensagem / Reclamações" Value="Mensagem / Reclamações">
-                            <asp:MenuItem Text="Caixa de Entrada" Value="Caixa de Entrada"></asp:MenuItem>
+                            <asp:MenuItem Text="Caixa de Entrada" Value="Caixa de Entrada" 
+                                NavigateUrl="~/ListaReclamacaoAbertaAdmin.aspx"></asp:MenuItem>
                             <asp:MenuItem NavigateUrl="~/enviaMensagemMorador.aspx" Text="Enviar" 
                                 Value="Enviar"></asp:MenuItem>
                             <asp:MenuItem Text="Cancelar" Value="Cancelar"></asp:MenuItem>

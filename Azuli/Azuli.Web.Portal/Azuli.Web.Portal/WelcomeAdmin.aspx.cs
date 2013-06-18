@@ -285,5 +285,10 @@ namespace Azuli.Web.Portal
         {
             Response.Redirect("liberaAcessoAdmin.aspx");
         }
+
+        protected void imgReclamacai_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("ListaReclamacaoAbertaAdmin.aspx");
+        }
     }
 }
