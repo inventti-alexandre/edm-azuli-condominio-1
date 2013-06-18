@@ -25,7 +25,9 @@ namespace Azuli.Web.Portal.Account
 
         protected override void OnLoad(EventArgs e)
         {
-
+            HttpCookie cookie = new HttpCookie("blocoMorador");
+            if(cookie.Value != null)
+                drpBloco.SelectedItem.Text = cookie.Value.ToString();
 
             hiddenControl();
             string id = ConfigurationManager.AppSettings["GoogleAnalyticsId"];
@@ -82,6 +84,16 @@ namespace Azuli.Web.Portal.Account
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
+            HttpCookie cookie = new HttpCookie("blocoMorador");
+            cookie.Value = drpBloco.SelectedItem.Text;
+            cookie.Expires = DateTime.Now.AddDays(365); this.Page.Response.AppendCookie(cookie);
+            Response.Cookies.Add(cookie);
+
+           
+
+
+
+
             Session.Clear();
 
             oAPmodel.apartamento = Convert.ToInt32(txtAP.Text);
@@ -90,6 +102,8 @@ namespace Azuli.Web.Portal.Account
 
             Session["AP"] = Convert.ToInt32(txtAP.Text);
             Session["Bloco"] = Convert.ToInt32(drpBloco.Text);
+
+
 
             int valida = oProprietario.autenticaMorador(oAPmodel, oProprietarioModel);
 
