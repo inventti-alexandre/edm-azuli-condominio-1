@@ -22,6 +22,24 @@ namespace Azuli.Web.Portal {
         protected global::AjaxControlToolkit.ToolkitScriptManager ToolkitScriptManager1;
         
         /// <summary>
+        /// txtBloco control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtBloco;
+        
+        /// <summary>
+        /// txtApto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtApto;
+        
+        /// <summary>
         /// imgGrupo control.
         /// </summary>
         /// <remarks>

@@ -30,12 +30,15 @@ namespace Azuli.Web.Portal
         protected void btnCadastrar_Click(object sender, EventArgs e)
         {
 
-            oEncomendas.Bloco = (int)Session["Bloco"];
-            oEncomendas.Apartamento = (int)Session["AP"]; 
+            //oEncomendas.Bloco = (int)Session["Bloco"];
+            //oEncomendas.Apartamento = (int)Session["AP"]; 
+            oEncomendas.Bloco = Convert.ToInt32(txtBloco.Text);
+            oEncomendas.Apartamento = Convert.ToInt32(txtApto.Text);
             oEncomendas.EncDtaRec = DateTime.Now;
             oEncomendas.EncDesc = txtDescricao.Text;
             oEncomendasBLL.cadastraEncomendas(oEncomendas);
 
         }
+
     }
 }

@@ -111,6 +111,14 @@
     <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
     </asp:ToolkitScriptManager>
     <br />
+    <table class="style1">
+        <tr>
+            <td class="style3">Bloco:</td>
+            <td class="style5"><asp:TextBox ID="txtBloco" runat="server" Width="45px"></asp:TextBox></td>
+            <td class="style4">Apartamento:</td>
+            <td><asp:TextBox ID="txtApto" runat="server" Width="45px"></asp:TextBox></td>
+        </tr>
+    </table>
     <br />
     <div id="imgAnuncio" 
         style="position: absolute; top: 183px; left: 218px; color: #0033CC; width: 160px;">
@@ -135,7 +143,7 @@
                 </tr>
                 <tr>
                     <td class="style5" colspan="2">
-                        <asp:Button ID="btnCadastrar" runat="server" CssClass="btGeral" Height="28px" OnClick="btnAnunciar_Click"
+                        <asp:Button ID="btnCadastrar" runat="server" CssClass="btGeral" Height="28px" OnClick="btnCadastrar_Click"
                             Text="Cadastrar" Width="80px" ValidationGroup="validaClassificado" />
                         <asp:Button ID="btnCancelar" runat="server" CssClass="btGeral" Height="28px" Text="Cancelar"
                             Width="82px" />
