@@ -1,9 +1,39 @@
 ﻿/* DEFAULTS
 ----------------------------------------------------------*/
 
+#tudo {
+	width:600px;
+	font: 80%/1.2 Arial, Helvetica, sans-serif;
+	margin:0 auto;
+	padding:0 20px;
+	color:#666;
+	background:#fff;
+	border:1px dotted #999;
+	}
+.foto{border:none;margin:10px;}
+.left {float:left;}
+.right {float:right;}
+/* CSS para efeitos jQuery  */
+#mascara {
+	position:absolute;
+	background:#000;
+	z-index:1;
+	top:0;
+	}
+.foto-ampliada {
+	width: 500px;
+	height: 375px;
+	position:absolute;
+	z-index:2;
+	cursor:pointer;
+	border:5px solid #999;
+	}
+
+
 body   
 {
     background: #b6b7bc;
+   
     font-size: .80em;
     font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
     margin: 0px;
@@ -78,6 +108,7 @@ h5, h6
     font-size: 1em;
 }
 
+
 /* this rule styles <h1> and <h2> tags that are the 
 first child of the left and right table columns */
 .rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
@@ -91,9 +122,9 @@ first child of the left and right table columns */
 
 .pageAdmin
 {
-    width: 970px;
+    width: 960px;
     background-color: #fff;
-    margin: 20px auto 0px auto;
+    margin: 5px auto 0px auto;
     border: 1px solid #496077;
 }
 
@@ -101,10 +132,20 @@ first child of the left and right table columns */
 
 .page
 {
+    
     width: 960px;
     background-color: #fff;
     margin: 5px auto 0px auto;
-    border: 1px solid #496077;
+    border: 1px solid #4884CD;
+}
+
+.pageLogin
+{
+    
+    width: 960px;
+    background-color: #fff;
+    margin: 5px auto 0px auto;
+    border: 1px solid #4884CD;
 }
 
 .header
@@ -116,7 +157,7 @@ first child of the left and right table columns */
     width: 960px;
     top: 0px;
     left: 0px;
-    height: 54px;
+    height: 64px;
 }
 
 .header h1
@@ -136,14 +177,14 @@ first child of the left and right table columns */
 
 .headerAdmin
 {
-    position: relative;
+     position: relative;
     margin: 0px;
     padding: 0px;
     background: #4b6c9e;
-    width: 959px;
-    top: -1px;
-    left: -2px;
-    height: 102px;
+    width: 960px;
+    top: 0px;
+    left: 0px;
+    height: 54px;
 }
 
 .headerAdmin h1
@@ -175,6 +216,7 @@ first child of the left and right table columns */
     padding: 0px 12px;
     margin: 12px 8px 8px 8px;
     min-height: 420px;
+    font-size: smal;
 }
 
 .leftCol
@@ -197,10 +239,10 @@ first child of the left and right table columns */
 .footer
 {
     color: #4e5766;
-    padding: 8px 0px 0px 0px;
+    padding: 2px 0px 0px 0px;
     margin: 0px auto;
     text-align: center;
-    line-height: normal;
+    line-height:  normal;
    
 }
 
@@ -210,29 +252,33 @@ first child of the left and right table columns */
 
 div.hideSkiplink
 {
-    background-color:#4884CD;
-    width:auto;
+    background-color:#0092D2;
+    width:1005px;
     height: 0;
     position:relative;
     top: -24px;
     vertical-align:middle;
-    right:-40px;
+    right:9px;
+    z-index: 999999;
 }
 
 div.hideSkiplinkAdmin
 {
-    background-color:#4884CD;
-    width:auto;
+    background-color:#0092D2;
+    width:918px;
     height: 0;
     position:relative;
-    top: -12px;
+    top: -4px;
     vertical-align:middle;
-    right:-45px;
+    right:-40px;
+    left: 40px;
 }
+
 
 div.menu
 {
     padding: 4px 0px 4px 8px;
+      display:block;
 }
 
 div.menu ul
@@ -241,18 +287,20 @@ div.menu ul
     margin: 0px;
     padding: 0px;
     width: auto;
+      display:block;
 }
 
 div.menu a, div.menu a:visited
 {
-    background-color: #00367E;
-    border: 1px #4e667d solid;
-    color: #dde4ec;
+    background-color: #3BA4CB;
+    border: 1px #0093D4 solid;
+    color: #FFFFFF;
     display: block;
     line-height: 1.35em;
     padding: 4px 20px;
     text-decoration: none;
     white-space: nowrap;
+      display:block;
 }
 
 div.menu a:hover
@@ -260,6 +308,7 @@ div.menu a:hover
     background-color: #bfcbd6;
     color: #465c71;
     text-decoration: none;
+      display:block;
 }
 
 div.menu ul li a:active
@@ -267,6 +316,7 @@ div.menu ul li a:active
     background-color: #465c71;
     color: #cfdbe6;
     text-decoration: none;
+      display:block;
 }
 
 /* FORM ELEMENTS   
@@ -279,6 +329,7 @@ fieldset
     border: 1px solid #ccc;
     width: auto;
     height: auto;
+    border-radius: 1em;
     
 }
 
@@ -311,7 +362,15 @@ legend
     font-size: 1.1em;
     font-weight: 600;
     padding: 2px 4px 8px 4px;
-    width: 459px;
+    width: 416px;
+}
+
+legend1 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+    width: 426px;
 }
 
 input.textEntry 
@@ -339,7 +398,7 @@ div.accountInfo
 {
     clear: both;
     height: 105px;
-    width: 968px;
+    width: 1031px;
 }
 
 .title
@@ -361,14 +420,31 @@ div.accountInfo
 .loginDisplay
 {
     
-       display: inherit;
+     display: inherit;
     text-align: left;
     padding: 1px;
-    color: white;
+    color: #006AB2;
     height: auto;
-    width: 457px;
-    top: 7px;
+    width: 501px;
+    top: 11px;
     }
+    
+.siteMap
+{
+    
+     display: inherit;
+    text-align:left;
+    
+    color:black;
+    height: 28%;
+    width: 40%;
+    top: 209%;
+   
+    
+    }
+ 
+
+    
 
 .loginDisplayLegend
 {
@@ -399,13 +475,13 @@ div.accountInfo
 
 .loginDisplayAdmin
 {
-    font-size: 1.1em;
-    display: block;
-    text-align: right;
-    padding: 10px;
-    color: White;
-    height: 1px;
-    width: 934px;
+    display: inherit;
+    text-align: left;
+    padding: 1px;
+    color: #006AB2;
+    height: auto;
+    width: 501px;
+    top: 11px;
 }
 
 .loginDisplayAdmin a:link
@@ -443,13 +519,18 @@ div.accountInfo
 
 input.botao, .btGeral {
 	font-family: Verdana;
-	font-size: 8pt;
+	font-size: 9pt;
 	font-weight: normal;
 	color: #4B6C9E;
 	text-align: center;
 	border: 1px solid #4B6C9E;
-	cursor: pointer;
-    margin-top: 0px;
+	cursor: auto;
+    margin-top: 16px;
+    }
+
+.btPortaria {
+	border-radius: 1em;
+	text-align:center;
 }
 
 .MasterMenu
@@ -521,6 +602,20 @@ input.botao, .btGeral {
     color: White;
 }
 
+.Border
+{
+   
+  
+}
+
+.BorderAdministrador
+{
+  
+  border:none; 
+  
+}
+
+
 .GridView
 {
 	border-style: outset;
@@ -531,37 +626,42 @@ input.botao, .btGeral {
 	font-size: 12px;
 	color: Black;
     margin-top: 0px;
-}
+    }
 .GridView td
 {
 	padding: 3px;
 	color: Black;
+	
 }
 .GridView td a
 {
 	color: Black;
+	
 }
 .GridView th
-{
+{   
 	background-color: #4884CD;
 	padding: 3px;
+	
 }
 .GridView th a
 {
 	font-weight: bold;
 	color: Black;
+	border-radius: 1em;
 }
 .GridViewEdit
 {
-	background-color: #999999;
+	background-color: white;
+	border-radius: 1em;
 }
 .GridViewPager td
 {
 	font-family: Verdana;
 	font-size: 12px;
 	color: Black;
+	border-radius: 1em;
 }
-
 /*/////////////////////////*/
 
 
@@ -586,15 +686,19 @@ input, textarea {
 	border: 1px solid #999999;
 	background-color: #f0f0f0;
 	color: #666666;
-	font-family: Verdana;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 8pt;
 	font-weight: normal;
 	text-align: left;
 	padding: 0px 2px 0px 2px;
 	margin-left: 3px;
     margin-right: 0px;
-    margin-top: 0px;
+    margin-top: 9px;
 }
+
+
+
+
 
 select {
 	background-color: #f0f0f0;
@@ -730,8 +834,6 @@ input.btLogin {
 	width: 500px;	
 	border: 0px;	
 	height: 470px;
-	overflow-x: hidden;
-	overflow-y: auto;	
 	font-family: Verdana;
 	font-size: 9pt;
 	color: #000000;
@@ -743,8 +845,7 @@ input.btLogin {
 	width: 100%;	
 	border: 1px solid #999999;
 	min-height: 437px;	
-	overflow-x: auto;
-	overflow-y: auto;
+	
 }
 
 
@@ -770,9 +871,9 @@ input.btLogin {
 .ajax__tab_default .ajax__tab_tab  {
 	height: 25px;
 	padding: 4px 0px 0px 0px;
-	#padding: 4px 0px 0px 0px;
+	
 	margin: 0px 0px 0px 0px;
-	#margin: 0px 0px -4px 0px;
+	
 	background:url("../images/bgAbas.gif") repeat-x;
 	color: #666666;
 }
@@ -813,8 +914,20 @@ input.btLogin {
 }
 
 .form {
-	margin: 10px 0px 0px 10px;
-	border: 0px;
+	border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    margin: 10px 0px 0px 10px;
+    width: 837px;
+}
+
+gn: left;
+	color: #333333;
+}
+
+.form td.btForm {
+	text-align: right;
+	padding: 5px 5px 10px 0px;
 }
 
 .form td {
@@ -866,15 +979,16 @@ input.btLogin {
 .watermarked
 {
 	border: 1px solid #999999;
-	height: 15px;
-	background-color: #f0f0f0;
-	color: #666666;
+	height: 272px;
+	background-color: white;
 	font-family: Verdana;
-	font-size: 8pt;
+	font-size: 6pt;
 	font-weight: normal;
 	text-align: left;
 	padding: 0px 2px 0px 2px;
 	margin: 0px 15px 0px 3px;
+    width: 647px;
+    border-radius: 1em;
 }
 
 .ContextMenuPanel 
@@ -885,11 +999,13 @@ input.btLogin {
 	background-color: #f0f0f0;
 	color: #666666;
 	font-family: Verdana;
-	font-size: 8pt;
+	font-size: 10pt;
 	font-weight: normal;
 	text-align: left;
 	padding: 0px 2px 0px 2px;
-	margin: 0px 15px 0px 3px;
+	margin: 0px 5px 0px 3px;
+	border-radius: 1em;
+    width: 563px;
 }
 
 .ContextMenuBreak
@@ -900,6 +1016,7 @@ input.btLogin {
 	overflow:hidden;
 	display:block;
 	border-top: 1px solid #999999;	
+	   border-radius: 1em;
 }
 
 a.ContextMenuItem
@@ -907,7 +1024,7 @@ a.ContextMenuItem
 	margin: 1px 0 1px 0;
 	display: block;
 	color: #666666;
-	font-
+}	
 
 a.ContextMenuItem
 {
@@ -923,11 +1040,7 @@ a.ContextMenuItem
 	white-space: nowrap;
 }
 
-round-color: #CCCCCC;
-	color: #990000;
-	border: 0px;
-	padding: 0px 2px 0px 2px;
-}
+
 
 .controleCalendario {
 	background-image: url(../images/superpag-header.gif);
@@ -966,11 +1079,16 @@ round-color: #CCCCCC;
 
 .sampleStyleB {
 	background-color:#FFFFFF;
-	padding: 2px 2px 2px 2px;
-	font-family: verdana;
-	font-size: 8pt;
-	font-weight: bold;
-	color: #666666;
+	padding: 1px 1px 1px 1px;
+	
+	border-style: double;
+    border-color: inherit;
+    border-width: 2px;
+     border-radius: 1em;
+	font-family: Verdana;
+	font-size: 10px;
+	color: Black;
+    margin-top: 0px;
 }
 
 .sampleStyleC {
@@ -1044,14 +1162,75 @@ round-color: #CCCCCC;
 
 .accordionContent
 {
-    background-color: #f0f0f0;
-    border-left: 1px dotted #999999;
-    border-right: 1px dotted #999999;
-    border-bottom: 1px dotted #999999;
+    background-color: #F0F0F0;
+    border-left: 2px solid #999999;
+    border-right: 2px solid #999999;
+    border-botom: 2px solid #999999;
     padding: 5px 5px 5px 5px;
     font-family: Verdana;
     font-size: 8pt;
     color: #666666;
+    border-radius: 1em;
+    height: 15px;
+}
+
+
+.instruct
+{
+    background-color: #BFCBD6;
+    border-left: 1px dotted #999999;
+    border-right: 1px dotted #999999;
+    border-bottom: 1px dottted #999999;
+    padding: 2px 2px 2px 2px;
+    font-family: Verdana;
+    font-size: 8pt;
+    color: #666666;
+    border-radius: 1em;
+    height: 13px;
+}
+
+   
+.InstructionPhotoDisplay
+{
+    
+    display: block;
+    text-align: left;
+    padding: 9px;
+     font-size: 9pt;
+    height: auto;
+    width: 400px;
+    top: 1px;
+    }
+        
+
+.seuAnuncios
+{
+     background-color: #BFCBD6;
+        border-left: 1px dotted #999999;
+        border-right: 1px dotted #999999;
+        border-bottom: 1px dotted #999999;
+        padding: 3px 3px 3px 3px;
+        font-family: Verdana;
+        font-size: 8pt;
+        color: #0000FF;
+        border-radius: 1em;
+        width:520px;
+    
+}
+
+.seuAnunciosTst
+{
+     background-color: #BFCBD6;
+        border-left: 1px dotted #999999;
+        border-right: 1px dotted #999999;
+        border-bottom: 1px dotted #999999;
+        padding: 3px 3px 3px 3px;
+        font-family: Verdana;
+        font-size: 7px;
+        color: #0000FF;
+        border-radius: 1em;
+        width:420px;
+    height: 25px;
 }
 
 .accordionContent a:link, .accordionContent a:active, .accordionContent a:visited
@@ -1069,3 +1248,183 @@ round-color: #CCCCCC;
     color: #990000;
     text-decoration: none;
 }
+
+.container:before, .container:after {
+    display:table;
+    content:"";
+    zoom:1 /* ie fix */;
+}
+
+.container:after {
+    clear:both;
+}
+
+/* Css para o classificado*/
+.containerClass {
+    width:458px;
+    margin:10 auto;
+    border:0px solid #fff;
+    box-shadow:0px 2px 7px #292929;
+    -moz-box-shadow: 0px 2px 7px #292929;
+    -webkit-box-shadow: 0px 2px 7px #292929;
+    border-radius:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    background-color:#ffffff;
+    position:absolute;
+    left:48%;
+}
+
+.containerClass:before, .container:after {
+    display:table;
+    content:"";
+    zoom:1 /* ie fix */;
+}
+
+.containerClass:after {
+    clear:both;
+}
+
+.mainbodyClass {
+    border-left: 2 solid #eee;
+    border-right: 0px solid #eee;
+    border-top: 1px solid #eee;
+    border-bottom: 2px solid #eee;
+    height:250px;
+    width:457px;
+    background-color:#EAEAEA;
+    }
+
+
+.headerEnqueteClass, .FooterEnqueteClass {
+    height: 32px;
+    padding: 2px;
+    background-color: #E0E0E0;
+    width: 454px;
+    
+  
+  
+}
+
+
+.FooterEnqueteClass {
+    background-color: whiteSmoke; 
+     -webkit-border-bottom-right-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    -moz-border-radius-bottomright:5px;
+    -moz-border-radius-bottomleft:5px;
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius:5px;
+    
+   
+}
+
+
+
+/*fim*/
+.container {
+    width:388px;
+    margin:0 auto;
+    border:1px solid #fff;
+    box-shadow:0px 2px 7px #292929;
+    -moz-box-shadow: 0px 2px 7px #292929;
+    -webkit-box-shadow: 0px 2px 7px #292929;
+    border-radius:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    background-color:#ffffff;
+}
+
+
+
+
+.mainbody {
+    border-left: 0 solid #eee;
+    border-right: 0 solid #eee;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    height:250px;
+    width:389px;
+    background-color:#EAEAEA;
+    }
+
+
+.headerEnquete, .FooterEnquete {
+    height: 32px;
+    padding: 4px;
+    background-color: #E0E0E0;
+    width: 381px;
+  
+  
+}
+
+
+.FooterEnquete {
+    background-color: whiteSmoke; 
+    -webkit-border-bottom-right-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    -moz-border-radius-bottomright:5px;
+    -moz-border-radius-bottomleft:5px;
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius:5px;
+}
+
+/* Telefones uteis - css */
+.containerTel {
+    width:258px;
+    margin:0 auto 0 0px;
+    border:1px solid #fff;
+    box-shadow:0px 2px 7px #292929;
+    -moz-box-shadow: 0px 2px 7px #292929;
+    -webkit-box-shadow: 0px 2px 7px #292929;
+    border-radius:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    background-color:#ffffff;
+    position:absolute;
+    left:70%;
+    top:45%;
+}
+
+
+
+
+.mainbodyTel {
+    border-left: 0 solid #eee;
+    border-right: 0 solid #eee;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    height:60px;
+    width:258px;
+    background-color:white;
+    }
+
+
+.headerEnqueteTel, .FooterEnqueteTel {
+    height: 22px;
+    padding: 2px;
+    background-color: #E0E0E0;
+    width:255px;
+    -webkit-border-bottom-right-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    -moz-border-radius-bottomright:5px;
+    -moz-border-radius-bottomleft:5px;
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius:5px;
+  
+  
+}
+
+
+.FooterEnqueteTel {
+    background-color: whiteSmoke; 
+    -webkit-border-bottom-right-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    -moz-border-radius-bottomright:5px;
+    -moz-border-radius-bottomleft:5px;
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius:5px;
+}
+
+
+

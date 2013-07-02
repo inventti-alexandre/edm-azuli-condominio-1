@@ -4,6 +4,7 @@
 body   
 {
     background: #b6b7bc;
+   
     font-size: .80em;
     font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
     margin: 0px;
@@ -52,8 +53,9 @@ h1
     font-size: 1.6em;
     padding-bottom: 0px;
     margin-bottom: 0px;
-    width: 777px;
-    height: 32px;
+    width: 738px;
+    height: 47px;
+    margin-left: 0px;
 }
 
 h2
@@ -92,7 +94,7 @@ first child of the left and right table columns */
 {
     width: 960px;
     background-color: #fff;
-    margin: 20px auto 0px auto;
+    margin: 5px auto 0px auto;
     border: 1px solid #496077;
 }
 
@@ -100,10 +102,20 @@ first child of the left and right table columns */
 
 .page
 {
+    
     width: 960px;
     background-color: #fff;
-    margin: 20px auto 0px auto;
-    border: 1px solid #496077;
+    margin: 5px auto 0px auto;
+    border: 1px solid #4884CD;
+}
+
+.pageLogin
+{
+    
+    width: 960px;
+    background-color: #fff;
+    margin: 5px auto 0px auto;
+    border: 1px solid #4884CD;
 }
 
 .header
@@ -135,14 +147,14 @@ first child of the left and right table columns */
 
 .headerAdmin
 {
-    position: relative;
+     position: relative;
     margin: 0px;
     padding: 0px;
     background: #4b6c9e;
-    width: 961px;
-    top: -1px;
-    left: -2px;
-    height: 56px;
+    width: 960px;
+    top: 0px;
+    left: 0px;
+    height: 54px;
 }
 
 .headerAdmin h1
@@ -209,24 +221,27 @@ first child of the left and right table columns */
 
 div.hideSkiplink
 {
-    background-color:#3a4f63;
-    width:auto;
+    background-color:#0092D2;
+    width:925px;
     height: 0;
     position:relative;
-    top: -3px;
+    top: -24px;
     vertical-align:middle;
-    right:-210px;
+    right:-40px;
 }
 
 div.hideSkiplinkAdmin
 {
-    background-color:#3a4f63;
-    width:960px;
-    height:10%;
-   
-    top: 0px;
-    right:-125%;
+    background-color:#0092D2;
+    width:918px;
+    height: 0;
+    position:relative;
+    top: -4px;
+    vertical-align:middle;
+    right:-40px;
+    left: 40px;
 }
+
 
 div.menu
 {
@@ -243,9 +258,9 @@ div.menu ul
 
 div.menu a, div.menu a:visited
 {
-    background-color: #465c71;
-    border: 1px #4e667d solid;
-    color: #dde4ec;
+    background-color: #3BA4CB;
+    border: 1px #0093D4 solid;
+    color: #FFFFFF;
     display: block;
     line-height: 1.35em;
     padding: 4px 20px;
@@ -277,6 +292,7 @@ fieldset
     border: 1px solid #ccc;
     width: auto;
     height: auto;
+    
 }
 
 fieldsetReservas
@@ -308,7 +324,7 @@ legend
     font-size: 1.1em;
     font-weight: 600;
     padding: 2px 4px 8px 4px;
-    width: 318px;
+    width: 459px;
 }
 
 input.textEntry 
@@ -325,8 +341,8 @@ input.passwordEntry
 
 div.accountInfo
 {
-    width: 95%;
-    height: 493px;
+    width: 87%;
+    height: 299px;
 }
 
 /* MISC  
@@ -336,7 +352,7 @@ div.accountInfo
 {
     clear: both;
     height: 105px;
-    width: 968px;
+    width: 981px;
 }
 
 .title
@@ -350,22 +366,51 @@ div.accountInfo
 .titleAdmin
 {
     display: block;
-    float: center;
-    text-align: center;
+    float: left;
+    text-align: left;
     width: auto;
 }
 
 .loginDisplay
 {
     
-    
+     display: inherit;
     text-align: left;
-    padding: 30px;
-    color: black;
-    font-weight: bold;
-    height: 1px;
-    width: 534px;
-}
+    padding: 1px;
+    color: #006AB2;
+    height: auto;
+    width: 501px;
+    top: 11px;
+    }
+    
+.siteMap
+{
+    
+     display: inherit;
+    text-align:left;
+    
+    color:black;
+    height: 28%;
+    width: 40%;
+    top: 211%;
+   
+    
+    }
+    
+        
+
+    
+
+.loginDisplayLegend
+{
+    
+     display: block;
+    text-align: left;
+    padding: 29px;
+    height: auto;
+    width: 860px;
+    top: 2px;
+    }
 
 .loginDisplay a:link
 {
@@ -385,13 +430,13 @@ div.accountInfo
 
 .loginDisplayAdmin
 {
-    font-size: 1.1em;
-    display: block;
-    text-align: right;
-    padding: 10px;
-    color: White;
-    height: 1px;
-    width: 934px;
+    display: inherit;
+    text-align: left;
+    padding: 1px;
+    color: #006AB2;
+    height: auto;
+    width: 501px;
+    top: 11px;
 }
 
 .loginDisplayAdmin a:link
@@ -418,6 +463,7 @@ div.accountInfo
 .bold
 {
     font-weight: bold;
+    width: 896px;
 }
 
 .submitButton
@@ -434,8 +480,8 @@ input.botao, .btGeral {
 	text-align: center;
 	border: 1px solid #4B6C9E;
 	cursor: pointer;
-    margin-top: 2px;
-}
+    margin-top: 9px;
+    }
 
 .MasterMenu
 {
@@ -506,13 +552,21 @@ input.botao, .btGeral {
     color: White;
 }
 
+.Border
+{
+    border:none;
+}
+
 .GridView
 {
-	background-color: White;
-	border: outset 2px;
+	border-style: outset;
+    border-color: inherit;
+    border-width: 2px;
+    background-color: White;
 	font-family: Verdana;
 	font-size: 12px;
 	color: Black;
+    margin-top: 0px;
 }
 .GridView td
 {
@@ -525,7 +579,7 @@ input.botao, .btGeral {
 }
 .GridView th
 {
-	background-color: #4B6C9E;
+	background-color: #4884CD;
 	padding: 3px;
 }
 .GridView th a
@@ -544,3 +598,504 @@ input.botao, .btGeral {
 	color: Black;
 }
 
+/*/////////////////////////*/
+
+
+
+
+.bodyHome
+{
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	background-color: #FFFFFF;
+	background-image: url("../images/superpag-fundo.gif");
+	background-position: top center;
+	background-repeat: no-repeat;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	overflow: hidden !important;
+}
+
+
+
+input, textarea {
+	border: 1px solid #999999;
+	background-color: #f0f0f0;
+	color: #666666;
+	font-family: Verdana;
+	font-size: 8pt;
+	font-weight: normal;
+	text-align: left;
+	padding: 0px 2px 0px 2px;
+	margin-left: 3px;
+    margin-right: 0px;
+    margin-top: 0px;
+}
+
+select {
+	background-color: #f0f0f0;
+	color: #666666;
+	font-family: Verdana;
+	font-size: 8pt;
+	font-weight: normal;
+	text-align: left;
+	margin: 0px 15px 0px 3px;
+}
+
+.check input {
+	border: 0px;
+	margin: 0px 3px 0px 3px;
+	vertical-align: middle;	
+	background-color: transparent;
+}
+
+.radio input {
+	border: 0px;
+	margin: 0px 3px 0px 3px;
+	vertical-align: middle;	
+	background-color: transparent;
+}
+input.btLogin {
+	font-family: Verdana;
+	font-size: 7pt;
+	font-weight: bold;
+	color: #990000;
+	text-align: left;
+	padding: 3px 1px 0px 10px;
+	text-transform: lowercase;
+	background-color: transparent;
+	background-image: url(../images/btLogin.gif);
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	width: 75px;
+	height: 22px;
+	border: 0px;
+	cursor: pointer;
+}
+
+
+
+.conteudo {
+	width: 1000px;
+	border: 0px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+.topSuperpag {
+	width: 1000px;
+	height: 100px;
+	border: 0px;
+	background-image: url(../images/superpag-header.gif);
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	background-color: #FFFFFF;
+	margin: 0px 0px 10px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+.dadosLogin {
+	margin: -34px 0px 0px -180px;
+	padding: 0px 0px 0px 0px;
+	text-align: left;
+	float: left;
+}
+
+.dadosLogin ul {
+	display: inline;
+	list-style-type: none;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+.dadosLogin ul li {
+	display: inline;
+	list-style-type: none;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	font-family: Verdana;
+	font-size: 8pt;
+	font-weight: normal;
+	text-align: left;
+	color: #000000;
+}
+
+.dadosLogin ul li.user {
+	background-image: url(../images/icUser.gif);
+	background-position: 0px 3px;
+	-ms-background-position-x: 0px;
+	-ms-background-position-y: 4px;
+	background-repeat: no-repeat;
+	background-color: Transparent;
+	display: inline;
+	list-style-type: none;
+	margin: 0px 0px 0px 0px;
+	padding: 10px 10px 10px 35px;
+	font-family: Verdana;
+	font-size: 8pt;
+	font-weight: normal;
+	text-align: left;
+	color: #000000;
+	height: 24px;
+}
+
+
+
+.conteudoPagina {
+	width: 810px;
+	float: right;
+	font-family: Verdana;
+	font-size: 9pt;
+	color: #000000;
+	text-align: left;
+	line-height: 25px;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+}
+
+.conteudoPagina tt {
+	font-family: Verdana;
+	font-size: 9pt;
+	color: #000000;
+	line-height: 25px;
+	font-weight: bold;
+}
+
+.saudacao {
+	text-align: left;
+	width: 500px;	
+	border: 0px;	
+	height: 470px;
+	font-family: Verdana;
+	font-size: 9pt;
+	color: #000000;
+	line-height: 25px;
+}
+
+.dadosConteudo {
+	text-align: left;
+	width: 100%;	
+	border: 1px solid #999999;
+	min-height: 437px;	
+	
+}
+
+
+
+.ajax__tab_default .ajax__tab_header {
+	font-family: verdana,tahoma,helvetica;
+	font-size: 8pt;
+	font-weight: normal;
+}
+
+.ajax__tab_default .ajax__tab_outer {
+	padding: 0px 9px 0px 0px;
+	background:url("../images/abaRight.gif") no-repeat top right;
+	height: 25px;
+}
+
+.ajax__tab_default .ajax__tab_inner {
+	padding: 0px 0px 0px 12px;
+	background:url("../images/abaLeft.gif") no-repeat;
+	height: 25px;
+}
+
+.ajax__tab_default .ajax__tab_tab  {
+	height: 25px;
+	padding: 4px 0px 0px 0px;
+	
+	margin: 0px 0px 0px 0px;
+	
+	background:url("../images/bgAbas.gif") repeat-x;
+	color: #666666;
+}
+
+.ajax__tab_default .ajax__tab_hover .ajax__tab_outer {
+	background:url("../images/abaRight_on.gif") no-repeat top right;
+}
+
+.ajax__tab_default .ajax__tab_hover .ajax__tab_inner {
+	background:url("../images/abaLeft_on.gif") no-repeat;
+}
+
+.ajax__tab_default .ajax__tab_hover .ajax__tab_tab {
+	background: url("../images/bgAbas_on.gif") repeat-x;
+	color: #FFFFFF;
+}
+
+.ajax__tab_default .ajax__tab_active .ajax__tab_outer {
+	background:url("../images/abaRight_on.gif") no-repeat top right;
+}
+
+.ajax__tab_default .ajax__tab_active .ajax__tab_inner {
+	background:url("../images/abaLeft_on.gif") no-repeat;
+}
+
+.ajax__tab_default .ajax__tab_active .ajax__tab_tab {
+	 background:url("../images/bgAbas_on.gif") repeat-x;
+	 color: #FFFFFF;
+}
+
+.ajax__tab_default .ajax__tab_body {
+	font-family: verdana,tahoma,helvetica;
+	font-size: 8pt;
+	border-top: 2px solid #990000;
+	color: #666666;
+	background-color: transparent;
+	padding: 4px 0px 0px 10px;
+}
+
+.form {
+	margin: 10px 0px 0px 10px;
+	border: 0px;
+}
+
+.form td {
+	font-family: Verdana;
+	font-size: 8pt;
+	padding: 0px 0px 0px 0px;
+	text-align: left;
+	color: #333333;
+}
+
+.form td.btForm {
+	text-align: right;
+	padding: 5px 5px 10px 0px;
+}
+
+.gridl {
+	margin: 10px 10px 10px 10px;
+	padding: 0px 0px 0px 0px;
+	background-color: #f0f0f0;
+	border: 0px;
+	width: 98%;
+}
+
+.gridl tr {
+	height: 12px;
+}
+.gridl th {
+	background-color: #CCCCCC;
+	border-bottom: 1px solid #990000;
+	font-family: Verdana;
+	font-size: 8pt;
+	font-weight: normal;
+	text-align: center;
+	padding: 1px 0px 1px 0px;
+	line-height: 14px;
+}
+
+.gridl td {
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #999999;
+	font-family: Verdana;
+	font-size: 8pt;
+	font-weight: normal;
+	text-align: left;
+	padding: 1px 2px 1px 5px;
+	line-height: 18px;
+}
+
+.watermarked
+{
+	border: 1px solid #999999;
+	height: 15px;
+	background-color: #f0f0f0;
+	color: #666666;
+	font-family: Verdana;
+	font-size: 8pt;
+	font-weight: normal;
+	text-align: left;
+	padding: 0px 2px 0px 2px;
+	margin: 0px 15px 0px 3px;
+}
+
+.ContextMenuPanel 
+{
+	z-index: 1000;
+	cursor: pointer;
+	border: 1px solid #999999;
+	background-color: #f0f0f0;
+	color: #666666;
+	font-family: Verdana;
+	font-size: 8pt;
+	font-weight: normal;
+	text-align: left;
+	padding: 0px 2px 0px 2px;
+	margin: 0px 15px 0px 3px;
+}
+
+.ContextMenuBreak
+{
+	margin:1px 1px 1px 32px;
+	padding:0;
+	height:1px;
+	overflow:hidden;
+	display:block;
+	border-top: 1px solid #999999;	
+}
+
+a.ContextMenuItem
+{
+	margin: 1px 0 1px 0;
+	display: block;
+	color: #666666;
+}	
+
+a.ContextMenuItem
+{
+	margin: 1px 0 1px 0;
+	display: block;
+	color: #666666;
+	font-family: Verdana;
+	font-size: 8pt;
+	font-weight: normal;
+	text-decoration: none;
+	cursor: pointer;	
+	padding: 0px 2px 0px 2px;
+	white-space: nowrap;
+}
+
+
+
+.controleCalendario {
+	background-image: url(../images/superpag-header.gif);
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	background-color: Transparent;
+	border: 0px;
+	margin: 0px 0px 0px 2px;	
+}
+
+.modalPopup {
+	background-color:#f0f0f0;
+	border: 1px solid #999999;
+	padding: 2px 2px 2px 2px;
+	width: 250px;
+}
+
+.modalHeader {
+	background-color: #990000;
+	padding: 2px 2px 2px 2px;
+	text-align: left;
+	font-family: Verdana;
+	font-size: 8pt;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+
+.sampleStyleA {
+	background-color:#FFFFFF;
+	padding: 2px 2px 2px 2px;
+	font-family: Verdana;
+	font-size: 8pt;
+	color: #333333;
+	font-weight: normal;
+}
+
+.sampleStyleB {
+	background-color:#FFFFFF;
+	padding: 2px 2px 2px 2px;
+	font-family: verdana;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #666666;
+}
+
+.sampleStyleC {
+	background-color:#f0f0f0;
+	padding: 2px 2px 2px 2px;
+	font-family: verdana;
+	font-size: 8pt;
+	font-style: italic;
+	color: #333333;
+}
+
+.sampleStyleD {
+	background-color: #f0f0f0;
+	color: #333333;
+	font-family: Verdana;
+	font-size: 8pt;
+	border: 1px dotted #990000;
+}
+
+.accordionHeader
+{
+    border: 1px solid #999999;
+    color: #FFFFFF;
+    background-color: #990000;
+	font-family: Verdana;
+	font-size: 8pt;
+	font-weight: bold;
+    padding: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+#master_content .accordionHeader a
+{
+	color: #FFFFFF;
+	background: none;
+	text-decoration: none;
+}
+
+#master_content .accordionHeader a:hover
+{
+	background: none;
+	text-decoration: underline;
+}
+
+.accordionHeaderSelected
+{
+    border: 1px solid #999999;
+    color: #FFFFFF;
+    background-color: #CC0000;
+	font-family: Verdana;
+	font-size: 8pt;
+	font-weight: bold;
+    padding: 5px ;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+#master_content .accordionHeaderSelected a
+{
+	color: #FFFFFF;
+	background: none;
+	text-decoration: none;
+}
+
+#master_content .accordionHeaderSelected a:hover
+{
+	background: none;
+	text-decoration: underline;
+}
+
+.accordionContent
+{
+    background-color: #BFCBD6;
+    border-left: 1px dotted #999999;
+    border-right: 1px dotted #999999;
+    border-bottom: 1px dotted #999999;
+    padding: 5px 5px 5px 5px;
+    font-family: Verdana;
+    font-size: 8pt;
+    color: #666666;
+    border-radius: 1em;
+}
+
+.accordionContent a:link, .accordionContent a:active, .accordionContent a:visited
+{
+    font-family: Verdana;
+    font-size: 8pt;
+    color: #990000;
+    text-decoration: underline;
+}
+
+.accordionContent a:hover
+{
+    font-family: Verdana;
+    font-size: 8pt;
+    color: #990000;
+    text-decoration: none;
+}

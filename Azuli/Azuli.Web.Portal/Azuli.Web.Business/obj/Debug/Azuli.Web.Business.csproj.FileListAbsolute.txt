@@ -34,3 +34,13 @@ C:\Users\Leandro\Documents\Visual Studio 2010\Projects\Azuli\Azuli.Web.Portal\Az
 C:\Users\Leandro\Documents\Visual Studio 2010\Projects\Azuli\Azuli.Web.Portal\Azuli.Web.Business\obj\Debug\Azuli.Web.Business.csprojResolveAssemblyReference.cache
 C:\Users\Leandro\Documents\Visual Studio 2010\Projects\Azuli\Azuli.Web.Portal\Azuli.Web.Business\obj\Debug\Azuli.Web.Business.dll
 C:\Users\Leandro\Documents\Visual Studio 2010\Projects\Azuli\Azuli.Web.Portal\Azuli.Web.Business\obj\Debug\Azuli.Web.Business.pdb
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Business\bin\Debug\Azuli.Web.Business.dll
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Business\bin\Debug\Azuli.Web.Business.pdb
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Business\bin\Debug\AjaxControlToolkit.DLL
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Business\bin\Debug\Azuli.Web.DAO.dll
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Business\bin\Debug\Azuli.Web.Model.dll
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Business\bin\Debug\Azuli.Web.DAO.pdb
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Business\bin\Debug\Azuli.Web.Model.pdb
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Business\obj\Debug\ResolveAssemblyReference.cache
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Business\obj\Debug\Azuli.Web.Business.dll
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Business\obj\Debug\Azuli.Web.Business.pdb

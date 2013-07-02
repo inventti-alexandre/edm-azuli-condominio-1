@@ -3,66 +3,42 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
-        .style2
-        {
-            width: 509px;
-        }
-        .style3
-        {
-            font-weight: 700;
-        }
-        .style4
-        {
-            width: 15px;
-            font-weight: bold;
-        }
         .style5
         {
             width: 567px;
         }
-        .style7
-        {
-            color: #006600;
-        }
         .menu
         {
         }
-        .style12
+        .style16
         {
-            width: 966px;
-            height: 130px;
+            width: 892px;
         }
-        .style13
+        #dvCalendar
         {
-            width: 536px;
+            height: 364px;
         }
-    .style14
-    {
-        text-decoration: underline;
-    }
-        .style15
-        {
-            width: 513px;
-            height: 130px;
-        }
-    </style>
+        </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
-<br /></br> <br /><br />
+
     <div id="dvProprietario" runat="server">
+    <br /><br /><br />
     <fieldset class="login">
-        <legend>Reservas feita em:  <asp:Label ID="lblMesAtual" runat="server" Style="font-weight: 700; color: #0033CC"></asp:Label></legend>
-        <table style="height: 192px; width: 669px;">
-            <tr>
-                <td align="center" class="style15">
+    
+        <legend class="accordionContent">Reservas feita em:  <asp:Label ID="lblMesAtual" runat="server" Style="font-weight: 700; color: #0033CC"></asp:Label></legend>
+        <table style="height: 150px; width: 903px;" class="loginDisplay">
+            <tr align="center">
+          
+                <td >
                  
+                    <div style="position: absolute; top: 223px; left: 398px;">
                     <asp:FormView ID="formVwChurrasco" runat="server" CellPadding="4"
                         Width="125px" CssClass="btGeral" AllowPaging="True" Height="76px" 
                         EmptyDataText="Você não tem Reservas para Churrasqueira neste mês!!" 
                         onpageindexchanging="formVwChurrasco_PageIndexChanging" 
-                        onitemdeleting="formVwChurrasco_ItemDeleting" 
                         DataKeyNames="dataAgendamento">
                         <EditRowStyle BackColor="#2461BF" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -82,25 +58,23 @@
                                 <br></br>
                             </table>
                             <br />
-                            <asp:Button ID="btnDel" runat="server" CssClass="botao" CausesValidation="True" CommandName="Delete"
-                                Text="Cancelar" />
+                         
                         </ItemTemplate>
                         <FooterTemplate>
                         </FooterTemplate>
                         <PagerSettings PageButtonCount="6" />
                         <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
                         <RowStyle BackColor="#EFF3FB" />
-                    </asp:FormView>
-                    
-                </td>
-          
-                <td align="center" class="style12">
+                    </asp:FormView>  
+                    </div>                  
+                                       
+                 <div style="position: absolute; top: 224px; left: 701px;">
                     <asp:FormView ID="frvSalaoFesta" runat="server" CellPadding="4" 
                         Width="125px" CssClass="btGeral" AllowPaging="True" Height="76px" 
                         EmptyDataText="Você não tem Reservas para o salão de Festa neste mês!!" 
                         onpageindexchanging="frvSalaoFesta_PageIndexChanging" 
-                        onitemdeleted="frvSalaoFesta_ItemDeleted" DataKeyNames="dataAgendamento" 
-                        onitemdeleting="frvSalaoFesta_ItemDeleting">
+                        DataKeyNames="dataAgendamento"> 
+                    
                         <EditRowStyle BackColor="#2461BF" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                         <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -119,7 +93,7 @@
                                 <br></br>
                             </table>
                             <br />
-                            <asp:Button ID="btnDel" runat="server" CssClass="botao" CausesValidation="True" CommandName="Delete"                                Text="Cancelar" />
+                     
                         </ItemTemplate>
                         <FooterTemplate>
                         </FooterTemplate>
@@ -127,15 +101,22 @@
                         <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
                         <RowStyle BackColor="#EFF3FB" />
                     </asp:FormView>
+                    </div>
+                 
                 </td>
             </tr>
              </table>
+
+        <br />
+
         <asp:Label ID="lblMgs" runat="server" 
                      Font-Bold="False" ForeColor="Red"></asp:Label>
     </fieldset> </div>
+
+    <!-- Opção para churrasqueira / Salão de Festa -->
     <div id="dvOpcao" runat="server">
         <fieldset class="login">
-            <legend>Selecione abaixo a reserva disponivel na data escolhida:</legend>
+            <legend class="accordionContent">Escolha a área a reservar: </legend>
             <table style="width: 643px; height: 152px;">
                 <tr>
                     <td class="style5">
@@ -180,17 +161,24 @@
                 <asp:Button ID="LoginButton" runat="server" Text="Finalizar Reserva" CssClass="botao"
                     Font-Bold="True" Height="28px" OnClick="LoginButton_Click" 
                     ValidationGroup="finalizaReserva" />
+            &nbsp;
+                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="botao"
+                    Font-Bold="True" Height="28px" OnClick="btnCancelar_Click" 
+                    ValidationGroup="finalizaReserva" />
             </p>
         </fieldset>
     </div>
+    <!-- Fim opção -->
+
+    <!-- Calendario para reserva -->
     <div id="dvCalendar" align="left" runat="server">
         <fieldset class="login">
-            <legend>Escolha a Data da sua reserva:</legend>
+           <legend class="accordionContent">Faça sua reserva, clicando 2 vezes na data escolhida:</legend>
             <asp:Label ID="lblMsgData" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
-            
-            <table style="width: 886px; height: 308px;">
+           <center>
+            <table>
                 <tr>
-                    <td  align="left">
+                    <td  align="center" class="style16">
 
                          
                      <asp:UpdatePanel ID="UpdatePanel1" runat="server"> 
@@ -202,8 +190,8 @@
                               
                         <asp:Calendar ID="Calendar1" runat="server" BackColor="White" OnSelectionChanged="Calendar1_SelectionChanged"
                             BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana"
-                            Font-Size="9pt" ForeColor="Black" Height="236px" NextPrevFormat="ShortMonth"
-                            Width="446px" OnDayRender="Calendar1_DayRender">
+                            Font-Size="9pt" ForeColor="Black" Height="216px" NextPrevFormat="ShortMonth"
+                            Width="410px" OnDayRender="Calendar1_DayRender">
                             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" Height="8pt" />
                             <DayStyle BackColor="#CCCCCC" />
                             <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="White" />
@@ -213,6 +201,7 @@
                                 ForeColor="White" Height="12pt" />
                             <TodayDayStyle ForeColor="White" />
                         </asp:Calendar>
+                          <br />
                           </ContentTemplate>
                             <Triggers>
                             <asp:AsyncPostBackTrigger ControlID="UpdateTimer" EventName="Tick" />
@@ -220,108 +209,26 @@
                             </Triggers>
                         </asp:UpdatePanel>
                     </td>
-                    <td class="style4">
-                        &nbsp;<br />
-                    </td>
-                    <td class="style3">
-                        <asp:ImageButton ID="imgFesta" runat="server" Height="16px" ImageUrl="~/images/azul.jpg"
-                            Width="27px" />
-                        <br />
-                        <br />
-                        <asp:ImageButton ID="imgFesta0" runat="server" Height="16px" ImageUrl="~/images/amarelo.jpg"
-                            Width="27px" />
-                        <br />
-                        <br />
-                        <asp:ImageButton ID="imgFesta1" runat="server" Height="16px" ImageUrl="~/images/vermelho.jpg"
-                            Width="27px" />
-                        <td align="left">
-                            <b>Salão de Festa Locado </b>
-                            <br />
-                            <br />
-                            <b>Área de Churraco Locada </b>
-                            <br />
-                            <br />
-                            <b>Salão de Festa e Área de churrasco Locado</b>
-                        </td>
                     </td>
                 </tr>
-            </table>
+                <tr>
+                    <td  align="left" class="style16">
+
+                         
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                         
+                            <asp:ImageButton ID="imgFesta" runat="server" Height="16px" ImageUrl="~/images/azul.jpg"
+                            Width="27px" /> <b>&nbsp;Salão de Festa Locado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:ImageButton ID="imgFesta0" runat="server" Height="16px" ImageUrl="~/images/amarelo.jpg"
+                            Width="27px" /> &nbsp;&nbsp; Área de Churrasco Locada&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:ImageButton ID="imgFesta1" runat="server" Height="16px" ImageUrl="~/images/vermelho.jpg"
+                            Width="27px" />&nbsp;&nbsp;&nbsp;&nbsp; Salão de Festa e Área de churrasco Locado </b>
+
+                    </td>
+                </tr>
+            </table></center> 
         </fieldset>
     </div>
-    <br />
-    <div id="DivConfirma" runat="server">
-        <fieldset class="login">
-            <legend class="style7">Reserva Efetuada com Sucesso Para o:</legend>
-            <table id="tbConfirma" style="width: 880px; height: 380px;" runat="server">
-                <tr>
-                    <td>
-                        &nbsp;&nbsp; <asp:Label ID="lblBocoTitle" runat="server" Font-Bold="True" Text="Bloco:"></asp:Label>
-                        &nbsp;<asp:Label ID="lblBlocoConfirma" runat="server" Font-Bold="True"></asp:Label>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Label ID="lblApTitle" runat="server" Font-Bold="True" Text="Ap:"></asp:Label>
-                        <asp:Label ID="lblApConfirma" runat="server" Font-Bold="True"></asp:Label>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="lblDataConfirma" runat="server" Font-Bold="True" Text="Data: "></asp:Label>
-            &nbsp;<asp:Label ID="lblConfirmaData" runat="server" Font-Bold="True"></asp:Label>
-                    </td>
-                </tr>
-    </div>
-    <tr>
-        <td>
-        <hr />
-            <p style="color:#3A5FCD; font-weight: bold;">
-                &nbsp;</p>
-            <p style="color:#3A5FCD; font-weight: bold;" class="style14">
-       Favor atentar às informações abaixo:
-    </p>
-    <table style="text-align: justify;">
-        <tr>
-            <td class="style13">
-                <ul style="color:#3A5FCD
-">
-                    <li>É permitido cancelar o agendamento somente com 2 dias de antencedencias </li>
-                </ul>
-                
-                <ul style="color:#3A5FCD
-">
-                    <li>Algumas regras</li>
-                </ul>
-                
-                <ul style="color:#3A5FCD
-">
-                    <li>Algumas regras</li>
-                </ul>
-                
-                <ul style="color:#3A5FCD
-">
-                    <li>Algumas regras</li>
-                </ul>
-                
-                <ul style="color:#3A5FCD
-">
-                    <li>Algumas regras</li>
-                </ul>
-               
-              
-                <p>
-                    &nbsp;</p>
-                <p>
-                    <asp:ImageButton ID="ImageButton1" runat="server" Height="27px" 
-                        ImageUrl="~/images/print.jpg" onclick="ImageButton1_Click1" />
-                </p>
-                <p>
-                    &nbsp;</p>
-                <p>
-                    <asp:Button ID="btnOKConfirma" runat="server" CssClass="botao" 
-                        onclick="btnOKConfirma_Click1" Text="Ok" Width="63px" />
-                &nbsp;</p>
-            </td>
-            <td>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <img alt="" src="images/azuli.jpg" style="height: 146px; width: 161px;" /></td>
-        </tr>
-    </table>
-            </td>
-    </tr>
-    </table> </fieldset></div>
+ <!-- Fim calendario -->
+
+    
 </asp:Content>

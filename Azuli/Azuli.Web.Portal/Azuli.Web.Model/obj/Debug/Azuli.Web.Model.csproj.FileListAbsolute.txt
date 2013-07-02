@@ -17,3 +17,8 @@ C:\Users\Leandro\Documents\Visual Studio 2010\Projects\Azuli\Azuli.Web.Portal\Az
 C:\Users\Leandro\Documents\Visual Studio 2010\Projects\Azuli\Azuli.Web.Portal\Azuli.Web.Model\bin\Debug\Azuli.Web.Model.pdb
 C:\Users\Leandro\Documents\Visual Studio 2010\Projects\Azuli\Azuli.Web.Portal\Azuli.Web.Model\obj\Debug\Azuli.Web.Model.dll
 C:\Users\Leandro\Documents\Visual Studio 2010\Projects\Azuli\Azuli.Web.Portal\Azuli.Web.Model\obj\Debug\Azuli.Web.Model.pdb
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Model\bin\Debug\Azuli.Web.Model.dll
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Model\bin\Debug\Azuli.Web.Model.pdb
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Model\obj\Debug\ResolveAssemblyReference.cache
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Model\obj\Debug\Azuli.Web.Model.dll
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Model\obj\Debug\Azuli.Web.Model.pdb

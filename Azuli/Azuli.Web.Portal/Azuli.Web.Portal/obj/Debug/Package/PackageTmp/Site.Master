@@ -3,9 +3,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head id="Head1" runat="server">
-    <title></title>
+    <title>Portal do Condominio</title>
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
     <script src="Scripts/ScriptAzuli.js" type="text/javascript"></script>
+
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+        } (document, 'script', 'facebook-jssdk'));
+</script>
+
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
     <style type="text/css">
@@ -15,25 +26,31 @@
             font-weight: normal;
             color:#4884CD;
         }
-    </style>
+   
+        </style>
 </head>
 <body>
+
+<div id="fb-root"></div>
+
+
     <form id="Form1" runat="server">
+    
     <div class="page">
         <div class="header">
             <div class="title">
                 
-                <img src="images/banner.jpg" style="height: 86px; width: 960px" />
-           
+                <img alt=""src="images/sgcv3.jpg" style="height: 86px; width: 960px" />
+              
             </div>
             <div class="clear hideSkiplink">
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
-                    EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" 
-                    DataSourceID="SiteMapDataSourceMenu">
-                    
+                    EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" StaticDisplayLevels="1"  
+                    DataSourceID="SiteMapDataSourceMenu" StaticPopOutImageUrl="~/images/home.png" DynamicPopOutImageUrl="~/images/home.png">
+                   
                 </asp:Menu>
             </div>
-             <div class="loginDisplay" style="position: absolute; left: 632px;">
+             <div class="loginDisplay" style="position: absolute; left: 38px;">
              <asp:Label ID="lblProprietarioMaster" runat="server" Font-Size="Small" 
                      Text="Seja Bem vindo: "></asp:Label>
                     <asp:Label ID="lblProprietarioDesc"  runat="server" Font-Size="Small" 
@@ -51,19 +68,38 @@
                      Font-Bold="False"></asp:Label>
                     <asp:Label ID="lblApDesc"  runat="server" Font-Size="Small" Font-Bold="True"></asp:Label>
             </div>
+
+            <div class="siteMap" style="position:absolute; left: 636px; margin-left: 40px;">
+             <asp:SiteMapPath id="smpWeb" runat="server" CssClass="DataWebControlStyle" 
+                    RenderCurrentNodeAsLink="True" Font-Size="X-Small">
+                </asp:SiteMapPath>
+            </div>
         </div>
+       
         <div class="main">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+               
+            </asp:ContentPlaceHolder>
         </div>
         <div class="clear">
             <asp:SiteMapDataSource ID="SiteMapDataSourceMenu" runat="server" 
                 ShowStartingNode="False" />
+            <asp:XmlDataSource ID="XmlDataSource1" runat="server" datafile="Web.sitemap">
+            </asp:XmlDataSource>
         </div>
-         <div class="footer">
-   
+         <center><div class="footer">
+       <div  class="fb-like" data-href="https://www.facebook.com/Sgcondominio"  data-send="true" data-width="450" data-show-faces="false" data-font="arial">
+           
+             </div>
+                  <br />
+  
              <span class="style1">&nbsp;<asp:Label ID="lblCopyright" runat="server"></asp:Label> &nbsp;- <asp:Label ID="lblVersion" runat="server"></asp:Label></span>&nbsp;</div>
+             </center>
+  
+             
     </div>
-    
+ 
     </form>
+    
 </body>
 </html>

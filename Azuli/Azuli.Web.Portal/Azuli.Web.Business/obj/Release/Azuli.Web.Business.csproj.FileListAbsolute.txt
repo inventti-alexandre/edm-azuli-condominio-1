@@ -35,3 +35,13 @@ C:\Meu Desenvolvimento\Azuli\Azuli.Web.Business\bin\Release\Azuli.Web.Model.dll
 C:\Meu Desenvolvimento\Azuli\Azuli.Web.Business\bin\Release\Azuli.Web.DAO.pdb
 C:\Meu Desenvolvimento\Azuli\Azuli.Web.Business\bin\Release\Azuli.Web.Model.pdb
 C:\Meu Desenvolvimento\Azuli\Azuli.Web.Business\obj\Release\Azuli.Web.Business.pdb
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Business\bin\Release\Azuli.Web.Business.dll
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Business\bin\Release\Azuli.Web.Business.pdb
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Business\bin\Release\AjaxControlToolkit.DLL
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Business\bin\Release\Azuli.Web.DAO.dll
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Business\bin\Release\Azuli.Web.Model.dll
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Business\bin\Release\Azuli.Web.DAO.pdb
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Business\bin\Release\Azuli.Web.Model.pdb
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Business\obj\Release\ResolveAssemblyReference.cache
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Business\obj\Release\Azuli.Web.Business.dll
+C:\Meu Desenvolvimento\AzuliProd\Azuli.Web.Business\obj\Release\Azuli.Web.Business.pdb
