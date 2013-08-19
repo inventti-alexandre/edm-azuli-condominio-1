@@ -133,7 +133,7 @@ first child of the left and right table columns */
 .page
 {
     
-    width: 960px;
+    width: 965px;
     background-color: #fff;
     margin: 5px auto 0px auto;
     border: 1px solid #4884CD;
@@ -142,7 +142,7 @@ first child of the left and right table columns */
 .pageLogin
 {
     
-    width: 960px;
+    width: 965px;
     background-color: #fff;
     margin: 5px auto 0px auto;
     border: 1px solid #4884CD;
@@ -154,7 +154,7 @@ first child of the left and right table columns */
     margin: 0px;
     padding: 0px;
     background: #4b6c9e;
-    width: 960px;
+    width: 965px;
     top: 0px;
     left: 0px;
     height: 64px;
@@ -253,7 +253,7 @@ first child of the left and right table columns */
 div.hideSkiplink
 {
     background-color:#0092D2;
-    width:1005px;
+    width:1000px;
     height: 0;
     position:relative;
     top: -24px;
@@ -277,7 +277,7 @@ div.hideSkiplinkAdmin
 
 div.menu
 {
-    padding: 4px 0px 4px 8px;
+    padding: 4px 8px 4px 6px;
       display:block;
 }
 
@@ -286,8 +286,7 @@ div.menu ul
     list-style: none;
     margin: 0px;
     padding: 0px;
-    width: auto;
-      display:block;
+    display:block;
 }
 
 div.menu a, div.menu a:visited
@@ -296,19 +295,19 @@ div.menu a, div.menu a:visited
     border: 1px #0093D4 solid;
     color: #FFFFFF;
     display: block;
-    line-height: 1.35em;
-    padding: 4px 20px;
+    line-height: 1.45em;
+    padding: 3px 17px;
     text-decoration: none;
-    white-space: nowrap;
-      display:block;
+    white-space: inherit;
+    display:block;
+    border-radius: 1em;
 }
 
 div.menu a:hover
 {
     background-color: #bfcbd6;
     color: #465c71;
-    text-decoration: none;
-      display:block;
+    display:block;
 }
 
 div.menu ul li a:active
@@ -678,7 +677,7 @@ input.botao, .btGeral {
 	margin: 0px 0px 0px 0px;
 	padding: 0px 0px 0px 0px;
 	overflow: hidden !important;
-}
+
 
 
 
@@ -1426,5 +1425,14 @@ a.ContextMenuItem
     border-bottom-left-radius:5px;
 }
 
+
+.ctnt
+{
+    position: relative;
+    overflow: visible;
+    display: block;
+    padding: 0px;
+    margin: 0px auto 0px auto;
+}
 
 
