@@ -43,7 +43,7 @@
         <div class="header">
             <div class="title">
                 <div class="title">
-                    <img alt="" src="images/sgcv3.jpg" style="height: 86px; width: 960px" />
+                    <img alt="" src="images/sgcv3.jpg" style="height: 86px; width: 965px" />
                 </div>
             </div>
         </div>
