@@ -5,11 +5,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
   
     <style type="text/css">
-        .style3
-        {
-            font-weight: bold;
-            width: 212px;
-        }
         .style4
         {
             background-color: #F0F0F0;
@@ -26,6 +21,35 @@
         {
             width: 186px;
         }
+    .style6
+    {
+        width: 440px;
+        height: 19px;
+    }
+    .style8
+    {
+        width: 4px;
+        height: 38px;
+    }
+    .style11
+    {
+        width: 215px;
+        height: 36px;
+    }
+    .style12
+    {
+        font-weight: bold;
+        width: 215px;
+        height: 36px;
+    }
+    .style13
+    {
+        width: 4px;
+        height: 36px;
+    }
+    .style15
+    {
+    }
     </style>
   
 </asp:Content>
@@ -34,19 +58,17 @@
         <fieldset class="loginDisplayLegend">
             <legend class="accordionContent">Deseja pesquisar por: </legend>
             <br />
-            <table align="center">
+            <table align="center" class="style6">
                 <tr>
-                    <td align="center">
+                    <td align="center" class="style11">
                         <asp:Button ID="btnBlocoAp" runat="server"  Text="Meu Bloco e Apartamento"
                             CssClass="btGeral" ValidationGroup="avancada" Font-Bold="True" 
                             Width="210px" onclick="btnBlocoAp_Click" />
                     </td>
-                    <td class="style3" align="center">
+                    <td class="style12" align="center">
                         <asp:Button ID="btnLimpar" runat="server" Text="Pesquisar por Data:"
                             CssClass="btGeral" Font-Bold="True" />
                     </td>
-                    <td class="style7" align="center">
-                        &nbsp;</td>
                 </tr>
                 </table>
         </fieldset>
@@ -76,6 +98,10 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </td>
             </tr>
+                      <tr>
+                          <td>
+                              &nbsp;</td>
+                      </tr>
         </table>
             </fieldset>
         </div>
