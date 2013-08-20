@@ -16,14 +16,14 @@ namespace Azuli.Crystal.Relatorios {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class ReciboMoradorByApBloco : ReportClass {
+    public class CrystalReport1 : ReportClass {
         
-        public ReciboMoradorByApBloco() {
+        public CrystalReport1() {
         }
         
         public override string ResourceName {
             get {
-                return "ReciboMoradorByApBloco.rpt";
+                return "CrystalReport1.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Azuli.Crystal.Relatorios {
         
         public override string FullResourceName {
             get {
-                return "Azuli.Crystal.Relatorios.ReciboMoradorByApBloco.rpt";
+                return "Azuli.Crystal.Relatorios.CrystalReport1.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace Azuli.Crystal.Relatorios {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedReciboMoradorByApBloco : Component, ICachedReport {
+    public class CachedCrystalReport1 : Component, ICachedReport {
         
-        public CachedReciboMoradorByApBloco() {
+        public CachedCrystalReport1() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace Azuli.Crystal.Relatorios {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            ReciboMoradorByApBloco rpt = new ReciboMoradorByApBloco();
+            CrystalReport1 rpt = new CrystalReport1();
             rpt.Site = this.Site;
             return rpt;
         }
