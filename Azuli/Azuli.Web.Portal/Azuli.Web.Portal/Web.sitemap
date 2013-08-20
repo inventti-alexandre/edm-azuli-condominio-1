@@ -48,12 +48,12 @@
     </siteMapNode>
 
 
-    <siteMapNode url="contato.aspx" title="Contato" description="" />
+    <siteMapNode url="" title="Fale Conosco" description="" roles="">
+      <siteMapNode url="~/contato.aspx" title="Contato" description=""  />
+       <siteMapNode url="~/videoajuda.aspx" title="Videos" description=""  />
+    </siteMapNode>
 
-    <siteMapNode url="~/videoajuda.aspx" title="Ajuda" description="" roles="" />
-
-
-
+    <siteMapNode url="SegundaViaContaAguaAzuli.aspx" title="2ª Via Água" description="" roles="" />
 
     <siteMapNode url="LoginAzulli.aspx" title="Sair" description="">
 
