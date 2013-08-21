@@ -5,106 +5,155 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
   
     <style type="text/css">
-        .style4
+        .style2
         {
-            background-color: #F0F0F0;
-            border-left: 2px solid #999999;
-            border-right: 2px solid #999999;
-            padding: 5px 5px 5px 5px;
-            font-family: Verdana;
-            font-size: 8pt;
-            color: #666666;
-            height: 15px;
-            font-weight: bold;
+            width: 63px;
         }
-        .style5
-        {
-            width: 186px;
-        }
-    .style6
-    {
-        width: 440px;
-        height: 19px;
-    }
-    .style8
-    {
-        width: 4px;
-        height: 38px;
-    }
-    .style11
-    {
-        width: 215px;
-        height: 36px;
-    }
-    .style12
-    {
-        font-weight: bold;
-        width: 215px;
-        height: 36px;
-    }
-    .style13
-    {
-        width: 4px;
-        height: 36px;
-    }
-    .style15
-    {
-    }
     </style>
   
-</asp:Content>
+    </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div id="dvAvancada" align="center" runat="server">
-        <fieldset class="loginDisplayLegend">
-            <legend class="accordionContent">Deseja pesquisar por: </legend>
-            <br />
-            <table align="center" class="style6">
-                <tr>
-                    <td align="center" class="style11">
-                        <asp:Button ID="btnBlocoAp" runat="server"  Text="Meu Bloco e Apartamento"
-                            CssClass="btGeral" ValidationGroup="avancada" Font-Bold="True" 
-                            Width="210px" onclick="btnBlocoAp_Click" />
-                    </td>
-                    <td class="style12" align="center">
-                        <asp:Button ID="btnLimpar" runat="server" Text="Pesquisar por Data:"
-                            CssClass="btGeral" Font-Bold="True" />
-                    </td>
-                </tr>
-                </table>
-        </fieldset>
-    </div>
+    
+    <br />
 
-   
-  <div id="dvPesquisaByData" align="center" runat="server">
-       <fieldset class="loginDisplayLegend">
-            <legend class="style4">
-                Deseja ver 2ª via por:</legend>
-                  <table style="width: 565px">
-            <tr>
-                <td class="style5" >
-                    <asp:Label ID="lblMes" runat="server" Font-Bold="True" Text="Mês:"></asp:Label>
-                    &nbsp;<asp:DropDownList ID="drpMeses" runat="server" CssClass="btGeral" Font-Bold="True"
-                        Height="16px" Width="101px" AutoPostBack="True"> 
-                        
-                    </asp:DropDownList>
-                </td>
-                <td  >
-                    <asp:Label ID="lblAno" runat="server" Font-Bold="True" Text="Ano:"></asp:Label>
-                    &nbsp;&nbsp;
-                    <asp:DropDownList ID="drpAno" runat="server" CssClass="btGeral" Font-Bold="True"
-                        Height="16px" Width="111px" AutoPostBack="True" >
-                       
-                    </asp:DropDownList>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </td>
-            </tr>
-                      <tr>
-                          <td>
-                              &nbsp;</td>
-                      </tr>
+    <fieldset  class="style1" dir="ltr">
+  
+        <legend class="accordionContent">Consulta de 2ª via conta de Água: </legend>
+        <br />
+        <asp:Label ID="lblConsultaAno" runat="server" CssClass="footer" 
+            Text="Mudar Ano de Consulta:"></asp:Label>
+        &nbsp;<asp:DropDownList ID="drpAno" runat="server" CssClass="FooterStyle" Height="26px" 
+            Width="123px" AutoPostBack="True" 
+           >
+        </asp:DropDownList>
+        <br />
+        <br />
+        
+         <center>   <asp:Label ID="lblMsg" runat="server" CssClass="failureNotification"></asp:Label></center>
+        
+        <br />
+
+        <div id="dvPublicacao" runat="server" align="left">
+      <table cellpadding="1" 
+            style="background-color: White; border: Outset 2px Silver; text-align: center; width: 100%;" 
+            class="btGeral" align="left" dir="ltr">
+        
+       
+        <tr>
+          <td>
+                <b><asp:Label ID="lblMeses" runat="server" Text=" Mês: " CssClass="Text"></asp:Label></b>
+            </td>
+            <td>
+                <asp:LinkButton ID="lbtMonth1" runat="server" CssClass="" 
+                    onclick="lbtMonth_Click">1</asp:LinkButton>
+            </td>
+            <td>
+                <asp:LinkButton ID="lbtMonth2" runat="server" CssClass="" 
+                    onclick="lbtMonth2_Click">2</asp:LinkButton>
+            </td>
+            <td>
+                <asp:LinkButton ID="lbtMonth3" runat="server" CssClass="" 
+                    onclick="lbtMonth3_Click">3</asp:LinkButton>
+            </td>
+            <td class="style2">
+                <asp:LinkButton ID="lbtMonth4" runat="server" CssClass="" 
+                    onclick="lbtMonth4_Click">4</asp:LinkButton>
+            </td>
+            <td>
+                <asp:LinkButton ID="lbtMonth5" runat="server" CssClass="" 
+                    onclick="lbtMonth5_Click">5</asp:LinkButton>
+            </td>
+            <td>
+                <asp:LinkButton ID="lbtMonth6" runat="server" CssClass="" 
+                    onclick="lbtMonth6_Click">6</asp:LinkButton>
+            </td>
+            <td>
+                <asp:LinkButton ID="lbtMonth7" runat="server" CssClass="" 
+                    onclick="lbtMonth7_Click">7</asp:LinkButton>
+            </td>
+            <td>
+                <asp:LinkButton ID="lbtMonth8" runat="server" CssClass="" 
+                    onclick="lbtMonth_Click8">8</asp:LinkButton>
+            </td>
+            <td>
+                <asp:LinkButton ID="lbtMonth9" runat="server" CssClass="" 
+                    onclick="lbtMonth_Click9">9</asp:LinkButton>
+            </td>
+            <td>
+                <asp:LinkButton ID="lbtMonth10" runat="server" CssClass="" 
+                    onclick="lbtMonth_Click10">10</asp:LinkButton>
+            </td>
+            <td>
+                <asp:LinkButton ID="lbtMonth11" runat="server" CssClass="" 
+                    onclick="lbtMonth_Click11">11</asp:LinkButton>
+            </td>
+            <td>
+                <asp:LinkButton ID="lbtMonth12" runat="server" CssClass="" 
+                    onclick="lbtMonth_Click12">12</asp:LinkButton>
+            </td>
+        </tr>
+
+          <tr>
+           <td>
+                <b><asp:Label ID="lblQuantidadesArquivos" runat="server" Text="Status: " CssClass="Text"></asp:Label></b>
+            </td>
+
+            <td>
+                <asp:Image ID="Image1" runat="server" Height="16px" 
+                    ImageUrl="~/images/cancel.png" Width="17px" />
+            </td>
+            <td>
+                <asp:Image ID="Image7" runat="server" Height="16px" 
+                    ImageUrl="~/images/cancel.png" Width="17px" />
+            </td>
+            <td>
+                <asp:Image ID="Image8" runat="server" Height="16px" 
+                    ImageUrl="~/images/cancel.png" Width="17px" />
+            </td>
+            <td class="style2">
+                <asp:Image ID="Image9" runat="server" Height="16px" 
+                    ImageUrl="~/images/cancel.png" Width="17px" />
+            </td>
+            <td>
+                <asp:Image ID="Image10" runat="server" Height="16px" 
+                    ImageUrl="~/images/cancel.png" Width="17px" />
+            </td>
+            <td>
+                <b>
+                <asp:Image ID="Image6" runat="server" Height="19px" 
+                    ImageUrl="~/images/ok.jpg" Width="27px" />
+                </b>
+            </td>
+            <td>
+                <asp:Image ID="Image11" runat="server" Height="16px" 
+                    ImageUrl="~/images/cancel.png" Width="17px" />
+            </td>
+            <td>
+                <asp:Image ID="Image12" runat="server" Height="16px" 
+                    ImageUrl="~/images/cancel.png" Width="17px" />
+            </td>
+            <td>
+                <asp:Image ID="Image13" runat="server" Height="16px" 
+                    ImageUrl="~/images/cancel.png" Width="17px" />
+            </td>
+            <td>
+                <asp:Image ID="Image14" runat="server" Height="16px" 
+                    ImageUrl="~/images/cancel.png" Width="17px" />
+            </td>
+            <td>
+                <asp:Image ID="Image15" runat="server" Height="16px" 
+                    ImageUrl="~/images/cancel.png" Width="17px" />
+            </td>
+            <td>
+                <asp:Image ID="Image16" runat="server" Height="16px" 
+                    ImageUrl="~/images/cancel.png" Width="17px" />
+            </td>
+        </tr>
         </table>
-            </fieldset>
         </div>
         
+        </fieldset>
+
+
   
 </asp:Content>
