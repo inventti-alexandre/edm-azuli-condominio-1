@@ -43,6 +43,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\AjaxControlToolkit.DLL</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -98,6 +101,7 @@
     <Content Include="images\home.png" />
     <Content Include="images\home2.jpg" />
     <Content Include="images\home3.jpg" />
+    <Content Include="images\indisponivel.gif" />
     <Content Include="images\logo8.jpg" />
     <Content Include="images\logoteste.png" />
     <Content Include="images\mensagem.jpg" />
@@ -151,10 +155,12 @@
     <Content Include="minhaReservas.aspx" />
     <Content Include="OcorrenciaMorador.aspx" />
     <Content Include="paginaInicialMoradores.aspx" />
+    <Content Include="ReportViewer.aspx" />
     <Content Include="ReservaDetalhadaMoradores.aspx" />
     <Content Include="resetSenha.aspx" />
     <Content Include="Scripts\ScriptAzuli.js" />
     <Content Include="Scripts\Silverlight.js" />
+    <Content Include="SegundaViaContaAguaAzuli.aspx" />
     <Content Include="ServerFile\Classificados\630110_s.jpg" />
     <Content Include="ServerFile\Classificados\63011_s.jpg" />
     <Content Include="ServerFile\Classificados\63012_m.jpg" />
@@ -471,6 +477,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ReportViewer.aspx.cs">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportViewer.aspx.designer.cs">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ReservaDetalhadaMoradores.aspx.cs">
       <DependentUpon>ReservaDetalhadaMoradores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -484,6 +497,13 @@
     </Compile>
     <Compile Include="resetSenha.aspx.designer.cs">
       <DependentUpon>resetSenha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SegundaViaContaAguaAzuli.aspx.cs">
+      <DependentUpon>SegundaViaContaAguaAzuli.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SegundaViaContaAguaAzuli.aspx.designer.cs">
+      <DependentUpon>SegundaViaContaAguaAzuli.aspx</DependentUpon>
     </Compile>
     <Compile Include="sgcNotificacao.aspx.cs">
       <DependentUpon>sgcNotificacao.aspx</DependentUpon>
@@ -605,7 +625,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>53690</DevelopmentServerPort>
+          <DevelopmentServerPort>52812</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

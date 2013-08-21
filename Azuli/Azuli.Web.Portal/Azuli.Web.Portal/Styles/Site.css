@@ -41,21 +41,8 @@ body
     color: #696969;
 }
 
-a:link, a:visited
-{
-    color: #034af3;
-}
 
-a:hover
-{
-    color: #1d60ff;
-    text-decoration: none;
-}
 
-a:active
-{
-    color: #034af3;
-}
 
 p
 {
@@ -1102,16 +1089,18 @@ a.ContextMenuItem
 
 .sampleStyleD {
 	background-color: #f0f0f0;
+	col
+
+.sampleStyleD {
+	background-color: #f0f0f0;
 	color: #333333;
 	font-family: Verdana;
 	font-size: 8pt;
 	border: 1px dotted #990000;
+    font-weight: 700;
 }
 
-.accordionHeader
-{
-    border: 1px solid #999999;
-    color: #FFFFFF;
+   color: #FFFFFF;
     background-color: #990000;
 	font-family: Verdana;
 	font-size: 8pt;
