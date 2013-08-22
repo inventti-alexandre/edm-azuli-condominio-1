@@ -1379,6 +1379,12 @@ a.ContextMenuItem
 
 
 .mainbodyTel {
+    border-left: 0 solid #ee
+
+
+
+
+.mainbodyTel {
     border-left: 0 solid #eee;
     border-right: 0 solid #eee;
     border-top: 1px solid #eee;
@@ -1386,11 +1392,11 @@ a.ContextMenuItem
     height:60px;
     width:258px;
     background-color:white;
-    }
+    font-size: medium;
+}
 
 
-.headerEnqueteTel, .FooterEnqueteTel {
-    height: 22px;
+px;
     padding: 2px;
     background-color: #E0E0E0;
     width:255px;
