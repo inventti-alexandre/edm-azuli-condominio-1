@@ -6,10 +6,8 @@ using Azuli.Web.Model;
 
 namespace Azuli.Web.DAO.Interfaces
 {
-    public interface IVisitas
+    public interface IContaAguaDAO
     {
-
-        void cadastraVisita(Visitas oVisitaModel);
-       
+        List<int> validaContaMesAnoMorador(ContaAgua oContaModel);
     }
 }

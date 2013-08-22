@@ -47,11 +47,13 @@
     <Compile Include="AcessoDAO.cs" />
     <Compile Include="Agenda.cs" />
     <Compile Include="ClassificadoVistoDAO.cs" />
+    <Compile Include="ContaAguaDAO.cs" />
     <Compile Include="EnqueteDAO.cs" />
     <Compile Include="FileDAO.cs" />
     <Compile Include="ClassificadoDAO.cs" />
     <Compile Include="FotoDAO.cs" />
     <Compile Include="GrupoClassificadosDAO.cs" />
+    <Compile Include="Interfaces\IContaAguaDAO.cs" />
     <Compile Include="Interfaces\IAgenda.cs" />
     <Compile Include="Interfaces\IClassificado.cs" />
     <Compile Include="Interfaces\IClassificadoVisto.cs" />
