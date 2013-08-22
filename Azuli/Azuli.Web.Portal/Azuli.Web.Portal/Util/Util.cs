@@ -72,8 +72,8 @@ namespace Azuli.Web.Portal.Util
 
                 //Loop para percorrer os vetores
                 for (int i = 0; i < 1; i++)
-                {
-
+                {   
+                   
                     //Atribui valores para o Vetor
                     VetorSenha[1] = senha[0].ToString();
                     VetorSenha[3] = senha[1].ToString();
