@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Text;
 using System.Configuration;
 using System.Globalization;
+using Azuli.Web.Business;
+using Azuli.Web.Model;
 
 namespace Azuli.Web.Portal
 {
@@ -14,6 +16,8 @@ namespace Azuli.Web.Portal
     {
         DateTime data = DateTime.Now;
         Util.Util oUtil = new Util.Util();
+        string apartamento;
+        string bloco;
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -25,8 +29,8 @@ namespace Azuli.Web.Portal
                 if (!IsPostBack)
                 {
 
-                    string apartamento = Session["AP"].ToString();
-                    string bloco = Session["Bloco"].ToString();
+                     apartamento = Session["AP"].ToString();
+                     bloco = Session["Bloco"].ToString();
                     // dvPesquisaByData.Visible = false;
                     this.lbtMonth1.Text = string.Format("{0:MMM}", CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(1).ToUpper());
                     this.lbtMonth2.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(2).ToUpper();
@@ -40,11 +44,26 @@ namespace Azuli.Web.Portal
                     this.lbtMonth10.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(10).ToUpper();
                     this.lbtMonth11.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(11).ToUpper();
                     this.lbtMonth12.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(12).ToUpper();
+                    //
+                    this.lbtMonth1.Enabled = false;
+                    this.lbtMonth2.Enabled = false;
+                    this.lbtMonth3.Enabled = false;
+                    this.lbtMonth4.Enabled = false;
+                    this.lbtMonth5.Enabled = false;
+                    this.lbtMonth6.Enabled = false;
+                    this.lbtMonth7.Enabled = false;
+                    this.lbtMonth8.Enabled = false;
+                    this.lbtMonth9.Enabled = false;
+                    this.lbtMonth10.Enabled = false;
+                    this.lbtMonth11.Enabled = false;
+                    this.lbtMonth12.Enabled = false;
+                  
 
                     preencheAno();
                     drpAno.SelectedItem.Text = data.Year.ToString();
 
                     preencheAno();
+                    showAvailableUnvailableReport();
 
 
                 }
@@ -137,109 +156,7 @@ namespace Azuli.Web.Portal
         }
 
 
-        /// <summary>
-        /// Calculates the percentage of all months of the year base.
-        /// </summary>
-        protected void showAvailableUnvailableReport()
-        {
-
-
-            // oFile.ano =  Convert.ToInt32(drpAno.SelectedItem.Text);
-
-            Dictionary<int, int> qtdPublicacao = new Dictionary<int, int>();
-
-
-            try
-            {
-                // qtdPublicacao = oFileBLL.contaArquivoByMeses(oFile);
-
-                if (qtdPublicacao.Count > 0)
-                {
-
-
-                    //btnOk.Visible = true;
-
-
-                    foreach (var item in qtdPublicacao)
-                    {
-                        //if (item.Key == 1)
-                        //{
-
-                        //    lblPercentage1.Text = item.Value.ToString();
-
-                        //}
-                        //else if (item.Key == 2)
-                        //{
-                        //    lblPercentage2.Text = item.Value.ToString();
-                        //}
-                        //else if (item.Key == 3)
-                        //{
-                        //    lblPercentage3.Text = item.Value.ToString();
-                        //}
-                        //else if (item.Key == 4)
-                        //{
-                        //    lblPercentage4.Text = item.Value.ToString();
-                        //}
-                        //else if (item.Key == 5)
-                        //{
-                        //    lblPercentage5.Text = item.Value.ToString();
-                        //}
-                        //else if (item.Key == 6)
-                        //{
-                        //    lblPercentage6.Text = item.Value.ToString();
-                        //}
-                        //else if (item.Key == 7)
-                        //{
-                        //    lblPercentage7.Text = item.Value.ToString();
-                        //}
-                        //else if (item.Key == 8)
-                        //{
-                        //    lblPercentage8.Text = item.Value.ToString();
-                        //}
-                        //else if (item.Key == 9)
-                        //{
-                        //    lblPercentage9.Text = item.Value.ToString();
-                        //}
-                        //else if (item.Key == 10)
-                        //{
-                        //    lblPercentage10.Text = item.Value.ToString();
-                        //}
-                        //else if (item.Key == 11)
-                        //{
-                        //    lblPercentage11.Text = item.Value.ToString();
-                        //}
-                        //else if (item.Key == 12)
-                        //{
-                        //    lblPercentage12.Text = item.Value.ToString();
-                        //}
-
-                        //dvPublicacao.Visible = true;
-                        //btnOk.Visible = false;
-                        //lblMsg.Visible = false;
-                    }
-                }
-
-                else
-                {
-                    // btnOk.Visible = false;
-                 //   dvPublicacao.Visible = false;
-                    // dvArquivosPublicados.Visible = false;
-                 //   lblMsg.Text = "Não existem arquivos publicados para este ano " + drpAno.SelectedItem.Text;
-                  //  lblMsg.Visible = true;
-
-                }
-
-
-
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
+      
 
         protected void lbtMonth_Click(object sender, EventArgs e)
         {
@@ -340,6 +257,106 @@ namespace Azuli.Web.Portal
 
 
 
+        /// <summary>
+        /// Calculates the percentage of all months of the year base.
+        /// </summary>
+        protected void showAvailableUnvailableReport()
+        {
+
+            ContaAgua oContaModel = new ContaAgua();
+            ContaAguaBLL oContaBLL = new ContaAguaBLL();
+            ApartamentoModel oAp = new ApartamentoModel();
+            oContaModel.ano = Convert.ToInt32(drpAno.SelectedValue);
+            oAp.apartamento = Convert.ToInt32(this.apartamento);
+            oAp.bloco = Convert.ToInt32(this.bloco);
+            oContaModel.modelAp = oAp;
+
+            List<int> pegaMeses = new List<int>();
+
+
+            try
+            {
+                pegaMeses = oContaBLL.validaContaMesAnoMorador(oContaModel); ;
+
+
+
+                 foreach (var item in pegaMeses)
+                    {
+                        if (item == 1)
+                        {
+
+                            this.lbtMonth1.Enabled = true;
+                            img1.ImageUrl = "~/images/verde.png"; 
+
+                        }
+                        else if (item == 2)
+                        {
+                            this.lbtMonth2.Enabled = true;
+                            img2.ImageUrl = "~/images/verde.png"; 
+                        }
+                        else if (item == 3)
+                        {
+                            this.lbtMonth3.Enabled = true;
+                            img3.ImageUrl = "~/images/verde.png"; 
+                        }
+                        else if (item == 4)
+                        {
+                            this.lbtMonth4.Enabled = true;
+                            img4.ImageUrl = "~/images/verde.png"; 
+                        }
+                        else if (item == 5)
+                        {
+                            this.lbtMonth5.Enabled = true;
+                            img5.ImageUrl = "~/images/verde.png"; 
+                        }
+                        else if (item == 6)
+                        {
+                            this.lbtMonth6.Enabled = true;
+                            img6.ImageUrl = "~/images/verde.png"; 
+                        }
+                        else if (item == 7)
+                        {
+                            this.lbtMonth7.Enabled = true;
+                            img7.ImageUrl = "~/images/verde.png"; 
+                        }
+                        else if (item == 8)
+                        {
+                            this.lbtMonth8.Enabled = true;
+                            img8.ImageUrl = "~/images/verde.png"; 
+                        }
+                        else if (item == 9)
+                        {
+                            this.lbtMonth9.Enabled = true;
+                            img9.ImageUrl = "~/images/verde.png"; 
+                        }
+                        else if (item == 10)
+                        {
+                            this.lbtMonth10.Enabled = true;
+                            img10.ImageUrl = "~/images/verde.png"; 
+                        }
+                        else if (item == 11)
+                        {
+                            this.lbtMonth11.Enabled = true;
+                            img11.ImageUrl = "~/images/verde.png"; 
+                        }
+                        else if (item == 12)
+                        {
+                            this.lbtMonth12.Enabled = true;
+                            img12.ImageUrl = "~/images/verde.png"; 
+                        }
+
+                        //dvPublicacao.Visible = true;
+                        //btnOk.Visible = false;
+                        //lblMsg.Visible = false;
+                    }
+                }
+
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
 
 

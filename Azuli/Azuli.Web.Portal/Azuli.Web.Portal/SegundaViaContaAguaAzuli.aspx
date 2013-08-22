@@ -20,7 +20,7 @@
   
         <legend class="accordionContent">Consulta de 2ª via conta de Água: </legend>
         <br />
-        <asp:Label ID="lblConsultaAno" runat="server" CssClass="footer" 
+        <asp:Label ID="lblConsultaAno" runat="server" CssClass="mainbodyTel" 
             Text="Mudar Ano de Consulta:"></asp:Label>
         &nbsp;<asp:DropDownList ID="drpAno" runat="server" CssClass="FooterStyle" Height="26px" 
             Width="123px" AutoPostBack="True" 
@@ -99,54 +99,52 @@
             </td>
 
             <td>
-                <asp:Image ID="Image1" runat="server" Height="16px" 
-                    ImageUrl="~/images/cancel.png" Width="17px" />
+                <asp:Image ID="img1" runat="server" Height="18px" 
+                    ImageUrl="~/images/vermelhoStatus.png" Width="23px" />
             </td>
             <td>
-                <asp:Image ID="Image7" runat="server" Height="16px" 
-                    ImageUrl="~/images/cancel.png" Width="17px" />
+                <asp:Image ID="img2" runat="server" Height="18px" 
+                    ImageUrl="~/images/vermelhoStatus.png" Width="23px" />
             </td>
             <td>
-                <asp:Image ID="Image8" runat="server" Height="16px" 
-                    ImageUrl="~/images/cancel.png" Width="17px" />
+                <asp:Image ID="img3" runat="server" Height="18px" 
+                    ImageUrl="~/images/vermelhoStatus.png" Width="23px" />
             </td>
             <td class="style2">
-                <asp:Image ID="Image9" runat="server" Height="16px" 
-                    ImageUrl="~/images/cancel.png" Width="17px" />
+                <asp:Image ID="img4" runat="server" Height="18px" 
+                    ImageUrl="~/images/vermelhoStatus.png" Width="23px" />
             </td>
             <td>
-                <asp:Image ID="Image10" runat="server" Height="16px" 
-                    ImageUrl="~/images/cancel.png" Width="17px" />
+                <asp:Image ID="img5" runat="server" Height="18px" 
+                    ImageUrl="~/images/vermelhoStatus.png" Width="23px" />
             </td>
             <td>
-                <b>
-                <asp:Image ID="Image6" runat="server" Height="19px" 
-                    ImageUrl="~/images/ok.jpg" Width="27px" />
-                </b>
+                <asp:Image ID="img6" runat="server" Height="18px" 
+                    ImageUrl="~/images/vermelhoStatus.png" Width="23px" />
             </td>
             <td>
-                <asp:Image ID="Image11" runat="server" Height="16px" 
-                    ImageUrl="~/images/cancel.png" Width="17px" />
+                <asp:Image ID="img7" runat="server" Height="18px" 
+                    ImageUrl="~/images/vermelhoStatus.png" Width="23px" />
             </td>
             <td>
-                <asp:Image ID="Image12" runat="server" Height="16px" 
-                    ImageUrl="~/images/cancel.png" Width="17px" />
+                <asp:Image ID="img8" runat="server" Height="18px" 
+                    ImageUrl="~/images/vermelhoStatus.png" Width="23px" />
             </td>
             <td>
-                <asp:Image ID="Image13" runat="server" Height="16px" 
-                    ImageUrl="~/images/cancel.png" Width="17px" />
+                <asp:Image ID="img9" runat="server" Height="18px" 
+                    ImageUrl="~/images/vermelhoStatus.png" Width="23px" />
             </td>
             <td>
-                <asp:Image ID="Image14" runat="server" Height="16px" 
-                    ImageUrl="~/images/cancel.png" Width="17px" />
+                <asp:Image ID="img10" runat="server" Height="18px" 
+                    ImageUrl="~/images/vermelhoStatus.png" Width="23px" />
             </td>
             <td>
-                <asp:Image ID="Image15" runat="server" Height="16px" 
-                    ImageUrl="~/images/cancel.png" Width="17px" />
+                <asp:Image ID="img11" runat="server" Height="18px" 
+                    ImageUrl="~/images/vermelhoStatus.png" Width="23px" />
             </td>
             <td>
-                <asp:Image ID="Image16" runat="server" Height="16px" 
-                    ImageUrl="~/images/cancel.png" Width="17px" />
+                <asp:Image ID="img12" runat="server" Height="18px" 
+                    ImageUrl="~/images/vermelhoStatus.png" Width="23px" />
             </td>
         </tr>
         </table>
