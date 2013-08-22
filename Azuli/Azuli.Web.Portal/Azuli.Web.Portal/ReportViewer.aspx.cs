@@ -40,22 +40,24 @@ namespace Azuli.Web.Portal
                 connectionCrystal.Password = ConfigurationManager.AppSettings["pwdSomee"];
                 connectionCrystal.Type = ConnectionInfoType.SQL;
                 connectionCrystal.IntegratedSecurity = false;
-                string caminhoRelatorio = ConfigurationManager.AppSettings["ReportsPath"] + "ReciboMoradorByApBloco.rpt"; // Local 
-                //string caminhoRelatorio = Server.MapPath(ConfigurationManager.AppSettings["ReportsPath"] + "ReciboMoradorByApBloco.rpt"); //web
-             
+                //string caminhoRelatorio = ConfigurationManager.AppSettings["ReportsPath"] + "ReciboMoradorByApBloco.rpt"; // Local 
+                 string caminhoRelatorio = Server.MapPath(ConfigurationManager.AppSettings["ReportsPath"] + "ReciboMoradorByApBloco.rpt"); //web
+
 
                 //string caminhoRelatorio = ConfigurationManager.AppSettings["ReportsPath"] + "ReciboMoradorByApBloco.rpt"; // Local 
                 // string caminhoRelatorio = Server.MapPath(ConfigurationManager.AppSettings["ReportsPath"] + "ReciboMoradorByApBloco.rpt"); //web   
                 //Session["reportSource"] = caminhoRelatorio;
 
-                //string apartamento = Session["AP"].ToString();
-                //string bloco = Session["Bloco"].ToString();
-                //string mes = Session["mes"].ToString();
-                //string ano = Session["ano"].ToString();
+                string apartamento = Session["AP"].ToString();
+                string bloco = Session["Bloco"].ToString();
+                string mes = Session["mes"].ToString();
+                string ano = Session["ano"].ToString();
 
                 rpt.Load(caminhoRelatorio);
-                //rpt.SetParameterValue("bloco", bloco);
-                //rpt.SetParameterValue("apartamento", apartamento);
+                rpt.SetParameterValue("bloco", bloco);
+                rpt.SetParameterValue("apto", apartamento);
+                rpt.SetParameterValue("mes", mes);
+                rpt.SetParameterValue("ano", ano);
                 SetDBLogonForReport(connectionCrystal, rpt);
 
                 //CrystalReportViewer1.ToolPanelView = CrystalDecisions.Web.ToolPanelViewType.None;
