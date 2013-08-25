@@ -61,8 +61,6 @@ namespace Azuli.Web.Portal
 
                     preencheAno();
                     drpAno.SelectedItem.Text = data.Year.ToString();
-
-                    preencheAno();
                     showAvailableUnvailableReport();
 
 
@@ -88,7 +86,7 @@ namespace Azuli.Web.Portal
         public void preencheAno()
         {
 
-            for (int ano = data.Year - 4; ano < 2015; ano++)
+            for (int ano = data.Year; ano <= data.Year; ano++)
             {
                 drpAno.Items.Add(ano.ToString());
 
