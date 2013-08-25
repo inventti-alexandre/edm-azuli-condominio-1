@@ -80,6 +80,7 @@ namespace Azuli.Web.Portal
 
                         e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#FFFF01");
                         TextBox t1 = new TextBox();
+                        t1.Font.Bold = true;
                         t1.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
                         t1.Width = 70;
                         t1.Height = 20;
@@ -88,6 +89,7 @@ namespace Azuli.Web.Portal
                         t1.ForeColor = Color.Black;
 
                         TextBox t2 = new TextBox();
+                        t2.Font.Bold = true;
                         t2.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
                         t2.Width = 70;
                         t2.Height = 20;
@@ -140,6 +142,7 @@ namespace Azuli.Web.Portal
 
                         e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#BADEF4");
                         TextBox t1 = new TextBox();
+                        t1.Font.Bold = true;
                         t1.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
                         t1.Width = 70;
                         t1.Height = 20;
@@ -148,6 +151,7 @@ namespace Azuli.Web.Portal
                         t1.ForeColor = Color.Black;
 
                         TextBox t2 = new TextBox();
+                        t2.Font.Bold = true;
                         t2.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
                         t2.Width = 70;
                         t2.Height = 20;
@@ -199,6 +203,7 @@ namespace Azuli.Web.Portal
 
                         e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#AA0708");
                         TextBox t1 = new TextBox();
+                        t1.Font.Bold = true;
                         t1.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
                         t1.Width = 70;
                         t1.Height = 20;
@@ -207,6 +212,7 @@ namespace Azuli.Web.Portal
                         t1.ForeColor = Color.Black;
 
                         TextBox t2 = new TextBox();
+                        t2.Font.Bold = true;
                         t2.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
                         t2.Width = 70;
                         t2.Height = 20;

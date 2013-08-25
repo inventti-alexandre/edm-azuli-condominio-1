@@ -7,24 +7,6 @@
         {
             width: 155px;
         }
-        .style4
-        {
-            width: 22px;
-        }
-        .style5
-        {
-            width: 200px;
-            height: 28px;
-        }
-        .style6
-        {
-            width: 22px;
-            height: 28px;
-        }
-        .style7
-        {
-            height: 28px;
-        }
         .controleCalendario
         {
         }
@@ -42,26 +24,25 @@
         }
         .style16
         {
-            width: 192px;
-        }
-        .style17
-        {
-            width: 195px;
+            width: 182px;
         }
         .style18
         {
-            font-size: small;
+            border: 1px solid #999999;
+            height: 272px;
+            background-color: white;
+            font-family: Verdana;
+            font-size: 6pt;
+            font-weight: normal;
+            text-align: left;
+            padding: 0px 2px 0px 2px;
+            margin: 0px 15px 0px 3px;
+            width: 874px;
+            border-radius: 1em;
         }
         .style19
         {
-            margin: 1px 1px 1px 32px;
-            padding: 0;
-            height: 1px;
-            overflow: hidden;
-            display: block;
-            border-top: 1px solid #999999;
-            border-radius: 1em;
-            width: 19px;
+            width: 177px;
         }
     </style>
     <script type="text/javascript">
@@ -81,16 +62,16 @@
     <fieldset class="loginDisplayLegend">
         <legend class="accordionContent">Gerenciador de Tarefas</legend>
         <div id="Div1" runat="server" align="center">
-            <table align="center" style="width: 852px">
+            <table align="center" style="width: 889px">
                 <tr>
-                    <td align="center" class="watermarked">
+                    <td align="center" class="style18">
                         <asp:Label ID="Label4" runat="server" Text="Gerenciamento de Reservas" CssClass="accordionContent"
                             Font-Bold="True"></asp:Label>
                         <br />
                         <br />
                         <br />
                         <asp:Calendar ID="Calendar2" runat="server" BackColor="White" Font-Names="Verdana"
-                            Font-Size="8pt" ForeColor="Black" Height="329px" Width="436px" BorderWidth="1px"
+                            Font-Size="8pt" ForeColor="Black" Height="360px" Width="759px" BorderWidth="1px"
                             OnDayRender="Calendar1_DayRender" ShowGridLines="True" 
                             NextPrevFormat="FullMonth">
                             <DayHeaderStyle Font-Bold="True" Height="1px" BackColor="#CCCCCC" />
@@ -102,21 +83,36 @@
                             <TodayDayStyle ForeColor="#009900" />
                         </asp:Calendar>
                         <br />
-                        <table id="tbLegend" runat="server" align="" style="width: 439px" 
+                        <table id="tbLegend" runat="server" align="center" style="width: 868px" 
                             class="accordionContent">
                             <tr class="style9">
                                 <td align="justify" class="style16">
                                     <asp:ImageButton ID="imgFesta" runat="server" Height="18px" ImageUrl="~/images/azul.jpg"
                                         Width="16px" />
-                                    <span class="style8">&nbsp;<b>SL</b> <b>Festa Alugado</b>&nbsp; </span>
+                                    <span class="style8">&nbsp;<b>Salão de</b> <b>Festa&nbsp; - Reservado</b> </span>
                                 </td>
-                                <td align="justify" class="style17">
+                                <td align="justify" class="style19">
                                     <asp:ImageButton ID="ImageButton2" runat="server" Height="18px" ImageUrl="~/images/amarelo.jpg"
+                                        Width="16px" />
+                                    <span class="style8">&nbsp;<b>Churrasqueira - Reservada</b></span></td>
+                                <td>
+                                    <asp:ImageButton ID="imgFesta1" runat="server" Height="18px" ImageUrl="~/images/vermelho.jpg"
+                                        Width="16px" />
+                                    &nbsp;<strong>Salão</strong> <b>Festa &amp; Churrasqueira - Reservada</b></td>
+                            </tr>
+                             <tr class="style9">
+                                <td align="justify" class="style16">
+                                    <asp:ImageButton ID="ImageButton1" runat="server" Height="18px" ImageUrl="~/images/azul.jpg"
+                                        Width="16px" />
+                                    <span class="style8">&nbsp;<strong>SL</strong> <b>de Festa - Pendente de 
+                                    Pagamento</b></span></td>
+                                <td align="justify" class="style19">
+                                    <asp:ImageButton ID="ImageButton3" runat="server" Height="18px" ImageUrl="~/images/amarelo.jpg"
                                         Width="16px" />
                                     <span class="style8">&nbsp;<b>Churrasco Alugada</b>&nbsp;</span>
                                 </td>
                                 <td align="justify" class="style15">
-                                    <asp:ImageButton ID="imgFesta1" runat="server" Height="18px" ImageUrl="~/images/vermelho.jpg"
+                                    <asp:ImageButton ID="ImageButton4" runat="server" Height="18px" ImageUrl="~/images/vermelho.jpg"
                                         Width="16px" />
                                     &nbsp;<b>Festa/Churras Alugada</b>
                                 </td>
@@ -124,6 +120,7 @@
                         </table>
                     </td>
                     <td> </td>
+                  <!-- Módulo desativado no momento - Para aceitação Inicial 
                     <td valign="top" class="watermarked">
                         <table>
                             <tr>
@@ -207,7 +204,7 @@
                                     <br />
                                     <asp:ImageButton ID="imgReclamacai" CssClass="BorderAdministrador" runat="server"
                                         ImageUrl="~/images/cliqueAqui.jpg" OnClick="imgReclamacai_Click" />
-                                </td>
+                                </td> -->
                             </tr>
                         </table>
                     </td>
