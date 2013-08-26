@@ -8,6 +8,7 @@ using Azuli.Web.Business;
 using Azuli.Web.Model;
 using Azuli.Web.Portal.Util;
 using System.Text;
+using System.Globalization;
 
 namespace Azuli.Web.Portal
 {
@@ -17,14 +18,18 @@ namespace Azuli.Web.Portal
         ProprietarioModel oProprietarioModel = new ProprietarioModel();
         ApartamentoModel oAPmodel = new ApartamentoModel();
         Util.Util oUtil = new Util.Util();
+      
+       
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 if (oUtil.validateSessionAdmin())
                 {
-
+                   
                     hiddenControlDiv();
+                    lblDataReserva.Text = dataByExtense();
                 }
                 else
                 {
@@ -32,6 +37,24 @@ namespace Azuli.Web.Portal
                    
                 }
             }
+        }
+
+        public string dataByExtense()
+        {
+            CultureInfo culture = new CultureInfo("pt-BR");
+            DateTimeFormatInfo dtfi = culture.DateTimeFormat;
+            DateTime dataReserva = new DateTime();
+            dataReserva = Convert.ToDateTime(Session["dataReservaAdministrador"]);
+
+            int dia = dataReserva.Day;
+            int ano = dataReserva.Year;
+            string mes = culture.TextInfo.ToTitleCase(dtfi.GetMonthName(dataReserva.Month));
+            string diaSemana = culture.TextInfo.ToTitleCase(dtfi.GetDayName(dataReserva.DayOfWeek));
+
+            string dataRetorno = diaSemana + ", " + dia + " de " + mes + " de " + ano;
+
+            return dataRetorno;
+          
         }
 
         /// <summary>
@@ -76,6 +99,7 @@ namespace Azuli.Web.Portal
                 dvCadastro.Visible = false;
                 dvDadosMorador.Visible = false;
                 dvNewUser.Visible = false;
+                dvPesquisaMorador.Visible = false;
                 foreach (var item in oProprietario.BuscaMoradorAdmin(oAPmodel))
                 {
                     lblApartDesc.Text = item.ap.apartamento.ToString();
@@ -100,6 +124,7 @@ namespace Azuli.Web.Portal
             else
             {
                 dvNewUser.Visible = true;
+                dvPesquisaMorador.Visible = false;
                 dvDadosMorador.Visible = false;
                 lblMsg.Visible = true;
                 btnCadastrar.Visible = true;
@@ -122,6 +147,8 @@ namespace Azuli.Web.Portal
             btnCancelar.Visible = false;
             lblMsg.Visible = false;
             btnCadastrar.Visible = false;
+            dvNewUser.Visible = false;
+            dvPesquisaMorador.Visible = true;
         }
 
         protected void btnCancel0_Click(object sender, EventArgs e)
@@ -140,6 +167,7 @@ namespace Azuli.Web.Portal
 
             txtBlocos.Text = drpBloco.SelectedItem.Text;
             txtApartamento.Text = txtAp.Text;
+            dvNewUser.Visible = false;
             
         }
 
@@ -152,9 +180,10 @@ namespace Azuli.Web.Portal
             oProprietarioModel.ap.bloco = Convert.ToInt32(txtBlocos.Text);
             oProprietarioModel.ap.apartamento = Convert.ToInt32(txtApartamento.Text);
             oProprietarioModel.proprietario1 = txtMorador1.Text;
-            oProprietarioModel.proprietario2 = txtMorador2.Text;
+            oProprietarioModel.proprietario2 = ""; //txtMorador2.Text - Para facilitar para o sindico;
             oProprietarioModel.email = txtEmail.Text;
             oProprietarioModel.senha = oUtil.GeraSenha();
+            
 
         
 
@@ -217,6 +246,12 @@ namespace Azuli.Web.Portal
         protected void btnCancel0_Click1(object sender, EventArgs e)
         {
             dvDadosMorador.Visible = false;
+            dvNewUser.Visible = false;
+            dvPesquisaMorador.Visible = true;
+            Session.Remove("MoradorSemInternetAP");
+            Session.Remove("MoradorSemInternetBloco");
+            Session.Remove("MoradorSemInternetNome1");
+            Session.Remove("MoradorSemInternetNome2");
         }
 
         protected void btnCancelarCadastro_Click(object sender, EventArgs e)
@@ -233,8 +268,18 @@ namespace Azuli.Web.Portal
             txtApartamento.Text = "";
             txtBlocos.Text = "";
             txtMorador1.Text = "";
-            txtMorador2.Text = "";
+            //txtMorador2.Text = "";
             txtAp.Text = "";
+        }
+
+        protected void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            txtEmail.Text = "";
+        }
+
+        protected void lnkBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("WelcomeAdmin.aspx");
         }
     }
 }

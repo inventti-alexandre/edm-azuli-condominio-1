@@ -110,7 +110,9 @@
     <Content Include="images\novo_morador_visitante.png" />
     <Content Include="images\ocoor.jpg" />
     <Content Include="images\online.gif" />
+    <Content Include="images\real.jpg" />
     <Content Include="images\reserva.jpg" />
+    <Content Include="images\salaoFesta.jpg" />
     <Content Include="images\seguranca.jpg" />
     <Content Include="images\sgc.jpg" />
     <Content Include="images\banner.jpg" />
@@ -628,7 +630,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>52812</DevelopmentServerPort>
+          <DevelopmentServerPort>55094</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

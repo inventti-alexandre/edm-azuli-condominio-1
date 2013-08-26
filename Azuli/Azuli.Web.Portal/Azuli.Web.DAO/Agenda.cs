@@ -199,6 +199,7 @@ namespace Azuli.Web.DAO
                 comandoSQL.Parameters.AddWithValue("@AP", oAp.apartamento);
                 comandoSQL.Parameters.AddWithValue("@FESTA", oAgenda.salaoFesta);
                 comandoSQL.Parameters.AddWithValue("@CHURRAS", oAgenda.salaoChurrasco);
+                comandoSQL.Parameters.AddWithValue("@PAGO", oAgenda.statusPagamento);
 
 
 
