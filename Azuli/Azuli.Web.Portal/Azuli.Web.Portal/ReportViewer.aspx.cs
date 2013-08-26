@@ -40,8 +40,8 @@ namespace Azuli.Web.Portal
                 connectionCrystal.Password = ConfigurationManager.AppSettings["pwdSomee"];
                 connectionCrystal.Type = ConnectionInfoType.SQL;
                 connectionCrystal.IntegratedSecurity = false;
-                //string caminhoRelatorio = ConfigurationManager.AppSettings["ReportsPath"] + "ReciboMoradorByApBloco.rpt"; // Local 
-                 string caminhoRelatorio = Server.MapPath(ConfigurationManager.AppSettings["ReportsPath"] + "ReciboMoradorByApBloco.rpt"); //web
+                 string caminhoRelatorio = ConfigurationManager.AppSettings["ReportsPath"] + "ReciboMoradorByApBloco.rpt"; // Local 
+                // string caminhoRelatorio = Server.MapPath(ConfigurationManager.AppSettings["ReportsPath"] + "ReciboMoradorByApBloco.rpt"); //web
 
 
                 //string caminhoRelatorio = ConfigurationManager.AppSettings["ReportsPath"] + "ReciboMoradorByApBloco.rpt"; // Local 
@@ -66,11 +66,11 @@ namespace Azuli.Web.Portal
                 //rpt.SetDatabaseLogon(connectionCrystal.UserID, connectionCrystal.Password, connectionCrystal.ServerName, connectionCrystal.DatabaseName);
                 //CrystalReportViewer1.ReportSourceID = ConfigurationManager.AppSettings["reciboMorador"];
 
-
-
+                
+                
                 rpt.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "Recibo");
 
-
+                rpt.Refresh();
 
 
             }

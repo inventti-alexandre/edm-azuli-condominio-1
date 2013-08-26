@@ -75,7 +75,7 @@ namespace Azuli.Web.Portal
                 {
 
                     listAgenda OeventCalendar = new listAgenda();
-                    if (item.salaoChurrasco == true & item.salaoFesta == false)
+                    if (item.salaoChurrasco == true & item.salaoFesta == false & item.statusPagamento != "N" )
                     {
 
                         e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#FFFF01");
@@ -85,7 +85,7 @@ namespace Azuli.Web.Portal
                         t1.Width = 70;
                         t1.Height = 20;
                         t1.TextMode = TextBoxMode.SingleLine;
-                        t1.Font.Size = 7;
+                        t1.Font.Size = 9;
                         t1.ForeColor = Color.Black;
 
                         TextBox t2 = new TextBox();
@@ -94,7 +94,7 @@ namespace Azuli.Web.Portal
                         t2.Width = 70;
                         t2.Height = 20;
                         t2.TextMode = TextBoxMode.SingleLine;
-                        t2.Font.Size = 7;
+                        t2.Font.Size = 9;
                         t2.ForeColor = Color.Black;
                         int count = 0;
 
@@ -137,7 +137,7 @@ namespace Azuli.Web.Portal
 
 
                     }
-                    else if (item.salaoChurrasco == false & item.salaoFesta == true)
+                    else if (item.salaoChurrasco == false & item.salaoFesta == true & item.statusPagamento != "N")
                     {
 
                         e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#BADEF4");
@@ -147,7 +147,7 @@ namespace Azuli.Web.Portal
                         t1.Width = 70;
                         t1.Height = 20;
                         t1.TextMode = TextBoxMode.SingleLine;
-                        t1.Font.Size = 7;
+                        t1.Font.Size = 9;
                         t1.ForeColor = Color.Black;
 
                         TextBox t2 = new TextBox();
@@ -156,7 +156,7 @@ namespace Azuli.Web.Portal
                         t2.Width = 70;
                         t2.Height = 20;
                         t2.TextMode = TextBoxMode.SingleLine;
-                        t2.Font.Size = 7;
+                        t2.Font.Size = 9;
                         t2.ForeColor = Color.Black;
                         int count = 0;
 
@@ -198,7 +198,7 @@ namespace Azuli.Web.Portal
 
 
                     }
-                    else if (item.salaoChurrasco == true & item.salaoFesta == true)
+                    else if (item.salaoChurrasco == true & item.salaoFesta == true & item.statusPagamento != "N")
                     {
 
                         e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#AA0708");
@@ -208,7 +208,7 @@ namespace Azuli.Web.Portal
                         t1.Width = 70;
                         t1.Height = 20;
                         t1.TextMode = TextBoxMode.SingleLine;
-                        t1.Font.Size = 7;
+                        t1.Font.Size = 9;
                         t1.ForeColor = Color.Black;
 
                         TextBox t2 = new TextBox();
@@ -217,7 +217,7 @@ namespace Azuli.Web.Portal
                         t2.Width = 70;
                         t2.Height = 20;
                         t2.TextMode = TextBoxMode.SingleLine;
-                        t2.Font.Size = 7;
+                        t2.Font.Size = 9;
                         t2.ForeColor = Color.Black;
                         int count = 0;
 
@@ -259,8 +259,204 @@ namespace Azuli.Web.Portal
 
                         e.Day.IsSelectable = false;
                     }
+
+                    /// Status Pendente
+                    /// 
+                    else if (item.salaoChurrasco == true & item.salaoFesta == false & item.statusPagamento != "S")
+                    {
+
+                        e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#FF8000");
+                        TextBox t1 = new TextBox();
+                        t1.Font.Bold = true;
+                        t1.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
+                        t1.Width = 70;
+                        t1.Height = 20;
+                        t1.TextMode = TextBoxMode.SingleLine;
+                        t1.Font.Size = 9;
+                        t1.ForeColor = Color.Black;
+
+                        TextBox t2 = new TextBox();
+                        t2.Font.Bold = true;
+                        t2.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
+                        t2.Width = 70;
+                        t2.Height = 20;
+                        t2.TextMode = TextBoxMode.SingleLine;
+                        t2.Font.Size = 9;
+                        t2.ForeColor = Color.Black;
+                        int count = 0;
+
+                        OeventCalendar = oAgenda.listaEventos_ByCalendar(item.dataAgendamento);
+                        foreach (var quemAlugou in OeventCalendar)
+                        {
+                            if (OeventCalendar.Count >= 2)
+                                if (count == 0)
+                                {
+                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento;
+                                    count = 1;
+                                }
+                                else
+                                {
+                                    t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento;
+                                }
+                            else
+                            {
+                                t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento;
+
+                            }
+
+                        }
+
+                        Panel p1 = new Panel();
+                        p1.ID = "p" + e.Day.DayNumberText + e.Day.Date.Month.ToString(); ;
+                        p1.Attributes.Add("style", "display:none;");
+                        p1.Attributes.Add("style", "display:none;");
+                        p1.Controls.Add(t1);
+
+                        if (t2.Text != "")
+                        {
+                            p1.Controls.Add(t2);
+                        }
+                        e.Cell.Controls.Add(p1);
+                        e.Cell.Height = 50;
+                        e.Cell.Attributes.Add("onmouseover", "ShowInfo('" + p1.ClientID + "')");
+                        e.Cell.Attributes.Add("onmouseout", "HideInfo('" + p1.ClientID + "')");
+
+
+
+                    }
+                    else if (item.salaoChurrasco == false & item.salaoFesta == true & item.statusPagamento != "S")
+                    {
+
+                        e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#1B6C81");
+                        TextBox t1 = new TextBox();
+                        t1.Font.Bold = true;
+                        t1.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
+                        t1.Width = 70;
+                        t1.Height = 20;
+                        t1.TextMode = TextBoxMode.SingleLine;
+                        t1.Font.Size = 9;
+                        t1.ForeColor = Color.Black;
+
+                        TextBox t2 = new TextBox();
+                        t2.Font.Bold = true;
+                        t2.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
+                        t2.Width = 70;
+                        t2.Height = 20;
+                        t2.TextMode = TextBoxMode.SingleLine;
+                        t2.Font.Size = 9;
+                        t2.ForeColor = Color.Black;
+                        int count = 0;
+
+                        OeventCalendar = oAgenda.listaEventos_ByCalendar(item.dataAgendamento);
+                        foreach (var quemAlugou in OeventCalendar)
+                        {
+                            if (OeventCalendar.Count >= 2)
+                                if (count == 0)
+                                {
+                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento;
+                                    count = 1;
+                                }
+                                else
+                                {
+                                    t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento;
+                                }
+                            else
+                            {
+                                t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento;
+
+                            }
+
+                        }
+
+                        Panel p1 = new Panel();
+                        p1.ID = "p" + e.Day.DayNumberText + e.Day.Date.Month.ToString(); ;
+                        p1.Attributes.Add("style", "display:none;");
+                        p1.Attributes.Add("style", "display:none;");
+                        p1.Controls.Add(t1);
+
+                        if (t2.Text != "")
+                        {
+                            p1.Controls.Add(t2);
+                        }
+                        e.Cell.Controls.Add(p1);
+                        e.Cell.Height = 50;
+                        e.Cell.Attributes.Add("onmouseover", "ShowInfo('" + p1.ClientID + "')");
+                        e.Cell.Attributes.Add("onmouseout", "HideInfo('" + p1.ClientID + "')");
+
+
+                    }
+                    else if (item.salaoChurrasco == true & item.salaoFesta == true & item.statusPagamento != "S")
+                    {
+
+                        e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#FB9FB7");
+                        TextBox t1 = new TextBox();
+                        t1.Font.Bold = true;
+                        t1.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
+                        t1.Width = 70;
+                        t1.Height = 20;
+                        t1.TextMode = TextBoxMode.SingleLine;
+                        t1.Font.Size = 9;
+                        t1.ForeColor = Color.Black;
+
+                        TextBox t2 = new TextBox();
+                        t2.Font.Bold = true;
+                        t2.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
+                        t2.Width = 70;
+                        t2.Height = 20;
+                        t2.TextMode = TextBoxMode.SingleLine;
+                        t2.Font.Size = 9;
+                        t2.ForeColor = Color.Black;
+                        int count = 0;
+
+                        OeventCalendar = oAgenda.listaEventos_ByCalendar(item.dataAgendamento);
+                        foreach (var quemAlugou in OeventCalendar)
+                        {
+                            if (OeventCalendar.Count >= 2)
+                                if (count == 0)
+                                {
+                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento;
+                                    count = 1;
+                                }
+                                else
+                                {
+                                    t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento;
+                                }
+                            else
+                            {
+                                t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento;
+                                t1.Text = "As duas P/";
+                            }
+
+                        }
+
+                        Panel p1 = new Panel();
+                        p1.ID = "p" + e.Day.DayNumberText + e.Day.Date.Month.ToString(); ;
+                        p1.Attributes.Add("style", "display:none;");
+                        p1.Attributes.Add("style", "display:none;");
+                        p1.Controls.Add(t1);
+
+                        if (t2.Text != "")
+                        {
+                            p1.Controls.Add(t2);
+                        }
+                        e.Cell.Controls.Add(p1);
+                        e.Cell.Height = 50;
+                        e.Cell.Attributes.Add("onmouseover", "ShowInfo('" + p1.ClientID + "')");
+                        e.Cell.Attributes.Add("onmouseout", "HideInfo('" + p1.ClientID + "')");
+
+                        e.Day.IsSelectable = false;
+                    }
+
+                    /* FIM */
+
                 }
             }
+
+
+
+
+
+
         }
 
 

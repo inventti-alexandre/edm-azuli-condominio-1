@@ -13,6 +13,7 @@ namespace Azuli.Web.Model
         public bool salaoChurrasco { get; set;}
         public int contadorChurrasco { get; set; }
         public int contadorFesta { get; set; }
+        public string statusPagamento { get; set; }
     }
 
     public class listAgenda : List<AgendaModel> { };

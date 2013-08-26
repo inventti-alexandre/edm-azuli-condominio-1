@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azuli.Acess.Control", "Azul
 		{D3EAAE17-F780-43B2-96D9-F884599E9E98} = {D3EAAE17-F780-43B2-96D9-F884599E9E98}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azuli.Crystal.Relatorios", "Azuli.Crystal.Relatorios\Azuli.Crystal.Relatorios.csproj", "{AAA71ED7-75F4-4DE7-8C83-5611DE3D45D4}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -52,6 +54,10 @@ Global
 		{328F6C69-4E2B-49CF-8C9D-345DF3AE9AC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{328F6C69-4E2B-49CF-8C9D-345DF3AE9AC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{328F6C69-4E2B-49CF-8C9D-345DF3AE9AC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAA71ED7-75F4-4DE7-8C83-5611DE3D45D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAA71ED7-75F4-4DE7-8C83-5611DE3D45D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAA71ED7-75F4-4DE7-8C83-5611DE3D45D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAA71ED7-75F4-4DE7-8C83-5611DE3D45D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

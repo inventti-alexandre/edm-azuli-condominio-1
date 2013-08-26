@@ -90,6 +90,8 @@
     <Content Include="GerenciarClassificadoMorador.aspx" />
     <Content Include="images\0ae1500.jpg" />
     <Content Include="images\add.png" />
+    <Content Include="images\AmareloPendente.png" />
+    <Content Include="images\azulPendente.png" />
     <Content Include="images\boton_responder.gif" />
     <Content Include="images\class.jpg" />
     <Content Include="images\classificados.jpg" />
@@ -129,6 +131,7 @@
     <Content Include="images\sgcv5.jpg" />
     <Content Include="images\tel.jpg" />
     <Content Include="images\tela-manutencao1.jpg" />
+    <Content Include="images\vermelhoPendente.png" />
     <Content Include="images\votar.jpg" />
     <Content Include="images\word.gif" />
     <Content Include="liberaAcessoAdmin.aspx" />

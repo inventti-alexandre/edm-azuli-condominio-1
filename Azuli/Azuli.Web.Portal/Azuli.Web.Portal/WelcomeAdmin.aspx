@@ -10,39 +10,25 @@
         .controleCalendario
         {
         }
-        .style8
-        {
-            width: 731px;
-        }
         .style9
         {
             font-size: xx-small;
         }
-        .style15
+        .style23
         {
-            width: 234px;
+            width: 913px;
         }
-        .style16
+        .style24
         {
-            width: 182px;
+            width: 315px;
         }
-        .style18
+        .style25
         {
-            border: 1px solid #999999;
-            height: 272px;
-            background-color: white;
-            font-family: Verdana;
-            font-size: 6pt;
-            font-weight: normal;
-            text-align: left;
-            padding: 0px 2px 0px 2px;
-            margin: 0px 15px 0px 3px;
-            width: 874px;
-            border-radius: 1em;
+            width: 233px;
         }
-        .style19
+        .style26
         {
-            width: 177px;
+            width: 244px;
         }
     </style>
     <script type="text/javascript">
@@ -62,59 +48,71 @@
     <fieldset class="loginDisplayLegend">
         <legend class="accordionContent">Gerenciador de Tarefas</legend>
         <div id="Div1" runat="server" align="center">
-            <table align="center" style="width: 889px">
+            <table align="center" style="width: 883px">
                 <tr>
-                    <td align="center" class="style18">
-                        <asp:Label ID="Label4" runat="server" Text="Gerenciamento de Reservas" CssClass="accordionContent"
-                            Font-Bold="True"></asp:Label>
-                        <br />
-                        <br />
-                        <br />
+                    <td align="center" class="style23">
+                       
+                 
                         <asp:Calendar ID="Calendar2" runat="server" BackColor="White" Font-Names="Verdana"
-                            Font-Size="8pt" ForeColor="Black" Height="360px" Width="759px" BorderWidth="1px"
+                            Font-Size="8pt" ForeColor="Black" Height="336px" Width="718px" BorderWidth="1px"
                             OnDayRender="Calendar1_DayRender" ShowGridLines="True" 
                             NextPrevFormat="FullMonth">
                             <DayHeaderStyle Font-Bold="True" Height="1px" BackColor="#CCCCCC" />
+                            <DayStyle Font-Bold="True" Font-Size="Small" />
                             <NextPrevStyle Font-Bold="True" Font-Size="9pt" ForeColor="#666666" />
                             <OtherMonthDayStyle ForeColor="#CC9966" />
-                            <SelectedDayStyle BackColor="#CCCCFF" Font-Bold="True" />
+                            <SelectedDayStyle Font-Bold="True" />
                             <SelectorStyle BackColor="#FFCC66" />
                             <TitleStyle BackColor="#E0E0E0" Font-Bold="True" Font-Size="9pt" ForeColor="Black" />
                             <TodayDayStyle ForeColor="#009900" />
                         </asp:Calendar>
                         <br />
-                        <table id="tbLegend" runat="server" align="center" style="width: 868px" 
+                        <table id="tbLegend" runat="server" align="center" style="width: 881px" 
                             class="accordionContent">
                             <tr class="style9">
-                                <td align="justify" class="style16">
-                                    <asp:ImageButton ID="imgFesta" runat="server" Height="18px" ImageUrl="~/images/azul.jpg"
-                                        Width="16px" />
-                                    <span class="style8">&nbsp;<b>Salão de</b> <b>Festa&nbsp; - Reservado</b> </span>
+                                <td align="justify" class="style25">
+                                    <asp:ImageButton ID="imgFesta" runat="server" Height="30px" ImageUrl="~/images/azul.jpg"
+                                        Width="31px" />
+                                    <asp:Label ID="lblSlfReservado" runat="server" 
+                                        style="font-weight: 700; font-family: Calibri; font-size: 14pt" 
+                                        Text="SL de Festa-  Reservado"></asp:Label>
                                 </td>
-                                <td align="justify" class="style19">
-                                    <asp:ImageButton ID="ImageButton2" runat="server" Height="18px" ImageUrl="~/images/amarelo.jpg"
-                                        Width="16px" />
-                                    <span class="style8">&nbsp;<b>Churrasqueira - Reservada</b></span></td>
-                                <td>
-                                    <asp:ImageButton ID="imgFesta1" runat="server" Height="18px" ImageUrl="~/images/vermelho.jpg"
-                                        Width="16px" />
-                                    &nbsp;<strong>Salão</strong> <b>Festa &amp; Churrasqueira - Reservada</b></td>
+                                <td align="justify" class="style26">
+                                    <asp:ImageButton ID="ImageButton2" runat="server" Height="31px" ImageUrl="~/images/amarelo.jpg"
+                                        Width="30px" />
+                                    &nbsp;<asp:Label ID="lblChurrasReservada" runat="server" 
+                                        style="font-weight: 700; font-family: Calibri; font-size: 14pt" 
+                                        Text="Churras. - Reservada"></asp:Label>
+                                </td>
+                                <td align="left" class="style24">
+                                    <asp:ImageButton ID="imgFesta1" runat="server" Height="30px" ImageUrl="~/images/vermelho.jpg"
+                                        Width="31px" />
+                                    &nbsp;<asp:Label ID="Label5" runat="server" 
+                                        style="font-weight: 700; font-family: Calibri; font-size: 14pt" 
+                                        Text="Churras/SL Festa - Reservada"></asp:Label>
+                                </td>
                             </tr>
                              <tr class="style9">
-                                <td align="justify" class="style16">
-                                    <asp:ImageButton ID="ImageButton1" runat="server" Height="18px" ImageUrl="~/images/azul.jpg"
-                                        Width="16px" />
-                                    <span class="style8">&nbsp;<strong>SL</strong> <b>de Festa - Pendente de 
-                                    Pagamento</b></span></td>
-                                <td align="justify" class="style19">
-                                    <asp:ImageButton ID="ImageButton3" runat="server" Height="18px" ImageUrl="~/images/amarelo.jpg"
-                                        Width="16px" />
-                                    <span class="style8">&nbsp;<b>Churrasco Alugada</b>&nbsp;</span>
+                                <td align="justify" class="style25">
+                                    <asp:ImageButton ID="ImageButton1" runat="server" Height="30px" ImageUrl="~/images/azulPendente.png"
+                                        Width="31px" />
+                                    <span>&nbsp;<asp:Label ID="lblPendentePg" runat="server" 
+                                        style="font-weight: 700; font-family: Calibri; font-size: 14pt; color: #CC0000" 
+                                        Text="SL Festa Pendente de PG"></asp:Label>
+                                    </span></td>
+                                <td align="justify" class="style26">
+                                    <asp:ImageButton ID="ImageButton3" runat="server" Height="31px" ImageUrl="~/images/AmareloPendente.png"
+                                        Width="30px" />
+                                    &nbsp;<asp:Label ID="Label4" runat="server" 
+                                        style="font-weight: 700; font-family: Calibri; font-size: 14pt; color: #CC0000" 
+                                        Text="Churras. - Pendente de PG"></asp:Label>
                                 </td>
-                                <td align="justify" class="style15">
-                                    <asp:ImageButton ID="ImageButton4" runat="server" Height="18px" ImageUrl="~/images/vermelho.jpg"
-                                        Width="16px" />
-                                    &nbsp;<b>Festa/Churras Alugada</b>
+                                <td align="justify" class="style24">
+                                    <asp:ImageButton ID="ImageButton4" runat="server" Height="30px" ImageUrl="~/images/vermelhoPendente.png"
+                                        Width="31px" />
+                                    &nbsp;<asp:Label ID="Label6" runat="server" 
+                                        style="font-weight: 700; font-family: Calibri; font-size: 14pt; color: #CC0000" 
+                                        Text="Churras/SL Festa - Pendente de PG"></asp:Label>
                                 </td>
                             </tr>
                         </table>
