@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using Azuli.Web.Business;
 using Azuli.Web.Model;
 using System.Drawing;
-using System.Drawing;
+using System.Web.UI.HtmlControls;
 
 namespace Azuli.Web.Portal
 {
@@ -81,30 +81,48 @@ namespace Azuli.Web.Portal
                     {
 
                        // e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#FFFF01");
-                        TextBox t1 = new TextBox();
+                        Label t1 = new Label();
                         t1.Font.Bold = true;
                         t1.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
-                        t1.Width = 90;
+                        t1.Width = 135;
                         t1.Height = 20;
-                        t1.TextMode = TextBoxMode.SingleLine;
+                        
+                        t1.Font.Name = "Calibri";
                         t1.Font.Size = 8;
                         t1.ForeColor = Color.Black;
 
-                        System.Web.UI.WebControls.Image imgReserva = new System.Web.UI.WebControls.Image();
-                        imgReserva.Width = 20;
-                        imgReserva.Height = 20;
+
+                        HyperLink linkPendenceSLFP = new HyperLink();
+                        linkPendenceSLFP.Font.Size = 8;
+                        
+                        linkPendenceSLFP.Width = 135;
+                        linkPendenceSLFP.Height = 20;
+
+
+                        HyperLink linkPendenceCHP = new HyperLink();
+                        linkPendenceCHP.Font.Size = 8;
+                        linkPendenceCHP.ForeColor = Color.Red;
+                        linkPendenceCHP.Height = 20;
+                        linkPendenceCHP.Width = 135;
+                        
+
+                       
 
 
 
-
-                        TextBox t2 = new TextBox();
+                        Label t2 = new Label();
                         t2.Font.Bold = true;
                         t2.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
-                        t2.Width = 90;
+                        t2.Width = 135;
                         t2.Height = 20;
-                        t2.TextMode = TextBoxMode.SingleLine;
+                        
                         t2.Font.Size = 8;
                         t2.ForeColor = Color.Black;
+
+                       
+                        
+                        
+
                         int count = 0;
                       
                         OeventCalendar = oAgenda.listaEventos_ByCalendar(item.dataAgendamento);
@@ -116,32 +134,39 @@ namespace Azuli.Web.Portal
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
                                         status = "SFP";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Red;
-                                        imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                        linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        //t1.ForeColor = Color.Red;
+                                        
                                     }
                                     else
                                     {
                                         status = "SFR";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
                                         t1.ForeColor = Color.Green;
-                                        imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
                                         status = "CHP";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Red;
-                                        imgReserva.ImageUrl = "images/churrasco.jpg";
+                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco="+quemAlugou.ap.bloco+"apto="+quemAlugou.ap.apartamento+"data="+quemAlugou.dataAgendamento+"status"+quemAlugou.statusPagamento;
+                                        
+                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        //t2.ForeColor = Color.Red;
+                                        
+                                        
                                     }
                                     else
                                     {
                                         status = "CHR";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Green;
-                                        imgReserva.ImageUrl = "images/churrasco.jpg";
+                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t2.ForeColor = Color.FromName("#FF9900");
+                                        
                                     }
-                                   // t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status ;
+                                   // t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status ;
                                     count = 1;
                                 }
                                 else
@@ -149,33 +174,39 @@ namespace Azuli.Web.Portal
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
                                         status = "SFP";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Red;
-                                        imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                       // t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                       //t1.ForeColor = Color.Red;
+                                        linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                        
                                     }
                                     else
                                     {
                                         status = "SFR";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Green;
-                                        imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t1.ForeColor = Color.Green;
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
                                         status = "CHP";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Red;
-                                        imgReserva.ImageUrl = "images/churrasco.jpg";
+                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                       
+                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        //t2.ForeColor = Color.Red;
+                                        
 
                                     }
                                     else
                                     {
                                         status = "CHR";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Green;
-                                        imgReserva.ImageUrl = "images/churrasco.jpg";
+                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t2.ForeColor = Color.FromName("#FF9900");
+                                        
                                     }
-                                   // t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                                   // t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
                                 }
                             else
                             {
@@ -183,33 +214,40 @@ namespace Azuli.Web.Portal
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                 {
                                     status = "SFP";
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Red;
-                                    imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                    linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                    linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+
+                                    //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    //t1.ForeColor = Color.Red;
+                                    
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                 {
                                     status = "SFR";
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                                    t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
                                     t1.ForeColor = Color.Green;
-                                    imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                    
                                 }
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                 {
                                     status = "CHP";
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Red;
-                                    imgReserva.ImageUrl = "images/churrasco.jpg";
+                                    linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                       
+                                    //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    //t2.ForeColor = Color.Red;
+                                    
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                 {
                                     status = "CHR";
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Green;
-                                    imgReserva.ImageUrl = "images/churrasco.jpg";
+                                    t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    t2.ForeColor = Color.FromName("#FF9900");
+                                    
                                 }
                                
-                                //t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                                //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
 
                             }
 
@@ -219,17 +257,29 @@ namespace Azuli.Web.Portal
                         p1.ID = "p" + e.Day.DayNumberText + e.Day.Date.Month.ToString(); ;
                         p1.Attributes.Add("style", "display:block;");
                         p1.Attributes.Add("style", "display:block;");
-                        p1.Controls.Add(t1);
-                        p1.Controls.Add(imgReserva);
+
+                        if (linkPendenceSLFP.Text != "")
+                        {
+                            p1.Controls.Add(linkPendenceSLFP);
+                        }
+                        if (linkPendenceCHP.Text != "")
+                        {
+                            p1.Controls.Add(linkPendenceCHP);
+                        }
+                        if (t1.Text != "")
+                        {
+                            p1.Controls.Add(t1);
+                        }
 
                         if (t2.Text != "")
                         {
                             p1.Controls.Add(t2);
                         }
+                       
                         e.Cell.Controls.Add(p1);
                         e.Cell.Height = 50;
-                        e.Cell.Attributes.Add("onmouseover", "ShowInfo('" + p1.ClientID + "')");
-                        e.Cell.Attributes.Add("onmouseout", "HideInfo('" + p1.ClientID + "')");
+                       // e.Cell.Attributes.Add("onmouseover", "ShowInfo('" + p1.ClientID + "')");
+                        //e.Cell.Attributes.Add("onmouseout", "HideInfo('" + p1.ClientID + "')");
 
 
 
@@ -238,25 +288,38 @@ namespace Azuli.Web.Portal
                     {
 
                        // e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#BADEF4");
-                        TextBox t1 = new TextBox();
+                        Label t1 = new Label();
                         t1.Font.Bold = true;
                         t1.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
-                        t1.Width = 90;
+                        t1.Width = 135;
                         t1.Height = 20;
-                        t1.TextMode = TextBoxMode.SingleLine;
+                        
                         t1.Font.Size = 8;
                         t1.ForeColor = Color.Black;
 
-                        System.Web.UI.WebControls.Image imgReserva = new System.Web.UI.WebControls.Image();
-                        imgReserva.Width = 20;
-                        imgReserva.Height = 20;
 
-                        TextBox t2 = new TextBox();
+                        HyperLink linkPendenceSLFP = new HyperLink();
+                        linkPendenceSLFP.Font.Size = 8;
+                        
+                        linkPendenceSLFP.Width = 135;
+                        linkPendenceSLFP.Height = 20;
+
+
+                        HyperLink linkPendenceCHP = new HyperLink();
+                        linkPendenceCHP.Font.Size = 8;
+                        linkPendenceCHP.ForeColor = Color.Red;
+                        linkPendenceCHP.Height = 20;
+                        linkPendenceCHP.Width = 135;
+                        
+                        
+                        
+
+                        Label t2 = new Label();
                         t2.Font.Bold = true;
                         t2.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
-                        t2.Width = 90;
+                        t2.Width = 135;
                         t2.Height = 20;
-                        t2.TextMode = TextBoxMode.SingleLine;
+                        
                         t2.Font.Size = 8;
                         t2.ForeColor = Color.Black;
                         int count = 0;
@@ -270,33 +333,41 @@ namespace Azuli.Web.Portal
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
                                         status = "SFP";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Red;
-                                        imgReserva.ImageUrl = "images/salaoFesta.jpg";
+
+                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        //t1.ForeColor = Color.Red;
+                                        
                                     }
 
                                     else
                                     {
                                         status = "SFR";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
                                         t1.ForeColor = Color.Green;
-                                        imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
                                         status = "CHP";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Red;
-                                        imgReserva.ImageUrl = "images/churrasco.jpg";
+                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                        
+                                        
+                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        //t2.ForeColor = Color.Red;
+                                        
                                     }
                                     else
                                     {
                                         status = "CHR";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Green;
-                                        imgReserva.ImageUrl = "images/churrasco.jpg";
+                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t2.ForeColor = Color.FromName("#FF9900");
                                     }
-                                   // t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                                   // t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
                                     count = 1;
                                 }
                                 else
@@ -304,64 +375,78 @@ namespace Azuli.Web.Portal
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
                                         status = "SFP";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Red;
-                                        imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                       // t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        //t1.ForeColor = Color.Red;
+                                        linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                        
                                     }
                                     else
                                     {
                                         status = "SFR";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Green;
-                                        imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t1.ForeColor = Color.Green;
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
                                         status = "CHP";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Red;
-                                        imgReserva.ImageUrl = "images/churrasco.jpg";
+                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                        
+                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        //t2.ForeColor = Color.Red;
+                                        
                                     }
                                     else
                                     {
                                         status = "CHR";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Green;
-                                        imgReserva.ImageUrl = "images/churrasco.jpg";
+                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t2.ForeColor = Color.FromName("#FF9900");
+                                        
                                     }
-                                    //t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                                    //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
                                 }
                             else
                             {
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                 {
                                     status = "SFP";
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Red;
-                                    imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                    //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    //t1.ForeColor = Color.Red;
+                                    linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                    linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                    
                                 }
                                 else
                                 {
                                     status = "SFR";
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                                    t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
                                     t1.ForeColor = Color.Green;
-                                    imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                    
                                 }
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                 {
                                     status = "CHP";
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Red;
-                                    imgReserva.ImageUrl = "images/churrasco.jpg";
+                                    //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    //t2.ForeColor = Color.Red;
+                                    linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                    linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                        
+                                    
                                 }
                                 else
                                 {
                                     status = "CHR";
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Green;
-                                    imgReserva.ImageUrl = "images/churrasco.jpg";
+                                    t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    t2.ForeColor = Color.FromName("#FF9900");
+                                    
                                 }
-                                // t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                                // t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
 
                             }
 
@@ -371,18 +456,30 @@ namespace Azuli.Web.Portal
                         p1.ID = "p" + e.Day.DayNumberText + e.Day.Date.Month.ToString(); ;
                         p1.Attributes.Add("style", "display:block;");
                         p1.Attributes.Add("style", "display:block;");
-                        p1.Controls.Add(t1);
-                        p1.Controls.Add(imgReserva);
 
+                        if (linkPendenceSLFP.Text != "")
+                        {
+                            p1.Controls.Add(linkPendenceSLFP);
+                        }
+                        if (linkPendenceCHP.Text != "")
+                        {
+                            p1.Controls.Add(linkPendenceCHP);
+                        }
+                        if (t1.Text != "")
+                        {
+                            p1.Controls.Add(t1);
+                        }
 
                         if (t2.Text != "")
                         {
                             p1.Controls.Add(t2);
                         }
+
+                       
                         e.Cell.Controls.Add(p1);
                         e.Cell.Height = 50;
-                        e.Cell.Attributes.Add("onmouseover", "ShowInfo('" + p1.ClientID + "')");
-                        e.Cell.Attributes.Add("onmouseout", "HideInfo('" + p1.ClientID + "')");
+                        //e.Cell.Attributes.Add("onmouseover", "ShowInfo('" + p1.ClientID + "')");
+                        //e.Cell.Attributes.Add("onmouseout", "HideInfo('" + p1.ClientID + "')");
 
 
                     }
@@ -390,27 +487,42 @@ namespace Azuli.Web.Portal
                     {
 
                       //  e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#AA0708");
-                        TextBox t1 = new TextBox();
+                        Label t1 = new Label();
                         t1.Font.Bold = true;
                         t1.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
-                        t1.Width = 90;
+                        t1.Width = 135;
                         t1.Height = 20;
-                        t1.TextMode = TextBoxMode.SingleLine;
+                        
                         t1.Font.Size = 8;
                         t1.ForeColor = Color.Black;
 
-                        System.Web.UI.WebControls.Image imgReserva = new System.Web.UI.WebControls.Image();
-                        imgReserva.Width = 20;
-                        imgReserva.Height = 20;
 
-                        TextBox t2 = new TextBox();
+                        HyperLink linkPendenceSLFP = new HyperLink();
+                        linkPendenceSLFP.Font.Size = 8;
+                        
+                        linkPendenceSLFP.Width = 135;
+                        linkPendenceSLFP.Height = 20;
+
+
+                        HyperLink linkPendenceCHP = new HyperLink();
+                        linkPendenceCHP.Font.Size = 8;
+                        linkPendenceCHP.ForeColor = Color.Red;
+                        linkPendenceCHP.Height = 20;
+                        linkPendenceCHP.Width = 135;
+                        
+
+                        Label t2 = new Label();
                         t2.Font.Bold = true;
                         t2.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
-                        t2.Width = 90;
+                        t2.Width = 135;
                         t2.Height = 20;
-                        t2.TextMode = TextBoxMode.SingleLine;
+                        
                         t2.Font.Size = 8;
                         t2.ForeColor = Color.Black;
+
+                       
+                        
+                        
                         int count = 0;
 
                         OeventCalendar = oAgenda.listaEventos_ByCalendar(item.dataAgendamento);
@@ -422,32 +534,39 @@ namespace Azuli.Web.Portal
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
                                         status = "SFP";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Red;
-                                        imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        //t1.ForeColor = Color.Red;
+                                        linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                     {
                                         status = "SFR";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
                                         t1.ForeColor = Color.Green;
-                                        imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
                                         status = "CHP";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Red;
-                                        imgReserva.ImageUrl = "images/churrasco.jpg";
+                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        //t2.ForeColor = Color.Red;
+                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                        
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                     {
                                         status = "CHR";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Green;
-                                        imgReserva.ImageUrl = "images/churrasco.jpg";
+                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t2.ForeColor = Color.FromName("#FF9900");
+                                        
                                     }
-                                    //t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                                    //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
                                     count = 1;
                                 }
                                 else
@@ -455,72 +574,76 @@ namespace Azuli.Web.Portal
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
                                         status = "SFP";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Red;
-                                        imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        //t1.ForeColor = Color.Red;
+                                        linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                     {
                                         status = "SFR";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Green;
-                                        imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t1.ForeColor = Color.Green;
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
                                         status = "CHP";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Red;
-                                        imgReserva.ImageUrl = "images/churrasco.jpg";
+                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        //t2.ForeColor = Color.Red;
+
+                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                     {
                                         status = "CHR";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Green;
-                                        imgReserva.ImageUrl = "images/churrasco.jpg";
+                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t2.ForeColor = Color.FromName("#FF9900");
+                                        
                                     }
-                                   // t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                                   // t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
                                 }
                             else
                             {
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                 {
                                     status = "SFP";
-                                    t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t2.ForeColor = Color.Red;
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Red;
-                                    imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                    //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    //t1.ForeColor = Color.Red;
+                                    linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                    linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                 {
                                     status = "SFR";
-                                    t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t2.ForeColor = Color.Green;
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                                    t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
                                     t1.ForeColor = Color.Green;
-                                    imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                    
                                 }
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                 {
                                     status = "CHP";
-                                    t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t2.ForeColor = Color.Red;
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Red;
-                                    imgReserva.ImageUrl = "images/churrasco.jpg";
+                                    //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    //t2.ForeColor = Color.Red;
+                                    linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                    linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                        
+                                    
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                 {
                                     status = "CHR";
-                                    t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t2.ForeColor = Color.Green;
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Green;
-                                    imgReserva.ImageUrl = "images/churrasco.jpg";
+                                    t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    t2.ForeColor = Color.FromName("#FF9900");
                                 }
-                               // t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                               // t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
                                // t1.Text = "As duas P/";
                             }
 
@@ -530,15 +653,28 @@ namespace Azuli.Web.Portal
                         p1.ID = "p" + e.Day.DayNumberText + e.Day.Date.Month.ToString(); ;
                         p1.Attributes.Add("style", "display:block;");
                         p1.Attributes.Add("style", "display:block;");
-                        p1.Controls.Add(t1);
 
-                        p1.Controls.Add(imgReserva);
+                        if (linkPendenceSLFP.Text != "")
+                        {
+                            p1.Controls.Add(linkPendenceSLFP);
+                        }
+                        if (linkPendenceCHP.Text != "")
+                        {
+                            p1.Controls.Add(linkPendenceCHP);
+                        }
+                        if (t1.Text != "")
+                        {
+                            p1.Controls.Add(t1);
+                        }
 
                         if (t2.Text != "")
                         {
                             p1.Controls.Add(t2);
                         }
+
+                       
                         e.Cell.Controls.Add(p1);
+                       
                         e.Cell.Height = 50;
                         e.Cell.Attributes.Add("onmouseover", "ShowInfo('" + p1.ClientID + "')");
                         e.Cell.Attributes.Add("onmouseout", "HideInfo('" + p1.ClientID + "')");
@@ -552,26 +688,40 @@ namespace Azuli.Web.Portal
                     {
 
                       //  e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#FF8000");
-                        TextBox t1 = new TextBox();
+                        Label t1 = new Label();
                         t1.Font.Bold = true;
                         t1.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
-                        t1.Width = 90;
+                        t1.Width = 135;
                         t1.Height = 20;
-                        t1.TextMode = TextBoxMode.SingleLine;
+                        
                         t1.Font.Size = 8;
                         t1.ForeColor = Color.Black;
 
 
-                        System.Web.UI.WebControls.Image imgReserva = new System.Web.UI.WebControls.Image();
-                        imgReserva.Width = 20;
-                        imgReserva.Height = 20;
+                        HyperLink linkPendenceSLFP = new HyperLink();
+                        linkPendenceSLFP.Font.Size = 8;
+                        
+                        linkPendenceSLFP.Width = 135;
+                        linkPendenceSLFP.Height = 20;
 
-                        TextBox t2 = new TextBox();
+
+                        HyperLink linkPendenceCHP = new HyperLink();
+                        linkPendenceCHP.Font.Size = 8;
+                        linkPendenceCHP.ForeColor = Color.Red;
+                        linkPendenceCHP.Height = 20;
+                        linkPendenceCHP.Width = 135;
+                        
+
+                       
+                        
+                        
+
+                        Label t2 = new Label();
                         t2.Font.Bold = true;
                         t2.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
-                        t2.Width = 90;
+                        t2.Width = 135;
                         t2.Height = 20;
-                        t2.TextMode = TextBoxMode.SingleLine;
+                        
                         t2.Font.Size = 8;
                         t2.ForeColor = Color.Black;
                         int count = 0;
@@ -585,32 +735,38 @@ namespace Azuli.Web.Portal
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
                                         status = "SFP";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Red;
-                                        imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        //t1.ForeColor = Color.Red;
+                                        linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                     {
                                         status = "SFR";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
                                         t1.ForeColor = Color.Green;
-                                        imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
                                         status = "CHP";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Red;
-                                        imgReserva.ImageUrl = "images/churrasco.jpg";
+                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        //t2.ForeColor = Color.Red;
+                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                        
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                     {
                                         status = "CHR";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Green;
-                                        imgReserva.ImageUrl = "images/churrasco.jpg";
+                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t2.ForeColor = Color.FromName("#FF9900");
                                     }
-                                   // t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                                   // t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
                                     count = 1;
                                 }
                                 else
@@ -618,64 +774,78 @@ namespace Azuli.Web.Portal
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
                                         status = "SFP";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Red;
-                                        imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        //t1.ForeColor = Color.Red;
+                                        linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                     {
                                         status = "SFR";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Green;
-                                        imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t1.ForeColor = Color.Green;
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
                                         status = "CHP";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Red;
-                                        imgReserva.ImageUrl = "images/churrasco.jpg";
+                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        //t2.ForeColor = Color.Red;
+
+                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                     {
                                         status = "CHR";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Green;
-                                        imgReserva.ImageUrl = "images/churrasco.jpg";
+                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t2.ForeColor = Color.FromName("#FF9900");
+                                        
                                     }
-                                   // t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                                   // t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
                                 }
                             else
                             {
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                 {
                                     status = "SFP";
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Red;
-                                    imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                    //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    //t1.ForeColor = Color.Red;
+                                    linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                    linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                    
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                 {
                                     status = "SFR";
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                                    t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
                                     t1.ForeColor = Color.Green;
-                                    imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                    
                                 }
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                 {
                                     status = "CHP";
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Red;
-                                    imgReserva.ImageUrl = "images/churrasco.jpg";
+                                    //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    //t2.ForeColor = Color.Red;
+                                    linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                    linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                        
+                                    
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                 {
                                     status = "CHR";
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Green;
-                                    imgReserva.ImageUrl = "images/churrasco.jpg";
+                                    t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    t2.ForeColor = Color.FromName("#FF9900");
+                                    
                                 }
-                                //t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                                //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
 
                             }
 
@@ -685,12 +855,20 @@ namespace Azuli.Web.Portal
                         p1.ID = "p" + e.Day.DayNumberText + e.Day.Date.Month.ToString(); ;
                         p1.Attributes.Add("style", "display:block;");
                         p1.Attributes.Add("style", "display:block;");
-                        p1.Controls.Add(t1);
+                        
 
-
-                        p1.Controls.Add(imgReserva);
-                        imgReserva.Width = 20;
-                        imgReserva.Height = 20;
+                        if (linkPendenceSLFP.Text != "")
+                        {
+                            p1.Controls.Add(linkPendenceSLFP);
+                        }
+                        if (linkPendenceCHP.Text != "")
+                        {
+                            p1.Controls.Add(linkPendenceCHP);
+                        }
+                        if (t1.Text != "")
+                        {
+                            p1.Controls.Add(t1);
+                        }
 
                         if (t2.Text != "")
                         {
@@ -708,26 +886,39 @@ namespace Azuli.Web.Portal
                     {
 
                        // e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#1B6C81");
-                        TextBox t1 = new TextBox();
+                        Label t1 = new Label();
                         t1.Font.Bold = true;
                         t1.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
-                        t1.Width = 90;
+                        t1.Width = 135;
                         t1.Height = 20;
-                        t1.TextMode = TextBoxMode.SingleLine;
+                        
                         t1.Font.Size = 8;
                         t1.ForeColor = Color.Black;
 
 
-                        System.Web.UI.WebControls.Image imgReserva = new System.Web.UI.WebControls.Image();
-                        imgReserva.Width = 20;
-                        imgReserva.Height = 20;
+                        HyperLink linkPendenceSLFP = new HyperLink();
+                        linkPendenceSLFP.Font.Size = 8;
+                        
+                        linkPendenceSLFP.Width = 135;
+                        linkPendenceSLFP.Height = 20;
 
-                        TextBox t2 = new TextBox();
+
+                        HyperLink linkPendenceCHP = new HyperLink();
+                        linkPendenceCHP.Font.Size = 8;
+                        linkPendenceCHP.ForeColor = Color.Red;
+                        linkPendenceCHP.Height = 20;
+                        linkPendenceCHP.Width = 135;
+                        
+                       
+                        
+                        
+
+                        Label t2 = new Label();
                         t2.Font.Bold = true;
                         t2.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
-                        t2.Width = 90;
+                        t2.Width = 135;
                         t2.Height = 20;
-                        t2.TextMode = TextBoxMode.SingleLine;
+                        
                         t2.Font.Size = 8;
                         t2.ForeColor = Color.Black;
                         int count = 0;
@@ -741,30 +932,37 @@ namespace Azuli.Web.Portal
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
                                         status = "SFP";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Red;
-                                        imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                       // t1.ForeColor = Color.Red;
+                                        linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                     {
                                         status = "SFR";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
                                         t1.ForeColor = Color.Green;
-                                        imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
                                         status = "CHP";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Red;
-                                        imgReserva.ImageUrl = "images/churrasco.jpg";
+                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                        
+                                       // t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                       // t2.ForeColor = Color.Red;
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                     {
                                         status = "CHR";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Green;
-                                        imgReserva.ImageUrl = "images/churrasco.jpg";
+                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t2.ForeColor = Color.FromName("#FF9900");
+                                        
                                     }
                                    
                                     count = 1;
@@ -774,62 +972,75 @@ namespace Azuli.Web.Portal
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
                                         status = "SFP";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Red;
-                                        imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        //t1.ForeColor = Color.Red;
+                                        linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                     {
                                         status = "SFR";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Green;
-                                        imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t1.ForeColor = Color.Green;
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
                                         status = "CHP";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Red;
-                                        imgReserva.ImageUrl = "images/churrasco.jpg";
+                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        //t2.ForeColor = Color.Red;
+                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                        
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                     {
                                         status = "CHR";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Green;
-                                        imgReserva.ImageUrl = "images/churrasco.jpg";
+                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t2.ForeColor = Color.FromName("#FF9900");
                                     }
-                                    t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status; 
+                                    t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status; 
                                 }
                             else
                             {
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                 {
                                     status = "SFP";
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Red;
-                                    imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                    //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    // t1.ForeColor = Color.Red;
+                                    linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                    linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                    
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                 {
                                     status = "SFR";
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                                    t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
                                     t1.ForeColor = Color.Green;
-                                    imgReserva.ImageUrl = "images/salaoFesta.jpg";
+                                    
                                 }
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                 {
                                     status = "CHP";
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Red;
-                                    imgReserva.ImageUrl = "images/churrasco.jpg";
+                                    //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    //t2.ForeColor = Color.Red;
+                                    linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                    linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                        
+                                    
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                 {
                                     status = "CHR";
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Green;
-                                    imgReserva.ImageUrl = "images/churrasco.jpg";
+                                    t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    t2.ForeColor = Color.FromName("#FF9900");
+                                    
                                 }
                             
 
@@ -841,9 +1052,20 @@ namespace Azuli.Web.Portal
                         p1.ID = "p" + e.Day.DayNumberText + e.Day.Date.Month.ToString(); ;
                         p1.Attributes.Add("style", "display:block;");
                         p1.Attributes.Add("style", "display:block;");
-                        p1.Controls.Add(t1);
+                       
 
-                        p1.Controls.Add(imgReserva);
+                        if (linkPendenceSLFP.Text != "")
+                        {
+                            p1.Controls.Add(linkPendenceSLFP);
+                        }
+                        if (linkPendenceCHP.Text != "")
+                        {
+                            p1.Controls.Add(linkPendenceCHP);
+                        }
+                        if (t1.Text != "")
+                        {
+                            p1.Controls.Add(t1);
+                        }
 
                         if (t2.Text != "")
                         {
@@ -860,26 +1082,38 @@ namespace Azuli.Web.Portal
                     {
 
                        // e.Cell.BackColor = System.Drawing.ColorTranslator.FromHtml("#FB9FB7");
-                        TextBox t1 = new TextBox();
+                        Label t1 = new Label();
                         t1.Font.Bold = true;
                         t1.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
-                        t1.Width = 90;
+                        t1.Width = 135;
                         t1.Height = 20;
-                        t1.TextMode = TextBoxMode.SingleLine;
+                        
                         t1.Font.Size = 8;
                         t1.ForeColor = Color.Black;
 
 
-                        System.Web.UI.WebControls.Image imgReserva = new System.Web.UI.WebControls.Image();
-                        imgReserva.Width = 20;
-                        imgReserva.Height = 20;
+                       
+                        HyperLink linkPendenceSLFP = new HyperLink();
+                        linkPendenceSLFP.Font.Size = 8;
+                        
+                        linkPendenceSLFP.Width = 135;
+                        linkPendenceSLFP.Height = 20;
+                        
 
-                        TextBox t2 = new TextBox();
+                        HyperLink linkPendenceCHP = new HyperLink();
+                        linkPendenceCHP.Font.Size = 8;
+                        linkPendenceCHP.ForeColor = Color.Red;
+                        linkPendenceCHP.Height = 20;
+                        linkPendenceCHP.Width = 135;
+                        
+                        
+
+                        Label t2 = new Label();
                         t2.Font.Bold = true;
                         t2.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
-                        t2.Width = 90;
+                        t2.Width = 135;
                         t2.Height = 20;
-                        t2.TextMode = TextBoxMode.SingleLine;
+                        
                         t2.Font.Size = 8;
                         t2.ForeColor = Color.Black;
                         int count = 0;
@@ -893,26 +1127,38 @@ namespace Azuli.Web.Portal
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
                                         status = "SFP";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Red;
+                                        linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                        
+                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        //t1.ForeColor = Color.Red;
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                     {
                                         status = "SFR";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
                                         t1.ForeColor = Color.Green;
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
                                         status = "CHP";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Red;
+                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                        
+                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        //t2.ForeColor = Color.Red;
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                     {
                                         status = "CHR";
-                                        t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Green;
+                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t2.ForeColor = Color.FromName("#FF9900");
+                                        
                                     }
                                    
                                     count = 1;
@@ -922,26 +1168,37 @@ namespace Azuli.Web.Portal
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
                                         status = "SFP";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Red;
+                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                       // t1.ForeColor = Color.Red;
+                                        linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                     {
                                         status = "SFR";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Green;
+                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t1.ForeColor = Color.Green;
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
                                         status = "CHP";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Red;
+                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        //t2.ForeColor = Color.Red;
+                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                        
+                                        
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                     {
                                         status = "CHR";
-                                        t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.Green;
+                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        t2.ForeColor = Color.FromName("#FF9900");
+                                        
                                     }
                                     
                                 }
@@ -950,34 +1207,38 @@ namespace Azuli.Web.Portal
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                 {
                                     status = "SFP";
-                                    t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t2.ForeColor = Color.Red;
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Red;
+                                    //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    //t1.ForeColor = Color.Red;
+                                    linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                    linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                 {
                                     status = "SFR";
-                                    t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t2.ForeColor = Color.Green;
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
+                                    t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
                                     t1.ForeColor = Color.Green;
+                                    
                                 }
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                 {
                                     status = "CHP";
-                                    t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t2.ForeColor = Color.Red;
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Red;
+                                    //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    //t2.ForeColor = Color.Red;
+                                    linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+
+                                    linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                        
+                                   
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                 {
                                     status = "CHR";
-                                    t2.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t2.ForeColor = Color.Green;
-                                    t1.Text = "B-" + quemAlugou.ap.bloco.ToString() + " A-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Green;
+                                    t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    t2.ForeColor = Color.FromName("#FF9900");
+                                    
+                                   
                                 }
                              
                                 //t1.Text = "As duas P/";
@@ -989,7 +1250,20 @@ namespace Azuli.Web.Portal
                         p1.ID = "p" + e.Day.DayNumberText + e.Day.Date.Month.ToString(); ;
                         p1.Attributes.Add("style", "display:block;");
                         p1.Attributes.Add("style", "display:block;");
-                        p1.Controls.Add(t1);
+                        
+
+                        if (linkPendenceSLFP.Text != "")
+                        {
+                            p1.Controls.Add(linkPendenceSLFP);
+                        }
+                        if (linkPendenceCHP.Text != "")
+                        {
+                            p1.Controls.Add(linkPendenceCHP);
+                        }
+                        if (t1.Text != "")
+                        {
+                            p1.Controls.Add(t1);
+                        }
 
                         if (t2.Text != "")
                         {

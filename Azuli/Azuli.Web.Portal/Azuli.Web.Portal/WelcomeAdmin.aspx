@@ -18,13 +18,19 @@
         {
             width: 913px;
         }
-        .style28
-        {
-            width: 421px;
-        }
         .style29
         {
             width: 429px;
+        }
+        .style30
+        {
+            width: 50px;
+            height: 31px;
+        }
+        .style31
+        {
+            width: 239px;
+            height: 211px;
         }
     </style>
     <script type="text/javascript">
@@ -40,59 +46,64 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
-    <br />
+    
     <fieldset class="loginDisplayLegend">
-        <legend class="accordionContent">Gerenciador de Tarefas</legend>
+        <legend class="accordionContent">Agendamento de Áreas Azuli </legend>
         <div id="Div1" runat="server" align="center">
-            <table align="center" style="width: 883px">
+            <table align="center" style="width: 883px; height: 493px;">
                 <tr>
                     <td align="center" class="style23">
                        
                  
                         <asp:Calendar ID="Calendar2" runat="server" BackColor="White" Font-Names="Verdana"
-                            Font-Size="8pt" ForeColor="Black" Height="338px" Width="824px" BorderWidth="1px"
+                            Font-Size="10pt" ForeColor="Black" Height="326px" Width="849px" BorderWidth="1px"
                             OnDayRender="Calendar1_DayRender" ShowGridLines="True" 
-                            NextPrevFormat="FullMonth" onselectionchanged="Calendar2_SelectionChanged">
+                            NextPrevFormat="FullMonth" onselectionchanged="Calendar2_SelectionChanged" 
+                            FirstDayOfWeek="Sunday">
                             <DayHeaderStyle Font-Bold="True" Height="1px" BackColor="#CCCCCC" />
-                            <DayStyle Font-Bold="True" Font-Size="Small" BackColor="#E0E0E0" />
+                            <DayStyle Font-Bold="True" Font-Size="Medium" BackColor="#E0E0E0" />
                             <NextPrevStyle Font-Bold="True" Font-Size="9pt" ForeColor="#666666" />
                             <OtherMonthDayStyle ForeColor="#CC9966" />
-                            <SelectedDayStyle Font-Bold="True" />
+                            <SelectedDayStyle Font-Bold="True" ForeColor="Blue" />
                             <SelectorStyle BackColor="#FFCC66" />
                             <TitleStyle BackColor="#E0E0E0" Font-Bold="True" Font-Size="9pt" ForeColor="Black" />
-                            <TodayDayStyle ForeColor="#009900" />
+                            <TodayDayStyle ForeColor="#0033CC" />
                         </asp:Calendar>
                         <br />
                         <table id="tbLegend" runat="server" align="center" 
                             class="accordionContent">
                             <tr class="style9">
-                                <td align="center" class="style29">
+                                <td align="justify" class="style29">
+                                    <img alt="" class="style30" src="images/salaoFesta.jpg" />
                                     <asp:Label ID="lblSlfReservado" runat="server" 
                                         style="font-weight: 700; font-family: Calibri; font-size: 14pt" 
                                         Text="SFR - Salão de Festa  Reservado" ForeColor="Green"></asp:Label>
                                 </td>
-                                <td align="center" class="style28">
-                                    &nbsp;<asp:Label ID="lblChurrasReservada" runat="server" 
-                                        style="font-weight: 700; font-family: Calibri; font-size: 14pt" 
-                                        Text="CHR -Churrasqueira Reservada" ForeColor="Green"></asp:Label>
+                                <td align="justify" class="style29">
+                                    <img alt="" class="style30" src="images/churrasco.jpg" /><asp:Label ID="Label5" 
+                                        runat="server" ForeColor="#FF9900" 
+                                        style="font-family: Calibri; font-size: 14pt; font-weight: 700" 
+                                        Text="CHR -Churrasqueira Reservada"></asp:Label>
                                 </td>
                             </tr>
                              <tr class="style9">
-                                <td align="center" class="style29">
+                                <td align="justify" class="style29">
                                     <span>
+                                    <img alt="" class="style30" src="images/salaoFesta.jpg" />
                                     <asp:Label ID="lblPendentePg" runat="server" 
                                         style="font-weight: 700; font-family: Calibri; font-size: 14pt; color: #CC0000" 
                                         Text="SFP - Salão de Festa Pendente de PG"></asp:Label>
                                     </span></td>
-                                <td align="center" class="style28">
-                                    &nbsp;<asp:Label ID="Label4" runat="server" 
-                                        style="font-weight: 700; font-family: Calibri; font-size: 14pt; color: #CC0000" 
-                                        Text="CHP -Churrasqueira Pendente de PG"></asp:Label>
+                                <td align="justify">
+                                    <img alt="" class="style30" src="images/churrasco.jpg" />&nbsp;<asp:Label 
+                                        ID="Label4" runat="server" 
+                                        style="font-weight: 700; font-family: Calibri; font-size: 14pt; color: #9900CC" 
+                                        Text="CHP -Churrasqueira Pendente de PG" ForeColor="#000099"></asp:Label>
                                 </td>
                             </tr>
                         </table>
                     </td>
-                    <td> </td>
+                    
                   <!-- Módulo desativado no momento - Para aceitação Inicial 
                     <td valign="top" class="watermarked">
                         <table>
@@ -180,9 +191,7 @@
                                 </td> -->
                             </tr>
                         </table>
-                    </td>
-                </tr>
-            </table>
+           
         </div>
     </fieldset>
 </asp:Content>
