@@ -94,6 +94,57 @@
         .accordionContent
         {
             font-size: 10pt;
+            width: 295px;
+        }
+        .style17
+        {
+            font-family: Verdana;
+            font-size: 15pt;
+        }
+        .style18
+        {
+            width: 66px;
+        }
+        .style19
+        {
+            font-size: 12pt;
+            font-weight: bold;
+        }
+        .style20
+        {
+            font-size: 12pt;
+            font-weight: bold;
+            width: 66px;
+        }
+        .style23
+        {
+            height: 18px;
+        }
+        .style25
+        {
+            width: 37px;
+            height: 19px;
+        }
+        .style26
+        {
+            width: 35px;
+            height: 22px;
+        }
+        .style27
+        {
+            font-weight: bold;
+            font-family: Verdana;
+            font-size: 15pt;
+            color: #006600;
+        }
+        .style28
+        {
+            width: 288px;
+        }
+        .style29
+        {
+            height: 18px;
+            width: 288px;
         }
     </style>
    
@@ -115,7 +166,7 @@
         ID="lnkBack" runat="server" CssClass="accordionContent" onclick="lnkBack_Click">Voltar para o calendário</asp:LinkButton>
 &nbsp; <hr />
     
-     <div id="dvPesquisaMorador" align="center" runat="server">
+    <center> <div id="dvPesquisaMorador" align="center" runat="server">
     
       <fieldset class="loginDisplayLegend">
      <legend align="left" class="style10">Agendamento para Moradores: </legend>
@@ -164,7 +215,7 @@
                         </tr>
                
         </table></center>
-  </fieldset> </div> 
+  </fieldset> </div> </center>
   
  <center> <asp:Label ID="lblMsgCadastro" runat="server" CssClass="failureNotification" 
          ForeColor="#0066FF"></asp:Label></center>
@@ -187,55 +238,164 @@
 
      <br /></center></fieldset></div>
 
-        <div id="dvDadosMorador" align="center" runat="server">
+     <div id="dvDadosMorador" align="center" runat="server">
      <fieldset class="loginDisplayLegend">
      <legend align="left" class="style10">&nbsp;<img alt="" class="style15" 
-             src="images/clientes.jpg" /> Dados do Morador</legend>
+             src="images/clientes.jpg" /> Dados do Morador para Reserva:</legend>
   
 
-      <center>  <table style="border: thin solid #C0C0C0; height: auto; width: 409px;" 
+    
+
+     <table style="border: thin solid #C0C0C0; height: auto; width: 466px;" 
               class="accordionContent">
             <tr>
-                <td align="center" style="margin-left: 40px">
-                    <table class="style1" border='0'>
+                <td align="center" style="margin-left: 40px" class="style18">
                         <tr>
-                            <td class="style6">
-                                <asp:Label ID="lblProprietario" runat="server" Font-Bold="True" Text="Nome:"></asp:Label>
+                            <td class="style20" align="right">
+                                <asp:Label ID="lblProprietario" runat="server" Font-Bold="True" Text="Nome:" 
+                                    CssClass="style17"></asp:Label>
                             </td>
-                            <td>
-                                <asp:Label ID="lblProprietarioDesc" runat="server" CssClass="style16"></asp:Label>
+                            <td align="center">
+                                <asp:Label ID="lblProprietarioDesc" runat="server" CssClass="style27"></asp:Label>
                             </td>
                         </tr>
                         <tr>
-                            <td class="style6">
-                                <asp:Label ID="lblBloco" runat="server" Font-Bold="True" Text="Bloco:"></asp:Label>
+                            <td class="style20" align="right">
+                                <asp:Label ID="lblBloco" runat="server" Font-Bold="True" Text="Bloco:" 
+                                    CssClass="style17"></asp:Label>
                             </td>
                             <td align="center">
-                                <asp:Label ID="lblBlocoDesc" runat="server" Text="6" CssClass="style16"></asp:Label>
+                                <asp:Label ID="lblBlocoDesc" runat="server" Text="6" CssClass="style27"></asp:Label>
                             </td>
                         </tr>
                        
                         <tr>
-                            <td class="style6">
-                                <asp:Label ID="Label1" runat="server" Font-Bold="True" Text="Apartamento: "></asp:Label>
+                            <td class="style20" align="right">
+                                <asp:Label ID="Label1" runat="server" Font-Bold="True" Text="APTO: " 
+                                    CssClass="style17"></asp:Label>
                             </td>
                             <td align="center">
-                                <asp:Label ID="lblApartDesc" runat="server" Text="301" CssClass="style16"></asp:Label>
+                                <asp:Label ID="lblApartDesc" runat="server" Text="301" CssClass="style27"></asp:Label>
                             </td>
+
                         </tr>
-                       
-                        </table>
-                    <br />
-                    <br />
-                    <asp:Button ID="btnOkPesquisa" runat="server" CssClass="botao" Text="Confirmar" 
+                       <tr>
+                       <td class="style19" colspan="2">
+                                     <asp:Button ID="btnOkPesquisa" runat="server" CssClass="botao" Text="Confirmar" 
                         Width="90px" onclick="btnOkPesquisa_Click" Height="27px" />
-&nbsp;&nbsp;&nbsp;&nbsp; 
-                    <asp:Button ID="btnCancel0" runat="server" CssClass="botao" 
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:Button ID="btnCancel0" runat="server" CssClass="botao" 
                         Text="Cancelar" onclick="btnCancel0_Click1"  />
+
+      
+
+        
+                            &nbsp;&nbsp;&nbsp;
+                                     <asp:LinkButton ID="lnkHistoricoReservas" runat="server">Histórico Reserva do Morador</asp:LinkButton>
+
+      
+
+        
+                            </td>
+                       
+                       </tr>
+                    
                 </td>
             </tr>
-        </table></center><br />
+        </table>
+
+       
+
+        
+        <br />
    </fieldset> </div>
+
+      
+                
+        <div id="dvSalaoEstatistica1"  runat="server" 
+                            
+        
+        
+        
+        
+        
+        
+        style="position: absolute; top: 226px; left: 688px; height: 86px; width: 274px;">
+        <table 
+              class="accordionContent">
+            <tr>
+                <td align="center">
+                
+                        <img alt="" class="style26" 
+                            src="images/salaoFesta.jpg" />&nbsp;
+                        <asp:Label 
+                            ID="Label23" runat="server" 
+                            style="font-weight: 700; font-family: Calibri; font-size: 12pt; color: #0000FF;" 
+                            Text="Salão de Festa"></asp:Label>
+                
+                        <tr>
+                            <td class="style23" align="center">
+                                <asp:Label ID="Label25" runat="server" Text="A ultima reserva foi a:" 
+                                    style="font-weight: 700"></asp:Label>
+                                &nbsp;<asp:Label ID="lblSalao" runat="server" CssClass="style16">5</asp:Label>
+                            &nbsp;<b>dia(s)</b></td>
+                        </tr>
+                    
+                </td>
+            </tr>
+                
+                        <tr>
+                            <td class="style23" align="center">
+                                <asp:Label ID="lblDataReservaUltima0" runat="server" style="font-weight: 700" 
+                                    Text="A data de Reserva foi:"></asp:Label>
+                                <asp:Label ID="lblDataUltimaReservaSalao0" runat="server" CssClass="style16">31/08/2013</asp:Label>
+                            </td>
+                        </tr>
+                    
+                </table>
+        </div>
+
+        <div id="dvChurras"  runat="server" 
+                            
+        
+        
+        
+        
+        
+        
+        style="position: absolute; top: 326px; left: 691px; height: 79px; width: 283px;">
+        <table 
+              class="accordionContent">
+            <tr>
+                <td align="center" class="style28">
+                
+                        <img alt="" class="style25" src="images/churrasco.jpg" />&nbsp; 
+                        <asp:Label 
+                            ID="Label2" runat="server" 
+                            style="font-weight: 700; font-family: Calibri; font-size: 12pt; color: #0000FF;" 
+                            Text="Churrasqueira "></asp:Label>
+                
+                        <tr>
+                            <td class="style29" align="left">
+                                <asp:Label ID="Label24" runat="server" Text="A ultima reserva foi a:" 
+                                    style="font-weight: 700"></asp:Label>
+                                &nbsp;<asp:Label ID="lblChurras" runat="server" CssClass="style16">5</asp:Label>
+                            &nbsp;<b>dia(s)</b></td>
+                        </tr>
+                    
+                </td>
+            </tr>
+                
+                        <tr>
+                            <td class="style29" align="left">
+                                <asp:Label ID="lblDataReservaUltima" runat="server" style="font-weight: 700" 
+                                    Text="A data de Reserva foi:"></asp:Label>
+&nbsp;<asp:Label ID="lblDataUltimaReservaSalao" runat="server" CssClass="style16">31/08/2013</asp:Label>
+                            </td>
+                        </tr>
+                    
+                </table>
+        </div>
  
  <center> <div id="dvCadastro"  runat="server" align="center" >
  <fieldset class="loginDisplayLegend"> 

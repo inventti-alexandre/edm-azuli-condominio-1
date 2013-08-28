@@ -94,6 +94,15 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.CheckBox chkPG;
         
         /// <summary>
+        /// lblDataPG control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDataPG;
+        
+        /// <summary>
         /// lblReserva control.
         /// </summary>
         /// <remarks>

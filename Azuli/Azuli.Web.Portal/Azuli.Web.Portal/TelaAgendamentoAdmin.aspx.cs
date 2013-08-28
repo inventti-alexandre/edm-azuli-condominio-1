@@ -436,6 +436,9 @@ namespace Azuli.Web.Portal
                     oAgendaModel.statusPagamento = "N";
                 }
 
+                    oAgendaModel.dataConfirmacaoPagamento = DateTime.Today;
+
+               
 
                 try
                 {
@@ -506,6 +509,22 @@ namespace Azuli.Web.Portal
             Session.Remove("MoradorSemInternetNome2");
 
             Response.Redirect("WelcomeAdmin.aspx");
+        }
+
+        protected void chkPG_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            DateTime Data = DateTime.Now;
+            string DataFormato = "";
+            if (chkPG.Checked)
+            {
+                DataFormato = Data.ToString("D");
+                lblDataPG.Text = "Pago hoje: " + DataFormato.ToUpper();
+            }
+            else
+            {
+                lblDataPG.Text = "";
+            }
         }
 
         #region Comentado para tirar complexibilidade

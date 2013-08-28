@@ -17,6 +17,8 @@ namespace Azuli.Web.Portal
         ProprietarioBLL oProprietario = new ProprietarioBLL();
         ProprietarioModel oProprietarioModel = new ProprietarioModel();
         ApartamentoModel oAPmodel = new ApartamentoModel();
+        AgendaModel oAgendaModel = new AgendaModel();
+        AgendaBLL oAgendaBLL = new AgendaBLL();
         Util.Util oUtil = new Util.Util();
       
        
@@ -37,6 +39,15 @@ namespace Azuli.Web.Portal
                    
                 }
             }
+        }
+
+        public void statusDiasChurrasSalao()
+        {
+            oAPmodel.bloco = Convert.ToInt32(Session["MoradorSemInternetBloco"]);
+            oAPmodel.apartamento = Convert.ToInt32(Session["MoradorSemInternetAP"]);
+            lblChurras.Text =  oAgendaBLL.quantidadeDiasReservaChurras(oAPmodel).ToString();
+            lblSalao.Text = oAgendaBLL.quantidadeDiasReservaFesta(oAPmodel).ToString();
+
         }
 
         public string dataByExtense()
@@ -68,6 +79,8 @@ namespace Azuli.Web.Portal
             btnCancelar.Visible = false;
             dvCadastro.Visible = false;
             dvNewUser.Visible = false;
+            dvSalaoEstatistica1.Visible = false;
+            dvChurras.Visible = false;
 
         }
 
@@ -78,6 +91,9 @@ namespace Azuli.Web.Portal
         public void activeControlDiv()
         {
             dvDadosMorador.Visible = true;
+            statusDiasChurrasSalao();
+            dvChurras.Visible = true;
+            dvSalaoEstatistica1.Visible = true;
            
         }
 
@@ -98,6 +114,8 @@ namespace Azuli.Web.Portal
             {
                 dvCadastro.Visible = false;
                 dvDadosMorador.Visible = false;
+                dvChurras.Visible = false;
+                dvSalaoEstatistica1.Visible = false;
                 dvNewUser.Visible = false;
                 dvPesquisaMorador.Visible = false;
                 foreach (var item in oProprietario.BuscaMoradorAdmin(oAPmodel))
@@ -126,6 +144,8 @@ namespace Azuli.Web.Portal
                 dvNewUser.Visible = true;
                 dvPesquisaMorador.Visible = false;
                 dvDadosMorador.Visible = false;
+                dvChurras.Visible = false;
+                dvSalaoEstatistica1.Visible = false;
                 lblMsg.Visible = true;
                 btnCadastrar.Visible = true;
                 btnCancelar.Visible = true;
@@ -160,6 +180,8 @@ namespace Azuli.Web.Portal
         {
             dvCadastro.Visible = true;
             dvDadosMorador.Visible = false;
+            dvChurras.Visible = false;
+            dvSalaoEstatistica1.Visible = false;
             btnCancelar.Visible = false;
             lblMsg.Visible = false;
             btnCadastrar.Visible = false;
@@ -246,6 +268,8 @@ namespace Azuli.Web.Portal
         protected void btnCancel0_Click1(object sender, EventArgs e)
         {
             dvDadosMorador.Visible = false;
+            dvChurras.Visible = false;
+            dvSalaoEstatistica1.Visible = false;
             dvNewUser.Visible = false;
             dvPesquisaMorador.Visible = true;
             Session.Remove("MoradorSemInternetAP");
@@ -258,6 +282,8 @@ namespace Azuli.Web.Portal
         {
             clearControl();
             dvDadosMorador.Visible = false;
+            dvChurras.Visible = false;
+            dvSalaoEstatistica1.Visible = false;
             dvCadastro.Visible = false;
             dvPesquisaMorador.Visible = true;
             lblMsgCadastro.Visible = false;

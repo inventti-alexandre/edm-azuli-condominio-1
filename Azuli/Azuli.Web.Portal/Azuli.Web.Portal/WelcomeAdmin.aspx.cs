@@ -76,7 +76,7 @@ namespace Azuli.Web.Portal
                 if (e.Day.Date == item.dataAgendamento)
                 {
 
-                    listAgenda OeventCalendar = new listAgenda();
+                        listAgenda OeventCalendar = new listAgenda();
                     if (item.salaoChurrasco == true & item.salaoFesta == false & item.statusPagamento != "N" )
                     {
 
@@ -421,7 +421,7 @@ namespace Azuli.Web.Portal
                                     linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
                                     
                                 }
-                                else
+                                if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                 {
                                     status = "SFR";
                                     t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
@@ -439,7 +439,7 @@ namespace Azuli.Web.Portal
                                         
                                     
                                 }
-                                else
+                                if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                 {
                                     status = "CHR";
                                     t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;

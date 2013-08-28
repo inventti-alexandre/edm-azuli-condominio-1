@@ -91,8 +91,12 @@
                     <tr>
                         <td class="style5">
                             <asp:CheckBox ID="chkPG" runat="server" Font-Bold="True" Text=" Pago" 
-                                CssClass="style4" />
-&nbsp;<img alt="" class="style3" src="images/real.jpg" /></td>
+                                CssClass="style4" AutoPostBack="True" 
+                                oncheckedchanged="chkPG_CheckedChanged" />
+&nbsp;<img alt="" class="style3" src="images/real.jpg" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Label ID="lblDataPG" runat="server" 
+                                style="font-weight: 700; color: #009933"></asp:Label>
+                        </td>
                     </tr>
                     <tr>
                         <td class="style5" align="center">

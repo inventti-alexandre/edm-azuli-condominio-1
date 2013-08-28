@@ -45,7 +45,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <br />
+    <br /><br />
     
     <fieldset class="loginDisplayLegend">
         <legend class="accordionContent">Agendamento de Áreas Azuli </legend>
@@ -53,8 +53,6 @@
             <table align="center" style="width: 883px; height: 493px;">
                 <tr>
                     <td align="center" class="style23">
-                       
-                 
                         <asp:Calendar ID="Calendar2" runat="server" BackColor="White" Font-Names="Verdana"
                             Font-Size="10pt" ForeColor="Black" Height="326px" Width="849px" BorderWidth="1px"
                             OnDayRender="Calendar1_DayRender" ShowGridLines="True" 

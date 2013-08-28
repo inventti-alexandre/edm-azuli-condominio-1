@@ -265,7 +265,7 @@
         <center>
             <asp:Label ID="lblAnuncio" runat="server" CssClass="main" ForeColor="#009900"></asp:Label></center>
     </div>
-    <div id="dvInfo" style="position: absolute; top: 546px; left: 647px; width: 457px;"
+    <div id="dvInfo" style="position: absolute; top: 546px; left: 638px; width: 457px;"
         class="">
         <fieldset class="InstructionPhotoDisplay">
             <legend class="instruct">Instrução para Foto</legend>
