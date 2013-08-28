@@ -1151,10 +1151,6 @@ a.ContextMenuItem
 
 .accordionContent
 {
-    background-color: #F0F0F
-
-.accordionContent
-{
     background-color: #F0F0F0;
     border-left: 2px solid #999999;
     border-right: 2px solid #999999;
@@ -1164,11 +1160,14 @@ a.ContextMenuItem
     font-size: 8pt;
     color: #666666;
     border-radius: 1em;
-    height: 85px;
+    height: 15px;
 }
 
 
-er-left: 1px dotted #999999;
+.instruct
+{
+    background-color: #BFCBD6;
+    border-left: 1px dotted #999999;
     border-right: 1px dotted #999999;
     border-bottom: 1px dottted #999999;
     padding: 2px 2px 2px 2px;
