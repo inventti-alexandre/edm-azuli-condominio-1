@@ -397,33 +397,35 @@ namespace Azuli.Web.Portal
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
+            int contadorChurras = 0;
+            int contadorFesta = 0;
 
             if (chkChurrascaria.Checked || chkSalaoFesta.Checked)
             {
 
-                bool salaoFesta = false;
-                bool churrasco = false;
+                //bool salaoFesta = false;
+                //bool churrasco = false;
 
-                if (chkSalaoFesta.Checked && chkChurrascaria.Checked)
-                {
-                    churrasco = true;
-                    salaoFesta = true;
-                }
-                else if (chkSalaoFesta.Checked && !chkChurrascaria.Checked)
-                {
-                    salaoFesta = true;
-                    churrasco = false; ;
-                }
+                //if (chkSalaoFesta.Checked && chkChurrascaria.Checked)
+                //{
+                //    churrasco = true;
+                //    salaoFesta = true;
+                //}
+                //else if (chkSalaoFesta.Checked && !chkChurrascaria.Checked)
+                //{
+                //    salaoFesta = true;
+                //    churrasco = false; ;
+                //}
 
-                else if (!chkSalaoFesta.Checked && chkChurrascaria.Checked)
-                {
-                    churrasco = true;
-                    salaoFesta = false;
-                }
+                //else if (!chkSalaoFesta.Checked && chkChurrascaria.Checked)
+                //{
+                //    churrasco = true;
+                //    salaoFesta = false;
+                //}
 
 
-                oAgendaModel.salaoChurrasco = churrasco;
-                oAgendaModel.salaoFesta = salaoFesta;
+                oAgendaModel.salaoChurrasco = chkChurrascaria.Checked;
+                oAgendaModel.salaoFesta = chkSalaoFesta.Checked;
                 oApModel.apartamento = int.Parse(lblApartDesc.Text);
                 oApModel.bloco = int.Parse(lblBlocoDesc.Text);
                 if (chkPG.Checked)
@@ -438,19 +440,39 @@ namespace Azuli.Web.Portal
 
                     oAgendaModel.dataConfirmacaoPagamento = DateTime.Today;
 
+                    if (txtObservacao.Text == string.Empty)
+                    {
+                        txtObservacao.Text = "Sem observações";
+                    }
+                    oAgendaModel.observacao = txtObservacao.Text;
                
 
                 try
                 {
-                    oAgenda.cadastrarAgenda(Convert.ToDateTime(Session["dataReservaAdministrador"]), oApModel, oAgendaModel);
 
-                    //dvAlugar.Visible = false;
-                    DivConfirma.Visible = true;
-                    dvProprietario.Visible = false;
+                     foreach (var item in  oAgenda.validaAgendamento(Convert.ToDateTime(lblData.Text), oApModel, oAgendaModel))
+	                 {
+                         contadorChurras = item.contadorChurrasco;
+                         contadorFesta =  item.contadorFesta;
+	                 }
 
-                    lblDataConfirma.Text = lblData.Text;
-                    lblBlocoConfirma.Text = lblBlocoDesc.Text;
-                    lblApConfirma.Text = lblApartDesc.Text;
+                     if (chkChurrascaria.Checked && contadorChurras <= 0 || chkSalaoFesta.Checked && contadorFesta <= 0)
+                     {
+                         oAgenda.cadastrarAgenda(Convert.ToDateTime(Session["dataReservaAdministrador"]), oApModel, oAgendaModel);
+
+                         //dvAlugar.Visible = false;
+                         DivConfirma.Visible = true;
+                         dvProprietario.Visible = false;
+
+                         lblConfirmaData.Text = lblData.Text;
+                         lblBlocoConfirma.Text = lblBlocoDesc.Text;
+                         lblApConfirma.Text = lblApartDesc.Text;
+                     }
+                     else
+                     {
+                         lblReserva.Text = "Já existem reservas para esta data!!";
+                         lblDataPG.Text = "";
+                     }
                 }
                 catch (Exception error)
                 {
@@ -472,7 +494,7 @@ namespace Azuli.Web.Portal
 
         protected void btnOKConfirma_Click(object sender, EventArgs e)
         {
-            Response.Redirect("telaAgendamentoAdmin.aspx");
+            Response.Redirect("WelcomeAdmin.aspx");
         }
 
 
@@ -508,7 +530,7 @@ namespace Azuli.Web.Portal
             Session.Remove("MoradorSemInternetNome1");
             Session.Remove("MoradorSemInternetNome2");
 
-            Response.Redirect("WelcomeAdmin.aspx");
+            Response.Redirect("AreaAdministrativa.aspx");
         }
 
         protected void chkPG_CheckedChanged(object sender, EventArgs e)

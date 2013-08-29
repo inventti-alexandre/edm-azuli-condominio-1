@@ -487,7 +487,7 @@ div.accountInfo
 
 .failureNotification
 {
-    font-size: 1.2em;
+    font-size: 10pt;
     color: Red;
 }
 
@@ -506,7 +506,7 @@ div.accountInfo
 input.botao, .btGeral {
 	font-family: Verdana;
 	font-size: 9pt;
-	font-weight: normal;
+	font-weight: 700;
 	color: #4B6C9E;
 	text-align: center;
 	border: 1px solid #4B6C9E;

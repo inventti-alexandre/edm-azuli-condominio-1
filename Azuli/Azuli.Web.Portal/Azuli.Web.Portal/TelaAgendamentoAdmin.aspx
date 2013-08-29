@@ -23,6 +23,67 @@
             font-size: 13pt;
         }
                  
+        .style5
+        {
+            width: 409px;
+        }
+        .style6
+        {
+        }
+        .style7
+        {
+        }
+        .style8
+        {
+            font-weight: bold;
+            width: 896px;
+            font-size: 13pt;
+        }
+        .style9
+        {
+            width: 624px;
+        }
+                 
+        .style10
+        {
+            background-color: #F0F0F0;
+            border-left: 2px solid #999999;
+            border-right: 2px solid #999999;
+            border-botom: 2px solid #999999;
+            padding: 5px 5px 5px 5px;
+            font-family: Verdana;
+            font-size: 12pt;
+            color: #006600;
+            border-radius: 1em;
+            height: 15px;
+            font-weight: bold;
+        }
+        .style11
+        {
+            font-size: 12pt;
+            color: #000000;
+        }
+                 
+        .style12
+        {
+            height: 68px;
+            width: 634px;
+        }
+        .style13
+        {
+            background-color: #F0F0F0;
+            border-left: 2px solid #999999;
+            border-right: 2px solid #999999;
+            border-botom: 2px solid #999999;
+            padding: 5px 5px 5px 5px;
+            font-family: Verdana;
+            font-size: 8pt;
+            color: #666666;
+            border-radius: 1em;
+            height: 18px;
+            width: 654px;
+        }
+                 
     </style>
 
      <script type="text/javascript">
@@ -44,25 +105,25 @@
         <fieldset class="loginDisplayLegend">
            <legend class="accordionContent"> RESERVANDO PARA:</legend>
                    
-             <table style="font-size: small">
+             <table style="font-size: small" class="accordionContent">
             <tr>
-            <td>
+            <td class="style4">
                  Morador:</td>
-                 <td>
-                <asp:Label ID="lblProprietarioDesc" runat="server" CssClass="bold"></asp:Label><br /></td>
+                 <td class="style4">
+                <asp:Label ID="lblProprietarioDesc" runat="server" CssClass="style8"></asp:Label><br /></td>
              <td>
                 Bloco:</td>
-               <td><asp:Label ID="lblBlocoDesc" runat="server" CssClass="bold"></asp:Label></td> 
+               <td><asp:Label ID="lblBlocoDesc" runat="server" CssClass="style8"></asp:Label></td> 
                 
               <td>  Apartamento:</td>
-               <td> <asp:Label ID="lblApartDesc" runat="server" CssClass="bold"></asp:Label></td>
+               <td> <asp:Label ID="lblApartDesc" runat="server" CssClass="style8"></asp:Label></td>
                 </tr>
                 
           </table>
             <br />
-            <table style="width: 541px; height: 171px;" class="accordionContent">
+            <table style="width: 549px; height: 171px;" class="accordionContent">
                     <tr>
-                        <td class="">
+                        <td class="style6" colspan="2">
                             
                                 <asp:Label ID="Label1" runat="server" Font-Bold="True" Text="Data da Reserva: " 
                                     CssClass="style4"></asp:Label>
@@ -73,39 +134,48 @@
                         </td>
                     </tr>
                     <tr>
-                        <td dir="ltr">
+                        <td dir="ltr" class="style7" colspan="2">
                             &nbsp;</td>
                     </tr>
                     <tr>
-                        <td dir="ltr">
+                        <td dir="ltr" class="style9">
                             <asp:CheckBox ID="chkSalaoFesta" runat="server" Text=" Salão de Festas" Font-Bold="True"
                                 EnableTheming="True" CssClass="style4" />
                         </td>
+                        <td dir="ltr" align="center" class="style5" rowspan="4">
+                            <asp:TextBox ID="txtObservacao" runat="server" Height="57px" 
+                                style="font-weight: 700; font-size: 14pt" TextMode="MultiLine" Width="295px"></asp:TextBox>
+                            <br />
+                            <asp:Label ID="Label2" runat="server" style="font-weight: 700; font-size: 13pt" 
+                                Text="Observação:"></asp:Label>
+                        </td>
                     </tr>
                     <tr>
-                        <td class="style5">
+                        <td class="style9">
                             <asp:CheckBox ID="chkChurrascaria" runat="server" Text=" Área de churrasco" 
                                 Font-Bold="True" CssClass="style4" />
                         </td>
                     </tr>
                     <tr>
-                        <td class="style5">
+                        <td class="style9">
                             <asp:CheckBox ID="chkPG" runat="server" Font-Bold="True" Text=" Pago" 
                                 CssClass="style4" AutoPostBack="True" 
                                 oncheckedchanged="chkPG_CheckedChanged" />
 &nbsp;<img alt="" class="style3" src="images/real.jpg" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:Label ID="lblDataPG" runat="server" 
-                                style="font-weight: 700; color: #009933"></asp:Label>
-                        </td>
+                            </td>
                     </tr>
                     <tr>
-                        <td class="style5" align="center">
-                            <center>
+                        <td class="style9" align="center">
+                            <center style="width: 245px">
                                 <asp:Label ID="lblReserva" runat="server" CssClass="failureNotification"></asp:Label></center>
                         </td>
                     </tr>
                        <tr>
-                        <td align="left">
+                        <td align="left" class="style6" colspan="2">
+                            
+                            <asp:Label ID="lblDataPG" runat="server" 
+                                style="font-weight: 700; color: #009933"></asp:Label>
+                            <br />
                             
                     <asp:Button ID="LoginButton" runat="server" Text="Reservar" CssClass="botao"
                         Font-Bold="True" Height="28px" OnClick="LoginButton_Click" Width="128px" />
@@ -123,66 +193,33 @@
         </fieldset>
     </div>
  
-    <div id="DivConfirma" runat="server">
-        <fieldset class="loginDisplayLegend">
-            <legend class="accordionContent">Reserva Efetuada com Sucesso Para o:</legend>
-            <table id="tbConfirma" style="width: 884px" runat="server">
+    <div id="DivConfirma" runat="server" class="">
+        <fieldset class="login">
+            <legend class="style10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Reserva Efetuada com Sucesso!</legend>
+            <br />
+    <center>     <table id="tbConfirma" runat="server" 
+                class="style13">
                 <tr>
-                    <td>
+                    <td align="center" class="style12">
                         &nbsp;&nbsp;
-                        <asp:Label ID="lblBocoTitle" runat="server" Font-Bold="True" Text="Bloco:"></asp:Label>
-                        &nbsp;<asp:Label ID="lblBlocoConfirma" runat="server" Font-Bold="True"></asp:Label>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Label ID="lblApTitle" runat="server" Font-Bold="True" Text="Ap:"></asp:Label>
-                        <asp:Label ID="lblApConfirma" runat="server" Font-Bold="True"></asp:Label>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Label ID="lblDataConfirma" runat="server" Font-Bold="True" Text="Data: "></asp:Label>
-                        &nbsp;<asp:Label ID="lblConfirmaData" runat="server" Font-Bold="True"></asp:Label>
+                        <asp:Label ID="lblBocoTitle" runat="server" Font-Bold="False" Text="Bloco:" 
+                            Font-Italic="False" style="font-size: 11pt; color: #000000"></asp:Label>
+                        &nbsp;<asp:Label ID="lblBlocoConfirma" runat="server" Font-Bold="True" 
+                            CssClass="style11"></asp:Label>
+                        &nbsp;<asp:Label ID="lblApTitle" runat="server" Font-Bold="False" Text="Ap:" 
+                            style="font-size: 12pt; color: #000000"></asp:Label>
+                        <asp:Label ID="lblApConfirma" runat="server" Font-Bold="True" 
+                            CssClass="style11"></asp:Label>
+                        &nbsp;&nbsp;
+                        <asp:Label ID="lblDataConfirma" runat="server" Font-Bold="False" Text="Data: " 
+                            style="font-size: 12pt; color: #000000"></asp:Label>
+                        &nbsp;<asp:Label ID="lblConfirmaData" runat="server" Font-Bold="True" 
+                            CssClass="style11"></asp:Label>
+                        <br />
+                            <asp:Button ID="btnOKConfirma" runat="server" CssClass="botao" OnClick="btnOKConfirma_Click"
+                                Text="Ok" Width="95px" Height="30px" />
                     </td>
-                </tr> </table>
-   
-    <hr />
-    <p style="color: #3A5FCD; font-weight: bold;">
-        &nbsp;</p>
-    <p style="color: #3A5FCD; font-weight: bold;" class="style14">
-        Favor atentar às informações abaixo:
-    </p>
-    <table style="text-align: justify;">
-        <tr>
-            <td class="style13">
-                <ul style="color: #3A5FCD">
-                    <li>É permitido cancelar o agendamento somente com 2 dias de antencedencias </li>
-                </ul>
-                <ul style="color: #3A5FCD">
-                    <li>Algumas regras</li>
-                </ul>
-                <ul style="color: #3A5FCD">
-                    <li>Algumas regras</li>
-                </ul>
-                <ul style="color: #3A5FCD">
-                    <li>Algumas regras</li>
-                </ul>
-                <ul style="color: #3A5FCD">
-                    <li>Algumas regras</li>
-                </ul>
-                <p>
-                    &nbsp;</p>
-                <p>
-                    <asp:ImageButton ID="ImageButton1" runat="server" Height="27px" ImageUrl="~/images/print.jpg"
-                        OnClick="ImageButton1_Click1" />
-                </p>
-                <p>
-                    &nbsp;</p>
-                <p>
-                    <asp:Button ID="btnOKConfirma" runat="server" CssClass="botao" OnClick="btnOKConfirma_Click1"
-                        Text="Ok" Width="63px" />
-                    &nbsp;</p>
-            </td>
-            <td>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <img alt="" src="images/azuli.jpg" style="height: 146px; width: 161px;" />
-            </td>
-        </tr>
-    </table>
-  </fieldset> </div> 
+                </tr>
+        
+           </table> </center>   </fieldset> </div> 
 </asp:Content>

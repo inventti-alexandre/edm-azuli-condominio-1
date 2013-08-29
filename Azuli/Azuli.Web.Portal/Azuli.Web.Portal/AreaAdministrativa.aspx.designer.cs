@@ -256,13 +256,13 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Label Label23;
         
         /// <summary>
-        /// Label25 control.
+        /// lblReservaFestaFoi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label25;
+        protected global::System.Web.UI.WebControls.Label lblReservaFestaFoi;
         
         /// <summary>
         /// lblSalao control.
@@ -274,22 +274,22 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Label lblSalao;
         
         /// <summary>
-        /// lblDataReservaUltima0 control.
+        /// lblDataReservaUltimaDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDataReservaUltima0;
+        protected global::System.Web.UI.WebControls.Label lblDataReservaUltimaDescription;
         
         /// <summary>
-        /// lblDataUltimaReservaSalao0 control.
+        /// lblDataUltimaReservaSalao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDataUltimaReservaSalao0;
+        protected global::System.Web.UI.WebControls.Label lblDataUltimaReservaSalao;
         
         /// <summary>
         /// dvChurras control.
@@ -310,13 +310,13 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Label24 control.
+        /// lblReservaChurraFoi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label24;
+        protected global::System.Web.UI.WebControls.Label lblReservaChurraFoi;
         
         /// <summary>
         /// lblChurras control.
@@ -328,22 +328,22 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Label lblChurras;
         
         /// <summary>
-        /// lblDataReservaUltima control.
+        /// lblDataReservaUltimaChurras control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDataReservaUltima;
+        protected global::System.Web.UI.WebControls.Label lblDataReservaUltimaChurras;
         
         /// <summary>
-        /// lblDataUltimaReservaSalao control.
+        /// lblDataUltimaReservachurras control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDataUltimaReservaSalao;
+        protected global::System.Web.UI.WebControls.Label lblDataUltimaReservachurras;
         
         /// <summary>
         /// dvCadastro control.

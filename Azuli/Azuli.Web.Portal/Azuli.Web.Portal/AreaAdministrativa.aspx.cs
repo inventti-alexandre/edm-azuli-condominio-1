@@ -43,11 +43,92 @@ namespace Azuli.Web.Portal
 
         public void statusDiasChurrasSalao()
         {
+            
+            
+
             oAPmodel.bloco = Convert.ToInt32(Session["MoradorSemInternetBloco"]);
             oAPmodel.apartamento = Convert.ToInt32(Session["MoradorSemInternetAP"]);
-            lblChurras.Text =  oAgendaBLL.quantidadeDiasReservaChurras(oAPmodel).ToString();
-            lblSalao.Text = oAgendaBLL.quantidadeDiasReservaFesta(oAPmodel).ToString();
+            Dictionary<int,DateTime> dataReservaDiasChurras = new Dictionary<int,DateTime>();
+            Dictionary<int,DateTime> dataReservaDiasFesta = new Dictionary<int,DateTime>();
+           
+            foreach (var item in oAgendaBLL.quantidadeDiasReservaChurras(oAPmodel))
+            {
+                lblChurras.Text = item.Key.ToString();
+                lblDataUltimaReservachurras.Text = item.Value.ToString("dd/MM/yyyy");
+                
+            }
 
+            foreach (var item in oAgendaBLL.quantidadeDiasReservaFesta(oAPmodel))
+            {
+              lblSalao.Text = item.Key.ToString();
+              lblDataUltimaReservaSalao.Text = item.Value.ToString("dd/MM/yyyy");
+            }
+
+             lblReservaChurraFoi.Text = "";
+             lblDataReservaUltimaChurras.Text = "";
+             lblReservaFestaFoi.Text = "";
+             lblDataReservaUltimaDescription.Text = "";
+
+             if (Convert.ToInt32(lblChurras.Text) < 0)
+             {
+                 lblChurras.Text = "" + Math.Abs(Convert.ToInt32(lblChurras.Text));
+                 lblReservaChurraFoi.Text = "Morador tem reserva aqui: ";
+                 lblDataReservaUltimaChurras.Text = "E está agendada para: ";
+             }
+             else
+             {
+                 if (Convert.ToInt32(lblChurras.Text) > 0)
+                 {
+                     lblChurras.Text = "" + Math.Abs(Convert.ToInt32(lblChurras.Text));
+                     lblReservaChurraFoi.Text = "Ultima reserva foi a: ";
+                     lblDataReservaUltimaChurras.Text = "E foi agendada dia: ";
+                 }
+                 else
+                 {
+                     if (Convert.ToInt32(lblChurras.Text) == 0)
+                     {
+                         lblChurras.Text = "" + Math.Abs(Convert.ToInt32(lblChurras.Text));
+                         lblDataUltimaReservachurras.Text = "Morador Ainda não fez reservas:";
+                         lblReservaChurraFoi.Text = "Status :";
+                         //lblReservaChurraFoi.Text = "Você tem reserva aqui";
+                         //lblDataReservaUltimaChurras.Text = "Você já tem reserva agenda p/";
+                     }
+                 }
+             }
+
+
+
+             if (Convert.ToInt32(lblSalao.Text) < 0)
+             {
+                 lblSalao.Text = "" + Math.Abs(Convert.ToInt32(lblSalao.Text));
+                 lblReservaFestaFoi.Text = "Morador tem reserva aqui: ";
+                 lblDataReservaUltimaDescription.Text = "E está agendada para: ";
+             }
+             else
+             {
+
+
+                 if (Convert.ToInt32(lblSalao.Text) > 0)
+                 {
+                     lblSalao.Text = "" + Math.Abs(Convert.ToInt32(lblSalao.Text));
+                     lblReservaFestaFoi.Text = "Ultima reserva foi a: ";
+                     lblDataReservaUltimaDescription.Text = "E foi agendada dia: ";
+                 }
+                 else
+                 {
+                     if (Convert.ToInt32(lblSalao.Text) == 0)
+                     {
+                         lblSalao.Text = "" + Math.Abs(Convert.ToInt32(lblSalao.Text));
+                         lblDataUltimaReservaSalao.Text = "Morador Ainda não fez reservas";
+                         lblReservaFestaFoi.Text = "Status :";
+                         //lblReservaFestaFoi.Text = "Você tem reserva aqui";
+                         //lblDataReservaUltimaDescription.Text = ": ";
+                     }
+                  }
+             }
+           
+
+           
         }
 
         public string dataByExtense()

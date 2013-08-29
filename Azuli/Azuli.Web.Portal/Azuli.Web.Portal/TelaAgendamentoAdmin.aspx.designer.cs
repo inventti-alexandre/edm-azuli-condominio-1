@@ -76,6 +76,24 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.CheckBox chkSalaoFesta;
         
         /// <summary>
+        /// txtObservacao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtObservacao;
+        
+        /// <summary>
+        /// Label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
         /// chkChurrascaria control.
         /// </summary>
         /// <remarks>
@@ -94,15 +112,6 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.CheckBox chkPG;
         
         /// <summary>
-        /// lblDataPG control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDataPG;
-        
-        /// <summary>
         /// lblReserva control.
         /// </summary>
         /// <remarks>
@@ -110,6 +119,15 @@ namespace Azuli.Web.Portal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblReserva;
+        
+        /// <summary>
+        /// lblDataPG control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDataPG;
         
         /// <summary>
         /// LoginButton control.
@@ -200,15 +218,6 @@ namespace Azuli.Web.Portal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblConfirmaData;
-        
-        /// <summary>
-        /// ImageButton1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
         
         /// <summary>
         /// btnOKConfirma control.

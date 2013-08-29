@@ -94,7 +94,7 @@
         .accordionContent
         {
             font-size: 10pt;
-            width: 295px;
+            width: 412px;
         }
         .style17
         {
@@ -123,12 +123,12 @@
         .style25
         {
             width: 37px;
-            height: 19px;
+            height: 26px;
         }
         .style26
         {
             width: 35px;
-            height: 22px;
+            height: 25px;
         }
         .style27
         {
@@ -145,6 +145,13 @@
         {
             height: 18px;
             width: 288px;
+        }
+        .style30
+        {
+            font-weight: bold;
+            font-family: Calibri;
+            font-size: 12pt;
+            color: #006600;
         }
     </style>
    
@@ -285,7 +292,7 @@
                         Width="90px" onclick="btnOkPesquisa_Click" Height="27px" />
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <asp:Button ID="btnCancel0" runat="server" CssClass="botao" 
-                        Text="Cancelar" onclick="btnCancel0_Click1"  />
+                        Text="Cancelar" onclick="btnCancel0_Click1" Height="27px" Width="90px"  />
 
       
 
@@ -320,7 +327,8 @@
         
         
         
-        style="position: absolute; top: 226px; left: 688px; height: 86px; width: 274px;">
+        
+        style="position: absolute; top: 218px; left: 681px; height: 91px; width: 274px;">
         <table 
               class="accordionContent">
             <tr>
@@ -334,8 +342,8 @@
                             Text="Salão de Festa"></asp:Label>
                 
                         <tr>
-                            <td class="style23" align="center">
-                                <asp:Label ID="Label25" runat="server" Text="A ultima reserva foi a:" 
+                            <td class="style23" align="left">
+                                <asp:Label ID="lblReservaFestaFoi" runat="server" 
                                     style="font-weight: 700"></asp:Label>
                                 &nbsp;<asp:Label ID="lblSalao" runat="server" CssClass="style16">5</asp:Label>
                             &nbsp;<b>dia(s)</b></td>
@@ -345,10 +353,11 @@
             </tr>
                 
                         <tr>
-                            <td class="style23" align="center">
-                                <asp:Label ID="lblDataReservaUltima0" runat="server" style="font-weight: 700" 
-                                    Text="A data de Reserva foi:"></asp:Label>
-                                <asp:Label ID="lblDataUltimaReservaSalao0" runat="server" CssClass="style16">31/08/2013</asp:Label>
+                            <td class="style23" align="left">
+                                <asp:Label ID="lblDataReservaUltimaDescription" runat="server" 
+                                    style="font-weight: 700"></asp:Label>
+                                &nbsp;<asp:Label ID="lblDataUltimaReservaSalao" runat="server" 
+                                    CssClass="style30">31/08/2013</asp:Label>
                             </td>
                         </tr>
                     
@@ -363,7 +372,8 @@
         
         
         
-        style="position: absolute; top: 326px; left: 691px; height: 79px; width: 283px;">
+        
+        style="position: absolute; top: 331px; left: 682px; height: 79px; width: 283px;">
         <table 
               class="accordionContent">
             <tr>
@@ -377,7 +387,7 @@
                 
                         <tr>
                             <td class="style29" align="left">
-                                <asp:Label ID="Label24" runat="server" Text="A ultima reserva foi a:" 
+                                <asp:Label ID="lblReservaChurraFoi" runat="server" 
                                     style="font-weight: 700"></asp:Label>
                                 &nbsp;<asp:Label ID="lblChurras" runat="server" CssClass="style16">5</asp:Label>
                             &nbsp;<b>dia(s)</b></td>
@@ -388,9 +398,9 @@
                 
                         <tr>
                             <td class="style29" align="left">
-                                <asp:Label ID="lblDataReservaUltima" runat="server" style="font-weight: 700" 
-                                    Text="A data de Reserva foi:"></asp:Label>
-&nbsp;<asp:Label ID="lblDataUltimaReservaSalao" runat="server" CssClass="style16">31/08/2013</asp:Label>
+                                <asp:Label ID="lblDataReservaUltimaChurras" runat="server" 
+                                    style="font-weight: 700"></asp:Label>
+&nbsp;<asp:Label ID="lblDataUltimaReservachurras" runat="server" CssClass="style30">31/08/2013</asp:Label>
                             </td>
                         </tr>
                     
