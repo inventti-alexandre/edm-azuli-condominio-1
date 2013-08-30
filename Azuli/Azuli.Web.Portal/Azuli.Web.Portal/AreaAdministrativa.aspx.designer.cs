@@ -238,6 +238,51 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.LinkButton lnkHistoricoReservas;
         
         /// <summary>
+        /// dvAgendamentosFuturos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvAgendamentosFuturos;
+        
+        /// <summary>
+        /// lgFesta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lgFesta;
+        
+        /// <summary>
+        /// grdReservaProgramadaFesta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdReservaProgramadaFesta;
+        
+        /// <summary>
+        /// lgChurras control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lgChurras;
+        
+        /// <summary>
+        /// grdReservaProgramadaChurras control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdReservaProgramadaChurras;
+        
+        /// <summary>
         /// dvSalaoEstatistica1 control.
         /// </summary>
         /// <remarks>

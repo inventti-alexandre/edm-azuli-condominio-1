@@ -32,6 +32,7 @@ namespace Azuli.Web.Portal
                    
                     hiddenControlDiv();
                     lblDataReserva.Text = dataByExtense();
+               
                 }
                 else
                 {
@@ -39,6 +40,123 @@ namespace Azuli.Web.Portal
                    
                 }
             }
+        }
+
+
+
+        public void ativaLinkAgendamentoFuturo()
+        {
+            oAPmodel.bloco = Convert.ToInt32(Session["MoradorSemInternetBloco"]);
+            oAPmodel.apartamento = Convert.ToInt32(Session["MoradorSemInternetAP"]);
+            int contaChurras = 0;
+            int contaFesta = 0;
+            oAgendaModel.ap = oAPmodel;
+
+            if (oAgendaBLL.agendamentoFuturoChurras(oAgendaModel).Count > 0)
+            {
+                foreach (var item in oAgendaBLL.agendamentoFuturoChurras(oAgendaModel))
+                {
+                    contaChurras = item.contadorChurrasco;
+                    
+                }
+
+                if (contaChurras < 0)
+                {
+                    lnkHistoricoReservas.Visible = true;
+                }
+            }
+
+            if (oAgendaBLL.agendamentoFuturoFesta(oAgendaModel).Count > 0)
+            {
+
+                foreach (var item in oAgendaBLL.agendamentoFuturoFesta(oAgendaModel))
+                {
+                    contaFesta = item.contadorFesta;
+
+                }
+
+                if (contaFesta < 0)
+                {
+                    lnkHistoricoReservas.Visible = true;
+                }
+               
+            }
+
+
+        }
+
+        public void preencheGridAgendamentoFuturo()
+        {
+            bool validaChuras = false;
+            bool validaFesta = false;
+            oAPmodel.bloco = Convert.ToInt32(Session["MoradorSemInternetBloco"]);
+            oAPmodel.apartamento = Convert.ToInt32(Session["MoradorSemInternetAP"]);
+
+            oAgendaModel.ap = oAPmodel;
+
+            if (oAgendaBLL.agendamentoFuturoFesta(oAgendaModel).Count > 0)
+            {
+                foreach (var item in oAgendaBLL.agendamentoFuturoFesta(oAgendaModel))
+                {
+                    if (item.contadorFesta < 0)
+                    {
+                        validaFesta = true;
+                        grdReservaProgramadaFesta.DataSource = oAgendaBLL.agendamentoFuturoFesta(oAgendaModel);
+                        grdReservaProgramadaFesta.DataBind();
+
+                       
+                    }
+                }
+            }
+
+          
+            if (oAgendaBLL.agendamentoFuturoChurras(oAgendaModel).Count > 0)
+            {
+                foreach (var item in oAgendaBLL.agendamentoFuturoChurras(oAgendaModel))
+                {
+                    if (item.contadorChurrasco < 0)
+                    {
+                        validaChuras = true;
+                        grdReservaProgramadaChurras.DataSource = oAgendaBLL.agendamentoFuturoChurras(oAgendaModel);
+                        grdReservaProgramadaChurras.DataBind();
+                       
+                    }
+
+                }
+
+           }
+
+            if(validaChuras)
+            {
+                dvAgendamentosFuturos.Visible = true;
+                grdReservaProgramadaFesta.Visible = false;
+                lgFesta.Visible = false;
+                grdReservaProgramadaChurras.Visible = true;
+                lgChurras.Visible = true;
+
+            }
+            else if (validaFesta)
+            {
+                dvAgendamentosFuturos.Visible = true;
+                grdReservaProgramadaFesta.Visible = true;
+                lgFesta.Visible = true;
+                grdReservaProgramadaChurras.Visible = false;
+                lgChurras.Visible = false;
+
+            }
+
+            if (validaFesta == true && validaChuras == true)
+            {
+                dvAgendamentosFuturos.Visible = true;
+                grdReservaProgramadaFesta.Visible = true;
+                lgFesta.Visible = true;
+                grdReservaProgramadaChurras.Visible = true;
+                lgChurras.Visible = true;
+            }
+          
+       
+
+
         }
 
         public void statusDiasChurrasSalao()
@@ -69,43 +187,34 @@ namespace Azuli.Web.Portal
              lblReservaFestaFoi.Text = "";
              lblDataReservaUltimaDescription.Text = "";
 
-             if (Convert.ToInt32(lblChurras.Text) < 0)
-             {
-                 lblChurras.Text = "" + Math.Abs(Convert.ToInt32(lblChurras.Text));
-                 lblReservaChurraFoi.Text = "Morador tem reserva aqui: ";
-                 lblDataReservaUltimaChurras.Text = "E está agendada para: ";
-             }
-             else
-             {
+            
                  if (Convert.ToInt32(lblChurras.Text) > 0)
                  {
                      lblChurras.Text = "" + Math.Abs(Convert.ToInt32(lblChurras.Text));
                      lblReservaChurraFoi.Text = "Ultima reserva foi a: ";
                      lblDataReservaUltimaChurras.Text = "E foi agendada dia: ";
                  }
-                 else
+                 else if (Convert.ToInt32(lblChurras.Text) == 0)
                  {
-                     if (Convert.ToInt32(lblChurras.Text) == 0)
-                     {
                          lblChurras.Text = "" + Math.Abs(Convert.ToInt32(lblChurras.Text));
                          lblDataUltimaReservachurras.Text = "Morador Ainda não fez reservas:";
                          lblReservaChurraFoi.Text = "Status :";
                          //lblReservaChurraFoi.Text = "Você tem reserva aqui";
                          //lblDataReservaUltimaChurras.Text = "Você já tem reserva agenda p/";
-                     }
+                  }
+
+                 else if (Convert.ToInt32(lblChurras.Text) < 0)
+                 {
+                     lblChurras.Text = "" + Math.Abs(Convert.ToInt32(lblChurras.Text));
+                     lblDataUltimaReservachurras.Text = "Morador Já tem reservas Pendentes!";
+                     lblReservaChurraFoi.Text = "Status :";
+                     lblChurras.Text = "Pendente";
+                     //lblReservaChurraFoi.Text = "Você tem reserva aqui";
+                     //lblDataReservaUltimaChurras.Text = "Você já tem reserva agenda p/";
                  }
-             }
+                
+             
 
-
-
-             if (Convert.ToInt32(lblSalao.Text) < 0)
-             {
-                 lblSalao.Text = "" + Math.Abs(Convert.ToInt32(lblSalao.Text));
-                 lblReservaFestaFoi.Text = "Morador tem reserva aqui: ";
-                 lblDataReservaUltimaDescription.Text = "E está agendada para: ";
-             }
-             else
-             {
 
 
                  if (Convert.ToInt32(lblSalao.Text) > 0)
@@ -114,21 +223,28 @@ namespace Azuli.Web.Portal
                      lblReservaFestaFoi.Text = "Ultima reserva foi a: ";
                      lblDataReservaUltimaDescription.Text = "E foi agendada dia: ";
                  }
-                 else
+                 else if (Convert.ToInt32(lblSalao.Text) == 0)
                  {
-                     if (Convert.ToInt32(lblSalao.Text) == 0)
-                     {
                          lblSalao.Text = "" + Math.Abs(Convert.ToInt32(lblSalao.Text));
                          lblDataUltimaReservaSalao.Text = "Morador Ainda não fez reservas";
                          lblReservaFestaFoi.Text = "Status :";
                          //lblReservaFestaFoi.Text = "Você tem reserva aqui";
                          //lblDataReservaUltimaDescription.Text = ": ";
-                     }
-                  }
-             }
-           
+                 }
 
-           
+                 else if (Convert.ToInt32(lblSalao.Text) < 0)
+                 {
+                     lblSalao.Text = "" + Math.Abs(Convert.ToInt32(lblSalao.Text));
+                     lblDataUltimaReservaSalao.Text = "Morador Já tem reservas Pendentes!";
+                     lblReservaFestaFoi.Text = "Status :";
+                     lblSalao.Text = "Pendente";
+                    
+                     //lblReservaFestaFoi.Text = "Você tem reserva aqui";
+                     //lblDataReservaUltimaDescription.Text = ": ";
+                 }
+
+
+             
         }
 
         public string dataByExtense()
@@ -162,7 +278,8 @@ namespace Azuli.Web.Portal
             dvNewUser.Visible = false;
             dvSalaoEstatistica1.Visible = false;
             dvChurras.Visible = false;
-
+            lnkHistoricoReservas.Visible = false;
+            dvAgendamentosFuturos.Visible = false;
         }
 
 
@@ -215,7 +332,7 @@ namespace Azuli.Web.Portal
                     //Session["Bloco"] = item.ap.bloco;
                    // Session["MoradorSemInternetNome1"] = item.proprietario1.ToString();
                     //Session["MoradorSemInternetNome2"] = item.proprietario2.ToString();
-
+                    ativaLinkAgendamentoFuturo();
                 }
 
                 activeControlDiv();
@@ -353,6 +470,7 @@ namespace Azuli.Web.Portal
             dvSalaoEstatistica1.Visible = false;
             dvNewUser.Visible = false;
             dvPesquisaMorador.Visible = true;
+            dvAgendamentosFuturos.Visible = false;
             Session.Remove("MoradorSemInternetAP");
             Session.Remove("MoradorSemInternetBloco");
             Session.Remove("MoradorSemInternetNome1");
@@ -387,6 +505,11 @@ namespace Azuli.Web.Portal
         protected void lnkBack_Click(object sender, EventArgs e)
         {
             Response.Redirect("WelcomeAdmin.aspx");
+        }
+
+        protected void lnkHistoricoReservas_Click(object sender, EventArgs e)
+        {
+            preencheGridAgendamentoFuturo();
         }
     }
 }

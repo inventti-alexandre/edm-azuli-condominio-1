@@ -234,6 +234,17 @@ namespace Azuli.Web.Portal.Util
                 return false;
             }
         }
+
+        public struct AgendamentoFuturo
+        {
+            public DateTime dataAgendamento { get; set;}
+            public int bloco { get; set; }
+            public int ap { get; set; }
+            public int dias { get; set;}
+            public string observacao { get;set; }
+        }
         
     }
+
+   
 }

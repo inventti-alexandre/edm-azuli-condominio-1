@@ -122,8 +122,8 @@
         }
         .style25
         {
-            width: 37px;
-            height: 26px;
+            width: 36px;
+            height: 22px;
         }
         .style26
         {
@@ -152,6 +152,35 @@
             font-family: Calibri;
             font-size: 12pt;
             color: #006600;
+        }
+        .style31
+        {
+            border-botom: 2px solid #999999;
+            font-family: Verdana;
+            font-size: 10pt;
+            color: #666666;
+            border-radius: 1em;
+            height: 15px;
+            width: 412px;
+            font-weight: bold;
+            border-left: 2px solid #999999;
+            border-right: 2px solid #999999;
+            padding: 5px;
+            background-color: #F0F0F0;
+        }
+        .style32
+        {
+            border-botom: 2px solid #999999;
+            font-family: Verdana;
+            font-size: 12pt;
+            color: #0000FF;
+            border-radius: 1em;
+            height: 15px;
+            width: 412px;
+            border-left: 2px solid #999999;
+            border-right: 2px solid #999999;
+            padding: 5px;
+            background-color: #F0F0F0;
         }
     </style>
    
@@ -248,7 +277,10 @@
      <div id="dvDadosMorador" align="center" runat="server">
      <fieldset class="loginDisplayLegend">
      <legend align="left" class="style10">&nbsp;<img alt="" class="style15" 
-             src="images/clientes.jpg" /> Dados do Morador para Reserva:</legend>
+             src="images/clientes.jpg" /> Dados do Morador para Reserva:
+                
+                        <img alt="" class="style26" 
+                            src="images/salaoFesta.jpg" /></legend>
   
 
     
@@ -287,7 +319,7 @@
 
                         </tr>
                        <tr>
-                       <td class="style19" colspan="2">
+                       <td class="style19" colspan="2" align="center">
                                      <asp:Button ID="btnOkPesquisa" runat="server" CssClass="botao" Text="Confirmar" 
                         Width="90px" onclick="btnOkPesquisa_Click" Height="27px" />
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -297,8 +329,9 @@
       
 
         
-                            &nbsp;&nbsp;&nbsp;
-                                     <asp:LinkButton ID="lnkHistoricoReservas" runat="server">Histórico Reserva do Morador</asp:LinkButton>
+                            &nbsp;&nbsp;&nbsp;<br />
+                                     <br />
+&nbsp;<asp:LinkButton ID="lnkHistoricoReservas" runat="server" onclick="lnkHistoricoReservas_Click">Morador já tem agendamentos - clique para ver..</asp:LinkButton>
 
       
 
@@ -311,13 +344,74 @@
             </tr>
         </table>
 
+    
        
-
-        
-        <br />
    </fieldset> </div>
 
-      
+   <center>  <div id="dvAgendamentosFuturos" runat="server">
+      <fieldset>
+       <legend id="lgFesta" class="style32" runat="server">Salão de Festa </legend>
+         <asp:GridView ID="grdReservaProgramadaFesta" runat="server" 
+             CssClass="GridView" AutoGenerateColumns="False" 
+              EmptyDataText="Não existe reservas futuras para o Salão de festa" 
+              Font-Bold="True" Font-Size="Small">
+             <Columns>
+                 <asp:TemplateField HeaderText="Data do Agendamento">
+                     <EditItemTemplate>
+                         <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("dataAgendamento") %>'></asp:TextBox>
+                     </EditItemTemplate>
+                     <ItemTemplate>
+                         <asp:Label ID="Label1" runat="server" Text='<%# Eval("dataAgendamento", "{0:dddd}") + " / " + Eval("dataAgendamento","{0:dd/MM/yyyy}") %>'></asp:Label>
+                     </ItemTemplate>
+                     <ItemStyle HorizontalAlign="Center" />
+                 </asp:TemplateField>
+                 <asp:TemplateField HeaderText="Quantidade de dias que falta para reserva">
+                     <EditItemTemplate>
+                         <asp:TextBox ID="TextBox2" runat="server" Text='<%# Eval("contadorFestaFuturo") %>'></asp:TextBox>
+                     </EditItemTemplate>
+                     <ItemTemplate>
+                         <asp:Label ID="Label2" runat="server" Text='<%# Eval("contadorFestaFuturo") %>'></asp:Label>
+                     </ItemTemplate>
+                     <ItemStyle HorizontalAlign="Center" />
+                 </asp:TemplateField>
+                 <asp:BoundField DataField="observacao" HeaderText="Observação" >
+                 <ItemStyle HorizontalAlign="Center" />
+                 </asp:BoundField>
+             </Columns>
+         </asp:GridView>
+                
+                        <br />
+                     
+           <legend id="lgChurras" class="style31" runat="server">churrasqueira<br 
+                   style="font-size: 12pt; color: #0000FF" />
+             
+          </legend> <br />
+         <asp:GridView ID="grdReservaProgramadaChurras" runat="server" 
+             CssClass="GridView" AutoGenerateColumns="False"  
+              EmptyDataText="Não existe reservas futuras para churrasqueira" Font-Bold="True" 
+              Font-Size="Small">
+              <Columns>
+                  <asp:TemplateField HeaderText="Data do Agendamento">
+                      <EditItemTemplate>
+                          <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("dataAgendamento") %>'></asp:TextBox>
+                      </EditItemTemplate>
+                      <ItemTemplate>
+                          <asp:Label ID="Label1" runat="server" Text='<%# Eval("dataAgendamento", "{0:dddd}") + " / " + Eval("dataAgendamento","{0:dd/MM/yyyy}") %>'></asp:Label>
+                      </ItemTemplate>
+                      <ItemStyle HorizontalAlign="Center" />
+                  </asp:TemplateField>
+                 <asp:BoundField DataField="contadorChurrasFuturo" 
+                      HeaderText="Quantidade de dias que falta para reserva" >
+                  <ItemStyle HorizontalAlign="Center" />
+                  </asp:BoundField>
+                 <asp:BoundField DataField="observacao" HeaderText="Observação" >
+                  <ItemStyle HorizontalAlign="Center" />
+                  </asp:BoundField>
+             </Columns>
+         </asp:GridView>
+          <br />
+         </fieldset>
+      </div></center> 
                 
         <div id="dvSalaoEstatistica1"  runat="server" 
                             

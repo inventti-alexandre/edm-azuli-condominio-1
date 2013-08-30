@@ -94,6 +94,61 @@ namespace Azuli.Web.Business
 
 
 
+        public listAgenda agendamentoFuturoFesta(AgendaModel oAgenda)
+        {
+            listAgenda oListAgenda = new listAgenda();
+
+            try
+            {
+                oListAgenda = oAgendaDao.agendamentoFuturoFesta(oAgenda);
+
+                return oListAgenda;
+
+            }
+            catch (Exception error)
+            {
+
+                throw error;
+            }
+        }
+        public listAgenda agendamentoFuturoChurras(AgendaModel oAgenda)
+        {
+            listAgenda oListAgenda = new listAgenda();
+
+            try
+            {
+                oListAgenda = oAgendaDao.agendamentoFuturoChurras(oAgenda);
+
+                return oListAgenda;
+
+            }
+            catch (Exception error)
+            {
+
+                throw error;
+            }
+        }
+
+        public listAgenda listaReservaDetalhadaChurrasco(int ano, int mes)
+        {
+            listAgenda oListAgenda = new listAgenda();
+
+            try
+            {
+                oListAgenda = oAgendaDao.listaReservaDetalhadaChurrasco(ano, mes);
+
+                return oListAgenda;
+
+            }
+            catch (Exception error)
+            {
+
+                throw error;
+            }
+
+        }
+
+
         public listAgenda listaReservaByMorador(ApartamentoModel oAp, AgendaModel oAgenda)
         {
             listAgenda oListAgenda = new listAgenda();
@@ -112,24 +167,7 @@ namespace Azuli.Web.Business
             }
         }
 
-        public listAgenda listaReservaDetalhadaChurrasco(int ano, int mes) 
-        {
-            listAgenda oListAgenda = new listAgenda();
-
-            try
-            {
-                oListAgenda = oAgendaDao.listaReservaDetalhadaChurrasco(ano, mes);
-
-                return oListAgenda;
-
-            }
-            catch (Exception error)
-            {
-
-                throw error;
-            }
-
-        }
+      
 
         public listAgenda listaReservaDetalhadaFesta(int ano, int mes)
         {
@@ -172,6 +210,39 @@ namespace Azuli.Web.Business
 
         }
 
+        public Dictionary<int, DateTime> quantidadeDiasReservaFesta(ApartamentoModel oAp)
+        {
+            Dictionary<int, DateTime> dataReservaFesta = new Dictionary<int, DateTime>();
+
+            try
+            {
+                dataReservaFesta = oAgendaDao.quantidadeDiasReservaFesta(oAp);
+
+                return dataReservaFesta;
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+
+        public Dictionary<int, DateTime> quantidadeDiasReservaChurras(ApartamentoModel oAp)
+        {
+            Dictionary<int, DateTime> dataReservaChurras = new Dictionary<int, DateTime>();
+
+            try
+            {
+                dataReservaChurras = oAgendaDao.quantidadeDiasReservaChurras(oAp);
+
+                return dataReservaChurras;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
       
 
         public void cancelaAgendamentoMorador(DateTime dataAgendamento, ApartamentoModel ap, bool festa, bool churras)
@@ -264,9 +335,16 @@ namespace Azuli.Web.Business
       
         #endregion
 
-       
 
 
-      
+
+
+
+
+
+
+
+
+
     }
 }

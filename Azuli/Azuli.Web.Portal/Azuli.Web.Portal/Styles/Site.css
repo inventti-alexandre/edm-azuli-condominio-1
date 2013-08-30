@@ -612,7 +612,8 @@ input.botao, .btGeral {
 	font-size: 12px;
 	color: Black;
     margin-top: 0px;
-    }
+    margin-right: 0px;
+}
 .GridView td
 {
 	padding: 3px;
@@ -1222,17 +1223,17 @@ a.ContextMenuItem
     height: 25px;
 }
 
+.accordionContent a:link, .accordionContent a:acti
+
 .accordionContent a:link, .accordionContent a:active, .accordionContent a:visited
 {
     font-family: Verdana;
-    font-size: 8pt;
+    font-size: 12pt;
     color: #990000;
     text-decoration: underline;
 }
 
-.accordionContent a:hover
-{
-    font-family: Verdana;
+;
     font-size: 8pt;
     color: #990000;
     text-decoration: none;

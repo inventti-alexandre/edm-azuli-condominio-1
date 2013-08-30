@@ -23,6 +23,7 @@ namespace Azuli.Web.Portal
             if (Page.Request.ServerVariables["http_user_agent"].ToLower().Contains("safari"))
             {
                 Page.ClientTarget = "uplevel";
+                
             }
         }
 

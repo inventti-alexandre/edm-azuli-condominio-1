@@ -19,5 +19,9 @@ namespace Azuli.Web.Business.Interfaces
          listAgenda listaReservaByMoradorAdmin(AgendaModel oAgenda);
          listAgenda listaReservaDetalhadaChurrasco(int ano, int mes );
          listAgenda listaReservaDetalhadaFesta(int ano, int mes );
+         Dictionary<int, DateTime> quantidadeDiasReservaFesta(ApartamentoModel oAp);
+         Dictionary<int, DateTime> quantidadeDiasReservaChurras(ApartamentoModel oAp);
+         listAgenda agendamentoFuturoFesta(AgendaModel oAgenda);
+         listAgenda agendamentoFuturoChurras(AgendaModel oAgenda);
     }
 }

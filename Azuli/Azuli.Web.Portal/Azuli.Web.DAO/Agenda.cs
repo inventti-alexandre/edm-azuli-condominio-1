@@ -44,6 +44,112 @@ namespace Azuli.Web.DAO
             }
         }
 
+
+        public listAgenda agendamentoFuturoFesta(AgendaModel oAgenda)
+        {
+            string clausulaSQL = "SP_AGENDAMENTO_FUTUROFESTA";
+
+            try
+            {
+                SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
+
+                comandoSQL.Parameters.AddWithValue("@BLOCO", oAgenda.ap.bloco);
+                comandoSQL.Parameters.AddWithValue("@APARTAMENTO", oAgenda.ap.apartamento);
+       
+
+                DataTable tbAgenda = new DataTable();
+
+                tbAgenda = ExecutaQuery(comandoSQL);
+
+                return carregaAgenda(tbAgenda);
+
+            }
+            catch (Exception error)
+            {
+
+                throw error;
+            }
+        }
+
+        public listAgenda agendamentoFuturoChurras(AgendaModel oAgenda)
+        {
+            string clausulaSQL = "SP_AGENDAMENTO_FUTUROCHURRAS";
+
+            try
+            {
+                SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
+
+                comandoSQL.Parameters.AddWithValue("@BLOCO", oAgenda.ap.bloco);
+                comandoSQL.Parameters.AddWithValue("@APARTAMENTO", oAgenda.ap.apartamento);
+              
+
+
+                DataTable tbAgenda = new DataTable();
+
+                tbAgenda = ExecutaQuery(comandoSQL);
+
+                return carregaAgenda(tbAgenda);
+
+            }
+            catch (Exception error)
+            {
+
+                throw error;
+            }
+        }
+
+     
+
+        public Dictionary<int, DateTime> quantidadeDiasReservaFesta(ApartamentoModel oAp)
+        {
+            string clausulaSQL = "SP_DIAS_AGENDAMENTO_FESTA";
+
+            try
+            {
+                SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
+                comandoSQL.Parameters.AddWithValue("@BLOCO", oAp.bloco);
+                comandoSQL.Parameters.AddWithValue("@APARTAMENTO", oAp.apartamento);
+                DataTable tbAgenda = new DataTable();
+                tbAgenda = ExecutaQuery(comandoSQL);
+                return carregaAgendaDiasReserva(tbAgenda);
+
+            }
+            catch (Exception error)
+            {
+
+                throw error;
+            }
+        }
+
+        public Dictionary<int,DateTime> quantidadeDiasReservaChurras(ApartamentoModel oAp)
+        {
+            string clausulaSQL = "SP_DIAS_CHURRASCO";
+
+            try
+            {
+                SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
+
+              
+                comandoSQL.Parameters.AddWithValue("@BLOCO", oAp.bloco);
+                comandoSQL.Parameters.AddWithValue("@APARTAMENTO", oAp.apartamento);
+
+
+
+                DataTable tbAgenda = new DataTable();
+
+                tbAgenda = ExecutaQuery(comandoSQL);
+
+                return carregaAgendaDiasReserva(tbAgenda);
+
+            }
+            catch (Exception error)
+            {
+
+                throw error;
+            }
+        }
+        
+
         
         public void cancelaAgendamentoMorador(DateTime dataAgendamento, ApartamentoModel ap, bool festa, bool churras)
         {
@@ -200,8 +306,8 @@ namespace Azuli.Web.DAO
                 comandoSQL.Parameters.AddWithValue("@FESTA", oAgenda.salaoFesta);
                 comandoSQL.Parameters.AddWithValue("@CHURRAS", oAgenda.salaoChurrasco);
                 comandoSQL.Parameters.AddWithValue("@PAGO", oAgenda.statusPagamento);
-
-
+                comandoSQL.Parameters.AddWithValue("@DATA_CONFIRMACAOPG", oAgenda.dataConfirmacaoPagamento);
+                comandoSQL.Parameters.AddWithValue("@OBSERVACAO", oAgenda.observacao);
 
                 ExecutaQuery(comandoSQL);
 
@@ -310,6 +416,16 @@ namespace Azuli.Web.DAO
                 if (dr.Table.Columns.Contains("DATA_AGENDAMENTO")) 
                 oAgendaModel.dataAgendamento = Convert.ToDateTime(dr["DATA_AGENDAMENTO"]);
 
+
+                if (dr.Table.Columns.Contains("DATA_CONFIRMACAOPG"))
+                    oAgendaModel.dataConfirmacaoPagamento = Convert.ToDateTime(dr["DATA_CONFIRMACAOPG"]);
+
+                if (dr.Table.Columns.Contains("DATA_INCLUSAO"))
+                    oAgendaModel.dataInclusao = Convert.ToDateTime(dr["DATA_INCLUSAO"]);
+
+
+                
+
                 if (dr.Table.Columns.Contains("SALAO_CHURRASCO")) 
                 oAgendaModel.salaoChurrasco = Convert.ToBoolean(dr["SALAO_CHURRASCO"]);
 
@@ -341,6 +457,33 @@ namespace Azuli.Web.DAO
                 if (dr.Table.Columns.Contains("PAGO"))
                     oAgendaModel.statusPagamento = dr["PAGO"].ToString();
 
+                if (dr.Table.Columns.Contains("OBSERVACAO"))
+                    oAgendaModel.observacao = dr["OBSERVACAO"].ToString();
+
+                if (dr.Table.Columns.Contains("DiasAgendaChurras"))
+                    oAgendaModel.contadorChurrasco = Convert.ToInt32(dr["DiasAgendaChurras"]);
+                
+                if (oAgendaModel.contadorChurrasco < 0)
+                {
+                    oAgendaModel.contadorChurrasFuturo = Math.Abs(Convert.ToInt32(dr["DiasAgendaChurras"]));
+                }
+
+
+                if (dr.Table.Columns.Contains("DataChurraPara"))
+                    oAgendaModel.dataAgendamento = Convert.ToDateTime(dr["DataChurraPara"]);
+
+                if (dr.Table.Columns.Contains("DiasAgendaFesta"))
+                    oAgendaModel.contadorFesta = Convert.ToInt32(dr["DiasAgendaFesta"]);
+
+                if (oAgendaModel.contadorFesta < 0)
+                {
+                    oAgendaModel.contadorFestaFuturo = Math.Abs(Convert.ToInt32(dr["DiasAgendaFesta"]));
+                }
+
+
+
+                if (dr.Table.Columns.Contains("dataFuturaFesta"))
+                    oAgendaModel.dataAgendamento = Convert.ToDateTime(dr["dataFuturaFesta"]);
 
                 oListaEventos.Add(oAgendaModel);
                                
@@ -349,6 +492,32 @@ namespace Azuli.Web.DAO
             return oListaEventos;
 
         }
+
+        private Dictionary<int, DateTime> carregaAgendaDiasReserva(DataTable dt)
+        {
+            Dictionary<int, DateTime> DiasDataReserva = new Dictionary<int, DateTime>();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                
+                AgendaModel oAgendaModel = new AgendaModel();
+
+                if (dr.Table.Columns.Contains("QtdDiasUltimaReservaChurras") && dr.Table.Columns.Contains("QtdDiasUltimaReservaChurras"))
+                    DiasDataReserva.Add(Convert.ToInt32(dr["QtdDiasUltimaReservaChurras"]),Convert.ToDateTime(dr["ultimaDataChurras"]));
+
+                if (dr.Table.Columns.Contains("QtdDiasUltimaReserva") && dr.Table.Columns.Contains("ultimaDataFesta"))
+                    DiasDataReserva.Add(Convert.ToInt32(dr["QtdDiasUltimaReserva"]), Convert.ToDateTime(dr["ultimaDataFesta"]));
+        
+            }
+
+            return DiasDataReserva;
+
+        }
+
+
+
+
+
 
 
 
@@ -389,5 +558,11 @@ namespace Azuli.Web.DAO
        
 
         #endregion
+
+
+
+       
+
+
     }
 }
