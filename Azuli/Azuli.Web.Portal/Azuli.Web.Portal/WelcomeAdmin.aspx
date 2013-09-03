@@ -27,10 +27,9 @@
             width: 50px;
             height: 31px;
         }
-        .style31
+        .style32
         {
-            width: 239px;
-            height: 211px;
+            color: #6B6B6B;
         }
     </style>
     <script type="text/javascript">
@@ -45,7 +44,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <br /><br />
+    <br />
     
     <fieldset class="loginDisplayLegend">
         <legend class="accordionContent">Agendamento de Áreas Azuli </legend>
@@ -56,47 +55,49 @@
                         <asp:Calendar ID="Calendar2" runat="server" BackColor="White" Font-Names="Verdana"
                             Font-Size="10pt" ForeColor="Black" Height="326px" Width="849px" BorderWidth="1px"
                             OnDayRender="Calendar1_DayRender" ShowGridLines="True" 
-                            NextPrevFormat="FullMonth" onselectionchanged="Calendar2_SelectionChanged" 
-                            FirstDayOfWeek="Sunday">
+                            NextPrevFormat="FullMonth" onselectionchanged="Calendar2_SelectionChanged">
                             <DayHeaderStyle Font-Bold="True" Height="1px" BackColor="#CCCCCC" />
                             <DayStyle Font-Bold="True" Font-Size="Medium" BackColor="#E0E0E0" />
                             <NextPrevStyle Font-Bold="True" Font-Size="9pt" ForeColor="#666666" />
                             <OtherMonthDayStyle ForeColor="#CC9966" />
                             <SelectedDayStyle Font-Bold="True" ForeColor="Blue" />
                             <SelectorStyle BackColor="#FFCC66" />
-                            <TitleStyle BackColor="#E0E0E0" Font-Bold="True" Font-Size="9pt" ForeColor="Black" />
+                            <TitleStyle BackColor="#E0E0E0" Font-Bold="True" Font-Size="12pt" 
+                                ForeColor="Black" Font-Italic="False" Font-Overline="False" 
+                                Font-Strikeout="False" Font-Underline="True" HorizontalAlign="Center" 
+                                VerticalAlign="Top" Wrap="True" />
                             <TodayDayStyle ForeColor="#0033CC" />
                         </asp:Calendar>
                         <br />
                         <table id="tbLegend" runat="server" align="center" 
                             class="accordionContent">
                             <tr class="style9">
-                                <td align="justify" class="style29">
-                                    <img alt="" class="style30" src="images/salaoFesta.jpg" />
+                                <td align="center" class="style29">
+                                    <img alt="" class="style30" src="images/salaoFesta.jpg" />&nbsp;
                                     <asp:Label ID="lblSlfReservado" runat="server" 
                                         style="font-weight: 700; font-family: Calibri; font-size: 14pt" 
-                                        Text="SFR - Salão de Festa  Reservado" ForeColor="Green"></asp:Label>
+                                        Text="SF- Salão de Festa " ForeColor="#215E21"></asp:Label>
                                 </td>
-                                <td align="justify" class="style29">
-                                    <img alt="" class="style30" src="images/churrasco.jpg" /><asp:Label ID="Label5" 
-                                        runat="server" ForeColor="#FF9900" 
-                                        style="font-family: Calibri; font-size: 14pt; font-weight: 700" 
-                                        Text="CHR -Churrasqueira Reservada"></asp:Label>
+                                <td align="center" class="style29">
+                                    <img alt="" class="style30" src="images/churrasco.jpg" />
+                                    <asp:Label ID="Label5" 
+                                        runat="server" ForeColor="DarkRed" 
+                                        style="font-family: Calibri; font-size: 14pt; font-weight: 700; color: #8B0000;" 
+                                        Text="CH -Churrasqueira "></asp:Label>
                                 </td>
                             </tr>
                              <tr class="style9">
-                                <td align="justify" class="style29">
+                                <td align="center" class="style29">
                                     <span>
-                                    <img alt="" class="style30" src="images/salaoFesta.jpg" />
-                                    <asp:Label ID="lblPendentePg" runat="server" 
-                                        style="font-weight: 700; font-family: Calibri; font-size: 14pt; color: #CC0000" 
-                                        Text="SFP - Salão de Festa Pendente de PG"></asp:Label>
+                                    &nbsp;<asp:Label ID="lblPendentePg" runat="server" 
+                                        style="font-weight: 700; font-family: Calibri; font-size: 14pt; color: #000000;" 
+                                        Text="(R) - Reservado" ForeColor="Black"></asp:Label>
                                     </span></td>
-                                <td align="justify">
-                                    <img alt="" class="style30" src="images/churrasco.jpg" />&nbsp;<asp:Label 
+                                <td align="center">
+                                    &nbsp;<asp:Label 
                                         ID="Label4" runat="server" 
-                                        style="font-weight: 700; font-family: Calibri; font-size: 14pt; color: #9900CC" 
-                                        Text="CHP -Churrasqueira Pendente de PG" ForeColor="#000099"></asp:Label>
+                                        style="font-weight: 700; font-family: Calibri; font-size: 14pt; " 
+                                        Text="(*) - Não Confirmado (Falta de Pagamento)" CssClass="style32"></asp:Label>
                                 </td>
                             </tr>
                         </table>

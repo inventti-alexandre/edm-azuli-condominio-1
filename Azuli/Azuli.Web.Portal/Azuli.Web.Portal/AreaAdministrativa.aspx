@@ -101,10 +101,6 @@
             font-family: Verdana;
             font-size: 15pt;
         }
-        .style18
-        {
-            width: 66px;
-        }
         .style19
         {
             font-size: 12pt;
@@ -114,7 +110,7 @@
         {
             font-size: 12pt;
             font-weight: bold;
-            width: 66px;
+            width: 131px;
         }
         .style23
         {
@@ -186,29 +182,24 @@
    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+   
     <br /><br /><br />
-    
-     &nbsp;
-    
-     <asp:Label ID="Label8" runat="server" 
-        style="font-weight: 700; font-family: Calibri; font-size: 13pt; color: #006600" 
-        Text="Data de Reserva Disponível: "></asp:Label>
-    :&nbsp;
-    &nbsp;
-    <asp:Label ID="lblDataReserva" runat="server" 
-        style="font-weight: 700; font-family: Calibri; font-size: 14pt" 
-        CssClass="accordionContent"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img alt="" src="images/reserva.jpg" style="height: 17px; width: 22px" /><asp:LinkButton 
-        ID="lnkBack" runat="server" CssClass="accordionContent" onclick="lnkBack_Click">Voltar para o calendário</asp:LinkButton>
-&nbsp; <hr />
-    
     <center> <div id="dvPesquisaMorador" align="center" runat="server">
     
       <fieldset class="loginDisplayLegend">
      <legend align="left" class="style10">Agendamento para Moradores: </legend>
-   
-     
-            <center>
+   <center>
+     <asp:Label ID="Label8" runat="server" 
+        style="font-weight: 700; font-family: Calibri; font-size: 13pt; color: #006600" 
+        Text="Data de Reserva escolhida: "></asp:Label>
+    :&nbsp;
+    &nbsp;
+    <asp:Label ID="lblDataReserva" runat="server" 
+        style="font-weight: 700; font-family: Calibri; font-size: 14pt" 
+        CssClass="accordionContent"></asp:Label>
+            <br />
+            <br />
+            
              <table  style="height: 83px; width: 546px;" class="accordionContent">
                         <tr>
                             <td class="style3">
@@ -247,7 +238,9 @@
                             <td class="style13" align="left">
                                 <asp:Button ID="btnOk" runat="server" CssClass="botao" Text="Pesquisar" 
                                     Width="75px" onclick="btnOk_Click" ValidationGroup="pesquisaAP" />
-&nbsp;</td>
+&nbsp;<asp:Button ID="btnOk0" runat="server" CssClass="botao" Text="voltar" 
+                                    Width="75px" onclick="btnOk0_Click" ValidationGroup="pesquisaAP" />
+                            </td>
                         </tr>
                
         </table></center>
@@ -279,17 +272,26 @@
      <legend align="left" class="style10">&nbsp;<img alt="" class="style15" 
              src="images/clientes.jpg" /> Dados do Morador para Reserva:
                 
-                        <img alt="" class="style26" 
-                            src="images/salaoFesta.jpg" /></legend>
+                        </legend>
   
 
     
 
-     <table style="border: thin solid #C0C0C0; height: auto; width: 466px;" 
+     <table style="border: thin solid #C0C0C0; height: auto; width: 457px;" 
               class="accordionContent">
-            <tr>
-                <td align="center" style="margin-left: 40px" class="style18">
-                        <tr>
+                            
+                       <tr>
+                            <td class="style20" align="right">
+                                <asp:Label ID="Label3" runat="server" 
+        style="font-weight: 700; font-family: Calibri; font-size: 13pt; color: #006600" 
+        Text="Data da Reserva: "></asp:Label></td>
+                            <td align="center">
+                                <asp:Label ID="Label5" runat="server" 
+        style="font-weight: 700; font-family: Calibri; font-size: 14pt" 
+        CssClass="accordionContent"></asp:Label></td>
+                        </tr>
+                
+                       <tr>
                             <td class="style20" align="right">
                                 <asp:Label ID="lblProprietario" runat="server" Font-Bold="True" Text="Nome:" 
                                     CssClass="style17"></asp:Label>

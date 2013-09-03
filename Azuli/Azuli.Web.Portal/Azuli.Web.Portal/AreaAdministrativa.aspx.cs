@@ -511,5 +511,10 @@ namespace Azuli.Web.Portal
         {
             preencheGridAgendamentoFuturo();
         }
+
+        protected void btnOk0_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("WelcomeAdmin.aspx");
+        }
     }
 }

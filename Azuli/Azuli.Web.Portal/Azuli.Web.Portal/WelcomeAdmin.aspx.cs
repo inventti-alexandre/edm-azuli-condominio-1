@@ -97,11 +97,12 @@ namespace Azuli.Web.Portal
                         
                         linkPendenceSLFP.Width = 135;
                         linkPendenceSLFP.Height = 20;
+                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
 
 
                         HyperLink linkPendenceCHP = new HyperLink();
                         linkPendenceCHP.Font.Size = 8;
-                        linkPendenceCHP.ForeColor = Color.Red;
+                        linkPendenceCHP.ForeColor = Color.FromName("#FF7979");
                         linkPendenceCHP.Height = 20;
                         linkPendenceCHP.Width = 135;
                         
@@ -133,121 +134,121 @@ namespace Azuli.Web.Portal
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
-                                        status = "SFP";
-                                        linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        status = "SF(*) - " ;
+                                        linkPendenceSLFP.Text = status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento;
                                         linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
-                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        //t1.ForeColor = Color.Red;
+                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
+                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        //t1.ForeColor = Color.FromName("#8B0000");
                                         
                                     }
                                     else
                                     {
-                                        status = "SFR";
-                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Green;
+                                        status = "SF(R) - ";
+                                        t1.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t1.ForeColor = Color.FromName("#215E21");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
-                                        status = "CHP";
-                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        status = "CH(*) - ";
+                                        linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco="+quemAlugou.ap.bloco+"apto="+quemAlugou.ap.apartamento+"data="+quemAlugou.dataAgendamento+"status"+quemAlugou.statusPagamento;
-                                        
-                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        //t2.ForeColor = Color.Red;
+                                        linkPendenceCHP.ForeColor = Color.FromName("FFA0CC");
+                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        //t2.ForeColor = Color.FromName("#8B0000");
                                         
                                         
                                     }
                                     else
                                     {
-                                        status = "CHR";
-                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.FromName("#FF9900");
+                                        status = "CH(R) - ";
+                                        t2.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t2.ForeColor = Color.FromName("#8B0000");
                                         
                                     }
-                                   // t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status ;
+                                   // t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento +  status ;
                                     count = 1;
                                 }
                                 else
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
-                                        status = "SFP";
-                                       // t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                       //t1.ForeColor = Color.Red;
-                                        linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        status = "SF(*) - " ;
+                                       // t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                       //t1.ForeColor = Color.FromName("#8B0000");
+                                        linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         
                                     }
                                     else
                                     {
-                                        status = "SFR";
-                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Green;
+                                        status = "SF(R) - ";
+                                        t1.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t1.ForeColor = Color.FromName("#215E21");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
-                                        status = "CHP";
-                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        status = "CH(*) - ";
+                                        linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                        
-                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        //t2.ForeColor = Color.Red;
+                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        //t2.ForeColor = Color.FromName("#8B0000");
                                         
 
                                     }
                                     else
                                     {
-                                        status = "CHR";
-                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.FromName("#FF9900");
+                                        status = "CH(R) - ";
+                                        t2.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t2.ForeColor = Color.FromName("#8B0000");
                                         
                                     }
-                                   // t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                   // t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                 }
                             else
                             {
 
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                 {
-                                    status = "SFP";
-                                    linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    status = "SF(*) - " ;
+                                    linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                    linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                 linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
 
-                                    //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    //t1.ForeColor = Color.Red;
+                                    //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    //t1.ForeColor = Color.FromName("#8B0000");
                                     
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                 {
-                                    status = "SFR";
-                                    t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Green;
+                                    status = "SF(R) - ";
+                                    t1.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    t1.ForeColor = Color.FromName("#215E21");
                                     
                                 }
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                 {
-                                    status = "CHP";
-                                    linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    status = "CH(*) - ";
+                                    linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                        
-                                    //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    //t2.ForeColor = Color.Red;
+                                    //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    //t2.ForeColor = Color.FromName("#8B0000");
                                     
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                 {
-                                    status = "CHR";
-                                    t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t2.ForeColor = Color.FromName("#FF9900");
+                                    status = "CH(R) - ";
+                                    t2.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    t2.ForeColor = Color.FromName("#8B0000");
                                     
                                 }
                                
-                                //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
 
                             }
 
@@ -307,7 +308,7 @@ namespace Azuli.Web.Portal
 
                         HyperLink linkPendenceCHP = new HyperLink();
                         linkPendenceCHP.Font.Size = 8;
-                        linkPendenceCHP.ForeColor = Color.Red;
+                         linkPendenceCHP.ForeColor = Color.FromName("#FF7979");
                         linkPendenceCHP.Height = 20;
                         linkPendenceCHP.Width = 135;
                         
@@ -332,121 +333,121 @@ namespace Azuli.Web.Portal
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
-                                        status = "SFP";
+                                        status = "SF(*) - " ;
 
-                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
-                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        //t1.ForeColor = Color.Red;
+                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
+                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        //t1.ForeColor = Color.FromName("#8B0000");
                                         
                                     }
 
                                     else
                                     {
-                                        status = "SFR";
-                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Green;
+                                        status = "SF(R) - ";
+                                        t1.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t1.ForeColor = Color.FromName("#215E21");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
-                                        status = "CHP";
-                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        status = "CH(*) - ";
+                                        linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                        linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                       
                                         
                                         
-                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        //t2.ForeColor = Color.Red;
+                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        //t2.ForeColor = Color.FromName("#8B0000");
                                         
                                     }
                                     else
                                     {
-                                        status = "CHR";
-                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.FromName("#FF9900");
+                                        status = "CH(R) - ";
+                                        t2.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t2.ForeColor = Color.FromName("#8B0000");
                                     }
-                                   // t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                   // t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     count = 1;
                                 }
                                 else
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
-                                        status = "SFP";
-                                       // t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        //t1.ForeColor = Color.Red;
-                                        linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        status = "SF(*) - " ;
+                                       // t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        //t1.ForeColor = Color.FromName("#8B0000");
+                                        linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         
                                     }
                                     else
                                     {
-                                        status = "SFR";
-                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Green;
+                                        status = "SF(R) - ";
+                                        t1.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t1.ForeColor = Color.FromName("#215E21");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
-                                        status = "CHP";
-                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        status = "CH(*) - ";
+                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                        linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                        //
                                         
-                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        //t2.ForeColor = Color.Red;
+                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        //t2.ForeColor = Color.FromName("#8B0000");
                                         
                                     }
                                     else
                                     {
-                                        status = "CHR";
-                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.FromName("#FF9900");
+                                        status = "CH(R) - ";
+                                        t2.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t2.ForeColor = Color.FromName("#8B0000");
                                         
                                     }
-                                    //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                 }
                             else
                             {
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                 {
-                                    status = "SFP";
-                                    //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    //t1.ForeColor = Color.Red;
-                                    linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    status = "SF(*) - " ;
+                                    //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    //t1.ForeColor = Color.FromName("#8B0000");
+                                    linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                    linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                 linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                     
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                 {
-                                    status = "SFR";
-                                    t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Green;
+                                    status = "SF(R) - ";
+                                    t1.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    t1.ForeColor = Color.FromName("#215E21");
                                     
                                 }
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                 {
-                                    status = "CHP";
-                                    //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    //t2.ForeColor = Color.Red;
-                                    linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    status = "CH(*) - ";
+                                    //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    //t2.ForeColor = Color.FromName("#8B0000");
+                                    linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                    linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                    
                                         
                                     
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                 {
-                                    status = "CHR";
-                                    t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t2.ForeColor = Color.FromName("#FF9900");
+                                    status = "CH(R) - ";
+                                    t2.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    t2.ForeColor = Color.FromName("#8B0000");
                                     
                                 }
-                                // t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                // t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
 
                             }
 
@@ -506,7 +507,7 @@ namespace Azuli.Web.Portal
 
                         HyperLink linkPendenceCHP = new HyperLink();
                         linkPendenceCHP.Font.Size = 8;
-                        linkPendenceCHP.ForeColor = Color.Red;
+                         linkPendenceCHP.ForeColor = Color.FromName("#FF7979");
                         linkPendenceCHP.Height = 20;
                         linkPendenceCHP.Width = 135;
                         
@@ -533,117 +534,117 @@ namespace Azuli.Web.Portal
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
-                                        status = "SFP";
-                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        //t1.ForeColor = Color.Red;
-                                        linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        status = "SF(*) - " ;
+                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        //t1.ForeColor = Color.FromName("#8B0000");
+                                        linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                     {
-                                        status = "SFR";
-                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Green;
+                                        status = "SF(R) - ";
+                                        t1.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t1.ForeColor = Color.FromName("#215E21");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
-                                        status = "CHP";
-                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        //t2.ForeColor = Color.Red;
-                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        status = "CH(*) - ";
+                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        //t2.ForeColor = Color.FromName("#8B0000");
+                                        linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                        linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                        
                                         
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                     {
-                                        status = "CHR";
-                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.FromName("#FF9900");
+                                        status = "CH(R) - ";
+                                        t2.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t2.ForeColor = Color.FromName("#8B0000");
                                         
                                     }
-                                    //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     count = 1;
                                 }
                                 else
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
-                                        status = "SFP";
-                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        //t1.ForeColor = Color.Red;
-                                        linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        status = "SF(*) - " ;
+                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        //t1.ForeColor = Color.FromName("#8B0000");
+                                        linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                     {
-                                        status = "SFR";
-                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Green;
+                                        status = "SF(R) - ";
+                                        t1.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t1.ForeColor = Color.FromName("#215E21");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
-                                        status = "CHP";
-                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        //t2.ForeColor = Color.Red;
+                                        status = "CH(*) - ";
+                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        //t2.ForeColor = Color.FromName("#8B0000");
 
-                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                        linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                        
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                     {
-                                        status = "CHR";
-                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.FromName("#FF9900");
+                                        status = "CH(R) - ";
+                                        t2.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t2.ForeColor = Color.FromName("#8B0000");
                                         
                                     }
-                                   // t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                   // t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                 }
                             else
                             {
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                 {
-                                    status = "SFP";
-                                    //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    //t1.ForeColor = Color.Red;
-                                    linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    status = "SF(*) - " ;
+                                    //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    //t1.ForeColor = Color.FromName("#8B0000");
+                                    linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                    linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                 linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                 {
-                                    status = "SFR";
-                                    t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Green;
+                                    status = "SF(R) - ";
+                                    t1.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    t1.ForeColor = Color.FromName("#215E21");
                                     
                                 }
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                 {
-                                    status = "CHP";
-                                    //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    //t2.ForeColor = Color.Red;
-                                    linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    status = "CH(*) - ";
+                                    //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    //t2.ForeColor = Color.FromName("#8B0000");
+                                    linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                    linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                    
                                         
                                     
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                 {
-                                    status = "CHR";
-                                    t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t2.ForeColor = Color.FromName("#FF9900");
+                                    status = "CH(R) - ";
+                                    t2.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    t2.ForeColor = Color.FromName("#8B0000");
                                 }
-                               // t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                               // t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                // t1.Text = "As duas P/";
                             }
 
@@ -707,7 +708,7 @@ namespace Azuli.Web.Portal
 
                         HyperLink linkPendenceCHP = new HyperLink();
                         linkPendenceCHP.Font.Size = 8;
-                        linkPendenceCHP.ForeColor = Color.Red;
+                         linkPendenceCHP.ForeColor = Color.FromName("#FF7979");
                         linkPendenceCHP.Height = 20;
                         linkPendenceCHP.Width = 135;
                         
@@ -734,118 +735,118 @@ namespace Azuli.Web.Portal
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
-                                        status = "SFP";
-                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        //t1.ForeColor = Color.Red;
-                                        linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        status = "SF(*) - " ;
+                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        //t1.ForeColor = Color.FromName("#8B0000");
+                                        linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                     {
-                                        status = "SFR";
-                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Green;
+                                        status = "SF(R) - ";
+                                        t1.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t1.ForeColor = Color.FromName("#215E21");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
-                                        status = "CHP";
-                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        //t2.ForeColor = Color.Red;
-                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        status = "CH(*) - ";
+                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        //t2.ForeColor = Color.FromName("#8B0000");
+                                        linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                        linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                        
                                         
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                     {
-                                        status = "CHR";
-                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.FromName("#FF9900");
+                                        status = "CH(R) - ";
+                                        t2.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t2.ForeColor = Color.FromName("#8B0000");
                                     }
-                                   // t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                   // t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     count = 1;
                                 }
                                 else
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
-                                        status = "SFP";
-                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        //t1.ForeColor = Color.Red;
-                                        linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        status = "SF(*) - " ;
+                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        //t1.ForeColor = Color.FromName("#8B0000");
+                                        linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                     {
-                                        status = "SFR";
-                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Green;
+                                        status = "SF(R) - ";
+                                        t1.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t1.ForeColor = Color.FromName("#215E21");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
-                                        status = "CHP";
-                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        //t2.ForeColor = Color.Red;
+                                        status = "CH(*) - ";
+                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        //t2.ForeColor = Color.FromName("#8B0000");
 
-                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                        linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                        
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                     {
-                                        status = "CHR";
-                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.FromName("#FF9900");
+                                        status = "CH(R) - ";
+                                        t2.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t2.ForeColor = Color.FromName("#8B0000");
                                         
                                     }
-                                   // t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                   // t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                 }
                             else
                             {
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                 {
-                                    status = "SFP";
-                                    //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    //t1.ForeColor = Color.Red;
-                                    linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    status = "SF(*) - " ;
+                                    //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    //t1.ForeColor = Color.FromName("#8B0000");
+                                    linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                    linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                 linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                     
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                 {
-                                    status = "SFR";
-                                    t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Green;
+                                    status = "SF(R) - ";
+                                    t1.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    t1.ForeColor = Color.FromName("#215E21");
                                     
                                 }
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                 {
-                                    status = "CHP";
-                                    //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    //t2.ForeColor = Color.Red;
-                                    linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    status = "CH(*) - ";
+                                    //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    //t2.ForeColor = Color.FromName("#8B0000");
+                                    linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                    linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                    
                                         
                                     
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                 {
-                                    status = "CHR";
-                                    t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t2.ForeColor = Color.FromName("#FF9900");
+                                    status = "CH(R) - ";
+                                    t2.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    t2.ForeColor = Color.FromName("#8B0000");
                                     
                                 }
-                                //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
 
                             }
 
@@ -905,7 +906,7 @@ namespace Azuli.Web.Portal
 
                         HyperLink linkPendenceCHP = new HyperLink();
                         linkPendenceCHP.Font.Size = 8;
-                        linkPendenceCHP.ForeColor = Color.Red;
+                         linkPendenceCHP.ForeColor = Color.FromName("#FF7979");
                         linkPendenceCHP.Height = 20;
                         linkPendenceCHP.Width = 135;
                         
@@ -931,37 +932,37 @@ namespace Azuli.Web.Portal
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
-                                        status = "SFP";
-                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                       // t1.ForeColor = Color.Red;
-                                        linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        status = "SF(*) - " ;
+                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                       // t1.ForeColor = Color.FromName("#8B0000");
+                                        linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                     {
-                                        status = "SFR";
-                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Green;
+                                        status = "SF(R) - ";
+                                        t1.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t1.ForeColor = Color.FromName("#215E21");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
-                                        status = "CHP";
-                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        status = "CH(*) - ";
+                                        linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                        linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
                                         
-                                       // t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                       // t2.ForeColor = Color.Red;
+                                        
+                                       // t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                       // t2.ForeColor = Color.FromName("#8B0000");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                     {
-                                        status = "CHR";
-                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.FromName("#FF9900");
+                                        status = "CH(R) - ";
+                                        t2.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t2.ForeColor = Color.FromName("#8B0000");
                                         
                                     }
                                    
@@ -971,75 +972,75 @@ namespace Azuli.Web.Portal
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
-                                        status = "SFP";
-                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        //t1.ForeColor = Color.Red;
-                                        linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        status = "SF(*) - " ;
+                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        //t1.ForeColor = Color.FromName("#8B0000");
+                                        linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                     {
-                                        status = "SFR";
-                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Green;
+                                        status = "SF(R) - ";
+                                        t1.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t1.ForeColor = Color.FromName("#215E21");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
-                                        status = "CHP";
-                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        //t2.ForeColor = Color.Red;
-                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        status = "CH(*) - ";
+                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        //t2.ForeColor = Color.FromName("#8B0000");
+                                        linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                        linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                        
                                         
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                     {
-                                        status = "CHR";
-                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.FromName("#FF9900");
+                                        status = "CH(R) - ";
+                                        t2.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t2.ForeColor = Color.FromName("#8B0000");
                                     }
-                                    t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status; 
+                                    t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ; 
                                 }
                             else
                             {
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                 {
-                                    status = "SFP";
-                                    //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    // t1.ForeColor = Color.Red;
-                                    linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    status = "SF(*) - " ;
+                                    //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    // t1.ForeColor = Color.FromName("#8B0000");
+                                    linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                    linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                 linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                     
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                 {
-                                    status = "SFR";
-                                    t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Green;
+                                    status = "SF(R) - ";
+                                    t1.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    t1.ForeColor = Color.FromName("#215E21");
                                     
                                 }
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                 {
-                                    status = "CHP";
-                                    //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    //t2.ForeColor = Color.Red;
-                                    linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    status = "CH(*) - ";
+                                    //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    //t2.ForeColor = Color.FromName("#8B0000");
+                                    linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                    linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                    
                                         
                                     
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                 {
-                                    status = "CHR";
-                                    t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t2.ForeColor = Color.FromName("#FF9900");
+                                    status = "CH(R) - ";
+                                    t2.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    t2.ForeColor = Color.FromName("#8B0000");
                                     
                                 }
                             
@@ -1102,7 +1103,7 @@ namespace Azuli.Web.Portal
 
                         HyperLink linkPendenceCHP = new HyperLink();
                         linkPendenceCHP.Font.Size = 8;
-                        linkPendenceCHP.ForeColor = Color.Red;
+                         linkPendenceCHP.ForeColor = Color.FromName("#FF7979");
                         linkPendenceCHP.Height = 20;
                         linkPendenceCHP.Width = 135;
                         
@@ -1126,38 +1127,38 @@ namespace Azuli.Web.Portal
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
-                                        status = "SFP";
-                                        linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        status = "SF(*) - " ;
+                                        linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         
-                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        //t1.ForeColor = Color.Red;
+                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        //t1.ForeColor = Color.FromName("#8B0000");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                     {
-                                        status = "SFR";
-                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Green;
+                                        status = "SF(R) - ";
+                                        t1.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t1.ForeColor = Color.FromName("#215E21");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
-                                        status = "CHP";
-                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        status = "CH(*) - ";
+                                        linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                        linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
                                         
-                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        //t2.ForeColor = Color.Red;
+                                        
+                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        //t2.ForeColor = Color.FromName("#8B0000");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                     {
-                                        status = "CHR";
-                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.FromName("#FF9900");
+                                        status = "CH(R) - ";
+                                        t2.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t2.ForeColor = Color.FromName("#8B0000");
                                         
                                     }
                                    
@@ -1167,37 +1168,37 @@ namespace Azuli.Web.Portal
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                     {
-                                        status = "SFP";
-                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                       // t1.ForeColor = Color.Red;
-                                        linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        status = "SF(*) - " ;
+                                        //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                       // t1.ForeColor = Color.FromName("#8B0000");
+                                        linkPendenceSLFP.Text = status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                        linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                     {
-                                        status = "SFR";
-                                        t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t1.ForeColor = Color.Green;
+                                        status = "SF(R) - ";
+                                        t1.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t1.ForeColor = Color.FromName("#215E21");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                     {
-                                        status = "CHP";
-                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        //t2.ForeColor = Color.Red;
-                                        linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                        status = "CH(*) - ";
+                                        //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        //t2.ForeColor = Color.FromName("#8B0000");
+                                        linkPendenceCHP.Text = status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                        linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                        
                                         
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                     {
-                                        status = "CHR";
-                                        t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                        t2.ForeColor = Color.FromName("#FF9900");
+                                        status = "CH(R) - ";
+                                        t2.Text = status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                        t2.ForeColor = Color.FromName("#8B0000");
                                         
                                     }
                                     
@@ -1206,37 +1207,37 @@ namespace Azuli.Web.Portal
                             {
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true)
                                 {
-                                    status = "SFP";
-                                    //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    //t1.ForeColor = Color.Red;
-                                    linkPendenceSLFP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    status = "SF(*) - " ;
+                                    //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    //t1.ForeColor = Color.FromName("#8B0000");
+                                    linkPendenceSLFP.Text = status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
-                                    linkPendenceSLFP.ForeColor = Color.FromName("#CC0000");
+                                 linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
                                 {
-                                    status = "SFR";
-                                    t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t1.ForeColor = Color.Green;
+                                    status = "SF(R) - ";
+                                    t1.Text = status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento;
+                                    t1.ForeColor = Color.FromName("#215E21");
                                     
                                 }
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true)
                                 {
-                                    status = "CHP";
-                                    //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    //t2.ForeColor = Color.Red;
-                                    linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
+                                    status = "CH(*) - ";
+                                    //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    //t2.ForeColor = Color.FromName("#8B0000");
+                                    linkPendenceCHP.Text = status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
 
-                                    linkPendenceCHP.ForeColor = Color.FromName("#9900D2");
+                                    
                                         
                                    
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true)
                                 {
-                                    status = "CHR";
-                                    t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento + " →" + status;
-                                    t2.ForeColor = Color.FromName("#FF9900");
+                                    status = "CH(R) - ";
+                                    t2.Text = status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
+                                    t2.ForeColor = Color.FromName("#8B0000");
                                     
                                    
                                 }
