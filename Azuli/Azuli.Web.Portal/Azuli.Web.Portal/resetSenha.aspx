@@ -9,11 +9,11 @@
   <center><div id="dvProprietario" runat="server" >
    
         <br />
-        <table class="btGeral" dir="ltr" frame="border" style="width: 349px" >
+        <table class="accordionContent" dir="ltr" frame="border" style="width: 375px" >
             <tr>
                 <td>
                     <asp:Label ID="Label2" runat="server" 
-                        Text="Escolha uma senha de 6 digitos:"></asp:Label>
+                        Text="Digite sua nova senha com 4 digitos:"></asp:Label>
                 </td>
                 <td>
                     <asp:TextBox ID="txtNovaSenha" runat="server" Height="21px" TextMode="Password" 
@@ -25,7 +25,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="Label3" runat="server" Text="Confirme a senha:"></asp:Label>
+                    <asp:Label ID="Label3" runat="server" Text="Confirme a nova senha:"></asp:Label>
                 </td>
                 <td>
                     <asp:TextBox ID="txtRepitaNovaSenha" runat="server" Height="21px" 
@@ -38,8 +38,8 @@
           
             <tr>
                 <td>
-                    <asp:Button ID="btnAlteraSenha" runat="server" CssClass="botao" Text="Ok" 
-                        Width="44px" onclick="btnAlteraSenha_Click" 
+                    <asp:Button ID="btnAlteraSenha" runat="server" CssClass="botao" Text="Mudar Senha" 
+                        Width="105px" onclick="btnAlteraSenha_Click" 
                         ValidationGroup="alteraSenha" />
                 </td>  </tr>
               

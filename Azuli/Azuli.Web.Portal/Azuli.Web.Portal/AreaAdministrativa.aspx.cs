@@ -32,6 +32,7 @@ namespace Azuli.Web.Portal
                    
                     hiddenControlDiv();
                     lblDataReserva.Text = dataByExtense();
+                    lblDataReserva2.Text = dataByExtense();
                
                 }
                 else
@@ -201,20 +202,8 @@ namespace Azuli.Web.Portal
                          lblReservaChurraFoi.Text = "Status :";
                          //lblReservaChurraFoi.Text = "Você tem reserva aqui";
                          //lblDataReservaUltimaChurras.Text = "Você já tem reserva agenda p/";
+                       
                   }
-
-                 else if (Convert.ToInt32(lblChurras.Text) < 0)
-                 {
-                     lblChurras.Text = "" + Math.Abs(Convert.ToInt32(lblChurras.Text));
-                     lblDataUltimaReservachurras.Text = "Morador Já tem reservas Pendentes!";
-                     lblReservaChurraFoi.Text = "Status :";
-                     lblChurras.Text = "Pendente";
-                     //lblReservaChurraFoi.Text = "Você tem reserva aqui";
-                     //lblDataReservaUltimaChurras.Text = "Você já tem reserva agenda p/";
-                 }
-                
-             
-
 
 
                  if (Convert.ToInt32(lblSalao.Text) > 0)
@@ -226,25 +215,13 @@ namespace Azuli.Web.Portal
                  else if (Convert.ToInt32(lblSalao.Text) == 0)
                  {
                          lblSalao.Text = "" + Math.Abs(Convert.ToInt32(lblSalao.Text));
-                         lblDataUltimaReservaSalao.Text = "Morador Ainda não fez reservas";
+                         lblDataUltimaReservaSalao.Text = "Morador Ainda não fez reservas!";
                          lblReservaFestaFoi.Text = "Status :";
                          //lblReservaFestaFoi.Text = "Você tem reserva aqui";
                          //lblDataReservaUltimaDescription.Text = ": ";
+                         
                  }
 
-                 else if (Convert.ToInt32(lblSalao.Text) < 0)
-                 {
-                     lblSalao.Text = "" + Math.Abs(Convert.ToInt32(lblSalao.Text));
-                     lblDataUltimaReservaSalao.Text = "Morador Já tem reservas Pendentes!";
-                     lblReservaFestaFoi.Text = "Status :";
-                     lblSalao.Text = "Pendente";
-                    
-                     //lblReservaFestaFoi.Text = "Você tem reserva aqui";
-                     //lblDataReservaUltimaDescription.Text = ": ";
-                 }
-
-
-             
         }
 
         public string dataByExtense()
@@ -422,7 +399,7 @@ namespace Azuli.Web.Portal
                {
                   
                    lblMsgCadastro.Visible = true;
-                   lblMsgCadastro.Text = "Cadastro efetuado com sucesso para Morador: <br> <b> " + oProprietarioModel.proprietario1 + " & " + oProprietarioModel.proprietario2 + " <b> <br>" + "Bloco: " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento + "<br> Sua Senha é: " + oProprietarioModel.senha + "<br><hr>";
+                   lblMsgCadastro.Text = "Cadastro efetuado com sucesso para Morador: <br> <b> " + oProprietarioModel.proprietario1 + " <b> <br>" + "Bloco: " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento + "<br> Sua Senha é: " + oProprietarioModel.senha + "<br><hr>";
                 
                    dvCadastro.Visible = false;
                    dvPesquisaMorador.Visible = false;

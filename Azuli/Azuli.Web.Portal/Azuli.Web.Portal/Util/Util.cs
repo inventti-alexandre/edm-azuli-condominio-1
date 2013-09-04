@@ -210,7 +210,7 @@ namespace Azuli.Web.Portal.Util
             string guid = Guid.NewGuid().ToString().Replace("-", "");
 
             Random clsRan = new Random();
-            Int32 tamanhoSenha = clsRan.Next(6, 6);
+            Int32 tamanhoSenha = clsRan.Next(4, 4);
 
             string senha = "";
             for (Int32 i = 0; i <= tamanhoSenha; i++)

@@ -1,5 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteAdmin.Master" AutoEventWireup="true" CodeBehind="alteraSenhaSindico.aspx.cs" Inherits="Azuli.Web.Portal.alteraSenhaSindico" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .style3
+        {
+            font-weight: bold;
+            font-size: 11pt;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -10,11 +17,11 @@
   <center><div id="dvProprietario" align="center" runat="server" >
    
         <br />
-        <table class="btGeral" dir="ltr" frame="border" style="width: 349px" >
+        <table class="accordionContent" dir="ltr" frame="border" style="width: 417px" >
             <tr>
                 <td>
                     <asp:Label ID="Label2" runat="server" 
-                        Text="Escolha uma senha de 6 digitos:"></asp:Label>
+                        Text="Escolha uma senha de 4 digitos:" CssClass="style3"></asp:Label>
                 </td>
                 <td>
                     <asp:TextBox ID="txtNovaSenha" runat="server" Height="21px" TextMode="Password" 
@@ -26,7 +33,8 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="Label3" runat="server" Text="Confirme a senha:"></asp:Label>
+                    <asp:Label ID="Label3" runat="server" Text="Confirme a nova senha:" 
+                        CssClass="style3"></asp:Label>
                 </td>
                 <td>
                     <asp:TextBox ID="txtRepitaNovaSenha" runat="server" Height="21px" 
@@ -39,9 +47,9 @@
           
             <tr>
                 <td>
-                    <asp:Button ID="btnAlteraSenha" runat="server" CssClass="botao" Text="Ok" 
-                        Width="44px" onclick="btnAlteraSenha_Click" 
-                        ValidationGroup="alteraSenha" />
+                    <asp:Button ID="btnAlteraSenha" runat="server" CssClass="botao" Text="Mudar Senha" 
+                        Width="126px" onclick="btnAlteraSenha_Click" 
+                        ValidationGroup="alteraSenha" style="font-size: 10pt" />
                 </td>  </tr>
               
         </table>

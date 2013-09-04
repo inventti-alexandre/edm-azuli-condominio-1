@@ -141,6 +141,7 @@
     <Content Include="LoginPortaria.aspx" />
     <Content Include="meuClassificados.aspx" />
     <Content Include="MostraPdfCircular.aspx" />
+    <Content Include="PendenciaAgendamentos.aspx" />
     <Content Include="publicarCircular.aspx" />
     <Content Include="consultaAgendasAdmin.aspx" />
     <Content Include="ErrorPage.aspx" />
@@ -403,6 +404,13 @@
     <Compile Include="PageAcessControl.Master.designer.cs">
       <DependentUpon>PageAcessControl.Master</DependentUpon>
     </Compile>
+    <Compile Include="PendenciaAgendamentos.aspx.cs">
+      <DependentUpon>PendenciaAgendamentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PendenciaAgendamentos.aspx.designer.cs">
+      <DependentUpon>PendenciaAgendamentos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="publicarCircular.aspx.cs">
       <DependentUpon>publicarCircular.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -630,7 +638,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51675</DevelopmentServerPort>
+          <DevelopmentServerPort>59796</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

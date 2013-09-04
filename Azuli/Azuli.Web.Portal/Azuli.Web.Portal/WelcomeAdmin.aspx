@@ -24,12 +24,17 @@
         }
         .style30
         {
-            width: 50px;
-            height: 31px;
+            width: 36px;
+            height: 29px;
         }
         .style32
         {
             color: #6B6B6B;
+            font-size: 12pt;
+        }
+        .style33
+        {
+            font-size: 12pt;
         }
     </style>
     <script type="text/javascript">
@@ -75,28 +80,28 @@
                                 <td align="center" class="style29">
                                     <img alt="" class="style30" src="images/salaoFesta.jpg" />&nbsp;
                                     <asp:Label ID="lblSlfReservado" runat="server" 
-                                        style="font-weight: 700; font-family: Calibri; font-size: 14pt" 
-                                        Text="SF- Salão de Festa " ForeColor="#215E21"></asp:Label>
+                                        style="font-weight: 700; font-family: Calibri; " 
+                                        Text="SF- Salão de Festa " ForeColor="#215E21" CssClass="style33"></asp:Label>
                                 </td>
                                 <td align="center" class="style29">
                                     <img alt="" class="style30" src="images/churrasco.jpg" />
                                     <asp:Label ID="Label5" 
                                         runat="server" ForeColor="DarkRed" 
-                                        style="font-family: Calibri; font-size: 14pt; font-weight: 700; color: #8B0000;" 
-                                        Text="CH -Churrasqueira "></asp:Label>
+                                        style="font-family: Calibri; font-weight: 700; color: #8B0000;" 
+                                        Text="CH -Churrasqueira " CssClass="style33"></asp:Label>
                                 </td>
                             </tr>
                              <tr class="style9">
                                 <td align="center" class="style29">
                                     <span>
                                     &nbsp;<asp:Label ID="lblPendentePg" runat="server" 
-                                        style="font-weight: 700; font-family: Calibri; font-size: 14pt; color: #000000;" 
-                                        Text="(R) - Reservado" ForeColor="Black"></asp:Label>
+                                        style="font-weight: 700; font-family: Calibri; color: #000000;" 
+                                        Text="(R) - Reservado" ForeColor="Black" CssClass="style33"></asp:Label>
                                     </span></td>
                                 <td align="center">
                                     &nbsp;<asp:Label 
                                         ID="Label4" runat="server" 
-                                        style="font-weight: 700; font-family: Calibri; font-size: 14pt; " 
+                                        style="font-weight: 700; font-family: Calibri; " 
                                         Text="(*) - Não Confirmado (Falta de Pagamento)" CssClass="style32"></asp:Label>
                                 </td>
                             </tr>
