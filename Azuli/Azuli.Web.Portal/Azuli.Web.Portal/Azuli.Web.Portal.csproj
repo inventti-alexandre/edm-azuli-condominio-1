@@ -93,6 +93,7 @@
     <Content Include="images\AmareloPendente.png" />
     <Content Include="images\azulPendente.png" />
     <Content Include="images\boton_responder.gif" />
+    <Content Include="images\calendario.png" />
     <Content Include="images\cancelar.jpg" />
     <Content Include="images\class.jpg" />
     <Content Include="images\classificados.jpg" />

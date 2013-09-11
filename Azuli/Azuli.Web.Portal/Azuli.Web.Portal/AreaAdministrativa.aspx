@@ -246,7 +246,7 @@
                                 <asp:Button ID="btnOk" runat="server" CssClass="botao" Text="Pesquisar" 
                                     Width="75px" onclick="btnOk_Click" ValidationGroup="pesquisaAP" />
 &nbsp;<asp:Button ID="btnOk0" runat="server" CssClass="botao" Text="voltar" 
-                                    Width="75px" onclick="btnOk0_Click" ValidationGroup="pesquisaAP" />
+                                    Width="75px" onclick="btnOk0_Click" />
                             </td>
                         </tr>
                
@@ -519,7 +519,8 @@
         
         
         
-        style="position: absolute; top: 218px; left: 681px; height: 91px; width: 274px;">
+        
+        style="position: absolute; top: 218px; left: 731px; height: 91px; width: 274px;">
         <table 
               class="accordionContent">
             <tr>
@@ -564,7 +565,8 @@
         
         
         
-        style="position: absolute; top: 331px; left: 682px; height: 79px; width: 283px;">
+        
+        style="position: absolute; top: 331px; left: 731px; height: 79px; width: 283px;">
         <table 
               class="accordionContent">
             <tr>

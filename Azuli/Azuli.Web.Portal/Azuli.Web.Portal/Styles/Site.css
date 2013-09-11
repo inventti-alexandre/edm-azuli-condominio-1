@@ -458,6 +458,16 @@ div.accountInfo
     color: white;
 }
 
+.loginPage
+{
+    display: inherit;
+    text-align: left;
+    padding: 1px;
+    height: auto;
+    width: 501px;
+    top: 11px;
+}
+
 
 .loginDisplayAdmin
 {

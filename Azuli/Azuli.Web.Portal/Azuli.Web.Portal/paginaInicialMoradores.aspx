@@ -45,12 +45,31 @@
             font-weight: bold;
             color: #000000;
         }
+        .style13
+        {
+            background-color: #F0F0F0;
+            border-left: 2px solid #999999;
+            border-right: 2px solid #999999;
+            border-botom: 2px solid #999999;
+            padding: 5px 5px 5px 5px;
+            font-family: Verdana;
+            font-size: 10pt;
+            color: #666666;
+            border-radius: 1em;
+            height: 15px;
+        }
+        .style14
+        {
+            width: 100%;
+        }
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
+    <fieldset class="loginPage">
+        <legend class="style13">Seja bem vindo ao Sistema !</legend>
    <div id="dvMsg" runat="server" style="position:relative;">
     <table  style="text-align:justify;">
         <tr>
@@ -67,12 +86,16 @@
                         <span class="style8">&nbsp;mensagens&nbsp;
                             <img alt="" class="style3" src="images/correio.jpg" /></span></span> </h1>
                           
-                        
+                      
 
             </td>
-
-          
-        </tr></table>
+            
+             
+     
+        </tr>
+        
+        </table>
+        <div style="position:absolute; top: -42px; left: 536px; width: 157px; height: 78px;">
         <div  id="dvUteis"  class="containerTel" runat="server">
             <div class="headerEnqueteTel">
                 <span class="style12"> Telefones Utéis <img src="images/tel.jpg"  alt="" width="20px" height="20px"/></span>
@@ -87,23 +110,39 @@
             </div>
        
       </div>
+      </div>
+       
        
     </div>
 
-    <fieldset>
-        <legend class="accordionContent">Seja bem vindo ao Sistema de Gerenciamento de Condominio</legend>
-       
-        <p>    Através do menu acima, é permitido fazer reservas do salão de festa / Churrasqueira
-            e abrir ocorrências, e consultar informações referente ao condominio, como estatuto do condominio e entre mais informações importantes. </p>
-        
-        
-        <li style="color: #000080">
-            <asp:LinkButton ID="link1" runat="server" OnClick="link1_Click">Download Regimento Interno do Condominio  Spazio Campo Azuli &nbsp;<img alt=""  src="images/pdf.jpg" style="height: 24px; width: 24px" /></asp:LinkButton></li>
-         <li style="color: #000080">
-            <asp:LinkButton ID="lnkDonwload" runat="server"  OnClick="lnkDonwload_Click">Apresentação das funcionalidades do sistema SGC! &nbsp;<img alt=""  src="images/pdf.jpg" style="height: 24px; width: 24px" /></asp:LinkButton></li>
-       
-       </fieldset>   
+    
+        <table class="style14">
+            <tr>
+                <td align="center">
 
+    
+    <fieldset>
+        <legend class="accordionContent">  <asp:Label ID="Label5" runat="server" 
+                Text="Clique no Calendário abaixo para Consultar Reservas!"></asp:Label></legend>
+        <p align="left">   
+       
+         &nbsp;<asp:ImageButton ID="ImageButton1" runat="server" Height="68px" 
+                ImageUrl="~/images/calendario.png" Width="82px" />
+          
+        </p>
+        </fieldset></td>
+                <td align="center">
+        <fieldset>
+<legend class="accordionContent">  <asp:Label ID="Label2" runat="server" 
+                Text="Faço Download dos arquivos abaixo!"></asp:Label></legend>
+        <li style="color: #000080">
+            <asp:LinkButton ID="link1" runat="server" OnClick="link1_Click">Regimento Interno do Condominio Azuli &nbsp;<img alt=""  src="images/pdf.jpg" style="height: 24px; width: 24px" /></asp:LinkButton></li>
+         <li style="color: #000080">
+            <asp:LinkButton ID="lnkDonwload" runat="server"  OnClick="lnkDonwload_Click">Funcionalidades do sistema SGC! &nbsp;<img alt=""  src="images/pdf.jpg" style="height: 24px; width: 24px" /></asp:LinkButton></li>
+       </fieldset></td>
+            </tr>
+        </table>
+        &nbsp;<br />
        
         <div  id="dvEnquete" style="position:absolute" class="container" runat="server">
             <div class="headerEnquete">
@@ -291,6 +330,8 @@
             </div>
        
       </div>
-     
-   <br /><br /> <br /><br /> <br /><br /> <br /><br /> <br /><br /> <br /><br /> <br /><br />
+       <br /><br /> <br /><br /> <br /><br /> <br /><br /> <br /><br /> <br /><br /> <br /><br /><br /><br /> <br /><br /><br /><br /> <br /><br />
+       </fieldset>   
+
+  
 </asp:Content>
