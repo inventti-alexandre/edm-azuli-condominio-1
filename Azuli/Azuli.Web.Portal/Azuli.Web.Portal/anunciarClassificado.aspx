@@ -157,7 +157,8 @@
             <br />
         <center>  
             <asp:GridView ID="grdClassificado" runat="server" AutoGenerateColumns="False" 
-                CssClass="GridView" Width="756px" EmptyDataText="Você não tem Anúncios publicados!!">
+                CssClass="gridl" Width="756px" 
+                EmptyDataText="Você não tem Anúncios publicados!!">
                 <Columns>
                     <asp:TemplateField HeaderText="Código" Visible="False">
                         <EditItemTemplate>

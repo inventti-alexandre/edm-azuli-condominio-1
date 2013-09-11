@@ -480,10 +480,15 @@ namespace Azuli.Web.DAO
                     oAgendaModel.contadorFestaFuturo = Math.Abs(Convert.ToInt32(dr["DiasAgendaFesta"]));
                 }
 
-
-
                 if (dr.Table.Columns.Contains("dataFuturaFesta"))
                     oAgendaModel.dataAgendamento = Convert.ToDateTime(dr["dataFuturaFesta"]);
+
+                if (dr.Table.Columns.Contains("diasPagouChurras"))
+                    oAgendaModel.qtdDiasPagamentoChurras = Convert.ToInt32(dr["diasPagouChurras"]);
+
+                if (dr.Table.Columns.Contains("diasPagouFesta"))
+                    oAgendaModel.qtdDiasPagamentoChurras = Convert.ToInt32(dr["diasPagouFesta"]);
+
 
                 oListaEventos.Add(oAgendaModel);
                                

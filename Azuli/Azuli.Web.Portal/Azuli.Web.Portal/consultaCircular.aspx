@@ -25,7 +25,7 @@
         <div id="dvPublicacao" runat="server">
       <table width="100%" cellpadding="5" 
             style="background-color: White; border: Outset 2px Silver; text-align: center;" 
-            class="btGeral">
+            class="accordionContent">
         
        
         <tr>
@@ -130,7 +130,8 @@
         <br />
             <asp:GridView ID="grdCircular" runat="server" AutoGenerateColumns="False" 
                 Height="39px" Width="907px" DataKeyNames="nameFile" 
-                onrowcommand="grdCircular_RowCommand" CssClass="GridView" EmptyDataText="Não foram encontrados arquivos publicados!!">
+                onrowcommand="grdCircular_RowCommand" CssClass="gridl" 
+                    EmptyDataText="Não foram encontrados arquivos publicados!!">
                 <Columns>
                     <asp:BoundField DataField="assunto" HeaderText="Assunto" />
                     <asp:BoundField DataField="mes" HeaderText="Mês" />

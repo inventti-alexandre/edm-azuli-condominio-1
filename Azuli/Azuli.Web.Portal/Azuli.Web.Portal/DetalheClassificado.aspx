@@ -55,19 +55,22 @@
     <div id="dvAnunciar" runat="server" align="center">
 
         <fieldset class="loginDisplayLegend">
-            <legend class="accordionContent">Detalhe do Classificado&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <legend class="accordionContent">Detalhes do Anúncio: &nbsp;&nbsp;&nbsp;<font 
+                    size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </font>
                 
             </legend>
-            <table class="GridView" style="width: 798px">
+            <table class="accordionContent" style="width: 798px">
                 <tr>
                     <td>
                         <asp:Label ID="lblAssunto" runat="server" 
-                            style="font-weight: 700; font-size: small; color: #0000FF;"></asp:Label>
+                            style="font-weight: 700; font-size: small; color: #666666;"></asp:Label>
                     </td>
-                    <td align="left" class="">
+                    <td align="right" class="">
                         &nbsp;
                         <asp:Label ID="lblValor" runat="server" 
-                            style="font-weight: 700; font-size: medium;" ForeColor="Red"></asp:Label>
+                            style="font-weight: 700; font-size: medium; color: #666666;" 
+                            ForeColor="Red"></asp:Label>
                     </td>
                 </tr>
                 
@@ -80,11 +83,11 @@
             <br />
             <br />
             
-             </fieldset>
-      </div>
+           
+  
     
     <div id="Div1" 
-        style="position:absolute; top: 336px; left: 952px; width: 190px;" 
+        style="position:absolute; top: 553px; left: 953px; width: 190px;" 
         runat="server"> 
         <asp:Label ID="lblContador" runat="server" 
             Text="Anúncio visto 0 veze(s)" Font-Bold="True" ForeColor="Blue"></asp:Label></div>
@@ -115,24 +118,19 @@
     
   
     
-    </div>
-     
-    <div id="dvDescricacao"  > 
+    
         
                 
+            <br />
+                    <br />
+                    <br />
         
-        
-               
-    <fieldset class="loginDisplayLegend">
-            <legend class="accordionContent">Descrição do Anúncio</legend>
     
         <table class="ContextMenuPanel">
             <tr>
                 <td colspan="2">
                     <asp:Label ID="lblDescricao" runat="server" style="font-weight: 700"></asp:Label>
-                    <br />
-                    <br />
-                    <br />
+                
                     <hr />
                 </td>
                 <td>
@@ -163,11 +161,13 @@
             </tr>
         </table>
       <br />
-           
-  <center>  <asp:Button ID="Button1" runat="server" Text="Voltar" 
-        CssClass="btGeral" onclick="Button1_Click" Width="86px" /> </center>
+             <br />
+                    <br />
+                 
+  <right>  <asp:Button ID="Button1" runat="server" Text="Voltar" 
+        CssClass="btGeral" onclick="Button1_Click" Width="86px" /> </right>
        
-    </fieldset>
+    
     </div>
         
          
@@ -176,4 +176,20 @@
     <div id="dvVeiculo" style="position: absolute; top: 151px; left: 398px; color: #0033CC;
         height: 23px; width: 205px; font-weight: 700;">
     </div>
+        <br />
+                    <br />
+                    <br />
+                        <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+    <br />
+                  
+      </fieldset>
+          </div>
 </asp:Content>

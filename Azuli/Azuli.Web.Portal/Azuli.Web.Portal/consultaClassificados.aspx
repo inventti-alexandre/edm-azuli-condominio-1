@@ -159,7 +159,9 @@
    <div id="dvVeiculo" 
            
            
-           style="position:absolute; top: 154px; left: 231px; color: #0033CC; font-weight: 700; height: 20px;"><asp:Label ID="lblGrupo" runat="server"></asp:Label></div>
+           
+           style="position:absolute; top: 150px; left: 227px; color: #0033CC; font-weight: 700; height: 20px;">
+       <asp:Label ID="lblGrupo" runat="server" style="color: #333333"></asp:Label></div>
              
          <legend class="accordionContent"> 
             <div id="imgAnuncio"   
@@ -169,7 +171,7 @@
         <center>  
            
             <asp:GridView ID="grdClassificado" runat="server" AutoGenerateColumns="False"  EmptyDataText="Não existem Anúncios para esta consulta"
-                CssClass="GridView">
+                CssClass="gridl">
                 <Columns>
                     <asp:TemplateField HeaderText="Código" Visible="False">
                         <EditItemTemplate>
@@ -216,7 +218,7 @@
                     </asp:TemplateField>
                     <asp:HyperLinkField DataNavigateUrlFields="idClassificado" 
                         DataNavigateUrlFormatString="~/detalheClassificado.aspx?codigo={0}" 
-                        Text="Ver ...">
+                        Text="Clique para ver  o Anúncio">
                     <HeaderStyle Font-Bold="False" />
                     <ItemStyle ForeColor="Blue" Font-Bold="True" />
                     </asp:HyperLinkField>

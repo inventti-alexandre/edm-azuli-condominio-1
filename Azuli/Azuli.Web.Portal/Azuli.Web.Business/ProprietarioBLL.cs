@@ -70,8 +70,16 @@ namespace Azuli.Web.Business
 
         public void alteraSenha(ProprietarioModel oProprietario)
         {
-
-           
+            try
+            {
+                oPropriDAO.alteraSenha(oProprietario);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+          
             
         }
 

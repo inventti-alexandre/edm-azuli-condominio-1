@@ -88,6 +88,22 @@
 
         }
         </script>
+    <style type="text/css">
+        .style2
+        {
+            background-color: #F0F0F0;
+            border-left: 2px solid #999999;
+            border-right: 2px solid #999999;
+            border-botom: 2px solid #999999;
+            padding: 5px 5px 5px 5px;
+            font-family: Verdana;
+            font-size: 10pt;
+            color: #666666;
+            border-radius: 1em;
+            height: 15px;
+            font-weight: bold;
+        }
+    </style>
 </asp:Content>
 
 
@@ -96,7 +112,7 @@
     <br />
   
      <fieldset class="loginDisplayLegend" >
-   <legend class="accordionContent">Editar classificados:</legend><br />
+   <legend class="style2">Alterar Anúncio:</legend><br />
    <center>
        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" 
         CssClass="GridView" Height="50px" Width="675px" 

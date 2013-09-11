@@ -15,7 +15,8 @@ namespace Azuli.Web.Model
         public int contadorFesta { get; set; }
         public int contadorChurrasFuturo{ get; set; }
         public int contadorFestaFuturo { get; set; }
-
+        public int qtdDiasPagamentoChurras { get; set; }
+        public int qtdDiasPagamentoFesta { get; set; }
         public string statusPagamento { get; set; }
         public DateTime dataConfirmacaoPagamento { get; set;}
         public DateTime dataInclusao { get; set; }

@@ -136,7 +136,7 @@ namespace Azuli.Web.Portal
                                     {
                                         status = "SF(*) - " ;
                                         linkPendenceSLFP.Text = status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento;
-                                        linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                      linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t1.ForeColor = Color.FromName("#8B0000");
@@ -153,7 +153,7 @@ namespace Azuli.Web.Portal
                                     {
                                         status = "CH(*) - ";
                                         linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco="+quemAlugou.ap.bloco+"apto="+quemAlugou.ap.apartamento+"data="+quemAlugou.dataAgendamento+"status"+quemAlugou.statusPagamento;
+                                        linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco="+quemAlugou.ap.bloco+"apto="+quemAlugou.ap.apartamento+"data="+quemAlugou.dataAgendamento+"status"+quemAlugou.statusPagamento;
                                         linkPendenceCHP.ForeColor = Color.FromName("FFA0CC");
                                         //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t2.ForeColor = Color.FromName("#8B0000");
@@ -178,7 +178,7 @@ namespace Azuli.Web.Portal
                                        // t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                        //t1.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                      linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         
                                     }
@@ -193,7 +193,7 @@ namespace Azuli.Web.Portal
                                     {
                                         status = "CH(*) - ";
                                         linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                        
                                         //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t2.ForeColor = Color.FromName("#8B0000");
@@ -216,7 +216,7 @@ namespace Azuli.Web.Portal
                                 {
                                     status = "SF(*) - " ;
                                     linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                    linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                    linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                  linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
 
                                     //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
@@ -234,7 +234,7 @@ namespace Azuli.Web.Portal
                                 {
                                     status = "CH(*) - ";
                                     linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                    linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                    linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                        
                                     //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     //t2.ForeColor = Color.FromName("#8B0000");
@@ -336,7 +336,7 @@ namespace Azuli.Web.Portal
                                         status = "SF(*) - " ;
 
                                         linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                      linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t1.ForeColor = Color.FromName("#8B0000");
@@ -354,7 +354,7 @@ namespace Azuli.Web.Portal
                                     {
                                         status = "CH(*) - ";
                                         linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                        
                                         
                                         
@@ -379,7 +379,7 @@ namespace Azuli.Web.Portal
                                        // t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t1.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                      linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         
                                     }
@@ -394,7 +394,7 @@ namespace Azuli.Web.Portal
                                     {
                                         status = "CH(*) - ";
                                         linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                         //
                                         
                                         //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
@@ -418,7 +418,7 @@ namespace Azuli.Web.Portal
                                     //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     //t1.ForeColor = Color.FromName("#8B0000");
                                     linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                    linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                    linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                  linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                     
                                 }
@@ -435,7 +435,7 @@ namespace Azuli.Web.Portal
                                     //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     //t2.ForeColor = Color.FromName("#8B0000");
                                     linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                    linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                    linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                     
                                         
                                     
@@ -538,7 +538,7 @@ namespace Azuli.Web.Portal
                                         //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t1.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                      linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         
                                     }
@@ -555,7 +555,7 @@ namespace Azuli.Web.Portal
                                         //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t2.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                         
                                         
                                         
@@ -578,7 +578,7 @@ namespace Azuli.Web.Portal
                                         //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t1.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                      linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         
                                     }
@@ -596,7 +596,7 @@ namespace Azuli.Web.Portal
                                         //t2.ForeColor = Color.FromName("#8B0000");
 
                                         linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                         
                                         
                                     }
@@ -617,7 +617,7 @@ namespace Azuli.Web.Portal
                                     //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     //t1.ForeColor = Color.FromName("#8B0000");
                                     linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                    linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                    linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                  linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
@@ -633,7 +633,7 @@ namespace Azuli.Web.Portal
                                     //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     //t2.ForeColor = Color.FromName("#8B0000");
                                     linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                    linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                    linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                     
                                         
                                     
@@ -739,7 +739,7 @@ namespace Azuli.Web.Portal
                                         //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t1.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                      linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         
                                     }
@@ -756,7 +756,7 @@ namespace Azuli.Web.Portal
                                         //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t2.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                         
                                         
                                         
@@ -778,7 +778,7 @@ namespace Azuli.Web.Portal
                                         //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t1.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                      linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         
                                     }
@@ -796,7 +796,7 @@ namespace Azuli.Web.Portal
                                         //t2.ForeColor = Color.FromName("#8B0000");
 
                                         linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                         
                                         
                                     }
@@ -817,7 +817,7 @@ namespace Azuli.Web.Portal
                                     //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     //t1.ForeColor = Color.FromName("#8B0000");
                                     linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                    linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                    linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                  linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                     
                                 }
@@ -834,7 +834,7 @@ namespace Azuli.Web.Portal
                                     //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     //t2.ForeColor = Color.FromName("#8B0000");
                                     linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                    linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                    linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                     
                                         
                                     
@@ -936,7 +936,7 @@ namespace Azuli.Web.Portal
                                         //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                        // t1.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                      linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         
                                     }
@@ -951,7 +951,7 @@ namespace Azuli.Web.Portal
                                     {
                                         status = "CH(*) - ";
                                         linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                         
                                         
                                        // t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
@@ -976,7 +976,7 @@ namespace Azuli.Web.Portal
                                         //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t1.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                      linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         
                                     }
@@ -993,7 +993,7 @@ namespace Azuli.Web.Portal
                                         //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t2.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                         
                                         
                                         
@@ -1014,7 +1014,7 @@ namespace Azuli.Web.Portal
                                     //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     // t1.ForeColor = Color.FromName("#8B0000");
                                     linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                    linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                    linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                  linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                     
                                 }
@@ -1031,7 +1031,7 @@ namespace Azuli.Web.Portal
                                     //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     //t2.ForeColor = Color.FromName("#8B0000");
                                     linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                    linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                    linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                     
                                         
                                     
@@ -1129,7 +1129,7 @@ namespace Azuli.Web.Portal
                                     {
                                         status = "SF(*) - " ;
                                         linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                      linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         
                                         //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
@@ -1147,7 +1147,7 @@ namespace Azuli.Web.Portal
                                     {
                                         status = "CH(*) - ";
                                         linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                         
                                         
                                         //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
@@ -1172,7 +1172,7 @@ namespace Azuli.Web.Portal
                                         //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                        // t1.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceSLFP.Text = status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                      linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         
                                     }
@@ -1189,7 +1189,7 @@ namespace Azuli.Web.Portal
                                         //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t2.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceCHP.Text = status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                        linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                         
                                         
                                         
@@ -1211,7 +1211,7 @@ namespace Azuli.Web.Portal
                                     //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     //t1.ForeColor = Color.FromName("#8B0000");
                                     linkPendenceSLFP.Text = status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                    linkPendenceSLFP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                    linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
                                  linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true)
@@ -1227,7 +1227,7 @@ namespace Azuli.Web.Portal
                                     //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     //t2.ForeColor = Color.FromName("#8B0000");
                                     linkPendenceCHP.Text = status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                    linkPendenceCHP.NavigateUrl = "~/InformePagamento.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
+                                    linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "apto=" + quemAlugou.ap.apartamento + "data=" + quemAlugou.dataAgendamento + "status" + quemAlugou.statusPagamento;
 
                                     
                                         
