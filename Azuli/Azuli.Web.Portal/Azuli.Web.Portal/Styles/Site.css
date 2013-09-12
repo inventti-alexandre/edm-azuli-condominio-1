@@ -316,6 +316,10 @@ fieldset
     width: auto;
     height: auto;
     border-radius: 1em;
+  
+
+ 
+ 
     
 }
 
@@ -435,12 +439,12 @@ div.accountInfo
 .loginDisplayLegend
 {
     
-     display: block;
+     
     text-align: left;
-    padding: 29px;
+    padding: 19px;
     height: auto;
     width: 860px;
-    top: 2px;
+    top: 2px 2px 3px;
     }
 
 .loginDisplay a:link

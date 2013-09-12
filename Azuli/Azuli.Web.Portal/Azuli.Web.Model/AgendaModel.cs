@@ -21,6 +21,8 @@ namespace Azuli.Web.Model
         public DateTime dataConfirmacaoPagamento { get; set;}
         public DateTime dataInclusao { get; set; }
         public string observacao { get; set; }
+        public double valorReserva { get; set; }
+      
     }
 
     public class listAgenda : List<AgendaModel> { };

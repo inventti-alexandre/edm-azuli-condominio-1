@@ -68,7 +68,8 @@
                                 Value="Liberar Acessos"></asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Configurar" Value="Mensagens">
-                            <asp:MenuItem Text="Valor Reserva" Value="Visualizar Circular">
+                            <asp:MenuItem Text="Valor Reserva" Value="Visualizar Circular" 
+                                NavigateUrl="~/ConfigurarValorReserva.aspx">
                             </asp:MenuItem>
                             <asp:MenuItem Text="Mensagem Reserva" Value="Visualizar Balancete">
                             </asp:MenuItem>

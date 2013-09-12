@@ -46,6 +46,7 @@
     <Compile Include="AgendaBLL.cs" />
     <Compile Include="ClassificadoBLL.cs" />
     <Compile Include="ClassificadoVisto.cs" />
+    <Compile Include="ConfiguracaoReservaBLL.cs" />
     <Compile Include="ContaAguaBLL.cs" />
     <Compile Include="EnqueteBLL.cs" />
     <Compile Include="FileBLL.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="Interfaces\IAgenda.cs" />
     <Compile Include="Interfaces\IClassificado.cs" />
     <Compile Include="Interfaces\IClassificadoVisto.cs" />
+    <Compile Include="Interfaces\IConfiguraReserva.cs" />
     <Compile Include="Interfaces\IContaAgua.cs" />
     <Compile Include="Interfaces\IEnquete.cs" />
     <Compile Include="Interfaces\IFile.cs" />

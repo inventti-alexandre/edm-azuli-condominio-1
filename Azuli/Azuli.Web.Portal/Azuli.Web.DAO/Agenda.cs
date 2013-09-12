@@ -489,6 +489,9 @@ namespace Azuli.Web.DAO
                 if (dr.Table.Columns.Contains("diasPagouFesta"))
                     oAgendaModel.qtdDiasPagamentoChurras = Convert.ToInt32(dr["diasPagouFesta"]);
 
+                if (dr.Table.Columns.Contains("valor"))
+                    oAgendaModel.valorReserva = Convert.ToDouble(dr["valor"]);
+
 
                 oListaEventos.Add(oAgendaModel);
                                

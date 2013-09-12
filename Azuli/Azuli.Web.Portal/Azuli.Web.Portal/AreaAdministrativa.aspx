@@ -91,12 +91,7 @@
             font-size: 14pt;
             color: #006600;
         }
-        .accordionContent
-        {
-            font-size: 10pt;
-            width: 412px;
-            font-weight: 700;
-        }
+       
         .style17
         {
             font-family: Verdana;

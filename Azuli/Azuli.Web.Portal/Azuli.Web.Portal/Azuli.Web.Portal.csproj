@@ -75,6 +75,7 @@
     <Content Include="camutils\webcam.js" />
     <Content Include="camutils\webcam.swf" />
     <Content Include="ClientBin\Azuli.Acess.Control.xap" />
+    <Content Include="ConfigurarValorReserva.aspx" />
     <Content Include="consultaAgendamentoAdmin.aspx" />
     <Content Include="consultaBalancete.aspx" />
     <Content Include="consultaCircular.aspx" />
@@ -270,6 +271,13 @@
     </Compile>
     <Compile Include="CadastrarVisitante.aspx.designer.cs">
       <DependentUpon>CadastrarVisitante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurarValorReserva.aspx.cs">
+      <DependentUpon>ConfigurarValorReserva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurarValorReserva.aspx.designer.cs">
+      <DependentUpon>ConfigurarValorReserva.aspx</DependentUpon>
     </Compile>
     <Compile Include="consultaAgendamentoAdmin.aspx.cs">
       <DependentUpon>consultaAgendamentoAdmin.aspx</DependentUpon>

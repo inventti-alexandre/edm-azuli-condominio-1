@@ -51,7 +51,7 @@
     <center> <div id="dvPesquisaMorador" align="center" runat="server">
     
       <fieldset class="loginDisplayLegend">
-     <legend align="left" class="style10">Confirmação de Pagamento Ou Cancelamento de Reservas</legend>
+     <legend align="left" class="accordionContent">Confirmação de Pagamento Ou Cancelamento de Reservas</legend>
 
 
 
