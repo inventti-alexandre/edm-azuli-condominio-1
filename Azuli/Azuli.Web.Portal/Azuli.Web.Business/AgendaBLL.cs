@@ -37,6 +37,25 @@ namespace Azuli.Web.Business
         }
 
 
+        public listAgenda pendentePagamento(AgendaModel oAgenda)
+        {
+            listAgenda oListaAgenda = new listAgenda();
+            Agenda oAgendaDao = new Agenda();
+            try
+            {
+                oListaAgenda = oAgendaDao.pendentePagamento(oAgenda);
+
+                return oListaAgenda;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
         public listAgenda listaEventos_ByCalendar(DateTime date)
         {
             listAgenda oListaAgenda = new listAgenda();
@@ -346,5 +365,10 @@ namespace Azuli.Web.Business
 
 
 
+
+      
+
+
+        
     }
 }

@@ -23,5 +23,6 @@ namespace Azuli.Web.DAO.Interfaces
          Dictionary<int, DateTime> quantidadeDiasReservaChurras(ApartamentoModel oAp);
          listAgenda agendamentoFuturoFesta (AgendaModel oAgenda);
          listAgenda agendamentoFuturoChurras(AgendaModel oAgenda);
+         listAgenda pendentePagamento(AgendaModel oAgenda);
     }
 }

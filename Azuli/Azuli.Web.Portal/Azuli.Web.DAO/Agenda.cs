@@ -523,6 +523,34 @@ namespace Azuli.Web.DAO
         }
 
 
+        public listAgenda pendentePagamento(AgendaModel oAgenda)
+        {
+            string clausulaSQL = "SP_PENDENTE_PAGAMENTO_RESERVA ";
+
+            try
+            {
+                SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
+
+
+                comandoSQL.Parameters.AddWithValue("@BLOCO", oAgenda.ap.bloco);
+                comandoSQL.Parameters.AddWithValue("@AP", oAgenda.ap.apartamento);
+                comandoSQL.Parameters.AddWithValue("@DATA", oAgenda.dataAgendamento);
+                
+
+                DataTable tbAgenda = new DataTable();
+
+                tbAgenda = ExecutaQuery(comandoSQL);
+
+                return carregaAgenda(tbAgenda);
+
+            }
+            catch (Exception error)
+            {
+
+                throw error;
+            }
+        }
+
 
 
 
@@ -565,12 +593,7 @@ namespace Azuli.Web.DAO
 
        
 
+
         #endregion
-
-
-
-       
-
-
     }
 }
