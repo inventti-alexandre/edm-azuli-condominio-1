@@ -59,6 +59,21 @@ namespace Azuli.Web.Business
             }
         }
 
+
+        public void deletaReserva(ConfiguraReserva oConfiguraReserva)
+        {
+            try
+            {
+                oConfigDao.deletaReserva(oConfiguraReserva);
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
         #endregion
     }
 }

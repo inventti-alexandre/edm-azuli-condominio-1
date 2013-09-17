@@ -15,6 +15,7 @@ namespace Azuli.Web.Portal
         {
 
 
+
             if (!IsPostBack)
             {
                 System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
@@ -28,7 +29,7 @@ namespace Azuli.Web.Portal
                 //    this.lblCopyright.Text = ((AssemblyCopyrightAttribute)copyright).Copyright;
 
                 //this.lblVersion.Text = string.Format(assembly.GetName().Version.ToString());
-
+              
                 
             }
 
@@ -71,7 +72,9 @@ namespace Azuli.Web.Portal
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
         }
+
+      
     }
 }

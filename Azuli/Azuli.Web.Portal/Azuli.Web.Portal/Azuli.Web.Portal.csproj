@@ -342,6 +342,11 @@
     <Compile Include="detalheOcorrencia.aspx.designer.cs">
       <DependentUpon>detalheOcorrencia.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DSrecibo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSrecibo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="enviaMensagemMorador.aspx.cs">
       <DependentUpon>enviaMensagemMorador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -611,6 +616,10 @@
     <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Azuli.Crystal.Relatorios\Azuli.Crystal.Relatorios.csproj">
+      <Project>{AAA71ED7-75F4-4DE7-8C83-5611DE3D45D4}</Project>
+      <Name>Azuli.Crystal.Relatorios</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Azuli.Web.Business\Azuli.Web.Business.csproj">
       <Project>{6779A8FD-9C97-482E-B4BC-AE41E86F8E97}</Project>
       <Name>Azuli.Web.Business</Name>
@@ -634,6 +643,17 @@
     <Content Include="App_Themes\DataWebControls\GridView.skin" />
     <Content Include="PageAcessControl.Master" />
     <Content Include="MostraFoto.ashx" />
+    <None Include="DSrecibo.xsc">
+      <DependentUpon>DSrecibo.xsd</DependentUpon>
+    </None>
+    <None Include="DSrecibo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSrecibo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSrecibo.xss">
+      <DependentUpon>DSrecibo.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -649,7 +669,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>58585</DevelopmentServerPort>
+          <DevelopmentServerPort>52595</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

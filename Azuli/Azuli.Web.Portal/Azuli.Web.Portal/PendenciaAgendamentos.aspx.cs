@@ -32,7 +32,7 @@ namespace Azuli.Web.Portal
                     string data = Request.QueryString["data"];
                     //string status = Request.QueryString["status"];
                     string bloco = Request.QueryString["bloco"];
-
+                    DvConfirma.Visible = false;
                     carregaPendencia(data, apto,bloco);
 
                    
@@ -68,6 +68,8 @@ namespace Azuli.Web.Portal
 
                         if (item.salaoFesta == true)
                         {
+                            lblBloco.Text = item.ap.bloco.ToString();
+                            lblApto.Text = item.ap.apartamento.ToString();
                             lblDiasAtrasoFesta.Text = item.qtdDiasPagamentoChurras.ToString();
                             lblValorFesta.Text = "R$ " + item.valorReserva.ToString();
                             valorFesta = item.valorReserva;
@@ -76,6 +78,8 @@ namespace Azuli.Web.Portal
 
                         if (item.salaoChurrasco == true)
                         {
+                            lblBloco.Text = item.ap.bloco.ToString();
+                            lblApto.Text = item.ap.apartamento.ToString();
                             lblDiasAtrasoChurras.Text = item.qtdDiasPagamentoChurras.ToString();
                             lblValorChurras.Text = "R$ " + item.valorReserva.ToString();
                             valorChurras = item.valorReserva;
@@ -96,6 +100,8 @@ namespace Azuli.Web.Portal
                         {
                             hiddenControllerChurras();
                             showControllerFesta();
+                            lblBloco.Text = item.ap.bloco.ToString();
+                            lblApto.Text = item.ap.apartamento.ToString();
                             lblDiasAtrasoFesta.Text = item.qtdDiasPagamentoChurras.ToString();
                             lblValorFesta.Text = "R$ " + item.valorReserva.ToString();
 
@@ -108,6 +114,8 @@ namespace Azuli.Web.Portal
                         {
                             hiddenControllerFesta();
                             showControllerChurras();
+                            lblBloco.Text = item.ap.bloco.ToString();
+                            lblApto.Text = item.ap.apartamento.ToString();
                             lblDiasAtrasoChurras.Text = item.qtdDiasPagamentoChurras.ToString();
                             lblValorChurras.Text = "R$ " +  item.valorReserva.ToString();
 

@@ -22,7 +22,7 @@
         <div class="headerAdmin">
             <div class="titleAdmin">
                
-                    <img alt="" src="images/sgcv3.jpg" style="height: 86px; width: 960px" />
+                    <img alt="" src="images/sgcv3.jpg" style="height: 86px; width: 1030px" />
                
             </div>
     </div>
@@ -34,25 +34,11 @@
                         <asp:MenuItem NavigateUrl="~/WelcomeAdmin.aspx" Text="Home" Value="Home">
                         </asp:MenuItem>
                         <asp:MenuItem Text="Agendamentos" Value="Ocorrência">
-                            <asp:MenuItem NavigateUrl="~/AreaAdministrativa.aspx" 
-                                Text="Fazer Reserva" Value="Fazer Reserva"></asp:MenuItem>
-                            <asp:MenuItem Text="Cancelar Agendamento" Value="Cancelar Agendamento"></asp:MenuItem>
-                            <asp:MenuItem Text="Reservas Confirmadas com Pagamento" Value="Confirmados">
-                            </asp:MenuItem>
                             <asp:MenuItem NavigateUrl="~/consultaAgendamentoAdmin.aspx" 
-                                Text="Consulta Reservas Realizadas" Value="Realizados"></asp:MenuItem>
-                            <asp:MenuItem Text="Consultar Reservas Pendente de Pagamento" 
-                                Value="Pendentes" NavigateUrl="~/consultaAgendamentoAdmin.aspx">
+                                Text="Confirmar Agendamento Pendentes" Value="Realizados"></asp:MenuItem>
+                            <asp:MenuItem Text="Cancelar Agendamento Pagos" Value="Cancelar Agendamento"></asp:MenuItem>
+                            <asp:MenuItem Text="Cancelar Agendamentos Pendentes" Value="Confirmados">
                             </asp:MenuItem>
-                        </asp:MenuItem>
-                        <asp:MenuItem Text="Mensagem / Reclamações" Value="Mensagem / Reclamações">
-                            <asp:MenuItem Text="Caixa de Entrada" Value="Caixa de Entrada" 
-                                NavigateUrl="~/ListaReclamacaoAbertaAdmin.aspx"></asp:MenuItem>
-                            <asp:MenuItem NavigateUrl="~/enviaMensagemMorador.aspx" Text="Enviar" 
-                                Value="Enviar"></asp:MenuItem>
-                            <asp:MenuItem Text="Cancelar" Value="Cancelar"></asp:MenuItem>
-                            <asp:MenuItem NavigateUrl="~/ListaReclamacaoAbertaAdmin.aspx" 
-                                Text="Ler Reclamações" Value="Ler Reclamações"></asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Circular" Value="Moradores">
                             <asp:MenuItem Text="Publicar Circular " 
@@ -64,16 +50,20 @@
                         <asp:MenuItem Text="Moradores" Value="Publicações">
                             <asp:MenuItem Text="Cadastrar/Alterar/Desativar Morador" 
                                 Value="Cadastrar / Alterar" NavigateUrl="~/gerenciamentoMoradorAdm.aspx"></asp:MenuItem>
-                            <asp:MenuItem NavigateUrl="~/liberaAcessoAdmin.aspx" Text="Liberação de Acesso" 
+                            <asp:MenuItem NavigateUrl="~/liberaAcessoAdmin.aspx" Text="Liberar  Acesso" 
                                 Value="Liberar Acessos"></asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Configurar" Value="Mensagens">
                             <asp:MenuItem Text="Valor Reserva" Value="Visualizar Circular" 
                                 NavigateUrl="~/ConfigurarValorReserva.aspx">
                             </asp:MenuItem>
-                            <asp:MenuItem Text="Mensagem Reserva" Value="Visualizar Balancete">
-                            </asp:MenuItem>
                             <asp:MenuItem Text="Dias para Cancelamentos" Value="Consultar Agendamentos">
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Relatórios Reservas" Value="Relatórios Reservas">
+                            <asp:MenuItem Text="Reservas Confirmadas do Mês" 
+                                Value="Reservas Confirmadas do Mês"></asp:MenuItem>
+                            <asp:MenuItem Text="Reservas Canceladas" Value="Reservas Canceladas">
                             </asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Alterar Senha" 

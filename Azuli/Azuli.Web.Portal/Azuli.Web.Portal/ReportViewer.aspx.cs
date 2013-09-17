@@ -10,6 +10,8 @@ using CrystalDecisions.CrystalReports.Engine;
 using System.Configuration;
 using System.Data.SqlClient;
 using CrystalDecisions.Shared;
+using System.Data;
+using Azuli.Crystal;
 
 namespace Azuli.Web.Portal
 {
@@ -18,14 +20,75 @@ namespace Azuli.Web.Portal
         Util.Util oUtil = new Util.Util();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (oUtil.validateSession())
+
+            if (Convert.ToBoolean(Session["ReciboAgua"]) == true)
             {
-                crystalReport();
+                if (oUtil.validateSession())
+                {
+
+                    crystalReport();
+
+                }
+            }
+            else
+            {
+
+                if (oUtil.validateSessionAdmin())
+                {
+
+                    Recibo();
+
+
+                }
             }
         }
 
 
+        public void Recibo()
+        {
 
+            try
+            {
+               // ReportDocument rpt = new ReportDocument();
+              
+                DSrecibo dsRecibo = new DSrecibo();
+                DataRow drRecibo = dsRecibo.Tables[0].NewRow();
+
+                drRecibo["valor"] = "R$ 50,00";
+                drRecibo["valorExtenso"] = " Cinquenta Reais #";
+                drRecibo["empresa"] = "Bloco: 06 - Apto: 301 - Morador Edmilson Lopes";
+                drRecibo["Descricao"] = "Reserva da Churrasqueira para o Dia 17/09/2013";
+                drRecibo["Dia"] = DateTime.Now.Day.ToString();
+                drRecibo["Mes"] = System.Globalization.DateTimeFormatInfo.CurrentInfo.GetMonthName(DateTime.Now.Month);
+                drRecibo["Ano"] = DateTime.Now.Year;
+
+                //string caminhoRelatorio = ConfigurationManager.AppSettings["ReportsPath"] + ConfigurationManager.AppSettings["reciboReserva"];
+                
+                //rpt.Load(caminhoRelatorio);
+                
+               // rpt.SetDataSource(drRecibo);
+
+                dsRecibo.Tables[0].Rows.Add(drRecibo);
+
+                Crystal.Relatorios.ReciboReserva rbReserva = new Crystal.Relatorios.ReciboReserva();
+
+                rbReserva.SetDataSource(dsRecibo);
+
+                CrystalReportViewer1.ReportSource = rbReserva;
+
+                rbReserva.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "Recibo");
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
 
         public void crystalReport()
         {

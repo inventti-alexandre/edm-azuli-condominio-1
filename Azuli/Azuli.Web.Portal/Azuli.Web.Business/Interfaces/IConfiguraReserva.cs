@@ -11,5 +11,6 @@ namespace Azuli.Web.Business.Interfaces
         ListaConfiguracaoReserva oListaValorReserva();
         void cadastraValorArea(ConfiguraReserva oConfiguraReserva);
         void alteraConfiguracaArea(ConfiguraReserva oConfiguraReserva);
+        void deletaReserva(ConfiguraReserva oConfiguraReserva);
     }
 }

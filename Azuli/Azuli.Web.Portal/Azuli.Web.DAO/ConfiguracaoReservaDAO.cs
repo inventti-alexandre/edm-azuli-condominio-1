@@ -53,6 +53,26 @@ namespace Azuli.Web.DAO
             }
         }
 
+
+        public void deletaReserva(ConfiguraReserva oConfiguraReserva)
+        {
+            string clausulaSQL = "SP_DELETA_CONFIGURACAO_RESERVA";
+
+            try
+            {
+                SqlCommand comandoSql = new SqlCommand(clausulaSQL);
+                comandoSql.Parameters.AddWithValue("@ID", oConfiguraReserva.id_valor);
+               
+
+                ExecutaComando(comandoSql);
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
         public void alteraConfiguracaArea(Model.ConfiguraReserva oConfiguraReserva)
         {
             string clausulaSQL = "SP_ALTERA_RESERVA_VALOR";
@@ -99,6 +119,10 @@ namespace Azuli.Web.DAO
             return oLisConfig;
 
         }
+
+  
+
+       
 
         #endregion
     }

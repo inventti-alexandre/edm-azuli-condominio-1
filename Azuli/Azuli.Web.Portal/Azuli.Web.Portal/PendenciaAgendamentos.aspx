@@ -51,11 +51,11 @@
               <tr>
                   <td class="style7" style="border-style: groove; border-width: thin">
                       <asp:Label ID="Label7" runat="server" CssClass="style5" Text="Bloco:"></asp:Label>
-&nbsp;<asp:Label ID="lblBloco" runat="server" CssClass="style5" Text="6"></asp:Label>
+&nbsp;<asp:Label ID="lblBloco" runat="server" CssClass="style5"></asp:Label>
 &nbsp;-
                       <asp:Label ID="Label8" runat="server" CssClass="style5" Text="Apartamento:"></asp:Label>
                   &nbsp;
-                      <asp:Label ID="lblApto" runat="server" CssClass="style5" Text="301"></asp:Label>
+                      <asp:Label ID="lblApto" runat="server" CssClass="style5"></asp:Label>
                   </td>
                   <td align="center" class="style7" 
                       style="border-style: groove; border-width: thin">
@@ -96,7 +96,8 @@
                       <asp:Label ID="lblDiasAtrasoChurras" runat="server" CssClass="style8" Text="8"></asp:Label>
                   </td>
                   <td align="left" 
-                      style="border-right-style: groove; border-left-style: groove">
+                      
+                      style="border-right-style: groove; border-left-style: groove; border-bottom-style: groove;">
                       <asp:Label ID="lblValorChurras" runat="server" CssClass="style6" 
                           Text="R$ 30,00"></asp:Label>
                   </td>

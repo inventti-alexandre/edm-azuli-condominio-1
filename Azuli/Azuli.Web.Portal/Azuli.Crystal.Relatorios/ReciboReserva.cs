@@ -16,14 +16,14 @@ namespace Azuli.Crystal.Relatorios {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class ReciboMoradorByApBloco : ReportClass {
+    public class ReciboReserva : ReportClass {
         
-        public ReciboMoradorByApBloco() {
+        public ReciboReserva() {
         }
         
         public override string ResourceName {
             get {
-                return "ReciboMoradorByApBloco.rpt";
+                return "ReciboReserva.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Azuli.Crystal.Relatorios {
         
         public override string FullResourceName {
             get {
-                return "Azuli.Crystal.Relatorios.ReciboMoradorByApBloco.rpt";
+                return "Azuli.Crystal.Relatorios.ReciboReserva.rpt";
             }
             set {
                 // Do nothing
@@ -87,44 +87,12 @@ namespace Azuli.Crystal.Relatorios {
                 return this.ReportDefinition.Sections[4];
             }
         }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_bloco {
-            get {
-                return this.DataDefinition.ParameterFields[0];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_apto {
-            get {
-                return this.DataDefinition.ParameterFields[1];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_ano {
-            get {
-                return this.DataDefinition.ParameterFields[2];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_mes {
-            get {
-                return this.DataDefinition.ParameterFields[3];
-            }
-        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedReciboMoradorByApBloco : Component, ICachedReport {
+    public class CachedReciboReserva : Component, ICachedReport {
         
-        public CachedReciboMoradorByApBloco() {
+        public CachedReciboReserva() {
         }
         
         [Browsable(false)]
@@ -161,7 +129,7 @@ namespace Azuli.Crystal.Relatorios {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            ReciboMoradorByApBloco rpt = new ReciboMoradorByApBloco();
+            ReciboReserva rpt = new ReciboReserva();
             rpt.Site = this.Site;
             return rpt;
         }

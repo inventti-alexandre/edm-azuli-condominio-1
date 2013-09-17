@@ -58,7 +58,7 @@
                 <tr>
                     <td align="center" class="style23">
                         <asp:Calendar ID="Calendar2" runat="server" BackColor="White" Font-Names="Verdana"
-                            Font-Size="10pt" ForeColor="Black" Height="326px" Width="849px" BorderWidth="1px"
+                            Font-Size="10pt" ForeColor="Black" Height="326px" Width="778px" BorderWidth="1px"
                             OnDayRender="Calendar1_DayRender" ShowGridLines="True" 
                             NextPrevFormat="FullMonth" onselectionchanged="Calendar2_SelectionChanged">
                             <DayHeaderStyle Font-Bold="True" Height="1px" BackColor="#CCCCCC" />

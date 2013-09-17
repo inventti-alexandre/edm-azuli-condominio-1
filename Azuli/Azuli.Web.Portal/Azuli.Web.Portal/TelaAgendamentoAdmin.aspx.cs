@@ -8,6 +8,8 @@ using Azuli.Web.Business;
 using Azuli.Web.Model;
 using System.Globalization;
 using System.Drawing;
+using System.Data;
+using System.Text;
 
 
 namespace Azuli.Web.Portal
@@ -461,6 +463,16 @@ namespace Azuli.Web.Portal
                          oAgenda.cadastrarAgenda(Convert.ToDateTime(Session["dataReservaAdministrador"]), oApModel, oAgendaModel);
 
                          //dvAlugar.Visible = false;
+                         if (chkPG.Checked)
+                         {
+                             btnRecibo.Visible = true;
+                             btnOKConfirma.Visible = false;
+                         }
+                         else
+                         {
+                             btnRecibo.Visible = false;
+                             btnOKConfirma.Visible = true;
+                         }
                          DivConfirma.Visible = true;
                          dvProprietario.Visible = false;
 
@@ -548,6 +560,87 @@ namespace Azuli.Web.Portal
                 lblDataPG.Text = "";
             }
         }
+
+        protected void btnRecibo_Click(object sender, EventArgs e)
+        {
+            openedPoupReport();
+
+        }
+
+
+
+        public void openedPoupReport()
+        {
+
+            OpenPopUp(Page.ResolveUrl("ReportViewer.aspx"), 700, 920, true, true);
+        }
+
+
+        /// <summary>
+        /// Abre uma janela no estilo Modal Dialog
+        /// </summary>
+        /// <param name="NamePage">Nome da pagina que sera aberta</param>
+        /// <param name="Height">Altura</param>
+        /// <param name="Width">Largura</param>
+        public static void OpenPopUp(string NamePage, int Height, int Width, bool ScrollBars, bool Resizable)
+        {
+
+
+            StringBuilder url = new StringBuilder();
+
+            url.Append("window.open('" + NamePage + "','janela1','");
+            url.Append("width =");
+            url.Append(Width);
+            url.Append(", height=");
+            url.Append(Height);
+            url.Append(", scrollbars=");
+            url.Append(ScrollBars ? "yes" : "no");
+            url.Append(", resizable=");
+            url.Append(Resizable ? "yes" : "no");
+            url.Append("');");
+
+            JsStartUpScript(url.ToString());
+        }
+
+        /// <summary>
+        /// Executa um script
+        /// </summary>
+        /// <param name="Script">Script que sera executado</param>
+        public static void JsStartUpScript(string Script)
+        {
+            Page paginaAtual;
+            paginaAtual = GetCurrentPage();
+            paginaAtual.ClientScript.RegisterClientScriptBlock(paginaAtual.GetType(), Guid.NewGuid().ToString(), Script, true);
+        }
+
+        /// <summary>
+        /// Retorna Pagina Corrente
+        /// </summary>
+        /// <returns></returns>
+        private static Page GetCurrentPage()
+        {
+            return (Page)System.Web.HttpContext.Current.Handler;
+        }
+
+
+
+        public void emitirRecibo()
+        {
+
+         
+
+           
+            
+    
+    
+        }
+
+        protected void ImageButton1_Click2(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("WelcomeAdmin.aspx");
+        }
+
+      
 
         #region Comentado para tirar complexibilidade
         //protected void UpdateTimer_Tick(object sender, EventArgs e)

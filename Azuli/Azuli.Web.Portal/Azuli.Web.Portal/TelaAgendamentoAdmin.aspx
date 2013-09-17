@@ -99,8 +99,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
    
-   <br /><br />
+   <br />
+   
     <br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:ImageButton ID="ImageButton1" runat="server" 
+        DescriptionUrl="Voltar Calendario" Height="24px" 
+        ImageUrl="~/images/calendario.png" onclick="ImageButton1_Click2" Width="29px" />
     <div id="dvProprietario" align="center" runat="server" class="GridViewPager">
         <fieldset class="loginDisplayLegend">
            <legend class="accordionContent"> RESERVANDO PARA:</legend>
@@ -216,8 +222,12 @@
                         &nbsp;<asp:Label ID="lblConfirmaData" runat="server" Font-Bold="True" 
                             CssClass="style11"></asp:Label>
                         <br />
+                            <br />
                             <asp:Button ID="btnOKConfirma" runat="server" CssClass="botao" OnClick="btnOKConfirma_Click"
                                 Text="Ok" Width="95px" Height="30px" />
+                    &nbsp;<asp:Button ID="btnRecibo" runat="server" CssClass="btForm" OnClick="btnRecibo_Click"
+                                Text="Gerar Recibo" Width="127px" Height="30px" Font-Bold="True" 
+                            ForeColor="#006600" />
                     </td>
                 </tr>
         

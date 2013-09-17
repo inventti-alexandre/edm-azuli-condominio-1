@@ -19,48 +19,44 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
   
-<fieldset class="loginDisplayLegend">
+    <fieldset class="loginDisplayLegend">
         <legend class="style3">Cadastrar Área e Valor:</legend>
 
   <center><div id="dvProprietario" runat="server" >
    
         <br />
-        <table class="accordionContent" dir="ltr" frame="border" style="width: 375px" >
+        <table class="accordionContent" dir="ltr" frame="border" style="width: 373px" >
             <tr>
-                <td>
+                <td align="right">
                     <asp:Label ID="Label2" runat="server" 
                         Text="Área Comum" style="font-weight: 700; font-size: 10pt"></asp:Label>
                 </td>
                 <td class="left">
-                    <asp:TextBox ID="txtArea" runat="server" Height="21px" 
+                    <asp:TextBox ID="txtArea" runat="server" Height="15px" 
                         Width="147px"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvNovaSenha" runat="server" 
                         CssClass="failureNotification" ErrorMessage="*" 
                         ValidationGroup="alteraSenha" ControlToValidate="txtArea"></asp:RequiredFieldValidator>
                 </td>
-                <td class="left">
-                    &nbsp;</td>
             </tr>
             <tr>
-                <td>
+                <td align="right">
                     <asp:Label ID="Label3" runat="server" Text="Valor: " 
                         style="font-weight: 700; font-size: 10pt"></asp:Label>
                 </td>
                 <td class="left">
-                    <asp:TextBox ID="txtValor" runat="server" Height="21px" Width="56px"></asp:TextBox>
+                    <asp:TextBox ID="txtValor" runat="server" Height="15px" Width="56px"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvRepitaNovaSenha" runat="server" 
                         CssClass="failureNotification" ErrorMessage="*" 
                         ValidationGroup="alteraSenha" ControlToValidate="txtValor"></asp:RequiredFieldValidator>
                 </td>
-                <td class="left">
-                    &nbsp;</td>
             </tr>
           
             <tr>
-                <td colspan="2">
+                <td colspan="2" align="center">
                     <asp:Button ID="btnAlteraSenha" runat="server" CssClass="botao" Text="Cadastrar" 
                         Width="105px" 
-                        ValidationGroup="alteraSenha" />
+                        ValidationGroup="alteraSenha" onclick="btnAlteraSenha_Click" />
                 </td>  </tr>
               
         </table>
@@ -71,55 +67,39 @@
                
                 SelectMethod="oListaValorReserva" 
                 UpdateMethod="alteraConfiguracaArea"
-                TypeName="Azuli.Web.Business.ConfiguracaoReservaBLL">
-               <UpdateParameters>
-               <asp:Parameter Name="id_valor" Type="Int32" />
-               <asp:Parameter Name="area" Type="String" />
-               <asp:Parameter Name="valor" Type="Double" />
-               
-               </UpdateParameters>
+                DeleteMethod="deletaReserva"
+                TypeName="Azuli.Web.Business.ConfiguracaoReservaBLL" 
+                DataObjectTypeName="Azuli.Web.Model.ConfiguraReserva">
                 </asp:ObjectDataSource>
             <asp:GridView ID="grdConfigArea" runat="server" 
                 AutoGenerateColumns="False" CssClass="gridl" 
                 DataSourceID="ObjectDataSourceLista" DataKeyNames="id_valor,area,valor">
                 <Columns>
-                    <asp:TemplateField HeaderText="id_valor" SortExpression="id_valor" 
-                        Visible="False">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="id_valor" runat="server" Text='<%# Bind("id_valor") %>'></asp:TextBox>
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("id_valor") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Área" SortExpression="area">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="area" runat="server" Text='<%# Bind("area") %>'></asp:TextBox>
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="Label2" runat="server" Text='<%# Bind("area") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Valor" SortExpression="valor">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="valor" runat="server" Text='<%# Bind("valor", "{0:N2}") %>'></asp:TextBox>
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="valor" runat="server" Text=' <%# "R$ " + Eval("valor", "{0:N2}") %>'></asp:Label>
-                        </ItemTemplate>
-                        <ItemStyle Font-Bold="True" ForeColor="#006600" />
-                    </asp:TemplateField>
+
+                     <asp:BoundField DataField="id_valor" HeaderText="id_valor" 
+                        SortExpression="id_valor" Visible="False" />
+                    <asp:BoundField DataField="area" HeaderText="Área" SortExpression="area" />
+                    <asp:BoundField DataField="valor" HeaderText="Valor (R$)" SortExpression="valor" />
                     <asp:CommandField EditText="Alterar" ShowEditButton="True" ButtonType="Button" 
                         CancelImageUrl="~/images/cancelar.jpg" CancelText="Cancelar" 
                         EditImageUrl="~/images/edit.png" UpdateImageUrl="~/images/save.png" 
-                        UpdateText="Salvar" >
+                        UpdateText="Salvar" HeaderText="Alteração de Valores" >
                     <ControlStyle BackColor="#0099CC" Font-Bold="True" ForeColor="White" />
                     <ItemStyle HorizontalAlign="Center" Width="180px" Font-Bold="True" 
                         ForeColor="White" />
                     </asp:CommandField>
+                     <asp:CommandField ButtonType="Button" DeleteText="Excluir" 
+                         ShowDeleteButton="True" HeaderText="Exclução de Área">
+                     <ControlStyle BackColor="#0099CC" Font-Bold="True" ForeColor="White" />
+                     <ItemStyle ForeColor="White" Width="120px" />
+                     </asp:CommandField>
                 </Columns>
             </asp:GridView>
            
+
+            <br />
+
+
 
         </center> </fieldset>
 </asp:Content>
