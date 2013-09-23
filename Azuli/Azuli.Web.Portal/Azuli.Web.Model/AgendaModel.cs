@@ -22,6 +22,7 @@ namespace Azuli.Web.Model
         public DateTime dataInclusao { get; set; }
         public string observacao { get; set; }
         public double valorReserva { get; set; }
+        public double ValorDesconto { get; set; }
       
     }
 

@@ -492,6 +492,13 @@ namespace Azuli.Web.DAO
                 if (dr.Table.Columns.Contains("valor"))
                     oAgendaModel.valorReserva = Convert.ToDouble(dr["valor"]);
 
+                if (dr.Table.Columns.Contains("ValorDesconto") && !Convert.IsDBNull(dr["ValorDesconto"]))
+                    oAgendaModel.ValorDesconto = Convert.ToDouble(dr["ValorDesconto"]);
+
+               
+               
+
+
 
                 oListaEventos.Add(oAgendaModel);
                                

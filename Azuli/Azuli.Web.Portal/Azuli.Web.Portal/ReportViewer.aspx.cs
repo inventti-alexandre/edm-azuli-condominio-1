@@ -53,7 +53,7 @@ namespace Azuli.Web.Portal
               
                 DSrecibo dsRecibo = new DSrecibo();
                 DataRow drRecibo = dsRecibo.Tables[0].NewRow();
-
+               
                 drRecibo["valor"] = "R$ 50,00";
                 drRecibo["valorExtenso"] = " Cinquenta Reais #";
                 drRecibo["empresa"] = "Bloco: 06 - Apto: 301 - Morador Edmilson Lopes";
