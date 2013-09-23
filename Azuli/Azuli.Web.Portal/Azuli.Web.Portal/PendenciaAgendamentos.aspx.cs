@@ -46,7 +46,7 @@ namespace Azuli.Web.Portal
 
                     carregaPendencia((string)Session["dataReservaOnline"], (string)Session["aptoSession"], (string)Session["blocoSession"]);
                     lblDataReserva.Text =  dataByExtense();
-
+                    lblDataReservaEtapa1.Text = dataByExtense();
                    
 
                 }
@@ -269,9 +269,9 @@ namespace Azuli.Web.Portal
             DvConfirma.Visible = true;
             dvPesquisaMorador.Visible = false;
 
-            lblStatus.Text = "Confirmação feita com sucesso área: Churrasqueira";
+            lblStatus.Text = "Confirmação será feita para área: Churrasqueira";
             lblStatus.ForeColor = System.Drawing.Color.Green;
-            lblMsg.Text = "Deseja gerar Recibo?";
+            lblMsg.Text = "Confirme os dados para reserva da Churrasqueira: ";
             actionStatus =  ((Int32)Enum.Parse(typeof(opcaoCancelamento), opcaoCancelamento.confirmaChurrasqueira.ToString()));
             Session["status"] = actionStatus;
               
@@ -285,10 +285,10 @@ namespace Azuli.Web.Portal
             DvConfirma.Visible = true;
             dvPesquisaMorador.Visible = false;
 
-            lblStatus.Text = "Cancelamento feito com sucesso área: Churrasqueira";
+            lblStatus.Text = "Cancelamento será feito para área: Churrasqueira";
             lblStatus.ForeColor = System.Drawing.Color.Red;
 
-            lblMsg.Text = "Deseja Gerar Recibo de cancelamento da Churrasqueira?";
+            lblMsg.Text = "Confirme os dados para cancelamento da Churrasqueira?";
             actionStatus = ((Int32)Enum.Parse(typeof(opcaoCancelamento), opcaoCancelamento.cancelaChurrasco.ToString()));
             Session["status"] = actionStatus;
         }
@@ -298,10 +298,10 @@ namespace Azuli.Web.Portal
             DvConfirma.Visible = true;
             dvPesquisaMorador.Visible = false;
 
-            lblStatus.Text = "Cancelamento feito com sucesso área: Salão de Festa";
+            lblStatus.Text = "Cancelamento será feito para área: Salão de Festa";
             lblStatus.ForeColor = System.Drawing.Color.Red;
 
-            lblMsg.Text = "Deseja Gerar Recibo de cancelamento do Salão de Festa?";
+            lblMsg.Text = "Confirma os dados para cancelamento do Salão de Festa?";
             actionStatus = ((Int32)Enum.Parse(typeof(opcaoCancelamento), opcaoCancelamento.cancelaSLFesta.ToString()));
             Session["status"] = actionStatus;
 
@@ -312,10 +312,10 @@ namespace Azuli.Web.Portal
             DvConfirma.Visible = true;
             dvPesquisaMorador.Visible = false;
 
-            lblStatus.Text = "Confirmação feita com sucesso área: Salão de Festa / Churrasqueira";
+            lblStatus.Text = "Confirmação será feita para área: Salão de Festa / Churrasqueira";
             lblStatus.ForeColor = System.Drawing.Color.Green;
 
-            lblMsg.Text = "Deseja Gerar Recibo agora?";
+            lblMsg.Text = "Confirme os dados para reservas do Salão de Festa e Churrasqueira";
             actionStatus = ((Int32)Enum.Parse(typeof(opcaoCancelamento), opcaoCancelamento.confimaTudo.ToString()));
             Session["status"] = actionStatus;
 
@@ -326,11 +326,11 @@ namespace Azuli.Web.Portal
             DvConfirma.Visible = true;
             dvPesquisaMorador.Visible = false;
 
-            lblStatus.Text = "Cancelamento feito com sucesso para áreas: Salão de Festa  e Churrasqueira";
+            lblStatus.Text = "Cancelamento será feito para áreas: Salão de Festa  e Churrasqueira";
 
             lblStatus.ForeColor = System.Drawing.Color.Red;
 
-            lblMsg.Text = "Deseja gerar recibo para áreas: Salão de Festa e Churrasqueira?";
+            lblMsg.Text = "Confirme os dados para cancelamento das áreas: Salão de Festa e Churrasqueira?";
             actionStatus = ((Int32)Enum.Parse(typeof(opcaoCancelamento), opcaoCancelamento.cancelaTudo.ToString()));
             Session["status"] = actionStatus;
 
@@ -342,10 +342,10 @@ namespace Azuli.Web.Portal
             DvConfirma.Visible = true;
             dvPesquisaMorador.Visible = false;
 
-            lblStatus.Text = "Confirmação feita com sucesso área: Salão de Festa";
+            lblStatus.Text = "Confirmação será feita para área: Salão de Festa";
             lblStatus.ForeColor = System.Drawing.Color.Green;
 
-            lblMsg.Text = "Deseja Gerar Recibo agora?";
+            lblMsg.Text = "Confirme os dados para reserva do Salão de Festa:";
             actionStatus = ((Int32)Enum.Parse(typeof(opcaoCancelamento), opcaoCancelamento.confirmaFesta.ToString()));
             Session["status"] = actionStatus;
 
@@ -370,12 +370,30 @@ namespace Azuli.Web.Portal
 
         protected void btnCadastrar_Click(object sender, EventArgs e)
         {
-            if (Session["status"] != "" || Session["status"] != null)
+            if (Session["status"] != null)
             {
                 switch ((Int32)Session["status"])
                 {
                     case 1:
                         ConfirmChurraqueira();
+                        break;
+                    case 2:
+                        ConfirmFesta();
+                        break;
+                    case 3:
+                        cancelFesta();
+                        break;
+
+                    case 4:
+                        cancelChurras();
+                        break;
+
+                    case 5:
+                        ConfirmTudo();
+                        break;
+
+                    case 6:
+                        cancelTudo();
                         break;
 
 
@@ -414,6 +432,170 @@ namespace Azuli.Web.Portal
 
 
             
+        }
+
+        public void ConfirmTudo()
+        {
+
+            oApModel.apartamento = Convert.ToInt32(Session["aptoSession"]);
+            oApModel.bloco = Convert.ToInt32(Session["blocoSession"]);
+            oAgendaModel.ap = oApModel;
+            oAgendaModel.dataConfirmacaoPagamento = DateTime.Now;
+            oAgendaModel.salaoChurrasco = true;
+            oAgendaModel.salaoFesta = true;
+            oAgendaModel.dataAgendamento = Convert.ToDateTime(Session["dataReservaOnline"]);
+            oAgendaModel.statusPagamento = "S";
+            oAgendaModel.observacao = txtObs.Text;
+
+            try
+            {
+                //Atualiza a reserva
+                oAgenda.cadastrarAgenda(oAgendaModel.dataAgendamento, oApModel, oAgendaModel);
+                Session.Remove("status");
+
+
+                // Gera Recibo
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+
+
+
+        }
+
+
+        public void cancelTudo()
+        {
+
+            oApModel.apartamento = Convert.ToInt32(Session["aptoSession"]);
+            oApModel.bloco = Convert.ToInt32(Session["blocoSession"]);
+            oAgendaModel.ap = oApModel;
+            oAgendaModel.dataConfirmacaoPagamento = DateTime.Now;
+            oAgendaModel.salaoChurrasco = true;
+            oAgendaModel.salaoFesta = true;
+            oAgendaModel.dataAgendamento = Convert.ToDateTime(Session["dataReservaOnline"]);
+
+
+            try
+            {
+                //Atualiza a reserva
+                oAgenda.cancelaAgendamentoMorador(oAgendaModel.dataAgendamento, oApModel, oAgendaModel.salaoFesta, oAgendaModel.salaoChurrasco);
+                Session.Remove("status");
+
+
+                // Gera Recibo
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+
+
+
+        }
+
+        public void cancelFesta()
+        {
+
+            oApModel.apartamento = Convert.ToInt32(Session["aptoSession"]);
+            oApModel.bloco = Convert.ToInt32(Session["blocoSession"]);
+            oAgendaModel.ap = oApModel;
+            oAgendaModel.dataConfirmacaoPagamento = DateTime.Now;
+            oAgendaModel.salaoChurrasco = false;
+            oAgendaModel.salaoFesta = true;
+            oAgendaModel.dataAgendamento = Convert.ToDateTime(Session["dataReservaOnline"]);
+
+
+            try
+            {
+                //Atualiza a reserva
+                oAgenda.cancelaAgendamentoMorador(oAgendaModel.dataAgendamento, oApModel, oAgendaModel.salaoFesta, oAgendaModel.salaoChurrasco);
+                Session.Remove("status");
+
+
+                // Gera Recibo
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+
+
+
+        }
+
+        public void cancelChurras()
+        {
+
+            oApModel.apartamento = Convert.ToInt32(Session["aptoSession"]);
+            oApModel.bloco = Convert.ToInt32(Session["blocoSession"]);
+            oAgendaModel.ap = oApModel;
+            oAgendaModel.dataConfirmacaoPagamento = DateTime.Now;
+            oAgendaModel.salaoChurrasco = true;
+            oAgendaModel.salaoFesta = false;
+            oAgendaModel.dataAgendamento = Convert.ToDateTime(Session["dataReservaOnline"]);
+            
+
+            try
+            {
+                //Atualiza a reserva
+                oAgenda.cancelaAgendamentoMorador(oAgendaModel.dataAgendamento,oApModel,oAgendaModel.salaoFesta,oAgendaModel.salaoChurrasco);
+                Session.Remove("status");
+
+
+                // Gera Recibo
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+
+
+
+        }
+
+
+        public void ConfirmFesta()
+        {
+
+            oApModel.apartamento = Convert.ToInt32(Session["aptoSession"]);
+            oApModel.bloco = Convert.ToInt32(Session["blocoSession"]);
+            oAgendaModel.ap = oApModel;
+            oAgendaModel.dataConfirmacaoPagamento = DateTime.Now;
+            oAgendaModel.salaoChurrasco = false;
+            oAgendaModel.salaoFesta = true;
+            oAgendaModel.dataAgendamento = Convert.ToDateTime(Session["dataReservaOnline"]);
+            oAgendaModel.statusPagamento = "S";
+            oAgendaModel.observacao = "Nada Por enquanto";
+
+            try
+            {
+                //Atualiza a reserva
+                oAgenda.cadastrarAgenda(oAgendaModel.dataAgendamento, oApModel, oAgendaModel);
+                Session.Remove("status");
+
+
+                // Gera Recibo
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+
+
+
         }
 
       

@@ -113,6 +113,16 @@
           </legend>
 
 
+          <br />
+          <asp:Label ID="Label9" runat="server" 
+              style="color: #006AB2; font-weight: 700; font-size: 12pt" 
+              Text="Data da Reserva: "></asp:Label>
+      <asp:Label ID="lblDataReservaEtapa1" runat="server" CssClass="accordionContent" 
+          style="font-weight: 700; font-family: Calibri; font-size: 14pt"></asp:Label>
+          <br />
+
+
+          <br />
 
 
           <table class="accordionContent">
@@ -153,12 +163,12 @@
                       style="border-right-style: groove; border-left-style: groove; border-width: thin; border-bottom-style: groove;">
                       <asp:Button ID="btnConfirmaChurras" runat="server" CssClass="botao" 
                           Text="Confirma Churrasqueira" BackColor="#3BA4CB" ForeColor="White" 
-                          onclick="btnConfirmaChurras_Click" />
+                          onclick="btnConfirmaChurras_Click" Height="29px" />
                   </td>
                   <td align="center" style="border-bottom-style: groove; border-width: thin">
                       <asp:Button ID="btnCancelarChurras" runat="server" CssClass="botao" 
                           Text="Cancela Churraqueira" BackColor="#3BA4CB" ForeColor="White" 
-                          onclick="btnCancelarChurras_Click" />
+                          onclick="btnCancelarChurras_Click" Height="30px" />
                   </td>
                   <td align="center" 
                       
@@ -183,12 +193,12 @@
                       style="border-right-style: groove; border-left-style: groove; border-width: thin">
                       <asp:Button ID="btnConfirmaSalao" runat="server" CssClass="botao" 
                           Text="Confirma Salão de Festa" BackColor="#3BA4CB" ForeColor="White" 
-                          onclick="btnConfirmaSalao_Click" />
+                          onclick="btnConfirmaSalao_Click" Height="26px" />
                   </td>
                   <td align="Center">
                       <asp:Button ID="btnCancelaFesta" runat="server" CssClass="botao" 
                           Text="Cancela Festa" BackColor="#3BA4CB" ForeColor="White" 
-                          onclick="btnCancelaFesta_Click" />
+                          onclick="btnCancelaFesta_Click" Height="26px" />
                   </td>
                   <td align="Center" style="border-left-style: groove; border-width: thin" 
                       class="style14">
@@ -269,6 +279,11 @@
       <span class="style20">Bloco e Apto:</span>
       <asp:Label ID="lblBlocoApto" runat="server" CssClass="accordionContent" 
           style="font-weight: 700; font-family: Calibri; font-size: 14pt"></asp:Label>
+      <br />
+      <br />
+      <span class="style20">Observação:</span>
+      <asp:TextBox ID="txtObs" runat="server" Height="59px" TextMode="MultiLine"></asp:TextBox>
+      <br />
     <br />
       <br />
      <asp:Button ID="btnCadastrar" runat="server" CssClass="botao" Text="Sim" 
