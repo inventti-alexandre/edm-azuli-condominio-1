@@ -321,6 +321,23 @@ namespace Azuli.Web.Business
         }
 
 
+        public listAgenda geraReciboPago(AgendaModel oAgenda)
+        {
+            listAgenda oListAgenda = new listAgenda();
+
+            try
+            {
+                oListAgenda = oAgendaDao.geraReciboPago(oAgenda);
+
+                return oListAgenda;
+
+            }
+            catch (Exception error)
+            {
+
+                throw error;
+            }
+        }
 
         #endregion
 
@@ -366,9 +383,12 @@ namespace Azuli.Web.Business
 
 
 
-      
 
 
-        
+
+
+
+     
+
     }
 }

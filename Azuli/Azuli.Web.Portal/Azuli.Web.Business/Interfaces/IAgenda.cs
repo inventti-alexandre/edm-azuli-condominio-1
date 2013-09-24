@@ -24,5 +24,6 @@ namespace Azuli.Web.Business.Interfaces
          listAgenda agendamentoFuturoFesta(AgendaModel oAgenda);
          listAgenda agendamentoFuturoChurras(AgendaModel oAgenda);
          listAgenda pendentePagamento(AgendaModel oAgenda);
+         listAgenda geraReciboPago(AgendaModel oAgenda);
     }
 }

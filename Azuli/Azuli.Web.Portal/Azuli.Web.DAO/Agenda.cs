@@ -165,6 +165,7 @@ namespace Azuli.Web.DAO
                 comandoSQL.Parameters.AddWithValue("@AP", ap.apartamento);
                 comandoSQL.Parameters.AddWithValue("@FESTA", festa);
                 comandoSQL.Parameters.AddWithValue("@CHURRAS", churras);
+            
                
                 ExecutaQuery(comandoSQL);
 
@@ -558,6 +559,126 @@ namespace Azuli.Web.DAO
             }
         }
 
+        public listAgenda geraReciboPago(AgendaModel oAgenda)
+        {
+            string clausulaSQL = "USP_GERA_RECIBO_RESERVA";
+
+            listAgenda oListaAgendaRecibo = new listAgenda();
+
+            SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["azulli"].ToString());
+            try
+            {
+                SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
+                comandoSQL.CommandType = CommandType.StoredProcedure;
+                comandoSQL.Connection = conn;
+                SqlDataReader myReader;
+                comandoSQL.Parameters.AddWithValue("@DATAAGE", oAgenda.dataAgendamento);
+                comandoSQL.Parameters.AddWithValue("@BLOCO", oAgenda.ap.bloco);
+                comandoSQL.Parameters.AddWithValue("@AP", oAgenda.ap.apartamento);
+              
+
+                conn.Open();
+
+                myReader = comandoSQL.ExecuteReader();
+
+
+                do
+                {
+
+
+                    while (myReader.Read())
+                    {
+
+                        //if(myReader.GetSchemaTable().Columns.Contains("CONTADOR_MENSAGEM_PENDENTE"))
+                        try
+                        {
+                            oAgenda.dataAgendamento = Convert.ToDateTime(myReader["dataRec"]);
+                        }
+                        catch (IndexOutOfRangeException e)
+                        {
+
+                            e.ToString();
+                        }
+
+                        try
+                        {
+                            oAgenda.ap.apartamento = Convert.ToInt32(myReader["apRec"]);
+                        }
+                        catch (IndexOutOfRangeException e)
+                        {
+                            e.ToString();
+
+                        }
+
+                        try
+                        {
+                            oAgenda.ap.bloco = Convert.ToInt32(myReader["blocoRec"]);
+                        }
+                        catch (IndexOutOfRangeException e)
+                        {
+                            e.ToString();
+
+                        }
+
+                        try
+                        {
+                            ProprietarioModel oPropri = new ProprietarioModel();
+                            oPropri.proprietario1 =  myReader["NomeRec"].ToString();
+                            oAgenda.ap.oProprietario  = oPropri;
+
+                        }
+                        catch (IndexOutOfRangeException e)
+                        {
+
+                            e.ToString();
+                        }
+
+                        try
+                        {
+                            oAgenda.observacao = myReader["descricaoRec"].ToString();
+                        }
+                        catch (IndexOutOfRangeException e)
+                        {
+
+                            e.ToString();
+                        }
+
+                        try
+                        {
+                            oAgenda.valorReserva =Convert.ToDouble(myReader["valorRec"]);
+                        }
+                        catch (IndexOutOfRangeException e)
+                        {
+
+                            e.ToString();
+                        }
+
+
+
+                        oListaAgendaRecibo.Add(oAgenda);
+
+                    }
+
+                } while (myReader.NextResult());
+
+
+
+                //DataSet tbPendencia = new DataSet();
+                //tbPendencia = ExecutaProcQuery(comandoSQL);
+
+                //DataTable pendenciaDT = tbPendencia.Tables[0];
+                //DataTable pendenciaDT01 = tbPendencia.Tables[1];
+
+                return oListaAgendaRecibo;
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
 
 
@@ -596,11 +717,6 @@ namespace Azuli.Web.DAO
 
       
        
-
-
-       
-
-
         #endregion
     }
 }

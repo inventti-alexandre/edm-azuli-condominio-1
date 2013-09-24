@@ -9,6 +9,7 @@ namespace Azuli.Web.Model
     {
         public int bloco { get; set; }
         public int apartamento { get; set;}
+        public ProprietarioModel oProprietario { get; set; }
     }
 
     public class listApartamento : List<ApartamentoModel> { };
