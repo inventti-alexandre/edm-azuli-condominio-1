@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Azuli.Web.Business;
 using Azuli.Web.Model;
 using System.Globalization;
+using System.Text;
 
 namespace Azuli.Web.Portal
 {
@@ -375,30 +376,60 @@ namespace Azuli.Web.Portal
                 switch ((Int32)Session["status"])
                 {
                     case 1:
+                        openedPoupReport();
                         ConfirmChurraqueira();
+                       
+                     
                         break;
                     case 2:
+                        openedPoupReport();
                         ConfirmFesta();
+                      
                         break;
                     case 3:
+                        openedPoupReport();
                         cancelFesta();
+                      
+                      
                         break;
 
                     case 4:
+                        openedPoupReport();
+                    
                         cancelChurras();
+                     
                         break;
 
                     case 5:
-                        ConfirmTudo();
+                        openedPoupReport();
+                        ConfirmFesta();
+                        ConfirmChurraqueira();
+                       
+                       
+
+
+                        //ConfirmTudo();
                         break;
 
                     case 6:
-                        cancelTudo();
+                        openedPoupReport();
+                        cancelFesta();
+                        cancelChurras();
+                       
+                       
+                        //cancelTudo();
                         break;
 
 
                 }
             }
+        }
+
+
+        public void openedPoupReport()
+        {
+
+            OpenPopUp(Page.ResolveUrl("ReportViewer.aspx"), 700, 920, true, true);
         }
 
         public void ConfirmChurraqueira()
@@ -412,12 +443,13 @@ namespace Azuli.Web.Portal
             oAgendaModel.salaoFesta = false;
             oAgendaModel.dataAgendamento = Convert.ToDateTime(Session["dataReservaOnline"]);
             oAgendaModel.statusPagamento = "S";
-            oAgendaModel.observacao = "Nada Por enquanto";
+            oAgendaModel.observacao = txtObs.Text;
 
             try
             {
                 //Atualiza a reserva
                 oAgenda.cadastrarAgenda(oAgendaModel.dataAgendamento, oApModel, oAgendaModel);
+               
                 Session.Remove("status");
                
 
@@ -454,6 +486,8 @@ namespace Azuli.Web.Portal
                 Session.Remove("status");
 
 
+
+
                 // Gera Recibo
 
             }
@@ -478,7 +512,7 @@ namespace Azuli.Web.Portal
             oAgendaModel.salaoChurrasco = true;
             oAgendaModel.salaoFesta = true;
             oAgendaModel.dataAgendamento = Convert.ToDateTime(Session["dataReservaOnline"]);
-
+            oAgendaModel.observacao = txtObs.Text;
 
             try
             {
@@ -502,7 +536,7 @@ namespace Azuli.Web.Portal
 
         public void cancelFesta()
         {
-
+            txtObs.Visible = false;
             oApModel.apartamento = Convert.ToInt32(Session["aptoSession"]);
             oApModel.bloco = Convert.ToInt32(Session["blocoSession"]);
             oAgendaModel.ap = oApModel;
@@ -516,6 +550,7 @@ namespace Azuli.Web.Portal
             {
                 //Atualiza a reserva
                 oAgenda.cancelaAgendamentoMorador(oAgendaModel.dataAgendamento, oApModel, oAgendaModel.salaoFesta, oAgendaModel.salaoChurrasco);
+              
                 Session.Remove("status");
 
 
@@ -534,7 +569,7 @@ namespace Azuli.Web.Portal
 
         public void cancelChurras()
         {
-
+            txtObs.Visible = false;
             oApModel.apartamento = Convert.ToInt32(Session["aptoSession"]);
             oApModel.bloco = Convert.ToInt32(Session["blocoSession"]);
             oAgendaModel.ap = oApModel;
@@ -548,6 +583,7 @@ namespace Azuli.Web.Portal
             {
                 //Atualiza a reserva
                 oAgenda.cancelaAgendamentoMorador(oAgendaModel.dataAgendamento,oApModel,oAgendaModel.salaoFesta,oAgendaModel.salaoChurrasco);
+              
                 Session.Remove("status");
 
 
@@ -567,7 +603,7 @@ namespace Azuli.Web.Portal
 
         public void ConfirmFesta()
         {
-
+        
             oApModel.apartamento = Convert.ToInt32(Session["aptoSession"]);
             oApModel.bloco = Convert.ToInt32(Session["blocoSession"]);
             oAgendaModel.ap = oApModel;
@@ -597,6 +633,53 @@ namespace Azuli.Web.Portal
 
 
         }
+
+        /// <summary>
+        /// Abre uma janela no estilo Modal Dialog
+        /// </summary>
+        /// <param name="NamePage">Nome da pagina que sera aberta</param>
+        /// <param name="Height">Altura</param>
+        /// <param name="Width">Largura</param>
+        public static void OpenPopUp(string NamePage, int Height, int Width, bool ScrollBars, bool Resizable)
+        {
+
+
+            StringBuilder url = new StringBuilder();
+
+            url.Append("window.open('" + NamePage + "','janela1','");
+            url.Append("width =");
+            url.Append(Width);
+            url.Append(", height=");
+            url.Append(Height);
+            url.Append(", scrollbars=");
+            url.Append(ScrollBars ? "yes" : "no");
+            url.Append(", resizable=");
+            url.Append(Resizable ? "yes" : "no");
+            url.Append("');");
+
+            JsStartUpScript(url.ToString());
+        }
+
+        /// <summary>
+        /// Executa um script
+        /// </summary>
+        /// <param name="Script">Script que sera executado</param>
+        public static void JsStartUpScript(string Script)
+        {
+            Page paginaAtual;
+            paginaAtual = GetCurrentPage();
+            paginaAtual.ClientScript.RegisterClientScriptBlock(paginaAtual.GetType(), Guid.NewGuid().ToString(), Script, true);
+        }
+
+        /// <summary>
+        /// Retorna Pagina Corrente
+        /// </summary>
+        /// <returns></returns>
+        private static Page GetCurrentPage()
+        {
+            return (Page)System.Web.HttpContext.Current.Handler;
+        }
+
 
       
       

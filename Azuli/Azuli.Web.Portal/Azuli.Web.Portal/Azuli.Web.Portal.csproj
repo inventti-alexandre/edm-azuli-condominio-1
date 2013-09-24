@@ -586,6 +586,7 @@
     <Compile Include="Util\Base.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Util\NumeroPorExtenso.cs" />
     <Compile Include="Util\SendMail.cs" />
     <Compile Include="Util\Util.cs" />
     <Compile Include="videoajuda.aspx.cs">

@@ -228,6 +228,9 @@
                     &nbsp;<asp:Button ID="btnRecibo" runat="server" CssClass="btForm" OnClick="btnRecibo_Click"
                                 Text="Gerar Recibo" Width="127px" Height="30px" Font-Bold="True" 
                             ForeColor="#006600" />
+                    &nbsp;<asp:ImageButton ID="imgCalendar" runat="server" 
+        DescriptionUrl="Voltar Calendario" Height="28px" 
+        ImageUrl="~/images/calendario.png" onclick="ImageButton1_Click2" Width="52px" />
                     </td>
                 </tr>
         

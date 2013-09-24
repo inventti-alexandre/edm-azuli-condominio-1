@@ -162,12 +162,12 @@
                   <td align="center" 
                       style="border-right-style: groove; border-left-style: groove; border-width: thin; border-bottom-style: groove;">
                       <asp:Button ID="btnConfirmaChurras" runat="server" CssClass="botao" 
-                          Text="Confirma Churrasqueira" BackColor="#3BA4CB" ForeColor="White" 
+                          Text="Confirma Churrasqueira" BackColor="#006600" ForeColor="White" 
                           onclick="btnConfirmaChurras_Click" Height="29px" />
                   </td>
                   <td align="center" style="border-bottom-style: groove; border-width: thin">
                       <asp:Button ID="btnCancelarChurras" runat="server" CssClass="botao" 
-                          Text="Cancela Churraqueira" BackColor="#3BA4CB" ForeColor="White" 
+                          Text="Cancela Churraqueira" BackColor="#CC3300" ForeColor="White" 
                           onclick="btnCancelarChurras_Click" Height="30px" />
                   </td>
                   <td align="center" 
@@ -192,12 +192,12 @@
                   <td align="center" 
                       style="border-right-style: groove; border-left-style: groove; border-width: thin">
                       <asp:Button ID="btnConfirmaSalao" runat="server" CssClass="botao" 
-                          Text="Confirma Salão de Festa" BackColor="#3BA4CB" ForeColor="White" 
+                          Text="Confirma Salão de Festa" BackColor="#006600" ForeColor="White" 
                           onclick="btnConfirmaSalao_Click" Height="26px" />
                   </td>
                   <td align="Center">
                       <asp:Button ID="btnCancelaFesta" runat="server" CssClass="botao" 
-                          Text="Cancela Festa" BackColor="#3BA4CB" ForeColor="White" 
+                          Text="Cancela Festa" BackColor="#CC0000" ForeColor="White" 
                           onclick="btnCancelaFesta_Click" Height="26px" />
                   </td>
                   <td align="Center" style="border-left-style: groove; border-width: thin" 
@@ -216,13 +216,13 @@
                   <td style="border: thin groove #CCCCCC;" align="center" 
                       class="style11">
                       <asp:Button ID="btnConfirmALL" runat="server" CssClass="botao" Text="Confirma tudo" 
-                          BackColor="#3BA4CB" ForeColor="White" Height="34px" 
+                          BackColor="#006600" ForeColor="White" Height="34px" 
                           style="font-size: 11pt" onclick="btnConfirmALL_Click" />
                   </td>
                   <td style="border: thin groove #CCCCCC;" align="center" 
                       class="style11">
                       <asp:Button ID="btnCancelAll" runat="server" CssClass="botao" Text="Cancela Tudo" 
-                          BackColor="#3BA4CB" ForeColor="White" Height="36px" 
+                          BackColor="#CC0000" ForeColor="White" Height="36px" 
                           style="font-size: 11pt" onclick="btnCancelAll_Click" />
                   </td>
                   <td style="border-style: groove; border-width: thin" class="style15">

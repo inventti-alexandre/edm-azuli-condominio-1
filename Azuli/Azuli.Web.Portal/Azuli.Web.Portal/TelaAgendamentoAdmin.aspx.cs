@@ -466,11 +466,13 @@ namespace Azuli.Web.Portal
                          if (chkPG.Checked)
                          {
                              btnRecibo.Visible = true;
+                             imgCalendar.Visible = true;
                              btnOKConfirma.Visible = false;
                          }
                          else
                          {
                              btnRecibo.Visible = false;
+                             imgCalendar.Visible = false;
                              btnOKConfirma.Visible = true;
                          }
                          DivConfirma.Visible = true;
@@ -563,6 +565,7 @@ namespace Azuli.Web.Portal
 
         protected void btnRecibo_Click(object sender, EventArgs e)
         {
+            Session["reciboConfirmadoNoAto"] = 1;
             openedPoupReport();
 
         }

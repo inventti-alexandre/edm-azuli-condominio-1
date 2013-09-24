@@ -12,11 +12,16 @@ using System.Data.SqlClient;
 using CrystalDecisions.Shared;
 using System.Data;
 using Azuli.Crystal;
+using Azuli.Web.Business;
+using Azuli.Web.Model;
 
 namespace Azuli.Web.Portal
 {
     public partial class ReportViewer : System.Web.UI.Page
     {
+
+        AgendaBLL oAgendaBLL = new AgendaBLL();
+        AgendaModel oAgendaModel = new AgendaModel();
         Util.Util oUtil = new Util.Util();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -47,20 +52,47 @@ namespace Azuli.Web.Portal
         public void Recibo()
         {
 
+            ApartamentoModel oAp = new ApartamentoModel();
+
+            if (Session["reciboConfirmadoNoAto"] != null && (int)Session["reciboConfirmadoNoAto"] == 1)
+            {
+                oAp.apartamento =  Convert.ToInt32(Session["MoradorSemInternetAP"]);
+                oAp.bloco = Convert.ToInt32(Session["MoradorSemInternetBloco"]);
+                oAgendaModel.dataAgendamento = Convert.ToDateTime(Session["dataReservaAdministrador"]);
+                oAgendaModel.ap = oAp;
+
+            }
+            else
+            {
+
+                oAp.apartamento = Convert.ToInt32(Session["aptoSession"]);
+                oAp.bloco = Convert.ToInt32(Session["blocoSession"]);
+                oAgendaModel.dataAgendamento = Convert.ToDateTime(Session["dataReservaOnline"]);
+                oAgendaModel.ap = oAp;
+            }
+
             try
             {
-               // ReportDocument rpt = new ReportDocument();
-              
                 DSrecibo dsRecibo = new DSrecibo();
                 DataRow drRecibo = dsRecibo.Tables[0].NewRow();
+
+                foreach (var item in  oAgendaBLL.geraReciboPago(oAgendaModel))
+                {
+                    drRecibo["DIA"] = DateTime.Now.Day;
+                    drRecibo["MES"] = System.Globalization.DateTimeFormatInfo.CurrentInfo.GetMonthName(DateTime.Now.Month);
+                    drRecibo["ANO"] = DateTime.Now.Year;
+                    drRecibo["VALOR_POR_EXTENSO"] = new Util.NumeroPorExtenso(Convert.ToDecimal(item.valorReserva));
+                    drRecibo["PROPRIETARIO"] = item.ap.bloco + " - " + item.ap.apartamento + " - " + item.ap.oProprietario.proprietario1;
+                    drRecibo["Descricao"] = item.observacao;
+                    drRecibo["VALOR"] = item.valorReserva;
+                    
+                    
+                }
                
-                drRecibo["valor"] = "R$ 50,00";
-                drRecibo["valorExtenso"] = " Cinquenta Reais #";
-                drRecibo["empresa"] = "Bloco: 06 - Apto: 301 - Morador Edmilson Lopes";
-                drRecibo["Descricao"] = "Reserva da Churrasqueira para o Dia 17/09/2013";
-                drRecibo["Dia"] = DateTime.Now.Day.ToString();
-                drRecibo["Mes"] = System.Globalization.DateTimeFormatInfo.CurrentInfo.GetMonthName(DateTime.Now.Month);
-                drRecibo["Ano"] = DateTime.Now.Year;
+              
+               
+               
+               
 
                 //string caminhoRelatorio = ConfigurationManager.AppSettings["ReportsPath"] + ConfigurationManager.AppSettings["reciboReserva"];
                 
