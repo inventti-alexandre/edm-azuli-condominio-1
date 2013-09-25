@@ -25,5 +25,6 @@ namespace Azuli.Web.Business.Interfaces
          listAgenda agendamentoFuturoChurras(AgendaModel oAgenda);
          listAgenda pendentePagamento(AgendaModel oAgenda);
          listAgenda geraReciboPago(AgendaModel oAgenda);
+         void cancelaAgendamentoMoradorObservation(DateTime dataAgendamento, ApartamentoModel ap, bool festa, bool churras, string observation);
     }
 }

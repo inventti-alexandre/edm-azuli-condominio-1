@@ -262,6 +262,20 @@ namespace Azuli.Web.Business
                 throw;
             }
         }
+
+        public void cancelaAgendamentoMoradorObservation(DateTime dataAgendamento, ApartamentoModel ap, bool festa, bool churras, string observation)
+        {
+            try
+            {
+                oAgendaDao.cancelaAgendamentoMoradorObservation(dataAgendamento, ap, festa, churras, observation);
+
+            }
+            catch (Exception error)
+            {
+
+                throw error;
+            }
+        }
       
 
         public void cancelaAgendamentoMorador(DateTime dataAgendamento, ApartamentoModel ap, bool festa, bool churras)
