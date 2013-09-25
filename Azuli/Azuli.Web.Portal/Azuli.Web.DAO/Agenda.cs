@@ -148,6 +148,35 @@ namespace Azuli.Web.DAO
                 throw error;
             }
         }
+
+        public void cancelaAgendamentoMoradorObservation(DateTime dataAgendamento, ApartamentoModel ap, bool festa, bool churras, string observation)
+        {
+            string clausulaSQL = "CANCELA_RESERVA_MORADOR";
+
+
+            try
+            {
+                SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
+
+                comandoSQL.Parameters.AddWithValue("@DATA_AGENDA", dataAgendamento);
+                comandoSQL.Parameters.AddWithValue("@BLOCO", ap.bloco);
+                comandoSQL.Parameters.AddWithValue("@AP", ap.apartamento);
+                comandoSQL.Parameters.AddWithValue("@FESTA", festa);
+                comandoSQL.Parameters.AddWithValue("@CHURRAS", churras);
+                comandoSQL.Parameters.AddWithValue("@OBSERVACAO", observation);
+
+
+                ExecutaQuery(comandoSQL);
+
+            }
+            catch (Exception error)
+            {
+
+                throw error;
+            }
+
+
+        }
         
 
         
