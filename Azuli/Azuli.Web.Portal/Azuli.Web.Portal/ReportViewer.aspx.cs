@@ -30,9 +30,7 @@ namespace Azuli.Web.Portal
             {
                 if (oUtil.validateSession())
                 {
-
                     crystalReport();
-
                 }
             }
             else
@@ -40,9 +38,7 @@ namespace Azuli.Web.Portal
 
                 if (oUtil.validateSessionAdmin())
                 {
-
                     Recibo();
-
 
                 }
             }
@@ -82,9 +78,9 @@ namespace Azuli.Web.Portal
                     drRecibo["MES"] = System.Globalization.DateTimeFormatInfo.CurrentInfo.GetMonthName(DateTime.Now.Month);
                     drRecibo["ANO"] = DateTime.Now.Year;
                     drRecibo["VALOR_POR_EXTENSO"] = new Util.NumeroPorExtenso(Convert.ToDecimal(item.valorReserva));
-                    drRecibo["PROPRIETARIO"] = item.ap.bloco + " - " + item.ap.apartamento + " - " + item.ap.oProprietario.proprietario1;
+                    drRecibo["PROPRIETARIO"] = "0"+item.ap.bloco + " - " + item.ap.apartamento + " - " + item.ap.oProprietario.proprietario1;
                     drRecibo["Descricao"] = item.observacao;
-                    drRecibo["VALOR"] = item.valorReserva;
+                    drRecibo["VALOR"] = item.valorReserva+",00";
                     
                     
                 }

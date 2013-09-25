@@ -467,12 +467,14 @@ namespace Azuli.Web.Portal
                          {
                              btnRecibo.Visible = true;
                              imgCalendar.Visible = true;
+                             hplnkWelcomeAdmin.Visible = true;
                              btnOKConfirma.Visible = false;
                          }
                          else
                          {
                              btnRecibo.Visible = false;
                              imgCalendar.Visible = false;
+                             hplnkWelcomeAdmin.Visible = false;
                              btnOKConfirma.Visible = true;
                          }
                          DivConfirma.Visible = true;

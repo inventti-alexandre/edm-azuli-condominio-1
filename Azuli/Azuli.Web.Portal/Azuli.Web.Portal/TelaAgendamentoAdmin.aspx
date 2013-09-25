@@ -84,6 +84,11 @@
             width: 654px;
         }
                  
+        .style14
+        {
+            width: 100%;
+        }
+                 
     </style>
 
      <script type="text/javascript">
@@ -223,15 +228,29 @@
                             CssClass="style11"></asp:Label>
                         <br />
                             <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<table class="style14">
+                            <tr>
+                                <td align="center">
                             <asp:Button ID="btnOKConfirma" runat="server" CssClass="botao" OnClick="btnOKConfirma_Click"
                                 Text="Ok" Width="95px" Height="30px" />
-                    &nbsp;<asp:Button ID="btnRecibo" runat="server" CssClass="btForm" OnClick="btnRecibo_Click"
+                                </td>
+                                <td>
+                                    <asp:Button ID="btnRecibo" runat="server" CssClass="btForm" OnClick="btnRecibo_Click"
                                 Text="Gerar Recibo" Width="127px" Height="30px" Font-Bold="True" 
                             ForeColor="#006600" />
-                    &nbsp;<asp:ImageButton ID="imgCalendar" runat="server" 
-        DescriptionUrl="Voltar Calendario" Height="28px" 
-        ImageUrl="~/images/calendario.png" onclick="ImageButton1_Click2" Width="52px" />
-                    </td>
+                                </td>
+                                <td>
+    <asp:ImageButton ID="imgCalendar" runat="server" 
+        DescriptionUrl="Voltar Calendario" Height="36px" 
+        ImageUrl="~/images/calendario.png" onclick="ImageButton1_Click2" Width="42px" />
+                                </td>
+                                <td>
+                        <asp:HyperLink ID="hplnkWelcomeAdmin" runat="server" ForeColor="Blue" 
+                            NavigateUrl="~/WelcomeAdmin.aspx">Clique aqui para voltar ao calendário</asp:HyperLink>
+                                </td>
+                            </tr>
+                        </table>
+&nbsp;</td>
                 </tr>
         
            </table> </center>   </fieldset> </div> 

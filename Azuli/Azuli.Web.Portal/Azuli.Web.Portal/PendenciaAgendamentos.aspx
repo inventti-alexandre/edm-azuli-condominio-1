@@ -101,6 +101,14 @@
             font-size: 13pt;
             font-weight: bold;
         }
+        .style21
+        {
+            width: 114%;
+        }
+        .style22
+        {
+            width: 168px;
+        }
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -295,4 +303,30 @@
 
      <br /></center></fieldset>
    </div></center>
+
+   <div id="DvVoltar" align="center" runat="server">
+    
+    <fieldset class="loginDisplayAdmin">
+   <legend class="style19"> 
+       <asp:Label ID="lblSucess" runat="server" Text="Ação efetuada com Sucesso!!" 
+           style="color: #006600"></asp:Label>
+        </legend>
+  <center> <br /> <br />
+      <table class="style21">
+          <tr>
+              <td align="right">
+                  <asp:ImageButton ID="ImageButton1" runat="server" Height="91px" 
+                      ImageUrl="~/images/calendario.png" Width="109px" />
+              </td>
+              <td>
+                  <asp:HyperLink ID="hplSucess" runat="server" 
+                      style="font-weight: 700; font-size: 12pt" CssClass="accordionContent" 
+                      Font-Bold="False" NavigateUrl="~/WelcomeAdmin.aspx">Clique aqui para voltar para o Calendário</asp:HyperLink>
+              </td>
+          </tr>
+      </table>
+          <br />
+
+     <br /></center></fieldset>
+   </div>
 </asp:Content>

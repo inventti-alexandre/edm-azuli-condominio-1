@@ -13,9 +13,7 @@ namespace Azuli.Web.Portal
 {
     public partial class PendenciaAgendamentos : System.Web.UI.Page
     {
-        string dataReservaOnline = "";
-        string apto = "";
-        string bloco = "";
+       
         int actionStatus = 0;
 
 
@@ -44,6 +42,7 @@ namespace Azuli.Web.Portal
                     //string status = Request.QueryString["status"];
                      Session["blocoSession"] = Request.QueryString["bloco"];
                     DvConfirma.Visible = false;
+                    DvVoltar.Visible = false;
 
                     carregaPendencia((string)Session["dataReservaOnline"], (string)Session["aptoSession"], (string)Session["blocoSession"]);
                     lblDataReserva.Text =  dataByExtense();
@@ -371,39 +370,50 @@ namespace Azuli.Web.Portal
 
         protected void btnCadastrar_Click(object sender, EventArgs e)
         {
+            DvVoltar.Visible = true;
+            DvConfirma.Visible = false;
+            dvPesquisaMorador.Visible = false;
             if (Session["status"] != null)
             {
                 switch ((Int32)Session["status"])
                 {
                     case 1:
-                        openedPoupReport();
+                     
                         ConfirmChurraqueira();
+                        openedPoupReport();
+                       
                        
                      
                         break;
                     case 2:
-                        openedPoupReport();
+                        
                         ConfirmFesta();
+                        openedPoupReport();
+                       
                       
                         break;
                     case 3:
-                        openedPoupReport();
+                        
                         cancelFesta();
+                        Response.Redirect("WelcomeAdmin.aspx");
+                        //openedPoupReport();
                       
                       
                         break;
 
                     case 4:
-                        openedPoupReport();
-                    
                         cancelChurras();
+                        Response.Redirect("WelcomeAdmin.aspx");
+                        //openedPoupReport();
                      
                         break;
 
                     case 5:
-                        openedPoupReport();
+                       
                         ConfirmFesta();
                         ConfirmChurraqueira();
+                        openedPoupReport();
+                      
                        
                        
 
@@ -412,9 +422,11 @@ namespace Azuli.Web.Portal
                         break;
 
                     case 6:
-                        openedPoupReport();
+                       
                         cancelFesta();
                         cancelChurras();
+
+                        Response.Redirect("WelcomeAdmin.aspx");
                        
                        
                         //cancelTudo();
@@ -466,77 +478,77 @@ namespace Azuli.Web.Portal
             
         }
 
-        public void ConfirmTudo()
-        {
+        //public void ConfirmTudo()
+        //{
 
-            oApModel.apartamento = Convert.ToInt32(Session["aptoSession"]);
-            oApModel.bloco = Convert.ToInt32(Session["blocoSession"]);
-            oAgendaModel.ap = oApModel;
-            oAgendaModel.dataConfirmacaoPagamento = DateTime.Now;
-            oAgendaModel.salaoChurrasco = true;
-            oAgendaModel.salaoFesta = true;
-            oAgendaModel.dataAgendamento = Convert.ToDateTime(Session["dataReservaOnline"]);
-            oAgendaModel.statusPagamento = "S";
-            oAgendaModel.observacao = txtObs.Text;
+        //    oApModel.apartamento = Convert.ToInt32(Session["aptoSession"]);
+        //    oApModel.bloco = Convert.ToInt32(Session["blocoSession"]);
+        //    oAgendaModel.ap = oApModel;
+        //    oAgendaModel.dataConfirmacaoPagamento = DateTime.Now;
+        //    oAgendaModel.salaoChurrasco = true;
+        //    oAgendaModel.salaoFesta = true;
+        //    oAgendaModel.dataAgendamento = Convert.ToDateTime(Session["dataReservaOnline"]);
+        //    oAgendaModel.statusPagamento = "S";
+        //    oAgendaModel.observacao = txtObs.Text;
 
-            try
-            {
-                //Atualiza a reserva
-                oAgenda.cadastrarAgenda(oAgendaModel.dataAgendamento, oApModel, oAgendaModel);
-                Session.Remove("status");
-
-
-
-
-                // Gera Recibo
-
-            }
-            catch (Exception e)
-            {
-
-                throw e;
-            }
+        //    try
+        //    {
+        //        //Atualiza a reserva
+        //        oAgenda.cadastrarAgenda(oAgendaModel.dataAgendamento, oApModel, oAgendaModel);
+        //        Session.Remove("status");
 
 
 
-        }
 
+        //        // Gera Recibo
 
-        public void cancelTudo()
-        {
+        //    }
+        //    catch (Exception e)
+        //    {
 
-            oApModel.apartamento = Convert.ToInt32(Session["aptoSession"]);
-            oApModel.bloco = Convert.ToInt32(Session["blocoSession"]);
-            oAgendaModel.ap = oApModel;
-            oAgendaModel.dataConfirmacaoPagamento = DateTime.Now;
-            oAgendaModel.salaoChurrasco = true;
-            oAgendaModel.salaoFesta = true;
-            oAgendaModel.dataAgendamento = Convert.ToDateTime(Session["dataReservaOnline"]);
-            oAgendaModel.observacao = txtObs.Text;
-
-            try
-            {
-                //Atualiza a reserva
-                oAgenda.cancelaAgendamentoMorador(oAgendaModel.dataAgendamento, oApModel, oAgendaModel.salaoFesta, oAgendaModel.salaoChurrasco);
-                Session.Remove("status");
-
-
-                // Gera Recibo
-
-            }
-            catch (Exception e)
-            {
-
-                throw e;
-            }
+        //        throw e;
+        //    }
 
 
 
-        }
+        //}
+
+
+        //public void cancelTudo()
+        //{
+
+        //    oApModel.apartamento = Convert.ToInt32(Session["aptoSession"]);
+        //    oApModel.bloco = Convert.ToInt32(Session["blocoSession"]);
+        //    oAgendaModel.ap = oApModel;
+        //    oAgendaModel.dataConfirmacaoPagamento = DateTime.Now;
+        //    oAgendaModel.salaoChurrasco = true;
+        //    oAgendaModel.salaoFesta = true;
+        //    oAgendaModel.dataAgendamento = Convert.ToDateTime(Session["dataReservaOnline"]);
+        //    oAgendaModel.observacao = txtObs.Text;
+
+        //    try
+        //    {
+        //        //Atualiza a reserva
+        //        oAgenda.cancelaAgendamentoMoradorObservation(oAgendaModel.dataAgendamento, oApModel, oAgendaModel.salaoFesta, oAgendaModel.salaoChurrasco, oAgendaModel.observacao);
+        //        Session.Remove("status");
+
+
+        //        // Gera Recibo
+
+        //    }
+        //    catch (Exception e)
+        //    {
+
+        //        throw e;
+        //    }
+
+
+
+        //}
 
         public void cancelFesta()
         {
-            txtObs.Visible = false;
+          
             oApModel.apartamento = Convert.ToInt32(Session["aptoSession"]);
             oApModel.bloco = Convert.ToInt32(Session["blocoSession"]);
             oAgendaModel.ap = oApModel;
@@ -544,14 +556,18 @@ namespace Azuli.Web.Portal
             oAgendaModel.salaoChurrasco = false;
             oAgendaModel.salaoFesta = true;
             oAgendaModel.dataAgendamento = Convert.ToDateTime(Session["dataReservaOnline"]);
+            oAgendaModel.observacao = txtObs.Text;
+
 
 
             try
             {
                 //Atualiza a reserva
-                oAgenda.cancelaAgendamentoMorador(oAgendaModel.dataAgendamento, oApModel, oAgendaModel.salaoFesta, oAgendaModel.salaoChurrasco);
+                //oAgenda.cancelaAgendamentoMorador(oAgendaModel.dataAgendamento, oApModel, oAgendaModel.salaoFesta, oAgendaModel.salaoChurrasco);
+                oAgenda.cancelaAgendamentoMoradorObservation(oAgendaModel.dataAgendamento, oApModel, oAgendaModel.salaoFesta, oAgendaModel.salaoChurrasco, oAgendaModel.observacao);
               
                 Session.Remove("status");
+
 
 
                 // Gera Recibo
@@ -569,7 +585,7 @@ namespace Azuli.Web.Portal
 
         public void cancelChurras()
         {
-            txtObs.Visible = false;
+           
             oApModel.apartamento = Convert.ToInt32(Session["aptoSession"]);
             oApModel.bloco = Convert.ToInt32(Session["blocoSession"]);
             oAgendaModel.ap = oApModel;
@@ -577,16 +593,17 @@ namespace Azuli.Web.Portal
             oAgendaModel.salaoChurrasco = true;
             oAgendaModel.salaoFesta = false;
             oAgendaModel.dataAgendamento = Convert.ToDateTime(Session["dataReservaOnline"]);
+            oAgendaModel.observacao = txtObs.Text;
             
 
             try
             {
                 //Atualiza a reserva
-                oAgenda.cancelaAgendamentoMorador(oAgendaModel.dataAgendamento,oApModel,oAgendaModel.salaoFesta,oAgendaModel.salaoChurrasco);
+                //oAgenda.cancelaAgendamentoMorador(oAgendaModel.dataAgendamento,oApModel,oAgendaModel.salaoFesta,oAgendaModel.salaoChurrasco);
+                oAgenda.cancelaAgendamentoMoradorObservation(oAgendaModel.dataAgendamento, oApModel, oAgendaModel.salaoFesta, oAgendaModel.salaoChurrasco, oAgendaModel.observacao);
               
                 Session.Remove("status");
-
-
+               
                 // Gera Recibo
 
             }
