@@ -104,6 +104,7 @@ namespace Azuli.Web.Portal
 
                         if (item.salaoFesta == true)
                         {
+                          
                             lblBloco.Text = item.ap.bloco.ToString();
                             lblApto.Text = item.ap.apartamento.ToString();
                             lblDiasAtrasoFesta.Text = item.qtdDiasPagamentoChurras.ToString();

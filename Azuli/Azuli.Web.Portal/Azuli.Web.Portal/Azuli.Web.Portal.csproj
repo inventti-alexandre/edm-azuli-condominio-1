@@ -146,6 +146,7 @@
     <Content Include="meuClassificados.aspx" />
     <Content Include="MostraPdfCircular.aspx" />
     <Content Include="PendenciaAgendamentos.aspx" />
+    <Content Include="PendenciaReservaMorador.aspx" />
     <Content Include="publicarCircular.aspx" />
     <Content Include="consultaAgendasAdmin.aspx" />
     <Content Include="ErrorPage.aspx" />
@@ -426,6 +427,13 @@
     </Compile>
     <Compile Include="PendenciaAgendamentos.aspx.designer.cs">
       <DependentUpon>PendenciaAgendamentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PendenciaReservaMorador.aspx.cs">
+      <DependentUpon>PendenciaReservaMorador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PendenciaReservaMorador.aspx.designer.cs">
+      <DependentUpon>PendenciaReservaMorador.aspx</DependentUpon>
     </Compile>
     <Compile Include="publicarCircular.aspx.cs">
       <DependentUpon>publicarCircular.aspx</DependentUpon>

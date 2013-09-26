@@ -22,67 +22,85 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// dvProprietario control.
+        /// Div1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvProprietario;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div1;
         
         /// <summary>
-        /// lblMesAtual control.
+        /// Calendar2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMesAtual;
+        protected global::System.Web.UI.WebControls.Calendar Calendar2;
         
         /// <summary>
-        /// formVwChurrasco control.
+        /// tbLegend control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView formVwChurrasco;
+        protected global::System.Web.UI.HtmlControls.HtmlTable tbLegend;
         
         /// <summary>
-        /// frvSalaoFesta control.
+        /// lblSlfReservado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView frvSalaoFesta;
+        protected global::System.Web.UI.WebControls.Label lblSlfReservado;
         
         /// <summary>
-        /// lblMgs control.
+        /// Label5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMgs;
+        protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// dvOpcao control.
+        /// lblPendentePg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvOpcao;
+        protected global::System.Web.UI.WebControls.Label lblPendentePg;
         
         /// <summary>
-        /// dvData control.
+        /// Label4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvData;
+        protected global::System.Web.UI.WebControls.Label Label4;
+        
+        /// <summary>
+        /// lblPendente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPendente;
+        
+        /// <summary>
+        /// Image1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image1;
         
         /// <summary>
         /// Label1 control.
@@ -94,129 +112,129 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// lblData control.
+        /// lblLiberarMorador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblData;
+        protected global::System.Web.UI.WebControls.Label lblLiberarMorador;
         
         /// <summary>
-        /// chkSalaoFesta control.
+        /// imgLiberarMorador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSalaoFesta;
+        protected global::System.Web.UI.WebControls.ImageButton imgLiberarMorador;
         
         /// <summary>
-        /// chkChurrascaria control.
+        /// Image2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkChurrascaria;
+        protected global::System.Web.UI.WebControls.Image Image2;
         
         /// <summary>
-        /// lblReserva control.
+        /// lblReservaDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblReserva;
+        protected global::System.Web.UI.WebControls.Label lblReservaDesc;
         
         /// <summary>
-        /// LoginButton control.
+        /// lblLiberarReserva control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button LoginButton;
+        protected global::System.Web.UI.WebControls.Label lblLiberarReserva;
         
         /// <summary>
-        /// btnCancelar control.
+        /// imgLiberarReserva control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancelar;
+        protected global::System.Web.UI.WebControls.ImageButton imgLiberarReserva;
         
         /// <summary>
-        /// dvCalendar control.
+        /// Image3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvCalendar;
+        protected global::System.Web.UI.WebControls.Image Image3;
         
         /// <summary>
-        /// lblMsgData control.
+        /// lblMsgRecDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMsgData;
+        protected global::System.Web.UI.WebControls.Label lblMsgRecDesc;
         
         /// <summary>
-        /// UpdatePanel1 control.
+        /// lblMsgRecebida control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.WebControls.Label lblMsgRecebida;
         
         /// <summary>
-        /// UpdateTimer control.
+        /// imgMsgRecebida control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.Timer UpdateTimer;
+        protected global::System.Web.UI.WebControls.ImageButton imgMsgRecebida;
         
         /// <summary>
-        /// Calendar1 control.
+        /// Image4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar1;
+        protected global::System.Web.UI.WebControls.Image Image4;
         
         /// <summary>
-        /// imgFesta control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imgFesta;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// imgFesta0 control.
+        /// lblLiberaOcorrencia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imgFesta0;
+        protected global::System.Web.UI.WebControls.Label lblLiberaOcorrencia;
         
         /// <summary>
-        /// imgFesta1 control.
+        /// imgReclamacai control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imgFesta1;
+        protected global::System.Web.UI.WebControls.ImageButton imgReclamacai;
     }
 }

@@ -115,8 +115,8 @@
        
     </div>
 
-    
-        <table class="style14">
+    <hr />
+        <table  class="style14">
             <tr>
                 <td align="center">
 
@@ -124,12 +124,22 @@
     <fieldset>
         <legend class="accordionContent">  <asp:Label ID="Label5" runat="server" 
                 Text="Clique no Calendário abaixo para Consultar Reservas!"></asp:Label></legend>
-        <p align="left">   
        
-         &nbsp;<asp:ImageButton ID="ImageButton1" runat="server" Height="68px" 
-                ImageUrl="~/images/calendario.png" Width="82px" />
+       <table class="style21">
+          <tr>
+              <td align="right">
+                  <asp:ImageButton ID="ImageButton1" runat="server" Height="91px" 
+                      ImageUrl="~/images/calendario.png" Width="109px" />
+              </td>
+              <td>
+                  <asp:HyperLink ID="hplSucess" runat="server" 
+                      style="font-weight: 700; font-size: 9pt;color:green;" CssClass="accordionContent" 
+                      Font-Bold="False" NavigateUrl="~/telaAgendamento.aspx">Clique aqui e consulte as reservas Aqui!!</asp:HyperLink>
+              </td>
+          </tr>
+      </table>
           
-        </p>
+        
         </fieldset></td>
                 <td align="center">
         <fieldset>
@@ -142,7 +152,7 @@
        </fieldset></td>
             </tr>
         </table>
-        &nbsp;<br />
+        <hr />
        
         <div  id="dvEnquete" style="position:absolute" class="container" runat="server">
             <div class="headerEnquete">

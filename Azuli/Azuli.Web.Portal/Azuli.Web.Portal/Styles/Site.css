@@ -1437,5 +1437,10 @@ px;
     padding: 0px;
     margin: 0px auto 0px auto;
 }
+hr {
+      color: #3BA4CB;
+      background-color: #3BA4CB;
+      height: 2px;
+    }
 
 
