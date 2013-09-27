@@ -86,8 +86,8 @@ namespace Azuli.Web.Portal
             {
                 dvFesta.Visible = true;
                 dvChurrasco.Visible = false;
-                grdReservaProgramadaFesta.DataSource = oAgenda.listaReservaByMoradorFesta(oAP, oAgendaModel);
-                grdReservaProgramadaFesta.DataBind();
+                grdReservaProgramadaFesta0.DataSource = oAgenda.listaReservaByMoradorFesta(oAP, oAgendaModel);
+                grdReservaProgramadaFesta0.DataBind();
 
                 //lblMsg.Visible = false;
                 lblMesAnoFesta.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
@@ -107,8 +107,8 @@ namespace Azuli.Web.Portal
                 grdReservaProgramadaChurras.DataSource = oAgenda.listaReservaByMorador(oAP, oAgendaModel);
                 grdReservaProgramadaChurras.DataBind();
 
-                grdReservaProgramadaFesta.DataSource = oAgenda.listaReservaByMoradorFesta(oAP, oAgendaModel);
-                grdReservaProgramadaFesta.DataBind();
+                grdReservaProgramadaFesta0.DataSource = oAgenda.listaReservaByMoradorFesta(oAP, oAgendaModel);
+                grdReservaProgramadaFesta0.DataBind();
               
                 dvFesta.Visible = true;
                // lblMsg.Visible = false;

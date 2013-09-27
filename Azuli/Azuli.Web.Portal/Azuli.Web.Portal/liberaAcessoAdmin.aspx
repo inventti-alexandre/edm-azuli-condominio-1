@@ -9,20 +9,33 @@
         <center>  <asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#006600"></asp:Label></center> 
    <br /><br />
   <center>
-       <asp:GridView ID="grdGerenciamentoMoradores" runat="server" AllowPaging="True" 
-           AllowSorting="True" AutoGenerateColumns="False" CssClass="GridView" DataKeyNames="PROPRIETARIO_BLOCO,PROPRIETARIO_AP"
+       <asp:GridView ID="grdGerenciamentoMoradores" runat="server" 
+           AutoGenerateColumns="False" CssClass="gridl" DataKeyNames="PROPRIETARIO_BLOCO,PROPRIETARIO_AP"
           EmptyDataText="Não existem acessos a ser liberados!" 
            DataSourceID="SqlDataSourceGerenciamentoUser" 
            onrowcommand="grdGerenciamentoMoradores_RowCommand">
            <Columns>
-               <asp:BoundField DataField="NOME_PROPRIETARIO1" HeaderText="Condomino 01" 
-                   SortExpression="NOME_PROPRIETARIO1" />
+               <asp:BoundField DataField="NOME_PROPRIETARIO1" HeaderText="Morador" 
+                   SortExpression="NOME_PROPRIETARIO1" >
+               <HeaderStyle Width="120px" />
+               </asp:BoundField>
                <asp:BoundField DataField="PROPRIETARIO_BLOCO" HeaderText="Bloco" 
-                   ReadOnly="True" SortExpression="PROPRIETARIO_BLOCO" />
+                   ReadOnly="True" SortExpression="PROPRIETARIO_BLOCO" >
+               <HeaderStyle Width="100px" />
+               <ItemStyle BackColor="#0066FF" Font-Bold="True" ForeColor="White" />
+               </asp:BoundField>
                <asp:BoundField DataField="PROPRIETARIO_AP" HeaderText="Apartamento" 
-                   ReadOnly="True" SortExpression="PROPRIETARIO_AP" />
-               <asp:BoundField DataField="email" HeaderText="E-mail" SortExpression="email" />
-               <asp:ButtonField ButtonType="Button" Text="Liberar" />
+                   ReadOnly="True" SortExpression="PROPRIETARIO_AP" >
+               <HeaderStyle Width="100px" />
+               <ItemStyle BackColor="#0066FF" Font-Bold="True" ForeColor="White" />
+               </asp:BoundField>
+               <asp:BoundField DataField="email" HeaderText="E-mail" SortExpression="email" >
+               <HeaderStyle Width="120px" />
+               </asp:BoundField>
+               <asp:ButtonField ButtonType="Button" Text="Liberar" >
+               <ControlStyle BackColor="#0066CC" Font-Bold="True" ForeColor="White" />
+               <ItemStyle Font-Bold="True" ForeColor="White" />
+               </asp:ButtonField>
            </Columns>
        </asp:GridView></center></fieldset></div> 
        <asp:SqlDataSource ID="SqlDataSourceGerenciamentoUser" runat="server" 

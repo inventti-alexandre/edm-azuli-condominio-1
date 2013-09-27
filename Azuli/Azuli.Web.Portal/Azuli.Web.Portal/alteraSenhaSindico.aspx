@@ -6,6 +6,20 @@
             font-weight: bold;
             font-size: 11pt;
         }
+        .style4
+        {
+            width: 160px;
+        }
+        .style6
+        {
+            width: 168px;
+            height: 132px;
+        }
+        .style7
+        {
+            font-weight: bold;
+            font-size: 10pt;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -16,12 +30,16 @@
  <br />
   <center><div id="dvProprietario" align="center" runat="server" >
    
-        <br />
+        <table class="style3">
+            <tr>
+                <td class="style4">
+                    <img alt="" class="style6" src="images/senha2.jpg" /></td>
+                <td align="justify">
         <table class="accordionContent" dir="ltr" frame="border" style="width: 417px" >
             <tr>
                 <td>
                     <asp:Label ID="Label2" runat="server" 
-                        Text="Escolha uma senha de 4 digitos:" CssClass="style3"></asp:Label>
+                        Text="Escolha uma senha de 4 digitos:" CssClass="style7"></asp:Label>
                 </td>
                 <td>
                     <asp:TextBox ID="txtNovaSenha" runat="server" Height="21px" TextMode="Password" 
@@ -34,7 +52,7 @@
             <tr>
                 <td>
                     <asp:Label ID="Label3" runat="server" Text="Confirme a nova senha:" 
-                        CssClass="style3"></asp:Label>
+                        CssClass="style7"></asp:Label>
                 </td>
                 <td>
                     <asp:TextBox ID="txtRepitaNovaSenha" runat="server" Height="21px" 
@@ -53,6 +71,14 @@
                 </td>  </tr>
               
         </table>
-    </div></center><br /><center><asp:Label ID="lblMensagem" runat="server" CssClass="failureNotification"></asp:Label></center> </fieldset></center>
+                </td>
+            </tr>
+        </table>
+   
+        <br />
+    </div></center><br /><center><asp:Label ID="lblMensagem" runat="server" CssClass="failureNotification"></asp:Label>
+            <br />
+            <br />
+        </center> </fieldset></center>
     
 </asp:Content>

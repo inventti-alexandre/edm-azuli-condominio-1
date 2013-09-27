@@ -11,12 +11,12 @@
    <br />
 
 
- <table >
+ <table class="accordionContent" >
      
          <tr>
             <td>
-                <asp:Label ID="lblcond01" runat="server" CssClass="Field" 
-                   >Condomino 01</asp:Label>
+                <asp:Label ID="lblcond01" runat="server" CssClass="Field" style="font-weight: bold; font-size: 9pt" 
+                   >Morador</asp:Label>
             </td>
             <td colspan="2">
                 <asp:TextBox ID="txtCond01" runat="server" CssClass="ObjectLarge" MaxLength="100" 
@@ -27,19 +27,7 @@
         </tr>
         <tr>
             <td>
-                <asp:Label ID="lblCondomino02" runat="server" CssClass="Field" 
-                   >Condomino 02</asp:Label>
-            </td>
-            <td colspan="2">
-                <asp:TextBox ID="txtCond02" runat="server" CssClass="ObjectLarge" MaxLength="100" 
-                    Height="21px" Width="273px"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtCond02" 
-                   ValidationGroup="InputValidationGroup">*</asp:RequiredFieldValidator>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <asp:Label ID="lblBloco" runat="server" CssClass="Field" 
+                <asp:Label ID="lblBloco" runat="server" CssClass="Field" style="font-weight: bold; font-size: 9pt" 
                    >Bloco:</asp:Label>
             </td>
             <td>
@@ -49,7 +37,7 @@
                
             </td>
             <td>
-                <asp:Label ID="lblAP" runat="server" CssClass="Field" 
+                <asp:Label ID="lblAP" runat="server" CssClass="Field" style="font-weight: bold; font-size: 9pt" 
                    >Apartamento:</asp:Label>
             &nbsp;
                 <asp:TextBox ID="txtAP" runat="server" Height="18px" Width="70px"></asp:TextBox>
@@ -61,7 +49,7 @@
         <tr>
             <td>
                 <asp:Label ID="lblEmail" runat="server" CssClass="Field" 
-                    meta:resourcekey="lblActivity">E-mail</asp:Label>
+                    meta:resourcekey="lblActivity" style="font-weight: bold; font-size: 9pt">E-mail</asp:Label>
             </td>
             <td>
                 <asp:TextBox ID="txtEmail" runat="server" MaxLength="200"></asp:TextBox>
@@ -73,13 +61,14 @@
         </tr>
     </table><br />
     <asp:ImageButton ID="ibtAddSave" runat="server" ImageUrl="~/images/add.png" 
-        ValidationGroup="InputValidationGroup" onclick="ibtAddSave_Click" />
+        ValidationGroup="InputValidationGroup" onclick="ibtAddSave_Click" 
+           Width="23px" />
     &nbsp;&nbsp;&nbsp;
     <asp:ImageButton ID="ibtCancel" runat="server" ImageUrl="~/Images/cancel.png" 
-           onclick="ibtCancel_Click"  />
+           onclick="ibtCancel_Click" Height="20px" Width="18px"  />
     &nbsp;&nbsp;&nbsp;
     <asp:ImageButton ID="ibtSearch" runat="server" ImageUrl="~/images/search.png" 
-           onclick="ibtSearch_Click"  />
+           onclick="ibtSearch_Click" Width="20px"  />
        <br />
        <br />
        <asp:Label ID="lblMsg" runat="server" Font-Bold="True"></asp:Label>
@@ -90,7 +79,7 @@
    <br /></br>
   
        <asp:GridView ID="grdGerenciamentoMoradores" runat="server" AllowPaging="True" 
-           AllowSorting="True" AutoGenerateColumns="False" CssClass="GridView" 
+           AllowSorting="True" AutoGenerateColumns="False" CssClass="gridl" 
            DataKeyNames="PROPRIETARIO_BLOCO,PROPRIETARIO_AP" 
            DataSourceID="SqlDataSourceGerenciamentoUser" Height="86px" Width="852px">
            <Columns>
@@ -99,9 +88,14 @@
                <asp:BoundField DataField="NOME_PROPRIETARIO2" HeaderText="Condomino 02" 
                    SortExpression="NOME_PROPRIETARIO2" />
                <asp:BoundField DataField="PROPRIETARIO_BLOCO" HeaderText="Bloco" 
-                   ReadOnly="True" SortExpression="PROPRIETARIO_BLOCO" />
+                   ReadOnly="True" SortExpression="PROPRIETARIO_BLOCO" >
+               <ItemStyle BackColor="#0066FF" Font-Bold="True" Font-Italic="False" 
+                   ForeColor="White" />
+               </asp:BoundField>
                <asp:BoundField DataField="PROPRIETARIO_AP" HeaderText="Apartamento" 
-                   ReadOnly="True" SortExpression="PROPRIETARIO_AP" />
+                   ReadOnly="True" SortExpression="PROPRIETARIO_AP" >
+               <ItemStyle BackColor="#0066FF" Font-Bold="True" ForeColor="White" />
+               </asp:BoundField>
                <asp:BoundField DataField="email" HeaderText="E-mail" SortExpression="email" />
                <asp:CheckBoxField DataField="STATUS" HeaderText="ATIVO" 
                    SortExpression="STATUS" />

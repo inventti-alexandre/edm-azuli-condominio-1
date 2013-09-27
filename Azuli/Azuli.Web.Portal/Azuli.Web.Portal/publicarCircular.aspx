@@ -1,12 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteAdmin.Master" AutoEventWireup="true" CodeBehind="publicarCircular.aspx.cs" Inherits="Azuli.Web.Portal.circular" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
-        .style1
-        {
-            width: 100%;
-        }
-    .register
+        .register
     {}
+        .style3
+        {
+            font-weight: bold;
+            font-size: 9pt;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -16,10 +17,11 @@
         <legend  class="accordionContent">Publicações de Circulares: </legend>
         <br />
         
-        <table class="GridView" align="center">
+        <table class="accordionContent" align="center">
             <tr>
                 <td>
-                    <asp:Label ID="lblDesc" runat="server" Text="Assunto:"></asp:Label>
+                    <asp:Label ID="lblDesc" runat="server" Text="Assunto:" 
+                        style="font-weight: 700; font-size: 9pt"></asp:Label>
                 </td>
                 <td>
                     <asp:TextBox ID="txtAssunto" runat="server" 
@@ -28,7 +30,8 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="lblMesDEsc" runat="server" Text="Mês de publicação:"></asp:Label>
+                    <asp:Label ID="lblMesDEsc" runat="server" Text="Mês de publicação:" 
+                        style="font-weight: 700; font-size: 9pt"></asp:Label>
                 </td>
                 <td>
                     <asp:DropDownList ID="drpMes" runat="server">
@@ -37,7 +40,8 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="lblAnoDesc" runat="server" Text="Ano da Publicação:"></asp:Label>
+                    <asp:Label ID="lblAnoDesc" runat="server" Text="Ano da Publicação:" 
+                        CssClass="style3"></asp:Label>
                 </td>
                 <td>
                     <asp:DropDownList ID="drpAno" runat="server">
@@ -46,10 +50,12 @@
             </tr>
             <tr>
                 <td><br />
-                    <asp:Label ID="lblArquivo" runat="server" Text="Arquivo a ser publicado:"></asp:Label>
+                    <asp:Label ID="lblArquivo" runat="server" Text="Arquivo a ser publicado:" 
+                        CssClass="style3"></asp:Label>
                 </td>
                 <td>
-                    <asp:FileUpload ID="fileWord" runat="server" Height="23px" Width="341px" />
+                    <asp:FileUpload ID="fileWord" runat="server" Height="23px" Width="341px" 
+                        CssClass="btPortaria" />
                 </td>
             </tr>
           
@@ -67,7 +73,8 @@
             </tr>
                <tr>
                 <td colspan="2" align="center">
-                   <asp:Label ID="lblMsg" runat="server" ForeColor="#006600"></asp:Label>
+                   <asp:Label ID="lblMsg" runat="server" ForeColor="#006600" 
+                        style="font-weight: 700"></asp:Label>
                  </td>
             </tr>
             </table>

@@ -52,7 +52,7 @@ namespace Azuli.Web.Portal
             {
 
                 oProprietarioModel.proprietario1 = txtCond01.Text;
-                oProprietarioModel.proprietario2 = txtCond02.Text;
+                //oProprietarioModel.proprietario2 = txtCond02.Text;
                 oProprietarioModel.email = txtEmail.Text;
                 oProprietarioModel.senha = oUtil.GeraSenha();
 
@@ -98,7 +98,7 @@ namespace Azuli.Web.Portal
         {
             txtBloco.Text = "";
             txtCond01.Text = "";
-            txtCond02.Text = "";
+           // txtCond02.Text = "";
             txtAP.Text = "";
             txtEmail.Text = "";
 

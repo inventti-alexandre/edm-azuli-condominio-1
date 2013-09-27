@@ -50,29 +50,20 @@
            <center><br />
      
           
-&nbsp;<asp:GridView ID="grdAgendaMorador" runat="server" EmptyDataText="Não existem reserva de Salão de Festa para este Mês" 
-                AutoGenerateColumns="False" Font-Bold="False" 
-                onrowcommand="grdAgendaMorador_RowCommand" 
-                DataKeyNames="dataAgendamento" 
-                onrowdeleting="grdAgendaMorador_RowDeleting" 
-                onrowdatabound="grdAgendaMorador_RowDataBound" CssClass="gridl" >
-                <Columns>
-                    <asp:TemplateField HeaderText="Data de Agendamento">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("dataAgendamento") %>'></asp:TextBox>
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="Label3" runat="server" 
-                                Text='<%# Eval("dataAgendamento", "{0:dddd}") + " - " + Eval("dataAgendamento","{0:dd/MM/yyyy}") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Bloco">
+&nbsp;<br />
+               <asp:GridView ID="grdReservaProgramadaFesta" runat="server" 
+                   AutoGenerateColumns="False" CssClass="gridl" 
+                   EmptyDataText="Não existe reservas futuras para o Salão de festa" 
+                   Font-Bold="False" Font-Size="Small">
+                   <Columns>
+                   <asp:TemplateField HeaderText="Bloco">
                         <EditItemTemplate>
                             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label1" runat="server" Text='<%# Bind("ap.bloco") %>'></asp:Label>
                         </ItemTemplate>
+                        <ItemStyle BackColor="#3399FF" Font-Bold="True" ForeColor="White" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Apartamento">
                         <EditItemTemplate>
@@ -81,10 +72,58 @@
                         <ItemTemplate>
                             <asp:Label ID="Label2" runat="server" Text='<%# Bind("ap.apartamento") %>'></asp:Label>
                         </ItemTemplate>
+                        <ItemStyle BackColor="#3399FF" Font-Bold="True" ForeColor="White" />
                     </asp:TemplateField>
-                </Columns>
-                <EmptyDataRowStyle Font-Bold="True" ForeColor="#CC3300" />
-            </asp:GridView>
+                       <asp:TemplateField HeaderText="Data da Reserva">
+                           <EditItemTemplate>
+                               <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("dataAgendamento") %>'></asp:TextBox>
+                           </EditItemTemplate>
+                           <ItemTemplate>
+                               <asp:Label ID="Label4" runat="server" 
+                                   Text='<%# Eval("dataAgendamento", "{0:ddd}") + "-" + Eval("dataAgendamento","{0:dd/MM/yy}") %>'></asp:Label>
+                           </ItemTemplate>
+                           <HeaderStyle Width="120px" />
+                           <ItemStyle ForeColor="#006600" HorizontalAlign="Left" />
+                       </asp:TemplateField>
+                       <asp:TemplateField HeaderText="Data solicitação da Reserva">
+                           <EditItemTemplate>
+                               <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("dataInclusao") %>'></asp:TextBox>
+                           </EditItemTemplate>
+                           <ItemTemplate>
+                               <asp:Label ID="Label5" runat="server" 
+                                   Text='<%# Eval("dataInclusao", "{0:ddd}") + "-" + Eval("dataInclusao","{0:dd/MM/yy}") %>'></asp:Label>
+                           </ItemTemplate>
+                           <ItemStyle Font-Size="Small" ForeColor="Red" />
+                       </asp:TemplateField>
+                       <asp:TemplateField HeaderText="Data de PG">
+                           <EditItemTemplate>
+                               <asp:TextBox ID="TextBox6" runat="server" 
+                                   Text='<%# Eval("dataConfirmacaoPagamento") %>'></asp:TextBox>
+                           </EditItemTemplate>
+                           <ItemTemplate>
+                               <asp:Label ID="Label6" runat="server" 
+                                   Text='<%# Eval("dataConfirmacaoPagamento", "{0:ddd}") + "-" + Eval("dataConfirmacaoPagamento","{0:dd/MM/yy}") %>'></asp:Label>
+                           </ItemTemplate>
+                           <HeaderStyle Width="120px" />
+                           <ItemStyle ForeColor="#006600" />
+                       </asp:TemplateField>
+                       <asp:TemplateField HeaderText="PG feito em (Dias)">
+                           <EditItemTemplate>
+                               <asp:TextBox ID="TextBox7" runat="server" 
+                                   Text='<%# Eval("qtdDiasPagamentoFesta") %>'></asp:TextBox>
+                           </EditItemTemplate>
+                           <ItemTemplate>
+                               <asp:Label ID="Label7" runat="server" 
+                                   Text='<%# ((int)Eval("qtdDiasPagamentoFesta") <= 0) ? "Pago no mesmo dia!" : Eval("qtdDiasPagamentoFesta")  %> '></asp:Label>
+                           </ItemTemplate>
+                           <ItemStyle HorizontalAlign="Left" />
+                       </asp:TemplateField>
+                       <asp:BoundField DataField="observacao" HeaderText="Obs.:">
+                       <ItemStyle HorizontalAlign="Left" />
+                       </asp:BoundField>
+                   </Columns>
+               </asp:GridView>
+               <br />
             <br />
                <asp:ImageButton ID="imgBtExcelFesta" runat="server" 
                    ImageUrl="~/images/excel.png" onclick="imgBtExcelFesta_Click" Width="21px" />
@@ -99,28 +138,21 @@
     <br />
      
        
-           <asp:GridView ID="grdChurras" runat="server" AutoGenerateColumns="False"
-                EmptyDataText="Não existem reserva de churrasqueira para este Mês" 
-                onrowcommand="grdChurras_RowCommand" 
-                onrowdeleting="grdChurras_RowDeleting" DataKeyNames="dataAgendamento" 
-                CssClass="gridl">
-                <Columns>
-                    <asp:TemplateField HeaderText="Data de Agendamento">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("dataAgendamento") %>'></asp:TextBox>
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="Label3" runat="server" 
-                                Text='<%# Eval("dataAgendamento", "{0:dddd}") + " - " + Eval("dataAgendamento","{0:dd/MM/yyyy}") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Bloco">
+            <br />
+        <asp:GridView ID="grdReservaProgramadaChurras" runat="server" 
+            AutoGenerateColumns="False" CssClass="gridl" 
+            EmptyDataText="Não existe reservas futuras para churrasqueira" Font-Bold="True" 
+            Font-Size="Small">
+            <Columns>
+
+               <asp:TemplateField HeaderText="Bloco">
                         <EditItemTemplate>
                             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label1" runat="server" Text='<%# Bind("ap.bloco") %>'></asp:Label>
                         </ItemTemplate>
+                        <ItemStyle BackColor="#3399FF" Font-Bold="True" ForeColor="White" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Apartamento">
                         <EditItemTemplate>
@@ -129,10 +161,62 @@
                         <ItemTemplate>
                             <asp:Label ID="Label2" runat="server" Text='<%# Bind("ap.apartamento") %>'></asp:Label>
                         </ItemTemplate>
+                        <ItemStyle BackColor="#3399FF" Font-Bold="True" ForeColor="White" />
                     </asp:TemplateField>
-                </Columns>
-                <EmptyDataRowStyle Font-Bold="True" ForeColor="#CC3300" />
-            </asp:GridView>
+                <asp:TemplateField HeaderText="Data da Reserva">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox8" runat="server" Text='<%# Bind("dataAgendamento") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label8" runat="server" 
+                            Text='<%# Eval("dataAgendamento", "{0:ddd}") + "-" + Eval("dataAgendamento","{0:dd/MM/yy}") %>'></asp:Label>
+                    </ItemTemplate>
+                    <ItemStyle ForeColor="#006600" HorizontalAlign="Center" Width="120px" />
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Data solicitação da Reserva">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox9" runat="server" Text='<%# Bind("dataInclusao") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label9" runat="server" 
+                            Text='<%# Eval("dataInclusao", "{0:ddd}") + " / " + Eval("dataInclusao","{0:dd/MM/yy}") %>'></asp:Label>
+                    </ItemTemplate>
+                    <ItemStyle ForeColor="#FF3300" HorizontalAlign="Center" Width="120px" />
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Data de PG">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox10" runat="server" 
+                            Text='<%# Eval("dataConfirmacaoPagamento") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label10" runat="server" 
+                            Text='<%# Eval("dataConfirmacaoPagamento", "{0:ddd}") + " / " + Eval("dataConfirmacaoPagamento","{0:dd/MM/yy}") %>'></asp:Label>
+                    </ItemTemplate>
+                    <ItemStyle ForeColor="#006600" HorizontalAlign="Center" Width="120px" />
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="PG foi feito em (Dias)">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox11" runat="server" 
+                            Text='<%# Eval("qtdDiasPagamentoChurras") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label11" runat="server" 
+                            Text='<%# ((int)Eval("qtdDiasPagamentoChurras") <= 0) ? "Pago no mesmo dia!" : Eval("qtdDiasPagamentoChurras")  %> '>&gt;</asp:Label>
+                    </ItemTemplate>
+                    <ItemStyle HorizontalAlign="Center" />
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Obs.:">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox12" runat="server" Text='<%# Bind("observacao") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label12" runat="server" Text='<%# Bind("observacao") %>'></asp:Label>
+                    </ItemTemplate>
+                    <ItemStyle HorizontalAlign="Center" />
+                </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
+        <br />
             <br />
             <asp:ImageButton ID="imgBtExcelChurras" runat="server" 
             ImageUrl="~/images/excel.png" onclick="imgBtExcelChurras_Click" Width="21px" />

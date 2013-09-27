@@ -81,16 +81,19 @@ namespace Azuli.Web.Portal
             {
                 dvFesta.Visible = true;
                 dvChurrasco.Visible = false;
-                grdAgendaMorador.DataSource = oAgenda.listaReservaDetalhadaFesta(ano,  mes);
-                grdAgendaMorador.DataBind();
+               //grdAgendaMorador.DataSource = oAgenda.listaReservaDetalhadaFesta(ano,  mes);
+                //grdAgendaMorador.DataBind();
+
+                grdReservaProgramadaFesta.DataSource = oAgenda.listaReservaDetalhadaFesta(ano, mes);
+                grdReservaProgramadaFesta.DataBind();
                
                 lblMesAnoFesta.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
             }
             else if (drpSalao.SelectedItem.Text == "Churrasqueira")
             {
 
-                grdChurras.DataSource = oAgenda.listaReservaDetalhadaChurrasco(ano, mes);
-                grdChurras.DataBind();
+                grdReservaProgramadaChurras.DataSource = oAgenda.listaReservaDetalhadaChurrasco(ano, mes);
+                grdReservaProgramadaChurras.DataBind();
                 dvChurrasco.Visible = true;
                 dvFesta.Visible = false;
                 
@@ -98,16 +101,24 @@ namespace Azuli.Web.Portal
             }
             else if (drpSalao.SelectedItem.Value == "1")
             {
-                grdChurras.DataSource = oAgenda.listaReservaDetalhadaChurrasco(ano, mes);
-                grdChurras.DataBind();
+
+                grdReservaProgramadaFesta.DataSource = oAgenda.listaReservaDetalhadaFesta(ano, mes);
+                grdReservaProgramadaFesta.DataBind();
+
+
+                grdReservaProgramadaChurras.DataSource = oAgenda.listaReservaDetalhadaChurrasco(ano, mes);
+                grdReservaProgramadaChurras.DataBind();
+
+               // grdChurras.DataSource = oAgenda.listaReservaDetalhadaChurrasco(ano, mes);
+               // grdChurras.DataBind();
               
                 dvFesta.Visible = true;
                 
                 lblMesAnoFesta.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
             
                 dvChurrasco.Visible = true;
-                grdAgendaMorador.DataSource = oAgenda.listaReservaDetalhadaFesta( ano, mes);
-                grdAgendaMorador.DataBind();
+               // grdAgendaMorador.DataSource = oAgenda.listaReservaDetalhadaFesta( ano, mes);
+               // grdAgendaMorador.DataBind();
                 
                 lbMesAnoChurras.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
 
@@ -167,7 +178,7 @@ namespace Azuli.Web.Portal
 
         protected void imgBtExcelFesta_Click(object sender, ImageClickEventArgs e)
         {
-            if (grdAgendaMorador.Rows.Count > 0)
+            if (grdReservaProgramadaFesta.Rows.Count > 0)
             {
                 lblarea.Text = "Reserva do Salão de Festa - " + drpMeses.SelectedItem.Text + "/" + drpAno.Text;
                 exportando = true;
@@ -197,7 +208,7 @@ namespace Azuli.Web.Portal
                 System.Web.UI.HtmlTextWriter htmlWrite = new HtmlTextWriter(stringWrite);
 
                 lblarea.RenderControl(htmlWrite);
-                grdAgendaMorador.RenderControl(htmlWrite);
+                grdReservaProgramadaFesta.RenderControl(htmlWrite);
                 Response.Write(stringWrite.ToString());
                 Response.End();
 
@@ -209,7 +220,7 @@ namespace Azuli.Web.Portal
         {
 
 
-            if (grdChurras.Rows.Count > 0)
+            if (grdReservaProgramadaChurras.Rows.Count > 0)
             {
                 lblarea.Text = "Reserva da Churrasqueira - " + drpMeses.SelectedItem.Text + "/" + drpAno.Text;
                 exportando = true;
@@ -235,7 +246,7 @@ namespace Azuli.Web.Portal
 
                 System.Web.UI.HtmlTextWriter htmlWrite = new HtmlTextWriter(stringWrite);
                 lblarea.RenderControl(htmlWrite);
-                grdChurras.RenderControl(htmlWrite);
+                grdReservaProgramadaChurras.RenderControl(htmlWrite);
                 Response.Write(stringWrite.ToString());
                 Response.End();
 

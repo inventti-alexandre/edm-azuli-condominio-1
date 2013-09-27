@@ -2,21 +2,41 @@
     CodeBehind="minhaReservas.aspx.cs" Inherits="Azuli.Web.Portal.minhaReservas" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .style2
+        {
+            font-size: 9pt;
+        }
+        .style3
+        {
+            background-color: #F0F0F0;
+            border-left: 2px solid #999999;
+            border-right: 2px solid #999999;
+            border-botom: 2px solid #999999;
+            padding: 5px 5px 5px 5px;
+            font-family: Verdana;
+            font-size: 12pt;
+            color: #666666;
+            border-radius: 1em;
+            height: 15px;
+            font-weight: bold;
+        }
+    </style>
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
     <fieldset class="loginDisplayLegend">
-        <legend  class="accordionContent">Reserva do Mês Geral: </legend><br />
-        <table style="width: 565px">
+        <legend  class="style3">Minhas reservas:</legend>
+        <table class="accordionContent">
             <tr>
-                <td >
+                <td align="left" >
                     <asp:Label ID="lblMes" runat="server" Font-Bold="True" Text="Mês:"></asp:Label>
                     &nbsp;<asp:DropDownList ID="drpMeses" runat="server" CssClass="btGeral" Font-Bold="True"
                         Height="16px" Width="101px" AutoPostBack="True" 
                         onselectedindexchanged="drpMeses_SelectedIndexChanged">
                     </asp:DropDownList>
                 </td>
-                <td  >
+                <td align="left"  >
                     <asp:Label ID="lblAno" runat="server" Font-Bold="True" Text="Ano:"></asp:Label>
                     &nbsp;&nbsp;
                     <asp:DropDownList ID="drpAno" runat="server" CssClass="btGeral" Font-Bold="True"
@@ -25,7 +45,7 @@
                     </asp:DropDownList>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </td>
-                <td>
+                <td align="left">
                     <asp:Label ID="lbSalao" runat="server" Font-Bold="True" Text="Área :"></asp:Label>
                     <asp:DropDownList ID="drpSalao" runat="server" CssClass="btGeral" Font-Bold="True"
                         Height="19px" Width="127px" AutoPostBack="True" OnSelectedIndexChanged="drpSalao_SelectedIndexChanged">
@@ -42,149 +62,189 @@
 
     <div id="dvFesta" runat="server" align="left" dir="ltr">
         <fieldset class="loginDisplayLegend">
-            <legend class="accordionContent">São de Festas - <asp:Label ID="lblMesAnoFesta" runat="server" CssClass="FooterStyle"></asp:Label></legend>
+            <legend class="accordionContent">
+                <asp:Image ID="Image1" runat="server" Height="16px" 
+                    ImageUrl="~/images/festa.jpg" Width="24px" />
+&nbsp;<span class="style2">São de Festas -</span> <asp:Label ID="lblMesAnoFesta" runat="server" CssClass="FooterStyle"></asp:Label></legend>
                
             <center>
                 <br />
-                &nbsp;<br />
-                &nbsp;<asp:GridView ID="grdReservaProgramadaFesta" runat="server" 
-             CssClass="gridl" AutoGenerateColumns="False" 
-              EmptyDataText="Não existe reservas futuras para o Salão de festa" 
-              Font-Bold="False" Font-Size="Small">
-             <Columns>
-                 <asp:TemplateField HeaderText="Data da Reserva">
-                     <EditItemTemplate>
-                         <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("dataAgendamento") %>'></asp:TextBox>
-                     </EditItemTemplate>
-                     <ItemTemplate>
-                         <asp:Label ID="Label4" runat="server" 
-                             Text='<%# Eval("dataAgendamento", "{0:ddd}") + "-" + Eval("dataAgendamento","{0:dd/MM/yy}") %>'></asp:Label>
-                     </ItemTemplate>
-                     <HeaderStyle Width="120px" />
-                     <ItemStyle HorizontalAlign="Left" ForeColor="#006600" />
-                 </asp:TemplateField>
+               <asp:GridView ID="grdReservaProgramadaFesta0" runat="server" 
+                   AutoGenerateColumns="False" CssClass="gridl" 
+                   EmptyDataText="Não existe reservas futuras para o Salão de festa" 
+                   Font-Bold="False" Font-Size="Small">
+                   <Columns>
+                   <asp:TemplateField HeaderText="Bloco">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label8" runat="server" Text='<%# Bind("ap.bloco") %>'></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle BackColor="#3399FF" Font-Bold="True" ForeColor="White" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Apartamento">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label9" runat="server" Text='<%# Bind("ap.apartamento") %>'></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle BackColor="#3399FF" Font-Bold="True" ForeColor="White" />
+                    </asp:TemplateField>
+                       <asp:TemplateField HeaderText="Data da Reserva">
+                           <EditItemTemplate>
+                               <asp:TextBox ID="TextBox10" runat="server" 
+                                   Text='<%# Bind("dataAgendamento") %>'></asp:TextBox>
+                           </EditItemTemplate>
+                           <ItemTemplate>
+                               <asp:Label ID="Label10" runat="server" 
+                                   
+                                   Text='<%# Eval("dataAgendamento", "{0:ddd}") + "-" + Eval("dataAgendamento","{0:dd/MM/yy}") %>'></asp:Label>
+                           </ItemTemplate>
+                           <HeaderStyle Width="120px" />
+                           <ItemStyle ForeColor="#006600" HorizontalAlign="Left" />
+                       </asp:TemplateField>
+                       <asp:TemplateField HeaderText="Data solicitação da Reserva">
+                           <EditItemTemplate>
+                               <asp:TextBox ID="TextBox11" runat="server" Text='<%# Bind("dataInclusao") %>'></asp:TextBox>
+                           </EditItemTemplate>
+                           <ItemTemplate>
+                               <asp:Label ID="Label11" runat="server" 
+                                   
+                                   Text='<%# Eval("dataInclusao", "{0:ddd}") + "-" + Eval("dataInclusao","{0:dd/MM/yy}") %>'></asp:Label>
+                           </ItemTemplate>
+                           <ItemStyle Font-Size="Small" ForeColor="Red" />
+                       </asp:TemplateField>
+                       <asp:TemplateField HeaderText="Data de PG">
+                           <EditItemTemplate>
+                               <asp:TextBox ID="TextBox12" runat="server" 
+                                   Text='<%# Eval("dataConfirmacaoPagamento") %>'></asp:TextBox>
+                           </EditItemTemplate>
+                           <ItemTemplate>
+                               <asp:Label ID="Label12" runat="server" 
+                                   
+                                   Text='<%# Eval("dataConfirmacaoPagamento", "{0:ddd}") + "-" + Eval("dataConfirmacaoPagamento","{0:dd/MM/yy}") %>'></asp:Label>
+                           </ItemTemplate>
+                           <HeaderStyle Width="120px" />
+                           <ItemStyle ForeColor="#006600" />
+                       </asp:TemplateField>
+                       <asp:TemplateField HeaderText="PG feito em (Dias)">
+                           <EditItemTemplate>
+                               <asp:TextBox ID="TextBox13" runat="server" 
+                                   Text='<%# Eval("qtdDiasPagamentoFesta") %>'></asp:TextBox>
+                           </EditItemTemplate>
+                           <ItemTemplate>
+                               <asp:Label ID="Label13" runat="server" 
+                                   
+                                   Text='<%# ((int)Eval("qtdDiasPagamentoFesta") <= 0) ? "Pago no mesmo dia!" : Eval("qtdDiasPagamentoFesta")  %> '></asp:Label>
+                           </ItemTemplate>
+                           <ItemStyle HorizontalAlign="Left" />
+                       </asp:TemplateField>
+                       <asp:BoundField DataField="observacao" HeaderText="Obs.:">
+                       <ItemStyle HorizontalAlign="Left" />
+                       </asp:BoundField>
+                   </Columns>
+               </asp:GridView>
+            
+               </center>
+              
 
-
-                  <asp:TemplateField HeaderText="Data solicitação da Reserva">
-                     <EditItemTemplate>
-                         <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("dataInclusao") %>'></asp:TextBox>
-                     </EditItemTemplate>
-                     <ItemTemplate>
-                         <asp:Label ID="Label5" runat="server" 
-                             Text='<%# Eval("dataInclusao", "{0:ddd}") + "-" + Eval("dataInclusao","{0:dd/MM/yy}") %>'></asp:Label>
-                     </ItemTemplate>
-                     <ItemStyle Font-Size="Small" ForeColor="Red" />
-                 </asp:TemplateField>
-
-
-                  <asp:TemplateField HeaderText="Data de PG">
-                     <EditItemTemplate>
-                         <asp:TextBox ID="TextBox6" runat="server" 
-                             Text='<%# Eval("dataConfirmacaoPagamento") %>'></asp:TextBox>
-                     </EditItemTemplate>
-                     <ItemTemplate>
-                         <asp:Label ID="Label6" runat="server" 
-                             Text='<%# Eval("dataConfirmacaoPagamento", "{0:ddd}") + "-" + Eval("dataConfirmacaoPagamento","{0:dd/MM/yy}") %>'></asp:Label>
-                     </ItemTemplate>
-                      <HeaderStyle Width="120px" />
-                     <ItemStyle ForeColor="#006600" />
-                 </asp:TemplateField>
-
-                  <asp:TemplateField HeaderText="PG feito em (Dias)">
-                     <EditItemTemplate>
-                         <asp:TextBox ID="TextBox7" runat="server" 
-                             Text='<%# Eval("qtdDiasPagamentoFesta") %>'></asp:TextBox>
-                     </EditItemTemplate>
-                     <ItemTemplate>
-                         <asp:Label ID="Label7" runat="server" 
-                             Text='<%# ((int)Eval("qtdDiasPagamentoFesta") <= 0) ? "Pago no mesmo dia!" : Eval("qtdDiasPagamentoFesta")  %> '></asp:Label>
-                     </ItemTemplate>
-                     <ItemStyle HorizontalAlign="Left" />
-                 </asp:TemplateField>
-
-                
-
-
-                 <asp:BoundField DataField="observacao" HeaderText="Obs.:" >
-                 <ItemStyle HorizontalAlign="Left" />
-                 </asp:BoundField>
-             </Columns>
-         </asp:GridView>
-  
-            </center>
-                <br />
-                &nbsp;
-                <br />
         </fieldset>
     </div>
 
 
     <div id="dvChurrasco" runat="server">
         <fieldset class="loginDisplayLegend">
-            <legend class="accordionContent">Área de Churrasco -
+            <legend class="accordionContent">
+                <asp:Image ID="Image2" runat="server" Height="16px" 
+                    ImageUrl="~/images/churrasco.jpg" Width="29px" />
+&nbsp;<span class="style2">Área de Churrasco -</span>
                 <asp:Label ID="lbMesAnoChurras" runat="server" CssClass="FooterStyle"></asp:Label></legend>
             <center>
                 <br />
-                &nbsp;<asp:GridView ID="grdReservaProgramadaChurras" runat="server" 
-             CssClass="gridl" AutoGenerateColumns="False"  
-              EmptyDataText="Não existe reservas futuras para churrasqueira" Font-Bold="True" 
-              Font-Size="Small">
-              <Columns>
-                  <asp:TemplateField HeaderText="Data da Reserva">
-                      <EditItemTemplate>
-                          <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("dataAgendamento") %>'></asp:TextBox>
-                      </EditItemTemplate>
-                      <ItemTemplate>
-                          <asp:Label ID="Label1" runat="server" Text='<%# Eval("dataAgendamento", "{0:ddd}") + "-" + Eval("dataAgendamento","{0:dd/MM/yy}") %>'></asp:Label>
-                      </ItemTemplate>
-                      <ItemStyle HorizontalAlign="Center" ForeColor="#006600" Width="120px" />
-                  </asp:TemplateField>
+        <asp:GridView ID="grdReservaProgramadaChurras" runat="server" 
+            AutoGenerateColumns="False" CssClass="gridl" 
+            EmptyDataText="Não existe reservas futuras para churrasqueira" Font-Bold="True" 
+            Font-Size="Small">
+            <Columns>
 
-
-                  <asp:TemplateField HeaderText="Data solicitação da Reserva">
-                     <EditItemTemplate>
-                         <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("dataInclusao") %>'></asp:TextBox>
-                     </EditItemTemplate>
-                     <ItemTemplate>
-                         <asp:Label ID="Label1" runat="server" Text='<%# Eval("dataInclusao", "{0:ddd}") + " / " + Eval("dataInclusao","{0:dd/MM/yy}") %>'></asp:Label>
-                     </ItemTemplate>
-                     <ItemStyle HorizontalAlign="Center" ForeColor="#FF3300" Width="120px" />
-                 </asp:TemplateField>
-
-
-                  <asp:TemplateField HeaderText="Data de PG">
-                     <EditItemTemplate>
-                         <asp:TextBox ID="TextBox2" runat="server" Text='<%# Eval("dataConfirmacaoPagamento") %>'></asp:TextBox>
-                     </EditItemTemplate>
-                     <ItemTemplate>
-                         <asp:Label ID="Label2" runat="server" Text='<%# Eval("dataConfirmacaoPagamento", "{0:ddd}") + " / " + Eval("dataConfirmacaoPagamento","{0:dd/MM/yy}") %>'></asp:Label>
-                     </ItemTemplate>
-                     <ItemStyle HorizontalAlign="Center" ForeColor="#006600" Width="120px" />
-                 </asp:TemplateField>
-
-                  <asp:TemplateField HeaderText="PG foi feito em (Dias)">
-                     <EditItemTemplate>
-                         <asp:TextBox ID="TextBox2" runat="server" Text='<%# Eval("qtdDiasPagamentoChurras") %>'></asp:TextBox>
-                     </EditItemTemplate>
-                     <ItemTemplate>
-                         <asp:Label ID="Label2" runat="server" Text='<%# ((int)Eval("qtdDiasPagamentoChurras") <= 0) ? "Pago no mesmo dia!" : Eval("qtdDiasPagamentoChurras")  %> '>></asp:Label>
-                     </ItemTemplate>
-                     <ItemStyle HorizontalAlign="Center" />
-                 </asp:TemplateField>
-
-
-
-                  <asp:TemplateField HeaderText="Obs.:">
-                      <EditItemTemplate>
-                          <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("observacao") %>'></asp:TextBox>
-                      </EditItemTemplate>
-                      <ItemTemplate>
-                          <asp:Label ID="Label3" runat="server" Text='<%# Bind("observacao") %>'></asp:Label>
-                      </ItemTemplate>
-                      <ItemStyle HorizontalAlign="Center" />
-                  </asp:TemplateField>
-             </Columns>
-         </asp:GridView>
+               <asp:TemplateField HeaderText="Bloco">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("ap.bloco") %>'></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle BackColor="#3399FF" Font-Bold="True" ForeColor="White" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Apartamento">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label2" runat="server" Text='<%# Bind("ap.apartamento") %>'></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle BackColor="#3399FF" Font-Bold="True" ForeColor="White" />
+                    </asp:TemplateField>
+                <asp:TemplateField HeaderText="Data da Reserva">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox14" runat="server" 
+                            Text='<%# Bind("dataAgendamento") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label14" runat="server" 
+                            
+                            Text='<%# Eval("dataAgendamento", "{0:ddd}") + "-" + Eval("dataAgendamento","{0:dd/MM/yy}") %>'></asp:Label>
+                    </ItemTemplate>
+                    <ItemStyle ForeColor="#006600" HorizontalAlign="Center" Width="120px" />
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Data solicitação da Reserva">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox15" runat="server" Text='<%# Bind("dataInclusao") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label15" runat="server" 
+                            
+                            Text='<%# Eval("dataInclusao", "{0:ddd}") + " / " + Eval("dataInclusao","{0:dd/MM/yy}") %>'></asp:Label>
+                    </ItemTemplate>
+                    <ItemStyle ForeColor="#FF3300" HorizontalAlign="Center" Width="120px" />
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Data de PG">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox16" runat="server" 
+                            Text='<%# Eval("dataConfirmacaoPagamento") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label16" runat="server" 
+                            
+                            Text='<%# Eval("dataConfirmacaoPagamento", "{0:ddd}") + " / " + Eval("dataConfirmacaoPagamento","{0:dd/MM/yy}") %>'></asp:Label>
+                    </ItemTemplate>
+                    <ItemStyle ForeColor="#006600" HorizontalAlign="Center" Width="120px" />
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="PG foi feito em (Dias)">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox17" runat="server" 
+                            Text='<%# Eval("qtdDiasPagamentoChurras") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label17" runat="server" 
+                            
+                            Text='<%# ((int)Eval("qtdDiasPagamentoChurras") <= 0) ? "Pago no mesmo dia!" : Eval("qtdDiasPagamentoChurras")  %> '>&gt;</asp:Label>
+                    </ItemTemplate>
+                    <ItemStyle HorizontalAlign="Center" />
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Obs.:">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox18" runat="server" Text='<%# Bind("observacao") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label18" runat="server" Text='<%# Bind("observacao") %>'></asp:Label>
+                    </ItemTemplate>
+                    <ItemStyle HorizontalAlign="Center" />
+                </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
                 
                 </center>
         </fieldset>

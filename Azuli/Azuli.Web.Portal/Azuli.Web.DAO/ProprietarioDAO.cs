@@ -60,7 +60,7 @@ namespace Azuli.Web.DAO
                 comandoSQL.Parameters.AddWithValue("@BLOCO", ap.ap.bloco);
                 comandoSQL.Parameters.AddWithValue("@AP", ap.ap.apartamento);
                 comandoSQL.Parameters.AddWithValue("@MORADOR1", ap.proprietario1);
-                comandoSQL.Parameters.AddWithValue("@MORADOR2", ap.proprietario2);
+                //comandoSQL.Parameters.AddWithValue("@MORADOR2", ap.proprietario2);
                 comandoSQL.Parameters.AddWithValue("@email", ap.email);
                 comandoSQL.Parameters.AddWithValue("@senha", ap.senha);
                 SqlParameter retornoCadastro = new SqlParameter("@RETORNO", SqlDbType.Int);
