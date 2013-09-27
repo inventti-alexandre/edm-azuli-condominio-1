@@ -18,8 +18,9 @@ namespace Azuli.Web.Portal
             {
                 if (oUtil.validateSession())
                 {
-                    lblDescBloco.Text = Session["Bloco"].ToString();
+                    lblDescBloco.Text = "0"+Session["Bloco"].ToString();
                     lblDescApartamento.Text = Session["AP"].ToString();
+                    lblMsg.Visible = false;
                 }
                 
             }
@@ -33,7 +34,8 @@ namespace Azuli.Web.Portal
             try
             {
                 oMensagemMorador.cadastraContato(drpListSubject.SelectedItem.Text, txtDescription.Text, Convert.ToInt32(Session["Bloco"]), Convert.ToInt32(Session["AP"]));
-                lblMsg.Text = "Obrigado por entrar em contato! <br> <font size='2' color='#948c8c'>Em breve entraremos em contato com você via sistema para sanar sua dúvida e/ou agradecermos o seu comentário ou sugestões! </font> ";
+                lblMsg.Visible = true;
+                lblMsg.Text = "Obrigado por entrar em contato! <br> <br> <font size='1' color='#948c8c'>Em breve entraremos em contato com você via sistema para sanar sua dúvida e/ou agradecermos o seu comentário ou sugestões! </font> ";
                 txtDescription.Text = "";
                 drpListSubject.SelectedIndex = -1;
             }

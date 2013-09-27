@@ -118,16 +118,16 @@
                                 </td>
                             </tr>
                              <tr class="style9">
-                                <td align="center" class="style31">
+                                <td align="left" class="style31">
                                     <span>
                                     &nbsp;<asp:Label ID="lblPendentePg" runat="server" 
                                         style="font-weight: 700; font-family: Calibri; color: #000000; font-size: 12pt;" 
                                         Text="(R) - Reservado" ForeColor="Black" CssClass="style33"></asp:Label>
                                     </span></td>
-                                <td align="center">
+                                <td align="left">
                                     &nbsp;<asp:Label 
                                         ID="Label4" runat="server" 
-                                        style="font-weight: 700; font-family: Calibri; font-size: 12pt;" 
+                                        style="font-weight: 700; font-family: Calibri; font-size: 12pt; color: #BCBCBC;" 
                                         Text="(*) - Não Confirmado (Falta de Pagamento)" CssClass="style32"></asp:Label>
                                 </td>
                             </tr>

@@ -101,12 +101,14 @@
     <Content Include="images\clientes.jpg" />
     <Content Include="images\cliqueAqui.jpg" />
     <Content Include="images\confirma.jpg" />
+    <Content Include="images\conosco.jpg" />
     <Content Include="images\enquete.jpg" />
     <Content Include="images\enquete1.jpg" />
     <Content Include="images\esqueci.jpg" />
     <Content Include="images\home.png" />
     <Content Include="images\home2.jpg" />
     <Content Include="images\home3.jpg" />
+    <Content Include="images\flConosco.jpg" />
     <Content Include="images\indisponivel.gif" />
     <Content Include="images\logo8.jpg" />
     <Content Include="images\logoteste.png" />
@@ -118,6 +120,8 @@
     <Content Include="images\reserva.jpg" />
     <Content Include="images\salaoFesta.jpg" />
     <Content Include="images\seguranca.jpg" />
+    <Content Include="images\Senha-icone.jpeg" />
+    <Content Include="images\senha2.jpg" />
     <Content Include="images\sgc.jpg" />
     <Content Include="images\banner.jpg" />
     <Content Include="images\cancel.png" />

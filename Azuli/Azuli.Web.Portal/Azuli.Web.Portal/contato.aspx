@@ -31,13 +31,29 @@
             border-radius: 1em;
             height: 15px;
         }
+        .style5
+        {
+            width: 551px;
+        }
+        .style6
+        {
+            width: 236px;
+            height: 39px;
+        }
+        .style7
+        {
+            width: 55px;
+            height: 40px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
 <fieldset class="loginDisplayLegend">
    
-    <legend title="Abrir Ocorrência" class="style4"> Deixe aqui seu comentário, opinião e sugestão:</legend><br />
+    <legend title="Abrir Ocorrência" class="style4"> Fale conosco:</legend>
+    <br />
+    <img alt="" class="style7" src="images/conosco.jpg" /><br />
    
    
    <center>
@@ -113,11 +129,14 @@
                                  <asp:RequiredFieldValidator ID="rfvDescription" runat="server" 
                                      ControlToValidate="txtDescription" ErrorMessage="Favor descrever seu comentário!" 
                                      Font-Bold="True" ForeColor="Red" 
-          ValidationGroup="validaDescricao"></asp:RequiredFieldValidator>
+          ValidationGroup="validaDescricao" CssClass="accordionContent"></asp:RequiredFieldValidator>
     
       <center>
 
-          <asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#006600"></asp:Label></center>
+          <br />
+
+          <asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#006600" 
+              CssClass="accordionContent"></asp:Label></center>
     </div>
      </center>
    

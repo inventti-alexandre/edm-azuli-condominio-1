@@ -86,34 +86,37 @@ namespace Azuli.Web.Portal
             {
                 dvFesta.Visible = true;
                 dvChurrasco.Visible = false;
-                grdAgendaMorador.DataSource = oAgenda.listaReservaByMoradorFesta(oAP, oAgendaModel);
-                grdAgendaMorador.DataBind();
-                lblMsg.Visible = false;
+                grdReservaProgramadaFesta.DataSource = oAgenda.listaReservaByMoradorFesta(oAP, oAgendaModel);
+                grdReservaProgramadaFesta.DataBind();
+
+                //lblMsg.Visible = false;
                 lblMesAnoFesta.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
             }
             else if (drpSalao.SelectedItem.Text == "Churrasqueira")
             {
 
-                grdChurras.DataSource = oAgenda.listaReservaByMorador(oAP, oAgendaModel);
-                grdChurras.DataBind();
+                grdReservaProgramadaChurras.DataSource = oAgenda.listaReservaByMorador(oAP, oAgendaModel);
+                grdReservaProgramadaChurras.DataBind();
                 dvChurrasco.Visible = true;
                 dvFesta.Visible = false;
-                lblMsg.Visible = false;
+              //  lblMsg.Visible = false;
                 lbMesAnoChurras.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
             }
             else if (drpSalao.SelectedItem.Value == "1")
             {
-                grdChurras.DataSource = oAgenda.listaReservaByMorador(oAP, oAgendaModel);
-                grdChurras.DataBind();
+                grdReservaProgramadaChurras.DataSource = oAgenda.listaReservaByMorador(oAP, oAgendaModel);
+                grdReservaProgramadaChurras.DataBind();
+
+                grdReservaProgramadaFesta.DataSource = oAgenda.listaReservaByMoradorFesta(oAP, oAgendaModel);
+                grdReservaProgramadaFesta.DataBind();
               
                 dvFesta.Visible = true;
-                lblMsg.Visible = false;
+               // lblMsg.Visible = false;
                 lblMesAnoFesta.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
                 lbMesAnoChurras.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
                 dvChurrasco.Visible = true;
-                grdAgendaMorador.DataSource = oAgenda.listaReservaByMoradorFesta(oAP, oAgendaModel);
-                grdAgendaMorador.DataBind();
-                lblMsg.Visible = false;
+              
+              //  lblMsg.Visible = false;
 
 
             }
@@ -154,7 +157,7 @@ namespace Azuli.Web.Portal
                 
 
                 int index = int.Parse((string)e.CommandArgument);
-                dataAgendamento = Convert.ToDateTime(grdAgendaMorador.DataKeys[index]["dataAgendamento"]);
+                dataAgendamento = Convert.ToDateTime(grdReservaProgramadaChurras.DataKeys[index]["dataAgendamento"]);
                 if (validaCancelamento(dataAgendamento))
                 {
                     bloco = Session["Bloco"].ToString();
@@ -166,7 +169,7 @@ namespace Azuli.Web.Portal
                     try
                     {
                         oAgenda.cancelaAgendamentoMorador(dataAgendamento, oAP, salaoFesta, churrasqueira);
-                        grdAgendaMorador.DataBind();
+                        grdReservaProgramadaChurras.DataBind();
                     }
                     catch (Exception)
                     {
@@ -209,7 +212,7 @@ namespace Azuli.Web.Portal
 
 
                 int index = int.Parse((string)e.CommandArgument);
-                dataAgendamento = Convert.ToDateTime(grdChurras.DataKeys[index]["dataAgendamento"]);
+                dataAgendamento = Convert.ToDateTime(grdReservaProgramadaChurras.DataKeys[index]["dataAgendamento"]);
 
                 if (validaCancelamento(dataAgendamento))
                 {
@@ -222,7 +225,7 @@ namespace Azuli.Web.Portal
                     try
                     {
                         oAgenda.cancelaAgendamentoMorador(dataAgendamento, oAP, salaoFesta, churrasqueira);
-                        grdChurras.DataBind();
+                        grdReservaProgramadaChurras.DataBind();
                     }
                     catch (Exception)
                     {
@@ -253,8 +256,8 @@ namespace Azuli.Web.Portal
 
             else
             {
-                lblMsg.Visible = true;
-                lblMsg.Text = "Só é permitido o cancelamento com 15 dias de antecedência e hoje faltam " + diasAgendado + " dias para reserva.";
+                //lblMsg.Visible = true;
+                //lblMsg.Text = "Só é permitido o cancelamento com 15 dias de antecedência e hoje faltam " + diasAgendado + " dias para reserva.";
                 
                 return false;
             }

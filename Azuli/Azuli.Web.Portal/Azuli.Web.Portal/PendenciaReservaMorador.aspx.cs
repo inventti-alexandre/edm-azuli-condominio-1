@@ -28,6 +28,7 @@ namespace Azuli.Web.Portal
                      Session["dataReservaOnline"] = Request.QueryString["data"];
                     //string status = Request.QueryString["status"];
                      Session["blocoSession"] = Request.QueryString["bloco"];
+                     lblBlocoApto.Text = "0" + Session["blocoSession"] + "-" + Session["aptoSession"];  
                     preencheGridAgendamentoFuturo();
                 }
             }
@@ -55,13 +56,23 @@ namespace Azuli.Web.Portal
 
                         if (item.salaoFesta == true)
                         {
-                            grdReservaProgramadaFesta.DataSource = oAgendaBLL.pendentePagamento(oAgendaModel);
+                            var festa = from festaPendente in oAgendaBLL.pendentePagamento(oAgendaModel)
+                                        where festaPendente.salaoFesta == true 
+                                        && festaPendente.salaoChurrasco == false
+                                        select festaPendente;
+
+                            grdReservaProgramadaFesta.DataSource = festa; //oAgendaBLL.pendentePagamento(oAgendaModel);
                             grdReservaProgramadaFesta.DataBind();
 
                         }
                         if (item.salaoChurrasco == true)
                         {
-                            grdReservaProgramadaChurras.DataSource = oAgendaBLL.pendentePagamento(oAgendaModel);
+                            var churras = from churrasPendente in oAgendaBLL.pendentePagamento(oAgendaModel)
+                                        where churrasPendente.salaoChurrasco == true
+                                        select churrasPendente;
+
+
+                            grdReservaProgramadaChurras.DataSource = churras;  //oAgendaBLL.pendentePagamento(oAgendaModel);
                             grdReservaProgramadaChurras.DataBind();
 
                         }

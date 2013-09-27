@@ -55,7 +55,7 @@
                 onrowcommand="grdAgendaMorador_RowCommand" 
                 DataKeyNames="dataAgendamento" 
                 onrowdeleting="grdAgendaMorador_RowDeleting" 
-                onrowdatabound="grdAgendaMorador_RowDataBound" CssClass="GridView" >
+                onrowdatabound="grdAgendaMorador_RowDataBound" CssClass="gridl" >
                 <Columns>
                     <asp:TemplateField HeaderText="Data de Agendamento">
                         <EditItemTemplate>
@@ -103,7 +103,7 @@
                 EmptyDataText="Não existem reserva de churrasqueira para este Mês" 
                 onrowcommand="grdChurras_RowCommand" 
                 onrowdeleting="grdChurras_RowDeleting" DataKeyNames="dataAgendamento" 
-                CssClass="GridView">
+                CssClass="gridl">
                 <Columns>
                     <asp:TemplateField HeaderText="Data de Agendamento">
                         <EditItemTemplate>

@@ -240,6 +240,19 @@ first child of the left and right table columns */
 div.hideSkiplink
 {
     background-color:#0092D2;
+    width:900px;
+    height: 0;
+    position:relative;
+    top: -24px;
+    vertical-align:middle;
+    left:150px;
+    z-index: 999999;
+}
+
+/* BACKUP 20130927 - RETIRADA DO MENU
+div.hideSkiplink
+{
+    background-color:#0092D2;
     width:1000px;
     height: 0;
     position:relative;
@@ -247,7 +260,7 @@ div.hideSkiplink
     vertical-align:middle;
     right:9px;
     z-index: 999999;
-}
+}*/
 
 div.hideSkiplinkAdmin
 {
@@ -387,8 +400,8 @@ div.accountInfo
 .clear
 {
     clear: both;
-    height: 105px;
-    width: 1031px;
+    height: auto;
+    width: auto;
 }
 
 .title
@@ -503,6 +516,7 @@ div.accountInfo
 {
     font-size: 10pt;
     color: Red;
+    font-weight: 700;
 }
 
 .bold
@@ -1168,6 +1182,12 @@ a.ContextMenuItem
     color: #666666;
     border-radius: 1em;
     height: 15px;
+}
+
+.redondo
+{
+      border-radius: 1em;
+    height: 47px;
 }
 
 
