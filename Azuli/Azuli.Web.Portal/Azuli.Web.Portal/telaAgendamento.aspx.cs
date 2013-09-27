@@ -49,10 +49,18 @@ namespace Azuli.Web.Portal
 
 
 
-          
-                e.Day.IsSelectable = false;
-                e.Cell.Font.Strikeout = false;
+            if (e.Day.Date < (System.DateTime.Now.AddDays(-1)))
+            {
+
+                e.Cell.Font.Strikeout = true;
                 e.Cell.Font.Bold = true;
+                e.Cell.BackColor = System.Drawing.Color.FromName("#BAE4F1");
+
+            }
+
+            e.Day.IsSelectable = false;
+            //e.Cell.Font.Strikeout = false;
+            e.Cell.Font.Bold = true;
 
            
 
