@@ -82,6 +82,13 @@ namespace Azuli.Web.Portal
                     {
                         if (item.salaoFesta == true)
                         {
+
+                            var churras = from churrasPendente in oAgendaBLL.pendentePagamento(oAgendaModel)
+                                          where churrasPendente.salaoChurrasco == true
+                                          select churrasPendente;
+
+                            grdReservaProgramadaChurras.DataSource = churras;
+                            grdReservaProgramadaChurras.DataBind();
                             
                             grdReservaProgramadaFesta.DataSource = oAgendaBLL.pendentePagamento(oAgendaModel);
                             grdReservaProgramadaFesta.DataBind();
@@ -89,6 +96,15 @@ namespace Azuli.Web.Portal
                         }
                         if (item.salaoChurrasco == true)
                         {
+
+                            var festa = from festaPendente in oAgendaBLL.pendentePagamento(oAgendaModel)
+                                        where festaPendente.salaoFesta == true
+                                        && festaPendente.salaoChurrasco == false
+                                        select festaPendente;
+
+                            grdReservaProgramadaFesta.DataSource = festa;
+                            grdReservaProgramadaFesta.DataBind();
+
                             grdReservaProgramadaChurras.DataSource = oAgendaBLL.pendentePagamento(oAgendaModel);
                             grdReservaProgramadaChurras.DataBind();
 

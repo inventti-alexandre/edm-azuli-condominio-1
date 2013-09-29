@@ -51,10 +51,10 @@
     <asp:Image style='position:absolute; top:0px; left:4px;' ID="imgGrupo" 
             runat="server" Height="44px" Width="153px" />
     </div>
-    
+    <center>
     <div id="dvAnunciar" runat="server" align="center">
-
-        <fieldset class="loginDisplayLegend">
+    
+      <center>  <fieldset class="loginDisplayLegend">
             <legend class="accordionContent">Detalhes do Anúncio: &nbsp;&nbsp;&nbsp;<font 
                     size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </font>
@@ -87,7 +87,7 @@
   
     
     <div id="Div1" 
-        style="position:absolute; top: 553px; left: 953px; width: 190px;" 
+        style="position:absolute; top: 586px; left: 908px; width: 190px;" 
         runat="server"> 
         <asp:Label ID="lblContador" runat="server" 
             Text="Anúncio visto 0 veze(s)" Font-Bold="True" ForeColor="Blue" 
@@ -178,6 +178,6 @@
                         <br />
                   
                   
-      </fieldset>
-          </div>
+      </fieldset></center>
+          </div></center>
 </asp:Content>

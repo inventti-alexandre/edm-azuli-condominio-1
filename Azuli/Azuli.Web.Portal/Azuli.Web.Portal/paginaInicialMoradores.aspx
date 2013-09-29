@@ -48,9 +48,10 @@
         .style13
         {
             background-color: #F0F0F0;
-            border-left: 2px solid #999999;
-            border-right: 2px solid #999999;
-            border-botom: 2px solid #999999;
+            border-left: 1px solid #0093d4;
+    border-right: 1px solid #0093d4;
+    border-bottom: 1px solid #0093d4;
+    border-top:  1px solid #0093d4;
             padding: 5px 5px 5px 5px;
             font-family: Verdana;
             font-size: 10pt;
@@ -68,8 +69,8 @@
     
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
-    <fieldset class="loginPage">
-        <legend class="style13">Seja bem vindo ao Sistema !</legend>
+ <center>   <fieldset class="loginPage">
+        <legend class="style13">Seja bem vindo ao Sistema</legend>
    <div id="dvMsg" runat="server" style="position:relative;">
     <table  style="text-align:justify;">
         <tr>
@@ -133,8 +134,8 @@
               </td>
               <td>
                   <asp:HyperLink ID="hplSucess" runat="server" 
-                      style="font-weight: 700; font-size: 9pt;color:green;" CssClass="accordionContent" 
-                      Font-Bold="False" NavigateUrl="~/telaAgendamento.aspx">Clique aqui e consulte as reservas Aqui!!</asp:HyperLink>
+                      style="font-weight: 900; font-size: 9pt;color:green;" CssClass="accordionContent" 
+                      Font-Bold="False" NavigateUrl="~/telaAgendamento.aspx" Width="330px">Clique aqui e consulte as reservas disponíveis</asp:HyperLink>
               </td>
           </tr>
       </table>
@@ -341,7 +342,7 @@
        
       </div>
        <br /><br /> <br /><br /> <br /><br /> <br /><br /> <br /><br /> <br /><br /> <br /><br /><br /><br /> <br /><br /><br /><br /> <br /><br />
-       </fieldset>   
+       </fieldset>   </center>
 
   
 </asp:Content>

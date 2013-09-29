@@ -19,9 +19,10 @@
         .style7
         {
             background-color: #BFCBD6;
-            border-left: 1px dotted #999999;
-            border-right: 1px dotted #999999;
-            border-bottom: 1px dotted #999999;
+            border-left: 1px solid #0093d4;
+    border-right: 1px solid #0093d4;
+    border-bottom: 1px solid #0093d4;
+    border-top:  1px solid #0093d4;
             padding: 3px 3px 3px 3px;
             font-family: Verdana;
             font-size: small;

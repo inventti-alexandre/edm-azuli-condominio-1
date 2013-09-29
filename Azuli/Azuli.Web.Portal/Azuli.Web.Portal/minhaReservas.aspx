@@ -10,15 +10,16 @@
         .style3
         {
             background-color: #F0F0F0;
-            border-left: 2px solid #999999;
-            border-right: 2px solid #999999;
-            border-botom: 2px solid #999999;
+             border-left: 1px solid #0093d4;
+    border-right: 1px solid #0093d4;
+    border-bottom: 1px solid #0093d4;
+    border-top:  1px solid #0093d4;
             padding: 5px 5px 5px 5px;
             font-family: Verdana;
             font-size: 12pt;
             color: #666666;
             border-radius: 1em;
-            height: 15px;
+            height: 12px;
             font-weight: bold;
         }
     </style>

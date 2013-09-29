@@ -75,10 +75,8 @@
     </asp:ScriptManager>
     
 
-    <br />
-    
     <fieldset class="loginDisplayLegend">
-        <legend class="accordionContent">Agendamento de Áreas Azuli </legend>
+        <legend class="accordionContent">CONSULTA DE DATA DAS RESERVAS </legend>
         <div id="Div1" runat="server" align="center">
             <table align="center" style="width: 883px; height: 493px;">
                 <tr>
