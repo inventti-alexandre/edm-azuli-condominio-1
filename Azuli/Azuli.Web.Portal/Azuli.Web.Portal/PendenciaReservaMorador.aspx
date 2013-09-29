@@ -46,7 +46,7 @@
                         <br /><br />
                         <asp:GridView ID="grdReservaProgramadaFesta" runat="server" CssClass="gridl" AutoGenerateColumns="False"
                             EmptyDataText="Não existe
-            reservas futuras para o Salão de festa" Font-Bold="False" Font-Size="Small">
+            reservas  para o Salão de festa" Font-Bold="False" Font-Size="Small">
                             <Columns>
                                 <asp:TemplateField HeaderText="Data da Reserva">
                                     <EditItemTemplate>
@@ -87,8 +87,7 @@
                                         <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("observacao") %>'></asp:TextBox>
                                     </EditItemTemplate>
                                     <ItemTemplate>
-                                        <asp:Label ID="Label3" runat="server" Text='<%# ((int)Eval("qtdDiasPagamentoChurras") <= 1) ? "Aguardando Pagamento ...."
-            : Eval("qtdDiasPagamentoChurras") %> '></asp:Label>
+                                        <asp:Label ID="Label3" runat="server" Text='<%# Bind("observacao") %>'></asp:Label>
                                     </ItemTemplate>
                                     <ItemStyle HorizontalAlign="Center" Font-Size="9pt" ForeColor="#CC3300" />
                                 </asp:TemplateField>
@@ -109,7 +108,7 @@
                         <br /> <br />
                         <asp:GridView ID="grdReservaProgramadaChurras" runat="server" CssClass="gridl" AutoGenerateColumns="False"
                             EmptyDataText="Não existe
-            reservas futuras para churrasqueira" Font-Bold="True" Font-Size="Small">
+            reservas para churrasqueira" Font-Bold="True" Font-Size="Small">
                             <Columns>
                                 <asp:TemplateField HeaderText="Data da Reserva">
                                     <EditItemTemplate>
@@ -148,8 +147,7 @@
                                         <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("observacao") %>'></asp:TextBox>
                                     </EditItemTemplate>
                                     <ItemTemplate>
-                                        <asp:Label ID="Label3" runat="server" Text='<%# ((int)Eval("qtdDiasPagamentoChurras") <= 1) ? "Aguardando Pagamento ...."
-            : Eval("qtdDiasPagamentoChurras") %> '></asp:Label>
+                                        <asp:Label ID="Label3" runat="server" Text='<%# Bind("observacao") %>'></asp:Label>
                                     </ItemTemplate>
                                     <ItemStyle HorizontalAlign="Center" ForeColor="#CC3300" />
                                 </asp:TemplateField>

@@ -82,14 +82,13 @@ namespace Azuli.Web.Portal
                     {
                         if (item.salaoFesta == true)
                         {
-                            grdReservaProgramadaChurras.Visible = false;
+                            
                             grdReservaProgramadaFesta.DataSource = oAgendaBLL.pendentePagamento(oAgendaModel);
                             grdReservaProgramadaFesta.DataBind();
 
                         }
                         if (item.salaoChurrasco == true)
                         {
-                            grdReservaProgramadaFesta.Visible = false;
                             grdReservaProgramadaChurras.DataSource = oAgendaBLL.pendentePagamento(oAgendaModel);
                             grdReservaProgramadaChurras.DataBind();
 

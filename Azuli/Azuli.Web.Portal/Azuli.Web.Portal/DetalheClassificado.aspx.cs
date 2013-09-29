@@ -168,6 +168,7 @@ namespace Azuli.Web.Portal
             
                 lblData.Text = item.dataClassificado.ToString();
                 lblEmail.Text = item.emailClassificadoContato;
+                tbImagem.Visible = true;
 		 
 	        } 
           

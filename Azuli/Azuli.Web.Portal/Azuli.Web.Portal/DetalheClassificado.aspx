@@ -90,7 +90,8 @@
         style="position:absolute; top: 553px; left: 953px; width: 190px;" 
         runat="server"> 
         <asp:Label ID="lblContador" runat="server" 
-            Text="Anúncio visto 0 veze(s)" Font-Bold="True" ForeColor="Blue"></asp:Label></div>
+            Text="Anúncio visto 0 veze(s)" Font-Bold="True" ForeColor="Blue" 
+            CssClass="accordionContent"></asp:Label></div>
     <div id="dvImagens" 
         style="position:absolute; top: 244px; left: 244px; width: 548px;" 
         runat="server">
@@ -120,13 +121,14 @@
     
     
         
-                
-            <br />
-                    <br />
-                    <br />
-        
+         
     
-        <table class="ContextMenuPanel">
+        
+       
+    
+    </div>
+        <br /> 
+         <table class="ContextMenuPanel">
             <tr>
                 <td colspan="2">
                     <asp:Label ID="lblDescricao" runat="server" style="font-weight: 700"></asp:Label>
@@ -164,14 +166,8 @@
              <br />
                     <br />
                  
-  <right>  <asp:Button ID="Button1" runat="server" Text="Voltar" 
-        CssClass="btGeral" onclick="Button1_Click" Width="86px" /> </right>
-       
-    
-    </div>
-        
-         
-     
+    <asp:Button ID="Button1" runat="server" Text="Voltar" 
+        CssClass="btGeral" onclick="Button1_Click" Width="86px" /> 
     
     <div id="dvVeiculo" style="position: absolute; top: 151px; left: 398px; color: #0033CC;
         height: 23px; width: 205px; font-weight: 700;">
@@ -180,15 +176,7 @@
                     <br />
                     <br />
                         <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-    <br />
+                  
                   
       </fieldset>
           </div>

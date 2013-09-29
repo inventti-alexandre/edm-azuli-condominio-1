@@ -160,12 +160,14 @@
            
            
            
-           style="position:absolute; top: 150px; left: 227px; color: #0033CC; font-weight: 700; height: 20px;">
+           
+           style="position:absolute; top: 150px; left: 269px; color: #0033CC; font-weight: 700; height: 20px;">
        <asp:Label ID="lblGrupo" runat="server" style="color: #333333"></asp:Label></div>
              
          <legend class="accordionContent"> 
             <div id="imgAnuncio"   
-                 style="position:absolute; top: 170px; left: 879px; color: #0033CC; font-weight: 700;"> <asp:Image ID="imgGrupo" runat="server" 
+                 
+                 style="position:absolute; top: 157px; left: 897px; color: #0033CC; font-weight: 700;"> <asp:Image ID="imgGrupo" runat="server" 
                     Height="44px" Width="155px" />  </div>
                </legend><br />
         <center>  
