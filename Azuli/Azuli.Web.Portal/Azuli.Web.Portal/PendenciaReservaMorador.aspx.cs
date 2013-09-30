@@ -130,5 +130,10 @@ namespace Azuli.Web.Portal
             grdReservaProgramadaFesta.Visible = true;
         }
 
+        protected void ImageButton1_Command(object sender, CommandEventArgs e)
+        {
+            Response.Redirect("telaAgendamento.aspx");
+        }
+
     }
 }

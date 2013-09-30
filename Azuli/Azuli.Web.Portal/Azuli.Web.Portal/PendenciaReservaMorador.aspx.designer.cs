@@ -31,15 +31,6 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Image Image3;
         
         /// <summary>
-        /// lblBlocoApto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBlocoApto;
-        
-        /// <summary>
         /// dvAgendamentosFuturos control.
         /// </summary>
         /// <remarks>
@@ -58,13 +49,22 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lgFesta;
         
         /// <summary>
-        /// Image1 control.
+        /// lblBlocoApto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.WebControls.Label lblBlocoApto;
+        
+        /// <summary>
+        /// Image4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image4;
         
         /// <summary>
         /// grdReservaProgramadaFesta control.
@@ -76,22 +76,13 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.GridView grdReservaProgramadaFesta;
         
         /// <summary>
-        /// lgChurras control.
+        /// Image5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lgChurras;
-        
-        /// <summary>
-        /// Image2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image2;
+        protected global::System.Web.UI.WebControls.Image Image5;
         
         /// <summary>
         /// grdReservaProgramadaChurras control.

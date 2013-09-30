@@ -15,6 +15,11 @@
         {
             font-size: 11pt;
         }
+        .style4
+        {
+            font-size: 10pt;
+            font-weight: bold;
+        }
     </style>
     <script language="javascript" type="text/javascript">
 // <![CDATA[
@@ -34,19 +39,37 @@
                 <asp:Image ID="Image3" runat="server" Height="16px" 
                     ImageUrl="~/images/real.jpg" Width="29px" />
                 </span> </legend>
-          <legend class="accordionContent"><font size="2">Bloco e Apartamento :</font> 
-              <asp:Label ID="lblBlocoApto" runat="server" Font-Size="12pt" style="color: #0000FF"></asp:Label></legend>
+       
               <center> <div id="dvAgendamentosFuturos" runat="server">
+
                     <fieldset>
                         <legend id="lgFesta" class="accordionContent" runat="server" onclick="return lgFesta_onclick()">
-                            <span class="style3">Salão de Festa</span>&nbsp; 
-                            <asp:Image ID="Image1" runat="server" Height="17px" 
-                                ImageUrl="~/images/festa.jpg" Width="29px" />
+                            <span class="style3">Áreas Reservadas</span>&nbsp; 
+                           
                         </legend>
-                        <br /><br />
+                        
+                 <legend class="accordionContent"><font size="2">Bloco e Apartamento :</font> 
+              <asp:Label ID="lblBlocoApto" runat="server" Font-Size="12pt" style="color: #0000FF"></asp:Label></legend>
+                        <br />
+                        <table class="accordionContent" 
+                            style="border-style: groove; border-width: thin">
+                            <tr>
+                                <td colspan="1" rowspan="1" 
+                                    style="border-color: #3BA4CB; border-bottom-style: groove; border-width: thin">
+                                    <span class="style3"> 
+                            <asp:Image ID="Image4" runat="server" Height="16px" 
+                                ImageUrl="~/images/festa.jpg" Width="21px" />
+                       
+                                &nbsp;</span><span class="style4">Salão de Festa</span>&nbsp; 
+                                                   
+                                </td>
+                                <td style="border-color: #3BA4CB; border-bottom-style: groove; border-width: thin" 
+                                    align="center">
+                                    <br />
+                       
                         <asp:GridView ID="grdReservaProgramadaFesta" runat="server" CssClass="gridl" AutoGenerateColumns="False"
                             EmptyDataText="Não existe
-            reservas  para o Salão de festa" Font-Bold="False" Font-Size="Small">
+            reservas  para o Salão de festa" Font-Bold="False" Font-Size="Small" Width="502px">
                             <Columns>
                                 <asp:TemplateField HeaderText="Data da Reserva">
                                     <EditItemTemplate>
@@ -95,17 +118,23 @@
                               
                             </Columns>
                         </asp:GridView>
-                        <br />
-                        <br />
-                        <hr />
-                        <legend id="lgChurras" class="accordionContent" runat="server">
-                            <span class="style33"><span class="style3">Churrasqueira</span>
-                            <asp:Image ID="Image2" runat="server" Height="17px" 
-                                ImageUrl="~/images/churrasco.jpg" Width="30px" />
-                            </span><br
+                                    <br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                 
+                            <span class="style33"><span class="style3">
+                            <asp:Image ID="Image5" runat="server" Height="17px" 
+                                ImageUrl="~/images/churrasco.jpg" Width="26px" />
+                            &nbsp;</span><span class="style4">Churrasqueira</span>
+                            </span>
+                                </td>
+                                <td align="center">
+                                 
+                                     <br
                             style="color: #0000FF" class="style5" />
-                        </legend>
-                        <br /> <br />
+                    
                         <asp:GridView ID="grdReservaProgramadaChurras" runat="server" CssClass="gridl" AutoGenerateColumns="False"
                             EmptyDataText="Não existe
             reservas para churrasqueira" Font-Bold="True" Font-Size="Small">
@@ -130,7 +159,7 @@
                                         <asp:Label ID="Label1" runat="server" Text='<%# Eval("dataInclusao", "{0:ddd}") + " / " + Eval("dataInclusao","{0:dd/MM/yy}")
             %>'></asp:Label>
                                     </ItemTemplate>
-                                    <ItemStyle HorizontalAlign="Center" ForeColor="#FF3300" Width="320px" />
+                                    <ItemStyle HorizontalAlign="Center" ForeColor="#FF3300" Width="200px" />
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Dias em Atraso">
                                     <EditItemTemplate>
@@ -153,13 +182,18 @@
                                 </asp:TemplateField>
                             </Columns>
                         </asp:GridView>
-                        <br /><br />
-               <br />
+                                     <br />
+                                </td>
+                            </tr>
+                        </table>
+                        
+                     <br /><br />
+                        
               <center>  <table class="style21">
                     <tr>
                         <td align="right">
-                            <asp:ImageButton ID="ImageButton1" runat="server" Height="59px" ImageUrl="~/images/calendario.png"
-                                Width="93px" />
+                            <asp:ImageButton ID="ImageButton1"  runat="server" Height="49px" ImageUrl="~/images/calendario.png"
+                                Width="61px" oncommand="ImageButton1_Command" />
                         </td>
                         <td>
                             <asp:HyperLink ID="hplSucess" runat="server" Style="font-weight: 700; font-size: 9pt;

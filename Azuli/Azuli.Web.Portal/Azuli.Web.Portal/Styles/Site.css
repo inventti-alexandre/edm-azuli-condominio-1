@@ -971,6 +971,7 @@ gn: left;
 	border-bottom: 2px solid #666666;
 	font-family: Verdana;
 	font-size: 9pt;
+	
    
 	
 	
@@ -989,6 +990,11 @@ gn: left;
 	line-height: 15px;
 	
 }
+.grid tr
+{
+    border-radius: 1em;
+}
+
 
 .watermarked
 {
@@ -1002,7 +1008,7 @@ gn: left;
 	padding: 0px 2px 0px 2px;
 	margin: 0px 15px 0px 3px;
     width: 647px;
-    behavior:url(border-radius.htc);border-radius: 1em;
+    border-radius: 1em;
    
 }
 
