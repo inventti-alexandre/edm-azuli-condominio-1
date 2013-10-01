@@ -33,7 +33,7 @@
 body   
 {
     background: #b6b7bc;
-   
+     
     font-size: .80em;
     font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
     margin: 0px;
@@ -113,17 +113,20 @@ first child of the left and right table columns */
     background-color: #fff;
     margin: 5px auto 0px auto;
     border: 1px solid #496077;
+     height:auto;
+
 }
 
 
 
 .page
 {
-    
+    height:auto;
     width: 1070px;
     background-color: #fff;
     margin: 5px auto 0px auto;
     border: 1px solid #4884CD;
+  
 }
 
 .pageLogin
@@ -133,6 +136,7 @@ first child of the left and right table columns */
     background-color: #fff;
     margin: 5px auto 0px auto;
     border: 1px solid #4884CD;
+   
 }
 
 .header
@@ -196,6 +200,7 @@ first child of the left and right table columns */
     min-height:420px;
     height: 82px;
     width: 930px;
+     
 }
 
 .main
@@ -204,6 +209,7 @@ first child of the left and right table columns */
     margin: 12px 8px 8px 8px;
     min-height: 420px;
     font-size: smal;
+     
 }
 
 .leftCol
