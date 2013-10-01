@@ -682,6 +682,26 @@ namespace Azuli.Web.DAO
                             e.ToString();
                         }
 
+                        try
+                        {
+                            oAgenda.salaoFesta = Convert.ToBoolean(myReader["FESTA"]);
+                        }
+                        catch (IndexOutOfRangeException e)
+                        {
+
+                            e.ToString();
+                        }
+
+                        try
+                        {
+                            oAgenda.salaoChurrasco = Convert.ToBoolean(myReader["CHURRAS"]);
+                        }
+                        catch (IndexOutOfRangeException e)
+                        {
+
+                            e.ToString();
+                        }
+
 
 
                         oListaAgendaRecibo.Add(oAgenda);

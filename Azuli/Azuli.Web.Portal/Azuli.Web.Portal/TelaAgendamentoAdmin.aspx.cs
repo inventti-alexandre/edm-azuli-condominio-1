@@ -21,6 +21,9 @@ namespace Azuli.Web.Portal
            ApartamentoModel oApModel = new ApartamentoModel();
            Util.Util oUtil = new Util.Util();
            ApartamentoModel oAP = new ApartamentoModel();
+           double churrasqueira =0;
+           double festa = 0;
+           double desconto = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,7 +41,8 @@ namespace Azuli.Web.Portal
                    lblProprietarioDesc.Text = Session["MoradorSemInternetNome1"].ToString() ;
                    lblData.Text = dataByExtense();
                    validaDate(Convert.ToDateTime(Session["dataReservaAdministrador"]));
-
+                   lblDesconto.Text = "Valor total R$ 00,00";
+                   precoArea();
                  
                     
 
@@ -46,6 +50,31 @@ namespace Azuli.Web.Portal
 
             }
             
+        }
+
+        public void precoArea()
+        {
+            ConfiguracaoReservaBLL oConfig = new ConfiguracaoReservaBLL();
+
+            foreach (var item in oConfig.oListaValorReserva())
+            {
+                if(item.id_valor==1)
+                {
+                    festa = item.valor;
+                    lblVlFesta.Text = "Valor - R$ " + item.valor+",00";
+                }
+                if(item.id_valor==2)
+                {
+                    churrasqueira = item.valor;
+                    lblVlrChurras.Text = "Valor - R$ " + item.valor+",00";
+                }
+
+                if (item.id_valor == 3)
+                {
+                    desconto = item.valor;
+                }
+                
+            }
         }
 
 
@@ -633,9 +662,6 @@ namespace Azuli.Web.Portal
         {
 
          
-
-           
-            
     
     
         }
@@ -643,6 +669,63 @@ namespace Azuli.Web.Portal
         protected void ImageButton1_Click2(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("WelcomeAdmin.aspx");
+        }
+
+        protected void chkChurrascaria_CheckedChanged(object sender, EventArgs e)
+        {
+
+            precoArea();
+            if (chkChurrascaria.Checked && chkSalaoFesta.Checked)
+            {
+                lblDesconto.Text = "Valor Total: R$" + ((festa + churrasqueira) - desconto)+",00 -> Desconto de: R$" + desconto + ",00";
+            }
+
+            if (!chkChurrascaria.Checked && !chkSalaoFesta.Checked)
+            {
+
+                lblDesconto.Text = "R$ 00,00";
+            }
+
+            if (!chkSalaoFesta.Checked && chkChurrascaria.Checked)
+            {
+                lblDesconto.Text = "Valor Total: R$" + churrasqueira + ",00"; ;
+
+            }
+            if (chkSalaoFesta.Checked && !chkChurrascaria.Checked)
+            {
+                lblDesconto.Text = "Valor Total: R$" + festa + ",00"; ;
+
+            }
+        }
+
+        protected void chkSalaoFesta_CheckedChanged(object sender, EventArgs e)
+        {
+            precoArea();
+            if (chkChurrascaria.Checked && chkSalaoFesta.Checked)
+            {
+                lblDesconto.Text = "Valor Total: R$" + ((festa + churrasqueira) - desconto) + ",00 -> Desconto de: R$" + desconto + ",00";
+            }
+
+
+         
+            if (!chkChurrascaria.Checked && !chkSalaoFesta.Checked)
+            {
+
+                lblDesconto.Text = "R$ 00,00";
+            }
+
+            if (chkSalaoFesta.Checked && !chkChurrascaria.Checked)
+            {
+                lblDesconto.Text = "Valor Total: R$" + festa+ ",00"; ;
+
+            }
+
+            if (!chkSalaoFesta.Checked && chkChurrascaria.Checked)
+            {
+                lblDesconto.Text = "Valor Total: R$" + churrasqueira + ",00"; ;
+
+            }
+
         }
 
       

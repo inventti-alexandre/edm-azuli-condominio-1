@@ -23,6 +23,7 @@ namespace Azuli.Web.Portal
         AgendaBLL oAgendaBLL = new AgendaBLL();
         AgendaModel oAgendaModel = new AgendaModel();
         Util.Util oUtil = new Util.Util();
+        ConfiguracaoReservaBLL oConfigValor = new ConfiguracaoReservaBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -77,10 +78,29 @@ namespace Azuli.Web.Portal
                     drRecibo["DIA"] = DateTime.Now.Day;
                     drRecibo["MES"] = System.Globalization.DateTimeFormatInfo.CurrentInfo.GetMonthName(DateTime.Now.Month);
                     drRecibo["ANO"] = DateTime.Now.Year;
-                    drRecibo["VALOR_POR_EXTENSO"] = new Util.NumeroPorExtenso(Convert.ToDecimal(item.valorReserva));
+                    if (item.salaoChurrasco == true && item.salaoFesta == true)
+                    {
+                        foreach (var Desconto in oConfigValor.oListaValorReserva())
+                        {
+                            if (Desconto.id_valor == 3)
+                            {
+                                drRecibo["VALOR_POR_EXTENSO"] = new Util.NumeroPorExtenso(Convert.ToDecimal(item.valorReserva - Desconto.valor));
+                                drRecibo["VALOR"] = item.valorReserva - Desconto.valor + ",00";
+
+                            }
+
+                        }
+
+                    }
+                    else
+                    {
+                        drRecibo["VALOR_POR_EXTENSO"] = new Util.NumeroPorExtenso(Convert.ToDecimal(item.valorReserva));
+                        drRecibo["VALOR"] = item.valorReserva + ",00";
+                    }
+                  
                     drRecibo["PROPRIETARIO"] = "0"+item.ap.bloco + " - " + item.ap.apartamento + " - " + item.ap.oProprietario.proprietario1;
                     drRecibo["Descricao"] = item.observacao;
-                    drRecibo["VALOR"] = item.valorReserva+",00";
+                   
                     
                     
                 }

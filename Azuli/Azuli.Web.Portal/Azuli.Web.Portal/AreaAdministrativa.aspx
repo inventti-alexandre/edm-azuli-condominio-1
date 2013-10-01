@@ -180,6 +180,10 @@
         }
         .gridl
         {}
+        .accordionContent
+        {
+            width: 281px;
+        }
     </style>
    
 </asp:Content>

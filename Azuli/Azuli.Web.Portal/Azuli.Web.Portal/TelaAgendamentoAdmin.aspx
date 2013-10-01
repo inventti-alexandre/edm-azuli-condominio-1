@@ -25,7 +25,7 @@
                  
         .style5
         {
-            width: 409px;
+            width: 444px;
         }
         .style6
         {
@@ -41,7 +41,7 @@
         }
         .style9
         {
-            width: 624px;
+            width: 743px;
         }
                  
         .style10
@@ -132,7 +132,8 @@
                 
           </table>
             <br />
-            <table style="width: 549px; height: 171px;" class="accordionContent">
+            <table style="width: 938px; height: 171px;" class="accordionContent" 
+                cellpadding="3">
                     <tr>
                         <td class="style6" colspan="2">
                             
@@ -151,7 +152,11 @@
                     <tr>
                         <td dir="ltr" class="style9">
                             <asp:CheckBox ID="chkSalaoFesta" runat="server" Text=" Salão de Festas" Font-Bold="True"
-                                EnableTheming="True" CssClass="style4" />
+                                EnableTheming="True" CssClass="style4" AutoPostBack="True" 
+                                oncheckedchanged="chkSalaoFesta_CheckedChanged" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Label ID="lblVlFesta" runat="server" CssClass="accordionContent" 
+                                Font-Bold="True" ForeColor="#006600" Text="Label"></asp:Label>
                         </td>
                         <td dir="ltr" align="center" class="style5" rowspan="4">
                             <asp:TextBox ID="txtObservacao" runat="server" Height="57px" 
@@ -162,9 +167,12 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="style9">
+                        <td class="style9" rowspan="1">
                             <asp:CheckBox ID="chkChurrascaria" runat="server" Text=" Área de churrasco" 
-                                Font-Bold="True" CssClass="style4" />
+                                Font-Bold="True" CssClass="style4" AutoPostBack="True" 
+                                oncheckedchanged="chkChurrascaria_CheckedChanged" />
+                        &nbsp;<asp:Label ID="lblVlrChurras" runat="server" CssClass="accordionContent" 
+                                Font-Bold="True" ForeColor="#006600" Text="Label"></asp:Label>
                         </td>
                     </tr>
                     <tr>
@@ -172,12 +180,14 @@
                             <asp:CheckBox ID="chkPG" runat="server" Font-Bold="True" Text=" Pago" 
                                 CssClass="style4" AutoPostBack="True" 
                                 oncheckedchanged="chkPG_CheckedChanged" />
-&nbsp;<img alt="" class="style3" src="images/real.jpg" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;<img alt="" class="style3" src="images/real.jpg" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Label ID="lblDesconto" runat="server" CssClass="accordionContent" 
+                                Font-Bold="True" ForeColor="Blue" Text="Label"></asp:Label>
                             </td>
                     </tr>
                     <tr>
                         <td class="style9" align="center">
-                            <center style="width: 245px">
+                            <center style="width: 321px">
                                 <asp:Label ID="lblReserva" runat="server" CssClass="failureNotification"></asp:Label></center>
                         </td>
                     </tr>

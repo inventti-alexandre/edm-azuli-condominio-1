@@ -85,6 +85,15 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.CheckBox chkSalaoFesta;
         
         /// <summary>
+        /// lblVlFesta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblVlFesta;
+        
+        /// <summary>
         /// txtObservacao control.
         /// </summary>
         /// <remarks>
@@ -112,6 +121,15 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.CheckBox chkChurrascaria;
         
         /// <summary>
+        /// lblVlrChurras control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblVlrChurras;
+        
+        /// <summary>
         /// chkPG control.
         /// </summary>
         /// <remarks>
@@ -119,6 +137,15 @@ namespace Azuli.Web.Portal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkPG;
+        
+        /// <summary>
+        /// lblDesconto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDesconto;
         
         /// <summary>
         /// lblReserva control.
