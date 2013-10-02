@@ -35,10 +35,8 @@
                         </asp:MenuItem>
                         <asp:MenuItem Text="Agendamentos" Value="Ocorrência">
                             <asp:MenuItem NavigateUrl="~/consultaAgendamentoAdmin.aspx" 
-                                Text="Confirmar Agendamento Pendentes" Value="Realizados"></asp:MenuItem>
-                            <asp:MenuItem Text="Cancelar Agendamento Pagos" Value="Cancelar Agendamento"></asp:MenuItem>
-                            <asp:MenuItem Text="Cancelar Agendamentos Pendentes" Value="Confirmados">
-                            </asp:MenuItem>
+                                Text="Confirmar Agendamentos Pendentes" Value="Realizados"></asp:MenuItem>
+                            <asp:MenuItem Text="Cancelar Agendamentos" Value="Cancelar Agendamentos"></asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Circular" Value="Moradores">
                             <asp:MenuItem Text="Publicar Circular " 
@@ -61,9 +59,13 @@
                             </asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Relatórios Reservas" Value="Relatórios Reservas">
-                            <asp:MenuItem Text="Reservas Confirmadas do Mês" 
-                                Value="Reservas Confirmadas do Mês"></asp:MenuItem>
+                            <asp:MenuItem Text="Reservas Confirmadas por Período" 
+                                Value="Reservas Confirmadas por Período"></asp:MenuItem>
                             <asp:MenuItem Text="Reservas Canceladas" Value="Reservas Canceladas">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Reservas Pendentes" Value="Reservas Pendentes">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Reservas Confirmadas" Value="Reservas Confirmadas">
                             </asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Alterar Senha" 
