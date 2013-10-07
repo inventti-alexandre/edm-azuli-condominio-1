@@ -112,8 +112,9 @@ first child of the left and right table columns */
     width: 1030px;
     background-color: #fff;
     margin: 5px auto 0px auto;
-    border: 1px solid #496077;
-     height:auto;
+    border: 1px solid #006DB6;
+    height:auto;
+    border-radius: 1em;
 
 }
 
@@ -126,6 +127,7 @@ first child of the left and right table columns */
     background-color: #fff;
     margin: 5px auto 0px auto;
     border: 1px solid #4884CD;
+       border-radius: 1em;
   
 }
 
@@ -249,7 +251,7 @@ div.hideSkiplink
     width:900px;
     height: 0;
     position:relative;
-    top: -24px;
+    top: -9px;
     vertical-align:middle;
     left:190px;
     z-index: 999999;
@@ -449,7 +451,7 @@ div.accountInfo
     color:black;
     height: 28%;
     width: 40%;
-    top: 209%;
+    top: 198%;
    
     
     }

@@ -75,5 +75,10 @@ namespace Azuli.Web.Portal
            
         
         }
+
+        protected void ImageButton1_Command(object sender, CommandEventArgs e)
+        {
+            Response.Redirect("http://camarasjc.sp.tempsite.ws/clicknow/telefones-uteis/");
+        }
     }
 }

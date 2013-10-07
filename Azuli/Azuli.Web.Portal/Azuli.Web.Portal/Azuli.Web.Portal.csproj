@@ -102,6 +102,7 @@
     <Content Include="images\cliqueAqui.jpg" />
     <Content Include="images\confirma.jpg" />
     <Content Include="images\conosco.jpg" />
+    <Content Include="images\contato.jpg" />
     <Content Include="images\enquete.jpg" />
     <Content Include="images\enquete1.jpg" />
     <Content Include="images\esqueci.jpg" />
@@ -683,7 +684,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>55040</DevelopmentServerPort>
+          <DevelopmentServerPort>53476</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

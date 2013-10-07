@@ -40,7 +40,7 @@
         <div class="header">
             <div class="title">
                 
-                <img alt=""src="images/sgcv3.jpg" style="height: 90px; width: 1070px" />
+                <img alt=""src="images/sgcv3.jpg" style="height: 96px; width: 1070px;border-radius: 1em" />
               
             </div>
             <div class="clear hideSkiplink">
@@ -50,6 +50,7 @@
                    
                 </asp:Menu>
             </div>
+          
              <div class="loginDisplay" style="position: absolute; left: 38px;">
              <asp:Label ID="lblProprietarioMaster" runat="server" Font-Size="Small" 
                      Text="Seja Bem vindo: "></asp:Label>
@@ -69,7 +70,7 @@
                     <asp:Label ID="lblApDesc"  runat="server" Font-Size="Small" Font-Bold="True"></asp:Label>
             </div>
 
-            <div class="siteMap" style="position:absolute; left: 636px; margin-left: 40px;">
+            <div class="siteMap" style="position:absolute; left: 636px;">
              <asp:SiteMapPath id="smpWeb" runat="server" CssClass="DataWebControlStyle" 
                     RenderCurrentNodeAsLink="True" Font-Size="X-Small">
                 </asp:SiteMapPath>

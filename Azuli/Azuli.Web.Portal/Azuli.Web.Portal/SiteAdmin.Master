@@ -22,7 +22,7 @@
         <div class="headerAdmin">
             <div class="titleAdmin">
                
-                    <img alt="" src="images/sgcv3.jpg" style="height: 86px; width: 1030px" />
+                    <img alt="" src="images/sgcv3.jpg" style="height: 96px; width: 1030px;border-radius: 1em" />
                
             </div>
     </div>

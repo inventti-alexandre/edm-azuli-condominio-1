@@ -9,13 +9,10 @@
         }
         .style3
         {
-            background-color: #F0F0F0;
-             border-left: 1px solid #0093d4;
-    border-right: 1px solid #0093d4;
-    border-bottom: 1px solid #0093d4;
-    border-top:  1px solid #0093d4;
-            padding: 5px 5px 5px 5px;
-            font-family: Verdana;
+            border: 1px solid #0093d4;
+        background-color: #F0F0F0;
+             padding: 5px 5px 5px 5px;
+            font-family: "Helvetica Neue";
             font-size: 12pt;
             color: #666666;
             border-radius: 1em;
@@ -27,7 +24,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
     <fieldset class="loginDisplayLegend">
-        <legend  class="style3">Minhas reservas:</legend>
+        <legend  class="style3">
+            <asp:Label ID="Label19" runat="server" CssClass="style2" Font-Bold="True" 
+                Font-Size="Medium" Text="Minhas Reservas"></asp:Label>
+        </legend>
         <table class="accordionContent">
             <tr>
                 <td align="left" >
