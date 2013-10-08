@@ -18,7 +18,7 @@
             <br />
             <table class="style1">
                 <tr>
-                    <td class="style2">
+                    <td class="style3">
                         <asp:Label ID="lblMes" runat="server" Font-Bold="True" Text="Mês:"></asp:Label>
                         &nbsp;<asp:DropDownList ID="drpMeses" runat="server" CssClass="btGeral" Font-Bold="True"
                             Height="16px" Width="101px" AutoPostBack="True" OnSelectedIndexChanged="drpMeses_SelectedIndexChanged">
