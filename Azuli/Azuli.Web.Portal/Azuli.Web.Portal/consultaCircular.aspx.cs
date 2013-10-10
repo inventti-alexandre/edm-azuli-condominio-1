@@ -20,11 +20,11 @@ namespace Azuli.Web.Portal
         DateTime data = DateTime.Now;
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            if (oUtil.validateSession())
+            if (!IsPostBack)
             {
-                if (!IsPostBack)
+                if (oUtil.validateSession())
                 {
+
                     dvArquivosPublicados.Visible = false;
                     btnOk.Visible = false;
                     this.lbtMonth1.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(1).ToUpper();
@@ -42,6 +42,7 @@ namespace Azuli.Web.Portal
                     preencheAno();
                     drpAno.SelectedItem.Text = data.Year.ToString();
                     CalculateQtdFile();
+
 
                 }
             }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Página Inicial Moradores" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+﻿<%@ Page  Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
     CodeBehind="paginaInicialMoradores.aspx.cs" Inherits="Azuli.Web.Portal.paginaInicialMoradores" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
@@ -67,8 +67,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     
-    <asp:ScriptManager ID="ScriptManager1" runat="server">
-    </asp:ScriptManager>
+  
  <center>   <fieldset class="loginPage">
         <legend class="style13">Seja bem vindo ao Sistema</legend>
    <div id="dvMsg" runat="server" style="position:relative;">

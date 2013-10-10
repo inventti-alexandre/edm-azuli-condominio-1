@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginAzulli.aspx.cs" Inherits="Azuli.Web.Portal.Account.LoginAzulli" %>
+﻿<%@ Page Language="C#"  Title="Portal do Condiminio" AutoEventWireup="true" CodeBehind="LoginAzulli.aspx.cs" Inherits="Azuli.Web.Portal.Account.LoginAzulli" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
@@ -25,11 +25,6 @@
         {
             font-size: x-small;
         }
-        .style3
-        {
-            font-size: x-small;
-            font-weight: bold;
-        }
         .style4
         {
             color: #0092D2;
@@ -43,12 +38,12 @@
         <div class="header">
             <div class="title">
                 <div class="title">
-                    <img alt="" src="images/sgcv3.jpg" style="height: 86px; width: 965px" />
+                    <img alt="" src="images/sgcv3.jpg" style="height: 100px; width: 965px;border-radius: 1em" />
                 </div>
             </div>
         </div>
         <div class="main">
-            <br />
+            <br /><br />
             <center>
                 <h2>
                     Tela de Acesso
@@ -214,8 +209,11 @@
             
         <div class="footerLogin" 
                 style="position:absolute; top: 596px; left: 341px; width: 622px;">
-            <span class="style3">Utilize o navegador Chrome para melhor visualização do site!    <img alt="" src="images/download.jpg" style="height: 20px; width: 21px" /><br />
-             </span><span class="style2"><span class="style4">© FernandesVilela Soluções de TI. INC 2013. Todos os direitos reservados</span>
+            <img alt="" src="images/download.jpg" style="height: 20px; width: 22px" /><span class="accordionContent"> Utilize o navegador Chrome para melhor visualização do site!
+             </span><span class="style2"><span class="style4">
+            <br />
+            <br />
+            © FernandesVilela Soluções de TI. INC 2013. Todos os direitos reservados</span>
             </span> &nbsp;<asp:Image ID="Image2" runat="server" Height="29px" 
                 ImageUrl="~/images/logoteste.png" Width="73px" />
         &nbsp;<asp:ImageButton ID="ImageButton1" runat="server" CssClass="Border" 

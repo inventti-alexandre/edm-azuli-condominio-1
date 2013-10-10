@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Azuli.Web.Portal
-{
-
-
-    public partial class resetSenha
-    {
-
+namespace Azuli.Web.Portal {
+    
+    
+    public partial class resetSenha {
+        
         /// <summary>
         /// dvProprietario control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvProprietario;
-
+        
         /// <summary>
         /// Label2 control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
-
+        
         /// <summary>
         /// txtNovaSenha control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNovaSenha;
-
+        
         /// <summary>
         /// rfvNovaSenha control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNovaSenha;
-
+        
         /// <summary>
         /// Label3 control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-
+        
         /// <summary>
         /// txtRepitaNovaSenha control.
         /// </summary>
@@ -67,7 +65,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRepitaNovaSenha;
-
+        
         /// <summary>
         /// rfvRepitaNovaSenha control.
         /// </summary>
@@ -76,7 +74,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvRepitaNovaSenha;
-
+        
         /// <summary>
         /// btnAlteraSenha control.
         /// </summary>
@@ -85,7 +83,7 @@ namespace Azuli.Web.Portal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAlteraSenha;
-
+        
         /// <summary>
         /// lblMensagem control.
         /// </summary>

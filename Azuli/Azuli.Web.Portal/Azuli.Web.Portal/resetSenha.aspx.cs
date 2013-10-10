@@ -15,10 +15,11 @@ namespace Azuli.Web.Portal
         Util.Util oUtil = new Util.Util();
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            oUtil.validateSession();
-            lblMensagem.Visible = false;
-
+            if (!IsPostBack)
+            {
+                oUtil.validateSession();
+                lblMensagem.Visible = false;
+            }
         }
 
         protected void btnAlteraSenha_Click(object sender, EventArgs e)

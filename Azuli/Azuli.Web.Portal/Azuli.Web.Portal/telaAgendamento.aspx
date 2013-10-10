@@ -1,8 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
-    CodeBehind="telaAgendamento.aspx.cs" Inherits="Azuli.Web.Portal.telaAgendamento" EnableEventValidation="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"CodeBehind="telaAgendamento.aspx.cs" Inherits="Azuli.Web.Portal.telaAgendamento" EnableEventValidation="false" %>
+    
+   
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-        <style type="text/css">
+    <style type="text/css">
         .style2
         {
             width: 155px;
@@ -47,92 +48,83 @@
             div.style.display = "block";
         }
     </script>
-      
-}
-        <style type="text/css">
-            .style30
-            {
-                height: 30px;
-                width: 45px;
-            }
-            .style31
-            {
-                width: 434px;
-            }
-            .style32
-            {
-                width: 434px;
-                height: 38px;
-            }
-            .style33
-            {
-                height: 38px;
-            }
-        </style>
+    }
+    <style type="text/css">
+        .style30
+        {
+            height: 30px;
+            width: 45px;
+        }
+        .style31
+        {
+            width: 434px;
+        }
+        .style32
+        {
+            width: 434px;
+            height: 38px;
+        }
+        .style33
+        {
+            height: 38px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
-    
-
     <fieldset class="loginDisplayLegend">
         <legend class="accordionContent">CONSULTA DE DATA DAS RESERVAS </legend>
-        <div id="Div1" runat="server" align="center">
+        <div id="dvConsulta" runat="server" align="center">
             <table align="center" style="width: 883px; height: 493px;">
-                <tr>
+             
                     <td align="center" class="style23">
                         <asp:Calendar ID="Calendar2" runat="server" BackColor="White" Font-Names="Verdana"
                             Font-Size="10pt" ForeColor="Black" Height="326px" Width="778px" BorderWidth="1px"
-                            OnDayRender="Calendar1_DayRender" ShowGridLines="True" 
-                            NextPrevFormat="FullMonth" onselectionchanged="Calendar2_SelectionChanged">
+                            OnDayRender="Calendar1_DayRender" ShowGridLines="True" NextPrevFormat="FullMonth"
+                            OnSelectionChanged="Calendar2_SelectionChanged">
                             <DayHeaderStyle Font-Bold="True" Height="1px" BackColor="#CCCCCC" />
                             <DayStyle Font-Bold="True" Font-Size="Medium" BackColor="#E0E0E0" />
                             <NextPrevStyle Font-Bold="True" Font-Size="9pt" ForeColor="#666666" />
                             <OtherMonthDayStyle ForeColor="#CC9966" />
                             <SelectedDayStyle Font-Bold="True" ForeColor="Blue" />
                             <SelectorStyle BackColor="#FFCC66" />
-                            <TitleStyle BackColor="#E0E0E0" Font-Bold="True" Font-Size="12pt" 
-                                ForeColor="Black" Font-Italic="False" Font-Overline="False" 
-                                Font-Strikeout="False" Font-Underline="True" HorizontalAlign="Center" 
-                                VerticalAlign="Top" Wrap="True" />
+                            <TitleStyle BackColor="#E0E0E0" Font-Bold="True" Font-Size="12pt" ForeColor="Black"
+                                Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="True"
+                                HorizontalAlign="Center" VerticalAlign="Top" Wrap="True" />
                             <TodayDayStyle ForeColor="#0033CC" />
                         </asp:Calendar>
                         <br />
-                        <table id="tbLegend" runat="server" align="center" 
-                            class="accordionContent">
+                        <table id="tbLegend" runat="server" align="center" class="accordionContent">
                             <tr class="style9">
                                 <td align="left" class="style32">
                                     <img alt="" class="style30" src="images/salaoFesta.jpg" />&nbsp;
-                                    <asp:Label ID="lblSlfReservado" runat="server" 
-                                        style="font-weight: 700; font-family: Calibri; font-size: 12pt;" 
-                                        Text="SF- Salão de Festa " ForeColor="#215E21" CssClass="style33"></asp:Label>
+                                    <asp:Label ID="lblSlfReservado" runat="server" Style="font-weight: 700; font-family: Calibri;
+                                        font-size: 12pt;" Text="SF- Salão de Festa " ForeColor="#215E21" CssClass="style33"></asp:Label>
                                 </td>
                                 <td align="left" class="style33">
                                     <img alt="" class="style30" src="images/churrasco.jpg" />
-                                    <asp:Label ID="Label5" 
-                                        runat="server" ForeColor="DarkRed" 
-                                        style="font-family: Calibri; font-weight: 700; color: #8B0000; font-size: 12pt;" 
-                                        Text="CH -Churrasqueira " CssClass="style33"></asp:Label>
+                                    <asp:Label ID="Label5" runat="server" ForeColor="DarkRed" Style="font-family: Calibri;
+                                        font-weight: 700; color: #8B0000; font-size: 12pt;" Text="CH -Churrasqueira "
+                                        CssClass="style33"></asp:Label>
                                 </td>
                             </tr>
-                             <tr class="style9">
+                            <tr class="style9">
                                 <td align="left" class="style31">
-                                    <span>
-                                    &nbsp;<asp:Label ID="lblPendentePg" runat="server" 
-                                        style="font-weight: 700; font-family: Calibri; color: #000000; font-size: 12pt;" 
-                                        Text="(R) - Reservado" ForeColor="Black" CssClass="style33"></asp:Label>
-                                    </span></td>
+                                    <span>&nbsp;<asp:Label ID="lblPendentePg" runat="server" Style="font-weight: 700;
+                                        font-family: Calibri; color: #000000; font-size: 12pt;" Text="(R) - Reservado"
+                                        ForeColor="Black" CssClass="style33"></asp:Label>
+                                    </span>
+                                </td>
                                 <td align="left">
-                                    &nbsp;<asp:Label 
-                                        ID="Label4" runat="server" 
-                                        style="font-weight: 700; font-family: Calibri; font-size: 12pt; color: #BCBCBC;" 
-                                        Text="(*) - Não Confirmado (Falta de Pagamento)" CssClass="style32"></asp:Label>
+                                    &nbsp;<asp:Label ID="Label4" runat="server" Style="font-weight: 700; font-family: Calibri;
+                                        font-size: 12pt; color: #BCBCBC;" Text="(*) - Não Confirmado (Falta de Pagamento)"
+                                        CssClass="style32"></asp:Label>
                                 </td>
                             </tr>
                         </table>
                     </td>
-                    
-                  <!-- Módulo desativado no momento - Para aceitação Inicial 
+                    <!-- Módulo desativado no momento - Para aceitação Inicial 
                     <td valign="top" class="watermarked">
                         <table>
                             <tr>
@@ -217,10 +209,8 @@
                                     <asp:ImageButton ID="imgReclamacai" CssClass="BorderAdministrador" runat="server"
                                         ImageUrl="~/images/cliqueAqui.jpg" OnClick="imgReclamacai_Click" />
                                 </td> -->
-                            </tr>
-                        </table>
-           
+               
+            </table>
         </div>
     </fieldset>
-  
 </asp:Content>

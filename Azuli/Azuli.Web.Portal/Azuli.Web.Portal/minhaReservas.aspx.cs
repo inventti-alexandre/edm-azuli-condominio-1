@@ -20,10 +20,13 @@ namespace Azuli.Web.Portal
 
         protected void Page_PreInit(object sender, EventArgs e)
         {
-            if (Page.Request.ServerVariables["http_user_agent"].ToLower().Contains("safari"))
+            if (!IsPostBack)
             {
-                Page.ClientTarget = "uplevel";
-                
+                if (Page.Request.ServerVariables["http_user_agent"].ToLower().Contains("safari"))
+                {
+                    Page.ClientTarget = "uplevel";
+
+                }
             }
         }
 

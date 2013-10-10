@@ -1,45 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="contato.aspx.cs" Inherits="Azuli.Web.Portal.contato" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
-        .style2
-        {
-            color: #666666;
-            font-weight: bold;
-            font-size: small;
-        }
-        .style3
-        {
-            font-family: Verdana;
-            font-size: small;
-            font-weight: 700;
-            color: #666666;
-            text-align: center;
-            border: 1px solid #4B6C9E;
-            cursor: auto;
-            margin-top: 16px;
-        }
-        .style4
-        {
-            background-color: #F0F0F0;
-            border-left: 2px solid #999999;
-            border-right: 2px solid #999999;
-            border-botom: 2px solid #999999;
-            padding: 5px 5px 5px 5px;
-            font-family: Verdana;
-            font-size: 10pt;
-            color: #666666;
-            border-radius: 1em;
-            height: 15px;
-        }
-        .style5
-        {
-            width: 551px;
-        }
-        .style6
-        {
-            width: 236px;
-            height: 39px;
-        }
+       
+  
         .style7
         {
             width: 55px;
@@ -48,11 +11,11 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
+    <br />
 <fieldset class="loginDisplayLegend">
    
-    <legend title="Abrir Ocorrência" class="style4"> Fale conosco:</legend>
-    <br />
+    <legend title="Abrir Ocorrência" class="accordionContent"> Fale conosco:</legend>
+   
     <img alt="" class="style7" src="images/conosco.jpg" /><br />
    
    

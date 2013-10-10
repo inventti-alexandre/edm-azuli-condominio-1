@@ -24,16 +24,18 @@ namespace Azuli.Web.Portal
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (oUtil.validateSession())
+            if (!IsPostBack)
             {
-                if (!IsPostBack)
+                if (oUtil.validateSession())
                 {
-                   
+
+
                     hiddenControl();
                     preencheMeses();
-                  
+
                     preencheAno();
                     consultaReserva();
+
 
                 }
             }

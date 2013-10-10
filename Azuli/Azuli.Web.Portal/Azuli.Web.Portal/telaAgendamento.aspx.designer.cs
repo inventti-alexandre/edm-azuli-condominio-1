@@ -22,13 +22,13 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// Div1 control.
+        /// dvConsulta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvConsulta;
         
         /// <summary>
         /// Calendar2 control.

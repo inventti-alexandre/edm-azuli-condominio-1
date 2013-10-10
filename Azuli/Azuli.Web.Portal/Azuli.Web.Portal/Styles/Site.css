@@ -127,7 +127,7 @@ first child of the left and right table columns */
     background-color: #fff;
     margin: 5px auto 0px auto;
     border: 1px solid #4884CD;
-       border-radius: 1em;
+   border-radius: 1em;
   
 }
 
@@ -138,6 +138,7 @@ first child of the left and right table columns */
     background-color: #fff;
     margin: 5px auto 0px auto;
     border: 1px solid #4884CD;
+     border-radius: 1em;
    
 }
 
@@ -146,7 +147,6 @@ first child of the left and right table columns */
     position: relative;
     margin: 0px;
     padding: 0px;
-    background: #4b6c9e;
     width: 965px;
     top: 0px;
     left: 0px;
@@ -1450,6 +1450,21 @@ a.ContextMenuItem
     width:258px;
     background-color:white;
     font-size: medium;
+}
+
+
+px;
+    padding: 2px;
+    background-color: #E0E0E0;
+    width:255px;
+    -webkit-border-bottom-right-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    -moz-border-radius-bottomright:5px;
+    -moz-border-radius-bottomleft:5px;
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius:5px;
+  
+  
 }
 
 

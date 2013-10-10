@@ -23,18 +23,20 @@ namespace Azuli.Web.Portal
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
-            if (oUtil.validateSession())
+            if (!IsPostBack)
             {
-             
-                if (!IsPostBack)
+
+
+
+                if (oUtil.validateSession())
                 {
+
 
 
                 }
 
             }
-            
+
         }
 
 
@@ -62,7 +64,7 @@ namespace Azuli.Web.Portal
             //e.Cell.Font.Strikeout = false;
             e.Cell.Font.Bold = true;
 
-           
+
 
             if (e.Day.IsToday)
             {

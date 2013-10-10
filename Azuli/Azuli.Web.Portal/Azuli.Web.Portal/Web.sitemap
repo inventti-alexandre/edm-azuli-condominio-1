@@ -6,13 +6,13 @@
 
   <siteMapNode url="" title="Página Principal"  description="" imageurl="images/home.png">
 
-    <siteMapNode url="paginaInicialMoradores.aspx" title="Home" description="" >
+    <siteMapNode url="~/paginaInicialMoradores.aspx" title="Home" description="" >
     </siteMapNode>
 
-    <siteMapNode url="" title="Reservas" description="Reservas">
+    <siteMapNode  title="Reservas" description="Reservas">
       <siteMapNode url="~/telaAgendamento.aspx" title="Calendário" description="" />
       <siteMapNode url="~/minhaReservas.aspx" title="Minhas Reservas" description="" />
-      <siteMapNode url="ReservaDetalhadaMoradores.aspx" title="Reservas Geral Confirmadas" description="" />
+      <siteMapNode url="~/ReservaDetalhadaMoradores.aspx" title="Reservas Geral Confirmadas" description="" />
 
     </siteMapNode>
 
@@ -28,10 +28,10 @@
       <siteMapNode url="~/detalheMensagemMorador.aspx" title="Caixa de Entrada" description="" />
 
     </siteMapNode>  -->
-    <siteMapNode  url=""  title="Classificados"  description=""  roles="">
+    <siteMapNode    title="Classificados"  description=""  roles="">
       <siteMapNode url="~/anunciarClassificado.aspx" title="Anunciar" description="" />
       <siteMapNode url="~/consultaClassificados.aspx" title="Consultar Classificados" description="" />
-      <siteMapNode url="meuClassificados.aspx" title="Gerenciar Classificados" description="" />
+      <siteMapNode url="~/meuClassificados.aspx" title="Gerenciar Classificados" description="" />
 
 
     </siteMapNode>
@@ -49,7 +49,7 @@
     </siteMapNode>
 
 
-    <siteMapNode url="~/contato.aspx" title="Fale Conosco" description="" roles="">
+    <siteMapNode url="contato.aspx" title="Fale Conosco" description="" roles="">
     <!-- <siteMapNode url="~/contato.aspx" title="Contato" description=""  />-->
     <!-- <siteMapNode url="~/videoajuda.aspx" title="Videos" description=""  /> -->
     </siteMapNode>

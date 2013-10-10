@@ -19,9 +19,7 @@ namespace Azuli.Web.Portal
             {
                 System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
-                Attribute title = AssemblyTitleAttribute.GetCustomAttribute(assembly, typeof(AssemblyTitleAttribute));
-                if (title != null)
-                    Page.Title = ((AssemblyTitleAttribute)title).Title;
+               
 
                 Attribute copyright = AssemblyCopyrightAttribute.GetCustomAttribute(assembly, typeof(AssemblyCopyrightAttribute));
                 if (copyright != null)
