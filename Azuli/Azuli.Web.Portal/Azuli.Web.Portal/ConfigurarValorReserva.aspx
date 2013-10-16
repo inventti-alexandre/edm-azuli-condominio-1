@@ -20,7 +20,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
   
     <fieldset class="loginDisplayLegend">
-        <legend class="style3">Cadastrar Área e Valor:</legend>
+        <legend class="accordionContent">Cadastrar Área e Valor:</legend>
 
   <center><div id="dvProprietario" runat="server" >
    

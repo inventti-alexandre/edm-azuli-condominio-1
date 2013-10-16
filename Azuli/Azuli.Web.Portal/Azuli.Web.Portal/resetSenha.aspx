@@ -28,10 +28,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
+        <div  id="dvProprietario"  runat="server">
    <fieldset class="loginDisplayLegend">
         <legend class="accordionContent"><span class="style5">Alterar sua Senha</span>:</legend>
       <br />
-            <div  id="dvProprietario"  runat="server">
+        
                 <table class="style3" align="center">
                     <tr>
                         <td class="style4" align="right">
@@ -72,11 +73,13 @@
                     </tr>
                 </table>
                 <br />
-            </div>
+                </fieldset>
+          </div>
      
         <br />
       
             <asp:Label ID="lblMensagem" runat="server" CssClass="accordionContent" Font-Bold="True"
-                Font-Size="Small" ForeColor="#CC3300" Visible="False"></asp:Label></center>
-    </fieldset>
+                Font-Size="Small" ForeColor="#CC3300" Visible="False"></asp:Label>
+    
+      
 </asp:Content>

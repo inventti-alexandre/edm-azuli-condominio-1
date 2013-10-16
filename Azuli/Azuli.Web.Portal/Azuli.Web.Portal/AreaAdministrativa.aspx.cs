@@ -257,6 +257,8 @@ namespace Azuli.Web.Portal
             dvChurras.Visible = false;
             lnkHistoricoReservas.Visible = false;
             dvAgendamentosFuturos.Visible = false;
+            imgCalendar.Visible = false;
+            hplnkWelcomeAdmin.Visible = false;
         }
 
 
@@ -324,7 +326,7 @@ namespace Azuli.Web.Portal
                 lblMsg.Visible = true;
                 btnCadastrar.Visible = true;
                 btnCancelar.Visible = true;
-                lblMsg.Text = "Não existem cadastro para este Apartamento e Bloco, <br/> Deseja Cadastrar? </br>";
+                lblMsg.Text = "Não existem cadastro para este Apartamento e Bloco, Deseja Cadastrar agora?";
             }
            
         }
@@ -391,6 +393,8 @@ namespace Azuli.Web.Portal
                if (count > 0)
                {
                    lblMsgCadastro.Visible = true;
+                   imgCalendar.Visible = true;
+                   hplnkWelcomeAdmin.Visible = true;
                    lblMsgCadastro.Text = "Já existe cadastro para o Bloco: " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento;
                 
                }
@@ -399,7 +403,9 @@ namespace Azuli.Web.Portal
                {
                   
                    lblMsgCadastro.Visible = true;
-                   lblMsgCadastro.Text = "Cadastro efetuado com sucesso para Morador: <br> <b> " + oProprietarioModel.proprietario1 + " <b> <br>" + "Bloco: " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento + "<br> Sua Senha é: " + oProprietarioModel.senha + "<br><hr>";
+                   imgCalendar.Visible = true;
+                   hplnkWelcomeAdmin.Visible = true;
+                   lblMsgCadastro.Text = "Cadastro efetuado com sucesso para Morador: <br> <b> " + oProprietarioModel.proprietario1 + " <b> <br>" + "Bloco: " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento + "<br> Sua Senha é: " + oProprietarioModel.senha + "<br><br><hr>";
                 
                    dvCadastro.Visible = false;
                    dvPesquisaMorador.Visible = false;
@@ -418,7 +424,9 @@ namespace Azuli.Web.Portal
                    {
                        
                        lblMsgCadastro.Visible = true;
-                       lblMsgCadastro.Text = "Cadastro efetuado com sucesso para Morador: <br> <b> " + oProprietarioModel.proprietario1 + " & " + oProprietarioModel.proprietario2 + " <b> <br>" + "Bloco: " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento + "<br> Sua Senha é: " + oProprietarioModel.senha + "<br><hr>";
+                       imgCalendar.Visible = true;
+                       hplnkWelcomeAdmin.Visible = true;
+                       lblMsgCadastro.Text = "<br><br>Cadastro efetuado com sucesso para Morador: <br> <b> " + oProprietarioModel.proprietario1 + " <b> <br>" + "Bloco: " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento + "<br> Sua Senha é: " + oProprietarioModel.senha + "<br><hr>";
 
                        dvCadastro.Visible = false;
                        dvPesquisaMorador.Visible = false;
@@ -463,6 +471,9 @@ namespace Azuli.Web.Portal
             dvCadastro.Visible = false;
             dvPesquisaMorador.Visible = true;
             lblMsgCadastro.Visible = false;
+            imgCalendar.Visible = false;
+            hplnkWelcomeAdmin.Visible = false;
+            
         }
 
         public void clearControl()
@@ -490,6 +501,11 @@ namespace Azuli.Web.Portal
         }
 
         protected void btnOk0_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("WelcomeAdmin.aspx");
+        }
+
+        protected void ImageButton1_Click2(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("WelcomeAdmin.aspx");
         }

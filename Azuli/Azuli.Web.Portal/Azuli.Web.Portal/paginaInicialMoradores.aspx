@@ -68,7 +68,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     
   
- <center>   <fieldset class="loginPage">
+ <center>   <fieldset class="loginDisplayLegend">
         <legend class="style13">Seja bem vindo ao Sistema</legend>
    <div id="dvMsg" runat="server" style="position:relative;">
     <table  style="text-align:justify;">

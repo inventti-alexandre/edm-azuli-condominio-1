@@ -109,7 +109,7 @@ first child of the left and right table columns */
 
 .pageAdmin
 {
-    width: 1030px;
+    width: 1070px;
     background-color: #fff;
     margin: 5px auto 0px auto;
     border: 1px solid #006DB6;
@@ -409,7 +409,7 @@ div.accountInfo
 
 .clear
 {
-    clear: both;
+    
     height: auto;
     width: auto;
 }
@@ -439,7 +439,7 @@ div.accountInfo
     color: #006AB2;
     height: auto;
     width: 501px;
-    top: 11px;
+    top: 20px;
     }
     
 .siteMap
@@ -448,10 +448,11 @@ div.accountInfo
      display: inherit;
     text-align:left;
     
-    color:black;
+    color:#448FB1;
     height: 28%;
     width: 40%;
     top: 198%;
+    font-weight:bold;
    
     
     }
@@ -504,7 +505,7 @@ div.accountInfo
     color: #006AB2;
     height: auto;
     width: 501px;
-    top: 11px;
+    top: 20px;
 }
 
 .loginDisplayAdmin a:link
@@ -1505,7 +1506,7 @@ px;
 hr {
       color: #3BA4CB;
       background-color: #3BA4CB;
-      height: 2px;
+      height: 1px;
     }
 
 

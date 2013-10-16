@@ -68,6 +68,7 @@
         .style11
         {
             font-weight: bold;
+            width: 404px;
         }
         .style13
         {
@@ -182,7 +183,7 @@
         {}
         .accordionContent
         {
-            width: 281px;
+            width: 441px;
         }
     </style>
    
@@ -193,7 +194,7 @@
     <center> <div id="dvPesquisaMorador" align="center" runat="server">
     
       <fieldset class="loginDisplayLegend">
-     <legend align="left" class="style10">Agendamento para Moradores: </legend>
+     <legend align="left" class="accordionContent">Agendamento para Moradores: </legend>
    <center>
      <asp:Label ID="Label8" runat="server" 
         style="font-weight: 700; font-family: Calibri; font-size: 13pt; color: #006600" 
@@ -254,29 +255,37 @@
   
  <center> 
      <asp:Label ID="lblMsgCadastro" runat="server" CssClass="accordionHeader" 
-         ForeColor="#0066FF" Font-Bold="True" Font-Size="Medium"></asp:Label></center>
+         ForeColor="#0066FF" Font-Bold="True" Font-Size="Medium"></asp:Label>
+     <br />
+    <asp:ImageButton ID="imgCalendar" runat="server" 
+        DescriptionUrl="Voltar Calendario" Height="36px" 
+        ImageUrl="~/images/calendario.png" onclick="ImageButton1_Click2" Width="42px" />
+                        <asp:HyperLink ID="hplnkWelcomeAdmin" runat="server" ForeColor="Blue" 
+                            NavigateUrl="~/WelcomeAdmin.aspx">Clique aqui para voltar ao calendário</asp:HyperLink>
+                                </center>
 
  
     <div id="dvNewUser" align="center" runat="server">
     <fieldset class="loginDisplayLegend">
-      <legend align="left" class="style10">Novo Cadastro de Morador</legend>
+      <legend align="left" class="accordionContent">Novo Cadastro de Morador</legend>
    
   <center> <br /> <br />
      <asp:Label ID="lblMsg" runat="server" 
-         Text="Label" style="font-family: Calibri; font-size: 17pt"></asp:Label>
+         Text="Label" style="font-family: Calibri; font-size: 17pt" 
+          CssClass="accordionContent" Width="800px" Height="38px"></asp:Label>
    <br /><br />
      <asp:Button ID="btnCadastrar" runat="server" CssClass="botao" Text="Sim" 
-         Width="70px" onclick="btnCadastrar_Click" />
+         Width="74px" onclick="btnCadastrar_Click" Height="35px" />
 &nbsp;
      <asp:Button ID="btnCancelar" runat="server" CssClass="botao" 
-         onclick="btnCancelar_Click" Text="Não" Width="50px" />
+         onclick="btnCancelar_Click" Text="Não" Width="69px" Height="35px" />
           <br />
 
      <br /></center></fieldset></div>
 
      <div id="dvDadosMorador" align="center" runat="server">
      <fieldset class="loginDisplayLegend">
-     <legend align="left" class="style10">&nbsp;<img alt="" class="style15" 
+     <legend align="left" class="accordionContent">&nbsp;<img alt="" class="style15" 
              src="images/clientes.jpg" /> Dados do Morador para Reserva:
                 
                         </legend>
@@ -519,7 +528,9 @@
         
         
         
-        style="position: absolute; top: 218px; left: 731px; height: 91px; width: 274px;">
+        
+        
+        style="position: absolute; top: 178px; left: 701px; height: 91px; width: 274px;">
         <table 
               class="accordionContent">
             <tr>
@@ -565,7 +576,9 @@
         
         
         
-        style="position: absolute; top: 331px; left: 731px; height: 79px; width: 283px;">
+        
+        
+        style="position: absolute; top: 292px; left: 703px; height: 79px; width: 283px;">
         <table 
               class="accordionContent">
             <tr>
@@ -606,14 +619,14 @@
  
       <table class="accordionContent" align="center">
             <tr>
-                <td class="style11" align="center">
+                <td class="" align="center">
                     <table class="style1" border='0'>
                         <tr>
                             <td class="style6">
                                 <asp:Label ID="lblPropre1" runat="server" Font-Bold="True" Text="Morador" 
                                     CssClass="style7"></asp:Label>
                             </td>
-                            <td class="style9">
+                            <td class="">
                                 <asp:TextBox ID="txtMorador1" runat="server" Width="167px" CssClass="style5"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvMorador1" runat="server" 
                                     ControlToValidate="txtMorador1" CssClass="failureNotification" ErrorMessage="*" 
@@ -625,7 +638,7 @@
                                 <asp:Label ID="lblEmail" runat="server" Font-Bold="True" Text="E-mail" 
                                     CssClass="style7"></asp:Label>
                             </td>
-                            <td class="style8">
+                            <td class="">
                             <asp:TextBox ID="txtEmail" runat="server" Width="165px" CssClass="style5" 
                                     AutoPostBack="True" ontextchanged="txtEmail_TextChanged">Não tem no momento</asp:TextBox>
                             </td>
@@ -635,7 +648,7 @@
                                 <asp:Label ID="Label4" runat="server" Font-Bold="True" Text="Apartamento: " 
                                     CssClass="style7"></asp:Label>
                             </td>
-                            <td class="style9">
+                            <td class="">
                                  <asp:TextBox ID="txtApartamento" runat="server" 
                                      onKeyPress="return Decimal(this,event);"  Width="53px" CssClass="style6"></asp:TextBox>
                                  <asp:RequiredFieldValidator ID="rfvAp" runat="server" 
@@ -648,7 +661,7 @@
                                 <asp:Label ID="Label6" runat="server" Font-Bold="True" Text="Bloco:" 
                                     CssClass="style7"></asp:Label>
                             </td>
-                            <td class="style9">
+                            <td class="">
                                  <asp:TextBox ID="txtBlocos" runat="server" 
                                      onKeyPress="return Decimal(this,event);"  Width="53px" CssClass="style6" />
                                  <asp:RequiredFieldValidator ID="rfvBloco" runat="server" 

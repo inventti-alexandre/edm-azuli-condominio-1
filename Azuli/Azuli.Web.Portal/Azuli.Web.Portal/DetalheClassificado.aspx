@@ -48,7 +48,7 @@
     
     <div id="imgAnuncio" style="position:absolute;top: 138px; left: 696px;">
     
-    <asp:Image style='position:absolute; top:0px; left:4px;' ID="imgGrupo" 
+    <asp:Image style='position:absolute; top:43px; left:285px;' ID="imgGrupo" 
             runat="server" Height="44px" Width="153px" />
     </div>
     <center>
@@ -87,7 +87,7 @@
   
     
     <div id="Div1" 
-        style="position:absolute; top: 586px; left: 908px; width: 190px;" 
+        style="position:absolute; top: 559px; left: 946px; width: 190px;" 
         runat="server"> 
         <asp:Label ID="lblContador" runat="server" 
             Text="Anúncio visto 0 veze(s)" Font-Bold="True" ForeColor="Blue" 

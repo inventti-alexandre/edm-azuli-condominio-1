@@ -44,15 +44,15 @@
 
 
 
-    <siteMapNode url="resetSenha.aspx" title="Alterar Senha" description="" roles="">
+    <siteMapNode url="resetSenha.aspx" title="Alterar Senha" description=""  />
 
-    </siteMapNode>
+    
 
 
-    <siteMapNode url="contato.aspx" title="Fale Conosco" description="" roles="">
+    <siteMapNode url="contato.aspx" title="Fale Conosco" description="" roles="" />
     <!-- <siteMapNode url="~/contato.aspx" title="Contato" description=""  />-->
     <!-- <siteMapNode url="~/videoajuda.aspx" title="Videos" description=""  /> -->
-    </siteMapNode>
+  
 
  <!--   <siteMapNode url="SegundaViaContaAguaAzuli.aspx" title="2ª Via Água" description="" roles="" />-->
 

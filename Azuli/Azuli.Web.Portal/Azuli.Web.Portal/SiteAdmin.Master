@@ -22,11 +22,30 @@
         <div class="headerAdmin">
             <div class="titleAdmin">
                
-                    <img alt="" src="images/sgcv3.jpg" style="height: 96px; width: 1030px;border-radius: 1em" />
+                    <img alt="" src="images/sgcv3.jpg" style="height: 96px; width: 1070px;border-radius: 1em" />
                
             </div>
     </div>
     <div class="clear hideSkiplinkAdmin">
+               <div class="loginDisplayAdmin" 
+                    style="position: absolute; left: -5px; top: -41px; margin-top: 0px;">
+             <asp:Label ID="lblProprietarioMaster" runat="server" Font-Size="Small" 
+                     Text="Seja Bem vindo: "></asp:Label>
+                    <asp:Label ID="lblProprietarioDesc"  runat="server" Font-Size="Small" 
+                     Font-Bold="True"></asp:Label>
+
+
+                     <asp:Label ID="lblBlocoMaster" runat="server" Font-Size="Small" 
+                     Text="  Bloco: "></asp:Label>
+                    <asp:Label ID="lblBlocoMasterDesc"  runat="server" Font-Size="Small" 
+                     Font-Bold="True"></asp:Label>
+
+
+                    
+                     <asp:Label ID="lblApMaster" runat="server" Font-Size="Small" Text=" AP : " 
+                     Font-Bold="False"></asp:Label>
+                    <asp:Label ID="lblApDesc"  runat="server" Font-Size="Small" Font-Bold="True"></asp:Label>
+            </div>
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
                     EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" >
                     
@@ -76,28 +95,6 @@
                     </Items>
 
                 </asp:Menu>
-               <div class="loginDisplayAdmin" 
-                    style="position: absolute; left: -5px; top: -62px; margin-top: 0px;">
-             <asp:Label ID="lblProprietarioMaster" runat="server" Font-Size="Small" 
-                     Text="Seja Bem vindo: "></asp:Label>
-                    <asp:Label ID="lblProprietarioDesc"  runat="server" Font-Size="Small" 
-                     Font-Bold="True"></asp:Label>
-
-
-                     <asp:Label ID="lblBlocoMaster" runat="server" Font-Size="Small" 
-                     Text="  Bloco: "></asp:Label>
-                    <asp:Label ID="lblBlocoMasterDesc"  runat="server" Font-Size="Small" 
-                     Font-Bold="True"></asp:Label>
-
-
-                    
-                     <asp:Label ID="lblApMaster" runat="server" Font-Size="Small" Text=" AP : " 
-                     Font-Bold="False"></asp:Label>
-                    <asp:Label ID="lblApDesc"  runat="server" Font-Size="Small" Font-Bold="True"></asp:Label>
-            </div>
-               <div id="dvHome" 
-            style="position:absolute; top: -9px; left: -27px; height: 28px; width: 30px;"> <p>
-                    <img alt="" class="style2" src="images/home3.jpg" /></p></div>
             </div>
            
     <div class="footerAdmin">

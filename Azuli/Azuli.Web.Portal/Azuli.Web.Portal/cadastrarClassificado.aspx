@@ -122,7 +122,8 @@
     <br />
     <br />
     <div id="imgAnuncio" 
-        style="position: absolute; top: 183px; left: 218px; color: #0033CC; width: 160px;">
+        
+        style="position: absolute; top: 301px; left: 847px; color: #0033CC; width: 160px;">
         <asp:Image ID="imgGrupo" runat="server" Height="44px" Width="156px" />
     </div>
     <div id="dvAnunciar" runat="server" align="center">

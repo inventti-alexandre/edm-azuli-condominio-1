@@ -17,8 +17,10 @@ namespace Azuli.Web.Portal
         {
             if (!IsPostBack)
             {
-                oUtil.validateSession();
-                lblMensagem.Visible = false;
+                if (oUtil.validateSession())
+                {
+                    lblMensagem.Visible = false;
+                }
             }
         }
 

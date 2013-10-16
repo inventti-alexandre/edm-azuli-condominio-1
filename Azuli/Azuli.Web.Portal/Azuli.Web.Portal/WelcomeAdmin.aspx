@@ -51,7 +51,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
     
-    <fieldset class="loginDisplayLegend">
+    <center>    <fieldset class="loginDisplayLegend">
         <legend class="accordionContent">Agendamento de Áreas Azuli </legend>
         <div id="Div1" runat="server" align="center">
             <table align="center" style="width: 883px; height: 493px;">
@@ -197,5 +197,5 @@
                         </table>
            
         </div>
-    </fieldset>
+    </fieldset> </center>   
 </asp:Content>
