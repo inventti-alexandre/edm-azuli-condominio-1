@@ -29,6 +29,11 @@
         {
             color: #0092D2;
         }
+        .style5
+        {
+            width: 67px;
+            height: 23px;
+        }
     </style>
 </head>
 <body>
@@ -66,8 +71,10 @@
                             <tr>
                                 <td>
                                     <p>
-                                        <asp:Label ID="UserNameLabel" runat="server" Font-Bold="True">Bloco: </asp:Label>
-                                        <asp:DropDownList ID="drpBloco" runat="server" Height="19px" Width="35px">
+                                        <asp:Label ID="UserNameLabel" runat="server" Font-Bold="True" 
+                                            style="font-size: medium">Bloco: </asp:Label>
+                                        <asp:DropDownList ID="drpBloco" runat="server" Height="19px" Width="35px" 
+                                            style="font-size: medium">
                                             <asp:ListItem>0</asp:ListItem>
                                             <asp:ListItem>1</asp:ListItem>
                                             <asp:ListItem>2</asp:ListItem>
@@ -83,8 +90,10 @@
                                 </td>
                                 <td>
                                     <p>
-                                        <asp:Label ID="Label1" runat="server" Font-Bold="True">AP: </asp:Label>
-                                        <asp:TextBox ID="txtAP" runat="server" onKeyPress="return Decimal(this,event);" CssClass="textEntry"></asp:TextBox>
+                                        <asp:Label ID="Label1" runat="server" Font-Bold="True" 
+                                            style="font-size: medium">AP: </asp:Label>
+                                        <asp:TextBox ID="txtAP" runat="server" onKeyPress="return Decimal(this,event);" 
+                                            CssClass="textEntry" Width="40px"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="requiredAP" runat="server" ControlToValidate="txtAP"
                                             CssClass="failureNotification" ErrorMessage="Favor informe o número do Apartamento"
                                             ToolTip="Favor informe o número do Apartamento" ValidationGroup="LoginUserValidationGroup">*</asp:RequiredFieldValidator>
@@ -101,9 +110,7 @@
                                 ValidationGroup="LoginUserValidationGroup">*</asp:RequiredFieldValidator>
                         </p>
                         <p>
-                            &nbsp;</p>
-                        <p>
-                            <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Entrar" ValidationGroup="LoginUserValidationGroup"
+                            &nbsp;<asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Entrar" ValidationGroup="LoginUserValidationGroup"
                                 CssClass="botao" OnClick="LoginButton_Click" Width="65px" />
                         </p>
                         <p>
@@ -121,7 +128,8 @@
                   <center>  
                       <div style="position:absolute; top: 563px; left: 594px; width: 138px;"  
                  class="fb-like" data-href="https://www.facebook.com/Sgcondominio" 
-                 data-send="true" data-width="450" data-show-faces="false" data-font="arial"></div>  </center>
+                 data-send="true" data-width="450" data-show-faces="false" data-font="arial">
+                          <img alt="" class="style5" src="images/chrome_logo_2x.png" /></div>  </center>
                     
                    
                     </div>
@@ -206,10 +214,10 @@
            
         </div>
         <center>
-            
+            <br />
         <div class="footerLogin" 
                 style="position:absolute; top: 596px; left: 341px; width: 622px;">
-            <img alt="" src="images/download.jpg" style="height: 20px; width: 22px" /><span class="accordionContent"> Utilize o navegador Chrome para melhor visualização do site!
+            <span class="accordionContent"> &nbsp;Utilize o navegador Chrome para melhor visualização do site!
              </span><span class="style2"><span class="style4">
             <br />
             <br />
@@ -218,6 +226,8 @@
                 ImageUrl="~/images/logoteste.png" Width="73px" />
         &nbsp;<asp:ImageButton ID="ImageButton1" runat="server" CssClass="Border" 
                 ImageUrl="~/images/ico_facebook.png" onclick="ImageButton1_Click" />
+        <a href="mailto:edmls@ig.com.br"> <asp:ImageButton ID="ImageButton2" runat="server" Height="33px" 
+                ImageUrl="~/images/email.jpg" Width="39px" /></a>
         </div></center>
     </div>
     </form>

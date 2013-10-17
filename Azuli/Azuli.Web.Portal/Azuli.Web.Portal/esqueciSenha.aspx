@@ -24,7 +24,7 @@
             <div class="title">
                 <div class="title">
                 
-                <img src="images/banner.jpg" style="height: 86px; width: 960px" />
+                <img src="images/sgcv3.jpg" style="height: 100px; width: 1070px;border-radius: 1em"/>
            
             </div>
              
@@ -50,11 +50,11 @@
   <center>
    
         
-        <table class="btGeral" dir="ltr" frame="border" 
+        <table class="accordionContent" dir="ltr" frame="border" 
             style="width: 432px; height: 101px;" >
             <tr>
                 <td>
-                    <br />
+                   
                     <asp:Label ID="Label2" runat="server" Text="Informe seu e-mail:"></asp:Label>
                 </td>
                 <td class="style1">
@@ -80,11 +80,7 @@
                 </td>
             </tr>
             <tr>
-                <td>
                
-                    &nbsp;</td>
-                <td class="style1">
-                    &nbsp;</td>
             </tr>
         </table>
 </center>

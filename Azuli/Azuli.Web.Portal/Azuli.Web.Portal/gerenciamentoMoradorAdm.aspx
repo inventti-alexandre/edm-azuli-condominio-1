@@ -52,7 +52,8 @@
                     meta:resourcekey="lblActivity" style="font-weight: bold; font-size: 9pt">E-mail</asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="txtEmail" runat="server" MaxLength="200"></asp:TextBox>
+                <asp:TextBox ID="txtEmail" runat="server" MaxLength="200" AutoPostBack="True" 
+                    ontextchanged="txtEmail_TextChanged" Width="144px">Não tem no momento</asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtEmail" 
                    ValidationGroup="InputValidationGroup">*</asp:RequiredFieldValidator>
             </td>
@@ -97,6 +98,9 @@
                <ItemStyle BackColor="#0066FF" Font-Bold="True" ForeColor="White" />
                </asp:BoundField>
                <asp:BoundField DataField="email" HeaderText="E-mail" SortExpression="email" />
+               <asp:BoundField HeaderText="Senha" DataField="PASSWORD" >
+               <ItemStyle BackColor="#0066FF" Font-Bold="True" ForeColor="White" />
+               </asp:BoundField>
                <asp:CheckBoxField DataField="STATUS" HeaderText="ATIVO" 
                    SortExpression="STATUS" />
                <asp:CommandField ButtonType="Image" CancelImageUrl="~/images/cancel.png" 
@@ -108,7 +112,7 @@
            ConnectionString="<%$ ConnectionStrings:azulli %>" 
            DeleteCommand="DELETE FROM [PROPRIETARIO] WHERE [PROPRIETARIO_BLOCO] = @PROPRIETARIO_BLOCO AND [PROPRIETARIO_AP] = @PROPRIETARIO_AP" 
            InsertCommand="INSERT INTO [PROPRIETARIO] ([NOME_PROPRIETARIO1], [NOME_PROPRIETARIO2], [PROPRIETARIO_BLOCO], [PROPRIETARIO_AP], [email], [STATUS]) VALUES (@NOME_PROPRIETARIO1, @NOME_PROPRIETARIO2, @PROPRIETARIO_BLOCO, @PROPRIETARIO_AP, @email, @STATUS)" 
-           SelectCommand="SELECT [NOME_PROPRIETARIO1], [NOME_PROPRIETARIO2], [PROPRIETARIO_BLOCO], [PROPRIETARIO_AP], [email], [STATUS] FROM [PROPRIETARIO] WHERE [STATUS] = 1  ORDER BY [DataCadastro] DESC" 
+           SelectCommand="SELECT [NOME_PROPRIETARIO1], [NOME_PROPRIETARIO2], [PROPRIETARIO_BLOCO], [PROPRIETARIO_AP],[PASSWORD] ,[email], [STATUS] FROM [PROPRIETARIO] WHERE [STATUS] = 1  ORDER BY [DataCadastro] DESC" 
            
            
          UpdateCommand="UPDATE [PROPRIETARIO] SET [NOME_PROPRIETARIO1] = @NOME_PROPRIETARIO1, [NOME_PROPRIETARIO2] = @NOME_PROPRIETARIO2, [email] = @email, [STATUS] = @STATUS WHERE [PROPRIETARIO_BLOCO] = @PROPRIETARIO_BLOCO AND [PROPRIETARIO_AP] = @PROPRIETARIO_AP">

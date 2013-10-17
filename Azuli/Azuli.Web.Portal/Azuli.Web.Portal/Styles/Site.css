@@ -363,6 +363,7 @@ fieldset p
 fieldset.login label, fieldset.register label, fieldset.changePassword label
 {
     display: block;
+    font-size: medium;
 }
 
 fieldset label.inline 
@@ -388,14 +389,15 @@ legend1
 
 input.textEntry 
 {
-    width: 40px;
     border: 1px solid #ccc;
+    font-size: medium;
 }
 
 input.passwordEntry 
 {
     width: 110px;
     border: 1px solid #ccc;
+    font-size: medium;
 }
 
 div.accountInfo

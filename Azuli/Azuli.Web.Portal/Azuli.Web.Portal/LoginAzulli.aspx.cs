@@ -244,7 +244,7 @@ namespace Azuli.Web.Portal.Account
 
                         else
                         {
-                            enviaMail();
+                            //enviaMail();
                             //SendMail enviaEmail = new SendMail();
                             //int status = 0;
                             //string msgCredencial = "";
