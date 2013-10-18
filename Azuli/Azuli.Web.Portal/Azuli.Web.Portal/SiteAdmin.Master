@@ -27,8 +27,8 @@
             </div>
     </div>
     <div class="clear hideSkiplinkAdmin">
-               <div class="loginDisplayAdmin" 
-                    style="position: absolute; left: -5px; top: -41px; margin-top: 0px;">
+               <div class="dysplayLogin" 
+                    style="position: absolute; left: -68px; top: -41px; margin-top: 0px;">
              <asp:Label ID="lblProprietarioMaster" runat="server" Font-Size="Small" 
                      Text="Seja Bem vindo: "></asp:Label>
                     <asp:Label ID="lblProprietarioDesc"  runat="server" Font-Size="Small" 

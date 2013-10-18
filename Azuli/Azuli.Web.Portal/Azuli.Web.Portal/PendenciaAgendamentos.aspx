@@ -113,11 +113,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <br /><br /><br />
+    <br /><br /><br /><br />
     <center> <div id="dvPesquisaMorador" align="center" runat="server">
     
       <fieldset class="loginDisplayLegend">
-     <legend align="left" class="style18">Confirmação de Pagamento Ou Cancelamento de Reservas:
+     <legend align="left" class="accordionContent">Confirmação de Pagamento Ou Cancelamento de Reservas:
           </legend>
 
 
@@ -270,7 +270,7 @@
     <center> <div id="DvConfirma" align="center" runat="server">
     
     <fieldset class="loginDisplayAdmin">
-   <legend class="style19"> 
+   <legend class="accordionContent"> 
        <asp:Label ID="lblStatus" runat="server" Text="Label"></asp:Label>
         </legend>
   <center> <br /> <br />

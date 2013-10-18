@@ -99,7 +99,7 @@
           <br />
 
           <asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#006600" 
-              CssClass="accordionContent"></asp:Label></center>
+              CssClass="accordionContent" Height="50px" Width="800px"></asp:Label></center>
     </div>
      </center>
    

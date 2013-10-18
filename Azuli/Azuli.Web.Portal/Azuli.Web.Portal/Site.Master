@@ -27,6 +27,13 @@
             color:#4884CD;
         }
    
+        .style2
+        {
+            font-weight: bold;
+            color: #006ABA;
+            font-size: medium;
+        }
+   
         </style>
 </head>
 <body>
@@ -35,7 +42,7 @@
 
 
     <form id="Form1" runat="server">
-    
+   
     <div class="page">
         <div class="header">
             <div class="title">
@@ -51,7 +58,8 @@
                 </asp:Menu>
             </div>
           
-             <div class="loginDisplay" style="position: absolute; left: 40px;">
+             <div class="dysplayLogin" 
+                style="position: absolute; left: 28px; top: 15px;">
              <asp:Label ID="lblProprietarioMaster" runat="server" Font-Size="Small" 
                      Text="Seja Bem vindo: "></asp:Label>
                     <asp:Label ID="lblProprietarioDesc"  runat="server" Font-Size="Small" 

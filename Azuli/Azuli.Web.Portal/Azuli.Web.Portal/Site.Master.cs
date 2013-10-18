@@ -28,7 +28,9 @@ namespace Azuli.Web.Portal
                 this.lblVersion.Text = string.Format(assembly.GetName().Version.ToString());
 
                 lblApDesc.Text = Session["AP"].ToString();
-                lblBlocoMasterDesc.Text = Session["Bloco"].ToString();
+                lblBlocoMasterDesc.Text ="0"+Session["Bloco"].ToString();
+              
+
                 lblProprietarioDesc.Text = Session["Proprie1"].ToString();
 
                 string id = ConfigurationManager.AppSettings["GoogleAnalyticsId"];

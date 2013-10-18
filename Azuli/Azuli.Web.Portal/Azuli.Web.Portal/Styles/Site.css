@@ -112,7 +112,7 @@ first child of the left and right table columns */
     width: 1070px;
     background-color: #fff;
     margin: 5px auto 0px auto;
-    border: 1px solid #006DB6;
+    border: 0px solid #006DB6;
     height:auto;
     border-radius: 1em;
 
@@ -391,6 +391,7 @@ input.textEntry
 {
     border: 1px solid #ccc;
     font-size: medium;
+    font-weight: 700;
 }
 
 input.passwordEntry 
@@ -604,7 +605,8 @@ input.botao, .btGeral {
 
 .AlternatingRowStyle
 {
-    background-color: #ADD8E6;
+    background-color: #A4D8F3;
+     border-radius: 1em;
 }
 
 .RowStyle
@@ -1209,6 +1211,22 @@ a.ContextMenuItem
     font-size: 8pt;
     color: #666666;
     behavior:url(border-radius.htc);border-radius: 1em;
+    height: 15px;
+    
+}
+
+.dysplayLogin
+{
+    background-color: #E5F2F3;
+    border-left: 1px solid #0093d4;
+    border-right: 1px solid #0093d4;
+    border-bottom: 1px solid #0093d4;
+    border-top:  1px solid #0093d4;
+    padding: 5px 5px 5px 5px;
+    font-family: Verdana;
+    font-size: 8pt;
+    color: black;
+    border-radius: 1em;
     height: 15px;
     
 }

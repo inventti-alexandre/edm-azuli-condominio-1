@@ -34,6 +34,10 @@
             width: 67px;
             height: 23px;
         }
+        #tbPassword
+        {
+            width: 309px;
+        }
     </style>
 </head>
 <body>
@@ -67,14 +71,15 @@
                 <div class="accountInfo" id="dvLogin" runat="server">
                     <fieldset class="login">
                         <legend  class="accordionContent">Entre com seu Bloco/Apartamento e Senha:</legend>
-                        <table id="tbPassword" runat="server">
+                        <table id="tbPassword" class="accordionContent"  runat="server">
                             <tr>
                                 <td>
                                     <p>
                                         <asp:Label ID="UserNameLabel" runat="server" Font-Bold="True" 
-                                            style="font-size: medium">Bloco: </asp:Label>
-                                        <asp:DropDownList ID="drpBloco" runat="server" Height="19px" Width="35px" 
-                                            style="font-size: medium">
+                                            style="font-size: medium" CssClass="style4">Bloco: </asp:Label>
+                                        &nbsp;<asp:DropDownList ID="drpBloco" runat="server" Height="25px" Width="52px" 
+                                            style="font-size: medium; font-weight: 700;" 
+                                            CssClass="AlternatingRowStyle">
                                             <asp:ListItem>0</asp:ListItem>
                                             <asp:ListItem>1</asp:ListItem>
                                             <asp:ListItem>2</asp:ListItem>
@@ -88,10 +93,10 @@
                                             ValidationGroup="LoginUserValidationGroup">*</asp:RequiredFieldValidator>
                                     </p>
                                 </td>
-                                <td>
+                                <td align="left">
                                     <p>
                                         <asp:Label ID="Label1" runat="server" Font-Bold="True" 
-                                            style="font-size: medium">AP: </asp:Label>
+                                            style="font-size: medium" CssClass="style4">AP: </asp:Label>
                                         <asp:TextBox ID="txtAP" runat="server" onKeyPress="return Decimal(this,event);" 
                                             CssClass="textEntry" Width="40px"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="requiredAP" runat="server" ControlToValidate="txtAP"
@@ -99,19 +104,35 @@
                                             ToolTip="Favor informe o número do Apartamento" ValidationGroup="LoginUserValidationGroup">*</asp:RequiredFieldValidator>
                                     </p>
                                 </td>
+
+                              
                             </tr>
-                        </table>
-                        <p>
-                            <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password" Font-Bold="True"
-                                Height="24px">Senha:</asp:Label>
-                            <asp:TextBox ID="Password" runat="server" CssClass="passwordEntry" TextMode="Password"></asp:TextBox>
+                            <tr>
+                              <td colspan="2" align="center">
+                                 <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password" 
+                                      Font-Bold="True" CssClass="style4">Senha
+                               </asp:Label>
+                            <asp:TextBox ID="Password" runat="server" CssClass="passwordEntry" 
+                                      TextMode="Password" Width="92px"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
                                 CssClass="failureNotification" ErrorMessage="Favor digite sua senha!" ToolTip="Favor digite sua senha!"
                                 ValidationGroup="LoginUserValidationGroup">*</asp:RequiredFieldValidator>
+                                
+                                </td>
+                            
+                            </tr>
+                            <tr align="center">
+                            <td colspan="2" align="center">
+                             &nbsp;<asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Entrar" ValidationGroup="LoginUserValidationGroup"
+                                CssClass="botao" OnClick="LoginButton_Click" Width="65px" />
+                            </td>
+                            </tr>
+                        </table>
+                        <p>
+                           
                         </p>
                         <p>
-                            &nbsp;<asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Entrar" ValidationGroup="LoginUserValidationGroup"
-                                CssClass="botao" OnClick="LoginButton_Click" Width="65px" />
+                           
                         </p>
                         <p>
                             <asp:LinkButton ID="LinkBtnEsqueci" runat="server" OnClick="lnkBtnEsqueci_Click">Esqueci minha senha</asp:LinkButton>
