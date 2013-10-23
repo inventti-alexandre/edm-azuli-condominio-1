@@ -67,11 +67,13 @@ namespace Azuli.Web.Portal
 
             lblPercentage7.Text = "0";
             lblPercentage8.Text = "0";
+            lblPercentage9.Text = "0";
 
 
             lblPercentage10.Text = "0";
 
             lblPercentage11.Text = "0";
+                 lblPercentage12.Text = "0";
 
         }
 
@@ -365,6 +367,7 @@ namespace Azuli.Web.Portal
 
         protected void drpAno_SelectedIndexChanged(object sender, EventArgs e)
         {
+         
             CalculateQtdFile();
             dvArquivosPublicados.Visible = false;
             
