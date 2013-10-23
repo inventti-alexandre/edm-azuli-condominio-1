@@ -50,6 +50,30 @@ namespace Azuli.Web.Portal
 
         }
 
+        public void clearQuantidadeArquivos()
+        {
+
+            lblPercentage1.Text = "0";
+
+            lblPercentage2.Text = "0";
+
+            lblPercentage3.Text = "0";
+
+            lblPercentage4.Text = "0";
+
+            lblPercentage5.Text = "0";
+
+            lblPercentage6.Text = "0";
+
+            lblPercentage7.Text = "0";
+            lblPercentage8.Text = "0";
+
+
+            lblPercentage10.Text = "0";
+
+            lblPercentage11.Text = "0";
+
+        }
 
         public void preencheAno()
         {
@@ -67,7 +91,7 @@ namespace Azuli.Web.Portal
         /// </summary>
         protected void CalculateQtdFile()
         {
-
+            clearQuantidadeArquivos();
 
             oFile.ano =  Convert.ToInt32(drpAno.SelectedItem.Text);
 
