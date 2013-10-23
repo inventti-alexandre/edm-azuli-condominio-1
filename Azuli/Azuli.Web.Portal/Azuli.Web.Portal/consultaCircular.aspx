@@ -122,7 +122,7 @@
         </div>
         
         </fieldset>
-
+        <center>
         <div id="dvArquivosPublicados" runat="server">
         
             <fieldset  class="login">
@@ -154,7 +154,7 @@
                 </Columns>
             </asp:GridView>
        
-     </fieldset>   </div><br /><center>
+     </fieldset>   </div></center><br /><center>
     <asp:Button ID="btnOk" runat="server" Text="Ok" Width="58px" CssClass="btGeral" 
             onclick="btnOk_Click" /></center>
         

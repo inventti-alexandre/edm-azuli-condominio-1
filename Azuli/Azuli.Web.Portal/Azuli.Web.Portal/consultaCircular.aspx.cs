@@ -269,10 +269,12 @@ namespace Azuli.Web.Portal
 
         public void preencheGridListaArquivo(int mes)
         {
+         
+
             oFile.ano = Convert.ToInt32(drpAno.SelectedValue);
             oFile.mes = mes;
 
-            lblmesAno.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(mes).ToUpper() + "/" + ano;
+            lblmesAno.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(mes).ToUpper() + "/" + oFile.ano;
             try
             {
                 grdCircular.DataSource = oFileBLL.listaArquivoCircular(oFile);
@@ -364,6 +366,8 @@ namespace Azuli.Web.Portal
         protected void drpAno_SelectedIndexChanged(object sender, EventArgs e)
         {
             CalculateQtdFile();
+            dvArquivosPublicados.Visible = false;
+            
         }
 
     }
