@@ -94,6 +94,7 @@
     <Content Include="images\AmareloPendente.png" />
     <Content Include="images\azulPendente.png" />
     <Content Include="images\boton_responder.gif" />
+    <Content Include="images\cadastro.jpg" />
     <Content Include="images\calendario.png" />
     <Content Include="images\cancelar.jpg" />
     <Content Include="images\chrome_logo_2x.png" />
@@ -119,6 +120,7 @@
     <Content Include="images\novo_morador_visitante.png" />
     <Content Include="images\ocoor.jpg" />
     <Content Include="images\online.gif" />
+    <Content Include="images\perfil.jpg" />
     <Content Include="images\real.jpg" />
     <Content Include="images\reserva.jpg" />
     <Content Include="images\salaoFesta.jpg" />
@@ -154,6 +156,7 @@
     <Content Include="MostraPdfCircular.aspx" />
     <Content Include="PendenciaAgendamentos.aspx" />
     <Content Include="PendenciaReservaMorador.aspx" />
+    <Content Include="PerfilMorador.aspx" />
     <Content Include="publicarCircular.aspx" />
     <Content Include="consultaAgendasAdmin.aspx" />
     <Content Include="ErrorPage.aspx" />
@@ -442,6 +445,13 @@
     </Compile>
     <Compile Include="PendenciaReservaMorador.aspx.designer.cs">
       <DependentUpon>PendenciaReservaMorador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilMorador.aspx.cs">
+      <DependentUpon>PerfilMorador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilMorador.aspx.designer.cs">
+      <DependentUpon>PerfilMorador.aspx</DependentUpon>
     </Compile>
     <Compile Include="publicarCircular.aspx.cs">
       <DependentUpon>publicarCircular.aspx</DependentUpon>

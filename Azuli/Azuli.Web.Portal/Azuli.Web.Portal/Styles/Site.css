@@ -379,6 +379,8 @@ legend
     width: 416px;
 }
 
+
+
 legend1 
 {
     font-size: 1.1em;
@@ -1201,18 +1203,15 @@ a.ContextMenuItem
 
 .accordionContent
 {
+    border: 1px solid #0093d4;
     background-color: #F0F0F0;
-    border-left: 1px solid #0093d4;
-    border-right: 1px solid #0093d4;
-    border-bottom: 1px solid #0093d4;
-    border-top:  1px solid #0093d4;
     padding: 5px 5px 5px 5px;
     font-family: Verdana;
     font-size: 8pt;
     color: #666666;
     behavior:url(border-radius.htc);border-radius: 1em;
     height: 15px;
-    
+    font-weight: 700;
 }
 
 .dysplayLogin
@@ -1530,3 +1529,4 @@ hr {
     }
 
 
+/*;

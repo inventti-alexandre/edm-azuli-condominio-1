@@ -9,6 +9,9 @@
     <siteMapNode url="~/paginaInicialMoradores.aspx" title="Home" description="" >
     </siteMapNode>
 
+    <siteMapNode url="~/PerfilMorador.aspx" title="Meu Perfil" description="" >
+    </siteMapNode>
+
     <siteMapNode  title="Reservas" description="Reservas">
       <siteMapNode url="~/telaAgendamento.aspx" title="Calendário" description="" />
       <siteMapNode url="~/minhaReservas.aspx" title="Minhas Reservas" description="" />
