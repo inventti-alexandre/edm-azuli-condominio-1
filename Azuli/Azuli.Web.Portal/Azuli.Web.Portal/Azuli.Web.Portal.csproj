@@ -354,6 +354,10 @@
     <Compile Include="detalheOcorrencia.aspx.designer.cs">
       <DependentUpon>detalheOcorrencia.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DSrecibo.cs">
+      <DependentUpon>DSrecibo.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DSrecibo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

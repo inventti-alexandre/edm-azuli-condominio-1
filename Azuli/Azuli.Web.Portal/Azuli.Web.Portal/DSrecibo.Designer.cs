@@ -26,6 +26,8 @@ namespace Azuli.Web.Portal {
         
         private dtReciboDataTable tabledtRecibo;
         
+        private dtViaAguaDataTable tabledtViaAgua;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -57,6 +59,9 @@ namespace Azuli.Web.Portal {
                 if ((ds.Tables["dtRecibo"] != null)) {
                     base.Tables.Add(new dtReciboDataTable(ds.Tables["dtRecibo"]));
                 }
+                if ((ds.Tables["dtViaAgua"] != null)) {
+                    base.Tables.Add(new dtViaAguaDataTable(ds.Tables["dtViaAgua"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -82,6 +87,16 @@ namespace Azuli.Web.Portal {
         public dtReciboDataTable dtRecibo {
             get {
                 return this.tabledtRecibo;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public dtViaAguaDataTable dtViaAgua {
+            get {
+                return this.tabledtViaAgua;
             }
         }
         
@@ -155,6 +170,9 @@ namespace Azuli.Web.Portal {
                 if ((ds.Tables["dtRecibo"] != null)) {
                     base.Tables.Add(new dtReciboDataTable(ds.Tables["dtRecibo"]));
                 }
+                if ((ds.Tables["dtViaAgua"] != null)) {
+                    base.Tables.Add(new dtViaAguaDataTable(ds.Tables["dtViaAgua"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -194,6 +212,12 @@ namespace Azuli.Web.Portal {
                     this.tabledtRecibo.InitVars();
                 }
             }
+            this.tabledtViaAgua = ((dtViaAguaDataTable)(base.Tables["dtViaAgua"]));
+            if ((initTable == true)) {
+                if ((this.tabledtViaAgua != null)) {
+                    this.tabledtViaAgua.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -206,11 +230,19 @@ namespace Azuli.Web.Portal {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tabledtRecibo = new dtReciboDataTable();
             base.Tables.Add(this.tabledtRecibo);
+            this.tabledtViaAgua = new dtViaAguaDataTable();
+            base.Tables.Add(this.tabledtViaAgua);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializedtRecibo() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializedtViaAgua() {
             return false;
         }
         
@@ -271,6 +303,9 @@ namespace Azuli.Web.Portal {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void dtReciboRowChangeEventHandler(object sender, dtReciboRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void dtViaAguaRowChangeEventHandler(object sender, dtViaAguaRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -604,6 +639,885 @@ namespace Azuli.Web.Portal {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class dtViaAguaDataTable : global::System.Data.TypedTableBase<dtViaAguaRow> {
+            
+            private global::System.Data.DataColumn _columnID_Condomínio;
+            
+            private global::System.Data.DataColumn columnNome_do_Condomínio;
+            
+            private global::System.Data.DataColumn columnEndereço_do_Condomínio;
+            
+            private global::System.Data.DataColumn columnBloco;
+            
+            private global::System.Data.DataColumn columnApartamento;
+            
+            private global::System.Data.DataColumn columnRegistro;
+            
+            private global::System.Data.DataColumn columnFechamento_Atual;
+            
+            private global::System.Data.DataColumn columnData_leitura_Anterior;
+            
+            private global::System.Data.DataColumn _columnLeitura_Anterior_M_;
+            
+            private global::System.Data.DataColumn columnData_leitura_Atual;
+            
+            private global::System.Data.DataColumn _columnLeitura_Atual_M_;
+            
+            private global::System.Data.DataColumn _columnConsumo_do_Mês_M_;
+            
+            private global::System.Data.DataColumn columnData_da_próxima_leitura;
+            
+            private global::System.Data.DataColumn columnstatus;
+            
+            private global::System.Data.DataColumn columnMédia;
+            
+            private global::System.Data.DataColumn columnHistórico_descricação_mês1;
+            
+            private global::System.Data.DataColumn columnHistórico_mês1;
+            
+            private global::System.Data.DataColumn columnHistórico_descricação_mês2;
+            
+            private global::System.Data.DataColumn columnHistórico_mês2;
+            
+            private global::System.Data.DataColumn columnHistórico_descricação_mês3;
+            
+            private global::System.Data.DataColumn columnHistórico_mês3;
+            
+            private global::System.Data.DataColumn columnHistórico_descricação_mês4;
+            
+            private global::System.Data.DataColumn columnHistórico_mês4;
+            
+            private global::System.Data.DataColumn columnHistórico_descricação_mês5;
+            
+            private global::System.Data.DataColumn columnHistórico_mês5;
+            
+            private global::System.Data.DataColumn columnHistórico_descricação_mês6;
+            
+            private global::System.Data.DataColumn columnHistórico_mês6;
+            
+            private global::System.Data.DataColumn _columnConsumo_M_;
+            
+            private global::System.Data.DataColumn columnConsumo_Valor;
+            
+            private global::System.Data.DataColumn _columnMínimo_M_;
+            
+            private global::System.Data.DataColumn columnMínimo_Valor;
+            
+            private global::System.Data.DataColumn _columnExcedente_M_;
+            
+            private global::System.Data.DataColumn columnExcedente_Valor;
+            
+            private global::System.Data.DataColumn _columnTarifa_Mínima_M_;
+            
+            private global::System.Data.DataColumn columnTarifa_Mínima_Valor;
+            
+            private global::System.Data.DataColumn columnExcedente_;
+            
+            private global::System.Data.DataColumn columna_pagar;
+            
+            private global::System.Data.DataColumn columnGeral;
+            
+            private global::System.Data.DataColumn columnAnormal;
+            
+            private global::System.Data.DataColumn columnInvididual;
+            
+            private global::System.Data.DataColumn columnANORMALIDADE;
+            
+            private global::System.Data.DataColumn columnImagem;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public dtViaAguaDataTable() {
+                this.TableName = "dtViaAgua";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal dtViaAguaDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected dtViaAguaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _ID_CondomínioColumn {
+                get {
+                    return this._columnID_Condomínio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Nome_do_CondomínioColumn {
+                get {
+                    return this.columnNome_do_Condomínio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Endereço_do_CondomínioColumn {
+                get {
+                    return this.columnEndereço_do_Condomínio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BlocoColumn {
+                get {
+                    return this.columnBloco;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ApartamentoColumn {
+                get {
+                    return this.columnApartamento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RegistroColumn {
+                get {
+                    return this.columnRegistro;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Fechamento_AtualColumn {
+                get {
+                    return this.columnFechamento_Atual;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Data_leitura_AnteriorColumn {
+                get {
+                    return this.columnData_leitura_Anterior;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _Leitura_Anterior_M_Column {
+                get {
+                    return this._columnLeitura_Anterior_M_;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Data_leitura_AtualColumn {
+                get {
+                    return this.columnData_leitura_Atual;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _Leitura_Atual_M_Column {
+                get {
+                    return this._columnLeitura_Atual_M_;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _Consumo_do_Mês_M_Column {
+                get {
+                    return this._columnConsumo_do_Mês_M_;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Data_da_próxima_leituraColumn {
+                get {
+                    return this.columnData_da_próxima_leitura;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn statusColumn {
+                get {
+                    return this.columnstatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MédiaColumn {
+                get {
+                    return this.columnMédia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Histórico_descricação_mês1Column {
+                get {
+                    return this.columnHistórico_descricação_mês1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Histórico_mês1Column {
+                get {
+                    return this.columnHistórico_mês1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Histórico_descricação_mês2Column {
+                get {
+                    return this.columnHistórico_descricação_mês2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Histórico_mês2Column {
+                get {
+                    return this.columnHistórico_mês2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Histórico_descricação_mês3Column {
+                get {
+                    return this.columnHistórico_descricação_mês3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Histórico_mês3Column {
+                get {
+                    return this.columnHistórico_mês3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Histórico_descricação_mês4Column {
+                get {
+                    return this.columnHistórico_descricação_mês4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Histórico_mês4Column {
+                get {
+                    return this.columnHistórico_mês4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Histórico_descricação_mês5Column {
+                get {
+                    return this.columnHistórico_descricação_mês5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Histórico_mês5Column {
+                get {
+                    return this.columnHistórico_mês5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Histórico_descricação_mês6Column {
+                get {
+                    return this.columnHistórico_descricação_mês6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Histórico_mês6Column {
+                get {
+                    return this.columnHistórico_mês6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _Consumo_M_Column {
+                get {
+                    return this._columnConsumo_M_;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Consumo_ValorColumn {
+                get {
+                    return this.columnConsumo_Valor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _Mínimo_M_Column {
+                get {
+                    return this._columnMínimo_M_;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Mínimo_ValorColumn {
+                get {
+                    return this.columnMínimo_Valor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _Excedente_M_Column {
+                get {
+                    return this._columnExcedente_M_;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Excedente_ValorColumn {
+                get {
+                    return this.columnExcedente_Valor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _Tarifa_Mínima_M_Column {
+                get {
+                    return this._columnTarifa_Mínima_M_;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Tarifa_Mínima_ValorColumn {
+                get {
+                    return this.columnTarifa_Mínima_Valor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Excedente_Column {
+                get {
+                    return this.columnExcedente_;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn a_pagarColumn {
+                get {
+                    return this.columna_pagar;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GeralColumn {
+                get {
+                    return this.columnGeral;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AnormalColumn {
+                get {
+                    return this.columnAnormal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn InvididualColumn {
+                get {
+                    return this.columnInvididual;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ANORMALIDADEColumn {
+                get {
+                    return this.columnANORMALIDADE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ImagemColumn {
+                get {
+                    return this.columnImagem;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public dtViaAguaRow this[int index] {
+                get {
+                    return ((dtViaAguaRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event dtViaAguaRowChangeEventHandler dtViaAguaRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event dtViaAguaRowChangeEventHandler dtViaAguaRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event dtViaAguaRowChangeEventHandler dtViaAguaRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event dtViaAguaRowChangeEventHandler dtViaAguaRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AdddtViaAguaRow(dtViaAguaRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public dtViaAguaRow AdddtViaAguaRow(
+                        string _ID_Condomínio, 
+                        string Nome_do_Condomínio, 
+                        string Endereço_do_Condomínio, 
+                        string Bloco, 
+                        string Apartamento, 
+                        string Registro, 
+                        string Fechamento_Atual, 
+                        string Data_leitura_Anterior, 
+                        string _Leitura_Anterior_M_, 
+                        string Data_leitura_Atual, 
+                        string _Leitura_Atual_M_, 
+                        string _Consumo_do_Mês_M_, 
+                        string Data_da_próxima_leitura, 
+                        string status, 
+                        string Média, 
+                        string Histórico_descricação_mês1, 
+                        string Histórico_mês1, 
+                        string Histórico_descricação_mês2, 
+                        string Histórico_mês2, 
+                        string Histórico_descricação_mês3, 
+                        string Histórico_mês3, 
+                        string Histórico_descricação_mês4, 
+                        string Histórico_mês4, 
+                        string Histórico_descricação_mês5, 
+                        string Histórico_mês5, 
+                        string Histórico_descricação_mês6, 
+                        string Histórico_mês6, 
+                        string _Consumo_M_, 
+                        string Consumo_Valor, 
+                        string _Mínimo_M_, 
+                        string Mínimo_Valor, 
+                        string _Excedente_M_, 
+                        string Excedente_Valor, 
+                        string _Tarifa_Mínima_M_, 
+                        string Tarifa_Mínima_Valor, 
+                        string Excedente_, 
+                        string a_pagar, 
+                        string Geral, 
+                        string Anormal, 
+                        string Invididual, 
+                        string ANORMALIDADE, 
+                        string Imagem) {
+                dtViaAguaRow rowdtViaAguaRow = ((dtViaAguaRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        _ID_Condomínio,
+                        Nome_do_Condomínio,
+                        Endereço_do_Condomínio,
+                        Bloco,
+                        Apartamento,
+                        Registro,
+                        Fechamento_Atual,
+                        Data_leitura_Anterior,
+                        _Leitura_Anterior_M_,
+                        Data_leitura_Atual,
+                        _Leitura_Atual_M_,
+                        _Consumo_do_Mês_M_,
+                        Data_da_próxima_leitura,
+                        status,
+                        Média,
+                        Histórico_descricação_mês1,
+                        Histórico_mês1,
+                        Histórico_descricação_mês2,
+                        Histórico_mês2,
+                        Histórico_descricação_mês3,
+                        Histórico_mês3,
+                        Histórico_descricação_mês4,
+                        Histórico_mês4,
+                        Histórico_descricação_mês5,
+                        Histórico_mês5,
+                        Histórico_descricação_mês6,
+                        Histórico_mês6,
+                        _Consumo_M_,
+                        Consumo_Valor,
+                        _Mínimo_M_,
+                        Mínimo_Valor,
+                        _Excedente_M_,
+                        Excedente_Valor,
+                        _Tarifa_Mínima_M_,
+                        Tarifa_Mínima_Valor,
+                        Excedente_,
+                        a_pagar,
+                        Geral,
+                        Anormal,
+                        Invididual,
+                        ANORMALIDADE,
+                        Imagem};
+                rowdtViaAguaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdtViaAguaRow);
+                return rowdtViaAguaRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                dtViaAguaDataTable cln = ((dtViaAguaDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new dtViaAguaDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this._columnID_Condomínio = base.Columns["ID-Condomínio"];
+                this.columnNome_do_Condomínio = base.Columns["Nome do Condomínio"];
+                this.columnEndereço_do_Condomínio = base.Columns["Endereço do Condomínio"];
+                this.columnBloco = base.Columns["Bloco"];
+                this.columnApartamento = base.Columns["Apartamento"];
+                this.columnRegistro = base.Columns["Registro"];
+                this.columnFechamento_Atual = base.Columns["Fechamento Atual"];
+                this.columnData_leitura_Anterior = base.Columns["Data leitura Anterior"];
+                this._columnLeitura_Anterior_M_ = base.Columns["Leitura Anterior M³"];
+                this.columnData_leitura_Atual = base.Columns["Data leitura Atual"];
+                this._columnLeitura_Atual_M_ = base.Columns["Leitura Atual M³"];
+                this._columnConsumo_do_Mês_M_ = base.Columns["Consumo do Mês M³"];
+                this.columnData_da_próxima_leitura = base.Columns["Data da próxima leitura"];
+                this.columnstatus = base.Columns["status"];
+                this.columnMédia = base.Columns["Média"];
+                this.columnHistórico_descricação_mês1 = base.Columns["Histórico descricação mês1"];
+                this.columnHistórico_mês1 = base.Columns["Histórico mês1"];
+                this.columnHistórico_descricação_mês2 = base.Columns["Histórico descricação mês2"];
+                this.columnHistórico_mês2 = base.Columns["Histórico mês2"];
+                this.columnHistórico_descricação_mês3 = base.Columns["Histórico descricação mês3"];
+                this.columnHistórico_mês3 = base.Columns["Histórico mês3"];
+                this.columnHistórico_descricação_mês4 = base.Columns["Histórico descricação mês4"];
+                this.columnHistórico_mês4 = base.Columns["Histórico mês4"];
+                this.columnHistórico_descricação_mês5 = base.Columns["Histórico descricação mês5"];
+                this.columnHistórico_mês5 = base.Columns["Histórico mês5"];
+                this.columnHistórico_descricação_mês6 = base.Columns["Histórico descricação mês6"];
+                this.columnHistórico_mês6 = base.Columns["Histórico mês6"];
+                this._columnConsumo_M_ = base.Columns["Consumo M³"];
+                this.columnConsumo_Valor = base.Columns["Consumo Valor"];
+                this._columnMínimo_M_ = base.Columns["Mínimo M³"];
+                this.columnMínimo_Valor = base.Columns["Mínimo Valor"];
+                this._columnExcedente_M_ = base.Columns["Excedente M³"];
+                this.columnExcedente_Valor = base.Columns["Excedente Valor"];
+                this._columnTarifa_Mínima_M_ = base.Columns["Tarifa Mínima M³"];
+                this.columnTarifa_Mínima_Valor = base.Columns["Tarifa Mínima Valor"];
+                this.columnExcedente_ = base.Columns["Excedente "];
+                this.columna_pagar = base.Columns["a pagar"];
+                this.columnGeral = base.Columns["Geral"];
+                this.columnAnormal = base.Columns["Anormal"];
+                this.columnInvididual = base.Columns["Invididual"];
+                this.columnANORMALIDADE = base.Columns["ANORMALIDADE"];
+                this.columnImagem = base.Columns["Imagem"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this._columnID_Condomínio = new global::System.Data.DataColumn("ID-Condomínio", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnID_Condomínio.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnID_Condomínio");
+                this._columnID_Condomínio.ExtendedProperties.Add("Generator_UserColumnName", "ID-Condomínio");
+                base.Columns.Add(this._columnID_Condomínio);
+                this.columnNome_do_Condomínio = new global::System.Data.DataColumn("Nome do Condomínio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNome_do_Condomínio);
+                this.columnEndereço_do_Condomínio = new global::System.Data.DataColumn("Endereço do Condomínio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEndereço_do_Condomínio);
+                this.columnBloco = new global::System.Data.DataColumn("Bloco", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBloco);
+                this.columnApartamento = new global::System.Data.DataColumn("Apartamento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnApartamento);
+                this.columnRegistro = new global::System.Data.DataColumn("Registro", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRegistro);
+                this.columnFechamento_Atual = new global::System.Data.DataColumn("Fechamento Atual", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechamento_Atual);
+                this.columnData_leitura_Anterior = new global::System.Data.DataColumn("Data leitura Anterior", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnData_leitura_Anterior);
+                this._columnLeitura_Anterior_M_ = new global::System.Data.DataColumn("Leitura Anterior M³", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnLeitura_Anterior_M_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnLeitura_Anterior_M_");
+                this._columnLeitura_Anterior_M_.ExtendedProperties.Add("Generator_UserColumnName", "Leitura Anterior M³");
+                base.Columns.Add(this._columnLeitura_Anterior_M_);
+                this.columnData_leitura_Atual = new global::System.Data.DataColumn("Data leitura Atual", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnData_leitura_Atual);
+                this._columnLeitura_Atual_M_ = new global::System.Data.DataColumn("Leitura Atual M³", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnLeitura_Atual_M_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnLeitura_Atual_M_");
+                this._columnLeitura_Atual_M_.ExtendedProperties.Add("Generator_UserColumnName", "Leitura Atual M³");
+                base.Columns.Add(this._columnLeitura_Atual_M_);
+                this._columnConsumo_do_Mês_M_ = new global::System.Data.DataColumn("Consumo do Mês M³", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnConsumo_do_Mês_M_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnConsumo_do_Mês_M_");
+                this._columnConsumo_do_Mês_M_.ExtendedProperties.Add("Generator_UserColumnName", "Consumo do Mês M³");
+                base.Columns.Add(this._columnConsumo_do_Mês_M_);
+                this.columnData_da_próxima_leitura = new global::System.Data.DataColumn("Data da próxima leitura", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnData_da_próxima_leitura);
+                this.columnstatus = new global::System.Data.DataColumn("status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstatus);
+                this.columnMédia = new global::System.Data.DataColumn("Média", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMédia);
+                this.columnHistórico_descricação_mês1 = new global::System.Data.DataColumn("Histórico descricação mês1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHistórico_descricação_mês1);
+                this.columnHistórico_mês1 = new global::System.Data.DataColumn("Histórico mês1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHistórico_mês1);
+                this.columnHistórico_descricação_mês2 = new global::System.Data.DataColumn("Histórico descricação mês2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHistórico_descricação_mês2);
+                this.columnHistórico_mês2 = new global::System.Data.DataColumn("Histórico mês2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHistórico_mês2);
+                this.columnHistórico_descricação_mês3 = new global::System.Data.DataColumn("Histórico descricação mês3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHistórico_descricação_mês3);
+                this.columnHistórico_mês3 = new global::System.Data.DataColumn("Histórico mês3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHistórico_mês3);
+                this.columnHistórico_descricação_mês4 = new global::System.Data.DataColumn("Histórico descricação mês4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHistórico_descricação_mês4);
+                this.columnHistórico_mês4 = new global::System.Data.DataColumn("Histórico mês4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHistórico_mês4);
+                this.columnHistórico_descricação_mês5 = new global::System.Data.DataColumn("Histórico descricação mês5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHistórico_descricação_mês5);
+                this.columnHistórico_mês5 = new global::System.Data.DataColumn("Histórico mês5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHistórico_mês5);
+                this.columnHistórico_descricação_mês6 = new global::System.Data.DataColumn("Histórico descricação mês6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHistórico_descricação_mês6);
+                this.columnHistórico_mês6 = new global::System.Data.DataColumn("Histórico mês6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHistórico_mês6);
+                this._columnConsumo_M_ = new global::System.Data.DataColumn("Consumo M³", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnConsumo_M_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnConsumo_M_");
+                this._columnConsumo_M_.ExtendedProperties.Add("Generator_UserColumnName", "Consumo M³");
+                base.Columns.Add(this._columnConsumo_M_);
+                this.columnConsumo_Valor = new global::System.Data.DataColumn("Consumo Valor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnConsumo_Valor);
+                this._columnMínimo_M_ = new global::System.Data.DataColumn("Mínimo M³", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnMínimo_M_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnMínimo_M_");
+                this._columnMínimo_M_.ExtendedProperties.Add("Generator_UserColumnName", "Mínimo M³");
+                base.Columns.Add(this._columnMínimo_M_);
+                this.columnMínimo_Valor = new global::System.Data.DataColumn("Mínimo Valor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMínimo_Valor);
+                this._columnExcedente_M_ = new global::System.Data.DataColumn("Excedente M³", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnExcedente_M_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnExcedente_M_");
+                this._columnExcedente_M_.ExtendedProperties.Add("Generator_UserColumnName", "Excedente M³");
+                base.Columns.Add(this._columnExcedente_M_);
+                this.columnExcedente_Valor = new global::System.Data.DataColumn("Excedente Valor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExcedente_Valor);
+                this._columnTarifa_Mínima_M_ = new global::System.Data.DataColumn("Tarifa Mínima M³", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnTarifa_Mínima_M_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnTarifa_Mínima_M_");
+                this._columnTarifa_Mínima_M_.ExtendedProperties.Add("Generator_UserColumnName", "Tarifa Mínima M³");
+                base.Columns.Add(this._columnTarifa_Mínima_M_);
+                this.columnTarifa_Mínima_Valor = new global::System.Data.DataColumn("Tarifa Mínima Valor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTarifa_Mínima_Valor);
+                this.columnExcedente_ = new global::System.Data.DataColumn("Excedente ", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExcedente_);
+                this.columna_pagar = new global::System.Data.DataColumn("a pagar", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columna_pagar);
+                this.columnGeral = new global::System.Data.DataColumn("Geral", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGeral);
+                this.columnAnormal = new global::System.Data.DataColumn("Anormal", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAnormal);
+                this.columnInvididual = new global::System.Data.DataColumn("Invididual", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInvididual);
+                this.columnANORMALIDADE = new global::System.Data.DataColumn("ANORMALIDADE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnANORMALIDADE);
+                this.columnImagem = new global::System.Data.DataColumn("Imagem", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImagem);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public dtViaAguaRow NewdtViaAguaRow() {
+                return ((dtViaAguaRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new dtViaAguaRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(dtViaAguaRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.dtViaAguaRowChanged != null)) {
+                    this.dtViaAguaRowChanged(this, new dtViaAguaRowChangeEvent(((dtViaAguaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.dtViaAguaRowChanging != null)) {
+                    this.dtViaAguaRowChanging(this, new dtViaAguaRowChangeEvent(((dtViaAguaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.dtViaAguaRowDeleted != null)) {
+                    this.dtViaAguaRowDeleted(this, new dtViaAguaRowChangeEvent(((dtViaAguaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.dtViaAguaRowDeleting != null)) {
+                    this.dtViaAguaRowDeleting(this, new dtViaAguaRowChangeEvent(((dtViaAguaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovedtViaAguaRow(dtViaAguaRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DSrecibo ds = new DSrecibo();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "dtViaAguaDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class dtReciboRow : global::System.Data.DataRow {
@@ -815,6 +1729,1203 @@ namespace Azuli.Web.Portal {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class dtViaAguaRow : global::System.Data.DataRow {
+            
+            private dtViaAguaDataTable tabledtViaAgua;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal dtViaAguaRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabledtViaAgua = ((dtViaAguaDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string _ID_Condomínio {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua._ID_CondomínioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID-Condomínio\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua._ID_CondomínioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Nome_do_Condomínio {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Nome_do_CondomínioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Nome do Condomínio\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Nome_do_CondomínioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Endereço_do_Condomínio {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Endereço_do_CondomínioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Endereço do Condomínio\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Endereço_do_CondomínioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Bloco {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.BlocoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bloco\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.BlocoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Apartamento {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.ApartamentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Apartamento\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.ApartamentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Registro {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.RegistroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Registro\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.RegistroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Fechamento_Atual {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Fechamento_AtualColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Fechamento Atual\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Fechamento_AtualColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Data_leitura_Anterior {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Data_leitura_AnteriorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Data leitura Anterior\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Data_leitura_AnteriorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string _Leitura_Anterior_M_ {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua._Leitura_Anterior_M_Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Leitura Anterior M³\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua._Leitura_Anterior_M_Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Data_leitura_Atual {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Data_leitura_AtualColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Data leitura Atual\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Data_leitura_AtualColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string _Leitura_Atual_M_ {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua._Leitura_Atual_M_Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Leitura Atual M³\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua._Leitura_Atual_M_Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string _Consumo_do_Mês_M_ {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua._Consumo_do_Mês_M_Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Consumo do Mês M³\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua._Consumo_do_Mês_M_Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Data_da_próxima_leitura {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Data_da_próxima_leituraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Data da próxima leitura\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Data_da_próxima_leituraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string status {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.statusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'status\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.statusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Média {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.MédiaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Média\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.MédiaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Histórico_descricação_mês1 {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Histórico_descricação_mês1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Histórico descricação mês1\' in table \'dtViaAgua\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Histórico_descricação_mês1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Histórico_mês1 {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Histórico_mês1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Histórico mês1\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Histórico_mês1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Histórico_descricação_mês2 {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Histórico_descricação_mês2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Histórico descricação mês2\' in table \'dtViaAgua\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Histórico_descricação_mês2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Histórico_mês2 {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Histórico_mês2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Histórico mês2\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Histórico_mês2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Histórico_descricação_mês3 {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Histórico_descricação_mês3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Histórico descricação mês3\' in table \'dtViaAgua\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Histórico_descricação_mês3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Histórico_mês3 {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Histórico_mês3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Histórico mês3\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Histórico_mês3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Histórico_descricação_mês4 {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Histórico_descricação_mês4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Histórico descricação mês4\' in table \'dtViaAgua\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Histórico_descricação_mês4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Histórico_mês4 {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Histórico_mês4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Histórico mês4\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Histórico_mês4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Histórico_descricação_mês5 {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Histórico_descricação_mês5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Histórico descricação mês5\' in table \'dtViaAgua\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Histórico_descricação_mês5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Histórico_mês5 {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Histórico_mês5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Histórico mês5\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Histórico_mês5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Histórico_descricação_mês6 {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Histórico_descricação_mês6Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Histórico descricação mês6\' in table \'dtViaAgua\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Histórico_descricação_mês6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Histórico_mês6 {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Histórico_mês6Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Histórico mês6\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Histórico_mês6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string _Consumo_M_ {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua._Consumo_M_Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Consumo M³\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua._Consumo_M_Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Consumo_Valor {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Consumo_ValorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Consumo Valor\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Consumo_ValorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string _Mínimo_M_ {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua._Mínimo_M_Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Mínimo M³\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua._Mínimo_M_Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Mínimo_Valor {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Mínimo_ValorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Mínimo Valor\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Mínimo_ValorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string _Excedente_M_ {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua._Excedente_M_Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Excedente M³\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua._Excedente_M_Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Excedente_Valor {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Excedente_ValorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Excedente Valor\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Excedente_ValorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string _Tarifa_Mínima_M_ {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua._Tarifa_Mínima_M_Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Tarifa Mínima M³\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua._Tarifa_Mínima_M_Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Tarifa_Mínima_Valor {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Tarifa_Mínima_ValorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Tarifa Mínima Valor\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Tarifa_Mínima_ValorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Excedente_ {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.Excedente_Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Excedente \' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.Excedente_Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string a_pagar {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.a_pagarColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'a pagar\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.a_pagarColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Geral {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.GeralColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Geral\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.GeralColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Anormal {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.AnormalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Anormal\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.AnormalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Invididual {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.InvididualColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Invididual\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.InvididualColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ANORMALIDADE {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.ANORMALIDADEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ANORMALIDADE\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.ANORMALIDADEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Imagem {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtViaAgua.ImagemColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Imagem\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.ImagemColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_ID_CondomínioNull() {
+                return this.IsNull(this.tabledtViaAgua._ID_CondomínioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_ID_CondomínioNull() {
+                this[this.tabledtViaAgua._ID_CondomínioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNome_do_CondomínioNull() {
+                return this.IsNull(this.tabledtViaAgua.Nome_do_CondomínioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNome_do_CondomínioNull() {
+                this[this.tabledtViaAgua.Nome_do_CondomínioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEndereço_do_CondomínioNull() {
+                return this.IsNull(this.tabledtViaAgua.Endereço_do_CondomínioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEndereço_do_CondomínioNull() {
+                this[this.tabledtViaAgua.Endereço_do_CondomínioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsBlocoNull() {
+                return this.IsNull(this.tabledtViaAgua.BlocoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetBlocoNull() {
+                this[this.tabledtViaAgua.BlocoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsApartamentoNull() {
+                return this.IsNull(this.tabledtViaAgua.ApartamentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetApartamentoNull() {
+                this[this.tabledtViaAgua.ApartamentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRegistroNull() {
+                return this.IsNull(this.tabledtViaAgua.RegistroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRegistroNull() {
+                this[this.tabledtViaAgua.RegistroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFechamento_AtualNull() {
+                return this.IsNull(this.tabledtViaAgua.Fechamento_AtualColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFechamento_AtualNull() {
+                this[this.tabledtViaAgua.Fechamento_AtualColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsData_leitura_AnteriorNull() {
+                return this.IsNull(this.tabledtViaAgua.Data_leitura_AnteriorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetData_leitura_AnteriorNull() {
+                this[this.tabledtViaAgua.Data_leitura_AnteriorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_Leitura_Anterior_M_Null() {
+                return this.IsNull(this.tabledtViaAgua._Leitura_Anterior_M_Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_Leitura_Anterior_M_Null() {
+                this[this.tabledtViaAgua._Leitura_Anterior_M_Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsData_leitura_AtualNull() {
+                return this.IsNull(this.tabledtViaAgua.Data_leitura_AtualColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetData_leitura_AtualNull() {
+                this[this.tabledtViaAgua.Data_leitura_AtualColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_Leitura_Atual_M_Null() {
+                return this.IsNull(this.tabledtViaAgua._Leitura_Atual_M_Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_Leitura_Atual_M_Null() {
+                this[this.tabledtViaAgua._Leitura_Atual_M_Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_Consumo_do_Mês_M_Null() {
+                return this.IsNull(this.tabledtViaAgua._Consumo_do_Mês_M_Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_Consumo_do_Mês_M_Null() {
+                this[this.tabledtViaAgua._Consumo_do_Mês_M_Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsData_da_próxima_leituraNull() {
+                return this.IsNull(this.tabledtViaAgua.Data_da_próxima_leituraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetData_da_próxima_leituraNull() {
+                this[this.tabledtViaAgua.Data_da_próxima_leituraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsstatusNull() {
+                return this.IsNull(this.tabledtViaAgua.statusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetstatusNull() {
+                this[this.tabledtViaAgua.statusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMédiaNull() {
+                return this.IsNull(this.tabledtViaAgua.MédiaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMédiaNull() {
+                this[this.tabledtViaAgua.MédiaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHistórico_descricação_mês1Null() {
+                return this.IsNull(this.tabledtViaAgua.Histórico_descricação_mês1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHistórico_descricação_mês1Null() {
+                this[this.tabledtViaAgua.Histórico_descricação_mês1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHistórico_mês1Null() {
+                return this.IsNull(this.tabledtViaAgua.Histórico_mês1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHistórico_mês1Null() {
+                this[this.tabledtViaAgua.Histórico_mês1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHistórico_descricação_mês2Null() {
+                return this.IsNull(this.tabledtViaAgua.Histórico_descricação_mês2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHistórico_descricação_mês2Null() {
+                this[this.tabledtViaAgua.Histórico_descricação_mês2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHistórico_mês2Null() {
+                return this.IsNull(this.tabledtViaAgua.Histórico_mês2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHistórico_mês2Null() {
+                this[this.tabledtViaAgua.Histórico_mês2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHistórico_descricação_mês3Null() {
+                return this.IsNull(this.tabledtViaAgua.Histórico_descricação_mês3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHistórico_descricação_mês3Null() {
+                this[this.tabledtViaAgua.Histórico_descricação_mês3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHistórico_mês3Null() {
+                return this.IsNull(this.tabledtViaAgua.Histórico_mês3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHistórico_mês3Null() {
+                this[this.tabledtViaAgua.Histórico_mês3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHistórico_descricação_mês4Null() {
+                return this.IsNull(this.tabledtViaAgua.Histórico_descricação_mês4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHistórico_descricação_mês4Null() {
+                this[this.tabledtViaAgua.Histórico_descricação_mês4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHistórico_mês4Null() {
+                return this.IsNull(this.tabledtViaAgua.Histórico_mês4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHistórico_mês4Null() {
+                this[this.tabledtViaAgua.Histórico_mês4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHistórico_descricação_mês5Null() {
+                return this.IsNull(this.tabledtViaAgua.Histórico_descricação_mês5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHistórico_descricação_mês5Null() {
+                this[this.tabledtViaAgua.Histórico_descricação_mês5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHistórico_mês5Null() {
+                return this.IsNull(this.tabledtViaAgua.Histórico_mês5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHistórico_mês5Null() {
+                this[this.tabledtViaAgua.Histórico_mês5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHistórico_descricação_mês6Null() {
+                return this.IsNull(this.tabledtViaAgua.Histórico_descricação_mês6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHistórico_descricação_mês6Null() {
+                this[this.tabledtViaAgua.Histórico_descricação_mês6Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHistórico_mês6Null() {
+                return this.IsNull(this.tabledtViaAgua.Histórico_mês6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHistórico_mês6Null() {
+                this[this.tabledtViaAgua.Histórico_mês6Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_Consumo_M_Null() {
+                return this.IsNull(this.tabledtViaAgua._Consumo_M_Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_Consumo_M_Null() {
+                this[this.tabledtViaAgua._Consumo_M_Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsConsumo_ValorNull() {
+                return this.IsNull(this.tabledtViaAgua.Consumo_ValorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetConsumo_ValorNull() {
+                this[this.tabledtViaAgua.Consumo_ValorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_Mínimo_M_Null() {
+                return this.IsNull(this.tabledtViaAgua._Mínimo_M_Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_Mínimo_M_Null() {
+                this[this.tabledtViaAgua._Mínimo_M_Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMínimo_ValorNull() {
+                return this.IsNull(this.tabledtViaAgua.Mínimo_ValorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMínimo_ValorNull() {
+                this[this.tabledtViaAgua.Mínimo_ValorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_Excedente_M_Null() {
+                return this.IsNull(this.tabledtViaAgua._Excedente_M_Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_Excedente_M_Null() {
+                this[this.tabledtViaAgua._Excedente_M_Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsExcedente_ValorNull() {
+                return this.IsNull(this.tabledtViaAgua.Excedente_ValorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetExcedente_ValorNull() {
+                this[this.tabledtViaAgua.Excedente_ValorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_Tarifa_Mínima_M_Null() {
+                return this.IsNull(this.tabledtViaAgua._Tarifa_Mínima_M_Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_Tarifa_Mínima_M_Null() {
+                this[this.tabledtViaAgua._Tarifa_Mínima_M_Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTarifa_Mínima_ValorNull() {
+                return this.IsNull(this.tabledtViaAgua.Tarifa_Mínima_ValorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTarifa_Mínima_ValorNull() {
+                this[this.tabledtViaAgua.Tarifa_Mínima_ValorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsExcedente_Null() {
+                return this.IsNull(this.tabledtViaAgua.Excedente_Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetExcedente_Null() {
+                this[this.tabledtViaAgua.Excedente_Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isa_pagarNull() {
+                return this.IsNull(this.tabledtViaAgua.a_pagarColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Seta_pagarNull() {
+                this[this.tabledtViaAgua.a_pagarColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGeralNull() {
+                return this.IsNull(this.tabledtViaAgua.GeralColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGeralNull() {
+                this[this.tabledtViaAgua.GeralColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAnormalNull() {
+                return this.IsNull(this.tabledtViaAgua.AnormalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAnormalNull() {
+                this[this.tabledtViaAgua.AnormalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsInvididualNull() {
+                return this.IsNull(this.tabledtViaAgua.InvididualColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetInvididualNull() {
+                this[this.tabledtViaAgua.InvididualColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsANORMALIDADENull() {
+                return this.IsNull(this.tabledtViaAgua.ANORMALIDADEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetANORMALIDADENull() {
+                this[this.tabledtViaAgua.ANORMALIDADEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsImagemNull() {
+                return this.IsNull(this.tabledtViaAgua.ImagemColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetImagemNull() {
+                this[this.tabledtViaAgua.ImagemColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -834,6 +2945,40 @@ namespace Azuli.Web.Portal {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtReciboRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class dtViaAguaRowChangeEvent : global::System.EventArgs {
+            
+            private dtViaAguaRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public dtViaAguaRowChangeEvent(dtViaAguaRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public dtViaAguaRow Row {
                 get {
                     return this.eventRow;
                 }

@@ -19,7 +19,7 @@
 
     </siteMapNode>
 
-    <!-- <siteMapNode url="" title="Reclamações" description="Reclamação">
+    <!-- <siteMapNode url="" title="Reclamações" description="Reclamação">    
 
       <siteMapNode url="~/OcorrenciaMorador.aspx" title="Fazer Reclamações" description="" />
       <siteMapNode url="~/detalheOcorrencia.aspx" title="Minhas Reclamações" description="" />
@@ -57,7 +57,7 @@
     <!-- <siteMapNode url="~/videoajuda.aspx" title="Videos" description=""  /> -->
   
 
- <!--   <siteMapNode url="SegundaViaContaAguaAzuli.aspx" title="2ª Via Água" description="" roles="" />-->
+  <siteMapNode url="SegundaViaContaAguaAzuli.aspx" title="2ª Via Água" description="" roles="" />
 
 <siteMapNode url="LoginAzulli.aspx" title="Sair" description="">
 

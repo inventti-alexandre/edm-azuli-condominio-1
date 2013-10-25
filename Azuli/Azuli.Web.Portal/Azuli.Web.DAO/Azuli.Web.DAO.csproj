@@ -67,6 +67,7 @@
     <Compile Include="Interfaces\IMensagemMorador.cs" />
     <Compile Include="Interfaces\IPendenciaAdmin.cs" />
     <Compile Include="Interfaces\IProprietario.cs" />
+    <Compile Include="Interfaces\IReciboAgua.cs" />
     <Compile Include="Interfaces\IVisitante.cs" />
     <Compile Include="Interfaces\IVisitas.cs" />
     <Compile Include="LancamentoOcorrencia.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="PendenciaAdminDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProprietarioDAO.cs" />
+    <Compile Include="ReciboAguaDAO.cs" />
     <Compile Include="VisitanteDAO.cs" />
     <Compile Include="VisitasDAO.cs" />
   </ItemGroup>
