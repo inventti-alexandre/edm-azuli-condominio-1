@@ -215,7 +215,7 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth_Click10(object sender, EventArgs e)
         {
-            Session["mes"] = 8;
+            Session["mes"] = 10;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
 
@@ -223,7 +223,7 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth_Click11(object sender, EventArgs e)
         {
-            Session["mes"] = 9;
+            Session["mes"] = 11;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
 
@@ -231,7 +231,7 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth_Click12(object sender, EventArgs e)
         {
-            Session["mes"] = 10;
+            Session["mes"] = 12;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
 
@@ -239,7 +239,7 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth_Click8(object sender, EventArgs e)
         {
-            Session["mes"] = 11;
+            Session["mes"] = 8;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
 
@@ -247,7 +247,7 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth_Click9(object sender, EventArgs e)
         {
-            Session["mes"] = 12;
+            Session["mes"] = 9;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
 

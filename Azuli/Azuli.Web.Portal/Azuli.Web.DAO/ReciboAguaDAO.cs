@@ -32,6 +32,8 @@ namespace Azuli.Web.DAO
 
                 comandoSQL.Parameters.AddWithValue("@BLOCO", oReciboModel.bloco);
                 comandoSQL.Parameters.AddWithValue("@AP", oReciboModel.apartamento);
+                comandoSQL.Parameters.AddWithValue("@Mes", oReciboModel.ano);
+                comandoSQL.Parameters.AddWithValue("@Ano", oReciboModel.mes);
 
                 DataTable tbRecibo = new DataTable();
 

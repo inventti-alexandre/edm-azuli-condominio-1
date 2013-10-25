@@ -14,6 +14,7 @@ using System.Data;
 using Azuli.Crystal;
 using Azuli.Web.Business;
 using Azuli.Web.Model;
+using System.Drawing.Printing;
 
 namespace Azuli.Web.Portal
 {
@@ -141,6 +142,17 @@ namespace Azuli.Web.Portal
         public void crystalReport()
         {
 
+            System.Drawing.Printing.PageSettings pg = new System.Drawing.Printing.PageSettings();
+            pg.Margins.Top = 0;
+            pg.Margins.Bottom = 0;
+            pg.Margins.Left = 0;
+            pg.Margins.Right = 0;
+            System.Drawing.Printing.PaperSize size = new System.Drawing.Printing.PaperSize(); 
+            size.RawKind = (int)PaperKind.Letter;
+            pg.PaperSize = size;
+            pg.Landscape = true;
+         
+
             ReciboAguaBLL oReciboBLL = new ReciboAguaBLL();
             ReciboAgua oReciboModel = new ReciboAgua();
 
@@ -152,9 +164,13 @@ namespace Azuli.Web.Portal
 
                 string apartamento = Session["AP"].ToString();
                 string bloco = Session["Bloco"].ToString();
+                string mes = Session["mes"].ToString();
+                string ano = Session["ano"].ToString();
 
                 oReciboModel.bloco = bloco;
                 oReciboModel.apartamento = apartamento;
+                oReciboModel.ano = Convert.ToInt32(ano);
+                oReciboModel.mes = Convert.ToInt32(mes);
 
                 foreach (var item in oReciboBLL.buscaTodosRecibosByBlocoAndApto(oReciboModel))
                 {

@@ -57,7 +57,7 @@
             </td>
             <td class="style2">
                 <asp:LinkButton ID="lbtMonth4" runat="server" CssClass="" 
-                    onclick="lbtMonth4_Click">4</asp:LinkButton>
+                    onclick="lbtMonth4_Click" style="font-size: 9pt">4</asp:LinkButton>
             </td>
             <td>
                 <asp:LinkButton ID="lbtMonth5" runat="server" CssClass="" 
