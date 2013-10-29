@@ -707,7 +707,7 @@ namespace Azuli.Web.Portal {
             
             private global::System.Data.DataColumn columnMínimo_Valor;
             
-            private global::System.Data.DataColumn _columnExcedente_M_;
+            private global::System.Data.DataColumn columnExcedentePagoPeloCondominio;
             
             private global::System.Data.DataColumn columnExcedente_Valor;
             
@@ -715,7 +715,7 @@ namespace Azuli.Web.Portal {
             
             private global::System.Data.DataColumn columnTarifa_Mínima_Valor;
             
-            private global::System.Data.DataColumn columnExcedente_;
+            private global::System.Data.DataColumn columnExcedenteValorRateio_;
             
             private global::System.Data.DataColumn columna_pagar;
             
@@ -728,6 +728,8 @@ namespace Azuli.Web.Portal {
             private global::System.Data.DataColumn columnANORMALIDADE;
             
             private global::System.Data.DataColumn columnImagem;
+            
+            private global::System.Data.DataColumn columnExcedenteValorDevido;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1012,9 +1014,9 @@ namespace Azuli.Web.Portal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn _Excedente_M_Column {
+            public global::System.Data.DataColumn ExcedentePagoPeloCondominioColumn {
                 get {
-                    return this._columnExcedente_M_;
+                    return this.columnExcedentePagoPeloCondominio;
                 }
             }
             
@@ -1044,9 +1046,9 @@ namespace Azuli.Web.Portal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Excedente_Column {
+            public global::System.Data.DataColumn ExcedenteValorRateio_Column {
                 get {
-                    return this.columnExcedente_;
+                    return this.columnExcedenteValorRateio_;
                 }
             }
             
@@ -1095,6 +1097,14 @@ namespace Azuli.Web.Portal {
             public global::System.Data.DataColumn ImagemColumn {
                 get {
                     return this.columnImagem;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ExcedenteValorDevidoColumn {
+                get {
+                    return this.columnExcedenteValorDevido;
                 }
             }
             
@@ -1167,17 +1177,18 @@ namespace Azuli.Web.Portal {
                         decimal Consumo_Valor, 
                         string _Mínimo_M_, 
                         decimal Mínimo_Valor, 
-                        string _Excedente_M_, 
+                        int ExcedentePagoPeloCondominio, 
                         decimal Excedente_Valor, 
                         string _Tarifa_Mínima_M_, 
                         decimal Tarifa_Mínima_Valor, 
-                        string Excedente_, 
+                        int ExcedenteValorRateio_, 
                         decimal a_pagar, 
                         string Geral, 
                         string Anormal, 
                         string Invididual, 
                         string ANORMALIDADE, 
-                        string Imagem) {
+                        string Imagem, 
+                        int ExcedenteValorDevido) {
                 dtViaAguaRow rowdtViaAguaRow = ((dtViaAguaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         _ID_Condomínio,
@@ -1211,17 +1222,18 @@ namespace Azuli.Web.Portal {
                         Consumo_Valor,
                         _Mínimo_M_,
                         Mínimo_Valor,
-                        _Excedente_M_,
+                        ExcedentePagoPeloCondominio,
                         Excedente_Valor,
                         _Tarifa_Mínima_M_,
                         Tarifa_Mínima_Valor,
-                        Excedente_,
+                        ExcedenteValorRateio_,
                         a_pagar,
                         Geral,
                         Anormal,
                         Invididual,
                         ANORMALIDADE,
-                        Imagem};
+                        Imagem,
+                        ExcedenteValorDevido};
                 rowdtViaAguaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtViaAguaRow);
                 return rowdtViaAguaRow;
@@ -1275,17 +1287,18 @@ namespace Azuli.Web.Portal {
                 this.columnConsumo_Valor = base.Columns["Consumo Valor"];
                 this._columnMínimo_M_ = base.Columns["Mínimo M³"];
                 this.columnMínimo_Valor = base.Columns["Mínimo Valor"];
-                this._columnExcedente_M_ = base.Columns["Excedente M³"];
+                this.columnExcedentePagoPeloCondominio = base.Columns["ExcedentePagoPeloCondominio"];
                 this.columnExcedente_Valor = base.Columns["Excedente Valor"];
                 this._columnTarifa_Mínima_M_ = base.Columns["Tarifa Mínima M³"];
                 this.columnTarifa_Mínima_Valor = base.Columns["Tarifa Mínima Valor"];
-                this.columnExcedente_ = base.Columns["Excedente "];
+                this.columnExcedenteValorRateio_ = base.Columns["ExcedenteValorRateio "];
                 this.columna_pagar = base.Columns["a pagar"];
                 this.columnGeral = base.Columns["Geral"];
                 this.columnAnormal = base.Columns["Anormal"];
                 this.columnInvididual = base.Columns["Invididual"];
                 this.columnANORMALIDADE = base.Columns["ANORMALIDADE"];
                 this.columnImagem = base.Columns["Imagem"];
+                this.columnExcedenteValorDevido = base.Columns["ExcedenteValorDevido"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1365,10 +1378,8 @@ namespace Azuli.Web.Portal {
                 base.Columns.Add(this._columnMínimo_M_);
                 this.columnMínimo_Valor = new global::System.Data.DataColumn("Mínimo Valor", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMínimo_Valor);
-                this._columnExcedente_M_ = new global::System.Data.DataColumn("Excedente M³", typeof(string), null, global::System.Data.MappingType.Element);
-                this._columnExcedente_M_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnExcedente_M_");
-                this._columnExcedente_M_.ExtendedProperties.Add("Generator_UserColumnName", "Excedente M³");
-                base.Columns.Add(this._columnExcedente_M_);
+                this.columnExcedentePagoPeloCondominio = new global::System.Data.DataColumn("ExcedentePagoPeloCondominio", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExcedentePagoPeloCondominio);
                 this.columnExcedente_Valor = new global::System.Data.DataColumn("Excedente Valor", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnExcedente_Valor);
                 this._columnTarifa_Mínima_M_ = new global::System.Data.DataColumn("Tarifa Mínima M³", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1377,8 +1388,8 @@ namespace Azuli.Web.Portal {
                 base.Columns.Add(this._columnTarifa_Mínima_M_);
                 this.columnTarifa_Mínima_Valor = new global::System.Data.DataColumn("Tarifa Mínima Valor", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTarifa_Mínima_Valor);
-                this.columnExcedente_ = new global::System.Data.DataColumn("Excedente ", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExcedente_);
+                this.columnExcedenteValorRateio_ = new global::System.Data.DataColumn("ExcedenteValorRateio ", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExcedenteValorRateio_);
                 this.columna_pagar = new global::System.Data.DataColumn("a pagar", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columna_pagar);
                 this.columnGeral = new global::System.Data.DataColumn("Geral", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1391,6 +1402,8 @@ namespace Azuli.Web.Portal {
                 base.Columns.Add(this.columnANORMALIDADE);
                 this.columnImagem = new global::System.Data.DataColumn("Imagem", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnImagem);
+                this.columnExcedenteValorDevido = new global::System.Data.DataColumn("ExcedenteValorDevido", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExcedenteValorDevido);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2246,17 +2259,18 @@ namespace Azuli.Web.Portal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string _Excedente_M_ {
+            public int ExcedentePagoPeloCondominio {
                 get {
                     try {
-                        return ((string)(this[this.tabledtViaAgua._Excedente_M_Column]));
+                        return ((int)(this[this.tabledtViaAgua.ExcedentePagoPeloCondominioColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Excedente M³\' in table \'dtViaAgua\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ExcedentePagoPeloCondominio\' in table \'dtViaAgua\' is DBNull" +
+                                ".", e);
                     }
                 }
                 set {
-                    this[this.tabledtViaAgua._Excedente_M_Column] = value;
+                    this[this.tabledtViaAgua.ExcedentePagoPeloCondominioColumn] = value;
                 }
             }
             
@@ -2310,17 +2324,17 @@ namespace Azuli.Web.Portal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Excedente_ {
+            public int ExcedenteValorRateio_ {
                 get {
                     try {
-                        return ((string)(this[this.tabledtViaAgua.Excedente_Column]));
+                        return ((int)(this[this.tabledtViaAgua.ExcedenteValorRateio_Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Excedente \' in table \'dtViaAgua\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ExcedenteValorRateio \' in table \'dtViaAgua\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledtViaAgua.Excedente_Column] = value;
+                    this[this.tabledtViaAgua.ExcedenteValorRateio_Column] = value;
                 }
             }
             
@@ -2417,6 +2431,22 @@ namespace Azuli.Web.Portal {
                 }
                 set {
                     this[this.tabledtViaAgua.ImagemColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ExcedenteValorDevido {
+                get {
+                    try {
+                        return ((int)(this[this.tabledtViaAgua.ExcedenteValorDevidoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ExcedenteValorDevido\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.ExcedenteValorDevidoColumn] = value;
                 }
             }
             
@@ -2794,14 +2824,14 @@ namespace Azuli.Web.Portal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Is_Excedente_M_Null() {
-                return this.IsNull(this.tabledtViaAgua._Excedente_M_Column);
+            public bool IsExcedentePagoPeloCondominioNull() {
+                return this.IsNull(this.tabledtViaAgua.ExcedentePagoPeloCondominioColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Set_Excedente_M_Null() {
-                this[this.tabledtViaAgua._Excedente_M_Column] = global::System.Convert.DBNull;
+            public void SetExcedentePagoPeloCondominioNull() {
+                this[this.tabledtViaAgua.ExcedentePagoPeloCondominioColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2842,14 +2872,14 @@ namespace Azuli.Web.Portal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExcedente_Null() {
-                return this.IsNull(this.tabledtViaAgua.Excedente_Column);
+            public bool IsExcedenteValorRateio_Null() {
+                return this.IsNull(this.tabledtViaAgua.ExcedenteValorRateio_Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExcedente_Null() {
-                this[this.tabledtViaAgua.Excedente_Column] = global::System.Convert.DBNull;
+            public void SetExcedenteValorRateio_Null() {
+                this[this.tabledtViaAgua.ExcedenteValorRateio_Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2922,6 +2952,18 @@ namespace Azuli.Web.Portal {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetImagemNull() {
                 this[this.tabledtViaAgua.ImagemColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsExcedenteValorDevidoNull() {
+                return this.IsNull(this.tabledtViaAgua.ExcedenteValorDevidoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetExcedenteValorDevidoNull() {
+                this[this.tabledtViaAgua.ExcedenteValorDevidoColumn] = global::System.Convert.DBNull;
             }
         }
         
