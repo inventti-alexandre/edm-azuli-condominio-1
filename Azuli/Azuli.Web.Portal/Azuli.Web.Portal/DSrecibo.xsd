@@ -71,6 +71,7 @@
               <xs:element name="ANORMALIDADE" msprop:Generator_ColumnVarNameInTable="columnANORMALIDADE" msprop:Generator_ColumnPropNameInRow="ANORMALIDADE" msprop:Generator_ColumnPropNameInTable="ANORMALIDADEColumn" msprop:Generator_UserColumnName="ANORMALIDADE" type="xs:string" minOccurs="0" />
               <xs:element name="Imagem" msprop:Generator_ColumnVarNameInTable="columnImagem" msprop:Generator_ColumnPropNameInRow="Imagem" msprop:Generator_ColumnPropNameInTable="ImagemColumn" msprop:Generator_UserColumnName="Imagem" type="xs:string" minOccurs="0" />
               <xs:element name="ExcedenteValorDevido" msprop:Generator_ColumnVarNameInTable="columnExcedenteValorDevido" msprop:Generator_ColumnPropNameInRow="ExcedenteValorDevido" msprop:Generator_ColumnPropNameInTable="ExcedenteValorDevidoColumn" msprop:Generator_UserColumnName="ExcedenteValorDevido" type="xs:int" minOccurs="0" />
+              <xs:element name="ExcedenteM3Rateio" msprop:Generator_ColumnVarNameInTable="columnExcedenteM3Rateio" msprop:Generator_ColumnPropNameInRow="ExcedenteM3Rateio" msprop:Generator_ColumnPropNameInTable="ExcedenteM3RateioColumn" msprop:Generator_UserColumnName="ExcedenteM3Rateio" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

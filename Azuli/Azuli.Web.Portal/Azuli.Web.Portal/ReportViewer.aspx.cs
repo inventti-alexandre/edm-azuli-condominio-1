@@ -210,13 +210,14 @@ namespace Azuli.Web.Portal
                     drSegundaVia["Tarifa Mínima M³"] = item.tarifaMinimaM3ValorDevido;
                     drSegundaVia["Tarifa Mínima Valor"] = item.tarifaMinimaValorValorDevido;
                     drSegundaVia["ExcedenteValorRateio "] = item.excedenteValorRateio;
-                    drSegundaVia["ExcedenteValorDevido "] = item.excedenteValorDevido;
+                     drSegundaVia["ExcedenteM3Rateio"] = item.excedenteM3Rateio;
                     drSegundaVia["a pagar"] = item.valorPagarValorDevido;
                     drSegundaVia["Geral"] = item.avisoGeralAviso;
                     drSegundaVia["Anormal"] = item.AnormalAviso;
                     drSegundaVia["Invididual"] = item.individualAviso;
                     drSegundaVia["ANORMALIDADE"] = item.anormalidadeAviso;
-                    drSegundaVia["Imagem"] = item.imagem; 
+                    drSegundaVia["Imagem"] = item.imagem;
+                    drSegundaVia["ExcedenteValorDevido"] = item.excedenteValorDevido;
 
                 }
 

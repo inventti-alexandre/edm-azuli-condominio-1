@@ -731,6 +731,8 @@ namespace Azuli.Web.Portal {
             
             private global::System.Data.DataColumn columnExcedenteValorDevido;
             
+            private global::System.Data.DataColumn columnExcedenteM3Rateio;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtViaAguaDataTable() {
@@ -1110,6 +1112,14 @@ namespace Azuli.Web.Portal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ExcedenteM3RateioColumn {
+                get {
+                    return this.columnExcedenteM3Rateio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1188,7 +1198,8 @@ namespace Azuli.Web.Portal {
                         string Invididual, 
                         string ANORMALIDADE, 
                         string Imagem, 
-                        int ExcedenteValorDevido) {
+                        int ExcedenteValorDevido, 
+                        int ExcedenteM3Rateio) {
                 dtViaAguaRow rowdtViaAguaRow = ((dtViaAguaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         _ID_Condomínio,
@@ -1233,7 +1244,8 @@ namespace Azuli.Web.Portal {
                         Invididual,
                         ANORMALIDADE,
                         Imagem,
-                        ExcedenteValorDevido};
+                        ExcedenteValorDevido,
+                        ExcedenteM3Rateio};
                 rowdtViaAguaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtViaAguaRow);
                 return rowdtViaAguaRow;
@@ -1299,6 +1311,7 @@ namespace Azuli.Web.Portal {
                 this.columnANORMALIDADE = base.Columns["ANORMALIDADE"];
                 this.columnImagem = base.Columns["Imagem"];
                 this.columnExcedenteValorDevido = base.Columns["ExcedenteValorDevido"];
+                this.columnExcedenteM3Rateio = base.Columns["ExcedenteM3Rateio"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1404,6 +1417,8 @@ namespace Azuli.Web.Portal {
                 base.Columns.Add(this.columnImagem);
                 this.columnExcedenteValorDevido = new global::System.Data.DataColumn("ExcedenteValorDevido", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnExcedenteValorDevido);
+                this.columnExcedenteM3Rateio = new global::System.Data.DataColumn("ExcedenteM3Rateio", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExcedenteM3Rateio);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2452,6 +2467,22 @@ namespace Azuli.Web.Portal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ExcedenteM3Rateio {
+                get {
+                    try {
+                        return ((int)(this[this.tabledtViaAgua.ExcedenteM3RateioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ExcedenteM3Rateio\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.ExcedenteM3RateioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Is_ID_CondomínioNull() {
                 return this.IsNull(this.tabledtViaAgua._ID_CondomínioColumn);
             }
@@ -2964,6 +2995,18 @@ namespace Azuli.Web.Portal {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetExcedenteValorDevidoNull() {
                 this[this.tabledtViaAgua.ExcedenteValorDevidoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsExcedenteM3RateioNull() {
+                return this.IsNull(this.tabledtViaAgua.ExcedenteM3RateioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetExcedenteM3RateioNull() {
+                this[this.tabledtViaAgua.ExcedenteM3RateioColumn] = global::System.Convert.DBNull;
             }
         }
         
