@@ -88,6 +88,12 @@ namespace Azuli.Web.DAO
                 if (itemOcorrencia.Table.Columns.Contains("Data leitura Anterior"))
                     oReciboAgua.dataLeituraAnterior = itemOcorrencia["Data leitura Anterior"].ToString();
 
+                if (itemOcorrencia.Table.Columns.Contains("Data leitura Atual"))
+                    oReciboAgua.dataLeituraAtual = itemOcorrencia["Data leitura Atual"].ToString();
+
+
+                
+
                 if (itemOcorrencia.Table.Columns.Contains("leitura Anterior M³"))
                     oReciboAgua.leituraAnteriorM3 = itemOcorrencia["leitura Anterior M³"].ToString();
 
