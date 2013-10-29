@@ -87,6 +87,10 @@
                             <asp:MenuItem Text="Reservas Confirmadas" Value="Reservas Confirmadas">
                             </asp:MenuItem>
                         </asp:MenuItem>
+                        <asp:MenuItem Text="Conta de Água Azuli" Value="Conta de Água Azuli">
+                            <asp:MenuItem NavigateUrl="~/GerarReciboAzuliAdm.aspx" Text="Gerar Recibo" 
+                                Value="Gerar Recibo"></asp:MenuItem>
+                        </asp:MenuItem>
                         <asp:MenuItem Text="Alterar Senha" 
                             Value="Alterar Senha do Administrador" 
                             NavigateUrl="~/alteraSenhaSindico.aspx"></asp:MenuItem>

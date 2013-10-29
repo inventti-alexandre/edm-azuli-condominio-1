@@ -253,7 +253,7 @@ div.hideSkiplink
     position:relative;
     top: -9px;
     vertical-align:middle;
-    left:190px;
+    left:115px;
     z-index: 999999;
 }
 
@@ -273,13 +273,13 @@ div.hideSkiplink
 div.hideSkiplinkAdmin
 {
     background-color:#0092D2;
-    width:900px;
+    width:972px;
     height: 0;
     position:relative;
     top: -4px;
     vertical-align:middle;
-    right:-60px;
-    left: 90px;
+    right:-84px;
+    left: 84px;
 }
 
 

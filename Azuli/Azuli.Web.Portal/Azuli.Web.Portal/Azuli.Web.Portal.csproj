@@ -88,6 +88,7 @@
     <Content Include="detalheOcorrencia.aspx" />
     <Content Include="enviaMensagemMorador.aspx" />
     <Content Include="esqueciSenha.aspx" />
+    <Content Include="GerarReciboAzuliAdm.aspx" />
     <Content Include="gerenciamentoMoradorAdm.aspx" />
     <Content Include="GerenciarClassificadoMorador.aspx" />
     <Content Include="images\0ae1500.jpg" />
@@ -384,6 +385,13 @@
     </Compile>
     <Compile Include="esqueciSenha.aspx.designer.cs">
       <DependentUpon>esqueciSenha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GerarReciboAzuliAdm.aspx.cs">
+      <DependentUpon>GerarReciboAzuliAdm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GerarReciboAzuliAdm.aspx.designer.cs">
+      <DependentUpon>GerarReciboAzuliAdm.aspx</DependentUpon>
     </Compile>
     <Compile Include="gerenciamentoMoradorAdm.aspx.cs">
       <DependentUpon>gerenciamentoMoradorAdm.aspx</DependentUpon>

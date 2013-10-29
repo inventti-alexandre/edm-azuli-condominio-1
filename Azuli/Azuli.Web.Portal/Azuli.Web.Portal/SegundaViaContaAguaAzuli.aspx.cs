@@ -102,6 +102,7 @@ namespace Azuli.Web.Portal
 
         public void openedPoupReport()
         {
+            Session["chooseReport"] = false;
             Session["ReciboAgua"] = true;
             OpenPopUp(Page.ResolveUrl("~/ReportViewer.aspx"), 700, 920, true, true);
         }
