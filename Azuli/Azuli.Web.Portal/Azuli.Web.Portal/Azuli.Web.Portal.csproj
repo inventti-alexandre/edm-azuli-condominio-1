@@ -64,6 +64,7 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="agendamentosPendentesAdm.aspx" />
     <Content Include="alteraSenhaSindico.aspx" />
     <Content Include="anunciarClassificado.aspx" />
     <Content Include="AreaAdministrativa.aspx" />
@@ -242,6 +243,13 @@
     <Content Include="WelcomeAdmin.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="agendamentosPendentesAdm.aspx.cs">
+      <DependentUpon>agendamentosPendentesAdm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="agendamentosPendentesAdm.aspx.designer.cs">
+      <DependentUpon>agendamentosPendentesAdm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="alteraSenhaSindico.aspx.cs">
       <DependentUpon>alteraSenhaSindico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -700,7 +708,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>53476</DevelopmentServerPort>
+          <DevelopmentServerPort>49518</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

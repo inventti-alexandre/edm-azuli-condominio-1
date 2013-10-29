@@ -1164,15 +1164,15 @@ namespace Azuli.Web.Portal {
                         string Histórico_descricação_mês6, 
                         string Histórico_mês6, 
                         string _Consumo_M_, 
-                        string Consumo_Valor, 
+                        decimal Consumo_Valor, 
                         string _Mínimo_M_, 
-                        string Mínimo_Valor, 
+                        decimal Mínimo_Valor, 
                         string _Excedente_M_, 
-                        string Excedente_Valor, 
+                        decimal Excedente_Valor, 
                         string _Tarifa_Mínima_M_, 
-                        string Tarifa_Mínima_Valor, 
+                        decimal Tarifa_Mínima_Valor, 
                         string Excedente_, 
-                        string a_pagar, 
+                        decimal a_pagar, 
                         string Geral, 
                         string Anormal, 
                         string Invididual, 
@@ -1357,29 +1357,29 @@ namespace Azuli.Web.Portal {
                 this._columnConsumo_M_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnConsumo_M_");
                 this._columnConsumo_M_.ExtendedProperties.Add("Generator_UserColumnName", "Consumo M³");
                 base.Columns.Add(this._columnConsumo_M_);
-                this.columnConsumo_Valor = new global::System.Data.DataColumn("Consumo Valor", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnConsumo_Valor = new global::System.Data.DataColumn("Consumo Valor", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnConsumo_Valor);
                 this._columnMínimo_M_ = new global::System.Data.DataColumn("Mínimo M³", typeof(string), null, global::System.Data.MappingType.Element);
                 this._columnMínimo_M_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnMínimo_M_");
                 this._columnMínimo_M_.ExtendedProperties.Add("Generator_UserColumnName", "Mínimo M³");
                 base.Columns.Add(this._columnMínimo_M_);
-                this.columnMínimo_Valor = new global::System.Data.DataColumn("Mínimo Valor", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnMínimo_Valor = new global::System.Data.DataColumn("Mínimo Valor", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMínimo_Valor);
                 this._columnExcedente_M_ = new global::System.Data.DataColumn("Excedente M³", typeof(string), null, global::System.Data.MappingType.Element);
                 this._columnExcedente_M_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnExcedente_M_");
                 this._columnExcedente_M_.ExtendedProperties.Add("Generator_UserColumnName", "Excedente M³");
                 base.Columns.Add(this._columnExcedente_M_);
-                this.columnExcedente_Valor = new global::System.Data.DataColumn("Excedente Valor", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnExcedente_Valor = new global::System.Data.DataColumn("Excedente Valor", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnExcedente_Valor);
                 this._columnTarifa_Mínima_M_ = new global::System.Data.DataColumn("Tarifa Mínima M³", typeof(string), null, global::System.Data.MappingType.Element);
                 this._columnTarifa_Mínima_M_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnTarifa_Mínima_M_");
                 this._columnTarifa_Mínima_M_.ExtendedProperties.Add("Generator_UserColumnName", "Tarifa Mínima M³");
                 base.Columns.Add(this._columnTarifa_Mínima_M_);
-                this.columnTarifa_Mínima_Valor = new global::System.Data.DataColumn("Tarifa Mínima Valor", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTarifa_Mínima_Valor = new global::System.Data.DataColumn("Tarifa Mínima Valor", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTarifa_Mínima_Valor);
                 this.columnExcedente_ = new global::System.Data.DataColumn("Excedente ", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnExcedente_);
-                this.columna_pagar = new global::System.Data.DataColumn("a pagar", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columna_pagar = new global::System.Data.DataColumn("a pagar", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columna_pagar);
                 this.columnGeral = new global::System.Data.DataColumn("Geral", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGeral);
@@ -2198,10 +2198,10 @@ namespace Azuli.Web.Portal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Consumo_Valor {
+            public decimal Consumo_Valor {
                 get {
                     try {
-                        return ((string)(this[this.tabledtViaAgua.Consumo_ValorColumn]));
+                        return ((decimal)(this[this.tabledtViaAgua.Consumo_ValorColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Consumo Valor\' in table \'dtViaAgua\' is DBNull.", e);
@@ -2230,10 +2230,10 @@ namespace Azuli.Web.Portal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Mínimo_Valor {
+            public decimal Mínimo_Valor {
                 get {
                     try {
-                        return ((string)(this[this.tabledtViaAgua.Mínimo_ValorColumn]));
+                        return ((decimal)(this[this.tabledtViaAgua.Mínimo_ValorColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Mínimo Valor\' in table \'dtViaAgua\' is DBNull.", e);
@@ -2262,10 +2262,10 @@ namespace Azuli.Web.Portal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Excedente_Valor {
+            public decimal Excedente_Valor {
                 get {
                     try {
-                        return ((string)(this[this.tabledtViaAgua.Excedente_ValorColumn]));
+                        return ((decimal)(this[this.tabledtViaAgua.Excedente_ValorColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Excedente Valor\' in table \'dtViaAgua\' is DBNull.", e);
@@ -2294,10 +2294,10 @@ namespace Azuli.Web.Portal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Tarifa_Mínima_Valor {
+            public decimal Tarifa_Mínima_Valor {
                 get {
                     try {
-                        return ((string)(this[this.tabledtViaAgua.Tarifa_Mínima_ValorColumn]));
+                        return ((decimal)(this[this.tabledtViaAgua.Tarifa_Mínima_ValorColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Tarifa Mínima Valor\' in table \'dtViaAgua\' is DBNull.", e);
@@ -2326,10 +2326,10 @@ namespace Azuli.Web.Portal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string a_pagar {
+            public decimal a_pagar {
                 get {
                     try {
-                        return ((string)(this[this.tabledtViaAgua.a_pagarColumn]));
+                        return ((decimal)(this[this.tabledtViaAgua.a_pagarColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'a pagar\' in table \'dtViaAgua\' is DBNull.", e);
