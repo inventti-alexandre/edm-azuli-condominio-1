@@ -66,8 +66,7 @@ namespace Azuli.Web.Portal
                     ReciboAgua oReciboModel = new ReciboAgua();
 
                     DSrecibo dsSegundaVia = new DSrecibo();
-                    DataRow drSegundaVia = dsSegundaVia.Tables[1].NewRow();
-                   
+                    
 
                     string mes = Session["mes"].ToString();
                     string ano = Session["ano"].ToString();
@@ -78,9 +77,10 @@ namespace Azuli.Web.Portal
                     {
                         foreach (var item in oReciboBLL.buscaTodosRecibosByYearAndMonth(Convert.ToInt32(ano), Convert.ToInt32(mes)))
                         {
-
-                        
-
+                   
+                            DataRow drSegundaVia = dsSegundaVia.Tables[1].NewRow();
+                   
+                            
                             drSegundaVia["ID-Condomínio"] = item.idCondominio;
                             drSegundaVia["Nome do Condomínio"] = item.nomeCondominio;
                             drSegundaVia["Endereço do Condomínio"] = item.enderecoCondominio;
@@ -125,9 +125,10 @@ namespace Azuli.Web.Portal
                             drSegundaVia["ANORMALIDADE"] = item.anormalidadeAviso;
                             drSegundaVia["Imagem"] = item.imagem;
                             drSegundaVia["ExcedenteValorDevido"] = item.excedenteValorDevido;
+                            drSegundaVia["excedenteM3Diario"] = item.excedenteM3diaria; 
 
                         
-
+                            
                              dsSegundaVia.Tables[1].Rows.Add(drSegundaVia);
                   
                      
@@ -141,8 +142,10 @@ namespace Azuli.Web.Portal
 
                         rbSegundaVia.SetDataSource(dsSegundaVia);
 
+                        rbSegundaVia.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "Recibo");
+
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         
                         throw;

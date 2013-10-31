@@ -733,6 +733,8 @@ namespace Azuli.Web.Portal {
             
             private global::System.Data.DataColumn columnExcedenteM3Rateio;
             
+            private global::System.Data.DataColumn columnexcedenteM3Diario;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtViaAguaDataTable() {
@@ -1120,6 +1122,14 @@ namespace Azuli.Web.Portal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn excedenteM3DiarioColumn {
+                get {
+                    return this.columnexcedenteM3Diario;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1191,7 +1201,7 @@ namespace Azuli.Web.Portal {
                         decimal Excedente_Valor, 
                         string _Tarifa_Mínima_M_, 
                         decimal Tarifa_Mínima_Valor, 
-                        int ExcedenteValorRateio_, 
+                        decimal ExcedenteValorRateio_, 
                         decimal a_pagar, 
                         string Geral, 
                         string Anormal, 
@@ -1199,7 +1209,8 @@ namespace Azuli.Web.Portal {
                         string ANORMALIDADE, 
                         string Imagem, 
                         int ExcedenteValorDevido, 
-                        int ExcedenteM3Rateio) {
+                        int ExcedenteM3Rateio, 
+                        decimal excedenteM3Diario) {
                 dtViaAguaRow rowdtViaAguaRow = ((dtViaAguaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         _ID_Condomínio,
@@ -1245,7 +1256,8 @@ namespace Azuli.Web.Portal {
                         ANORMALIDADE,
                         Imagem,
                         ExcedenteValorDevido,
-                        ExcedenteM3Rateio};
+                        ExcedenteM3Rateio,
+                        excedenteM3Diario};
                 rowdtViaAguaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtViaAguaRow);
                 return rowdtViaAguaRow;
@@ -1312,6 +1324,7 @@ namespace Azuli.Web.Portal {
                 this.columnImagem = base.Columns["Imagem"];
                 this.columnExcedenteValorDevido = base.Columns["ExcedenteValorDevido"];
                 this.columnExcedenteM3Rateio = base.Columns["ExcedenteM3Rateio"];
+                this.columnexcedenteM3Diario = base.Columns["excedenteM3Diario"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1401,7 +1414,7 @@ namespace Azuli.Web.Portal {
                 base.Columns.Add(this._columnTarifa_Mínima_M_);
                 this.columnTarifa_Mínima_Valor = new global::System.Data.DataColumn("Tarifa Mínima Valor", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTarifa_Mínima_Valor);
-                this.columnExcedenteValorRateio_ = new global::System.Data.DataColumn("ExcedenteValorRateio ", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnExcedenteValorRateio_ = new global::System.Data.DataColumn("ExcedenteValorRateio ", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnExcedenteValorRateio_);
                 this.columna_pagar = new global::System.Data.DataColumn("a pagar", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columna_pagar);
@@ -1419,6 +1432,8 @@ namespace Azuli.Web.Portal {
                 base.Columns.Add(this.columnExcedenteValorDevido);
                 this.columnExcedenteM3Rateio = new global::System.Data.DataColumn("ExcedenteM3Rateio", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnExcedenteM3Rateio);
+                this.columnexcedenteM3Diario = new global::System.Data.DataColumn("excedenteM3Diario", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexcedenteM3Diario);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2339,10 +2354,10 @@ namespace Azuli.Web.Portal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ExcedenteValorRateio_ {
+            public decimal ExcedenteValorRateio_ {
                 get {
                     try {
-                        return ((int)(this[this.tabledtViaAgua.ExcedenteValorRateio_Column]));
+                        return ((decimal)(this[this.tabledtViaAgua.ExcedenteValorRateio_Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ExcedenteValorRateio \' in table \'dtViaAgua\' is DBNull.", e);
@@ -2478,6 +2493,22 @@ namespace Azuli.Web.Portal {
                 }
                 set {
                     this[this.tabledtViaAgua.ExcedenteM3RateioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal excedenteM3Diario {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledtViaAgua.excedenteM3DiarioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'excedenteM3Diario\' in table \'dtViaAgua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtViaAgua.excedenteM3DiarioColumn] = value;
                 }
             }
             
@@ -3007,6 +3038,18 @@ namespace Azuli.Web.Portal {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetExcedenteM3RateioNull() {
                 this[this.tabledtViaAgua.ExcedenteM3RateioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsexcedenteM3DiarioNull() {
+                return this.IsNull(this.tabledtViaAgua.excedenteM3DiarioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetexcedenteM3DiarioNull() {
+                this[this.tabledtViaAgua.excedenteM3DiarioColumn] = global::System.Convert.DBNull;
             }
         }
         

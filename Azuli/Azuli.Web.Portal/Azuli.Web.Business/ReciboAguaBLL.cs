@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Azuli.Web.DAO;
 using Azuli.Web.Model;
+using System.IO;
 
 
 namespace Azuli.Web.Business
@@ -18,9 +19,23 @@ namespace Azuli.Web.Business
             throw new NotImplementedException();
         }
 
-        public listaSegundaViaAgua buscaTodosRecibosByYearAndMonth(int ano)
+        public listaSegundaViaAgua buscaTodosRecibosByYearAndMonth(int ano, int mes)
         {
-            throw new NotImplementedException();
+            listaSegundaViaAgua oListReciboAgua;
+            ReciboAguaDAO oReciboDao = new ReciboAguaDAO();
+
+            try
+            {
+                oListReciboAgua = oReciboDao.buscaTodosRecibosByYearAndMonth(ano, mes);
+
+                return oListReciboAgua;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public listaSegundaViaAgua buscaTodosRecibosByBlocoAndApto(ReciboAgua oReciboModel)
@@ -41,6 +56,119 @@ namespace Azuli.Web.Business
                 throw;
             }
 
+        }
+
+   
+
+        public void importIntegracaoWeb(ReciboAgua oReciboModel)
+        {
+          
+            ReciboAguaDAO oReciboDao = new ReciboAguaDAO();
+
+            try
+            {
+                oReciboDao.importIntegracaoWeb(oReciboModel);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
+        //public listaSegundaViaAgua LoadFile(string file)
+        //{
+        //    if (string.IsNullOrEmpty(file))
+        //        throw new ArgumentException("file");
+
+
+        //    if (!System.IO.File.Exists(file))
+        //        throw new Exception("File " + file + " not found.");
+
+
+        //    StreamReader reader = new StreamReader(file, Encoding.Unicode, false);
+
+        //    return LoadFile(reader.BaseStream);
+        //}
+
+        ////public listaSegundaViaAgua LoadFile(System.IO.Stream file)
+        //{
+
+        //    int lineNumber = 1;
+
+        //    StreamReader reader = new StreamReader(file, Encoding.Default, false);
+
+
+        //    try
+        //    {
+        //        #region First Line
+
+        //        string line = reader.ReadLine();
+
+
+        //        if (string.IsNullOrEmpty(line))
+        //            throw new Exception("YearBase at the top of the file " + file + " not found");
+
+        //        string[] lineSplit = line.Split(new char[] { ';' });
+
+               
+
+        //        #endregion
+
+        //        #region Header Line
+
+        //        lineNumber++;
+        //        line = reader.ReadLine();
+
+        //        //Getting the name of each header
+        //        string[] headers = line.Split(new char[] { ';' });
+
+        //        #endregion
+
+        //        #region Rows
+
+        //        //Checking all lines of the file
+        //        while (reader.Peek() > 0)
+        //        {
+        //            lineNumber++;
+        //            line = reader.ReadLine();
+
+        //            //Converting the line to object
+        //          //  Model.IteropProject newObject = ConvertRowToObject(yearBase, lineNumber, line);
+
+        //            //If found a valid object
+        //            if (newObject != null)
+        //             //   list.Add(newObject);
+
+        //        }//end while
+
+
+        //        #endregion
+
+        //    }
+        //    finally
+        //    {
+        //        reader.Close();
+        //    }
+
+        //    return list;
+        //}
+
+        #endregion
+
+        #region IReciboAgua Members
+
+
+        public listaSegundaViaAgua LoadFile(string file)
+        {
+            throw new NotImplementedException();
+        }
+
+        public listaSegundaViaAgua LoadFile(Stream file)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

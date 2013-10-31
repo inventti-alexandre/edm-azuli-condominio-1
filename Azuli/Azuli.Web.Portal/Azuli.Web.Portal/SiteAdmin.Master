@@ -76,6 +76,7 @@
                             </asp:MenuItem>
                             <asp:MenuItem Text="Dias para Cancelamentos" Value="Consultar Agendamentos">
                             </asp:MenuItem>
+                            <asp:MenuItem Text="Integração Recibo" Value="Integração Recibo"></asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Relatórios Reservas" Value="Relatórios Reservas">
                             <asp:MenuItem Text="Reservas Confirmadas por Período" 

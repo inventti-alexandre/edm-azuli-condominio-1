@@ -151,6 +151,7 @@
     <Content Include="images\vermelhoPendente.png" />
     <Content Include="images\votar.jpg" />
     <Content Include="images\word.gif" />
+    <Content Include="integracaoWeb.aspx" />
     <Content Include="liberaAcessoAdmin.aspx" />
     <Content Include="ListaReclamacaoAbertaAdmin.aspx" />
     <Content Include="LoginPortaria.aspx" />
@@ -406,6 +407,13 @@
     </Compile>
     <Compile Include="GerenciarClassificadoMorador.aspx.designer.cs">
       <DependentUpon>GerenciarClassificadoMorador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="integracaoWeb.aspx.cs">
+      <DependentUpon>integracaoWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="integracaoWeb.aspx.designer.cs">
+      <DependentUpon>integracaoWeb.aspx</DependentUpon>
     </Compile>
     <Compile Include="liberaAcessoAdmin.aspx.cs">
       <DependentUpon>liberaAcessoAdmin.aspx</DependentUpon>
@@ -716,7 +724,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>61813</DevelopmentServerPort>
+          <DevelopmentServerPort>51559</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

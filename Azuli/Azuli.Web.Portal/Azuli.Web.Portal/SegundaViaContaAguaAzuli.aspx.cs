@@ -257,7 +257,7 @@ namespace Azuli.Web.Portal
 
 
         /// <summary>
-        /// Calculates the percentage of all months of the year base.
+        /// Check which month and year the report is available 
         /// </summary>
         protected void showAvailableUnvailableReport()
         {
