@@ -293,7 +293,7 @@ namespace Azuli.Web.DAO
                     oReciboAgua.ano = Convert.ToInt32(itemOcorrencia["Consulta - Ano"]);
 
                 if (itemOcorrencia.Table.Columns.Contains("Excedente M3 Diario"))
-                    oReciboAgua.excedenteM3diaria = Convert.ToInt32(itemOcorrencia["Excedente M3 Diario"]);
+                    oReciboAgua.excedenteM3diaria = Convert.ToDouble(itemOcorrencia["Excedente M3 Diario"]);
 
 
                 oListReciboAgua.Add(oReciboAgua);
