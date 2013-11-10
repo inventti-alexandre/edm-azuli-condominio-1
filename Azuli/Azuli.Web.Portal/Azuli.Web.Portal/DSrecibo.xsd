@@ -72,7 +72,7 @@
               <xs:element name="Imagem" msprop:Generator_ColumnVarNameInTable="columnImagem" msprop:Generator_ColumnPropNameInRow="Imagem" msprop:Generator_ColumnPropNameInTable="ImagemColumn" msprop:Generator_UserColumnName="Imagem" type="xs:string" minOccurs="0" />
               <xs:element name="ExcedenteValorDevido" msprop:Generator_ColumnVarNameInTable="columnExcedenteValorDevido" msprop:Generator_ColumnPropNameInRow="ExcedenteValorDevido" msprop:Generator_ColumnPropNameInTable="ExcedenteValorDevidoColumn" msprop:Generator_UserColumnName="ExcedenteValorDevido" type="xs:int" minOccurs="0" />
               <xs:element name="ExcedenteM3Rateio" msprop:Generator_ColumnVarNameInTable="columnExcedenteM3Rateio" msprop:Generator_ColumnPropNameInRow="ExcedenteM3Rateio" msprop:Generator_ColumnPropNameInTable="ExcedenteM3RateioColumn" msprop:Generator_UserColumnName="ExcedenteM3Rateio" type="xs:int" minOccurs="0" />
-              <xs:element name="excedenteM3Diario" msprop:Generator_ColumnVarNameInTable="columnexcedenteM3Diario" msprop:Generator_ColumnPropNameInRow="excedenteM3Diario" msprop:Generator_ColumnPropNameInTable="excedenteM3DiarioColumn" msprop:Generator_UserColumnName="excedenteM3Diario" type="xs:decimal" minOccurs="0" />
+              <xs:element name="excedenteM3Diario" msprop:Generator_ColumnVarNameInTable="columnexcedenteM3Diario" msprop:Generator_ColumnPropNameInRow="excedenteM3Diario" msprop:Generator_ColumnPropNameInTable="excedenteM3DiarioColumn" msprop:Generator_UserColumnName="excedenteM3Diario" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

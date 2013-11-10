@@ -1210,7 +1210,7 @@ namespace Azuli.Web.Portal {
                         string Imagem, 
                         int ExcedenteValorDevido, 
                         int ExcedenteM3Rateio, 
-                        decimal excedenteM3Diario) {
+                        double excedenteM3Diario) {
                 dtViaAguaRow rowdtViaAguaRow = ((dtViaAguaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         _ID_Condomínio,
@@ -1432,7 +1432,7 @@ namespace Azuli.Web.Portal {
                 base.Columns.Add(this.columnExcedenteValorDevido);
                 this.columnExcedenteM3Rateio = new global::System.Data.DataColumn("ExcedenteM3Rateio", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnExcedenteM3Rateio);
-                this.columnexcedenteM3Diario = new global::System.Data.DataColumn("excedenteM3Diario", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnexcedenteM3Diario = new global::System.Data.DataColumn("excedenteM3Diario", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnexcedenteM3Diario);
             }
             
@@ -2498,10 +2498,10 @@ namespace Azuli.Web.Portal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal excedenteM3Diario {
+            public double excedenteM3Diario {
                 get {
                     try {
-                        return ((decimal)(this[this.tabledtViaAgua.excedenteM3DiarioColumn]));
+                        return ((double)(this[this.tabledtViaAgua.excedenteM3DiarioColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'excedenteM3Diario\' in table \'dtViaAgua\' is DBNull.", e);
