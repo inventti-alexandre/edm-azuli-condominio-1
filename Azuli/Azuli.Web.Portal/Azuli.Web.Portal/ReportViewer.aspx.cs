@@ -79,7 +79,6 @@ namespace Azuli.Web.Portal
                         {
                    
                             DataRow drSegundaVia = dsSegundaVia.Tables[1].NewRow();
-                   
                             
                             drSegundaVia["ID-Condomínio"] = item.idCondominio;
                             drSegundaVia["Nome do Condomínio"] = item.nomeCondominio;
