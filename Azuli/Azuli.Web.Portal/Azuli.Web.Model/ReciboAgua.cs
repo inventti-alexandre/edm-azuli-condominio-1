@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Azuli.Web.Model
 {
+    [Serializable]
     public class ReciboAgua
     {
         public string idCondominio  {get;set;}
@@ -53,8 +54,9 @@ namespace Azuli.Web.Model
         public string anormalidadeAviso { get; set; }
         public int ano { get; set; }
         public int mes { get; set; }
-        public double excedenteM3diaria {get;set;}
+        public decimal excedenteM3diaria {get;set;}
     }
 
+     [Serializable]
     public class listaSegundaViaAgua : List<ReciboAgua> { }
 }

@@ -71,7 +71,7 @@
                 <div class="accountInfo" id="dvLogin" runat="server">
                     <fieldset class="login">
                         <legend  class="accordionContent">Entre com seu Bloco/Apartamento e Senha:</legend>
-                        <table id="tbPassword" class="accordionContent"  runat="server">
+                        <table id="tbPassword" class="accordionContent"  runat="server" frame="border">
                             <tr>
                                 <td>
                                     <p>

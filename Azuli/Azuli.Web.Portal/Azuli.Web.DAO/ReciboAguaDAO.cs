@@ -77,9 +77,12 @@ namespace Azuli.Web.DAO
 
             try
             {
+                
+
                 SqlCommand comandoSQL = new SqlCommand(clausulaSQL);
                 comandoSQL.Parameters.AddWithValue("@ID_CONDOMINIO ",oReciboModel.idCondominio);
                 comandoSQL.Parameters.AddWithValue("@NOME_CONDOMINIO " ,oReciboModel.nomeCondominio);
+                comandoSQL.Parameters.AddWithValue("@ENDERECO_CONDOMINIO", oReciboModel.enderecoCondominio);
                 comandoSQL.Parameters.AddWithValue("@BLOCO",oReciboModel.bloco);
                 comandoSQL.Parameters.AddWithValue("@APTO",oReciboModel.apartamento);
                 comandoSQL.Parameters.AddWithValue("@REGISTRO INT",oReciboModel.registro);
@@ -123,6 +126,9 @@ namespace Azuli.Web.DAO
                 comandoSQL.Parameters.AddWithValue("@AvisoANORMALIDADE ",oReciboModel.anormalidadeAviso);
                 comandoSQL.Parameters.AddWithValue("@ConsutaMes ",oReciboModel.ano);
                 comandoSQL.Parameters.AddWithValue("@ConsultaAno ", oReciboModel.mes);
+                comandoSQL.Parameters.AddWithValue("@ExcedenteM3Diario ", oReciboModel.excedenteM3diaria);
+
+                ExecutaComando(comandoSQL);
 
             }
             catch (Exception)
@@ -293,7 +299,7 @@ namespace Azuli.Web.DAO
                     oReciboAgua.ano = Convert.ToInt32(itemOcorrencia["Consulta - Ano"]);
 
                 if (itemOcorrencia.Table.Columns.Contains("Excedente M3 Diario"))
-                    oReciboAgua.excedenteM3diaria = Convert.ToDouble(itemOcorrencia["Excedente M3 Diario"]);
+                    oReciboAgua.excedenteM3diaria = Convert.ToDecimal(itemOcorrencia["Excedente M3 Diario"]);
 
 
                 oListReciboAgua.Add(oReciboAgua);

@@ -1,63 +1,63 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteAdmin.Master" AutoEventWireup="true" CodeBehind="integracaoWeb.aspx.cs" Inherits="Azuli.Web.Portal.integracaoWeb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .style3
+        {
+            width: 100%;
+        }
+        .style4
+        {
+            width: 331px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <fieldset>
 <legend class="accordionContent">Integração WEB - Recibo - Control Water</legend>
  <p>
+        <table class="style3">
+            <tr>
+                <td class="style4">
+        <asp:FileUpload ID="fupProject" runat="server" CssClass="btGeral" Width="357px" />
+                </td>
+                <td>
+        <asp:Button ID="btnCheck" runat="server" 
+            onclick="btnCheck_Click" CssClass="btGeral" Text="Checar Arquivo" />
+                </td>
+            </tr>
+        </table>
         <br />
-        <asp:FileUpload ID="fupProject" runat="server" />
     </p>
-    <hr />
-    <p>
-        <asp:Button ID="btnCheck" runat="server" meta:resourcekey="btnCheck" 
-            onclick="btnCheck_Click" />
+    <p align="center">
+    &nbsp;
+        <asp:CustomValidator ID="cvErrorMessage" runat="server" Display="None" 
+            ForeColor="Red" style="font-weight: 700"></asp:CustomValidator>
+           
     </p>
-    <p>
-        <asp:CustomValidator ID="cvErrorMessage" runat="server" Display="None"></asp:CustomValidator>
+    <p align="left">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label 
+            ID="lblDescTotalRead" runat="server" Text="Total de Recibos Lidos: " ></asp:Label>
+        &nbsp;<asp:Label ID="lblTotalRead" runat="server" Text="0" 
+            style="font-weight: 700; font-size: medium"></asp:Label>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+                   
     </p>
-    <p>
-        <asp:Label ID="lblDescTotalRead" runat="server" Text="Total projects read: " meta:resourcekey="lblDescTotalRead" ></asp:Label>
-        <asp:Label ID="lblTotalRead" runat="server" Text="0"></asp:Label>
-    </p>
-    <p>
-        <asp:GridView ID="grdProjects" runat="server"  CssClass="GridView" 
-            EditRowStyle-CssClass="GridViewEdit" PagerStyle-CssClass="GridViewPager" 
-            PageSize="20" AutoGenerateColumns="False" Width="98%" 
-            ondatabound="grdProjects_DataBound" 
-            onrowdatabound="grdProjects_RowDataBound" 
-            EmptyDataText="There is no project to be updated/inserted"
-            meta:resourcekey="grdProjects">
-            <Columns>
-                <asp:TemplateField>
-                    <ItemTemplate>
-                        <asp:CheckBox ID="chkSelect" runat="server" Checked="True" />
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:BoundField DataField="YearBase" HeaderText="YearBase" meta:resourcekey="YearBase" />
-                <asp:BoundField DataField="ProjectType" HeaderText="ProjectType" meta:resourcekey="ProjectType" />
-                <asp:BoundField DataField="ProjectName" HeaderText="ProjectName" meta:resourcekey="ProjectName" />
-                <asp:BoundField DataField="SubProjectName" HeaderText="SubProjectName" meta:resourcekey="SubProjectName" />
-                <asp:BoundField DataField="Status" HeaderText="Project Status" meta:resourcekey="Status" />
-                <asp:BoundField DataField="ErrorMessage" HeaderText="Status" meta:resourcekey="ErrorMessage"  />
-            </Columns>
-            <PagerStyle CssClass="GridViewPager"></PagerStyle>
-            <EditRowStyle CssClass="GridViewEdit"></EditRowStyle>
+    <div style="height:285px; width:1039px; overflow:auto" id="divtabela" 
+            align="center">
+      
+    &nbsp;<asp:GridView ID="grdImport" runat="server" Font-Size="Smaller" CssClass="gridl">
+            
         </asp:GridView>
-    </p>
-    <p>
-        <asp:Button ID="cmdSave" runat="server" Text="Save" meta:resourcekey="cmdSave" 
-            onclick="cmdSave_Click" Enabled="False"/>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="cmdQueue" runat="server" onclick="cmdQueue_Click"  meta:resourcekey="cmdQueue"
-            Text="Queue" />
-    </p>
-    <p>
+   </div>
+        <p align="center">
+        <asp:Button ID="cmdSave" runat="server" Text="Cadastrar Arquivo" 
+            onclick="cmdSave_Click" Enabled="False" CssClass="btGeral"/> 
+           
+        </p>
+    <p align="center">
         <asp:Label ID="lblSaved" runat="server" meta:resourcekey="lblSaved" Text="Dados armazenados com sucesso" 
-            Visible="False"></asp:Label>
+            Visible="False" Font-Bold="True" ForeColor="#006600"></asp:Label>
     </p>
-    <p>
-        &nbsp;</p>
         </fieldset>
 
 </asp:Content>

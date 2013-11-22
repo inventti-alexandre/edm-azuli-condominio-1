@@ -73,9 +73,13 @@ namespace Azuli.Web.Portal
 
 
 
+                    var oListOrdenadoByRegistro = from listaOrdenada in oReciboBLL.buscaTodosRecibosByYearAndMonth(Convert.ToInt32(ano), Convert.ToInt32(mes))
+                                                  orderby listaOrdenada.registro ascending
+                                                  select listaOrdenada;
+
                     try
                     {
-                        foreach (var item in oReciboBLL.buscaTodosRecibosByYearAndMonth(Convert.ToInt32(ano), Convert.ToInt32(mes)))
+                        foreach (var item in oListOrdenadoByRegistro)
                         {
                    
                             DataRow drSegundaVia = dsSegundaVia.Tables[1].NewRow();
@@ -125,13 +129,9 @@ namespace Azuli.Web.Portal
                             drSegundaVia["Imagem"] = item.imagem;
                             drSegundaVia["ExcedenteValorDevido"] = item.excedenteValorDevido;
                             drSegundaVia["excedenteM3Diario"] = item.excedenteM3diaria; 
-
                         
-                            
                              dsSegundaVia.Tables[1].Rows.Add(drSegundaVia);
-                  
                      
-                       
 
                         }
 

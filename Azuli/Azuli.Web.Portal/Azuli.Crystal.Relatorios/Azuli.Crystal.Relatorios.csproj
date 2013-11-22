@@ -57,6 +57,12 @@
       <DependentUpon>ReciboMoradorByApBloco.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RelatorioGeral.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelatorioGeral.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ReciboReserva.rpt">
@@ -66,6 +72,10 @@
     <EmbeddedResource Include="ReciboMoradorByApBloco.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReciboMoradorByApBloco.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioGeral.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RelatorioGeral.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

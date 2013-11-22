@@ -179,6 +179,7 @@
     <Content Include="minhaReservas.aspx" />
     <Content Include="OcorrenciaMorador.aspx" />
     <Content Include="paginaInicialMoradores.aspx" />
+    <Content Include="relatorioGeral\relatorioGeral.aspx" />
     <Content Include="ReportViewer.aspx" />
     <Content Include="ReservaDetalhadaMoradores.aspx" />
     <Content Include="resetSenha.aspx" />
@@ -560,6 +561,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="relatorioGeral\relatorioGeral.aspx.cs">
+      <DependentUpon>relatorioGeral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="relatorioGeral\relatorioGeral.aspx.designer.cs">
+      <DependentUpon>relatorioGeral.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ReportViewer.aspx.cs">
       <DependentUpon>ReportViewer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -640,6 +648,7 @@
     <Compile Include="Util\Base.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Util\ImportFileIntegrationWeb.cs" />
     <Compile Include="Util\NumeroPorExtenso.cs" />
     <Compile Include="Util\SendMail.cs" />
     <Compile Include="Util\Util.cs" />

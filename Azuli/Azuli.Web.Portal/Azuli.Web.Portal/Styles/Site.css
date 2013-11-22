@@ -358,6 +358,8 @@ fieldsetReservas
 fieldset p 
 {
     margin: 2px 12px 10px 10px;
+    height: 37px;
+    width: 1002px;
 }
 
 fieldset.login label, fieldset.register label, fieldset.changePassword label
@@ -583,7 +585,7 @@ input.botao, .btGeral {
 
 .DataWebControlStyle
 {
-    font-size: 100%;
+    font-size: 1pt;
 }
 
 .HeaderStyle
@@ -1203,13 +1205,13 @@ a.ContextMenuItem
 
 .accordionContent
 {
-    border: 1px solid #0093d4;
+    border: 2px solid #0093d4;
     background-color: #F0F0F0;
-    padding: 5px 5px 5px 5px;
+    padding: 4px 4px 4px 4px;
     font-family: Verdana;
     font-size: 8pt;
     color: #666666;
-    behavior:url(border-radius.htc);border-radius: 1em;
+    border-radius: 1em;
     height: 15px;
     font-weight: 700;
 }
@@ -1528,5 +1530,6 @@ hr {
       height: 1px;
     }
 
+ 
 
 /*;
