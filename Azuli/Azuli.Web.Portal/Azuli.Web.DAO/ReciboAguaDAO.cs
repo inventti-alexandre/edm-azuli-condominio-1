@@ -85,7 +85,7 @@ namespace Azuli.Web.DAO
                 comandoSQL.Parameters.AddWithValue("@ENDERECO_CONDOMINIO", oReciboModel.enderecoCondominio);
                 comandoSQL.Parameters.AddWithValue("@BLOCO",oReciboModel.bloco);
                 comandoSQL.Parameters.AddWithValue("@APTO",oReciboModel.apartamento);
-                comandoSQL.Parameters.AddWithValue("@REGISTRO INT",oReciboModel.registro);
+                comandoSQL.Parameters.AddWithValue("@REGISTRO",oReciboModel.registro);
                 comandoSQL.Parameters.AddWithValue("@FECHAMENTO_ATUAL ",oReciboModel.fechamentoAtual);
                 comandoSQL.Parameters.AddWithValue("@Data_leitura_Anterior ",oReciboModel.dataLeituraAnterior);
                 comandoSQL.Parameters.AddWithValue("@leitura_Anterior_M3 ",oReciboModel.leituraAnteriorM3);
