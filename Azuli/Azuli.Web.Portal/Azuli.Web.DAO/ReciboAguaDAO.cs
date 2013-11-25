@@ -95,18 +95,18 @@ namespace Azuli.Web.DAO
                 comandoSQL.Parameters.AddWithValue("@dt_proximaLeitura",oReciboModel.dataProximaLeitura);
                 comandoSQL.Parameters.AddWithValue("@Status ",oReciboModel.status);
                 comandoSQL.Parameters.AddWithValue("@Media ",oReciboModel.media);
-                comandoSQL.Parameters.AddWithValue("@HistDescrição_mes1 ",oReciboModel.historicoDescricaoMes1);
-                comandoSQL.Parameters.AddWithValue("@HistóricoMes1 ",oReciboModel.historicoMes1);
-                comandoSQL.Parameters.AddWithValue("@HistDescrição_mes1 ",oReciboModel.historicoDescricaoMes2);
-                comandoSQL.Parameters.AddWithValue("@HistóricoMes1 ",oReciboModel.historicoMes2);
-                comandoSQL.Parameters.AddWithValue("@HistDescrição_mes1 ",oReciboModel.historicoDescricaoMes3);
-                comandoSQL.Parameters.AddWithValue("@HistóricoMes1 ",oReciboModel.historicoMes3);
-                comandoSQL.Parameters.AddWithValue("@HistDescrição_mes1 ",oReciboModel.historicoDescricaoMes4);
-                comandoSQL.Parameters.AddWithValue("@HistóricoMes1 ",oReciboModel.historicoMes4);
-                comandoSQL.Parameters.AddWithValue("@HistDescrição_mes1 ",oReciboModel.historicoDescricaoMes5);
-                comandoSQL.Parameters.AddWithValue("@HistóricoMes1 ",oReciboModel.historicoMes5);
-                comandoSQL.Parameters.AddWithValue("@HistDescrição_mes1 ",oReciboModel.historicoDescricaoMes6);
-                comandoSQL.Parameters.AddWithValue("@HistóricoMes1 ",oReciboModel.historicoMes6);
+                comandoSQL.Parameters.AddWithValue("@HistDescricao_mes1 ",oReciboModel.historicoDescricaoMes1);
+                comandoSQL.Parameters.AddWithValue("@HistoricoMes1 ",oReciboModel.historicoMes1);
+                comandoSQL.Parameters.AddWithValue("@HistDescricao_mes2 ",oReciboModel.historicoDescricaoMes2);
+                comandoSQL.Parameters.AddWithValue("@HistoricoMes2 ",oReciboModel.historicoMes2);
+                comandoSQL.Parameters.AddWithValue("@HistDescricao_mes3 ",oReciboModel.historicoDescricaoMes3);
+                comandoSQL.Parameters.AddWithValue("@HistoricoMes3 ",oReciboModel.historicoMes3);
+                comandoSQL.Parameters.AddWithValue("@HistDescricao_mes4 ",oReciboModel.historicoDescricaoMes4);
+                comandoSQL.Parameters.AddWithValue("@HistoricoMes4",oReciboModel.historicoMes4);
+                comandoSQL.Parameters.AddWithValue("@HistDescricao_mes5 ",oReciboModel.historicoDescricaoMes5);
+                comandoSQL.Parameters.AddWithValue("@HistoricoMes5",oReciboModel.historicoMes5);
+                comandoSQL.Parameters.AddWithValue("@HistDescricao_mes6",oReciboModel.historicoDescricaoMes6);
+                comandoSQL.Parameters.AddWithValue("@HistoricoMes6",oReciboModel.historicoMes6);
                 comandoSQL.Parameters.AddWithValue("@Imagem ",oReciboModel.imagem);
                 comandoSQL.Parameters.AddWithValue("@Pg_condoConsumoM3 ",oReciboModel.consumoM3pagoCondominio);
                 comandoSQL.Parameters.AddWithValue("@Pg_condoConsumoValor ",oReciboModel.ConsumoValorPagoCondominio);
@@ -116,7 +116,7 @@ namespace Azuli.Web.DAO
                 comandoSQL.Parameters.AddWithValue("@Pg_condoExcedenteValor ",oReciboModel.excedenteValorPagoCondominio);
                 comandoSQL.Parameters.AddWithValue("@ValorRateioExcedenteM3 ",oReciboModel.excedenteM3Rateio);
                 comandoSQL.Parameters.AddWithValue("@ValorRateioExcedenteValor ",oReciboModel.excedenteValorRateio);
-                comandoSQL.Parameters.AddWithValue("@ValorDevidoTarifaMinimaM3 ",oReciboModel.tarifaMinimaValorValorDevido);
+                comandoSQL.Parameters.AddWithValue("@ValorDevidoTarifaMinimaM3 ",oReciboModel.tarifaMinimaM3ValorDevido);
                 comandoSQL.Parameters.AddWithValue("@ValorDevidoTarifaMinimaValor ",oReciboModel.tarifaMinimaValorValorDevido);
                 comandoSQL.Parameters.AddWithValue("@ValorDevidoExcedente ",oReciboModel.excedenteValorDevido);
                 comandoSQL.Parameters.AddWithValue("@ValorDevidoPagar ",oReciboModel.valorPagarValorDevido);
@@ -124,11 +124,13 @@ namespace Azuli.Web.DAO
                 comandoSQL.Parameters.AddWithValue("@AvisoAnormal ",oReciboModel.AnormalAviso);
                 comandoSQL.Parameters.AddWithValue("@AvisoIndividual ",oReciboModel.individualAviso);
                 comandoSQL.Parameters.AddWithValue("@AvisoANORMALIDADE ",oReciboModel.anormalidadeAviso);
-                comandoSQL.Parameters.AddWithValue("@ConsutaMes ",oReciboModel.ano);
-                comandoSQL.Parameters.AddWithValue("@ConsultaAno ", oReciboModel.mes);
+                comandoSQL.Parameters.AddWithValue("@ConsutaMes ",oReciboModel.mes);
+                comandoSQL.Parameters.AddWithValue("@ConsultaAno ", oReciboModel.ano);
                 comandoSQL.Parameters.AddWithValue("@ExcedenteM3Diario ", oReciboModel.excedenteM3diaria);
 
                 ExecutaComando(comandoSQL);
+
+                
 
             }
             catch (Exception)
@@ -201,41 +203,41 @@ namespace Azuli.Web.DAO
                 if (itemOcorrencia.Table.Columns.Contains("Média"))
                     oReciboAgua.media = itemOcorrencia["Média"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Histórico descrição mês1"))
-                    oReciboAgua.historicoDescricaoMes1 = itemOcorrencia["Histórico descrição mês1"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Historico descricao mês1"))
+                    oReciboAgua.historicoDescricaoMes1 = itemOcorrencia["Historico descricao mês1"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Histórico descrição mês2"))
-                    oReciboAgua.historicoDescricaoMes2 = itemOcorrencia["Histórico descrição mês2"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Historico descricao mês2"))
+                    oReciboAgua.historicoDescricaoMes2 = itemOcorrencia["Historico descricao mês2"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Histórico descrição mês3"))
-                    oReciboAgua.historicoDescricaoMes3 = itemOcorrencia["Histórico descrição mês3"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Historico descricao mês3"))
+                    oReciboAgua.historicoDescricaoMes3 = itemOcorrencia["Historico descricao mês3"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Histórico descrição mês4"))
-                    oReciboAgua.historicoDescricaoMes4 = itemOcorrencia["Histórico descrição mês4"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Historico descricao mês4"))
+                    oReciboAgua.historicoDescricaoMes4 = itemOcorrencia["Historico descricao mês4"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Histórico descrição mês5"))
-                    oReciboAgua.historicoDescricaoMes5 = itemOcorrencia["Histórico descrição mês5"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Historico descricao mês5"))
+                    oReciboAgua.historicoDescricaoMes5 = itemOcorrencia["Historico descricao mês5"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Histórico descrição mês6"))
-                    oReciboAgua.historicoDescricaoMes6 = itemOcorrencia["Histórico descrição mês6"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Historico descricao mês6"))
+                    oReciboAgua.historicoDescricaoMes6 = itemOcorrencia["Historico descricao mês6"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Histórico mês1"))
-                    oReciboAgua.historicoMes1 = itemOcorrencia["Histórico mês1"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Historico mês1"))
+                    oReciboAgua.historicoMes1 = itemOcorrencia["Historico mês1"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Histórico mês2"))
-                    oReciboAgua.historicoMes2 = itemOcorrencia["Histórico mês2"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Historico mês2"))
+                    oReciboAgua.historicoMes2 = itemOcorrencia["Historico mês2"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Histórico mês3"))
-                    oReciboAgua.historicoMes3 = itemOcorrencia["Histórico mês3"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Historico mês3"))
+                    oReciboAgua.historicoMes3 = itemOcorrencia["Historico mês3"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Histórico mês4"))
-                    oReciboAgua.historicoMes4 = itemOcorrencia["Histórico mês4"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Historico mês4"))
+                    oReciboAgua.historicoMes4 = itemOcorrencia["Historico mês4"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Histórico mês5"))
-                    oReciboAgua.historicoMes5 = itemOcorrencia["Histórico mês5"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Historico mês5"))
+                    oReciboAgua.historicoMes5 = itemOcorrencia["Historico mês5"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Histórico mês6"))
-                    oReciboAgua.historicoMes6 = itemOcorrencia["Histórico mês6"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Historico mês6"))
+                    oReciboAgua.historicoMes6 = itemOcorrencia["Historico mês6"].ToString();
 
                 if (itemOcorrencia.Table.Columns.Contains("Imagem"))
                     oReciboAgua.imagem = itemOcorrencia["Imagem"].ToString();
@@ -251,7 +253,7 @@ namespace Azuli.Web.DAO
                     oReciboAgua.minimoM3PagoCondominio = Convert.ToInt32(itemOcorrencia["Pago pelo condomínio - Mínimo M³"]);
 
                 if (itemOcorrencia.Table.Columns.Contains("Pago pelo condomínio - Mínimo Valor"))
-                    oReciboAgua.minimoValorPagoCondominio = Convert.ToInt32(itemOcorrencia["Pago pelo condomínio - Mínimo Valor"]);
+                    oReciboAgua.minimoValorPagoCondominio = Convert.ToDecimal(itemOcorrencia["Pago pelo condomínio - Mínimo Valor"]);
 
                 if (itemOcorrencia.Table.Columns.Contains("Pago pelo condomínio - Excedente M³"))
                     oReciboAgua.excedenteM3PagoCondominio = Convert.ToInt32(itemOcorrencia["Pago pelo condomínio - Excedente M³"]);
@@ -299,7 +301,7 @@ namespace Azuli.Web.DAO
                     oReciboAgua.ano = Convert.ToInt32(itemOcorrencia["Consulta - Ano"]);
 
                 if (itemOcorrencia.Table.Columns.Contains("Excedente M3 Diario"))
-                    oReciboAgua.excedenteM3diaria = Convert.ToDecimal(itemOcorrencia["Excedente M3 Diario"]);
+                    oReciboAgua.excedenteM3diaria = float.Parse(itemOcorrencia["Excedente M3 Diario"].ToString());
 
 
                 oListReciboAgua.Add(oReciboAgua);

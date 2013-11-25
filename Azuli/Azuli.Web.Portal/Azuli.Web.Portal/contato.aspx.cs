@@ -52,7 +52,7 @@ namespace Azuli.Web.Portal
             drpListSubject.SelectedIndex = -1;
             txtDescription.Text = "";
 
-
+            lblMsg.Visible = false;
         }
     }
 }

@@ -31,6 +31,9 @@ namespace Azuli.Web.Portal
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+                hiddenComponent();
+           
 
         }
 
@@ -59,6 +62,8 @@ namespace Azuli.Web.Portal
 
                     this.cvErrorMessage.IsValid = true;
                     this.cmdSave.Enabled = true;
+
+                    showComponent();
                     
 
                 }
@@ -105,5 +110,23 @@ namespace Azuli.Web.Portal
             this.cvErrorMessage.IsValid = true;
 
         }
+
+        public void hiddenComponent()
+        {
+            divtabela.Visible = false;
+            lblDescTotalRead.Visible = false;
+            lblSaved.Visible = false;
+            lblTotalRead.Visible = false;
+        }
+
+        public void showComponent()
+        {
+            divtabela.Visible = true;
+            lblDescTotalRead.Visible = true;
+            lblTotalRead.Visible = true;
+        }
     }
+
+   
+
 }

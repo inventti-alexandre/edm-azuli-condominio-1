@@ -63,7 +63,7 @@
     <div id="dvConsulta" runat="server" align="center">
         <fieldset class="loginDisplayLegend">
             <legend class="accordionContent">CONSULTA DE DATA DAS RESERVAS </legend>
-            <table align="center" style="width: 883px; height: 493px;">
+            <table align="center" style="width: 877px; height: 343px;">
                 <td align="center" class="style23">
                     <asp:Calendar ID="Calendar2" runat="server" BackColor="White" Font-Names="Verdana"
                         Font-Size="10pt" ForeColor="Black" Height="326px" Width="778px" BorderWidth="1px"

@@ -1,10 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteAdmin.Master" AutoEventWireup="true" CodeBehind="integracaoWeb.aspx.cs" Inherits="Azuli.Web.Portal.integracaoWeb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
-        .style3
-        {
-            width: 100%;
-        }
         .style4
         {
             width: 331px;
@@ -14,8 +10,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <fieldset>
 <legend class="accordionContent">Integração WEB - Recibo - Control Water</legend>
- <p>
-        <table class="style3">
+
+ <center><p>
+        <table class="accordionContent">
             <tr>
                 <td class="style4">
         <asp:FileUpload ID="fupProject" runat="server" CssClass="btGeral" Width="357px" />
@@ -25,34 +22,36 @@
             onclick="btnCheck_Click" CssClass="btGeral" Text="Checar Arquivo" />
                 </td>
             </tr>
-        </table>
+        </table></center>
         <br />
-    </p>
     <p align="center">
-    &nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   
         <asp:CustomValidator ID="cvErrorMessage" runat="server" Display="None" 
             ForeColor="Red" style="font-weight: 700"></asp:CustomValidator>
            
     </p>
-    <p align="left">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label 
-            ID="lblDescTotalRead" runat="server" Text="Total de Recibos Lidos: " ></asp:Label>
-        &nbsp;<asp:Label ID="lblTotalRead" runat="server" Text="0" 
-            style="font-weight: 700; font-size: medium"></asp:Label>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-                   
-    </p>
-    <div style="height:285px; width:1039px; overflow:auto" id="divtabela" 
-            align="center">
+        <div style="height:285px; width:1012px; overflow:auto" id="divtabela" 
+            align="center" class="accordionContent" runat="server">
       
-    &nbsp;<asp:GridView ID="grdImport" runat="server" Font-Size="Smaller" CssClass="gridl">
+    &nbsp;<asp:GridView ID="grdImport" runat="server" Font-Size="Smaller" 
+            CssClass="gridviewImport" GridLines="Vertical" ShowHeader="False">
+            <AlternatingRowStyle BackColor="#CCCCCC" />
             
-        </asp:GridView>
+        </asp:GridView> 
    </div>
-        <p align="center">
-        <asp:Button ID="cmdSave" runat="server" Text="Cadastrar Arquivo" 
-            onclick="cmdSave_Click" Enabled="False" CssClass="btGeral"/> 
+   <br />
+        <p align="left">
+            <asp:Label 
+            ID="lblDescTotalRead" runat="server" Text="Total de Recibos Lidos: " 
+                CssClass="accordionContent" ></asp:Label> <asp:Label ID="lblTotalRead" runat="server" Text="0"   style="font-weight: 700; font-size: medium" CssClass="accordionContent"></asp:Label>
+            
            
+        </p>
+        <p align="center">
+        <asp:Button ID="cmdSave" runat="server" Text="Fazer Integração" 
+            onclick="cmdSave_Click" Enabled="False" CssClass="btGeral" Width="167px" 
+                Height="33px"/> 
         </p>
     <p align="center">
         <asp:Label ID="lblSaved" runat="server" meta:resourcekey="lblSaved" Text="Dados armazenados com sucesso" 

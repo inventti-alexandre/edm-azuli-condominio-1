@@ -3,30 +3,22 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
-        .style2
+        .style4
+        {
+            font-weight: bold;
+            color: #006ABA;
+        }
+        .style5
         {
             font-size: 9pt;
-        }
-        .style3
-        {
-            border: 1px solid #0093d4;
-        background-color: #F0F0F0;
-             padding: 5px 5px 5px 5px;
-            font-family: "Helvetica Neue";
-            font-size: 12pt;
-            color: #666666;
-            border-radius: 1em;
-            height: 12px;
-            font-weight: bold;
         }
     </style>
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
     <fieldset class="loginDisplayLegend">
-        <legend  class="style3">
-            <asp:Label ID="Label19" runat="server" CssClass="style2" Font-Bold="True" 
-                Font-Size="Medium" Text="Minhas Reservas"></asp:Label>
+        <legend  class="accordionContent">
+            Reserva do Mês Geral: 
         </legend>
         <table class="accordionContent">
             <tr>
@@ -66,7 +58,7 @@
             <legend class="accordionContent">
                 <asp:Image ID="Image1" runat="server" Height="16px" 
                     ImageUrl="~/images/festa.jpg" Width="24px" />
-&nbsp;<span class="style2">São de Festas -</span> <asp:Label ID="lblMesAnoFesta" runat="server" CssClass="FooterStyle"></asp:Label></legend>
+&nbsp;<span class="style4">São de Festas -</span> <asp:Label ID="lblMesAnoFesta" runat="server" CssClass="FooterStyle"></asp:Label></legend>
                
             <center>
                 <br />
@@ -159,8 +151,8 @@
         <fieldset class="loginDisplayLegend">
             <legend class="accordionContent">
                 <asp:Image ID="Image2" runat="server" Height="16px" 
-                    ImageUrl="~/images/churrasco.jpg" Width="29px" />
-&nbsp;<span class="style2">Área de Churrasco -</span>
+                    ImageUrl="~/images/churrasco.jpg" Width="29px" CssClass="style5" />
+&nbsp;<span class="style4">Área de Churrasco -</span>
                 <asp:Label ID="lbMesAnoChurras" runat="server" CssClass="FooterStyle"></asp:Label></legend>
             <center>
                 <br />

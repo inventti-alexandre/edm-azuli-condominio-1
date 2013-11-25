@@ -83,7 +83,7 @@
                         ValidationGroup="validaDescricao" onclick="btnCadastro_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp; 
                     <asp:Button ID="btnLimpar" runat="server" CssClass="botao" 
-                        Text="Limpar Campos" ValidationGroup="validaDescricao" 
+                        Text="Limpar Campos" 
                         onclick="btnLimpar_Click" />
                 </td>
             </tr>

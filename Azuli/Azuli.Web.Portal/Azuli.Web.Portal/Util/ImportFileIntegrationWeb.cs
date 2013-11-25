@@ -211,6 +211,12 @@ namespace Azuli.Web.Portal.Util
                 throw new Exception("Not found imagem in column: " + ((int)Header.imagem).ToString());
             model.imagem = split[(int)Header.imagem].Trim().ToString();
 
+
+
+            if (split.Length <= (int)Header.ConsumoValorPagoCondominio)
+                throw new Exception("Not found consumoM3pagoCondominio in column: " + ((int)Header.consumoM3pagoCondominio).ToString());
+            model.ConsumoValorPagoCondominio = Convert.ToDecimal(split[(int)Header.ConsumoValorPagoCondominio].Trim());
+
             if (split.Length <= (int)Header.consumoM3pagoCondominio)
                 throw new Exception("Not found consumoM3pagoCondominio in column: " + ((int)Header.consumoM3pagoCondominio).ToString());
             model.consumoM3pagoCondominio = Convert.ToInt32(split[(int)Header.consumoM3pagoCondominio].Trim());
@@ -286,8 +292,8 @@ namespace Azuli.Web.Portal.Util
 
             if (split.Length <= (int)Header.excedenteM3diaria)
                 throw new Exception("Not found  excedenteM3diaria in column: " + ((int)Header.excedenteM3diaria).ToString());
-           
-            model.excedenteM3diaria = Convert.ToDecimal(split[(int)Header.excedenteM3diaria].Trim(), info);
+             decimal excedenteM3diario = Convert.ToDecimal(split[(int)Header.excedenteM3diaria].Trim().ToString());
+             model.excedenteM3diaria = (float)excedenteM3diario;
            
             return model;
         }
@@ -319,6 +325,15 @@ namespace Azuli.Web.Portal.Util
 
         }
 
+
+        public string ReplaceAt(string value, int index, char newchar)
+        {
+            if (value.Length <= index)
+                return value;
+            else
+                return string.Concat(value.Select((c, i) => i == index ? newchar : c));
+        }
+
         /// <summary>
         /// Methods which read the file and convert it to the model
         /// </summary>
@@ -341,10 +356,21 @@ namespace Azuli.Web.Portal.Util
                 {
                     string line = reader.ReadLine();
 
+                    int count = line.Length;
+                    
+                    if(line[count -5] == '.')
+                    {
+                        line = line.Remove(count - 5, 1);
+                        line = line.Insert(count - 5, ",");
+
+                    }
+                 
+                    
                     //Converting the line to object
                     ReciboAgua newObject = ConvertRowToObject(lineNumber, line);
 
                     //If found a valid object
+                   
                     if (newObject != null)
                         list.Add(newObject);
 

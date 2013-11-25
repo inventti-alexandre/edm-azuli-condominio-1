@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-   <br /><br /> <br /><br />
+   <br /><br /> 
    
     <fieldset class="login" runat="server"> 
         <legend class="accordionContent">Reserva do Mês Geral: </legend>
