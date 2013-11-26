@@ -107,7 +107,7 @@ namespace Azuli.Web.Portal
 
             var contador = bussiness.validaImportacao(oReciboModel);
 
-            if (contador.Count <= 1)
+            if (contador[0].mes == 0)
             {
 
 
@@ -132,16 +132,18 @@ namespace Azuli.Web.Portal
                 lblSaved.Text = "Integração feita com sucesso !";
                 divtabela.Visible = false;
                 this.cvErrorMessage.IsValid = true;
-                cmdSave.Visible = true;
+                cmdSave.Visible = false;
                 lblDescTotalRead.Visible = false;
                 lblTotalRead.Visible = false;
-                btnCheck.Visible = false;
+                btnCheck.Visible = true;
             }
             else
             {
+                hiddenComponent();
                 this.lblSaved.Visible = true;
+                this.btnCheck.Visible = true;
                 this.lblSaved.ForeColor = Color.Red;
-                lblSaved.Text = "já houve integração para esses dados, favor contacte o Administrador !";
+                lblSaved.Text = "já houve integração p/ refêrencia - "+oReciboModel.mes +"/"+oReciboModel.ano;
             }
         }
 
