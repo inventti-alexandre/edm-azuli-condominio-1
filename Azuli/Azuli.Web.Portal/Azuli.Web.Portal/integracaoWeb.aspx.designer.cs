@@ -76,6 +76,15 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Label lblTotalRead;
         
         /// <summary>
+        /// lblSaved control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSaved;
+        
+        /// <summary>
         /// cmdSave control.
         /// </summary>
         /// <remarks>
@@ -85,12 +94,21 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Button cmdSave;
         
         /// <summary>
-        /// lblSaved control.
+        /// lblImport control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSaved;
+        protected global::System.Web.UI.WebControls.Label lblImport;
+        
+        /// <summary>
+        /// lblCountImport control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCountImport;
     }
 }

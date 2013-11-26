@@ -15,5 +15,6 @@ namespace Azuli.Web.Business.Interfaces
         void importIntegracaoWeb(ReciboAgua oReciboModel);
         listaSegundaViaAgua LoadFile(string file);
         listaSegundaViaAgua LoadFile(Stream file);
+        listaSegundaViaAgua validaImportacao(ReciboAgua oReciboModel);
     }
 }

@@ -71,6 +71,34 @@ namespace Azuli.Web.DAO
         }
 
 
+
+        public listaSegundaViaAgua validaImportacao(ReciboAgua oReciboModel)
+        {
+            string clausulaSql = "SP_VALIDAIMPORT_BY_YEAR_MOUNTH";
+
+            try
+            {
+                SqlCommand comandoSQL = new SqlCommand(clausulaSql);
+
+                comandoSQL.Parameters.AddWithValue("@Mes", oReciboModel.ano);
+                comandoSQL.Parameters.AddWithValue("@Ano", oReciboModel.mes);
+
+                DataTable tbRecibo = new DataTable();
+
+                tbRecibo = ExecutaQuery(comandoSQL);
+
+                return populaSegundaViaAgua(tbRecibo);
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
         public void importIntegracaoWeb(ReciboAgua oReciboModel)
         {
             string clausulaSQL = "SP_INTEGRACAO_GENEXUS_WEB_TXT";
@@ -181,9 +209,6 @@ namespace Azuli.Web.DAO
 
                 if (itemOcorrencia.Table.Columns.Contains("Data leitura Atual"))
                     oReciboAgua.dataLeituraAtual = itemOcorrencia["Data leitura Atual"].ToString();
-
-
-                
 
                 if (itemOcorrencia.Table.Columns.Contains("leitura Anterior M³"))
                     oReciboAgua.leituraAnteriorM3 = itemOcorrencia["leitura Anterior M³"].ToString();
@@ -297,6 +322,9 @@ namespace Azuli.Web.DAO
                 if (itemOcorrencia.Table.Columns.Contains("Consuta - Mes"))
                     oReciboAgua.mes = Convert.ToInt32(itemOcorrencia["Consuta - Mes"]);
 
+                if (itemOcorrencia.Table.Columns.Contains("validaContador"))
+                    oReciboAgua.mes = Convert.ToInt32(itemOcorrencia["validaContador"]);
+
                 if (itemOcorrencia.Table.Columns.Contains("Consulta - Ano"))
                     oReciboAgua.ano = Convert.ToInt32(itemOcorrencia["Consulta - Ano"]);
 
@@ -312,5 +340,10 @@ namespace Azuli.Web.DAO
             return oListReciboAgua;
         }
 
+
+      
+
+
+        
     }
 }

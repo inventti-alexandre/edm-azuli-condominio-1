@@ -1570,5 +1570,30 @@ hr {
     padding:5px 10px 5px 10px;
 }
 
+.modal
+    {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: black;
+        z-index: 99;
+        opacity: 0.7;
+        filter: alpha(opacity=70);
+        -moz-opacity: 0.8;
+        min-height: 100%;
+        width: 100%;
+    }
+    .loading
+    {
+        font-family: Arial;
+        font-size: 12pt;
+        border: 2px solid #67CFF5;
+        width: 300px;
+        height: 100px;
+        display: none;
+        position: fixed;
+        background-color: White;
+        z-index: 999;
+    }
 
 /*;

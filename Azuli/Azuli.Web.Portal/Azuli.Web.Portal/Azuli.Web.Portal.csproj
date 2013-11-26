@@ -116,6 +116,7 @@
     <Content Include="images\home3.jpg" />
     <Content Include="images\flConosco.jpg" />
     <Content Include="images\indisponivel.gif" />
+    <Content Include="images\loader.gif" />
     <Content Include="images\logo8.jpg" />
     <Content Include="images\logoteste.png" />
     <Content Include="images\mensagem.jpg" />

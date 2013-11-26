@@ -6,6 +6,24 @@
             width: 331px;
         }
     </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        function ShowProgress() {
+            setTimeout(function () {
+                var modal = $('<div />');
+                modal.addClass("modal");
+                $('body').append(modal);
+                var loading = $(".loading");
+                loading.show();
+                var top = Math.max($(window).height() / 2 - loading[0].offsetHeight / 2, 0);
+                var left = Math.max($(window).width() / 2 - loading[0].offsetWidth / 2, 0);
+                loading.css({ top: top, left: left });
+            }, 200);
+        }
+        $('form').live("submit", function () {
+            ShowProgress();
+        });
+</script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <fieldset>
@@ -43,8 +61,14 @@
    <br />
         <p align="left">
             <asp:Label 
-            ID="lblDescTotalRead" runat="server" Text="Total de Recibos Lidos: " 
-                CssClass="accordionContent" ></asp:Label> <asp:Label ID="lblTotalRead" runat="server" Text="0"   style="font-weight: 700; font-size: medium" CssClass="accordionContent"></asp:Label>
+            ID="lblDescTotalRead" runat="server" Text="Total de Recibos Lidos =" 
+                CssClass="accordionContent" ></asp:Label> <b>&nbsp;</b> <asp:Label ID="lblTotalRead" runat="server" Text="0"   style="font-weight: 700; font-size: medium" CssClass="accordionContent"></asp:Label>
+            
+           
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="lblSaved" runat="server" meta:resourcekey="lblSaved" 
+            Visible="False" Font-Bold="True" ForeColor="#006600" 
+            style="font-size: large" CssClass="accordionContent"></asp:Label>
             
            
         </p>
@@ -54,9 +78,14 @@
                 Height="33px"/> 
         </p>
     <p align="center">
-        <asp:Label ID="lblSaved" runat="server" meta:resourcekey="lblSaved" Text="Dados armazenados com sucesso" 
-            Visible="False" Font-Bold="True" ForeColor="#006600"></asp:Label>
-    </p>
+        &nbsp;</p>
+
+    <div class="loading" align="center" runat="server">
+    <asp:Label Text="Importando os dados. Por favor espere..." ID="lblImport" runat="server"></asp:Label><asp:Label Text="" ID="lblCountImport" runat="server"></asp:Label>
+    <br />
+    <br />
+    <img src="images/loader.gif" alt="" />
+   </div>
         </fieldset>
 
 </asp:Content>

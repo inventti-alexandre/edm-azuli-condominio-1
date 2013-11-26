@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Azuli.Web.Business;
 using Azuli.Web.Model;
+using System.Drawing;
 
 namespace Azuli.Web.Portal
 {
@@ -32,19 +33,25 @@ namespace Azuli.Web.Portal
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
+            {
+                string script = "$(document).ready(function () { $('[id*=cmdSave]').click(); });";
+                ClientScript.RegisterStartupScript(this.GetType(), "load", script, true);
                 hiddenComponent();
-           
-
+                btnCheck.Visible = true;
+            }
         }
 
         protected void btnCheck_Click(object sender, EventArgs e)
         {
+            
             this.lblSaved.Visible = false;
             try
             {
 
                 if (this.fupProject.HasFile)
                 {
+                  
+                    divtabela.Visible = true;
                     Util.ImportFileIntegrationWeb oIntegracao = new Util.ImportFileIntegrationWeb();
 
                     listaSegundaViaAgua olist = oIntegracao.LoadFile(fupProject.FileContent);
@@ -90,25 +97,52 @@ namespace Azuli.Web.Portal
         protected void cmdSave_Click(object sender, EventArgs e)
         {
 
+            
+
+            ReciboAgua oReciboModel = new ReciboAgua();
             ReciboAguaBLL bussiness = new ReciboAguaBLL();
 
-             //Forech entry found in text file loaded
-            for (int c = 0; c < IteropList.Count; c++)
+            oReciboModel.ano = IteropList[1].mes;
+            oReciboModel.mes = IteropList[1].ano;
+
+            var contador = bussiness.validaImportacao(oReciboModel);
+
+            if (contador.Count <= 1)
             {
-                try
+
+
+
+                // Add Fake Delay to simulate long running process.
+                System.Threading.Thread.Sleep(5000);
+                //Forech entry found in text file loaded
+                for (int c = 0; c < IteropList.Count; c++)
                 {
-                    bussiness.importIntegracaoWeb(IteropList[c]);
-                    lblSaved.Visible = true;
+
+                    try
+                    {
+                        bussiness.importIntegracaoWeb(IteropList[c]);
+                    }
+                    catch (Exception ex)
+                    {
+                        ex.Message.ToString();
+                    }
                 }
-                catch (Exception ex)
-                {
-                    ex.Message.ToString();
-                }
+
+                this.lblSaved.Visible = true;
+                lblSaved.Text = "Integração feita com sucesso !";
+                divtabela.Visible = false;
+                this.cvErrorMessage.IsValid = true;
+                cmdSave.Visible = true;
+                lblDescTotalRead.Visible = false;
+                lblTotalRead.Visible = false;
+                btnCheck.Visible = false;
             }
-
-            this.lblSaved.Visible = true;
-            this.cvErrorMessage.IsValid = true;
-
+            else
+            {
+                this.lblSaved.Visible = true;
+                this.lblSaved.ForeColor = Color.Red;
+                lblSaved.Text = "já houve integração para esses dados, favor contacte o Administrador !";
+            }
         }
 
         public void hiddenComponent()
@@ -117,6 +151,8 @@ namespace Azuli.Web.Portal
             lblDescTotalRead.Visible = false;
             lblSaved.Visible = false;
             lblTotalRead.Visible = false;
+            cmdSave.Visible = false;
+            btnCheck.Visible = false;
         }
 
         public void showComponent()
@@ -124,6 +160,7 @@ namespace Azuli.Web.Portal
             divtabela.Visible = true;
             lblDescTotalRead.Visible = true;
             lblTotalRead.Visible = true;
+            cmdSave.Visible = true;
         }
     }
 

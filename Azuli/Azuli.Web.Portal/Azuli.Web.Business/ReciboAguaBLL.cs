@@ -58,6 +58,24 @@ namespace Azuli.Web.Business
 
         }
 
+        public listaSegundaViaAgua validaImportacao(ReciboAgua oReciboModel)
+        {
+              listaSegundaViaAgua oListReciboAgua;
+              ReciboAguaDAO oReciboDao = new ReciboAguaDAO();
+
+            try
+            {
+               oListReciboAgua = oReciboDao.validaImportacao(oReciboModel);
+
+               return oListReciboAgua;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
    
 
         public void importIntegracaoWeb(ReciboAgua oReciboModel)
@@ -156,7 +174,7 @@ namespace Azuli.Web.Business
         //    return list;
         //}
 
-        #endregion
+       
 
         #region IReciboAgua Members
 
@@ -170,6 +188,13 @@ namespace Azuli.Web.Business
         {
             throw new NotImplementedException();
         }
+
+        #endregion
+
+        
+
+
+       
 
         #endregion
     }

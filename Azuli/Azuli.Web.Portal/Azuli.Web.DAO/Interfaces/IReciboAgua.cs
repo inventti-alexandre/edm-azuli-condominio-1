@@ -13,6 +13,7 @@ namespace Azuli.Web.DAO.Interfaces
         listaSegundaViaAgua buscaTodosRecibosByYearAndMonth(int ano, int mes);
         listaSegundaViaAgua buscaTodosRecibosByBlocoAndApto(ReciboAgua oReciboModel);
         void importIntegracaoWeb(ReciboAgua oReciboModel);
+        listaSegundaViaAgua validaImportacao(ReciboAgua oReciboModel);
 
         
     }
