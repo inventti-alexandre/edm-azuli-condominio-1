@@ -37,7 +37,7 @@
                 </td>
                 <td>
         <asp:Button ID="btnCheck" runat="server" 
-            onclick="btnCheck_Click" CssClass="btGeral" Text="Checar Arquivo" />
+            onclick="btnCheck_Click" CssClass="btGeral" Text="Verificar Arquivo" />
                 </td>
             </tr>
         </table></center>

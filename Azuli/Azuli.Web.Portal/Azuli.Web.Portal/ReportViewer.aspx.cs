@@ -335,6 +335,9 @@ namespace Azuli.Web.Portal
                         drSegundaVia["ANORMALIDADE"] = item.anormalidadeAviso;
                         drSegundaVia["Imagem"] = item.imagem;
                         drSegundaVia["ExcedenteValorDevido"] = item.excedenteValorDevido;
+                        drSegundaVia["excedenteM3Diario"] = item.excedenteM3diaria; 
+                        
+
 
                   
 
