@@ -75,11 +75,19 @@
                 </div>
             </center>
             <br />
-            <center>
-                <asp:Label ID="lblMensagem" runat="server" CssClass="failureNotification"></asp:Label>
-                <br />
-                <br />
-            </center>
+
+           
+      
+            
+           <center>      <asp:Label ID="lblMensagem" runat="server" 
+                   CssClass="accordionContent" Font-Bold="True"
+                Font-Size="Small" ForeColor="#CC3300" Visible="False"></asp:Label></center>
+
+           
+      
+            
         </fieldset>
+        <br /><br /><br />
+                   
     </center>
 </asp:Content>

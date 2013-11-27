@@ -72,14 +72,15 @@
                         </td>
                     </tr>
                 </table>
-                <br />
+                <br /><br /><br />
+                      <center>  <asp:Label ID="lblMensagem" runat="server" CssClass="accordionContent" Font-Bold="True"
+                Font-Size="Small" ForeColor="#CC3300" Visible="False"></asp:Label></center>
                 </fieldset>
           </div>
      
-        <br />
+     
       
-            <asp:Label ID="lblMensagem" runat="server" CssClass="accordionContent" Font-Bold="True"
-                Font-Size="Small" ForeColor="#CC3300" Visible="False"></asp:Label>
+    
     
       
 </asp:Content>

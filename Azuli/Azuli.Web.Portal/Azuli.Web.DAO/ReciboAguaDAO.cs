@@ -228,41 +228,42 @@ namespace Azuli.Web.DAO
                 if (itemOcorrencia.Table.Columns.Contains("Média"))
                     oReciboAgua.media = itemOcorrencia["Média"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Historico descricao mês1"))
-                    oReciboAgua.historicoDescricaoMes1 = itemOcorrencia["Historico descricao mês1"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Historico descricao mês2"))
-                    oReciboAgua.historicoDescricaoMes2 = itemOcorrencia["Historico descricao mês2"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Histórico descrição mês1"))
+                    oReciboAgua.historicoDescricaoMes1 = itemOcorrencia["Histórico descrição mês1"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Historico descricao mês3"))
-                    oReciboAgua.historicoDescricaoMes3 = itemOcorrencia["Historico descricao mês3"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Histórico descrição mês2"))
+                    oReciboAgua.historicoDescricaoMes2 = itemOcorrencia["Histórico descrição mês2"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Historico descricao mês4"))
-                    oReciboAgua.historicoDescricaoMes4 = itemOcorrencia["Historico descricao mês4"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Histórico descrição mês3"))
+                    oReciboAgua.historicoDescricaoMes3 = itemOcorrencia["Histórico descrição mês3"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Historico descricao mês5"))
-                    oReciboAgua.historicoDescricaoMes5 = itemOcorrencia["Historico descricao mês5"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Histórico descrição mês4"))
+                    oReciboAgua.historicoDescricaoMes4 = itemOcorrencia["Histórico descrição mês4"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Historico descricao mês6"))
-                    oReciboAgua.historicoDescricaoMes6 = itemOcorrencia["Historico descricao mês6"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Histórico descrição mês5"))
+                    oReciboAgua.historicoDescricaoMes5 = itemOcorrencia["Histórico descrição mês5"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Historico mês1"))
-                    oReciboAgua.historicoMes1 = itemOcorrencia["Historico mês1"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Histórico descrição mês6"))
+                    oReciboAgua.historicoDescricaoMes6 = itemOcorrencia["Histórico descrição mês6"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Historico mês2"))
-                    oReciboAgua.historicoMes2 = itemOcorrencia["Historico mês2"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Histórico mês1"))
+                    oReciboAgua.historicoMes1 = itemOcorrencia["Histórico mês1"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Historico mês3"))
-                    oReciboAgua.historicoMes3 = itemOcorrencia["Historico mês3"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Histórico mês2"))
+                    oReciboAgua.historicoMes2 = itemOcorrencia["Histórico mês2"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Historico mês4"))
-                    oReciboAgua.historicoMes4 = itemOcorrencia["Historico mês4"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Histórico mês3"))
+                    oReciboAgua.historicoMes3 = itemOcorrencia["Histórico mês3"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Historico mês5"))
-                    oReciboAgua.historicoMes5 = itemOcorrencia["Historico mês5"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Histórico mês4"))
+                    oReciboAgua.historicoMes4 = itemOcorrencia["Histórico mês4"].ToString();
 
-                if (itemOcorrencia.Table.Columns.Contains("Historico mês6"))
-                    oReciboAgua.historicoMes6 = itemOcorrencia["Historico mês6"].ToString();
+                if (itemOcorrencia.Table.Columns.Contains("Histórico mês5"))
+                    oReciboAgua.historicoMes5 = itemOcorrencia["Histórico mês5"].ToString();
+
+                if (itemOcorrencia.Table.Columns.Contains("Histórico mês6"))
+                    oReciboAgua.historicoMes6 = itemOcorrencia["Histórico mês6"].ToString();
 
                 if (itemOcorrencia.Table.Columns.Contains("Imagem"))
                     oReciboAgua.imagem = itemOcorrencia["Imagem"].ToString();

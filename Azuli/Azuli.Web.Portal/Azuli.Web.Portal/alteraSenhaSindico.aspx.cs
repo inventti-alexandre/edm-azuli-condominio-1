@@ -47,18 +47,24 @@ namespace Azuli.Web.Portal
                         StringBuilder sb = new StringBuilder();
                         sb.Append("<b>A sua senha foi alterada com sucesso! No próximo logon será necessário  usá-la!</b>");
 
+                        lblMensagem.Visible = true;
+                        lblMensagem.ForeColor = System.Drawing.Color.Green;
                         lblMensagem.Text = sb.ToString();
 
 
                     }
                     else
                     {
+                        lblMensagem.Visible = true;
+                        lblMensagem.ForeColor = System.Drawing.Color.Red;
                         lblMensagem.Text = "Senhas digitadas estão diferentes, favor verificar.";
                     }
                 }
                 else
                 {
-                    lblMensagem.Text = "Senha precisa ter 4 caracteres, por motivo de segurança";
+                    lblMensagem.Visible = true;
+                    lblMensagem.ForeColor = System.Drawing.Color.Red;
+                    lblMensagem.Text = "Senha precisa ser de até 4 caracteres, por motivo de segurança";
                 }
 
             }
