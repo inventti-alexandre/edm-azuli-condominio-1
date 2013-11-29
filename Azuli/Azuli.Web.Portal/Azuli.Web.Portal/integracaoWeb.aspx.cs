@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using Azuli.Web.Business;
 using Azuli.Web.Model;
 using System.Drawing;
+using System.IO;
+using Ionic.Zip;
 
 namespace Azuli.Web.Portal
 {
@@ -164,8 +166,69 @@ namespace Azuli.Web.Portal
             lblTotalRead.Visible = true;
             cmdSave.Visible = true;
         }
-    }
 
+        protected void btnUploadImg_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string path = System.Configuration.ConfigurationManager.AppSettings["imagemRecibo"].ToString();
+
+                string ano = IteropList[1].mes.ToString();
+                string mes = IteropList[1].ano.ToString();
+
+
+                string pasta = ano.Substring(2, 2) + mes;
+                path += pasta;
+
+                string serverMap = Server.MapPath(path);
+
+                DirectoryInfo dir = new DirectoryInfo(serverMap);
+                if (dir.Exists)
+                {
+                    Console.Write("Diretório existe");
+                }
+                else
+                {
+                    System.IO.Directory.CreateDirectory(serverMap);
+
+
+                    if (this.fileUploadImagem.HasFile)
+                    {
+
+                        using (ZipFile zip = ZipFile.Read(fileUploadImagem.PostedFile.InputStream))
+                        {
+                            zip.ExtractAll(serverMap, ExtractExistingFileAction.DoNotOverwrite);
+
+                            var zipOrdenado = from itensUzipados in  zip.Entries
+                                              orderby itensUzipados.FileName descending
+                                              select itensUzipados;
+
+
+
+                            grZip.DataSource = zipOrdenado;
+                            grZip.DataBind();
+
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.Message.ToString();
+            }
+
+
+        }
+
+        }
+
+      
+
+     
+
+            
+    }
+        
    
 
-}

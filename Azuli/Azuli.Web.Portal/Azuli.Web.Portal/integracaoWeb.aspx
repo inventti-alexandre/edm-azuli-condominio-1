@@ -86,6 +86,37 @@
     <br />
     <img src="images/loader.gif" alt="" />
    </div>
+
+   <div id="dvUploadArquivos" runat="server">
+      <fieldset>
+<legend class="accordionContent">Integração WEB - Recibo - Control Water</legend>
+   <br /> <center>
+        <table class="accordionContent">
+            <tr>
+                <td class="style4">
+        <asp:FileUpload ID="fileUploadImagem" runat="server" CssClass="btGeral" Width="357px" />
+                </td>
+                <td>
+        <asp:Button ID="btnUploadImg" runat="server" 
+             CssClass="btGeral" Text="Upload de imagem" onclick="btnUploadImg_Click" />
+                    <br />
+                </td>
+            </tr>
+        </table>
+        <br />
+        <asp:GridView ID="grZip" runat="server" CssClass="gridl" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField DataField="FileName" HeaderText="Nome do Arquivo" />
+                <asp:BoundField DataField="CreationTime" HeaderText="Data de Criação" />
+            </Columns>
+       </asp:GridView></center>
         </fieldset>
+   
+       
+   
+   </div>
+        </fieldset>
+
+    <br />
 
 </asp:Content>
