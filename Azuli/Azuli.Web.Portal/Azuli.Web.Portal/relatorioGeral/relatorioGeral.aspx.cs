@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Azuli.Web.Portal.relatorioGeral
 {
-    public partial class relatorioGeral : System.Web.UI.Page
+    public partial class relatorioGeral : Util.Base
     {
         protected void Page_Load(object sender, EventArgs e)
         {

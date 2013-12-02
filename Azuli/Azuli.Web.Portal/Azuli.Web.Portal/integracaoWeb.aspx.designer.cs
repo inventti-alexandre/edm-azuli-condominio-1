@@ -13,6 +13,15 @@ namespace Azuli.Web.Portal {
     public partial class integracaoWeb {
         
         /// <summary>
+        /// lblPasso control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPasso;
+        
+        /// <summary>
         /// fupProject control.
         /// </summary>
         /// <remarks>
@@ -31,13 +40,13 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Button btnCheck;
         
         /// <summary>
-        /// cvErrorMessage control.
+        /// lblMsgError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator cvErrorMessage;
+        protected global::System.Web.UI.WebControls.Label lblMsgError;
         
         /// <summary>
         /// divtabela control.
@@ -121,6 +130,15 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvUploadArquivos;
         
         /// <summary>
+        /// lblPasso0 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPasso0;
+        
+        /// <summary>
         /// fileUploadImagem control.
         /// </summary>
         /// <remarks>
@@ -137,6 +155,33 @@ namespace Azuli.Web.Portal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnUploadImg;
+        
+        /// <summary>
+        /// lblSavedImagen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSavedImagen;
+        
+        /// <summary>
+        /// lnkRecibo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkRecibo;
+        
+        /// <summary>
+        /// lblRegistros control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRegistros;
         
         /// <summary>
         /// grZip control.

@@ -12,8 +12,9 @@ using Ionic.Zip;
 
 namespace Azuli.Web.Portal
 {
-    public partial class integracaoWeb : System.Web.UI.Page
+    public partial class integracaoWeb : Util.Base
     {
+        Util.Util oUtil = new Util.Util();
         #region Properties
         private listaSegundaViaAgua IteropList
         {
@@ -34,12 +35,16 @@ namespace Azuli.Web.Portal
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!IsPostBack)
             {
-                string script = "$(document).ready(function () { $('[id*=cmdSave]').click(); });";
-                ClientScript.RegisterStartupScript(this.GetType(), "load", script, true);
-                hiddenComponent();
-                btnCheck.Visible = true;
+                if (oUtil.validateSessionAdmin())
+                {
+                    string script = "$(document).ready(function () { $('[id*=cmdSave]').click(); });";
+                    ClientScript.RegisterStartupScript(this.GetType(), "load", script, true);
+                    hiddenComponent();
+                    btnCheck.Visible = true;
+                }
             }
         }
 
@@ -68,10 +73,10 @@ namespace Azuli.Web.Portal
                     this.grdImport.DataSource = ordenaList;
                     this.grdImport.DataBind();
                     this.lblTotalRead.Text = olist.Count.ToString();
-
-                    this.cvErrorMessage.IsValid = true;
                     this.cmdSave.Enabled = true;
-
+                    lblMsgError.Visible = false;
+                    this.grZip.DataSource = null;
+                    this.grZip.DataBind();
                     showComponent();
                     
 
@@ -81,18 +86,25 @@ namespace Azuli.Web.Portal
                 {
 
                     this.lblTotalRead.Text = "0";
-                    this.grdImport.DataSource = null;
-                    this.grdImport.DataBind();
-                    this.cvErrorMessage.ErrorMessage = "No File Uploaded.";
-                    this.cvErrorMessage.IsValid = false;
+                    this.grZip.DataSource = null;
+                    this.grZip.DataBind();
+                    this.lblMsgError.Text = "No File Uploaded.";
+                    lblMsgError.Visible = true;
                     this.cmdSave.Enabled = false;
 
                 }
             }
             catch (Exception ex)
             {
-                this.cvErrorMessage.ErrorMessage = ex.Message;
-                this.cvErrorMessage.IsValid = false;
+                divtabela.Visible = false;
+                lblDescTotalRead.Visible = false;
+                lblSaved.Visible = false;
+                lblTotalRead.Visible = false;
+                cmdSave.Visible = false;
+                lblMsgError.Visible = true;
+                dvUploadArquivos.Visible = false;
+                this.lblMsgError.Text = ex.Message;
+               
             }    
         }
 
@@ -131,13 +143,15 @@ namespace Azuli.Web.Portal
                 }
 
                 this.lblSaved.Visible = true;
-                lblSaved.Text = "Integração feita com sucesso !";
+                lblSaved.Text = "Integração feita com sucesso Referência - > " + oReciboModel.mes + "/" + oReciboModel.ano;
                 divtabela.Visible = false;
-                this.cvErrorMessage.IsValid = true;
                 cmdSave.Visible = false;
                 lblDescTotalRead.Visible = false;
                 lblTotalRead.Visible = false;
                 btnCheck.Visible = true;
+                dvUploadArquivos.Visible = true;
+                this.grZip.DataSource = null;
+                this.grZip.DataBind();
             }
             else
             {
@@ -157,6 +171,10 @@ namespace Azuli.Web.Portal
             lblTotalRead.Visible = false;
             cmdSave.Visible = false;
             btnCheck.Visible = false;
+            dvUploadArquivos.Visible = false;
+            lblMsgError.Visible = true;
+            lnkRecibo.Visible = false;
+            lnkRecibo.Visible = false;
         }
 
         public void showComponent()
@@ -185,7 +203,10 @@ namespace Azuli.Web.Portal
                 DirectoryInfo dir = new DirectoryInfo(serverMap);
                 if (dir.Exists)
                 {
-                    Console.Write("Diretório existe");
+
+                    this.ClientScript.RegisterClientScriptBlock(this.GetType(), "alerta", "<script type='text/javascript'>alert('já existe imagens para esta referência- "+pasta+ "')</script>");
+                    lblSavedImagen.Visible = false;
+                    
                 }
                 else
                 {
@@ -200,13 +221,19 @@ namespace Azuli.Web.Portal
                             zip.ExtractAll(serverMap, ExtractExistingFileAction.DoNotOverwrite);
 
                             var zipOrdenado = from itensUzipados in  zip.Entries
-                                              orderby itensUzipados.FileName descending
+                                              orderby itensUzipados.FileName ascending
                                               select itensUzipados;
-
 
 
                             grZip.DataSource = zipOrdenado;
                             grZip.DataBind();
+
+                            lblRegistros.Text = " " + zip.Count + " arquivos salvos";
+
+                            lblSavedImagen.Visible = true;
+                            lnkRecibo.Visible =  true;
+                            lblSavedImagen.Text = "Importação das imagens feitas com sucesso. Referência -> " + pasta;
+
 
                         }
 
@@ -219,6 +246,11 @@ namespace Azuli.Web.Portal
             }
 
 
+        }
+
+        protected void lnkRecibo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("GerarReciboAzuliAdm.aspx");
         }
 
         }

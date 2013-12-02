@@ -76,7 +76,6 @@
                             </asp:MenuItem>
                             <asp:MenuItem Text="Dias para Cancelamentos" Value="Consultar Agendamentos">
                             </asp:MenuItem>
-                            <asp:MenuItem Text="Integração Recibo" Value="Integração Recibo"></asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Relatórios Reservas" Value="Relatórios Reservas">
                             <asp:MenuItem Text="Reservas Confirmadas por Período" 
@@ -89,7 +88,7 @@
                             </asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Conta de Água Azuli" Value="Conta de Água Azuli">
-                            <asp:MenuItem NavigateUrl="~/GerarReciboAzuliAdm.aspx" Text="Gerar Recibo" 
+                            <asp:MenuItem NavigateUrl="~/GerarReciboAzuliAdm.aspx" Text="Gerar Recibos" 
                                 Value="Gerar Recibo"></asp:MenuItem>
                             <asp:MenuItem NavigateUrl="~/integracaoWeb.aspx" 
                                 Text="Importação File Recibo Web" Value="Importação File Recibo Web">

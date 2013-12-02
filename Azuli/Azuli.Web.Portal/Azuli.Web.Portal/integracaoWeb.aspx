@@ -30,6 +30,10 @@
 <legend class="accordionContent">Integração WEB - Recibo - Control Water</legend>
 
  <center><p>
+        <asp:Label ID="lblPasso" runat="server" 
+            style="font-weight: 700; font-size: large; color: #006600" 
+            Text="1º passo - Importação de dados"></asp:Label>
+        <br />
         <table class="accordionContent">
             <tr>
                 <td class="style4">
@@ -43,10 +47,9 @@
         </table></center>
         <br />
     <p align="center">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                   
-        <asp:CustomValidator ID="cvErrorMessage" runat="server" Display="None" 
-            ForeColor="Red" style="font-weight: 700"></asp:CustomValidator>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblMsgError" runat="server" 
+            CssClass="failureNotification"></asp:Label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
            
     </p>
         <div style="height:285px; width:1012px; overflow:auto" id="divtabela" 
@@ -91,6 +94,12 @@
       <fieldset>
 <legend class="accordionContent">Integração WEB - Recibo - Control Water</legend>
    <br /> <center>
+              <br />
+              <asp:Label ID="lblPasso0" runat="server" 
+                  style="font-weight: 700; font-size: large; color: #006600" 
+                  Text="2º passo - Upload das imagens dos Hidrômetro"></asp:Label>
+              <br />
+              <br />
         <table class="accordionContent">
             <tr>
                 <td class="style4">
@@ -103,6 +112,22 @@
                 </td>
             </tr>
         </table>
+              <br />
+              <br />
+        <asp:Label ID="lblSavedImagen" runat="server" meta:resourcekey="lblSaved" 
+            Visible="False" Font-Bold="True" ForeColor="#006600" 
+            style="font-size: large" CssClass="accordionContent"></asp:Label>
+            
+           
+              <br />
+              <br />
+              <asp:LinkButton ID="lnkRecibo" runat="server" onclick="lnkRecibo_Click" 
+                  style="font-size: medium">Consultar Recibo</asp:LinkButton>
+              <br />
+              <br />
+              <asp:Label ID="lblRegistros" runat="server" 
+                  style="font-weight: 700; font-size: medium"></asp:Label>
+              <br />
         <br />
         <asp:GridView ID="grZip" runat="server" CssClass="gridl" AutoGenerateColumns="False">
             <Columns>
