@@ -12,7 +12,7 @@ using Ionic.Zip;
 
 namespace Azuli.Web.Portal
 {
-    public partial class integracaoWeb : Util.Base
+    public partial class integracaoWeb : System.Web.UI.Page
     {
         Util.Util oUtil = new Util.Util();
         #region Properties
