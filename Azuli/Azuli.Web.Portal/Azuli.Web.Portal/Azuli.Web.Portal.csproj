@@ -652,6 +652,7 @@
     <Compile Include="Util\Base.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Util\ConfiguracaoExcentesMinimo.cs" />
     <Compile Include="Util\ImportFileIntegrationWeb.cs" />
     <Compile Include="Util\NumeroPorExtenso.cs" />
     <Compile Include="Util\SendMail.cs" />
@@ -737,7 +738,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>63042</DevelopmentServerPort>
+          <DevelopmentServerPort>62577</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

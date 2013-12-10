@@ -46,6 +46,10 @@ namespace Azuli.Web.Portal
             }
         }
 
+        public void verificaExcenteCondominio()
+        {
+
+        }
 
         public void Recibo()
         {
@@ -111,17 +115,44 @@ namespace Azuli.Web.Portal
                             drSegundaVia["Histórico mês5"] = item.historicoMes5;
                             drSegundaVia["Histórico descricação mês6"] = item.historicoDescricaoMes6;
                             drSegundaVia["Histórico mês6"] = item.historicoMes6;
-                            drSegundaVia["Consumo M³"] = item.consumoM3pagoCondominio;
+                          
+                            // Virá do banco quando o consumo - se maior que 2400 fara o valor do rateio
+                            //item.consumoM3pagoCondominio = 2600;
+                            // o Valor pago do condominio virá do banco também...
+                            //item.ConsumoValorPagoCondominio = 7900;
+
+                            //Isto ficará fixo - Será a diferença paga entre o valor pago do consumo minimo, e o consumo e excedente
+                            item.excedenteValorPagoCondominio = Math.Abs(item.ConsumoValorPagoCondominio - item.minimoValorPagoCondominio);
+                            
                             drSegundaVia["Consumo Valor"] = item.ConsumoValorPagoCondominio;
+                            drSegundaVia["Consumo M³"] = item.consumoM3pagoCondominio;
+                           
                             drSegundaVia["Mínimo M³"] = item.minimoM3PagoCondominio;
                             drSegundaVia["Mínimo Valor"] = item.minimoValorPagoCondominio;
-                            drSegundaVia["ExcedentePagoPeloCondominio"] = item.excedenteM3PagoCondominio;
+                          
                             drSegundaVia["Excedente Valor"] = item.excedenteValorPagoCondominio;
                             drSegundaVia["Tarifa Mínima M³"] = item.tarifaMinimaM3ValorDevido;
                             drSegundaVia["Tarifa Mínima Valor"] = item.tarifaMinimaValorValorDevido;
-                            drSegundaVia["ExcedenteValorRateio "] = item.excedenteValorRateio;
+
+                            //Se o valor do consumo do M3 for maior que o minimo M3 do condominio será feito o rateio...
+                            if (item.consumoM3pagoCondominio > item.minimoM3PagoCondominio)
+                            {
+                                item.excedenteM3PagoCondominio = item.consumoM3pagoCondominio - item.minimoM3PagoCondominio;
+                                item.excedenteValorRateio = (item.excedenteValorPagoCondominio / item.excedenteM3Rateio);
+                                item.valorPagarValorDevido = (Math.Round(item.excedenteValorRateio,2) * item.excedenteValorDevido);
+                                
+                                drSegundaVia["ExcedentePagoPeloCondominio"] = item.excedenteM3PagoCondominio;
+                                drSegundaVia["ExcedenteValorRateio "] = item.excedenteValorRateio;
+                                drSegundaVia["a pagar"] = item.valorPagarValorDevido;
+                            }
+                            //Se não mantêm o valor sem rateio..
+                            else
+                            {
+                                drSegundaVia["ExcedentePagoPeloCondominio"] = item.excedenteM3PagoCondominio;
+                                drSegundaVia["ExcedenteValorRateio "] = item.excedenteValorRateio;
+                                drSegundaVia["a pagar"] = item.valorPagarValorDevido;
+                            }
                             drSegundaVia["ExcedenteM3Rateio"] = item.excedenteM3Rateio;
-                            drSegundaVia["a pagar"] = item.valorPagarValorDevido;
                             drSegundaVia["Geral"] = item.avisoGeralAviso;
                             drSegundaVia["Anormal"] = item.AnormalAviso;
                             drSegundaVia["Invididual"] = item.individualAviso;
@@ -147,7 +178,7 @@ namespace Azuli.Web.Portal
                     catch (Exception ex)
                     {
                         
-                        throw;
+                        throw ex;
                     }
                     
 
@@ -318,17 +349,42 @@ namespace Azuli.Web.Portal
                         drSegundaVia["Histórico mês5"] = item.historicoMes5;
                         drSegundaVia["Histórico descricação mês6"] = item.historicoDescricaoMes6;
                         drSegundaVia["Histórico mês6"] = item.historicoMes6;
+
+                        //item.consumoM3pagoCondominio = 2600;
+                        // o Valor pago do condominio virá do banco também...
+                        //item.ConsumoValorPagoCondominio = 7900;
+
+                        //Isto ficará fixo - Será a diferença paga entre o valor pago do consumo minimo, e o consumo e excedente
+                        item.excedenteValorPagoCondominio = Math.Abs(item.ConsumoValorPagoCondominio - item.minimoValorPagoCondominio);
+
                         drSegundaVia["Consumo M³"] = item.consumoM3pagoCondominio;
                         drSegundaVia["Consumo Valor"] = item.ConsumoValorPagoCondominio;
                         drSegundaVia["Mínimo M³"] = item.minimoM3PagoCondominio;
                         drSegundaVia["Mínimo Valor"] = item.minimoValorPagoCondominio;
-                        drSegundaVia["ExcedentePagoPeloCondominio"] = item.excedenteM3PagoCondominio;
                         drSegundaVia["Excedente Valor"] = item.excedenteValorPagoCondominio;
                         drSegundaVia["Tarifa Mínima M³"] = item.tarifaMinimaM3ValorDevido;
+
+
+                        //Se o valor do consumo do M3 for maior que o minimo M3 do condominio será feito o rateio...
+                        if (item.consumoM3pagoCondominio > item.minimoM3PagoCondominio)
+                        {
+                            item.excedenteM3PagoCondominio = item.consumoM3pagoCondominio - item.minimoM3PagoCondominio;
+                            item.excedenteValorRateio = (item.excedenteValorPagoCondominio / item.excedenteM3Rateio);
+                            item.valorPagarValorDevido = (Math.Round(item.excedenteValorRateio, 2) * item.excedenteValorDevido);
+
+                            drSegundaVia["ExcedentePagoPeloCondominio"] = item.excedenteM3PagoCondominio;
+                            drSegundaVia["ExcedenteValorRateio "] = item.excedenteValorRateio;
+                            drSegundaVia["a pagar"] = item.valorPagarValorDevido;
+                        }
+                        //Se não mantêm o valor sem rateio..
+                        else
+                        {
+                            drSegundaVia["ExcedentePagoPeloCondominio"] = item.excedenteM3PagoCondominio;
+                            drSegundaVia["ExcedenteValorRateio "] = item.excedenteValorRateio;
+                            drSegundaVia["a pagar"] = item.valorPagarValorDevido;
+                        }
                         drSegundaVia["Tarifa Mínima Valor"] = item.tarifaMinimaValorValorDevido;
-                        drSegundaVia["ExcedenteValorRateio "] = item.excedenteValorRateio;
                         drSegundaVia["ExcedenteM3Rateio"] = item.excedenteM3Rateio;
-                        drSegundaVia["a pagar"] = item.valorPagarValorDevido;
                         drSegundaVia["Geral"] = item.avisoGeralAviso;
                         drSegundaVia["Anormal"] = item.AnormalAviso;
                         drSegundaVia["Invididual"] = item.individualAviso;
