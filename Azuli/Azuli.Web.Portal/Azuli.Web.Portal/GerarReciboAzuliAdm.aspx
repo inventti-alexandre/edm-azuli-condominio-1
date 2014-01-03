@@ -11,7 +11,7 @@
         <asp:Label ID="lblConsultaAno" runat="server" CssClass="mainbodyTel" 
             Text="Mudar Ano de Consulta:"></asp:Label>
         &nbsp;<asp:DropDownList ID="drpAno" runat="server" CssClass="FooterStyle" Height="26px" 
-            Width="123px" AutoPostBack="True" 
+            Width="123px" AutoPostBack="True" ontextchanged="drpAno_TextChanged" 
            >
         </asp:DropDownList>
         <br />

@@ -70,7 +70,7 @@ namespace Azuli.Web.Portal
         public void preencheAno()
         {
 
-            for (int ano = data.Year; ano <= data.Year; ano++)
+            for (int ano = data.Year -1 ; ano <= data.Year; ano++)
             {
                 drpAno.Items.Add(ano.ToString());
 
@@ -240,6 +240,7 @@ namespace Azuli.Web.Portal
         /// </summary>
         protected void showAvailableUnvailableReport()
         {
+            statusInicialDonwload();
 
             ContaAgua oContaModel = new ContaAgua();
             ContaAguaBLL oContaBLL = new ContaAguaBLL();
@@ -336,6 +337,54 @@ namespace Azuli.Web.Portal
 
                 throw;
             }
+        }
+
+        public void statusInicialDonwload()
+        {
+
+            this.lbtMonth1.Enabled = false;
+            img1.ImageUrl = "~/images/vermelhoStatus.png";
+
+
+            this.lbtMonth2.Enabled = false;
+            img2.ImageUrl = "~/images/vermelhoStatus.png";
+
+
+            this.lbtMonth3.Enabled = false;
+            img3.ImageUrl = "~/images/vermelhoStatus.png";
+
+
+            this.lbtMonth4.Enabled = false;
+            img4.ImageUrl = "~/images/vermelhoStatus.png";
+
+
+            this.lbtMonth5.Enabled = false;
+            img5.ImageUrl = "~/images/vermelhoStatus.png";
+
+            this.lbtMonth6.Enabled = false;
+            img6.ImageUrl = "~/images/vermelhoStatus.png";
+
+            this.lbtMonth7.Enabled = false;
+            img7.ImageUrl = "~/images/vermelhoStatus.png";
+
+            this.lbtMonth8.Enabled = false;
+            img8.ImageUrl = "~/images/vermelhoStatus.png";
+
+
+            this.lbtMonth9.Enabled = false;
+            img9.ImageUrl = "~/images/vermelhoStatus.png";
+
+            this.lbtMonth10.Enabled = false;
+            img10.ImageUrl = "~/images/vermelhoStatus.png";
+            this.lbtMonth11.Enabled = false;
+            img11.ImageUrl = "~/images/vermelhoStatus.png";
+            this.lbtMonth12.Enabled = false;
+            img12.ImageUrl = "~/images/vermelhoStatus.png";
+        }
+
+        protected void drpAno_TextChanged(object sender, EventArgs e)
+        {
+            showAvailableUnvailableReport();
         }
 
 
