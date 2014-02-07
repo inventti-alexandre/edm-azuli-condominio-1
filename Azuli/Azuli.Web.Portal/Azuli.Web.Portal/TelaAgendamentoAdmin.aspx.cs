@@ -58,18 +58,18 @@ namespace Azuli.Web.Portal
 
             foreach (var item in oConfig.oListaValorReserva())
             {
-                if(item.id_valor==1)
+                if(item.area =="FESTA")
                 {
                     festa = item.valor;
                     lblVlFesta.Text = "Valor - R$ " + item.valor+",00";
                 }
-                if(item.id_valor==2)
+                if (item.area == "CHURRAS")
                 {
                     churrasqueira = item.valor;
                     lblVlrChurras.Text = "Valor - R$ " + item.valor+",00";
                 }
 
-                if (item.id_valor == 3)
+                if (item.area == "DESCONTO P/ Duas Áreas")
                 {
                     desconto = item.valor;
                 }
