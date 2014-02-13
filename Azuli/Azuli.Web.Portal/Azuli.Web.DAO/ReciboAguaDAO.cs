@@ -70,6 +70,108 @@ namespace Azuli.Web.DAO
             }
         }
 
+        public  listaSegundaViaAgua graficoConsumoPorBloco(int yearBase)
+        {
+            string clausulaSql = "SP_GRAFICO_CONSUMO_PORBLOCO";
+
+            try
+            {
+                SqlCommand comandoSQL = new SqlCommand(clausulaSql);
+                comandoSQL.Parameters.AddWithValue("@ANO", yearBase);
+
+                DataTable tbRecibo = new DataTable();
+
+                tbRecibo = ExecutaQuery(comandoSQL);
+
+                return populaSegundaViaAgua(tbRecibo);
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        public listaSegundaViaAgua graficoQuantidadeApAnormal(int yearBase)
+        {
+            string clausulaSql = "SP_GRAFICO_QUANTIDADE_ANORMALIDADE";
+
+            try
+            {
+                SqlCommand comandoSQL = new SqlCommand(clausulaSql);
+                comandoSQL.Parameters.AddWithValue("@ANO", yearBase);
+
+                DataTable tbRecibo = new DataTable();
+
+                tbRecibo = ExecutaQuery(comandoSQL);
+
+                return populaSegundaViaAgua(tbRecibo);
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        public listaSegundaViaAgua graficoExcedentePorApartamento(int yearBase)
+        {
+            string clausulaSql = "SP_GRAFICO_EXCEDENTES10_APS";
+
+            try
+            {
+                SqlCommand comandoSQL = new SqlCommand(clausulaSql);
+                comandoSQL.Parameters.AddWithValue("@ANO", yearBase);
+
+                DataTable tbRecibo = new DataTable();
+
+                tbRecibo = ExecutaQuery(comandoSQL);
+
+                return populaSegundaViaAgua(tbRecibo);
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        public listaSegundaViaAgua graficosConsumoAgua(int yearBase)
+        {
+
+            string clausulaSql = "SP_GRAFICO_CONSUMO_GERAL_AZULI";
+
+            try
+            {
+                SqlCommand comandoSQL = new SqlCommand(clausulaSql);
+                comandoSQL.Parameters.AddWithValue("@ANO", yearBase);
+
+                DataTable tbRecibo = new DataTable();
+
+                tbRecibo = ExecutaQuery(comandoSQL);
+
+                return populaSegundaViaAgua(tbRecibo);
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+
 
 
         public listaSegundaViaAgua validaImportacao(ReciboAgua oReciboModel)
@@ -323,6 +425,12 @@ namespace Azuli.Web.DAO
                 if (itemOcorrencia.Table.Columns.Contains("Consuta - Mes"))
                     oReciboAgua.mes = Convert.ToInt32(itemOcorrencia["Consuta - Mes"]);
 
+                if (itemOcorrencia.Table.Columns.Contains("somaExcedente"))
+                    oReciboAgua.somaConsumoByBloco = Convert.ToInt32(itemOcorrencia["somaExcedente"]);
+
+                if (itemOcorrencia.Table.Columns.Contains("qtdAnormalidade"))
+                    oReciboAgua.qtdAnormalidade = Convert.ToInt32(itemOcorrencia["qtdAnormalidade"]);
+                
                 if (itemOcorrencia.Table.Columns.Contains("validaContador"))
                     oReciboAgua.mes = Convert.ToInt32(itemOcorrencia["validaContador"]);
 
@@ -342,9 +450,10 @@ namespace Azuli.Web.DAO
         }
 
 
-      
 
 
-        
+
+
+
     }
 }
