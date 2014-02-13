@@ -44,6 +44,8 @@ namespace Azuli.Web.Portal
 
                 }
             }
+
+
         }
 
         public void verificaExcenteCondominio()
