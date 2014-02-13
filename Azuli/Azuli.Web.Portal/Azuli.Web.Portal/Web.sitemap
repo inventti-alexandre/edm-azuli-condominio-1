@@ -57,7 +57,9 @@
     <!-- <siteMapNode url="~/videoajuda.aspx" title="Videos" description=""  /> -->
   
 
- <!-- <siteMapNode url="SegundaViaContaAguaAzuli.aspx" title="2ª Via Água" description="" roles="" />-->
+  <siteMapNode url="SegundaViaContaAguaAzuli.aspx" title="2ª Via Água" description="" roles="" >
+    <siteMapNode url="~/ChartConsumoWater.aspx" title="Gráficos" description=""  />
+  </siteMapNode>
 
 <siteMapNode url="LoginAzulli.aspx" title="Sair" description="">
 
