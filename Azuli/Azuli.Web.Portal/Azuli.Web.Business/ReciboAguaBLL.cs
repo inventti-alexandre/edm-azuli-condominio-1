@@ -191,10 +191,81 @@ namespace Azuli.Web.Business
 
         #endregion
 
-        
+        public listaSegundaViaAgua graficosConsumoAgua(int yearBase)
+        {
+            listaSegundaViaAgua oListReciboAgua;
+            ReciboAguaDAO oReciboDao = new ReciboAguaDAO();
 
+            try
+            {
+                oListReciboAgua = oReciboDao.graficosConsumoAgua(yearBase);
 
-       
+                return oListReciboAgua;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public listaSegundaViaAgua graficoQuantidadeApAnormal(int yearBase)
+        {
+            listaSegundaViaAgua oListReciboAgua;
+            ReciboAguaDAO oReciboDao = new ReciboAguaDAO();
+
+            try
+            {
+                oListReciboAgua = oReciboDao.graficoQuantidadeApAnormal(yearBase);
+
+                return oListReciboAgua;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public listaSegundaViaAgua graficoConsumoPorBloco(int yearBase)
+        {
+            listaSegundaViaAgua oListReciboAgua;
+            ReciboAguaDAO oReciboDao = new ReciboAguaDAO();
+
+            try
+            {
+                oListReciboAgua = oReciboDao.graficoConsumoPorBloco(yearBase);
+
+                return oListReciboAgua;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public listaSegundaViaAgua graficoExcedentePorApartamento(int yearBase)
+        {
+            listaSegundaViaAgua oListReciboAgua;
+            ReciboAguaDAO oReciboDao = new ReciboAguaDAO();
+
+            try
+            {
+                oListReciboAgua = oReciboDao.graficoExcedentePorApartamento(yearBase);
+
+                return oListReciboAgua;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
 
         #endregion
     }

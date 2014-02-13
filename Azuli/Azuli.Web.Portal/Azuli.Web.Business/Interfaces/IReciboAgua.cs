@@ -16,5 +16,10 @@ namespace Azuli.Web.Business.Interfaces
         listaSegundaViaAgua LoadFile(string file);
         listaSegundaViaAgua LoadFile(Stream file);
         listaSegundaViaAgua validaImportacao(ReciboAgua oReciboModel);
+        listaSegundaViaAgua graficosConsumoAgua(int yearBase);
+        listaSegundaViaAgua graficoExcedentePorApartamento(int yearBase);
+        listaSegundaViaAgua graficoConsumoPorBloco(int yearBase);
+        listaSegundaViaAgua graficoQuantidadeApAnormal(int yearBase);
+
     }
 }
