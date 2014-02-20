@@ -46,10 +46,19 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DotNet.Highcharts">
+      <HintPath>..\..\..\Users\edmilson.santos\Desktop\DotNet.Highcharts.dll</HintPath>
+    </Reference>
+    <Reference Include="Highchart">
+      <HintPath>..\..\..\Users\edmilson.santos\Desktop\Release\Highchart.dll</HintPath>
+    </Reference>
     <Reference Include="Ionic.Zip">
       <HintPath>..\..\..\Users\edmilson.santos\Desktop\temp\Tools\Ionic.Zip.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -71,6 +80,7 @@
     <Content Include="alteraSenhaSindico.aspx" />
     <Content Include="anunciarClassificado.aspx" />
     <Content Include="AreaAdministrativa.aspx" />
+    <Content Include="AuxliaryChart1.aspx" />
     <Content Include="avisarEcomendaPortaria.aspx" />
     <Content Include="Azuli.Acess.ControlTestPage.aspx" />
     <Content Include="Azuli.Acess.ControlTestPage.html" />
@@ -78,12 +88,16 @@
     <Content Include="CadastrarVisitante.aspx" />
     <Content Include="camutils\webcam.js" />
     <Content Include="camutils\webcam.swf" />
+    <Content Include="chartConsumoIndividual.aspx" />
+    <Content Include="chartConsumoIndv.aspx" />
+    <Content Include="ChartConsumoWater.aspx" />
     <Content Include="ClientBin\Azuli.Acess.Control.xap" />
     <Content Include="ConfigurarValorReserva.aspx" />
     <Content Include="consultaAgendamentoAdmin.aspx" />
     <Content Include="consultaBalancete.aspx" />
     <Content Include="consultaCircular.aspx" />
     <Content Include="consultaClassificados.aspx" />
+    <Content Include="ConsumoIndividual.aspx" />
     <Content Include="contato.aspx" />
     <Content Include="controlePortaria.aspx" />
     <Content Include="DetalheClassificado.aspx" />
@@ -102,6 +116,7 @@
     <Content Include="images\cadastro.jpg" />
     <Content Include="images\calendario.png" />
     <Content Include="images\cancelar.jpg" />
+    <Content Include="images\chart.jpg" />
     <Content Include="images\chrome_logo_2x.png" />
     <Content Include="images\class.jpg" />
     <Content Include="images\classificados.jpg" />
@@ -114,6 +129,7 @@
     <Content Include="images\enquete.jpg" />
     <Content Include="images\enquete1.jpg" />
     <Content Include="images\esqueci.jpg" />
+    <Content Include="images\fechar.jpg" />
     <Content Include="images\home.png" />
     <Content Include="images\home2.jpg" />
     <Content Include="images\home3.jpg" />
@@ -187,6 +203,13 @@
     <Content Include="ReportViewer.aspx" />
     <Content Include="ReservaDetalhadaMoradores.aspx" />
     <Content Include="resetSenha.aspx" />
+    <Content Include="Scripts\exporting.js" />
+    <Content Include="Scripts\exporting.src.js" />
+    <Content Include="Scripts\highcharts-all.js" />
+    <Content Include="Scripts\highcharts-more.js" />
+    <Content Include="Scripts\highcharts-more.src.js" />
+    <Content Include="Scripts\highcharts.js" />
+    <Content Include="Scripts\highcharts.src.js" />
     <Content Include="Scripts\ScriptAzuli.js" />
     <Content Include="Scripts\Silverlight.js" />
     <Content Include="SegundaViaContaAguaAzuli.aspx" />
@@ -278,6 +301,13 @@
     <Compile Include="AreaAdministrativa.aspx.designer.cs">
       <DependentUpon>AreaAdministrativa.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AuxliaryChart1.aspx.cs">
+      <DependentUpon>AuxliaryChart1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AuxliaryChart1.aspx.designer.cs">
+      <DependentUpon>AuxliaryChart1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="avisarEcomendaPortaria.aspx.cs">
       <DependentUpon>avisarEcomendaPortaria.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -298,6 +328,27 @@
     </Compile>
     <Compile Include="CadastrarVisitante.aspx.designer.cs">
       <DependentUpon>CadastrarVisitante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chartConsumoIndividual.aspx.cs">
+      <DependentUpon>chartConsumoIndividual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chartConsumoIndividual.aspx.designer.cs">
+      <DependentUpon>chartConsumoIndividual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chartConsumoIndv.aspx.cs">
+      <DependentUpon>chartConsumoIndv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chartConsumoIndv.aspx.designer.cs">
+      <DependentUpon>chartConsumoIndv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChartConsumoWater.aspx.cs">
+      <DependentUpon>ChartConsumoWater.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChartConsumoWater.aspx.designer.cs">
+      <DependentUpon>ChartConsumoWater.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConfigurarValorReserva.aspx.cs">
       <DependentUpon>ConfigurarValorReserva.aspx</DependentUpon>
@@ -333,6 +384,13 @@
     </Compile>
     <Compile Include="consultaClassificados.aspx.designer.cs">
       <DependentUpon>consultaClassificados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsumoIndividual.aspx.cs">
+      <DependentUpon>ConsumoIndividual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsumoIndividual.aspx.designer.cs">
+      <DependentUpon>ConsumoIndividual.aspx</DependentUpon>
     </Compile>
     <Compile Include="contato.aspx.cs">
       <DependentUpon>contato.aspx</DependentUpon>
@@ -738,7 +796,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>62577</DevelopmentServerPort>
+          <DevelopmentServerPort>51138</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
