@@ -28,7 +28,7 @@
     </div>
     <div class="clear hideSkiplinkAdmin">
                <div class="dysplayLogin" 
-                    style="position: absolute; left: -68px; top: -41px; margin-top: 0px;">
+                    style="position: absolute; left: -17px; top: -41px; margin-top: 0px;">
              <asp:Label ID="lblProprietarioMaster" runat="server" Font-Size="Small" 
                      Text="Seja Bem vindo: "></asp:Label>
                     <asp:Label ID="lblProprietarioDesc"  runat="server" Font-Size="Small" 
@@ -87,9 +87,11 @@
                             <asp:MenuItem Text="Reservas Confirmadas" Value="Reservas Confirmadas">
                             </asp:MenuItem>
                         </asp:MenuItem>
-                        <asp:MenuItem Text="Conta de Água Azuli" Value="Conta de Água Azuli">
+                        <asp:MenuItem Text="Gestão de Consumo de Água" Value="Conta de Água Azuli">
                             <asp:MenuItem NavigateUrl="~/GerarReciboAzuliAdm.aspx" Text="Gerar Recibos" 
                                 Value="Gerar Recibo"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/AuxliaryChart1.aspx" Text="Gestão por Gráficos" 
+                                Value="Gestão por Gráficos"></asp:MenuItem>
                             <asp:MenuItem NavigateUrl="~/integracaoWeb.aspx" 
                                 Text="Importação File Recibo Web" Value="Importação File Recibo Web">
                             </asp:MenuItem>
