@@ -86,7 +86,7 @@ namespace Azuli.Web.Portal
         public void preencheAno()
         {
 
-            for (int ano = data.Year; ano <= data.Year; ano++)
+            for (int ano = 2013; ano <= data.Year; ano++)
             {
                 drpAno.Items.Add(ano.ToString());
 
