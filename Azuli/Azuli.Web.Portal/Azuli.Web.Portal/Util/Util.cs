@@ -60,7 +60,7 @@ namespace Azuli.Web.Portal.Util
             try
             {
                 //Definição dos Vetores
-                string[] VetorSenha = new string[8];
+                string[] VetorSenha = new string[10];
                 string retorno = "";
 
 
@@ -83,6 +83,9 @@ namespace Azuli.Web.Portal.Util
                     VetorSenha[4] = senha[5].ToString();
                     VetorSenha[7] = senha[6].ToString();
                     VetorSenha[6] = senha[7].ToString();
+                    VetorSenha[8] = senha[8].ToString();
+                    VetorSenha[9] = senha[9].ToString();
+                   
            
   
     
