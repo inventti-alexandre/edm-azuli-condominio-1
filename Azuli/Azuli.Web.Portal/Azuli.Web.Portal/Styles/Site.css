@@ -248,12 +248,12 @@ first child of the left and right table columns */
 div.hideSkiplink
 {
     background-color:#0092D2;
-    width:900px;
+    width:1000px;
     height: 0;
     position:relative;
     top: -9px;
     vertical-align:middle;
-    left:115px;
+    left:75px;
     z-index: 999999;
 }
 
@@ -273,13 +273,13 @@ div.hideSkiplink
 div.hideSkiplinkAdmin
 {
     background-color:#0092D2;
-    width:972px;
+    width:1097px;
     height: 0;
     position:relative;
     top: -4px;
     vertical-align:middle;
-    right:-84px;
-    left: 84px;
+    right:-42px;
+    left: 42px;
 }
 
 
@@ -609,6 +609,8 @@ input.botao, .btGeral {
 {
     background-color: #A4D8F3;
      border-radius: 1em;
+    font-weight: 700;
+    margin-left: 16px;
 }
 
 .RowStyle
@@ -1081,12 +1083,17 @@ a.ContextMenuItem
 
 
 .controleCalendario {
-	background-image: url(../images/superpag-header.gif);
+	border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+background-image: url('../images/superpag-header.gif');
 	background-position: 0px 0px;
 	background-repeat: no-repeat;
 	background-color: Transparent;
-	border: 0px;
-	margin: 0px 0px 0px 2px;	
+	margin: 0px 0px 0px 2px;
+    font-weight: 700;
+    height: 159px;
+    width: 148px;
 }
 
 .modalPopup {
@@ -1235,6 +1242,7 @@ a.ContextMenuItem
       behavior:url(border-radius.htc);border-radius: 1em;
     height: 47px;
     behavior:url(border-radius.htc);
+    font-weight: 700;
 }
 
 
@@ -1243,14 +1251,13 @@ a.ContextMenuItem
     background-color: #BFCBD6;
     border-left: 1px dotted #999999;
     border-right: 1px dotted #999999;
-    border-bottom: 1px dottted #999999;
     padding: 2px 2px 2px 2px;
     font-family: Verdana;
     font-size: 8pt;
     color: #666666;
     behavior:url(border-radius.htc);border-radius: 1em;
     height: 13px;
-  
+    font-weight: 700;
 }
 
    
@@ -1367,9 +1374,7 @@ a.ContextMenuItem
     padding: 2px;
     background-color: #E0E0E0;
     width: 454px;
-    
-  
-  
+    font-weight: 700;
 }
 
 
@@ -1596,4 +1601,17 @@ hr {
         z-index: 999;
     }
 
+
+.background
+{
+    font-family: Arial;
+        font-size: 12pt;
+        border: 2px solid #67CFF5;
+        width: 300px;
+        height: 100px;
+        display: none;
+        position: fixed;
+        background-color: White;
+        z-index: 999;
+}
 /*;
