@@ -55,6 +55,8 @@ namespace Azuli.Web.Model
         public int ano { get; set; }
         public int mes { get; set; }
         public float excedenteM3diaria {get;set;}
+        public int somaConsumoByBloco { get; set; }
+        public int qtdAnormalidade { get; set; }
     }
 
      [Serializable]

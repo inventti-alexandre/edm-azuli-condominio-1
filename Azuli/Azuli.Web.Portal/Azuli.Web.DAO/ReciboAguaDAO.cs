@@ -172,6 +172,35 @@ namespace Azuli.Web.DAO
         }
 
 
+        public listaSegundaViaAgua graficosConsumoAguaIndividual(int yearBase, int bloco, int apto)
+        {
+
+            string clausulaSql = "SP_GRAFICO_CONSUMO_INDIVIDUAL";
+
+            try
+            {
+                SqlCommand comandoSQL = new SqlCommand(clausulaSql);
+                comandoSQL.Parameters.AddWithValue("@ANO", yearBase);
+                comandoSQL.Parameters.AddWithValue("@Bloco", bloco);
+                comandoSQL.Parameters.AddWithValue("@Apto", apto);
+
+                DataTable tbRecibo = new DataTable();
+
+                tbRecibo = ExecutaQuery(comandoSQL);
+
+                return populaSegundaViaAgua(tbRecibo);
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+
 
 
         public listaSegundaViaAgua validaImportacao(ReciboAgua oReciboModel)

@@ -210,6 +210,26 @@ namespace Azuli.Web.Business
             }
         }
 
+
+        public listaSegundaViaAgua graficosConsumoAguaIndividual(int yearBase, int bloco, int apto)
+        {
+            listaSegundaViaAgua oListReciboAgua;
+            ReciboAguaDAO oReciboDao = new ReciboAguaDAO();
+
+            try
+            {
+                oListReciboAgua = oReciboDao.graficosConsumoAguaIndividual(yearBase, bloco, apto);
+
+                return oListReciboAgua;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public listaSegundaViaAgua graficoQuantidadeApAnormal(int yearBase)
         {
             listaSegundaViaAgua oListReciboAgua;

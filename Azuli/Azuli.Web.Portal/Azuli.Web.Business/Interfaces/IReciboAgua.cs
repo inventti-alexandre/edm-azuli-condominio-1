@@ -20,6 +20,7 @@ namespace Azuli.Web.Business.Interfaces
         listaSegundaViaAgua graficoExcedentePorApartamento(int yearBase);
         listaSegundaViaAgua graficoConsumoPorBloco(int yearBase);
         listaSegundaViaAgua graficoQuantidadeApAnormal(int yearBase);
+        listaSegundaViaAgua graficosConsumoAguaIndividual(int yearBase, int bloco, int apto);
 
     }
 }
