@@ -59,6 +59,10 @@ namespace Azuli.Web.Portal
                     arrayCondominio.Add(item.consumoM3pagoCondominio);
                     meses.Add(item.fechamentoAtual);
                     arrayApartamento.Add(item.mes);
+                    if ( item.consumoM3pagoCondominio < item.mes )
+                    {
+                        item.mes = item.consumoM3pagoCondominio;
+                    }
                     arrayAreaComum.Add(item.consumoM3pagoCondominio - item.mes);
 
                 }

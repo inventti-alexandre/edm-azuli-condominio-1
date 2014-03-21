@@ -28,7 +28,12 @@ namespace Azuli.Web.Portal
         protected void Application_Error(object sender, EventArgs e)
         {
             StringBuilder corpoEmail = new StringBuilder();
-            Exception ex = Server.GetLastError().GetBaseException();
+
+            string ambiente = System.Configuration.ConfigurationManager.AppSettings["ambiente"].ToString();
+
+            
+            
+            Exception ex = Server.GetLastError();
             if (ex.GetType() != typeof(HttpException))
             {
 
@@ -37,6 +42,8 @@ namespace Azuli.Web.Portal
                 Util.SendMail logError = new Util.SendMail();
 
                 string paginaAtual = Request.CurrentExecutionFilePath;
+
+                HttpContext ctx = HttpContext.Current;
 
                 corpoEmail.Append("<html>");
 				corpoEmail.Append("<head>");
@@ -57,8 +64,17 @@ namespace Azuli.Web.Portal
 				corpoEmail.Append("<tr><td valign=top><font class='sbd'>IP, " + Request.UserHostAddress.ToString() + " Página - "  + paginaAtual.Remove(0,paginaAtual.LastIndexOf("/") + 1)
 
 + "!</td></tr>");
-				corpoEmail.Append("<tr><td valign=top><font class='sbd'>Detalhes do Erro - " + ex.Message.ToString() + " :</td>");
-				corpoEmail.Append("<tr><td valign=top><font class='sbd'>Apartamento: <b>"+ System.Web.HttpContext.Current.Session["AP"] +"</b></td>");
+				corpoEmail.Append("<tr><td valign=top><font class='sbd'>Error - " + ex.Message.ToString() + " :</td>");
+                corpoEmail.Append("<tr><td valign=top><font class='sbd'>Detalhes do Erro - " + ex.InnerException.Message.ToString() + " :</td>");
+                corpoEmail.Append("<tr><td valign=top><font class='sbd'>URL - " + Request.Url.AbsoluteUri.ToString() + " :</td>");
+                corpoEmail.Append("<tr><td valign=top><font class='sbd'>Stack Trace - " + ex.InnerException.StackTrace.ToString() + " :</td>");
+                corpoEmail.Append("<tr><td valign=top><font class='sbd'>Host Name: : - " + Request.UserHostName.ToString() + " :</td>");
+                corpoEmail.Append("<tr><td valign=top><font class='sbd'>User Agent: - " + Request.UserAgent.ToString() + " :</td>");
+                corpoEmail.Append("<tr><td valign=top><font class='sbd'>URL Referrer: - " + Request.UrlReferrer.ToString() + " :</td>");
+                corpoEmail.Append("<tr><td valign=top><font class='sbd'>UserName - " + Request.LogonUserIdentity.Name.ToString() + " :</td>");
+                corpoEmail.Append("<tr><td valign=top><font class='sbd'>Method - " + ex.TargetSite.ToString() + " :</td>");
+                corpoEmail.Append("<tr><td valign=top><font class='sbd'>Source - " + ex.Source.ToString() + " :</td>");
+                corpoEmail.Append("<tr><td valign=top><font class='sbd'>UserName:: <b>" + System.Web.HttpContext.Current.Session["AP"] + "</b></td>");
 				corpoEmail.Append("<tr><td valign=top><font class='sbd'>Bloco: <b>" + System.Web.HttpContext.Current.Session["Bloco"] +"</b></td>");
 				corpoEmail.Append("<tr><td valign=top><font class='sbd'>Data:" + DateTime.Now + "</td></tr>");
 				corpoEmail.Append("<tr><td valign=top><font class='sbd'>Spazio Azuli</td></tr>");
@@ -66,7 +82,23 @@ namespace Azuli.Web.Portal
 				corpoEmail.Append("	<td valign='top'>---------------------------------------------</td>");
 				corpoEmail.Append("</tr>");
 				corpoEmail.Append("</table>");
-				corpoEmail.Append("<a href='http://www.condominioazuli.somee.com/'>http://www.condominioazuli.somee.com/ </a> ");
+                if (ambiente == "DEV")
+                {
+                    corpoEmail.Append("<b><h2><font color='red'> ERRO NO AMBIENTE DE DESENVOLVIMENTO</font></h2></b> ");
+                    corpoEmail.Append("<b>DatabaseName: AzuliPortal</b> - Login: edmls34_SQLLogin_1 - Password - 25pdqsl4ih<br> ");
+                    corpoEmail.Append("<b>Connection String: workstation id=PORTALAZULI.mssql.somee.com;packet size=4096;user id=edmls34_SQLLogin_1;pwd=25pdqsl4ih;data source=PORTALAZULI.mssql.somee.com;persist security info=False;initial catalog=PORTALAZULI</b><br> ");
+                    corpoEmail.Append("<b>Application Name: azuli.somee.com</b><br> ");
+                    corpoEmail.Append("<a href='http://www.azuli.somee.com'>http://www.azuli.somee.com/ </a> ");
+                }
+                else
+                {
+                    corpoEmail.Append("<b><h2><font color='red'>ERRO NO AMBIENTE DE PRODUÇÃO</font></h2></b> ");
+                    corpoEmail.Append("<b>DatabaseName: PORTALAZULI</b> - Login: edmls34_SQLLogin_1 - Password - 25pdqsl4ih<br> ");
+                    corpoEmail.Append("<b>Connection String: workstation id=AzuliPortal.mssql.somee.com;packet size=4096;user id=edmls34_SQLLogin_1;pwd=25pdqsl4ih;data source=AzuliPortal.mssql.somee.com;persist security info=False;initial catalog=AzuliPortal</b><br> ");
+                    corpoEmail.Append("<b>Application Name: azulicondominio.somee.com</b><br> ");
+                    corpoEmail.Append("<a href='http://www.condominioazuli.somee.com/'>http://www.condominioazuli.somee.com/ </a> ");
+                }
+				
 				corpoEmail.Append("</body>");
 				corpoEmail.Append("</html>");
 

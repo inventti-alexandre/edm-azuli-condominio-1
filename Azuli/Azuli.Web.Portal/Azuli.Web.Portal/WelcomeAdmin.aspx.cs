@@ -62,6 +62,26 @@ namespace Azuli.Web.Portal
                
             }
 
+            if (e.Day.Date > (System.DateTime.Now.AddDays(30)))
+            {
+
+                Label t1 = new Label();
+                t1.Font.Bold = true;
+                t1.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
+                t1.Width = 100;
+                t1.Height = 20;
+
+                t1.Font.Name = "Calibri";
+                t1.Font.Size = 10;
+                t1.ForeColor = Color.Black;
+                t1.Text = "Não Liberado!";
+                t1.ForeColor = System.Drawing.Color.White;
+                t1.BackColor = System.Drawing.Color.FromName("#8B0000");
+               
+
+
+            }
+
             if (e.Day.IsToday)
             {
                 e.Cell.Font.Bold = true;
@@ -71,7 +91,7 @@ namespace Azuli.Web.Portal
 
             foreach (var item in listaAgenda)
             {
-
+               
 
                 if (e.Day.Date == item.dataAgendamento)
                 {

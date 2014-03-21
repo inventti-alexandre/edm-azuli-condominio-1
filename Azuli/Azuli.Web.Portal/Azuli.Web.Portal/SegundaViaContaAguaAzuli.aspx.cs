@@ -23,7 +23,6 @@ namespace Azuli.Web.Portal
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
             if (oUtil.validateSession())
             {
                 if (!IsPostBack)
@@ -58,11 +57,9 @@ namespace Azuli.Web.Portal
                     this.lbtMonth11.Enabled = false;
                     this.lbtMonth12.Enabled = false;
                   
-
                     preencheAno();
                     drpAno.SelectedItem.Text = data.Year.ToString();
                     showAvailableUnvailableReport();
-
 
                 }
             }
@@ -74,8 +71,6 @@ namespace Azuli.Web.Portal
         {
             string mesCorrente = "";
             // drpMeses.DataSource = Enum.GetNames(typeof(Util.Util.meses));
-
-
             mesCorrente = System.Globalization.DateTimeFormatInfo.CurrentInfo.GetMonthName(data.Month);
 
             // drpMeses.Items.Add(mesCorrente); //drpMeses.Items.IndexOf(drpMeses.Items.FindByValue(data.Month.ToString()));
@@ -96,7 +91,6 @@ namespace Azuli.Web.Portal
 
         protected void btnBlocoAp_Click(object sender, EventArgs e)
         {
-
 
         }
 
@@ -266,8 +260,8 @@ namespace Azuli.Web.Portal
             ContaAguaBLL oContaBLL = new ContaAguaBLL();
             ApartamentoModel oAp = new ApartamentoModel();
             oContaModel.ano = Convert.ToInt32(drpAno.SelectedValue);
-            oAp.apartamento = Convert.ToInt32(this.apartamento);
-            oAp.bloco = Convert.ToInt32(this.bloco);
+            oAp.apartamento = Convert.ToInt32(Session["AP"]);
+            oAp.bloco = Convert.ToInt32(Session["Bloco"]);
             oContaModel.modelAp = oAp;
 
             List<int> pegaMeses = new List<int>();
@@ -355,6 +349,11 @@ namespace Azuli.Web.Portal
 
                 throw;
             }
+        }
+
+        protected void drpAno_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            showAvailableUnvailableReport();
         }
 
 

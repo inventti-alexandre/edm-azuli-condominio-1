@@ -28,12 +28,8 @@ namespace Azuli.Web.Portal
 
 
 
-                if (oUtil.validateSession())
-                {
-
-
-
-                }
+                oUtil.validateSession();
+               
 
             }
 
@@ -56,8 +52,30 @@ namespace Azuli.Web.Portal
 
                 e.Cell.Font.Strikeout = true;
                 e.Cell.Font.Bold = true;
+             
                 e.Cell.BackColor = System.Drawing.Color.FromName("#BAE4F1");
 
+            }
+
+            if (e.Day.Date > (System.DateTime.Now.AddDays(30)))
+            {
+
+                    Label t1 = new Label();
+                    t1.Font.Bold = true;
+                    t1.ID = "t" + e.Day.DayNumberText + e.Day.Date.Month.ToString();
+                    t1.Width = 135;
+                    t1.Height = 20;
+
+                    t1.Font.Name = "Calibri";
+                    t1.Font.Size = 10;
+                    t1.ForeColor = Color.Black;
+                    t1.Text = "Não Liberado!";
+                    t1.ForeColor = System.Drawing.Color.White;
+                    t1.BackColor = System.Drawing.Color.FromName("#8B0000");
+
+                    e.Cell.Controls.Add(t1);
+
+                   
             }
 
             e.Day.IsSelectable = false;
@@ -144,6 +162,7 @@ namespace Azuli.Web.Portal
                                         linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
                                         //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t1.ForeColor = Color.FromName("#8B0000");
+                                        
 
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")

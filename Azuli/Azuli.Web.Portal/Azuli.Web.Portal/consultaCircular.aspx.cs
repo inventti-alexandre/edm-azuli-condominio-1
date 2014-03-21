@@ -53,27 +53,18 @@ namespace Azuli.Web.Portal
         public void clearQuantidadeArquivos()
         {
 
-            lblPercentage1.Text = "0";
-
-            lblPercentage2.Text = "0";
-
-            lblPercentage3.Text = "0";
-
-            lblPercentage4.Text = "0";
-
-            lblPercentage5.Text = "0";
-
-            lblPercentage6.Text = "0";
-
-            lblPercentage7.Text = "0";
-            lblPercentage8.Text = "0";
-            lblPercentage9.Text = "0";
-
-
+            lblPercentage1.Text =  "0";
+            lblPercentage2.Text =  "0";
+            lblPercentage3.Text =  "0";
+            lblPercentage4.Text =  "0";
+            lblPercentage5.Text =  "0";
+            lblPercentage6.Text =  "0";
+            lblPercentage7.Text =  "0";
+            lblPercentage8.Text =  "0";
+            lblPercentage9.Text =  "0";
             lblPercentage10.Text = "0";
-
             lblPercentage11.Text = "0";
-                 lblPercentage12.Text = "0";
+            lblPercentage12.Text = "0";
 
         }
 
