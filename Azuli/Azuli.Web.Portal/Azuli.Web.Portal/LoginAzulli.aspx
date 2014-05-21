@@ -16,6 +16,22 @@
              fjs.parentNode.insertBefore(js, fjs);
          } (document, 'script', 'facebook-jssdk'));
 </script>
+   <link href="css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="css/charisma-app.css" rel="stylesheet">
+	<link href="css/jquery-ui-1.8.21.custom.css" rel="stylesheet">
+	<link href='css/fullcalendar.css' rel='stylesheet'>
+	<link href='css/fullcalendar.print.css' rel='stylesheet'  media='print'>
+	<link href='css/chosen.css' rel='stylesheet'>
+	<link href='css/uniform.default.css' rel='stylesheet'>
+	<link href='css/colorbox.css' rel='stylesheet'>
+	<link href='css/jquery.cleditor.css' rel='stylesheet'>
+	<link href='css/jquery.noty.css' rel='stylesheet'>
+	<link href='css/noty_theme_default.css' rel='stylesheet'>
+	<link href='css/elfinder.min.css' rel='stylesheet'>
+	<link href='css/elfinder.theme.css' rel='stylesheet'>
+	<link href='css/jquery.iphone.toggle.css' rel='stylesheet'>
+	<link href='css/opa-icons.css' rel='stylesheet'>
+	<link href='css/uploadify.css' rel='stylesheet'>
     <style type="text/css">
         .style1
         {
@@ -41,7 +57,7 @@
     </style>
 </head>
 <body>
-<div id="fb-root"></div>
+<div id="fb-root" class="container-fluid"></div>
     <form id="Form1" runat="server">
     <div class="pageLogin">
         <div class="header">
@@ -68,7 +84,7 @@
                 </span>
                 <asp:ValidationSummary ID="LoginUserValidationSummary" runat="server" CssClass="failureNotification"
                     ValidationGroup="LoginUserValidationGroup" Height="43px" Width="427px" />
-                <div class="accountInfo" id="dvLogin" runat="server">
+                <div class="row-fluid" id="dvLogin" runat="server">
                     <fieldset class="login">
                         <legend  class="accordionContent">Entre com seu Bloco/Apartamento e Senha:</legend>
                         <table id="tbPassword" class="accordionContent"  runat="server" frame="border">
