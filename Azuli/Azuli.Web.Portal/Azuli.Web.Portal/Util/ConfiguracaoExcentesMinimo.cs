@@ -11,5 +11,5 @@ namespace Azuli.Web.Portal.Util
         public ReciboAgua oReciboExcenteConfig { get; set; }
     }
 
-    public class listaConfigExcedente : List<ConfiguracaoExcentesMinimo> { }
+    public class listaConfigExcedente : List<ConfiguracaoExcentesMinimo> { } 
 }

@@ -12,7 +12,7 @@ namespace Azuli.Web.Portal.Util
     public class ImportFileIntegrationWeb
     {
 
-        System.Globalization.NumberFormatInfo info = new System.Globalization.NumberFormatInfo();
+        System.Globalization.NumberFormatInfo info = new System.Globalization.NumberFormatInfo(); 
      
 
         #region Enumerations
