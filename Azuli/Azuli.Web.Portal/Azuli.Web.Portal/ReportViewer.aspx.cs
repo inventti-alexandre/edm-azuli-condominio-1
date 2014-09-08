@@ -72,7 +72,7 @@ namespace Azuli.Web.Portal
                     ReciboAgua oReciboModel = new ReciboAgua();
 
                     DSrecibo dsSegundaVia = new DSrecibo();
-                    
+                 
 
                     string mes = Session["mes"].ToString();
                     string ano = Session["ano"].ToString();
@@ -85,6 +85,8 @@ namespace Azuli.Web.Portal
 
                     try
                     {
+
+
                         foreach (var item in oListOrdenadoByRegistro)
                         {
                    
@@ -101,7 +103,9 @@ namespace Azuli.Web.Portal
                             drSegundaVia["Leitura Anterior M³"] = item.leituraAnteriorM3;
                             drSegundaVia["Data leitura Atual"] = item.dataLeituraAtual;
                             drSegundaVia["Leitura Atual M³"] = item.leituraAtualM3;
-                            drSegundaVia["Consumo do Mês M³"] = item.consumoMesM3;
+
+
+                            drSegundaVia["Consumo do Mês M³"] = Math.Round(item.excedenteM3diaria * 30, 0);//item.consumoMesM3;// item.consumoMesM3;
                             drSegundaVia["Data da próxima leitura"] = item.dataProximaLeitura;
                             drSegundaVia["status"] = item.status;
                             drSegundaVia["Média"] = item.media;
@@ -141,7 +145,7 @@ namespace Azuli.Web.Portal
                             {
                                 item.excedenteM3PagoCondominio = item.consumoM3pagoCondominio - item.minimoM3PagoCondominio;
                                 item.excedenteValorRateio = (item.excedenteValorPagoCondominio / item.excedenteM3Rateio);
-                                item.valorPagarValorDevido = (Math.Round(item.excedenteValorRateio,2) * item.excedenteValorDevido);
+                                item.valorPagarValorDevido = (Math.Round(item.excedenteValorRateio,0) * item.excedenteValorDevido);
                                 
                                 drSegundaVia["ExcedentePagoPeloCondominio"] = item.excedenteM3PagoCondominio;
                                 drSegundaVia["ExcedenteValorRateio "] = item.excedenteValorRateio;

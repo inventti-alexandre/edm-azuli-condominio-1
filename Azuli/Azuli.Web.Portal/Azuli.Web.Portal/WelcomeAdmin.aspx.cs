@@ -62,7 +62,7 @@ namespace Azuli.Web.Portal
                
             }
 
-            if (e.Day.Date > (System.DateTime.Now.AddDays(30)))
+            if (e.Day.Date > (System.DateTime.Now.AddDays(90)))
             {
 
                 Label t1 = new Label();
@@ -77,7 +77,8 @@ namespace Azuli.Web.Portal
                 t1.Text = "Não Liberado!";
                 t1.ForeColor = System.Drawing.Color.White;
                 t1.BackColor = System.Drawing.Color.FromName("#8B0000");
-               
+                e.Cell.Controls.Add(t1);
+                e.Day.IsSelectable = false;
 
 
             }

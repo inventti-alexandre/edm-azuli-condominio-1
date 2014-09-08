@@ -250,7 +250,7 @@ namespace Azuli.Web.DAO
                 comandoSQL.Parameters.AddWithValue("@leitura_Anterior_M3 ",oReciboModel.leituraAnteriorM3);
                 comandoSQL.Parameters.AddWithValue("@Data_leitura_Atual ",oReciboModel.dataLeituraAtual);
                 comandoSQL.Parameters.AddWithValue("@Leitura_Atual_m3 ",oReciboModel.leituraAtualM3);
-                comandoSQL.Parameters.AddWithValue("@Consumo_mes_M3 ",oReciboModel.consumoMesM3);
+                comandoSQL.Parameters.AddWithValue("@Consumo_mes_M3 ",corrigeConsumo(oReciboModel.excedenteM3diaria));
                 comandoSQL.Parameters.AddWithValue("@dt_proximaLeitura",oReciboModel.dataProximaLeitura);
                 comandoSQL.Parameters.AddWithValue("@Status ",oReciboModel.status);
                 comandoSQL.Parameters.AddWithValue("@Media ",oReciboModel.media);
@@ -299,6 +299,13 @@ namespace Azuli.Web.DAO
             }
         }
 
+
+        public float corrigeConsumo(float excedenteM3Diario)
+        {
+
+            return excedenteM3Diario = Convert.ToInt32(Math.Round(excedenteM3Diario * 30, 0));
+
+        }
 
         #endregion
 
