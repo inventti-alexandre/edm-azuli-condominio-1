@@ -136,7 +136,7 @@ namespace Azuli.Web.Portal.Account
                     if (Session["AP"].ToString() != "301" && Session["Bloco"].ToString() != "6")
                     {
                         Util.SendMail oEmail = new SendMail();
-                        oEmail.enviaSenha("Acesso feito com sucesso para o apartamento/bloco " + Session["AP"].ToString() + "---" + Session["Bloco"].ToString(), "Acessos", "edmls@ig.com.br", 0);
+                        oEmail.enviaSenha("Acesso feito com sucesso para o apartamento/bloco " + Session["AP"].ToString() + " - " + Session["Bloco"].ToString(), "Acessos", "edmls@ig.com.br", 0);
                         Response.Redirect("~/paginaInicialMoradores.aspx");
                     }
                     else
@@ -245,15 +245,17 @@ namespace Azuli.Web.Portal.Account
                         else
                         {
                             //enviaMail();
-                            //SendMail enviaEmail = new SendMail();
-                            //int status = 0;
-                            //string msgCredencial = "";
-                            //msgCredencial = "Cadastro efetuado com sucesso para Morador: <br> <b> " + oProprietarioModel.proprietario1 + " <b> <br>" + " Bloco:  " + oProprietarioModel.ap.bloco + " / Apartamento:  " + oProprietarioModel.ap.apartamento + "<br> Sua Senha é: " + oProprietarioModel.senha + "<br><hr> acesse: http://www.condominioazuli.somee.com/";
-                            //enviaEmail.enviaSenha(msgCredencial, oProprietarioModel.proprietario1, oProprietarioModel.email, status);
+                             SendMail enviaEmail = new SendMail();
+                             int status = 0;
+                             string msgCredencial = "";
+                             msgCredencial = "Solicitação de acesso favor verificar na área administrativa -> liberar acessos";
+                             enviaEmail.enviaSenha(msgCredencial, oProprietarioModel.proprietario1,"edmls@ig.com.br", status);
                             dvDadosMorador.Visible = true;
                             lblMsg.Text = "Solicitação efetuada com sucesso!! Em breve você irá receber sua senha no e-mail informado <br> <b> ";
-
-
+                            txtNome.Text = "";
+                            txtEmail.Text = "";
+                            txtSolicitaAP.Text = "";
+                            drpBlocoSolicita.SelectedItem.Text = "1";
 
                         }
 

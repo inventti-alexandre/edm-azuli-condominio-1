@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Azuli.Web.Business;
+using Azuli.Web.Portal.Util;
 
 namespace Azuli.Web.Portal
 {
@@ -38,6 +39,10 @@ namespace Azuli.Web.Portal
                 lblMsg.Text = "Obrigado por entrar em contato! <br> <br> <font size='1' color='#948c8c'>Em breve entraremos em contato com você via sistema para sanar sua dúvida e/ou agradecermos o seu comentário ou sugestões! </font> ";
                 txtDescription.Text = "";
                 drpListSubject.SelectedIndex = -1;
+
+                Util.SendMail oEmail = new SendMail();
+                oEmail.enviaSenha("Assunto:" + drpListSubject.SelectedItem.Text + "<br> Descrição: " + txtDescription.Text + "<br> Bloco:  " + Session["Bloco"].ToString() + " <br> Apto: " + Session["AP"].ToString() , "Fale Conosco Azuli", "edmls@ig.com.br", 0);
+                
             }
             catch (Exception er)
             {

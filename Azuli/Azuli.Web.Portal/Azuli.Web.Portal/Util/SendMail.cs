@@ -27,8 +27,8 @@ namespace Azuli.Web.Portal.Util
             senhaDescriptografada = descriptografaSenha.SNH(senhaCriptrografada);
 
 
-            NetworkCredential credencial = new NetworkCredential(emailRemetente, senhaDescriptografada);
-            cliente.UseDefaultCredentials = false;
+            NetworkCredential credencial = new NetworkCredential(emailRemetente, senhaDescriptografada.ToUpper());
+            cliente.UseDefaultCredentials = true;
             cliente.Credentials = credencial;
             cliente.EnableSsl = true;
 
@@ -69,7 +69,7 @@ namespace Azuli.Web.Portal.Util
                   msg.Bcc.Add("edmls@ig.com.br");
                   msg.IsBodyHtml = true;
                   msg.Body = mensagem;
-                  msg.Subject = "Sistema Spazio Campo Azuli Azuli - Sua Credencial";
+                  msg.Subject = "Sistema Spazio Campo Azuli - Sua Credencial";
 
                   try
                   {
