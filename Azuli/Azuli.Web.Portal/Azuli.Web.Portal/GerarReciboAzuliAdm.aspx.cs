@@ -130,9 +130,19 @@ namespace Azuli.Web.Portal
 
         public void openedPoupReport()
         {
-            Session["chooseReport"] = true;
-            Session["ReciboAgua"] = false;
-            OpenPopUp(Page.ResolveUrl("~/ReportViewer.aspx"), 700, 920, true, true);
+            if (Convert.ToBoolean(Session["Excel"]))
+            {
+                Session["chooseReport"] = true;
+                Response.Redirect("~/ReportViewer.aspx");
+               
+            }
+            else
+            {
+                Session["Excel"] = false;
+                Session["chooseReport"] = true;
+                Session["ReciboAgua"] = false;
+                OpenPopUp(Page.ResolveUrl("~/ReportViewer.aspx"), 700, 920, true, true);
+            }
 
         }
 
@@ -140,7 +150,8 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth_Click(object sender, EventArgs e)
         {
-
+            Session["Excel"] = false;
+            
             Session["mes"] = 1;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
@@ -151,6 +162,7 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth2_Click(object sender, EventArgs e)
         {
+            Session["Excel"] = false;
             Session["mes"] = 2;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
@@ -158,6 +170,10 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth3_Click(object sender, EventArgs e)
         {
+
+
+
+            Session["Excel"] = false;
             Session["mes"] = 3;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
@@ -166,6 +182,8 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth4_Click(object sender, EventArgs e)
         {
+            Session["Excel"] = false;
+           
             Session["mes"] = 4;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
@@ -173,6 +191,8 @@ namespace Azuli.Web.Portal
         }
         protected void lbtMonth5_Click(object sender, EventArgs e)
         {
+            Session["Excel"] = false;
+            Session["Excel"] = false;
             Session["mes"] = 5;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
@@ -180,6 +200,8 @@ namespace Azuli.Web.Portal
         }
         protected void lbtMonth6_Click(object sender, EventArgs e)
         {
+            Session["Excel"] = false;
+            
             Session["mes"] = 6;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
@@ -188,6 +210,8 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth7_Click(object sender, EventArgs e)
         {
+
+            Session["Excel"] = false;
             Session["mes"] = 7;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
@@ -197,14 +221,18 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth_Click10(object sender, EventArgs e)
         {
+
+            Session["Excel"] = false;
             Session["mes"] = 10;
             Session["ano"] = drpAno.SelectedValue;
+
             openedPoupReport();
 
         }
 
         protected void lbtMonth_Click11(object sender, EventArgs e)
         {
+            Session["Excel"] = false;
             Session["mes"] = 11;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
@@ -213,6 +241,7 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth_Click12(object sender, EventArgs e)
         {
+            Session["Excel"] = false;
             Session["mes"] = 12;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
@@ -221,6 +250,7 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth_Click8(object sender, EventArgs e)
         {
+            Session["Excel"] = false;
             Session["mes"] = 8;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
@@ -229,6 +259,7 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth_Click9(object sender, EventArgs e)
         {
+            Session["Excel"] = false;
             Session["mes"] = 9;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
@@ -385,6 +416,110 @@ namespace Azuli.Web.Portal
         protected void drpAno_TextChanged(object sender, EventArgs e)
         {
             showAvailableUnvailableReport();
+        }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["mes"] = 1;
+            Session["ano"] = drpAno.SelectedValue;
+            Session["Excel"] = true;
+            openedPoupReport();
+
+        }
+
+        protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["mes"] = 2;
+            Session["ano"] = drpAno.SelectedValue;
+            Session["Excel"] = true;
+            openedPoupReport();
+        }
+
+        protected void ImageButton3_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["mes"] = 3;
+            Session["ano"] = drpAno.SelectedValue;
+            Session["Excel"] = true;
+            openedPoupReport();
+        }
+
+        protected void ImageButton4_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["mes"] = 4;
+            Session["ano"] = drpAno.SelectedValue;
+            Session["Excel"] = true;
+            openedPoupReport();
+
+        }
+
+        protected void ImageButton5_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["mes"] = 5;
+            Session["ano"] = drpAno.SelectedValue;
+            Session["Excel"] = true;
+            openedPoupReport();
+        }
+
+        protected void ImageButton6_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["mes"] = 6;
+            Session["ano"] = drpAno.SelectedValue;
+            Session["Excel"] = true;
+            openedPoupReport();
+        }
+
+        protected void ImageButton7_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["mes"] = 7;
+            Session["ano"] = drpAno.SelectedValue;
+            Session["Excel"] = true;
+            openedPoupReport();
+
+        }
+
+        protected void ImageButton8_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["mes"] = 8;
+            Session["ano"] = drpAno.SelectedValue;
+            Session["Excel"] = true;
+            openedPoupReport();
+
+        }
+
+        protected void ImageButton9_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["mes"] = 9;
+            Session["ano"] = drpAno.SelectedValue;
+            Session["Excel"] = true;
+            openedPoupReport();
+
+        }
+
+        protected void ImageButton10_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["mes"] = 10;
+            Session["ano"] = drpAno.SelectedValue;
+            Session["Excel"] = true;
+            openedPoupReport();
+
+        }
+
+        protected void ImageButton11_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["mes"] = 11;
+            Session["ano"] = drpAno.SelectedValue;
+            Session["Excel"] = true;
+            openedPoupReport();
+
+        }
+
+        protected void ImageButton12_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["mes"] = 12;
+            Session["ano"] = drpAno.SelectedValue;
+            Session["Excel"] = true;
+            openedPoupReport();
+
         }
 
 

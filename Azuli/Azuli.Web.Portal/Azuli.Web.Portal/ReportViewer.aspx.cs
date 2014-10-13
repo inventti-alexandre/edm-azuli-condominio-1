@@ -15,6 +15,8 @@ using Azuli.Crystal;
 using Azuli.Web.Business;
 using Azuli.Web.Model;
 using System.Drawing.Printing;
+using System.IO;
+using System.Reflection;
 
 namespace Azuli.Web.Portal
 {
@@ -45,6 +47,8 @@ namespace Azuli.Web.Portal
                 }
             }
 
+           
+
 
         }
 
@@ -52,6 +56,85 @@ namespace Azuli.Web.Portal
         {
 
         }
+
+        public class BancoExcel
+        {
+            public string parameters { get; set; }
+
+            
+        }
+        
+
+
+        public void Export(string fileName, listaSegundaViaAgua listAguaExcel)
+        {
+            //The Clear method erases any buffered HTML output.
+            HttpContext.Current.Response.Clear();
+            //The AddHeader method adds a new HTML header and value to the response sent to the client.
+            HttpContext.Current.Response.AddHeader(
+                "content-disposition", string.Format("attachment; filename={0}", fileName + ".xls"));
+            //The ContentType property specifies the HTTP content type for the response.
+            HttpContext.Current.Response.ContentType = "application/ms-excel";
+            //Implements a TextWriter for writing information to a string. The information is stored in an underlying StringBuilder.
+            using (StringWriter sw = new StringWriter())
+            {
+                //Writes markup characters and text to an ASP.NET server control output stream. This class provides formatting capabilities that ASP.NET server controls use when rendering markup to clients.
+                using (HtmlTextWriter htw = new HtmlTextWriter(sw))
+                {
+                    //  Create a form to contain the List
+                    System.Web.UI.WebControls.Table table = new System.Web.UI.WebControls.Table();
+                    TableRow row = new TableRow();
+
+
+                     List<BancoExcel> listExcel = new List<BancoExcel>()
+                     {
+                         new BancoExcel{parameters="Registro"},
+                         new BancoExcel{parameters = "Consumo M³"}
+                     };
+ 
+                    foreach(var item in  listExcel)
+                    {
+
+                        TableHeaderCell hcell = new TableHeaderCell();
+                        hcell.BorderColor = System.Drawing.Color.Black;
+                        hcell.Text = item.parameters;
+                        row.Cells.Add(hcell);
+                    }
+                    
+
+                    table.Rows.Add(row);
+
+
+                    var listAprove = from listaOrd in listAguaExcel
+                                     orderby listaOrd.registro ascending
+                                     select listaOrd;
+
+                    //  add each of the data item to the table
+                    foreach (ReciboAgua emp in listAprove)
+                    {
+                        TableRow row1 = new TableRow();
+                        TableCell cellAge = new TableCell();
+                        cellAge.Text = "" + emp.registro;
+                        TableCell cellName = new TableCell();
+                        cellName.Text = "" + Math.Round(emp.excedenteM3diaria * 30, 0);
+                        row1.Cells.Add(cellAge);
+                        row1.Cells.Add(cellName);
+                        table.Rows.Add(row1);
+                    }
+                    //  render the table into the htmlwriter
+                    table.RenderControl(htw);
+                    //  render the htmlwriter into the response
+                    HttpContext.Current.Response.Write(sw.ToString());
+                    HttpContext.Current.Response.End();
+
+                    Response.Redirect("~/GerarReciboAzuliAdm.aspx");
+
+                    
+                }
+            }
+        }
+
+        
 
         public void Recibo()
         {
@@ -83,110 +166,126 @@ namespace Azuli.Web.Portal
                                                   orderby listaOrdenada.registro ascending
                                                   select listaOrdenada;
 
-                    try
+
+                    listaSegundaViaAgua listExcel = oReciboBLL.buscaTodosRecibosByYearAndMonth(Convert.ToInt32(ano), Convert.ToInt32(mes));
+
+
+
+                    if (Convert.ToBoolean(Session["Excel"]) == true)
                     {
+                        Export(mes + "/" + ano, listExcel);
+                    }
 
-
-                        foreach (var item in oListOrdenadoByRegistro)
+                    else
+                    {
+                        try
                         {
-                   
-                            DataRow drSegundaVia = dsSegundaVia.Tables[1].NewRow();
-                            
-                            drSegundaVia["ID-Condomínio"] = item.idCondominio;
-                            drSegundaVia["Nome do Condomínio"] = item.nomeCondominio;
-                            drSegundaVia["Endereço do Condomínio"] = item.enderecoCondominio;
-                            drSegundaVia["Bloco"] = item.bloco;
-                            drSegundaVia["Apartamento"] = item.apartamento;
-                            drSegundaVia["Registro"] = item.registro;
-                            drSegundaVia["Fechamento Atual"] = item.fechamentoAtual;
-                            drSegundaVia["Data leitura Anterior"] = item.dataLeituraAnterior;
-                            drSegundaVia["Leitura Anterior M³"] = item.leituraAnteriorM3;
-                            drSegundaVia["Data leitura Atual"] = item.dataLeituraAtual;
-                            drSegundaVia["Leitura Atual M³"] = item.leituraAtualM3;
 
 
-                            drSegundaVia["Consumo do Mês M³"] = Math.Round(item.excedenteM3diaria * 30, 0);//item.consumoMesM3;// item.consumoMesM3;
-                            drSegundaVia["Data da próxima leitura"] = item.dataProximaLeitura;
-                            drSegundaVia["status"] = item.status;
-                            drSegundaVia["Média"] = item.media;
-                            drSegundaVia["Histórico descricação mês1"] = item.historicoDescricaoMes1;
-                            drSegundaVia["Histórico mês1"] = item.historicoMes1;
-                            drSegundaVia["Histórico descricação mês2"] = item.historicoDescricaoMes2;
-                            drSegundaVia["Histórico mês2"] = item.historicoMes2;
-                            drSegundaVia["Histórico descricação mês3"] = item.historicoDescricaoMes3;
-                            drSegundaVia["Histórico mês3"] = item.historicoMes3;
-                            drSegundaVia["Histórico descricação mês4"] = item.historicoDescricaoMes4;
-                            drSegundaVia["Histórico mês4"] = item.historicoMes4;
-                            drSegundaVia["Histórico descricação mês5"] = item.historicoDescricaoMes5;
-                            drSegundaVia["Histórico mês5"] = item.historicoMes5;
-                            drSegundaVia["Histórico descricação mês6"] = item.historicoDescricaoMes6;
-                            drSegundaVia["Histórico mês6"] = item.historicoMes6;
-                          
-                            // Virá do banco quando o consumo - se maior que 2400 fara o valor do rateio
-                            //item.consumoM3pagoCondominio = 2600;
-                            // o Valor pago do condominio virá do banco também...
-                            //item.ConsumoValorPagoCondominio = 7900;
 
-                            //Isto ficará fixo - Será a diferença paga entre o valor pago do consumo minimo, e o consumo e excedente
-                            item.excedenteValorPagoCondominio = Math.Abs(item.ConsumoValorPagoCondominio - item.minimoValorPagoCondominio);
-                            
-                            drSegundaVia["Consumo Valor"] = item.ConsumoValorPagoCondominio;
-                            drSegundaVia["Consumo M³"] = item.consumoM3pagoCondominio;
-                           
-                            drSegundaVia["Mínimo M³"] = item.minimoM3PagoCondominio;
-                            drSegundaVia["Mínimo Valor"] = item.minimoValorPagoCondominio;
-                          
-                            drSegundaVia["Excedente Valor"] = item.excedenteValorPagoCondominio;
-                            drSegundaVia["Tarifa Mínima M³"] = item.tarifaMinimaM3ValorDevido;
-                            drSegundaVia["Tarifa Mínima Valor"] = item.tarifaMinimaValorValorDevido;
 
-                            //Se o valor do consumo do M3 for maior que o minimo M3 do condominio será feito o rateio...
-                            if (item.consumoM3pagoCondominio > item.minimoM3PagoCondominio)
+                            foreach (var item in oListOrdenadoByRegistro)
                             {
-                                item.excedenteM3PagoCondominio = item.consumoM3pagoCondominio - item.minimoM3PagoCondominio;
-                                item.excedenteValorRateio = (item.excedenteValorPagoCondominio / item.excedenteM3Rateio);
-                                item.valorPagarValorDevido = (Math.Round(item.excedenteValorRateio,0) * item.excedenteValorDevido);
-                                
-                                drSegundaVia["ExcedentePagoPeloCondominio"] = item.excedenteM3PagoCondominio;
-                                drSegundaVia["ExcedenteValorRateio "] = item.excedenteValorRateio;
-                                drSegundaVia["a pagar"] = item.valorPagarValorDevido;
-                            }
-                            //Se não mantêm o valor sem rateio..
-                            else
-                            {
-                                drSegundaVia["ExcedentePagoPeloCondominio"] = item.excedenteM3PagoCondominio;
-                                drSegundaVia["ExcedenteValorRateio "] = item.excedenteValorRateio;
-                                drSegundaVia["a pagar"] = item.valorPagarValorDevido;
-                            }
-                            drSegundaVia["ExcedenteM3Rateio"] = item.excedenteM3Rateio;
-                            drSegundaVia["Geral"] = item.avisoGeralAviso;
-                            drSegundaVia["Anormal"] = item.AnormalAviso;
-                            drSegundaVia["Invididual"] = item.individualAviso;
-                            drSegundaVia["ANORMALIDADE"] = item.anormalidadeAviso;
-                            drSegundaVia["Imagem"] = item.imagem;
-                            drSegundaVia["ExcedenteValorDevido"] = item.excedenteValorDevido;
-                            drSegundaVia["excedenteM3Diario"] = item.excedenteM3diaria; 
-                        
-                             dsSegundaVia.Tables[1].Rows.Add(drSegundaVia);
-                     
 
+
+
+                                DataRow drSegundaVia = dsSegundaVia.Tables[1].NewRow();
+
+                                drSegundaVia["ID-Condomínio"] = item.idCondominio;
+                                drSegundaVia["Nome do Condomínio"] = item.nomeCondominio;
+                                drSegundaVia["Endereço do Condomínio"] = item.enderecoCondominio;
+                                drSegundaVia["Bloco"] = item.bloco;
+                                drSegundaVia["Apartamento"] = item.apartamento;
+                                drSegundaVia["Registro"] = item.registro;
+                                drSegundaVia["Fechamento Atual"] = item.fechamentoAtual;
+                                drSegundaVia["Data leitura Anterior"] = item.dataLeituraAnterior;
+                                drSegundaVia["Leitura Anterior M³"] = item.leituraAnteriorM3;
+                                drSegundaVia["Data leitura Atual"] = item.dataLeituraAtual;
+                                drSegundaVia["Leitura Atual M³"] = item.leituraAtualM3;
+
+
+                                drSegundaVia["Consumo do Mês M³"] = Math.Round(item.excedenteM3diaria * 30, 0);//item.consumoMesM3;// item.consumoMesM3;
+                                drSegundaVia["Data da próxima leitura"] = item.dataProximaLeitura;
+                                drSegundaVia["status"] = item.status;
+                                drSegundaVia["Média"] = item.media;
+                                drSegundaVia["Histórico descricação mês1"] = item.historicoDescricaoMes1;
+                                drSegundaVia["Histórico mês1"] = item.historicoMes1;
+                                drSegundaVia["Histórico descricação mês2"] = item.historicoDescricaoMes2;
+                                drSegundaVia["Histórico mês2"] = item.historicoMes2;
+                                drSegundaVia["Histórico descricação mês3"] = item.historicoDescricaoMes3;
+                                drSegundaVia["Histórico mês3"] = item.historicoMes3;
+                                drSegundaVia["Histórico descricação mês4"] = item.historicoDescricaoMes4;
+                                drSegundaVia["Histórico mês4"] = item.historicoMes4;
+                                drSegundaVia["Histórico descricação mês5"] = item.historicoDescricaoMes5;
+                                drSegundaVia["Histórico mês5"] = item.historicoMes5;
+                                drSegundaVia["Histórico descricação mês6"] = item.historicoDescricaoMes6;
+                                drSegundaVia["Histórico mês6"] = item.historicoMes6;
+
+                                // Virá do banco quando o consumo - se maior que 2400 fara o valor do rateio
+                                //item.consumoM3pagoCondominio = 2600;
+                                // o Valor pago do condominio virá do banco também...
+                                //item.ConsumoValorPagoCondominio = 7900;
+
+                                //Isto ficará fixo - Será a diferença paga entre o valor pago do consumo minimo, e o consumo e excedente
+                                item.excedenteValorPagoCondominio = Math.Abs(item.ConsumoValorPagoCondominio - item.minimoValorPagoCondominio);
+
+                                drSegundaVia["Consumo Valor"] = item.ConsumoValorPagoCondominio;
+                                drSegundaVia["Consumo M³"] = item.consumoM3pagoCondominio;
+
+                                drSegundaVia["Mínimo M³"] = item.minimoM3PagoCondominio;
+                                drSegundaVia["Mínimo Valor"] = item.minimoValorPagoCondominio;
+
+                                drSegundaVia["Excedente Valor"] = item.excedenteValorPagoCondominio;
+                                drSegundaVia["Tarifa Mínima M³"] = item.tarifaMinimaM3ValorDevido;
+                                drSegundaVia["Tarifa Mínima Valor"] = item.tarifaMinimaValorValorDevido;
+
+                                //Se o valor do consumo do M3 for maior que o minimo M3 do condominio será feito o rateio...
+                                if (item.consumoM3pagoCondominio > item.minimoM3PagoCondominio)
+                                {
+                                    item.excedenteM3PagoCondominio = item.consumoM3pagoCondominio - item.minimoM3PagoCondominio;
+                                    item.excedenteValorRateio = (item.excedenteValorPagoCondominio / item.excedenteM3Rateio);
+                                    item.valorPagarValorDevido = (Math.Round(item.excedenteValorRateio, 0) * item.excedenteValorDevido);
+
+                                    drSegundaVia["ExcedentePagoPeloCondominio"] = item.excedenteM3PagoCondominio;
+                                    drSegundaVia["ExcedenteValorRateio "] = item.excedenteValorRateio;
+                                    drSegundaVia["a pagar"] = item.valorPagarValorDevido;
+                                }
+                                //Se não mantêm o valor sem rateio..
+                                else
+                                {
+                                    drSegundaVia["ExcedentePagoPeloCondominio"] = item.excedenteM3PagoCondominio;
+                                    drSegundaVia["ExcedenteValorRateio "] = item.excedenteValorRateio;
+                                    drSegundaVia["a pagar"] = item.valorPagarValorDevido;
+                                }
+                                drSegundaVia["ExcedenteM3Rateio"] = item.excedenteM3Rateio;
+                                drSegundaVia["Geral"] = item.avisoGeralAviso;
+                                drSegundaVia["Anormal"] = item.AnormalAviso;
+                                drSegundaVia["Invididual"] = item.individualAviso;
+                                drSegundaVia["ANORMALIDADE"] = item.anormalidadeAviso;
+                                drSegundaVia["Imagem"] = item.imagem;
+                                drSegundaVia["ExcedenteValorDevido"] = item.excedenteValorDevido;
+                                drSegundaVia["excedenteM3Diario"] = item.excedenteM3diaria;
+
+                                dsSegundaVia.Tables[1].Rows.Add(drSegundaVia);
+
+
+                            }
+
+
+
+                            Crystal.Relatorios.ReciboMoradorByApBloco rbSegundaVia = new Crystal.Relatorios.ReciboMoradorByApBloco();
+
+                            rbSegundaVia.SetDataSource(dsSegundaVia);
+
+                            rbSegundaVia.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "Recibo");
                         }
 
+                        catch (Exception ex)
+                        {
 
-                       
-                        Crystal.Relatorios.ReciboMoradorByApBloco rbSegundaVia = new Crystal.Relatorios.ReciboMoradorByApBloco();
-
-                        rbSegundaVia.SetDataSource(dsSegundaVia);
-
-                        rbSegundaVia.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "Recibo");
-
+                            throw ex;
+                        }
                     }
-                    catch (Exception ex)
-                    {
-                        
-                        throw ex;
-                    }
-                    
 
               }
             
@@ -277,7 +376,7 @@ namespace Azuli.Web.Portal
                 catch (Exception ex)
                 {
 
-                    throw ex;
+                     throw ex;
                 }
               
 
