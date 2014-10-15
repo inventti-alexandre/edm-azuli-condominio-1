@@ -3,14 +3,16 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
+    
+
   <br />
-    <fieldset  class="style1" dir="ltr">
+    <fieldset  class="" dir="ltr">
   
-        <legend class="accordionContent">Gerar Recibo Mensal - Conta Água Azuli</legend>
+        <legend class="">Gerar Recibo Mensal - Conta Água Azuli</legend>
         <br />
         <asp:Label ID="lblConsultaAno" runat="server" CssClass="mainbodyTel" 
             Text="Mudar Ano de Consulta:"></asp:Label>
-        &nbsp;<asp:DropDownList ID="drpAno" runat="server" CssClass="FooterStyle" Height="26px" 
+        &nbsp;<asp:DropDownList ID="drpAno" runat="server" CssClass="" Height="26px" 
             Width="123px" AutoPostBack="True" ontextchanged="drpAno_TextChanged" 
            >
         </asp:DropDownList>
@@ -23,8 +25,8 @@
 
         <div id="dvPublicacao" runat="server" align="left">
       <table cellpadding="1" 
-            style="background-color: White; border: Outset 2px Silver; text-align: center; width: 100%;" 
-            class="btGeral" align="left" dir="ltr">
+            style="border: Outset 2px Silver; text-align: center; width: 100%;" 
+            class="well" align="left" dir="ltr">
         
        
         <tr>
@@ -92,7 +94,7 @@
                 <br />
                 <br />
                 <asp:ImageButton ID="ImageButton1" runat="server" 
-                    ImageUrl="~/images/excel.png" onclick="ImageButton1_Click" />
+                    ImageUrl="~/images/excel.png" onclick="ImageButton1_Click" Width="23px" />
             </td>
             <td>
                 <asp:Image ID="img2" runat="server" Height="18px" 
@@ -100,7 +102,7 @@
                     <br />
                 <br />
                 <asp:ImageButton ID="ImageButton2" ImageUrl="~/images/excel.png" runat="server" 
-                    onclick="ImageButton2_Click" />
+                    onclick="ImageButton2_Click" Width="23px" />
             </td>
             <td>
                 <asp:Image ID="img3" runat="server" Height="18px" 
@@ -108,7 +110,7 @@
                     <br />
                 <br />
                 <asp:ImageButton ID="ImageButton3" ImageUrl="~/images/excel.png" runat="server" 
-                    onclick="ImageButton3_Click" style="width: 16px" />
+                    onclick="ImageButton3_Click" Width="23px" />
             </td>
             <td class="style2">
                 <asp:Image ID="img4" runat="server" Height="18px" 
@@ -116,7 +118,7 @@
                     <br />
                 <br />
                 <asp:ImageButton ID="ImageButton4" ImageUrl="~/images/excel.png" runat="server" 
-                    onclick="ImageButton4_Click" />
+                    onclick="ImageButton4_Click" Width="23px" />
             </td>
             <td>
                 <asp:Image ID="img5" runat="server" Height="18px" 
@@ -124,7 +126,7 @@
                     <br />
                 <br />
                 <asp:ImageButton ID="ImageButton5" ImageUrl="~/images/excel.png" runat="server" 
-                    onclick="ImageButton5_Click" />
+                    onclick="ImageButton5_Click" Width="23px" />
             </td>
             <td>
                 <asp:Image ID="img6" runat="server" Height="18px" 
@@ -132,7 +134,7 @@
                     <br />
                 <br />
                 <asp:ImageButton ID="ImageButton6" ImageUrl="~/images/excel.png" runat="server" 
-                    onclick="ImageButton6_Click" />
+                    onclick="ImageButton6_Click" Width="23px" />
             </td>
             <td>
                 <asp:Image ID="img7" runat="server" Height="18px" 
@@ -140,7 +142,7 @@
                     <br />
                 <br />
                 <asp:ImageButton ID="ImageButton7" ImageUrl="~/images/excel.png" runat="server" 
-                    onclick="ImageButton7_Click" style="height: 16px" />
+                    onclick="ImageButton7_Click" Width="23px" />
             </td>
             <td>
                 <asp:Image ID="img8" runat="server" Height="18px" 
@@ -148,7 +150,7 @@
                     <br />
                 <br />
                 <asp:ImageButton ID="ImageButton8" ImageUrl="~/images/excel.png" runat="server" 
-                    onclick="ImageButton8_Click" />
+                    onclick="ImageButton8_Click" Width="23px" />
             </td>
             <td>
                 <asp:Image ID="img9" runat="server" Height="18px" 
@@ -156,7 +158,7 @@
                     <br />
                 <br />
                 <asp:ImageButton ID="ImageButton9" ImageUrl="~/images/excel.png" runat="server" 
-                    onclick="ImageButton9_Click" />
+                    onclick="ImageButton9_Click" Width="23px" />
             </td>
             <td>
                 <asp:Image ID="img10" runat="server" Height="18px" 
@@ -164,7 +166,7 @@
                     <br />
                 <br />
                 <asp:ImageButton ID="ImageButton10" ImageUrl="~/images/excel.png" 
-                    runat="server" onclick="ImageButton10_Click" />
+                    runat="server" onclick="ImageButton10_Click"  Width="23px"/>
             </td>
             <td>
                 <asp:Image ID="img11" runat="server" Height="18px" 
@@ -172,7 +174,7 @@
                     <br />
                 <br />
                 <asp:ImageButton ID="ImageButton11"  ImageUrl="~/images/excel.png" 
-                    runat="server" onclick="ImageButton11_Click" />
+                    runat="server" onclick="ImageButton11_Click" Width="23px" />
 
             </td>
             <td>
@@ -181,12 +183,112 @@
                     <br />
                 <br />
                 <asp:ImageButton ID="ImageButton12" ImageUrl="~/images/excel.png" 
-                    runat="server" onclick="ImageButton12_Click" />
+                    runat="server" onclick="ImageButton12_Click" Width="23px" />
             </td>
         </tr>
         </table>
         </div>
         
+        
+
+        <br />
+  
+        <legend class="well-small">Detalhe do Consumo - Referência: <asp:Label ID="lblReferencia" runat="server"></asp:Label></legend>
+        <br />
+         <center>   
+             <asp:GridView  ID="grdDetalheConsumo" runat="server" AutoGenerateColumns="False" 
+                Height="68px" Width="761px" Font-Italic="False" Font-Names="Arial">
+                <Columns>
+                    <asp:TemplateField HeaderText="Registro">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Eval("registro ") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("registro ") %>'></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle BackColor="#F2DCDB" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Apto">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox2" runat="server" Text='<%# Eval("apartamento") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("apartamento") %>'></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle BackColor="#F2DCDB" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Histórico de consumo 6 últimos meses [média] [m³]">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox9" runat="server" Text='<%# Eval("historicoMes1") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label9" runat="server" Text='<%# Eval("historicoMes1") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Leitura Anterior">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox3" runat="server" 
+                                Text='<%# Eval("leituraAnteriorM3 ") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label3" runat="server" 
+                                Text='<%# Eval("leituraAnteriorM3") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Leitura Atual">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox4" runat="server" 
+                                Text='<%# Eval("leituraAtualM3") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label4" runat="server" Text='<%# Eval("leituraAtualM3") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Consumo 30d M³">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox5" runat="server" Text='<%# Eval("consumoMesM3") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label5" runat="server" Text='<%# Eval("consumoMesM3") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Excedente">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox6" runat="server" 
+                                Text='<%# Eval("excedenteValorDevido") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label6" runat="server" 
+                                Text='<%# Eval("excedenteValorDevido") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="À pagar">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox7" runat="server" 
+                                Text='<%# Eval("valorPagarValorDevido") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label7" runat="server" 
+                                Text='<%# Eval("valorPagarValorDevido") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Obs.">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox8" runat="server" Text='<%# Eval("status") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label8" runat="server" Text='<%# Eval("status") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+
+
+                 <HeaderStyle BackColor="#F2F2F2" Font-Bold="True" Font-Size="Smaller" 
+                     ForeColor="Black" />
+                 <RowStyle BackColor="White" />
+
+
+            </asp:GridView></center>
         </fieldset>
 
 </asp:Content>

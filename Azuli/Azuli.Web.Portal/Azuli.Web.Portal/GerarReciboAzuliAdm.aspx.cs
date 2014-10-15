@@ -8,6 +8,7 @@ using System.Text;
 using System.Globalization;
 using Azuli.Web.Model;
 using Azuli.Web.Business;
+using System.Text.RegularExpressions;
 
 namespace Azuli.Web.Portal
 {
@@ -16,6 +17,7 @@ namespace Azuli.Web.Portal
 
         DateTime data = DateTime.Now;
         Util.Util oUtil = new Util.Util();
+        ReciboAguaBLL oReciboBLL = new ReciboAguaBLL();
        
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -420,10 +422,8 @@ namespace Azuli.Web.Portal
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-            Session["mes"] = 1;
-            Session["ano"] = drpAno.SelectedValue;
-            Session["Excel"] = true;
-            openedPoupReport();
+        
+            detalheConsumo(1, Convert.ToInt32(drpAno.SelectedValue));
 
         }
 
@@ -462,10 +462,7 @@ namespace Azuli.Web.Portal
 
         protected void ImageButton6_Click(object sender, ImageClickEventArgs e)
         {
-            Session["mes"] = 6;
-            Session["ano"] = drpAno.SelectedValue;
-            Session["Excel"] = true;
-            openedPoupReport();
+            detalheConsumo(6, Convert.ToInt32(drpAno.SelectedValue));
         }
 
         protected void ImageButton7_Click(object sender, ImageClickEventArgs e)
@@ -520,6 +517,57 @@ namespace Azuli.Web.Portal
             Session["Excel"] = true;
             openedPoupReport();
 
+        }
+
+        public void detalheConsumo(int mes, int ano)
+        {
+            listaSegundaViaAgua listExcel = oReciboBLL.buscaTodosRecibosByYearAndMonth(ano, mes);
+             listaSegundaViaAgua listExcelTratada = new listaSegundaViaAgua();
+            ReciboAgua oReciboModel = new ReciboAgua();
+
+            foreach (var item in listExcel)
+            {
+                oReciboModel.registro = "R"+item.registro;
+                oReciboModel.apartamento = "B" + item.bloco + "-AP" + item.apartamento;
+                oReciboModel.historicoMes1 = " " + item.historicoMes1 + "-" + item.historicoMes2 + "-" + item.historicoMes3 + "-" + item.historicoMes4 + "-" + item.historicoMes5 + "-" + item.historicoMes6 + "("+item.media+")";
+                oReciboModel.leituraAnteriorM3 = item.leituraAnteriorM3;
+                oReciboModel.leituraAtualM3 = item.leituraAtualM3;
+                oReciboModel.consumoMesM3 =   Math.Round(item.excedenteM3diaria * 30, 0).ToString();
+                oReciboModel.excedenteValorDevido = item.excedenteValorDevido;
+                oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+
+                Regex re = new Regex("[0-9]");
+                StringBuilder s = new StringBuilder();
+
+                foreach (Match m in re.Matches(item.historicoMes1))
+                {
+                    s.Append(m.Value);
+                }
+
+                item.historicoMes1 = s.ToString();
+
+                if (item.historicoMes1 == "-" || item.historicoMes1 == "")
+                    item.historicoMes1 = "0";
+
+                if (Math.Round(item.excedenteM3diaria * 30, 0) < Convert.ToInt32(item.historicoMes1))
+                {
+                    oReciboModel.status = "↓ " + item.status;
+                
+                }
+                else
+                {
+                    oReciboModel.status = "↑ " + item.status;
+
+                }
+
+
+                listExcelTratada.Add(oReciboModel);
+                
+                   
+            }
+
+            grdDetalheConsumo.DataSource = listExcelTratada;
+            grdDetalheConsumo.DataBind();
         }
 
 

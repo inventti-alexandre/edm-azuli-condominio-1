@@ -68,72 +68,85 @@ namespace Azuli.Web.Portal
 
         public void Export(string fileName, listaSegundaViaAgua listAguaExcel)
         {
-            //The Clear method erases any buffered HTML output.
-            HttpContext.Current.Response.Clear();
-            //The AddHeader method adds a new HTML header and value to the response sent to the client.
-            HttpContext.Current.Response.AddHeader(
-                "content-disposition", string.Format("attachment; filename={0}", fileName + ".xls"));
-            //The ContentType property specifies the HTTP content type for the response.
-            HttpContext.Current.Response.ContentType = "application/ms-excel";
-            //Implements a TextWriter for writing information to a string. The information is stored in an underlying StringBuilder.
-            using (StringWriter sw = new StringWriter())
-            {
-                //Writes markup characters and text to an ASP.NET server control output stream. This class provides formatting capabilities that ASP.NET server controls use when rendering markup to clients.
-                using (HtmlTextWriter htw = new HtmlTextWriter(sw))
-                {
-                    //  Create a form to contain the List
-                    System.Web.UI.WebControls.Table table = new System.Web.UI.WebControls.Table();
-                    TableRow row = new TableRow();
 
 
-                     List<BancoExcel> listExcel = new List<BancoExcel>()
-                     {
-                         new BancoExcel{parameters="Registro"},
-                         new BancoExcel{parameters = "Consumo M³"}
-                     };
+
+
+
+
+            ////The Clear method erases any buffered HTML output.
+            //HttpContext.Current.Response.Clear();
+            ////The AddHeader method adds a new HTML header and value to the response sent to the client.
+            //HttpContext.Current.Response.AddHeader(
+            //    "content-disposition", string.Format("attachment; filename={0}", fileName + ".xls"));
+            ////The ContentType property specifies the HTTP content type for the response.
+            //HttpContext.Current.Response.ContentType = "application/ms-excel";
+            ////Implements a TextWriter for writing information to a string. The information is stored in an underlying StringBuilder.
+            //using (StringWriter sw = new StringWriter())
+            //{
+            //    //Writes markup characters and text to an ASP.NET server control output stream. This class provides formatting capabilities that ASP.NET server controls use when rendering markup to clients.
+            //    using (HtmlTextWriter htw = new HtmlTextWriter(sw))
+            //    {
+            //        //  Create a form to contain the List
+            //        System.Web.UI.WebControls.Table table = new System.Web.UI.WebControls.Table();
+            //        TableRow row = new TableRow();
+
+
+            //         List<BancoExcel> listExcel = new List<BancoExcel>()
+            //         {
+            //             new BancoExcel{parameters="Registro"},
+            //             new BancoExcel{parameters = "Apto"},
+            //             new BancoExcel{parameters = "Histórico"},
+            //             new BancoExcel{parameters = "Leitura Anterior"},
+            //             new BancoExcel{parameters = "Leitura Atual"},
+            //             new BancoExcel{parameters = "Consumo"},
+            //             new BancoExcel{parameters = "Excedente M³"},
+            //             new BancoExcel{parameters = "À pagar"},
+            //             new BancoExcel{parameters = "Obs:"},
+
+            //         };
  
-                    foreach(var item in  listExcel)
-                    {
+            //        foreach(var item in  listExcel)
+            //        {
 
-                        TableHeaderCell hcell = new TableHeaderCell();
-                        hcell.BorderColor = System.Drawing.Color.Black;
-                        hcell.Text = item.parameters;
-                        row.Cells.Add(hcell);
-                    }
+            //            TableHeaderCell hcell = new TableHeaderCell();
+            //            hcell.BorderColor = System.Drawing.Color.Black;
+            //            hcell.Text = item.parameters;
+            //            row.Cells.Add(hcell);
+            //        }
                     
 
-                    table.Rows.Add(row);
+            //        table.Rows.Add(row);
 
 
-                    var listAprove = from listaOrd in listAguaExcel
-                                     orderby listaOrd.registro ascending
-                                     select listaOrd;
+            //        var listAprove = from listaOrd in listAguaExcel
+            //                         orderby listaOrd.registro ascending
+            //                         select listaOrd;
 
-                    //  add each of the data item to the table
-                    foreach (ReciboAgua emp in listAprove)
-                    {
-                        TableRow row1 = new TableRow();
-                        TableCell cellAge = new TableCell();
-                        cellAge.Text = "" + emp.registro;
-                        TableCell cellName = new TableCell();
-                        cellName.Text = "" + Math.Round(emp.excedenteM3diaria * 30, 0);
-                        row1.Cells.Add(cellAge);
-                        row1.Cells.Add(cellName);
-                        table.Rows.Add(row1);
-                    }
-                    //  render the table into the htmlwriter
-                    table.RenderControl(htw);
-                    //  render the htmlwriter into the response
-                    HttpContext.Current.Response.Write(sw.ToString());
-                    HttpContext.Current.Response.End();
+            //        //  add each of the data item to the table
+            //        foreach (ReciboAgua emp in listAprove)
+            //        {
+            //            TableRow row1 = new TableRow();
+            //            TableCell cellAge = new TableCell();
+            //            cellAge.Text = "" + emp.registro;
+            //            TableCell cellName = new TableCell();
+            //            cellName.Text = "" + Math.Round(emp.excedenteM3diaria * 30, 0);
+            //            row1.Cells.Add(cellAge);
+            //            row1.Cells.Add(cellName);
+            //            table.Rows.Add(row1);
+            //        }
+            //        //  render the table into the htmlwriter
+            //        table.RenderControl(htw);
+            //        //  render the htmlwriter into the response
+            //        HttpContext.Current.Response.Write(sw.ToString());
+            //        HttpContext.Current.Response.End();
 
-                    Response.Redirect("~/GerarReciboAzuliAdm.aspx");
+            //        Response.Redirect("~/GerarReciboAzuliAdm.aspx");
 
                     
-                }
+                //}
             }
-        }
-
+        
         
 
         public void Recibo()
