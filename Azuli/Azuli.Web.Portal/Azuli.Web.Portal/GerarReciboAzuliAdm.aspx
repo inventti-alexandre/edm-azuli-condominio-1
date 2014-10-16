@@ -195,7 +195,7 @@
   
         </div>
   
-        <legend class="well-small">Detalhe do Consumo - Referência: <asp:Label ID="lblReferencia" runat="server"></asp:Label></legend>
+        <legend class="">Detalhe do Consumo - Referência: <asp:Label ID="lblReferencia" runat="server"></asp:Label></legend>
         <br />
          <center style="margin-left: 40px">   
              <asp:GridView  ID="grdDetalheConsumo" runat="server" AutoGenerateColumns="False" 
@@ -307,7 +307,7 @@
                  <SelectedRowStyle ForeColor="Black" />
 
 
-            </asp:GridView></div></center>
+            </asp:GridView></center>
         </fieldset>  
 
 </asp:Content>

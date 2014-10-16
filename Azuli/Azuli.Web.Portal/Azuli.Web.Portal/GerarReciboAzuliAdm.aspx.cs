@@ -18,6 +18,7 @@ namespace Azuli.Web.Portal
         DateTime data = DateTime.Now;
         Util.Util oUtil = new Util.Util();
         ReciboAguaBLL oReciboBLL = new ReciboAguaBLL();
+        
        
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -132,15 +133,15 @@ namespace Azuli.Web.Portal
 
         public void openedPoupReport()
         {
-            if (Convert.ToBoolean(Session["Excel"]))
+            if (Convert.ToBoolean(Session["RelGerencial"]))
             {
-                Session["chooseReport"] = true;
-                Response.Redirect("~/ReportViewer.aspx");
+                
+                OpenPopUp(Page.ResolveUrl("~/reportRelatorioGeral.aspx"), 700, 920, true, true);
                
             }
             else
             {
-                Session["Excel"] = false;
+               
                 Session["chooseReport"] = true;
                 Session["ReciboAgua"] = false;
                 OpenPopUp(Page.ResolveUrl("~/ReportViewer.aspx"), 700, 920, true, true);
@@ -462,7 +463,12 @@ namespace Azuli.Web.Portal
 
         protected void ImageButton6_Click(object sender, ImageClickEventArgs e)
         {
-            detalheConsumo(6, Convert.ToInt32(drpAno.SelectedValue));
+
+            Session["mes"] = 6;
+            Session["ano"] = drpAno.SelectedValue;
+            Session["RelGerencial"] = true;
+            openedPoupReport();
+           // detalheConsumo(6, Convert.ToInt32(drpAno.SelectedValue));
         }
 
         protected void ImageButton7_Click(object sender, ImageClickEventArgs e)

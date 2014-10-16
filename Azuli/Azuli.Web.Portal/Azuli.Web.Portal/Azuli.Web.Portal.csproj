@@ -338,6 +338,7 @@
     <Content Include="OcorrenciaMorador.aspx" />
     <Content Include="paginaInicialMoradores.aspx" />
     <Content Include="relatorioGeral\relatorioGeral.aspx" />
+    <Content Include="reportRelatorioGeral.aspx" />
     <Content Include="ReportViewer.aspx" />
     <Content Include="ReservaDetalhadaMoradores.aspx" />
     <Content Include="resetSenha.aspx" />
@@ -795,6 +796,13 @@
     </Compile>
     <Compile Include="relatorioGeral\relatorioGeral.aspx.designer.cs">
       <DependentUpon>relatorioGeral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reportRelatorioGeral.aspx.cs">
+      <DependentUpon>reportRelatorioGeral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reportRelatorioGeral.aspx.designer.cs">
+      <DependentUpon>reportRelatorioGeral.aspx</DependentUpon>
     </Compile>
     <Compile Include="ReportViewer.aspx.cs">
       <DependentUpon>ReportViewer.aspx</DependentUpon>
