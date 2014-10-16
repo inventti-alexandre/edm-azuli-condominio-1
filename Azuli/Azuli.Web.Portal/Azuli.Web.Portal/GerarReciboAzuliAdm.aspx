@@ -187,11 +187,13 @@
             </td>
         </tr>
         </table>
-        </div>
+      
         
         
 
         <br />
+  
+        </div>
   
         <legend class="well-small">Detalhe do Consumo - Referência: <asp:Label ID="lblReferencia" runat="server"></asp:Label></legend>
         <br />
@@ -199,7 +201,8 @@
              <asp:GridView  ID="grdDetalheConsumo" runat="server" AutoGenerateColumns="False" 
                 Height="68px" Width="761px" Font-Italic="False" 
                  Font-Names="Times New Roman" EnableTheming="True" Font-Bold="True" 
-                 onrowdatabound="grdDetalheConsumo_RowDataBound" DataKeyNames="excedenteValorDevido">
+                 onrowdatabound="grdDetalheConsumo_RowDataBound" 
+                 DataKeyNames="excedenteValorDevido" ShowFooter="True">
                  <AlternatingRowStyle BorderStyle="None" Wrap="True" />
                 <Columns>
                     <asp:TemplateField HeaderText="Registro">
@@ -221,7 +224,7 @@
                         </ItemTemplate>
                         <ItemStyle BackColor="#F2DCDB" HorizontalAlign="Center" Width="70px" />
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Histórico de consumo 6 últimos meses [média] [m³]">
+                    <asp:TemplateField HeaderText="Histórico de consumo 6 últimos meses (média) [m³]">
                         <EditItemTemplate>
                             <asp:TextBox ID="TextBox9" runat="server" Text='<%# Eval("historicoMes1") %>'></asp:TextBox>
                         </EditItemTemplate>
@@ -229,7 +232,7 @@
                             <asp:Label ID="Label9" runat="server" Text='<%# Eval("historicoMes1") %>'></asp:Label>
                         </ItemTemplate>
                         <HeaderStyle BackColor="#F2F2F2" />
-                        <ItemStyle HorizontalAlign="Center" BackColor="#F2F2F2" />
+                        <ItemStyle HorizontalAlign="Center" Width="130px" BackColor="#F2F2F2" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Leitura Anterior">
                         <EditItemTemplate>
@@ -252,14 +255,14 @@
                         </ItemTemplate>
                          <ItemStyle HorizontalAlign="Center" BackColor="White" />
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Consumo 30d M³">
+                    <asp:TemplateField HeaderText="Consumo 30d [M³]">
                         <EditItemTemplate>
                             <asp:TextBox ID="TextBox5" runat="server" Text='<%# Eval("consumoMesM3") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label5" runat="server" Text='<%# Eval("consumoMesM3") %>'></asp:Label>
                         </ItemTemplate>
-                         <ItemStyle HorizontalAlign="Center" BackColor="White" />
+                         <ItemStyle HorizontalAlign="Center" Width="25px" BackColor="White" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Excedente">
                         <EditItemTemplate>
@@ -270,7 +273,7 @@
                             <asp:Label ID="Label6" runat="server" 
                                 Text='<%# Eval("excedenteValorDevido") %>'></asp:Label>
                         </ItemTemplate>
-                         <ItemStyle HorizontalAlign="Center"  Width="auto"/>
+                         <ItemStyle HorizontalAlign="Center"  Width="60px"/>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="À pagar">
                         <EditItemTemplate>
@@ -281,6 +284,7 @@
                             <asp:Label ID="Label7" runat="server" 
                                 Text='<%# Eval("valorPagarValorDevido","{0:C2}") %>'></asp:Label>
                         </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center"  Width="60px"/>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Obs.">
                         <EditItemTemplate>
@@ -294,13 +298,16 @@
                 </Columns>
 
 
+                 <FooterStyle BackColor="#F2F2F2" />
+
+
                  <HeaderStyle BackColor="#F2F2F2" Font-Bold="True" Font-Size="Small" 
                      ForeColor="Black" />
                  <RowStyle BackColor="White" ForeColor="Black" />
                  <SelectedRowStyle ForeColor="Black" />
 
 
-            </asp:GridView></center>
-        </fieldset>
+            </asp:GridView></div></center>
+        </fieldset>  
 
 </asp:Content>

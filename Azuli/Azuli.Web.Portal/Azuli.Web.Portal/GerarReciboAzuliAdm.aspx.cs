@@ -485,11 +485,7 @@ namespace Azuli.Web.Portal
 
         protected void ImageButton9_Click(object sender, ImageClickEventArgs e)
         {
-            Session["mes"] = 9;
-            Session["ano"] = drpAno.SelectedValue;
-            Session["Excel"] = true;
-            openedPoupReport();
-
+            detalheConsumo(9, Convert.ToInt32(drpAno.SelectedValue));
         }
 
         protected void ImageButton10_Click(object sender, ImageClickEventArgs e)
@@ -521,53 +517,80 @@ namespace Azuli.Web.Portal
 
         public void detalheConsumo(int mes, int ano)
         {
-            listaSegundaViaAgua listExcel = oReciboBLL.buscaTodosRecibosByYearAndMonth(ano, mes);
-             listaSegundaViaAgua listExcelTratada = new listaSegundaViaAgua();
+            var listExcel = from lisExcelBl1 in oReciboBLL.buscaTodosRecibosByYearAndMonth(ano, mes)
+                                            orderby lisExcelBl1.registro ascending
+                                            select lisExcelBl1;
+             
+            
+            
+            listaSegundaViaAgua listExcelTratada = new listaSegundaViaAgua();
+             listaSegundaViaAgua listExcelTratada1 = new listaSegundaViaAgua();
            
 
             foreach (var item in listExcel)
             {
                 ReciboAgua oReciboModel = new ReciboAgua();
-                oReciboModel.registro = "R"+item.registro;
-                oReciboModel.apartamento = "B" + item.bloco + "-AP" + item.apartamento;
-                oReciboModel.historicoMes1 = " " + returnNumber(item.historicoMes1) + "-" + returnNumber(item.historicoMes2) + "-" + returnNumber(item.historicoMes3) + "-" + returnNumber(item.historicoMes4) + "-" + returnNumber(item.historicoMes5) + "-" + returnNumber(item.historicoMes6) + " - (" + item.media + ")";
-                oReciboModel.leituraAnteriorM3 = item.leituraAnteriorM3;
-                oReciboModel.leituraAtualM3 = item.leituraAtualM3;
-                oReciboModel.consumoMesM3 =   Math.Round(item.excedenteM3diaria * 30, 0).ToString();
-                oReciboModel.excedenteValorDevido = item.excedenteValorDevido;
-                oReciboModel.valorPagarValorDevido =  item.valorPagarValorDevido;
 
-
-
-                item.historicoMes1 = returnNumber(item.historicoMes1).ToString();
-
-                if (item.status == "")
-                {
-                    oReciboModel.status = "-";
-                }
-                else
+                if (item.bloco == "1")
                 {
 
-                    if (Math.Round(item.excedenteM3diaria * 30, 0) < Convert.ToInt32(item.historicoMes1))
+                    oReciboModel.registro = "R" + item.registro;
+                    oReciboModel.apartamento = "B" + item.bloco + "-AP" + item.apartamento;
+                    oReciboModel.historicoMes1 = " " + returnNumber(item.historicoMes6) + "-" + returnNumber(item.historicoMes5) + "-" + returnNumber(item.historicoMes4) + "-" + returnNumber(item.historicoMes3) + "-" + returnNumber(item.historicoMes2) + "-" + returnNumber(item.historicoMes1) + " - (" + item.media + ")";
+                    oReciboModel.leituraAnteriorM3 = item.leituraAnteriorM3;
+                    oReciboModel.leituraAtualM3 = item.leituraAtualM3;
+                    oReciboModel.consumoMesM3 = Math.Round(item.excedenteM3diaria * 30, 0).ToString();
+                    oReciboModel.excedenteValorDevido = item.excedenteValorDevido;
+                    oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+
+
+
+                    item.historicoMes1 = returnNumber(item.historicoMes1).ToString();
+
+                    if (item.status == "")
                     {
-                        oReciboModel.status = "↓ " + item.status;
-
+                        oReciboModel.status = "-";
                     }
                     else
                     {
-                        oReciboModel.status = "↑ " + item.status;
 
+                        if (Math.Round(item.excedenteM3diaria * 30, 0) < Convert.ToInt32(item.historicoMes1))
+                        {
+                            oReciboModel.status = "↓ " + item.status;
+
+                        }
+                        else
+                        {
+                            oReciboModel.status = "↑ " + item.status;
+
+                        }
                     }
+
+                    listExcelTratada.Add(oReciboModel);
                 }
 
 
-                listExcelTratada.Add(oReciboModel);
+                
                 
                    
             }
 
             grdDetalheConsumo.DataSource = listExcelTratada;
             grdDetalheConsumo.DataBind();
+
+            grdDetalheConsumo.FooterRow.Cells[0].ColumnSpan = 9;
+            grdDetalheConsumo.FooterRow.Cells[0].HorizontalAlign = HorizontalAlign.Center;
+            grdDetalheConsumo.FooterRow.Cells[0].Font.Size = 28;
+            grdDetalheConsumo.FooterRow.Cells.RemoveAt(8);
+            grdDetalheConsumo.FooterRow.Cells.RemoveAt(7);
+            grdDetalheConsumo.FooterRow.Cells.RemoveAt(6);
+            grdDetalheConsumo.FooterRow.Cells.RemoveAt(5);
+            grdDetalheConsumo.FooterRow.Cells.RemoveAt(4);
+            grdDetalheConsumo.FooterRow.Cells.RemoveAt(3);
+            grdDetalheConsumo.FooterRow.Cells.RemoveAt(2);
+            grdDetalheConsumo.FooterRow.Cells.RemoveAt(1);
+            grdDetalheConsumo.FooterRow.Cells[0].ForeColor = System.Drawing.Color.Black;
+            grdDetalheConsumo.FooterRow.Cells[0].Text = "BLOCO 1";
         }
 
         public StringBuilder returnNumber(string historico)
@@ -583,6 +606,19 @@ namespace Azuli.Web.Portal
             return s;
         }
 
+
+        public int addZero(int valor)
+        {
+            string auxiliar = "";
+            if (valor == 0 || valor == 1 || valor == 2 || valor == 3 || valor == 4 || valor == 5 || valor == 6 || valor == 7 || valor == 8 || valor == 9)
+            {
+
+                auxiliar = "0" + valor;
+            }
+
+            return Convert.ToInt32(auxiliar);
+
+        }
         protected void grdDetalheConsumo_RowDataBound(object sender, GridViewRowEventArgs e)
         {
 
@@ -591,10 +627,16 @@ namespace Azuli.Web.Portal
             // quando montar as linhas do tipo DADOS
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                if (Convert.ToInt32(DataBinder.Eval(e.Row.DataItem, "excedenteValorDevido")) > 10)
+                if (Convert.ToInt32(DataBinder.Eval(e.Row.DataItem, "consumoMesM3")) > 10)
                 {
-                    e.Row.Cells[6].BackColor = System.Drawing.Color.Red;
+                    e.Row.Cells[5].ForeColor = System.Drawing.Color.FromName("#800000"); 
                     
+                }
+
+                if (Convert.ToInt32(DataBinder.Eval(e.Row.DataItem, "consumoMesM3")) > 20)
+                {
+                    e.Row.Cells[5].ForeColor = System.Drawing.Color.Red;
+
                 }
                 if (DataBinder.Eval(e.Row.DataItem, "status").ToString() == "↓ Anormal")
                 {
@@ -611,6 +653,9 @@ namespace Azuli.Web.Portal
                     e.Row.Cells[8].ForeColor = System.Drawing.Color.Yellow;
                     
                 }
+
+               
+ 
             }
         }
 
