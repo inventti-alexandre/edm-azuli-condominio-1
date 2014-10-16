@@ -523,41 +523,41 @@ namespace Azuli.Web.Portal
         {
             listaSegundaViaAgua listExcel = oReciboBLL.buscaTodosRecibosByYearAndMonth(ano, mes);
              listaSegundaViaAgua listExcelTratada = new listaSegundaViaAgua();
-            ReciboAgua oReciboModel = new ReciboAgua();
+           
 
             foreach (var item in listExcel)
             {
+                ReciboAgua oReciboModel = new ReciboAgua();
                 oReciboModel.registro = "R"+item.registro;
                 oReciboModel.apartamento = "B" + item.bloco + "-AP" + item.apartamento;
-                oReciboModel.historicoMes1 = " " + item.historicoMes1 + "-" + item.historicoMes2 + "-" + item.historicoMes3 + "-" + item.historicoMes4 + "-" + item.historicoMes5 + "-" + item.historicoMes6 + "("+item.media+")";
+                oReciboModel.historicoMes1 = " " + returnNumber(item.historicoMes1) + "-" + returnNumber(item.historicoMes2) + "-" + returnNumber(item.historicoMes3) + "-" + returnNumber(item.historicoMes4) + "-" + returnNumber(item.historicoMes5) + "-" + returnNumber(item.historicoMes6) + " - (" + item.media + ")";
                 oReciboModel.leituraAnteriorM3 = item.leituraAnteriorM3;
                 oReciboModel.leituraAtualM3 = item.leituraAtualM3;
                 oReciboModel.consumoMesM3 =   Math.Round(item.excedenteM3diaria * 30, 0).ToString();
                 oReciboModel.excedenteValorDevido = item.excedenteValorDevido;
-                oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+                oReciboModel.valorPagarValorDevido =  item.valorPagarValorDevido;
 
-                Regex re = new Regex("[0-9]");
-                StringBuilder s = new StringBuilder();
 
-                foreach (Match m in re.Matches(item.historicoMes1))
+
+                item.historicoMes1 = returnNumber(item.historicoMes1).ToString();
+
+                if (item.status == "")
                 {
-                    s.Append(m.Value);
-                }
-
-                item.historicoMes1 = s.ToString();
-
-                if (item.historicoMes1 == "-" || item.historicoMes1 == "")
-                    item.historicoMes1 = "0";
-
-                if (Math.Round(item.excedenteM3diaria * 30, 0) < Convert.ToInt32(item.historicoMes1))
-                {
-                    oReciboModel.status = "↓ " + item.status;
-                
+                    oReciboModel.status = "-";
                 }
                 else
                 {
-                    oReciboModel.status = "↑ " + item.status;
 
+                    if (Math.Round(item.excedenteM3diaria * 30, 0) < Convert.ToInt32(item.historicoMes1))
+                    {
+                        oReciboModel.status = "↓ " + item.status;
+
+                    }
+                    else
+                    {
+                        oReciboModel.status = "↑ " + item.status;
+
+                    }
                 }
 
 
@@ -570,6 +570,53 @@ namespace Azuli.Web.Portal
             grdDetalheConsumo.DataBind();
         }
 
+        public StringBuilder returnNumber(string historico)
+        {
+            Regex re = new Regex("[0-9]");
+            StringBuilder s = new StringBuilder();
+
+            foreach (Match m in re.Matches(historico))
+            {
+                s.Append(m.Value);
+            }
+
+            return s;
+        }
+
+        protected void grdDetalheConsumo_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+
+
+            
+            // quando montar as linhas do tipo DADOS
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                if (Convert.ToInt32(DataBinder.Eval(e.Row.DataItem, "excedenteValorDevido")) > 10)
+                {
+                    e.Row.Cells[6].BackColor = System.Drawing.Color.Red;
+                    
+                }
+                if (DataBinder.Eval(e.Row.DataItem, "status").ToString() == "↓ Anormal")
+                {
+
+                    e.Row.Cells[8].BackColor = System.Drawing.Color.Blue;
+                    e.Row.Cells[8].ForeColor = System.Drawing.Color.White;
+                    
+                }
+
+                if (DataBinder.Eval(e.Row.DataItem, "status").ToString() == "↑ Anormal")
+                {
+
+                    e.Row.Cells[8].BackColor = System.Drawing.Color.Red;
+                    e.Row.Cells[8].ForeColor = System.Drawing.Color.Yellow;
+                    
+                }
+            }
+        }
+
 
     }
+
+   
+
 }
