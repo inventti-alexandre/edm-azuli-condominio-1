@@ -23,18 +23,7 @@
         }
         
         
-        .grid
-        {
-            border: solid 22px black !important;
-        }
-        .grid td
-        {
-            border: solid 22px black;
-        }
-        .grid tr
-        {
-            border: solid 22px black;
-        }
+       
     </style>
     <title></title>
     <link href="css/bootstrap-classic.min.css" rel="stylesheet" type="text/css" />
@@ -42,10 +31,16 @@
 </head>
 <body>
     <form id="form" runat="server">
+      <center style="margin-left: 40px">
     
+          <asp:Label ID="lblReferencia" CssClass="btn-success" runat="server" style="font-weight: 700" 
+              Text=""></asp:Label>
+            &nbsp;
     
-    <div class="form-horizontal">
-        <center style="margin-left: 40px">
+     <asp:ImageButton ID="ImageButton1" runat="server" Height="37px" 
+                ImageUrl="~/images/excel2.png" onclick="ImageButton1_Click" 
+              Width="41px" />
+            &nbsp;<br />
             <asp:GridView ID="grdDetalheConsumo" runat="server" BorderColor="Black" BorderWidth="2px"
                 BorderStyle="Solid" AutoGenerateColumns="False" Height="0px" Width="761px" Font-Italic="False"
                 Font-Names="Arial" Font-Size="11px" EnableTheming="True" Font-Bold="True" OnRowDataBound="grdDetalheConsumo1_RowDataBound"
@@ -155,7 +150,7 @@
                 <SelectedRowStyle ForeColor="Black" />
             </asp:GridView>
         </center>
-        <br /><br /><br /><br /><br /><br /><br /><br />
+        <br />
         <center style="margin-left: 40px">
             <asp:GridView ID="GridBloco2" runat="server" BorderColor="Black" BorderWidth="2px"
                 BorderStyle="Solid" AutoGenerateColumns="False" Height="0px" Width="761px" Font-Italic="False"
@@ -266,7 +261,7 @@
                 <SelectedRowStyle ForeColor="Black" />
             </asp:GridView>
         </center>
-        <br /> <br /><br /><br /><br /><br /><br />
+        <br /> 
         <center style="margin-left: 40px">
             <asp:GridView ID="GridView1" runat="server" BorderColor="Black" BorderWidth="2px"
                 BorderStyle="Solid" AutoGenerateColumns="False" Height="0px" Width="761px" Font-Italic="False"
@@ -377,7 +372,7 @@
                 <SelectedRowStyle ForeColor="Black" />
             </asp:GridView>
         </center>
-        <br /><br /> <br /><br /><br /><br /><br /><br />
+        <br />
         <center style="margin-left: 40px">
             <asp:GridView ID="GridView2" runat="server" BorderColor="Black" BorderWidth="2px"
                 BorderStyle="Solid" AutoGenerateColumns="False" Height="0px" Width="761px" Font-Italic="False"
@@ -488,7 +483,7 @@
                 <SelectedRowStyle ForeColor="Black" />
             </asp:GridView>
         </center>
-        <br /><br /> <br /><br /><br /><br /><br /><br />
+        <br />
         <center style="margin-left: 40px">
             <asp:GridView ID="GridView3" runat="server" BorderColor="Black" BorderWidth="2px"
                 BorderStyle="Solid" AutoGenerateColumns="False" Height="0px" Width="761px" Font-Italic="False"
@@ -599,7 +594,7 @@
                 <SelectedRowStyle ForeColor="Black" />
             </asp:GridView>
         </center>
-        <br /><br /> <br /><br /><br /><br /><br /><br />
+        <br />
         <center style="margin-left: 40px">
             <asp:GridView ID="GridView4" runat="server" BorderColor="Black" BorderWidth="2px"
                 BorderStyle="Solid" AutoGenerateColumns="False" Height="0px" Width="761px" Font-Italic="False"
@@ -709,7 +704,7 @@
                     BorderWidth="2px" />
                 <SelectedRowStyle ForeColor="Black" />
             </asp:GridView>
-        </center><br /> <br /><br /><br />
+        </center><br />
         <center style="margin-left: 40px">
             <asp:GridView ID="GridView5" runat="server" BorderColor="Black" BorderWidth="2px"
                 BorderStyle="Solid" AutoGenerateColumns="False" Height="0px" Width="761px" Font-Italic="False"
@@ -819,7 +814,7 @@
                     BorderWidth="2px" />
                 <SelectedRowStyle ForeColor="Black" />
             </asp:GridView>
-        </center>
+      
     </div></form>
    
 </body>

@@ -153,7 +153,7 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth_Click(object sender, EventArgs e)
         {
-            Session["Excel"] = false;
+            Session["RelGerencial"] = false;
             
             Session["mes"] = 1;
             Session["ano"] = drpAno.SelectedValue;
@@ -165,7 +165,7 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth2_Click(object sender, EventArgs e)
         {
-            Session["Excel"] = false;
+            Session["RelGerencial"] = false;
             Session["mes"] = 2;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
@@ -176,7 +176,7 @@ namespace Azuli.Web.Portal
 
 
 
-            Session["Excel"] = false;
+            Session["RelGerencial"] = false;
             Session["mes"] = 3;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
@@ -185,7 +185,7 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth4_Click(object sender, EventArgs e)
         {
-            Session["Excel"] = false;
+            Session["RelGerencial"] = false;
            
             Session["mes"] = 4;
             Session["ano"] = drpAno.SelectedValue;
@@ -194,8 +194,7 @@ namespace Azuli.Web.Portal
         }
         protected void lbtMonth5_Click(object sender, EventArgs e)
         {
-            Session["Excel"] = false;
-            Session["Excel"] = false;
+            Session["RelGerencial"]= false;
             Session["mes"] = 5;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
@@ -203,8 +202,7 @@ namespace Azuli.Web.Portal
         }
         protected void lbtMonth6_Click(object sender, EventArgs e)
         {
-            Session["Excel"] = false;
-            
+            Session["RelGerencial"] = false;
             Session["mes"] = 6;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
@@ -214,7 +212,7 @@ namespace Azuli.Web.Portal
         protected void lbtMonth7_Click(object sender, EventArgs e)
         {
 
-            Session["Excel"] = false;
+            Session["RelGerencial"] = false;
             Session["mes"] = 7;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
@@ -225,7 +223,7 @@ namespace Azuli.Web.Portal
         protected void lbtMonth_Click10(object sender, EventArgs e)
         {
 
-            Session["Excel"] = false;
+            Session["RelGerencial"] = false;
             Session["mes"] = 10;
             Session["ano"] = drpAno.SelectedValue;
 
@@ -235,7 +233,7 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth_Click11(object sender, EventArgs e)
         {
-            Session["Excel"] = false;
+            Session["RelGerencial"] = false;
             Session["mes"] = 11;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
@@ -244,7 +242,7 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth_Click12(object sender, EventArgs e)
         {
-            Session["Excel"] = false;
+            Session["RelGerencial"] = false;
             Session["mes"] = 12;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
@@ -253,7 +251,7 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth_Click8(object sender, EventArgs e)
         {
-            Session["Excel"] = false;
+            Session["RelGerencial"] = false;
             Session["mes"] = 8;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
@@ -262,7 +260,7 @@ namespace Azuli.Web.Portal
 
         protected void lbtMonth_Click9(object sender, EventArgs e)
         {
-            Session["Excel"] = false;
+            Session["RelGerencial"] = false;
             Session["mes"] = 9;
             Session["ano"] = drpAno.SelectedValue;
             openedPoupReport();
@@ -302,62 +300,86 @@ namespace Azuli.Web.Portal
 
                         this.lbtMonth1.Enabled = true;
                         img1.ImageUrl = "~/images/verde.png";
+                        ImageButton1.Visible = true;
 
                     }
                     else if (item == 2)
                     {
                         this.lbtMonth2.Enabled = true;
                         img2.ImageUrl = "~/images/verde.png";
+                        ImageButton2.Visible = true;
+
                     }
                     else if (item == 3)
                     {
                         this.lbtMonth3.Enabled = true;
                         img3.ImageUrl = "~/images/verde.png";
+                        ImageButton3.Visible = true;
+
                     }
                     else if (item == 4)
                     {
                         this.lbtMonth4.Enabled = true;
                         img4.ImageUrl = "~/images/verde.png";
+                        ImageButton4.Visible = true;
+
                     }
                     else if (item == 5)
                     {
                         this.lbtMonth5.Enabled = true;
                         img5.ImageUrl = "~/images/verde.png";
+                        ImageButton5.Visible = true;
+
                     }
                     else if (item == 6)
                     {
                         this.lbtMonth6.Enabled = true;
-                        img6.ImageUrl = "~/images/verde.png";
+                        img6.ImageUrl = "~/images/verde.png"; 
+                        ImageButton6.Visible = true;
+
+
                     }
                     else if (item == 7)
                     {
                         this.lbtMonth7.Enabled = true;
                         img7.ImageUrl = "~/images/verde.png";
+                        ImageButton7.Visible = true;
+
                     }
                     else if (item == 8)
                     {
                         this.lbtMonth8.Enabled = true;
                         img8.ImageUrl = "~/images/verde.png";
+                        ImageButton8.Visible = true;
+
                     }
                     else if (item == 9)
                     {
                         this.lbtMonth9.Enabled = true;
                         img9.ImageUrl = "~/images/verde.png";
+                        ImageButton9.Visible = true;
+
                     }
                     else if (item == 10)
                     {
                         this.lbtMonth10.Enabled = true;
                         img10.ImageUrl = "~/images/verde.png";
+                        ImageButton10.Visible = true;
+
                     }
                     else if (item == 11)
                     {
                         this.lbtMonth11.Enabled = true;
                         img11.ImageUrl = "~/images/verde.png";
+                        ImageButton11.Visible = true;
+
                     }
                     else if (item == 12)
                     {
                         this.lbtMonth12.Enabled = true;
                         img12.ImageUrl = "~/images/verde.png";
+                        ImageButton12.Visible = true;
+
                     }
 
                     //dvPublicacao.Visible = true;
@@ -378,42 +400,55 @@ namespace Azuli.Web.Portal
 
             this.lbtMonth1.Enabled = false;
             img1.ImageUrl = "~/images/vermelhoStatus.png";
-
+            ImageButton1.Visible = false;
 
             this.lbtMonth2.Enabled = false;
             img2.ImageUrl = "~/images/vermelhoStatus.png";
+            ImageButton2.Visible = false;
 
 
             this.lbtMonth3.Enabled = false;
             img3.ImageUrl = "~/images/vermelhoStatus.png";
+            ImageButton3.Visible = false;
 
 
             this.lbtMonth4.Enabled = false;
             img4.ImageUrl = "~/images/vermelhoStatus.png";
+            ImageButton4.Visible = false;
 
 
             this.lbtMonth5.Enabled = false;
             img5.ImageUrl = "~/images/vermelhoStatus.png";
+            ImageButton5.Visible = false;
 
             this.lbtMonth6.Enabled = false;
             img6.ImageUrl = "~/images/vermelhoStatus.png";
+            ImageButton6.Visible = false;
 
             this.lbtMonth7.Enabled = false;
             img7.ImageUrl = "~/images/vermelhoStatus.png";
+            ImageButton7.Visible = false;
 
             this.lbtMonth8.Enabled = false;
             img8.ImageUrl = "~/images/vermelhoStatus.png";
+            ImageButton8.Visible = false;
 
 
             this.lbtMonth9.Enabled = false;
             img9.ImageUrl = "~/images/vermelhoStatus.png";
+            ImageButton9.Visible = false;
 
             this.lbtMonth10.Enabled = false;
             img10.ImageUrl = "~/images/vermelhoStatus.png";
+            ImageButton10.Visible = false;
+
             this.lbtMonth11.Enabled = false;
             img11.ImageUrl = "~/images/vermelhoStatus.png";
+            ImageButton11.Visible = false;
+
             this.lbtMonth12.Enabled = false;
             img12.ImageUrl = "~/images/vermelhoStatus.png";
+            ImageButton12.Visible = false;
         }
 
         protected void drpAno_TextChanged(object sender, EventArgs e)
