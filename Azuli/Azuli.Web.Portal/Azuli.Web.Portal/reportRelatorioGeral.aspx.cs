@@ -14,6 +14,12 @@ using NPOI.HPSF;
 using NPOI.HSSF.Util;
 using NPOI.POIFS.FileSystem;
 using NPOI.SS.UserModel;
+using Microsoft.Office.Interop.Excel;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using Aspose.Pdf;
+using Aspose.Pdf.Generator;
+using Aspose.Cells;
 
 namespace Azuli.Web.Portal
 {
@@ -880,15 +886,54 @@ namespace Azuli.Web.Portal
         public void preencheDadosExcel()
         {
 
+            //int consumoAPs = 0;
+            //int consumoSomaExcedentes = 0;
+            double[] arrayConsumoTotalAPs = new double[5];
+            int[] arrayExcedente = new int[5];
+            int[] arraySabesp = new int[5];
+
+
             string mes = Session["mes"].ToString();
             string ano = Session["ano"].ToString();
+            int anoHistorico = Convert.ToInt32(mes);
 
+            
             string folder = System.Configuration.ConfigurationManager.AppSettings["relatorioGeral"];
            
             var listExcel = from lisExcelBl1 in oReciboBLL.buscaTodosRecibosByYearAndMonth(Convert.ToInt32(ano),Convert.ToInt32(mes))
                             orderby lisExcelBl1.registro ascending
                             select lisExcelBl1;
 
+            for (int i = 0; i < 5; i ++)
+            {
+
+                var listHistoricoAP = from listHistorico in oReciboBLL.buscaTodosRecibosByYearAndMonth(Convert.ToInt32(ano), Convert.ToInt32(anoHistorico))
+                                      select Math.Round(listHistorico.excedenteM3diaria * 30, 0);
+
+                var listHistoricoExcedente = from listHistorico in oReciboBLL.buscaTodosRecibosByYearAndMonth(Convert.ToInt32(ano), Convert.ToInt32(anoHistorico))
+                                             select Convert.ToInt32(listHistorico.excedenteM3Rateio);
+
+                var listSabesp = from listHistorico in oReciboBLL.buscaTodosRecibosByYearAndMonth(Convert.ToInt32(ano), Convert.ToInt32(anoHistorico))
+                                             select Convert.ToInt32(listHistorico.consumoM3pagoCondominio);
+
+                 arrayConsumoTotalAPs[i] =  listHistoricoAP.Sum();
+                 arrayExcedente[i] = listHistoricoExcedente.FirstOrDefault();
+                 arraySabesp[i] = listSabesp.FirstOrDefault();
+
+                 if (anoHistorico ==1)
+                 {
+                     anoHistorico = 12;
+                 }
+                 anoHistorico--;
+
+                 
+                                
+                
+            }
+
+           
+            
+            
             var listChart = from lisExcelChartAux in oReciboBLL.buscaTodosRecibosByYearAndMonth(Convert.ToInt32(ano), Convert.ToInt32(mes))
                             orderby lisExcelChartAux.consumoMesM3 descending
                             select Convert.ToInt32(lisExcelChartAux.consumoMesM3);
@@ -898,7 +943,7 @@ namespace Azuli.Web.Portal
             //local
             FileStream fs = new FileStream(@"C:\Users\Edmilson\Documents\RelatorioGeral.xls", FileMode.Open, FileAccess.Read);
             //web
-           // FileStream fs = new FileStream(Server.MapPath(folder+"rgeral.xls"), FileMode.Open, FileAccess.Read);
+            // FileStream fs = new FileStream(Server.MapPath(folder+"RelatorioGeral.xls"), FileMode.Open, FileAccess.Read);
 
             // Load the template into a NPOI workbook
             HSSFWorkbook templateWorkbook = new HSSFWorkbook(fs, true);
@@ -906,6 +951,35 @@ namespace Azuli.Web.Portal
             ISheet sheet = templateWorkbook.GetSheet("RG");
             ISheet sheetMedia = templateWorkbook.GetSheet("Plan2");
             int auxiliarChart = 0;
+            int posArrayConsumoAps = 23;
+            int posArrayExcedente = 24;
+            int posArrayConsumoSabesp = 22;
+
+
+            sheet.GetRow(posArrayConsumoAps).GetCell(7).SetCellValue(arrayConsumoTotalAPs[0]);
+            sheet.GetRow(posArrayConsumoAps).GetCell(6).SetCellValue(arrayConsumoTotalAPs[1]);
+            sheet.GetRow(posArrayConsumoAps).GetCell(5).SetCellValue(arrayConsumoTotalAPs[2]);
+            sheet.GetRow(posArrayConsumoAps).GetCell(4).SetCellValue(arrayConsumoTotalAPs[3]);
+            sheet.GetRow(posArrayConsumoAps).GetCell(3).SetCellValue(arrayConsumoTotalAPs[4]);
+
+            sheet.GetRow(posArrayExcedente).GetCell(7).SetCellValue(arrayExcedente[0]);
+            sheet.GetRow(posArrayExcedente).GetCell(6).SetCellValue(arrayExcedente[1]);
+            sheet.GetRow(posArrayExcedente).GetCell(5).SetCellValue(arrayExcedente[2]);
+            sheet.GetRow(posArrayExcedente).GetCell(4).SetCellValue(arrayExcedente[3]);
+            sheet.GetRow(posArrayExcedente).GetCell(3).SetCellValue(arrayExcedente[4]);
+
+
+            sheet.GetRow(posArrayConsumoSabesp).GetCell(7).SetCellValue(arraySabesp[0]);
+            sheet.GetRow(posArrayConsumoSabesp).GetCell(6).SetCellValue(arraySabesp[1]);
+            sheet.GetRow(posArrayConsumoSabesp).GetCell(5).SetCellValue(arraySabesp[2]);
+            sheet.GetRow(posArrayConsumoSabesp).GetCell(4).SetCellValue(arraySabesp[3]);
+            sheet.GetRow(posArrayConsumoSabesp).GetCell(3).SetCellValue(arraySabesp[4]);
+
+
+
+
+
+
             foreach (var item in listChart.OrderByDescending(x => x))
             {
 
@@ -924,6 +998,8 @@ namespace Azuli.Web.Portal
             int initial = 46;
             int dataAtual = 9;
             int dataAnterior = 9 ;
+            int consumoSabesp = 5;
+            int valorCobrado = 6;
             bool date = false;
 
             foreach (var item in listExcel)
@@ -932,8 +1008,14 @@ namespace Azuli.Web.Portal
 
                 if (date == false)
                 {
-                    sheet.GetRow(dataAtual).GetCell(1).SetCellValue(item.dataLeituraAtual);
-                    sheet.GetRow(dataAnterior).GetCell(5).SetCellValue(item.dataLeituraAnterior);
+
+
+                    sheet.GetRow(dataAtual).GetCell(1).SetCellValue(item.dataLeituraAtual.Replace("Leitura Atual (", "").Replace("):", ""));
+                    sheet.GetRow(dataAnterior).GetCell(5).SetCellValue(item.dataLeituraAnterior.Replace("Leitura anterior (", "").Replace("):", ""));
+                    sheet.GetRow(consumoSabesp).GetCell(2).SetCellValue(item.consumoM3pagoCondominio);
+                    sheet.GetRow(valorCobrado).GetCell(2).SetCellValue(String.Format("{0:C2}",item.ConsumoValorPagoCondominio)); 
+
+
                     date = true;
                 }
                    
@@ -1021,10 +1103,36 @@ namespace Azuli.Web.Portal
             MemoryStream ms = new MemoryStream();
             templateWorkbook.Write(ms);
 
-            // Send the memory stream to the browser
-            ExportDataTableToExcel(ms, "rgeral.xls");
+            //string mdir = @"C:\Users\Edmilson\Downloads\";
 
 
+            //Aspose.Cells.Workbook wk = new Aspose.Cells.Workbook(ms);
+
+
+            //wk.Save(mdir+"teste.pdf", Aspose.Cells.SaveFormat.Pdf);
+
+            ////Oworkbook.Save(mdir + "teste.pdf", SaveFormat.Pdf);
+
+            //// Send the memory stream to the browser
+            ExportDataTableToExcel(ms, "Relatório Geral Referência " + addZero(mes) + "/" + ano);
+
+
+        }
+
+
+
+        private void DownloadAsPDF(MemoryStream ms)
+        {
+            Response.Clear();
+            Response.ClearContent();
+            Response.ClearHeaders();
+            Response.ContentType = "application/pdf";
+            Response.AppendHeader("Content-Disposition", "attachment;filename=abc.pdf");
+            Response.OutputStream.Write(ms.GetBuffer(), 0, ms.GetBuffer().Length);
+            Response.OutputStream.Flush();
+            Response.OutputStream.Close();
+            Response.End();
+            ms.Close();
         }
 
         public static void ExportDataTableToExcel(MemoryStream memoryStream, string fileName)
@@ -1179,6 +1287,74 @@ namespace Azuli.Web.Portal
             preencheDadosExcel();
         }
 
+        public bool ExportWorkbookToPdf(string workbookPath, string outputPath)
+        {
+            // If either required string is null or empty, stop and bail out
+            if (string.IsNullOrEmpty(workbookPath) || string.IsNullOrEmpty(outputPath))
+            {
+                return false;
+            }
+
+            // Create COM Objects
+            Microsoft.Office.Interop.Excel.Application excelApplication;
+            Microsoft.Office.Interop.Excel.Workbook excelWorkbook;
+
+            // Create new instance of Excel
+            excelApplication = new Microsoft.Office.Interop.Excel.Application();
+
+            // Make the process invisible to the user
+            excelApplication.ScreenUpdating = false;
+
+            // Make the process silent
+            excelApplication.DisplayAlerts = false;
+
+            // Open the workbook that you wish to export to PDF
+            excelWorkbook = excelApplication.Workbooks.Open(workbookPath);
+
+            // If the workbook failed to open, stop, clean up, and bail out
+            if (excelWorkbook == null)
+            {
+                excelApplication.Quit();
+
+                excelApplication = null;
+                excelWorkbook = null;
+
+                return false;
+            }
+
+            var exportSuccessful = true;
+            try
+            {
+                // Call Excel's native export function (valid in Office 2007 and Office 2010, AFAIK)
+                excelWorkbook.ExportAsFixedFormat(Microsoft.Office.Interop.Excel.XlFixedFormatType.xlTypePDF, outputPath);
+            }
+            catch (System.Exception ex)
+            {
+                // Mark the export as failed for the return value...
+                exportSuccessful = false;
+
+                // Do something with any exceptions here, if you wish...
+                // MessageBox.Show...        
+            }
+            finally
+            {
+                // Close the workbook, quit the Excel, and clean up regardless of the results...
+                excelWorkbook.Close();
+                excelApplication.Quit();
+
+                excelApplication = null;
+                excelWorkbook = null;
+            }
+
+            // You can use the following method to automatically open the PDF after export if you wish
+            // Make sure that the file actually exists first...
+            if (System.IO.File.Exists(outputPath))
+            {
+                System.Diagnostics.Process.Start(outputPath);
+            }
+
+            return exportSuccessful;
+        }
 
     }
 }
