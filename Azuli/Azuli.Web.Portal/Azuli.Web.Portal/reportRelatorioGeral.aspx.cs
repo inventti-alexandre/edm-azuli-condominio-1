@@ -97,7 +97,7 @@ namespace Azuli.Web.Portal
 
                     item.historicoMes1 = returnNumber(item.historicoMes1).ToString();
 
-                    
+
                     if (item.status == "" || item.historicoMes1 == "" || item.status == "-")
                     {
                         oReciboModel.status = "-";
@@ -108,33 +108,30 @@ namespace Azuli.Web.Portal
 
                         if (Math.Round(item.excedenteM3diaria * 30, 0) < Convert.ToInt32(item.historicoMes1))
                         {
-                            if (string.Empty == item.status)
-                            {
-
-                                oReciboModel.status = item.status = "-";
-                            }
-                            else
-                            {
-
+                            
                                 oReciboModel.status = "↓ " + item.status;
-                            }
+                            
 
                         }
-                        else
+                        if (Math.Round(item.excedenteM3diaria * 30, 0) > Convert.ToInt32(item.historicoMes1))
                         {
-                            if (string.Empty == item.status)
-                            {
-
-                                oReciboModel.status = item.status = "-";
-                            }
-                            else
-                            {
+                            
 
                                 oReciboModel.status = "↑ " + item.status;
-                            }
+                           
+
+                        }
+
+                        if (Math.Round(item.excedenteM3diaria * 30, 0) == Convert.ToInt32(item.historicoMes1))
+                        {
+
+
+                            oReciboModel.status = item.status;
+
 
                         }
                     }
+                    
 
                     listExcelTratada.Add(oReciboModel);
                 }
@@ -165,30 +162,26 @@ namespace Azuli.Web.Portal
 
                         if (Math.Round(item.excedenteM3diaria * 30, 0) < Convert.ToInt32(item.historicoMes1))
                         {
-                            if (string.Empty == item.status)
-                            {
 
-                                oReciboModel.status = item.status = "-";
-                            }
-                            else
-                            {
+                            oReciboModel.status = "↓ " + item.status;
 
-                                oReciboModel.status = "↓ " + item.status;
-                            }
 
                         }
-                        else
+                        if (Math.Round(item.excedenteM3diaria * 30, 0) > Convert.ToInt32(item.historicoMes1))
                         {
-                            if (string.Empty == item.status)
-                            {
 
-                                oReciboModel.status = item.status = "-";
-                            }
-                            else
-                            {
 
-                                oReciboModel.status = "↑ " + item.status;
-                            }
+                            oReciboModel.status = "↑ " + item.status;
+
+
+                        }
+
+                        if (Math.Round(item.excedenteM3diaria * 30, 0) == Convert.ToInt32(item.historicoMes1))
+                        {
+
+
+                            oReciboModel.status = item.status;
+
 
                         }
                     }
@@ -222,30 +215,26 @@ namespace Azuli.Web.Portal
 
                         if (Math.Round(item.excedenteM3diaria * 30, 0) < Convert.ToInt32(item.historicoMes1))
                         {
-                            if (string.Empty == item.status)
-                            {
 
-                                oReciboModel.status = item.status = "-";
-                            }
-                            else
-                            {
+                            oReciboModel.status = "↓ " + item.status;
 
-                                oReciboModel.status = "↓ " + item.status;
-                            }
 
                         }
-                        else
+                        if (Math.Round(item.excedenteM3diaria * 30, 0) > Convert.ToInt32(item.historicoMes1))
                         {
-                            if (string.Empty == item.status)
-                            {
 
-                                oReciboModel.status = item.status = "-";
-                            }
-                            else
-                            {
 
-                                oReciboModel.status = "↑ " + item.status;
-                            }
+                            oReciboModel.status = "↑ " + item.status;
+
+
+                        }
+
+                        if (Math.Round(item.excedenteM3diaria * 30, 0) == Convert.ToInt32(item.historicoMes1))
+                        {
+
+
+                            oReciboModel.status = item.status;
+
 
                         }
                     }
@@ -279,30 +268,26 @@ namespace Azuli.Web.Portal
 
                         if (Math.Round(item.excedenteM3diaria * 30, 0) < Convert.ToInt32(item.historicoMes1))
                         {
-                            if (string.Empty == item.status)
-                            {
 
-                                oReciboModel.status = item.status = "-";
-                            }
-                            else
-                            {
+                            oReciboModel.status = "↓ " + item.status;
 
-                                oReciboModel.status = "↓ " + item.status;
-                            }
 
                         }
-                        else
+                        if (Math.Round(item.excedenteM3diaria * 30, 0) > Convert.ToInt32(item.historicoMes1))
                         {
-                            if (string.Empty == item.status)
-                            {
 
-                                oReciboModel.status = item.status = "-";
-                            }
-                            else
-                            {
 
-                                oReciboModel.status = "↑ " + item.status;
-                            }
+                            oReciboModel.status = "↑ " + item.status;
+
+
+                        }
+
+                        if (Math.Round(item.excedenteM3diaria * 30, 0) == Convert.ToInt32(item.historicoMes1))
+                        {
+
+
+                            oReciboModel.status = item.status;
+
 
                         }
                     }
@@ -335,34 +320,31 @@ namespace Azuli.Web.Portal
                     else
                     {
 
-                        if (Math.Round(item.excedenteM3diaria * 30, 0) < Convert.ToInt32(item.historicoMes1))
-                        {
-                            if (string.Empty == item.status)
-                            {
-
-                                oReciboModel.status = item.status = "-";
-                            }
-                            else
+                            if (Math.Round(item.excedenteM3diaria * 30, 0) < Convert.ToInt32(item.historicoMes1))
                             {
 
                                 oReciboModel.status = "↓ " + item.status;
-                            }
 
-                        }
-                        else
-                        {
-                            if (string.Empty == item.status)
+
+                            }
+                            if (Math.Round(item.excedenteM3diaria * 30, 0) > Convert.ToInt32(item.historicoMes1))
                             {
 
-                                oReciboModel.status = item.status = "-";
-                            }
-                            else
-                            {
 
                                 oReciboModel.status = "↑ " + item.status;
+
+
                             }
 
-                        }
+                            if (Math.Round(item.excedenteM3diaria * 30, 0) == Convert.ToInt32(item.historicoMes1))
+                            {
+
+
+                                oReciboModel.status = item.status;
+
+
+                            }
+                        
                     }
 
                     listExcelTratada5.Add(oReciboModel);
@@ -394,30 +376,26 @@ namespace Azuli.Web.Portal
 
                         if (Math.Round(item.excedenteM3diaria * 30, 0) < Convert.ToInt32(item.historicoMes1))
                         {
-                            if (string.Empty == item.status)
-                            {
-
-                                oReciboModel.status = item.status = "-";
-                            }
-                            else
-                            {
-
+                            
                                 oReciboModel.status = "↓ " + item.status;
-                            }
+                            
 
                         }
-                        else
+                        if (Math.Round(item.excedenteM3diaria * 30, 0) > Convert.ToInt32(item.historicoMes1))
                         {
-                            if (string.Empty == item.status)
-                            {
 
-                                oReciboModel.status = item.status = "-";
-                            }
-                            else
-                            {
 
-                                oReciboModel.status = "↑ " + item.status;
-                            }
+                            oReciboModel.status = "↑ " + item.historicoMes1;
+                           
+
+                        }
+
+                        if (Math.Round(item.excedenteM3diaria * 30, 0) == Convert.ToInt32(item.historicoMes1))
+                        {
+
+
+                            oReciboModel.status = item.status;
+
 
                         }
                     }
@@ -911,82 +889,123 @@ namespace Azuli.Web.Portal
                             orderby lisExcelBl1.registro ascending
                             select lisExcelBl1;
 
+            var listChart = from lisExcelChartAux in oReciboBLL.buscaTodosRecibosByYearAndMonth(Convert.ToInt32(ano), Convert.ToInt32(mes))
+                            orderby lisExcelChartAux.consumoMesM3 descending
+                            select Convert.ToInt32(lisExcelChartAux.consumoMesM3);
+
 
             // Open Template
             //local
-            //FileStream fs = new FileStream(@"C:\Users\Edmilson\Documents\rgeral.xlsx", FileMode.Open, FileAccess.Read);
+            FileStream fs = new FileStream(@"C:\Users\Edmilson\Documents\RelatorioGeral.xls", FileMode.Open, FileAccess.Read);
             //web
-            FileStream fs = new FileStream(Server.MapPath(folder+"rgeral.xls"), FileMode.Open, FileAccess.Read);
+           // FileStream fs = new FileStream(Server.MapPath(folder+"rgeral.xls"), FileMode.Open, FileAccess.Read);
 
             // Load the template into a NPOI workbook
             HSSFWorkbook templateWorkbook = new HSSFWorkbook(fs, true);
 
             ISheet sheet = templateWorkbook.GetSheet("RG");
+            ISheet sheetMedia = templateWorkbook.GetSheet("Plan2");
+            int auxiliarChart = 0;
+            foreach (var item in listChart.OrderByDescending(x => x))
+            {
 
-            int initial = 48;
+                if (auxiliarChart <= 240)
+                {
+
+                    sheetMedia.GetRow(auxiliarChart).GetCell(0).SetCellValue(item);
+                    sheetMedia.GetRow(auxiliarChart).GetCell(2).SetCellValue(item); // 
+                    auxiliarChart++;
+                }
+                
+            }
+
+            sheetMedia.ForceFormulaRecalculation = true;
+
+            int initial = 46;
+            int dataAtual = 9;
+            int dataAnterior = 9 ;
+            bool date = false;
 
             foreach (var item in listExcel)
             {
                 ReciboAgua oReciboModel = new ReciboAgua();
 
-                
+                if (date == false)
+                {
+                    sheet.GetRow(dataAtual).GetCell(1).SetCellValue(item.dataLeituraAtual);
+                    sheet.GetRow(dataAnterior).GetCell(5).SetCellValue(item.dataLeituraAnterior);
+                    date = true;
+                }
+                   
                     //R111
 
                     sheet.GetRow(initial).GetCell(0).SetCellValue("R" + item.registro);  // 
-                    sheet.GetRow(initial).GetCell(1).SetCellValue("B" + item.bloco + "-AP" + item.apartamento);  // 
-                    sheet.GetRow(initial).GetCell(2).SetCellValue(item.leituraAnteriorM3);
-                    sheet.GetRow(initial).GetCell(3).SetCellValue(item.leituraAtualM3);
+                    sheet.GetRow(initial).GetCell(1).SetCellValue("B" + item.bloco + "-AP" + item.apartamento);  //
+                    sheet.GetRow(initial).GetCell(2).SetCellValue(" " + addZero(returnNumber(item.historicoMes6)) + "-" + addZero(returnNumber(item.historicoMes5)) + "-" + addZero(returnNumber(item.historicoMes4)) + "-" + addZero(returnNumber(item.historicoMes3)) + "-" + addZero(returnNumber(item.historicoMes2)) + "-" + addZero(returnNumber(item.historicoMes1)) + " - (" + addZero(item.media) + ")");
+                    sheet.GetRow(initial).GetCell(3).SetCellValue(item.leituraAnteriorM3);
+                    sheet.GetRow(initial).GetCell(4).SetCellValue(item.leituraAtualM3);
+                    
+                    sheet.GetRow(initial).GetCell(5).SetCellValue(Math.Round(item.excedenteM3diaria * 30, 0));
+                    sheet.GetRow(initial).GetCell(6).SetCellValue(""+item.excedenteValorDevido);
+                    sheet.GetRow(initial).GetCell(7).SetCellValue(String.Format("{0:C2}", item.valorPagarValorDevido));
 
                     item.historicoMes1 = returnNumber(item.historicoMes1).ToString();
 
                     if (item.status == "" || item.historicoMes1 == "")
                     {
-                        oReciboModel.status = "-";
+                       // oReciboModel.status = "-";
                         item.historicoMes1 = "0";
+                        sheet.GetRow(initial).GetCell(8).SetCellValue(" - ");
                     }
                     else
                     {
 
                         if (Math.Round(item.excedenteM3diaria * 30, 0) < Convert.ToInt32(item.historicoMes1))
                         {
-                            sheet.GetRow(initial).GetCell(7).SetCellValue("↓ " + item.status);
+                            sheet.GetRow(initial).GetCell(8).SetCellValue("↓ " + item.status);
 
                         }
-                        else
+                        if (Math.Round(item.excedenteM3diaria * 30, 0) > Convert.ToInt32(item.historicoMes1))
                         {
-                            sheet.GetRow(initial).GetCell(7).SetCellValue("↑ " + item.status);
+                            sheet.GetRow(initial).GetCell(8).SetCellValue("↑ " + item.status);
 
                         }
+
+                        if (Math.Round(item.excedenteM3diaria * 30, 0) == Convert.ToInt32(item.historicoMes1))
+                        {
+                            sheet.GetRow(initial).GetCell(8).SetCellValue( item.status);
+                        }
+
+
                     }
+
+                    
 
                     initial++;
 
-                    if (initial == 88) // bloco 2
+                    if (initial == 86) // bloco 2
                     {
-                        initial = 94;
+                        initial = 92;
                     }
-                    else if (initial == 134) // bloco 3
+                    else if (initial == 132) // bloco 3
                     {
-                        initial = 140;
+                        initial = 138;
                     }
-                    else if (initial == 180) // bloco 4
+                    else if (initial == 178) // bloco 4
                     {
-                        initial = 186;
-                    }
-
-                    else if (initial == 226) // bloco 5
-                    {
-                        initial = 232;
-                    }
-                    else if (initial == 272) //bloco 6
-                    {
-                        initial = 278;
+                        initial = 184;
                     }
 
-                    else if (initial == 272) //bloco 6
+                    else if (initial == 224) // bloco 5
                     {
-                        initial = 278;
+                        initial = 230;
                     }
+                    else if (initial == 270) //bloco 6
+                    {
+                        initial = 276;
+                    }
+
+                    
                     
 
             }
