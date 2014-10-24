@@ -14,12 +14,7 @@ using NPOI.HPSF;
 using NPOI.HSSF.Util;
 using NPOI.POIFS.FileSystem;
 using NPOI.SS.UserModel;
-using Microsoft.Office.Interop.Excel;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
-using Aspose.Pdf;
-using Aspose.Pdf.Generator;
-using Aspose.Cells;
+
 
 namespace Azuli.Web.Portal
 {
@@ -891,6 +886,7 @@ namespace Azuli.Web.Portal
             double[] arrayConsumoTotalAPs = new double[5];
             int[] arrayExcedente = new int[5];
             int[] arraySabesp = new int[5];
+            string[] mesesHistrorico = new string[5];
 
 
             string mes = Session["mes"].ToString();
@@ -898,33 +894,59 @@ namespace Azuli.Web.Portal
             int anoHistorico = Convert.ToInt32(mes);
 
             
-            string folder = System.Configuration.ConfigurationManager.AppSettings["relatorioGeral"];
-           
             var listExcel = from lisExcelBl1 in oReciboBLL.buscaTodosRecibosByYearAndMonth(Convert.ToInt32(ano),Convert.ToInt32(mes))
                             orderby lisExcelBl1.registro ascending
                             select lisExcelBl1;
 
+           // bool mesVerdadeiro = false;
+            int anoExcel = Convert.ToInt32(ano);
+
+
             for (int i = 0; i < 5; i ++)
             {
+                if (anoExcel == 2013)
+                {
 
-                var listHistoricoAP = from listHistorico in oReciboBLL.buscaTodosRecibosByYearAndMonth(Convert.ToInt32(ano), Convert.ToInt32(anoHistorico))
-                                      select Math.Round(listHistorico.excedenteM3diaria * 30, 0);
+                    var listHistoricoAP = from listHistorico in oReciboBLL.buscaTodosRecibosByYearAndMonth(anoExcel, Convert.ToInt32(anoHistorico))
+                                          select Convert.ToInt32(listHistorico.consumoMesM3);
 
-                var listHistoricoExcedente = from listHistorico in oReciboBLL.buscaTodosRecibosByYearAndMonth(Convert.ToInt32(ano), Convert.ToInt32(anoHistorico))
+                    arrayConsumoTotalAPs[i] = listHistoricoAP.Sum();
+                }
+                else
+                {
+                    var listHistoricoAP = from listHistorico in oReciboBLL.buscaTodosRecibosByYearAndMonth(anoExcel, Convert.ToInt32(anoHistorico))
+                                          select Math.Round(listHistorico.excedenteM3diaria * 30, 0);
+
+                    arrayConsumoTotalAPs[i] = listHistoricoAP.Sum();
+                }
+
+                var listHistoricoExcedente = from listHistorico in oReciboBLL.buscaTodosRecibosByYearAndMonth(anoExcel, Convert.ToInt32(anoHistorico))
                                              select Convert.ToInt32(listHistorico.excedenteM3Rateio);
 
-                var listSabesp = from listHistorico in oReciboBLL.buscaTodosRecibosByYearAndMonth(Convert.ToInt32(ano), Convert.ToInt32(anoHistorico))
-                                             select Convert.ToInt32(listHistorico.consumoM3pagoCondominio);
+                var listSabesp = from listHistorico in oReciboBLL.buscaTodosRecibosByYearAndMonth(anoExcel, Convert.ToInt32(anoHistorico))
+                                 select listHistorico.consumoM3pagoCondominio;
 
-                 arrayConsumoTotalAPs[i] =  listHistoricoAP.Sum();
+
+
+                mesesHistrorico[i] = "01/" + anoHistorico + "/" + anoExcel;
                  arrayExcedente[i] = listHistoricoExcedente.FirstOrDefault();
                  arraySabesp[i] = listSabesp.FirstOrDefault();
 
-                 if (anoHistorico ==1)
+
+
+                 if (anoHistorico == 1)
                  {
                      anoHistorico = 12;
+                     anoExcel--;
                  }
-                 anoHistorico--;
+                 else
+                 {
+                    
+                   anoHistorico--;
+                     
+                 }
+
+                
 
                  
                                 
@@ -941,9 +963,13 @@ namespace Azuli.Web.Portal
 
             // Open Template
             //local
-            FileStream fs = new FileStream(@"C:\Users\Edmilson\Documents\RelatorioGeral.xls", FileMode.Open, FileAccess.Read);
+            // FileStream fs = new FileStream(@"C:\Users\Edmilson\Documents\RelatorioGeral.xls", FileMode.Open, FileAccess.Read);
             //web
-            // FileStream fs = new FileStream(Server.MapPath(folder+"RelatorioGeral.xls"), FileMode.Open, FileAccess.Read);
+
+            var dir = System.Configuration.ConfigurationManager.AppSettings["relatorioGeral"];
+            FileStream fs = new FileStream(Server.MapPath(dir+"RelatorioGeral.xls"), FileMode.Open, FileAccess.Read);
+
+            
 
             // Load the template into a NPOI workbook
             HSSFWorkbook templateWorkbook = new HSSFWorkbook(fs, true);
@@ -954,8 +980,10 @@ namespace Azuli.Web.Portal
             int posArrayConsumoAps = 23;
             int posArrayExcedente = 24;
             int posArrayConsumoSabesp = 22;
+            int posArrayMesesHistorico = 21;
+            int posArrayReferencia = 0;
 
-
+            sheet.GetRow(posArrayReferencia).GetCell(8).SetCellValue(Convert.ToDateTime("01/"+mes+"/"+ano));
             sheet.GetRow(posArrayConsumoAps).GetCell(7).SetCellValue(arrayConsumoTotalAPs[0]);
             sheet.GetRow(posArrayConsumoAps).GetCell(6).SetCellValue(arrayConsumoTotalAPs[1]);
             sheet.GetRow(posArrayConsumoAps).GetCell(5).SetCellValue(arrayConsumoTotalAPs[2]);
@@ -974,6 +1002,12 @@ namespace Azuli.Web.Portal
             sheet.GetRow(posArrayConsumoSabesp).GetCell(5).SetCellValue(arraySabesp[2]);
             sheet.GetRow(posArrayConsumoSabesp).GetCell(4).SetCellValue(arraySabesp[3]);
             sheet.GetRow(posArrayConsumoSabesp).GetCell(3).SetCellValue(arraySabesp[4]);
+
+            sheet.GetRow(posArrayMesesHistorico).GetCell(7).SetCellValue(Convert.ToDateTime(mesesHistrorico[0]));
+            sheet.GetRow(posArrayMesesHistorico).GetCell(6).SetCellValue(Convert.ToDateTime(mesesHistrorico[1]));
+            sheet.GetRow(posArrayMesesHistorico).GetCell(5).SetCellValue(Convert.ToDateTime(mesesHistrorico[2]));
+            sheet.GetRow(posArrayMesesHistorico).GetCell(4).SetCellValue(Convert.ToDateTime(mesesHistrorico[3]));
+            sheet.GetRow(posArrayMesesHistorico).GetCell(3).SetCellValue(Convert.ToDateTime(mesesHistrorico[4]));
 
 
 
@@ -1103,16 +1137,7 @@ namespace Azuli.Web.Portal
             MemoryStream ms = new MemoryStream();
             templateWorkbook.Write(ms);
 
-            //string mdir = @"C:\Users\Edmilson\Downloads\";
-
-
-            //Aspose.Cells.Workbook wk = new Aspose.Cells.Workbook(ms);
-
-
-            //wk.Save(mdir+"teste.pdf", Aspose.Cells.SaveFormat.Pdf);
-
-            ////Oworkbook.Save(mdir + "teste.pdf", SaveFormat.Pdf);
-
+            
             //// Send the memory stream to the browser
             ExportDataTableToExcel(ms, "Relatório Geral Referência " + addZero(mes) + "/" + ano);
 
@@ -1123,6 +1148,7 @@ namespace Azuli.Web.Portal
 
         private void DownloadAsPDF(MemoryStream ms)
         {
+            
             Response.Clear();
             Response.ClearContent();
             Response.ClearHeaders();
@@ -1135,13 +1161,13 @@ namespace Azuli.Web.Portal
             ms.Close();
         }
 
-        public static void ExportDataTableToExcel(MemoryStream memoryStream, string fileName)
+        private static void ExportDataTableToExcel(MemoryStream memoryStream, string fileName)
         {
+            
             HttpResponse response = HttpContext.Current.Response;
             response.ContentType = "application/vnd.ms-excel";
             response.AddHeader("Content-Disposition", string.Format("attachment;filename={0}", fileName));
             response.Clear();
-
             response.BinaryWrite(memoryStream.GetBuffer());
             response.End();
         }
