@@ -27,7 +27,7 @@ namespace Azuli.Web.Portal.Util
             senhaDescriptografada = descriptografaSenha.SNH(senhaCriptrografada);
 
 
-            NetworkCredential credencial = new NetworkCredential(emailRemetente, senhaDescriptografada.ToUpper());
+            NetworkCredential credencial = new NetworkCredential(emailRemetente, senhaDescriptografada);
             cliente.UseDefaultCredentials = true;
             cliente.Credentials = credencial;
             cliente.EnableSsl = true;
