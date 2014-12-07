@@ -82,8 +82,27 @@ namespace Azuli.Web.Portal
             {
                 ReciboAgua oReciboModel = new ReciboAgua();
 
+
+
                 if (item.bloco == "1")
                 {
+
+                    //Se o valor do consumo do M3 for maior que o minimo M3 do condominio será feito o rateio...
+                    if (item.consumoM3pagoCondominio > item.minimoM3PagoCondominio)
+                    {
+                        item.excedenteValorPagoCondominio = Math.Abs(item.ConsumoValorPagoCondominio - item.minimoValorPagoCondominio);
+                        item.excedenteM3PagoCondominio = item.consumoM3pagoCondominio - item.minimoM3PagoCondominio;
+                        item.excedenteValorRateio = (item.excedenteValorPagoCondominio / item.excedenteM3Rateio);
+                        item.valorPagarValorDevido = item.excedenteValorDevido * Math.Round(item.excedenteValorRateio, 2);
+                        oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+
+                      
+                    }
+                    //Se não mantêm o valor sem rateio..
+                    else
+                    {
+                        oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+                    }
 
                     oReciboModel.registro = "R" + item.registro;
                     oReciboModel.apartamento = "B" + item.bloco + "-AP" + item.apartamento;
@@ -92,7 +111,7 @@ namespace Azuli.Web.Portal
                     oReciboModel.leituraAtualM3 = item.leituraAtualM3;
                     oReciboModel.consumoMesM3 = Math.Round(item.excedenteM3diaria * 30, 0).ToString();
                     oReciboModel.excedenteValorDevido = item.excedenteValorDevido;
-                    oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+                   
 
 
 
@@ -140,6 +159,23 @@ namespace Azuli.Web.Portal
                 if (item.bloco == "2")
                 {
 
+                    //Se o valor do consumo do M3 for maior que o minimo M3 do condominio será feito o rateio...
+                    if (item.consumoM3pagoCondominio > item.minimoM3PagoCondominio)
+                    {
+                        item.excedenteValorPagoCondominio = Math.Abs(item.ConsumoValorPagoCondominio - item.minimoValorPagoCondominio);
+                        item.excedenteM3PagoCondominio = item.consumoM3pagoCondominio - item.minimoM3PagoCondominio;
+                        item.excedenteValorRateio = (item.excedenteValorPagoCondominio / item.excedenteM3Rateio);
+                        item.valorPagarValorDevido = item.excedenteValorDevido * Math.Round(item.excedenteValorRateio, 2);
+                        oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+
+
+                    }
+                    //Se não mantêm o valor sem rateio..
+                    else
+                    {
+                        oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+                    }
+
                     oReciboModel.registro = "R" + item.registro;
                     oReciboModel.apartamento = "B" + item.bloco + "-AP" + item.apartamento;
                     oReciboModel.historicoMes1 = " " + addZero(returnNumber(item.historicoMes6)) + "-" + addZero(returnNumber(item.historicoMes5)) + "-" + addZero(returnNumber(item.historicoMes4)) + "-" + addZero(returnNumber(item.historicoMes3)) + "-" + addZero(returnNumber(item.historicoMes2)) + "-" + addZero(returnNumber(item.historicoMes1)) + " - (" + addZero(item.media) + ")";
@@ -147,7 +183,7 @@ namespace Azuli.Web.Portal
                     oReciboModel.leituraAtualM3 = item.leituraAtualM3;
                     oReciboModel.consumoMesM3 = Math.Round(item.excedenteM3diaria * 30, 0).ToString();
                     oReciboModel.excedenteValorDevido = item.excedenteValorDevido;
-                    oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+                  //  oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
 
 
 
@@ -193,6 +229,23 @@ namespace Azuli.Web.Portal
                 if (item.bloco == "3")
                 {
 
+                    //Se o valor do consumo do M3 for maior que o minimo M3 do condominio será feito o rateio...
+                    if (item.consumoM3pagoCondominio > item.minimoM3PagoCondominio)
+                    {
+                        item.excedenteValorPagoCondominio = Math.Abs(item.ConsumoValorPagoCondominio - item.minimoValorPagoCondominio);
+                        item.excedenteM3PagoCondominio = item.consumoM3pagoCondominio - item.minimoM3PagoCondominio;
+                        item.excedenteValorRateio = (item.excedenteValorPagoCondominio / item.excedenteM3Rateio);
+                        item.valorPagarValorDevido = item.excedenteValorDevido * Math.Round(item.excedenteValorRateio, 2);
+                        oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+
+
+                    }
+                    //Se não mantêm o valor sem rateio..
+                    else
+                    {
+                        oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+                    }
+
                     oReciboModel.registro = "R" + item.registro;
                     oReciboModel.apartamento = "B" + item.bloco + "-AP" + item.apartamento;
                     oReciboModel.historicoMes1 = " " + addZero(returnNumber(item.historicoMes6)) + "-" + addZero(returnNumber(item.historicoMes5)) + "-" + addZero(returnNumber(item.historicoMes4)) + "-" + addZero(returnNumber(item.historicoMes3)) + "-" + addZero(returnNumber(item.historicoMes2)) + "-" + addZero(returnNumber(item.historicoMes1)) + " - (" + addZero(item.media) + ")";
@@ -200,7 +253,7 @@ namespace Azuli.Web.Portal
                     oReciboModel.leituraAtualM3 = item.leituraAtualM3;
                     oReciboModel.consumoMesM3 = Math.Round(item.excedenteM3diaria * 30, 0).ToString();
                     oReciboModel.excedenteValorDevido = item.excedenteValorDevido;
-                    oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+                    //oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
 
 
 
@@ -246,6 +299,23 @@ namespace Azuli.Web.Portal
                 if (item.bloco == "4")
                 {
 
+                    //Se o valor do consumo do M3 for maior que o minimo M3 do condominio será feito o rateio...
+                    if (item.consumoM3pagoCondominio > item.minimoM3PagoCondominio)
+                    {
+                        item.excedenteValorPagoCondominio = Math.Abs(item.ConsumoValorPagoCondominio - item.minimoValorPagoCondominio);
+                        item.excedenteM3PagoCondominio = item.consumoM3pagoCondominio - item.minimoM3PagoCondominio;
+                        item.excedenteValorRateio = (item.excedenteValorPagoCondominio / item.excedenteM3Rateio);
+                        item.valorPagarValorDevido = item.excedenteValorDevido * Math.Round(item.excedenteValorRateio, 2);
+                        oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+
+
+                    }
+                    //Se não mantêm o valor sem rateio..
+                    else
+                    {
+                        oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+                    }
+
                     oReciboModel.registro = "R" + item.registro;
                     oReciboModel.apartamento = "B" + item.bloco + "-AP" + item.apartamento;
                     oReciboModel.historicoMes1 = " " + addZero(returnNumber(item.historicoMes6)) + "-" + addZero(returnNumber(item.historicoMes5)) + "-" + addZero(returnNumber(item.historicoMes4)) + "-" + addZero(returnNumber(item.historicoMes3)) + "-" + addZero(returnNumber(item.historicoMes2)) + "-" + addZero(returnNumber(item.historicoMes1)) + " - (" + addZero(item.media) + ")";
@@ -253,7 +323,7 @@ namespace Azuli.Web.Portal
                     oReciboModel.leituraAtualM3 = item.leituraAtualM3;
                     oReciboModel.consumoMesM3 = Math.Round(item.excedenteM3diaria * 30, 0).ToString();
                     oReciboModel.excedenteValorDevido = item.excedenteValorDevido;
-                    oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+                    //oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
 
 
 
@@ -299,7 +369,22 @@ namespace Azuli.Web.Portal
 
                 if (item.bloco == "5")
                 {
+                    //Se o valor do consumo do M3 for maior que o minimo M3 do condominio será feito o rateio...
+                    if (item.consumoM3pagoCondominio > item.minimoM3PagoCondominio)
+                    {
+                        item.excedenteValorPagoCondominio = Math.Abs(item.ConsumoValorPagoCondominio - item.minimoValorPagoCondominio);
+                        item.excedenteM3PagoCondominio = item.consumoM3pagoCondominio - item.minimoM3PagoCondominio;
+                        item.excedenteValorRateio = (item.excedenteValorPagoCondominio / item.excedenteM3Rateio);
+                        item.valorPagarValorDevido = item.excedenteValorDevido * Math.Round(item.excedenteValorRateio, 2);
+                        oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
 
+
+                    }
+                    //Se não mantêm o valor sem rateio..
+                    else
+                    {
+                        oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+                    }
                     oReciboModel.registro = "R" + item.registro;
                     oReciboModel.apartamento = "B" + item.bloco + "-AP" + item.apartamento;
                     oReciboModel.historicoMes1 = " " + addZero(returnNumber(item.historicoMes6)) + "-" + addZero(returnNumber(item.historicoMes5)) + "-" + addZero(returnNumber(item.historicoMes4)) + "-" + addZero(returnNumber(item.historicoMes3)) + "-" + addZero(returnNumber(item.historicoMes2)) + "-" + addZero(returnNumber(item.historicoMes1)) + " - (" + addZero(item.media) + ")";
@@ -307,7 +392,7 @@ namespace Azuli.Web.Portal
                     oReciboModel.leituraAtualM3 = item.leituraAtualM3;
                     oReciboModel.consumoMesM3 = Math.Round(item.excedenteM3diaria * 30, 0).ToString();
                     oReciboModel.excedenteValorDevido = item.excedenteValorDevido;
-                    oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+                    //oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
 
 
 
@@ -353,6 +438,22 @@ namespace Azuli.Web.Portal
 
                 if (item.bloco == "6")
                 {
+                    //Se o valor do consumo do M3 for maior que o minimo M3 do condominio será feito o rateio...
+                    if (item.consumoM3pagoCondominio > item.minimoM3PagoCondominio)
+                    {
+                        item.excedenteValorPagoCondominio = Math.Abs(item.ConsumoValorPagoCondominio - item.minimoValorPagoCondominio);
+                        item.excedenteM3PagoCondominio = item.consumoM3pagoCondominio - item.minimoM3PagoCondominio;
+                        item.excedenteValorRateio = (item.excedenteValorPagoCondominio / item.excedenteM3Rateio);
+                        item.valorPagarValorDevido = item.excedenteValorDevido * Math.Round(item.excedenteValorRateio, 2);
+                        oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+
+
+                    }
+                    //Se não mantêm o valor sem rateio..
+                    else
+                    {
+                        oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+                    }
 
                     oReciboModel.registro = "R" + item.registro;
                     oReciboModel.apartamento = "B" + item.bloco + "-AP" + item.apartamento;
@@ -361,7 +462,7 @@ namespace Azuli.Web.Portal
                     oReciboModel.leituraAtualM3 = item.leituraAtualM3;
                     oReciboModel.consumoMesM3 = Math.Round(item.excedenteM3diaria * 30, 0).ToString();
                     oReciboModel.excedenteValorDevido = item.excedenteValorDevido;
-                    oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+                    //oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
 
 
 
@@ -1063,7 +1164,9 @@ namespace Azuli.Web.Portal
                     
                     sheet.GetRow(initial).GetCell(5).SetCellValue(Math.Round(item.excedenteM3diaria * 30, 0));
                     sheet.GetRow(initial).GetCell(6).SetCellValue(""+item.excedenteValorDevido);
-                    sheet.GetRow(initial).GetCell(7).SetCellValue(String.Format("{0:C2}", item.valorPagarValorDevido));
+                    item.excedenteValorPagoCondominio = Math.Abs(item.ConsumoValorPagoCondominio - item.minimoValorPagoCondominio);
+                    item.excedenteValorRateio = (item.excedenteValorPagoCondominio / item.excedenteM3Rateio);
+                    sheet.GetRow(initial).GetCell(7).SetCellValue(String.Format("{0:C2}", item.excedenteValorDevido * Math.Round(item.excedenteValorRateio, 2)));
 
                     item.historicoMes1 = returnNumber(item.historicoMes1).ToString();
 

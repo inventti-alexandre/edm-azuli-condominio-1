@@ -17,6 +17,7 @@ using Azuli.Web.Model;
 using System.Drawing.Printing;
 using System.IO;
 using System.Reflection;
+using System.Text;
 
 namespace Azuli.Web.Portal
 {
@@ -146,7 +147,11 @@ namespace Azuli.Web.Portal
                     
                 //}
             }
-        
+
+
+
+       
+
         
 
         public void Recibo()
@@ -166,6 +171,7 @@ namespace Azuli.Web.Portal
 
                     ReciboAguaBLL oReciboBLL = new ReciboAguaBLL();
                     ReciboAgua oReciboModel = new ReciboAgua();
+                    double totalExcedenteDinamico = 0;
 
                     DSrecibo dsSegundaVia = new DSrecibo();
                  
@@ -193,7 +199,16 @@ namespace Azuli.Web.Portal
                     {
                         try
                         {
+                            foreach (var item in oListOrdenadoByRegistro)
+                            {
 
+                                if (Math.Round(item.excedenteM3diaria * 30, 0, MidpointRounding.AwayFromZero) > 10)
+                                {
+
+                                    totalExcedenteDinamico += Math.Round(item.excedenteM3diaria * 30, 0, MidpointRounding.AwayFromZero) - 10;
+                                }
+
+                            }
 
 
 
@@ -216,8 +231,11 @@ namespace Azuli.Web.Portal
                                 drSegundaVia["Data leitura Atual"] = item.dataLeituraAtual;
                                 drSegundaVia["Leitura Atual M³"] = item.leituraAtualM3;
 
+                                drSegundaVia["Consumo do Mês M³"] = Math.Round(item.excedenteM3diaria * 30, 0 , MidpointRounding.AwayFromZero);//item.consumoMesM3;// item.consumoMesM3;
 
-                                drSegundaVia["Consumo do Mês M³"] = Math.Round(item.excedenteM3diaria * 30, 0);//item.consumoMesM3;// item.consumoMesM3;
+                               
+
+                                //drSegundaVia["Consumo do Mês M³"] = Math.Round(item.excedenteM3diaria * 30, 0);//item.consumoMesM3;// item.consumoMesM3;
                                 drSegundaVia["Data da próxima leitura"] = item.dataProximaLeitura;
                                 drSegundaVia["status"] = item.status;
                                 drSegundaVia["Média"] = item.media;
@@ -252,16 +270,31 @@ namespace Azuli.Web.Portal
                                 drSegundaVia["Tarifa Mínima M³"] = item.tarifaMinimaM3ValorDevido;
                                 drSegundaVia["Tarifa Mínima Valor"] = item.tarifaMinimaValorValorDevido;
 
+                        
+
+                                //var dir = System.Configuration.ConfigurationManager.AppSettings["relatorioGeral"];
+
+                                //StreamWriter details = new StreamWriter("D:\\DZHosts\\LocalUser\\edmls34\\www.azulicondominio.com\\relatorio"+mes+ano+".txt",true,Encoding.ASCII);
                                 //Se o valor do consumo do M3 for maior que o minimo M3 do condominio será feito o rateio...
                                 if (item.consumoM3pagoCondominio > item.minimoM3PagoCondominio)
                                 {
                                     item.excedenteM3PagoCondominio = item.consumoM3pagoCondominio - item.minimoM3PagoCondominio;
-                                    item.excedenteValorRateio = (item.excedenteValorPagoCondominio / item.excedenteM3Rateio);
-                                    item.valorPagarValorDevido = (Math.Round(item.excedenteValorRateio, 0) * item.excedenteValorDevido);
+
+
+                                    item.excedenteValorRateio = Convert.ToDecimal(Math.Round(Convert.ToDouble(item.excedenteValorPagoCondominio) / totalExcedenteDinamico + 0.0005, 3));
+                                    item.valorPagarValorDevido = item.excedenteValorDevido *  item.excedenteValorRateio;
 
                                     drSegundaVia["ExcedentePagoPeloCondominio"] = item.excedenteM3PagoCondominio;
                                     drSegundaVia["ExcedenteValorRateio "] = item.excedenteValorRateio;
                                     drSegundaVia["a pagar"] = item.valorPagarValorDevido;
+
+
+                                  
+                                   
+
+                                    //details.WriteLine(item.bloco + " " + item.apartamento + " " + item.valorPagarValorDevido);
+
+
                                 }
                                 //Se não mantêm o valor sem rateio..
                                 else
@@ -270,7 +303,9 @@ namespace Azuli.Web.Portal
                                     drSegundaVia["ExcedenteValorRateio "] = item.excedenteValorRateio;
                                     drSegundaVia["a pagar"] = item.valorPagarValorDevido;
                                 }
-                                drSegundaVia["ExcedenteM3Rateio"] = item.excedenteM3Rateio;
+                                //details.Close();
+
+                                drSegundaVia["ExcedenteM3Rateio"] = totalExcedenteDinamico;
                                 drSegundaVia["Geral"] = item.avisoGeralAviso;
                                 drSegundaVia["Anormal"] = item.AnormalAviso;
                                 drSegundaVia["Invididual"] = item.individualAviso;
@@ -488,7 +523,7 @@ namespace Azuli.Web.Portal
                         {
                             item.excedenteM3PagoCondominio = item.consumoM3pagoCondominio - item.minimoM3PagoCondominio;
                             item.excedenteValorRateio = (item.excedenteValorPagoCondominio / item.excedenteM3Rateio);
-                            item.valorPagarValorDevido = (Math.Round(item.excedenteValorRateio, 2) * item.excedenteValorDevido);
+                            item.valorPagarValorDevido = item.excedenteValorDevido * Math.Round(item.excedenteValorRateio, 2);
 
                             drSegundaVia["ExcedentePagoPeloCondominio"] = item.excedenteM3PagoCondominio;
                             drSegundaVia["ExcedenteValorRateio "] = item.excedenteValorRateio;
