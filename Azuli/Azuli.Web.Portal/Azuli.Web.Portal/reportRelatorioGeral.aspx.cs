@@ -58,6 +58,7 @@ namespace Azuli.Web.Portal
             listaSegundaViaAgua listExcelTratada4 = new listaSegundaViaAgua();
             listaSegundaViaAgua listExcelTratada5 = new listaSegundaViaAgua();
             listaSegundaViaAgua listExcelTratada6 = new listaSegundaViaAgua();
+            double totalExcedenteDinamico = 0;
 
 
             foreach (var item in listExcel)
@@ -75,14 +76,24 @@ namespace Azuli.Web.Portal
                 
             }
 
-            
+
+            foreach (var item in listExcel)
+            {
+
+                if (Math.Round(item.excedenteM3diaria * 30, 0, MidpointRounding.AwayFromZero) > 10)
+                {
+
+                    totalExcedenteDinamico += Math.Round(item.excedenteM3diaria * 30, 0, MidpointRounding.AwayFromZero) - 10;
+                }
+
+            }
                     
 
             foreach (var item in listExcel)
             {
                 ReciboAgua oReciboModel = new ReciboAgua();
 
-
+                
 
                 if (item.bloco == "1")
                 {
@@ -92,8 +103,9 @@ namespace Azuli.Web.Portal
                     {
                         item.excedenteValorPagoCondominio = Math.Abs(item.ConsumoValorPagoCondominio - item.minimoValorPagoCondominio);
                         item.excedenteM3PagoCondominio = item.consumoM3pagoCondominio - item.minimoM3PagoCondominio;
-                        item.excedenteValorRateio = (item.excedenteValorPagoCondominio / item.excedenteM3Rateio);
-                        item.valorPagarValorDevido = item.excedenteValorDevido * Math.Round(item.excedenteValorRateio, 2);
+                        item.excedenteValorRateio = Convert.ToDecimal(Math.Round(Convert.ToDouble(item.excedenteValorPagoCondominio) / totalExcedenteDinamico + 0.0005, 3));
+                        item.valorPagarValorDevido = item.excedenteValorDevido * item.excedenteValorRateio;
+                        
                         oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
 
                       
@@ -164,9 +176,11 @@ namespace Azuli.Web.Portal
                     {
                         item.excedenteValorPagoCondominio = Math.Abs(item.ConsumoValorPagoCondominio - item.minimoValorPagoCondominio);
                         item.excedenteM3PagoCondominio = item.consumoM3pagoCondominio - item.minimoM3PagoCondominio;
-                        item.excedenteValorRateio = (item.excedenteValorPagoCondominio / item.excedenteM3Rateio);
-                        item.valorPagarValorDevido = item.excedenteValorDevido * Math.Round(item.excedenteValorRateio, 2);
+                        item.excedenteValorRateio = Convert.ToDecimal(Math.Round(Convert.ToDouble(item.excedenteValorPagoCondominio) / totalExcedenteDinamico + 0.0005, 3));
+                        item.valorPagarValorDevido = item.excedenteValorDevido * item.excedenteValorRateio;
+
                         oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+
 
 
                     }
@@ -234,9 +248,11 @@ namespace Azuli.Web.Portal
                     {
                         item.excedenteValorPagoCondominio = Math.Abs(item.ConsumoValorPagoCondominio - item.minimoValorPagoCondominio);
                         item.excedenteM3PagoCondominio = item.consumoM3pagoCondominio - item.minimoM3PagoCondominio;
-                        item.excedenteValorRateio = (item.excedenteValorPagoCondominio / item.excedenteM3Rateio);
-                        item.valorPagarValorDevido = item.excedenteValorDevido * Math.Round(item.excedenteValorRateio, 2);
+                        item.excedenteValorRateio = Convert.ToDecimal(Math.Round(Convert.ToDouble(item.excedenteValorPagoCondominio) / totalExcedenteDinamico + 0.0005, 3));
+                        item.valorPagarValorDevido = item.excedenteValorDevido * item.excedenteValorRateio;
+
                         oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+
 
 
                     }
@@ -304,9 +320,11 @@ namespace Azuli.Web.Portal
                     {
                         item.excedenteValorPagoCondominio = Math.Abs(item.ConsumoValorPagoCondominio - item.minimoValorPagoCondominio);
                         item.excedenteM3PagoCondominio = item.consumoM3pagoCondominio - item.minimoM3PagoCondominio;
-                        item.excedenteValorRateio = (item.excedenteValorPagoCondominio / item.excedenteM3Rateio);
-                        item.valorPagarValorDevido = item.excedenteValorDevido * Math.Round(item.excedenteValorRateio, 2);
+                        item.excedenteValorRateio = Convert.ToDecimal(Math.Round(Convert.ToDouble(item.excedenteValorPagoCondominio) / totalExcedenteDinamico + 0.0005, 3));
+                        item.valorPagarValorDevido = item.excedenteValorDevido * item.excedenteValorRateio;
+
                         oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+
 
 
                     }
@@ -374,8 +392,9 @@ namespace Azuli.Web.Portal
                     {
                         item.excedenteValorPagoCondominio = Math.Abs(item.ConsumoValorPagoCondominio - item.minimoValorPagoCondominio);
                         item.excedenteM3PagoCondominio = item.consumoM3pagoCondominio - item.minimoM3PagoCondominio;
-                        item.excedenteValorRateio = (item.excedenteValorPagoCondominio / item.excedenteM3Rateio);
-                        item.valorPagarValorDevido = item.excedenteValorDevido * Math.Round(item.excedenteValorRateio, 2);
+                        item.excedenteValorRateio = Convert.ToDecimal(Math.Round(Convert.ToDouble(item.excedenteValorPagoCondominio) / totalExcedenteDinamico + 0.0005, 3));
+                        item.valorPagarValorDevido = item.excedenteValorDevido * item.excedenteValorRateio;
+
                         oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
 
 
@@ -443,9 +462,11 @@ namespace Azuli.Web.Portal
                     {
                         item.excedenteValorPagoCondominio = Math.Abs(item.ConsumoValorPagoCondominio - item.minimoValorPagoCondominio);
                         item.excedenteM3PagoCondominio = item.consumoM3pagoCondominio - item.minimoM3PagoCondominio;
-                        item.excedenteValorRateio = (item.excedenteValorPagoCondominio / item.excedenteM3Rateio);
-                        item.valorPagarValorDevido = item.excedenteValorDevido * Math.Round(item.excedenteValorRateio, 2);
+                        item.excedenteValorRateio = Convert.ToDecimal(Math.Round(Convert.ToDouble(item.excedenteValorPagoCondominio) / totalExcedenteDinamico + 0.0005, 3));
+                        item.valorPagarValorDevido = item.excedenteValorDevido * item.excedenteValorRateio;
+
                         oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
+
 
 
                     }
@@ -487,7 +508,7 @@ namespace Azuli.Web.Portal
                         {
 
 
-                            oReciboModel.status = "↑ " + item.historicoMes1;
+                            oReciboModel.status = "↑ " + item.status;
                            
 
                         }
@@ -985,7 +1006,8 @@ namespace Azuli.Web.Portal
             //int consumoAPs = 0;
             //int consumoSomaExcedentes = 0;
             double[] arrayConsumoTotalAPs = new double[5];
-            int[] arrayExcedente = new int[5];
+            double[] arrayExcedente = new double[5];
+           
             int[] arraySabesp = new int[5];
             string[] mesesHistrorico = new string[5];
 
@@ -1016,13 +1038,17 @@ namespace Azuli.Web.Portal
                 else
                 {
                     var listHistoricoAP = from listHistorico in oReciboBLL.buscaTodosRecibosByYearAndMonth(anoExcel, Convert.ToInt32(anoHistorico))
-                                          select Math.Round(listHistorico.excedenteM3diaria * 30, 0);
+                                          select Math.Round(listHistorico.excedenteM3diaria * 30, 0,MidpointRounding.AwayFromZero);
 
                     arrayConsumoTotalAPs[i] = listHistoricoAP.Sum();
                 }
 
-                var listHistoricoExcedente = from listHistorico in oReciboBLL.buscaTodosRecibosByYearAndMonth(anoExcel, Convert.ToInt32(anoHistorico))
-                                             select Convert.ToInt32(listHistorico.excedenteM3Rateio);
+               // var listHistoricoExcedente = from listHistorico in oReciboBLL.buscaTodosRecibosByYearAndMonth(anoExcel, Convert.ToInt32(anoHistorico))
+                                           //  select Convert.ToInt32(listHistorico.excedenteM3Rateio);
+
+                var oListOrdenadoByRegistro = from listaOrdenada in oReciboBLL.buscaTodosRecibosByYearAndMonth(Convert.ToInt32(anoExcel), Convert.ToInt32(anoHistorico))
+                                              orderby listaOrdenada.registro ascending
+                                              select listaOrdenada;
 
                 var listSabesp = from listHistorico in oReciboBLL.buscaTodosRecibosByYearAndMonth(anoExcel, Convert.ToInt32(anoHistorico))
                                  select listHistorico.consumoM3pagoCondominio;
@@ -1030,9 +1056,24 @@ namespace Azuli.Web.Portal
 
 
                 mesesHistrorico[i] = "01/" + anoHistorico + "/" + anoExcel;
-                 arrayExcedente[i] = listHistoricoExcedente.FirstOrDefault();
-                 arraySabesp[i] = listSabesp.FirstOrDefault();
+                double totalExcedenteDinamico = 0;
+                foreach (var item in oListOrdenadoByRegistro)
+                {
 
+                    if (Math.Round(item.excedenteM3diaria * 30, 0, MidpointRounding.AwayFromZero) > 10)
+                    {
+
+                       totalExcedenteDinamico += Math.Round(item.excedenteM3diaria * 30, 0, MidpointRounding.AwayFromZero) - 10;
+                    }
+                   
+                       
+                    
+                }
+
+                arrayExcedente[i] = totalExcedenteDinamico;
+                arraySabesp[i] = listSabesp.FirstOrDefault();
+
+               
 
 
                  if (anoHistorico == 1)
@@ -1064,11 +1105,11 @@ namespace Azuli.Web.Portal
 
             // Open Template
             //local
-            // FileStream fs = new FileStream(@"C:\Users\Edmilson\Documents\RelatorioGeral.xls", FileMode.Open, FileAccess.Read);
+            FileStream fs = new FileStream(@"C:\Users\Edmilson\Documents\RelatorioGeral.xls", FileMode.Open, FileAccess.Read);
             //web
 
-            var dir = System.Configuration.ConfigurationManager.AppSettings["relatorioGeral"];
-            FileStream fs = new FileStream(Server.MapPath(dir+"RelatorioGeral.xls"), FileMode.Open, FileAccess.Read);
+           // var dir = System.Configuration.ConfigurationManager.AppSettings["relatorioGeral"];
+           // FileStream fs = new FileStream(Server.MapPath(dir+"RelatorioGeral.xls"), FileMode.Open, FileAccess.Read);
 
             
 
@@ -1161,8 +1202,8 @@ namespace Azuli.Web.Portal
                     sheet.GetRow(initial).GetCell(2).SetCellValue(" " + addZero(returnNumber(item.historicoMes6)) + "-" + addZero(returnNumber(item.historicoMes5)) + "-" + addZero(returnNumber(item.historicoMes4)) + "-" + addZero(returnNumber(item.historicoMes3)) + "-" + addZero(returnNumber(item.historicoMes2)) + "-" + addZero(returnNumber(item.historicoMes1)) + " - (" + addZero(item.media) + ")");
                     sheet.GetRow(initial).GetCell(3).SetCellValue(item.leituraAnteriorM3);
                     sheet.GetRow(initial).GetCell(4).SetCellValue(item.leituraAtualM3);
-                    
-                    sheet.GetRow(initial).GetCell(5).SetCellValue(Math.Round(item.excedenteM3diaria * 30, 0));
+
+                    sheet.GetRow(initial).GetCell(5).SetCellValue(Math.Round(item.excedenteM3diaria * 30, 0 , MidpointRounding.AwayFromZero));
                     sheet.GetRow(initial).GetCell(6).SetCellValue(""+item.excedenteValorDevido);
                     item.excedenteValorPagoCondominio = Math.Abs(item.ConsumoValorPagoCondominio - item.minimoValorPagoCondominio);
                     item.excedenteValorRateio = (item.excedenteValorPagoCondominio / item.excedenteM3Rateio);

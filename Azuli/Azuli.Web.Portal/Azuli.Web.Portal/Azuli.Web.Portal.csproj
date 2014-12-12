@@ -13,7 +13,8 @@
     <RootNamespace>Azuli.Web.Portal</RootNamespace>
     <AssemblyName>Azuli.Web.Portal</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <SilverlightApplicationList>{328F6C69-4E2B-49CF-8C9D-345DF3AE9AC0}|..\Azuli.Acess.Control\Azuli.Acess.Control.csproj|ClientBin|False</SilverlightApplicationList>
+    <SilverlightApplicationList>
+    </SilverlightApplicationList>
     <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
