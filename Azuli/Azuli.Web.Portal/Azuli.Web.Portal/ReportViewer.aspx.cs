@@ -169,6 +169,7 @@ namespace Azuli.Web.Portal
                   pg.PaperSize = size;
                   pg.Landscape = true;
 
+                  decimal somatudo = 0;
                     ReciboAguaBLL oReciboBLL = new ReciboAguaBLL();
                     ReciboAgua oReciboModel = new ReciboAgua();
                     double totalExcedenteDinamico = 0;
@@ -276,6 +277,7 @@ namespace Azuli.Web.Portal
 
                                 //StreamWriter details = new StreamWriter("D:\\DZHosts\\LocalUser\\edmls34\\www.azulicondominio.com\\relatorio"+mes+ano+".txt",true,Encoding.ASCII);
                                 //Se o valor do consumo do M3 for maior que o minimo M3 do condominio será feito o rateio...
+                                
                                 if (item.consumoM3pagoCondominio > item.minimoM3PagoCondominio)
                                 {
                                     item.excedenteM3PagoCondominio = item.consumoM3pagoCondominio - item.minimoM3PagoCondominio;
@@ -283,6 +285,8 @@ namespace Azuli.Web.Portal
 
                                     item.excedenteValorRateio = Convert.ToDecimal(Math.Round(Convert.ToDouble(item.excedenteValorPagoCondominio) / totalExcedenteDinamico + 0.0005, 3));
                                     item.valorPagarValorDevido = item.excedenteValorDevido *  item.excedenteValorRateio;
+
+                                    somatudo += item.valorPagarValorDevido;
 
                                     drSegundaVia["ExcedentePagoPeloCondominio"] = item.excedenteM3PagoCondominio;
                                     drSegundaVia["ExcedenteValorRateio "] = item.excedenteValorRateio;
@@ -303,6 +307,7 @@ namespace Azuli.Web.Portal
                                     drSegundaVia["ExcedenteValorRateio "] = item.excedenteValorRateio;
                                     drSegundaVia["a pagar"] = item.valorPagarValorDevido;
                                 }
+
                                 //details.Close();
 
                                 drSegundaVia["ExcedenteM3Rateio"] = totalExcedenteDinamico;

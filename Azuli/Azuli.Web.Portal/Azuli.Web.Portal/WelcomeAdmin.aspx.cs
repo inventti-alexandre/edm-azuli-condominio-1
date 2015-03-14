@@ -118,12 +118,12 @@ namespace Azuli.Web.Portal
                         
                         linkPendenceSLFP.Width = 135;
                         linkPendenceSLFP.Height = 20;
-                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
+                        linkPendenceSLFP.ForeColor = Color.FromName("#215E21");
 
 
                         HyperLink linkPendenceCHP = new HyperLink();
                         linkPendenceCHP.Font.Size = 8;
-                        linkPendenceCHP.ForeColor = Color.FromName("#FF7979");
+                        linkPendenceCHP.ForeColor = Color.FromName("#8B0000");
                         linkPendenceCHP.Height = 20;
                         linkPendenceCHP.Width = 135;
                         
@@ -155,10 +155,10 @@ namespace Azuli.Web.Portal
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "SF(*) - " ;
+                                        status = "SF  - " ;
                                         linkPendenceSLFP.Text = status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento;
                                         linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
-                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
+                                     linkPendenceSLFP.ForeColor =  Color.FromName("#215E21");
                                         //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t1.ForeColor = Color.FromName("#8B0000");
                                         
@@ -172,12 +172,12 @@ namespace Azuli.Web.Portal
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "CH(*) - ";
+                                        status = "CH - ";
                                         linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco="+quemAlugou.ap.bloco+"&apto="+quemAlugou.ap.apartamento+"&data="+quemAlugou.dataAgendamento+"&status"+quemAlugou.statusPagamento;
                                         linkPendenceCHP.ForeColor = Color.FromName("FFA0CC");
                                         //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        //t2.ForeColor = Color.FromName("#8B0000");
+                                        t2.ForeColor = Color.FromName("#8B0000");
                                         
                                         
                                     }
@@ -195,12 +195,12 @@ namespace Azuli.Web.Portal
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "SF(*) - " ;
+                                        status = "SF  - " ;
                                        // t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                        //t1.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
-                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
+                                     linkPendenceSLFP.ForeColor =  Color.FromName("#215E21");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
@@ -212,12 +212,12 @@ namespace Azuli.Web.Portal
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "CH(*) - ";
+                                        status = "CH - ";
                                         linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
                                        
                                         //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        //t2.ForeColor = Color.FromName("#8B0000");
+                                        t2.ForeColor = Color.FromName("#8B0000");
                                         
 
                                     }
@@ -235,10 +235,10 @@ namespace Azuli.Web.Portal
 
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
                                 {
-                                    status = "SF(*) - " ;
+                                    status = "SF  - " ;
                                     linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento ;
-                                 linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
+                                 linkPendenceSLFP.ForeColor =  Color.FromName("#215E21");
 
                                     //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     //t1.ForeColor = Color.FromName("#8B0000");
@@ -253,12 +253,12 @@ namespace Azuli.Web.Portal
                                 }
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true && quemAlugou.statusPagamento != "C")
                                 {
-                                    status = "CH(*) - ";
+                                    status = "CH - ";
                                     linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
                                        
                                     //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                    //t2.ForeColor = Color.FromName("#8B0000");
+                                    t2.ForeColor = Color.FromName("#8B0000");
                                     
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true && quemAlugou.statusPagamento != "C")
@@ -354,11 +354,11 @@ namespace Azuli.Web.Portal
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "SF(*) - " ;
+                                        status = "SF  - " ;
 
                                         linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
-                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
+                                     linkPendenceSLFP.ForeColor =  Color.FromName("#215E21");
                                         //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t1.ForeColor = Color.FromName("#8B0000");
                                         
@@ -373,14 +373,14 @@ namespace Azuli.Web.Portal
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "CH(*) - ";
+                                        status = "CH - ";
                                         linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
                                        
                                         
                                         
                                         //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        //t2.ForeColor = Color.FromName("#8B0000");
+                                        t2.ForeColor = Color.FromName("#8B0000");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true && quemAlugou.statusPagamento != "C")
@@ -396,12 +396,12 @@ namespace Azuli.Web.Portal
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "SF(*) - " ;
+                                        status = "SF  - " ;
                                        // t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t1.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
-                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
+                                     linkPendenceSLFP.ForeColor =  Color.FromName("#215E21");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
@@ -413,13 +413,13 @@ namespace Azuli.Web.Portal
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "CH(*) - ";
+                                        status = "CH - ";
                                         linkPendenceCHP.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
                                         //
                                         
                                         //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        //t2.ForeColor = Color.FromName("#8B0000");
+                                        t2.ForeColor = Color.FromName("#8B0000");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true && quemAlugou.statusPagamento != "C")
@@ -435,12 +435,12 @@ namespace Azuli.Web.Portal
                             {
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
                                 {
-                                    status = "SF(*) - " ;
+                                    status = "SF  - " ;
                                     //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     //t1.ForeColor = Color.FromName("#8B0000");
                                     linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
-                                 linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
+                                 linkPendenceSLFP.ForeColor =  Color.FromName("#215E21");
                                     
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
@@ -452,9 +452,9 @@ namespace Azuli.Web.Portal
                                 }
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true && quemAlugou.statusPagamento != "C")
                                 {
-                                    status = "CH(*) - ";
+                                    status = "CH - ";
                                     //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                    //t2.ForeColor = Color.FromName("#8B0000");
+                                    t2.ForeColor = Color.FromName("#8B0000");
                                     linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
                                     
@@ -555,12 +555,12 @@ namespace Azuli.Web.Portal
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
                                     { 
-                                        status = "SF(*) - " ;
+                                        status = "SF  - " ;
                                         //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t1.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
-                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
+                                     linkPendenceSLFP.ForeColor =  Color.FromName("#215E21");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
@@ -572,9 +572,9 @@ namespace Azuli.Web.Portal
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "CH(*) - ";
+                                        status = "CH - ";
                                         //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        //t2.ForeColor = Color.FromName("#8B0000");
+                                        t2.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
                                         
@@ -595,12 +595,12 @@ namespace Azuli.Web.Portal
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "SF(*) - " ;
+                                        status = "SF  - " ;
                                         //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t1.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
-                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
+                                     linkPendenceSLFP.ForeColor =  Color.FromName("#215E21");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
@@ -612,9 +612,9 @@ namespace Azuli.Web.Portal
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "CH(*) - ";
+                                        status = "CH - ";
                                         //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        //t2.ForeColor = Color.FromName("#8B0000");
+                                        t2.ForeColor = Color.FromName("#8B0000");
 
                                         linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
@@ -634,12 +634,12 @@ namespace Azuli.Web.Portal
                             {
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
                                 {
-                                    status = "SF(*) - " ;
+                                    status = "SF  - " ;
                                     //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     //t1.ForeColor = Color.FromName("#8B0000");
                                     linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
-                                 linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
+                                 linkPendenceSLFP.ForeColor =  Color.FromName("#215E21");
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
                                 {
@@ -650,9 +650,9 @@ namespace Azuli.Web.Portal
                                 }
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true && quemAlugou.statusPagamento != "C") 
                                 {
-                                    status = "CH(*) - ";
+                                    status = "CH - ";
                                     //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                    //t2.ForeColor = Color.FromName("#8B0000");
+                                    t2.ForeColor = Color.FromName("#8B0000");
                                     linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
                                     
@@ -756,12 +756,12 @@ namespace Azuli.Web.Portal
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "SF(*) - " ;
+                                        status = "SF  - " ;
                                         //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t1.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
-                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
+                                     linkPendenceSLFP.ForeColor =  Color.FromName("#215E21");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
@@ -773,9 +773,9 @@ namespace Azuli.Web.Portal
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "CH(*) - ";
+                                        status = "CH - ";
                                         //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        //t2.ForeColor = Color.FromName("#8B0000");
+                                        t2.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
                                         
@@ -795,12 +795,12 @@ namespace Azuli.Web.Portal
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "SF(*) - " ;
+                                        status = "SF  - " ;
                                         //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t1.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
-                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
+                                     linkPendenceSLFP.ForeColor =  Color.FromName("#215E21");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
@@ -812,9 +812,9 @@ namespace Azuli.Web.Portal
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "CH(*) - ";
+                                        status = "CH - ";
                                         //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        //t2.ForeColor = Color.FromName("#8B0000");
+                                        t2.ForeColor = Color.FromName("#8B0000");
 
                                         linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
@@ -834,12 +834,12 @@ namespace Azuli.Web.Portal
                             {
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
                                 {
-                                    status = "SF(*) - " ;
+                                    status = "SF  - " ;
                                     //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     //t1.ForeColor = Color.FromName("#8B0000");
                                     linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
-                                 linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
+                                 linkPendenceSLFP.ForeColor =  Color.FromName("#215E21");
                                     
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
@@ -851,9 +851,9 @@ namespace Azuli.Web.Portal
                                 }
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true && quemAlugou.statusPagamento != "C") 
                                 {
-                                    status = "CH(*) - ";
+                                    status = "CH - ";
                                     //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                    //t2.ForeColor = Color.FromName("#8B0000");
+                                    t2.ForeColor = Color.FromName("#8B0000");
                                     linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
                                     
@@ -953,12 +953,12 @@ namespace Azuli.Web.Portal
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "SF(*) - " ;
+                                        status = "SF  - " ;
                                         //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                        // t1.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
-                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
+                                     linkPendenceSLFP.ForeColor =  Color.FromName("#215E21");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
@@ -970,7 +970,7 @@ namespace Azuli.Web.Portal
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "CH(*) - ";
+                                        status = "CH - ";
                                         linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
                                         
@@ -993,12 +993,12 @@ namespace Azuli.Web.Portal
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "SF(*) - " ;
+                                        status = "SF  - " ;
                                         //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t1.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
-                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
+                                     linkPendenceSLFP.ForeColor =  Color.FromName("#215E21");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C") 
@@ -1010,9 +1010,9 @@ namespace Azuli.Web.Portal
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "CH(*) - ";
+                                        status = "CH - ";
                                         //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        //t2.ForeColor = Color.FromName("#8B0000");
+                                        t2.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
                                         
@@ -1031,12 +1031,12 @@ namespace Azuli.Web.Portal
                             {
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
                                 {
-                                    status = "SF(*) - " ;
+                                    status = "SF  - " ;
                                     //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     // t1.ForeColor = Color.FromName("#8B0000");
                                     linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
-                                 linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
+                                 linkPendenceSLFP.ForeColor =  Color.FromName("#215E21");
                                     
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C" )
@@ -1048,9 +1048,9 @@ namespace Azuli.Web.Portal
                                 }
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true && quemAlugou.statusPagamento != "C")
                                 {
-                                    status = "CH(*) - ";
+                                    status = "CH - ";
                                     //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                    //t2.ForeColor = Color.FromName("#8B0000");
+                                    t2.ForeColor = Color.FromName("#8B0000");
                                     linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
                                     
@@ -1148,10 +1148,10 @@ namespace Azuli.Web.Portal
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "SF(*) - " ;
+                                        status = "SF  - " ;
                                         linkPendenceSLFP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
-                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
+                                     linkPendenceSLFP.ForeColor =  Color.FromName("#215E21");
                                         
                                         //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         //t1.ForeColor = Color.FromName("#8B0000");
@@ -1166,13 +1166,13 @@ namespace Azuli.Web.Portal
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "CH(*) - ";
+                                        status = "CH - ";
                                         linkPendenceCHP.Text =  status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
                                         
                                         
                                         //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        //t2.ForeColor = Color.FromName("#8B0000");
+                                        t2.ForeColor = Color.FromName("#8B0000");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoChurrasco == true && quemAlugou.statusPagamento != "C")
@@ -1189,12 +1189,12 @@ namespace Azuli.Web.Portal
                                 {
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "SF(*) - " ;
+                                        status = "SF  - " ;
                                         //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                        // t1.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceSLFP.Text = status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
-                                     linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
+                                     linkPendenceSLFP.ForeColor =  Color.FromName("#215E21");
                                         
                                     }
                                     if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
@@ -1206,9 +1206,9 @@ namespace Azuli.Web.Portal
                                     }
                                     if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true && quemAlugou.statusPagamento != "C")
                                     {
-                                        status = "CH(*) - ";
+                                        status = "CH - ";
                                         //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                        //t2.ForeColor = Color.FromName("#8B0000");
+                                        t2.ForeColor = Color.FromName("#8B0000");
                                         linkPendenceCHP.Text = status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                         linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
                                         
@@ -1228,12 +1228,12 @@ namespace Azuli.Web.Portal
                             {
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
                                 {
-                                    status = "SF(*) - " ;
+                                    status = "SF  - " ;
                                     //t1.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     //t1.ForeColor = Color.FromName("#8B0000");
                                     linkPendenceSLFP.Text = status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceSLFP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
-                                 linkPendenceSLFP.ForeColor = Color.FromName("#8FBC8F");
+                                 linkPendenceSLFP.ForeColor =  Color.FromName("#215E21");
                                 }
                                 if (quemAlugou.statusPagamento == "S" && quemAlugou.salaoFesta == true && quemAlugou.statusPagamento != "C")
                                 {
@@ -1244,9 +1244,9 @@ namespace Azuli.Web.Portal
                                 }
                                 if (quemAlugou.statusPagamento == "N" && quemAlugou.salaoChurrasco == true && quemAlugou.statusPagamento != "C")
                                 {
-                                    status = "CH(*) - ";
+                                    status = "CH - ";
                                     //t2.Text = "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
-                                    //t2.ForeColor = Color.FromName("#8B0000");
+                                    t2.ForeColor = Color.FromName("#8B0000");
                                     linkPendenceCHP.Text = status + "BL-" + quemAlugou.ap.bloco.ToString() + " AP-" + quemAlugou.ap.apartamento ;
                                     linkPendenceCHP.NavigateUrl = "~/PendenciaAgendamentos.aspx?Bloco=" + quemAlugou.ap.bloco + "&apto=" + quemAlugou.ap.apartamento + "&data=" + quemAlugou.dataAgendamento + "&status" + quemAlugou.statusPagamento;
 

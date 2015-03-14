@@ -1,7 +1,9 @@
 ﻿<%@ Page  Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
     CodeBehind="paginaInicialMoradores.aspx.cs" Inherits="Azuli.Web.Portal.paginaInicialMoradores" %>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+
     <style type="text/css">
         .style1
         {

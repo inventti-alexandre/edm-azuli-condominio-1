@@ -5,19 +5,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
-        .style2
-        {
-            background-color: #ADD8E6;
-            font-style: normal;
-        }
-                 
-        .style3
-        {
-            width: 22px;
-            height: 14px;
-            font-size: 13pt;
-        }
-                 
+                         
         .style4
         {
             font-size: 13pt;
@@ -179,8 +167,9 @@
                         <td class="style9">
                             <asp:CheckBox ID="chkPG" runat="server" Font-Bold="True" Text=" Pago" 
                                 CssClass="style4" AutoPostBack="True" 
-                                oncheckedchanged="chkPG_CheckedChanged" />
-&nbsp;<img alt="" class="style3" src="images/real.jpg" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                oncheckedchanged="chkPG_CheckedChanged" Visible="False" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <br />
                             <asp:Label ID="lblDesconto" runat="server" CssClass="accordionContent" 
                                 Font-Bold="True" ForeColor="Blue" Text="Label"></asp:Label>
                             </td>

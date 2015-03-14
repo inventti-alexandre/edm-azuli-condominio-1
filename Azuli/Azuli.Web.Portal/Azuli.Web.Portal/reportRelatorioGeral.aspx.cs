@@ -121,7 +121,7 @@ namespace Azuli.Web.Portal
                     oReciboModel.historicoMes1 = " " + addZero(returnNumber(item.historicoMes6)) + "-" + addZero(returnNumber(item.historicoMes5)) + "-" + addZero(returnNumber(item.historicoMes4)) + "-" + addZero(returnNumber(item.historicoMes3)) + "-" + addZero(returnNumber(item.historicoMes2)) + "-" + addZero(returnNumber(item.historicoMes1)) + " - (" + addZero(item.media) + ")";
                     oReciboModel.leituraAnteriorM3 = item.leituraAnteriorM3;
                     oReciboModel.leituraAtualM3 = item.leituraAtualM3;
-                    oReciboModel.consumoMesM3 = Math.Round(item.excedenteM3diaria * 30, 0).ToString();
+                    oReciboModel.consumoMesM3 = Math.Round(item.excedenteM3diaria * 30, 0, MidpointRounding.AwayFromZero).ToString();
                     oReciboModel.excedenteValorDevido = item.excedenteValorDevido;
                    
 
@@ -195,7 +195,7 @@ namespace Azuli.Web.Portal
                     oReciboModel.historicoMes1 = " " + addZero(returnNumber(item.historicoMes6)) + "-" + addZero(returnNumber(item.historicoMes5)) + "-" + addZero(returnNumber(item.historicoMes4)) + "-" + addZero(returnNumber(item.historicoMes3)) + "-" + addZero(returnNumber(item.historicoMes2)) + "-" + addZero(returnNumber(item.historicoMes1)) + " - (" + addZero(item.media) + ")";
                     oReciboModel.leituraAnteriorM3 = item.leituraAnteriorM3;
                     oReciboModel.leituraAtualM3 = item.leituraAtualM3;
-                    oReciboModel.consumoMesM3 = Math.Round(item.excedenteM3diaria * 30, 0).ToString();
+                    oReciboModel.consumoMesM3 = Math.Round(item.excedenteM3diaria * 30, 0, MidpointRounding.AwayFromZero).ToString();
                     oReciboModel.excedenteValorDevido = item.excedenteValorDevido;
                   //  oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
 
@@ -267,7 +267,7 @@ namespace Azuli.Web.Portal
                     oReciboModel.historicoMes1 = " " + addZero(returnNumber(item.historicoMes6)) + "-" + addZero(returnNumber(item.historicoMes5)) + "-" + addZero(returnNumber(item.historicoMes4)) + "-" + addZero(returnNumber(item.historicoMes3)) + "-" + addZero(returnNumber(item.historicoMes2)) + "-" + addZero(returnNumber(item.historicoMes1)) + " - (" + addZero(item.media) + ")";
                     oReciboModel.leituraAnteriorM3 = item.leituraAnteriorM3;
                     oReciboModel.leituraAtualM3 = item.leituraAtualM3;
-                    oReciboModel.consumoMesM3 = Math.Round(item.excedenteM3diaria * 30, 0).ToString();
+                    oReciboModel.consumoMesM3 = Math.Round(item.excedenteM3diaria * 30, 0, MidpointRounding.AwayFromZero).ToString();
                     oReciboModel.excedenteValorDevido = item.excedenteValorDevido;
                     //oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
 
@@ -339,7 +339,7 @@ namespace Azuli.Web.Portal
                     oReciboModel.historicoMes1 = " " + addZero(returnNumber(item.historicoMes6)) + "-" + addZero(returnNumber(item.historicoMes5)) + "-" + addZero(returnNumber(item.historicoMes4)) + "-" + addZero(returnNumber(item.historicoMes3)) + "-" + addZero(returnNumber(item.historicoMes2)) + "-" + addZero(returnNumber(item.historicoMes1)) + " - (" + addZero(item.media) + ")";
                     oReciboModel.leituraAnteriorM3 = item.leituraAnteriorM3;
                     oReciboModel.leituraAtualM3 = item.leituraAtualM3;
-                    oReciboModel.consumoMesM3 = Math.Round(item.excedenteM3diaria * 30, 0).ToString();
+                    oReciboModel.consumoMesM3 = Math.Round(item.excedenteM3diaria * 30, 0, MidpointRounding.AwayFromZero).ToString();
                     oReciboModel.excedenteValorDevido = item.excedenteValorDevido;
                     //oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
 
@@ -409,7 +409,7 @@ namespace Azuli.Web.Portal
                     oReciboModel.historicoMes1 = " " + addZero(returnNumber(item.historicoMes6)) + "-" + addZero(returnNumber(item.historicoMes5)) + "-" + addZero(returnNumber(item.historicoMes4)) + "-" + addZero(returnNumber(item.historicoMes3)) + "-" + addZero(returnNumber(item.historicoMes2)) + "-" + addZero(returnNumber(item.historicoMes1)) + " - (" + addZero(item.media) + ")";
                     oReciboModel.leituraAnteriorM3 = item.leituraAnteriorM3;
                     oReciboModel.leituraAtualM3 = item.leituraAtualM3;
-                    oReciboModel.consumoMesM3 = Math.Round(item.excedenteM3diaria * 30, 0).ToString();
+                    oReciboModel.consumoMesM3 = Math.Round(item.excedenteM3diaria * 30, 0, MidpointRounding.AwayFromZero).ToString();
                     oReciboModel.excedenteValorDevido = item.excedenteValorDevido;
                     //oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
 
@@ -481,7 +481,8 @@ namespace Azuli.Web.Portal
                     oReciboModel.historicoMes1 = " " + addZero(returnNumber(item.historicoMes6)) + "-" + addZero(returnNumber(item.historicoMes5)) + "-" + addZero(returnNumber(item.historicoMes4)) + "-" + addZero(returnNumber(item.historicoMes3)) + "-" + addZero(returnNumber(item.historicoMes2)) + "-" + addZero(returnNumber(item.historicoMes1)) + " - (" + addZero(item.media) + ")";
                     oReciboModel.leituraAnteriorM3 = item.leituraAnteriorM3;
                     oReciboModel.leituraAtualM3 = item.leituraAtualM3;
-                    oReciboModel.consumoMesM3 = Math.Round(item.excedenteM3diaria * 30, 0).ToString();
+                    
+                    oReciboModel.consumoMesM3 = Math.Round(item.excedenteM3diaria * 30, 0, MidpointRounding.AwayFromZero).ToString();
                     oReciboModel.excedenteValorDevido = item.excedenteValorDevido;
                     //oReciboModel.valorPagarValorDevido = item.valorPagarValorDevido;
 
@@ -1100,16 +1101,16 @@ namespace Azuli.Web.Portal
             
             var listChart = from lisExcelChartAux in oReciboBLL.buscaTodosRecibosByYearAndMonth(Convert.ToInt32(ano), Convert.ToInt32(mes))
                             orderby lisExcelChartAux.consumoMesM3 descending
-                            select Convert.ToInt32(lisExcelChartAux.consumoMesM3);
+                            select lisExcelChartAux;
 
 
             // Open Template
             //local
-            FileStream fs = new FileStream(@"C:\Users\Edmilson\Documents\RelatorioGeral.xls", FileMode.Open, FileAccess.Read);
+            //FileStream fs = new FileStream(@"C:\Users\Edmilson\Documents\RelatorioGeral.xls", FileMode.Open, FileAccess.Read);
             //web
 
-           // var dir = System.Configuration.ConfigurationManager.AppSettings["relatorioGeral"];
-           // FileStream fs = new FileStream(Server.MapPath(dir+"RelatorioGeral.xls"), FileMode.Open, FileAccess.Read);
+            var dir = System.Configuration.ConfigurationManager.AppSettings["relatorioGeral"];
+            FileStream fs = new FileStream(Server.MapPath(dir + "RelatorioGeral.xls"), FileMode.Open, FileAccess.Read);
 
             
 
@@ -1156,14 +1157,15 @@ namespace Azuli.Web.Portal
 
 
 
-            foreach (var item in listChart.OrderByDescending(x => x))
+            foreach (var item in listChart)
             {
-
+                
                 if (auxiliarChart <= 240)
                 {
 
-                    sheetMedia.GetRow(auxiliarChart).GetCell(0).SetCellValue(item);
-                    sheetMedia.GetRow(auxiliarChart).GetCell(2).SetCellValue(item); // 
+
+                    sheetMedia.GetRow(auxiliarChart).GetCell(0).SetCellValue(Math.Round(item.excedenteM3diaria * 30, 0, MidpointRounding.AwayFromZero));
+                    sheetMedia.GetRow(auxiliarChart).GetCell(2).SetCellValue(Math.Round(item.excedenteM3diaria * 30, 0, MidpointRounding.AwayFromZero)); // 
                     auxiliarChart++;
                 }
                 

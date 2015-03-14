@@ -20,6 +20,7 @@ namespace Azuli.Web.Portal
            AgendaModel oAgendaModel = new AgendaModel();
            ApartamentoModel oApModel = new ApartamentoModel();
            Util.Util oUtil = new Util.Util();
+           ProprietarioBLL oProprietario = new ProprietarioBLL();
            ApartamentoModel oAP = new ApartamentoModel();
            double churrasqueira =0;
            double festa = 0;
@@ -490,6 +491,24 @@ namespace Azuli.Web.Portal
                      if (chkChurrascaria.Checked && contadorChurras <= 0 || chkSalaoFesta.Checked && contadorFesta <= 0)
                      {
                          oAgenda.cadastrarAgenda(Convert.ToDateTime(Session["dataReservaAdministrador"]), oApModel, oAgendaModel);
+
+                         Util.SendMail oEnviaEmailCadastro = new Util.SendMail();
+
+
+                         string emailReserva = "";
+	                       
+                         foreach(var item in oProprietario.enviaCrendencialAcesso(oApModel))
+                         {
+                             emailReserva = item.email;
+                         }
+
+
+                         if (emailReserva != string.Empty || emailReserva != "")
+                         {
+                             oEnviaEmailCadastro.enviaSenha("Reserva realizada com sucesso para:", oApModel.apartamento + "-" + oApModel.bloco + "<b> No dia" + Session["dataReservaAdministrador"].ToString(), emailReserva, 1);
+                         }
+
+                        
 
                          //dvAlugar.Visible = false;
                          if (chkPG.Checked)

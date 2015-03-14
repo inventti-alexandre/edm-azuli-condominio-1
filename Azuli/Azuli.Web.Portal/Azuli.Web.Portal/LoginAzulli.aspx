@@ -153,7 +153,7 @@
                         <p>
                             <asp:LinkButton ID="LinkBtnEsqueci" runat="server" OnClick="lnkBtnEsqueci_Click">Esqueci minha senha</asp:LinkButton>
                         </p>
-                        <asp:LinkButton ID="lnkBtnTeste" runat="server" OnClick="lnkBtnTeste_Click">Solicite aqui seu Acesso para teste!</asp:LinkButton>
+                        <asp:LinkButton ID="lnkBtnTeste"  CssClass="btn" runat="server" OnClick="lnkBtnTeste_Click">Solicite aqui seu Acesso!</asp:LinkButton>
                         <br />
                    
                         <br />
@@ -258,7 +258,7 @@
              </span><span class="style2"><span class="style4">
             <br />
             <br />
-            © FernandesVilela Soluções de TI. INC 2013. Todos os direitos reservados</span>
+            © EL2 Soluções em Sistemas. INC 2015. Todos os direitos reservados</span>
             </span> &nbsp;<asp:Image ID="Image2" runat="server" Height="29px" 
                 ImageUrl="~/images/logoteste.png" Width="73px" />
         &nbsp;<asp:ImageButton ID="ImageButton1" runat="server" CssClass="Border" 

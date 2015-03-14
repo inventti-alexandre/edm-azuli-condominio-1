@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteAdmin.Master" AutoEventWireup="true"
     CodeBehind="WelcomeAdmin.aspx.cs" Inherits="Azuli.Web.Portal.WelcomeAdmin" %>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
         .style2
@@ -47,12 +48,15 @@
             div.style.display = "block";
         }
     </script>
+
+  
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
     
     <center>    <fieldset class="loginDisplayLegend">
         <legend class="accordionContent">Agendamento de Áreas Azuli </legend>
+      
         <div id="Div1" runat="server" align="center">
             <table align="center" style="width: 883px; height: 493px;">
                 <tr>
@@ -74,37 +78,45 @@
                             <TodayDayStyle ForeColor="#0033CC" />
                         </asp:Calendar>
                         <br />
-                        <table id="tbLegend" runat="server" align="center" 
+                        <table  id="tbLegend" runat="server" align="center" 
                             class="accordionContent">
                             <tr class="style9">
-                                <td align="center" class="style29">
+                                <td align="center" class="">
                                     <img alt="" class="style30" src="images/salaoFesta.jpg" />&nbsp;
-                                    <asp:Label ID="lblSlfReservado" runat="server" 
+                                   
+                                </td>
+                                <td>
+                                 <asp:Label ID="lblSlfReservado" runat="server" 
                                         style="font-weight: 700; font-family: Calibri; " 
                                         Text="SF- Salão de Festa " ForeColor="#215E21" CssClass="style33"></asp:Label>
                                 </td>
-                                <td align="center" class="style29">
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                <td align="center" class="">
+                                
                                     <img alt="" class="style30" src="images/churrasco.jpg" />
-                                    <asp:Label ID="Label5" 
+                            
+                                </td>
+                                <td>
+                                        <asp:Label ID="Label5" 
                                         runat="server" ForeColor="DarkRed" 
                                         style="font-family: Calibri; font-weight: 700; color: #8B0000;" 
                                         Text="CH -Churrasqueira " CssClass="style33"></asp:Label>
                                 </td>
                             </tr>
-                             <tr class="style9">
+                             <%--<tr class="style9">
                                 <td align="center" class="style29">
                                     <span>
                                     &nbsp;<asp:Label ID="lblPendentePg" runat="server" 
                                         style="font-weight: 700; font-family: Calibri; color: #000000;" 
                                         Text="(R) - Reservado" ForeColor="Black" CssClass="style33"></asp:Label>
                                     </span></td>
-                                <td align="center">
+                                <%--<td align="center">
                                     &nbsp;<asp:Label 
                                         ID="Label4" runat="server" 
                                         style="font-weight: 700; font-family: Calibri; " 
                                         Text="(*) - Não Confirmado (Falta de Pagamento)" CssClass="style32"></asp:Label>
-                                </td>
-                            </tr>
+                                </td>--%>
+                           <%-- </tr>--%>--%>
                         </table>
                     </td>
                     
@@ -195,6 +207,7 @@
                                 </td> -->
                             </tr>
                         </table>
+                          <hr />
            
         </div>
     </fieldset> </center>   
