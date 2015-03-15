@@ -27,7 +27,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<table style="></table>
+<table ></table>
     <br />
 
   <center>  <fieldset  class="loginDisplayLegend">

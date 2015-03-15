@@ -54,8 +54,8 @@
                         </asp:MenuItem>
                         <asp:MenuItem Text="Agendamentos" Value="Ocorrência">
                             <asp:MenuItem NavigateUrl="~/consultaAgendamentoAdmin.aspx" 
-                                Text="Confirmar Agendamentos Pendentes" Value="Realizados"></asp:MenuItem>
-                            <asp:MenuItem Text="Cancelar Agendamentos" Value="Cancelar Agendamentos"></asp:MenuItem>
+                                Text="Agendamentos Realizados" Value="Realizados"></asp:MenuItem>
+                            <asp:MenuItem Text="Agendamentos Cancelados" Value="Cancelar Agendamentos"></asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Circular" Value="Moradores">
                             <asp:MenuItem Text="Publicar Circular " 

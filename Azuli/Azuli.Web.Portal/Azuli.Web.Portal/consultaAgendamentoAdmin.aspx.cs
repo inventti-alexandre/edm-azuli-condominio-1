@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Azuli.Web.Business;
 using Azuli.Web.Model;
 using System.Text;
+using System.Drawing;
 
 namespace Azuli.Web.Portal
 {
@@ -15,40 +16,32 @@ namespace Azuli.Web.Portal
 
         DateTime data = DateTime.Now;
         AgendaBLL oAgenda = new AgendaBLL();
+        AgendaModel oAgendaModel = new AgendaModel();
         ApartamentoModel oAP = new ApartamentoModel();
         Util.Util oUtil = new Util.Util();
         bool exportando = false;
         Label lblarea = new Label();
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (oUtil.validateSessionAdmin())
+            if (!IsPostBack)
             {
-                if (!IsPostBack)
+                if (oUtil.validateSessionAdmin())
                 {
+
+
+                    hiddenControl();
                     preencheMeses();
-                    drpMeses.SelectedIndex = data.Month - 1;
+
                     preencheAno();
-                    drpAno.SelectedItem.Text = data.Year.ToString();
                     consultaReserva();
+
+
                 }
             }
         }
 
-        protected void drpMeses_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            consultaReserva();
-        }
-
-        protected void drpAno_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            consultaReserva();
-        }
-
-        protected void drpSalao_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            consultaReserva();
-        }
 
 
         public void preencheMeses()
@@ -60,58 +53,75 @@ namespace Azuli.Web.Portal
             mesCorrente = System.Globalization.DateTimeFormatInfo.CurrentInfo.GetMonthName(data.Month);
 
             drpMeses.Items.Add(mesCorrente); //drpMeses.Items.IndexOf(drpMeses.Items.FindByValue(data.Month.ToString()));
+            drpMeses.SelectedIndex = data.Month - 1;
             drpMeses.DataBind();
         }
 
         public void preencheAno()
         {
 
-            for (int ano = data.Year - 4; ano < 2020; ano++)
+            for (int ano = data.Year - 4; ano < 2015; ano++)
             {
                 drpAno.Items.Add(ano.ToString());
-            }
 
+            }
+            drpAno.SelectedValue = data.Year.ToString();
         }
 
-
-         private void consultaReserva()
-        
+        public void hiddenControl()
         {
-              int ano=  Convert.ToInt32(drpAno.SelectedItem.Value);
-              int mes = Convert.ToInt32(drpMeses.SelectedIndex + 1);
-            
+            dvChurrasco.Visible = false;
+            dvFesta.Visible = false;
+        }
 
-            if (drpSalao.SelectedItem.Value == "1")
+        private void consultaReserva()
+        {
+            int ano = Convert.ToInt32(drpAno.SelectedItem.Value);
+            int mes = Convert.ToInt32(drpMeses.SelectedIndex + 1);
+
+
+            if (drpSalao.SelectedItem.Text == "Festa")
             {
                 dvFesta.Visible = true;
-                divChurrasco.Visible = false;
-                grdFesta.DataSource = oAgenda.listaReservaDetalhadaFesta(ano,  mes);
-                grdFesta.DataBind();
+                dvChurrasco.Visible = false;
+                //grdAgendaMorador.DataSource = oAgenda.listaReservaDetalhadaFesta(ano,  mes);
+                //grdAgendaMorador.DataBind();
+
+                grdReservaProgramadaFesta.DataSource = oAgenda.listaReservaDetalhadaFesta(ano, mes);
+                grdReservaProgramadaFesta.DataBind();
 
                 lblMesAnoFesta.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
             }
-            else if (drpSalao.SelectedItem.Value == "2")
+            else if (drpSalao.SelectedItem.Text == "Churrasqueira")
             {
 
-                grdChurrasco.DataSource = oAgenda.listaReservaDetalhadaChurrasco(ano, mes);
-                grdChurrasco.DataBind();
-                divChurrasco.Visible = true;
+                grdReservaProgramadaChurras.DataSource = oAgenda.listaReservaDetalhadaChurrasco(ano, mes);
+                grdReservaProgramadaChurras.DataBind();
+                dvChurrasco.Visible = true;
                 dvFesta.Visible = false;
 
                 lbMesAnoChurras.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
             }
-            else if (drpSalao.SelectedItem.Value == "3")
+            else if (drpSalao.SelectedItem.Value == "1")
             {
-                grdChurrasco.DataSource = oAgenda.listaReservaDetalhadaChurrasco(ano, mes);
-                grdChurrasco.DataBind();
-              
+
+                grdReservaProgramadaFesta.DataSource = oAgenda.listaReservaDetalhadaFesta(ano, mes);
+                grdReservaProgramadaFesta.DataBind();
+
+
+                grdReservaProgramadaChurras.DataSource = oAgenda.listaReservaDetalhadaChurrasco(ano, mes);
+                grdReservaProgramadaChurras.DataBind();
+
+                // grdChurras.DataSource = oAgenda.listaReservaDetalhadaChurrasco(ano, mes);
+                // grdChurras.DataBind();
+
                 dvFesta.Visible = true;
 
                 lblMesAnoFesta.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
-            
-                divChurrasco.Visible = true;
-                grdFesta.DataSource = oAgenda.listaReservaDetalhadaFesta( ano, mes);
-                grdFesta.DataBind();
+
+                dvChurrasco.Visible = true;
+                // grdAgendaMorador.DataSource = oAgenda.listaReservaDetalhadaFesta( ano, mes);
+                // grdAgendaMorador.DataBind();
 
                 lbMesAnoChurras.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
 
@@ -119,92 +129,162 @@ namespace Azuli.Web.Portal
 
         }
 
-         protected void imgBtExcelFesta_Click(object sender, ImageClickEventArgs e)
-         {
-             if (grdFesta.Rows.Count > 0)
-             {
-                 lblarea.Text = "Reserva do Salão de Festa - " + drpMeses.SelectedItem.Text + "/" + drpAno.Text;
-                 exportando = true;
 
-                 Response.ClearContent();
+        protected void drpSalao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            consultaReserva();
 
-                 Response.AddHeader("content-disposition", "attachment;filename=SalaoFesta" + drpMeses.SelectedItem.Text + "/" + drpAno.Text + ".xls");
+        }
 
+        protected void drpMeses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            consultaReserva();
+        }
 
-                 // If you want the option to open the Excel file without saving than
+        protected void drpAno_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            consultaReserva();
 
-                 // comment out the line below
+        }
 
-                 Response.Cache.SetCacheability(HttpCacheability.NoCache);
-
-                 Response.ContentType = "application/ms-excel";
-
-                 Response.ContentEncoding = System.Text.Encoding.GetEncoding("Windows-1252");
-                 Response.Charset = "ISO-8859-1";
-                 EnableViewState = false;
-
-                 System.IO.StringWriter stringWrite = new System.IO.StringWriter();
-
-                 System.Web.UI.HtmlTextWriter htmlWrite = new HtmlTextWriter(stringWrite);
-
-                 lblarea.RenderControl(htmlWrite);
-                 grdFesta.RenderControl(htmlWrite);
-                 Response.Write(stringWrite.ToString());
-                 Response.End();
-
-             }
-
-         }
-
-         protected void imgBtExcelChurras_Click(object sender, ImageClickEventArgs e)
-         {
+        protected void grdAgendaMorador_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
 
 
-             if (grdChurrasco.Rows.Count > 0)
-             {
-                 lblarea.Text = "Reserva da Churrasqueira - " + drpMeses.SelectedItem.Text + "/" + drpAno.Text;
-                 exportando = true;
+        }
 
-                 Response.ClearContent();
+        protected void grdAgendaMorador_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
 
-                 Response.AddHeader("content-disposition", "attachment;filename=AreaChurrasco" + drpMeses.SelectedItem.Text + "/" + drpAno.Text + ".xls");
+        }
 
-                 Response.Charset = "";
+        protected void grdAgendaMorador_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
 
-                 // If you want the option to open the Excel file without saving than
+        }
 
-                 // comment out the line below
-                 Response.ContentEncoding = System.Text.Encoding.GetEncoding("Windows-1252");
-                 Response.Charset = "ISO-8859-1";
-                 EnableViewState = false;
-                 Response.Cache.SetCacheability(HttpCacheability.NoCache);
-
-                 Response.ContentType = "application/ms-excel";
-
-                 System.IO.StringWriter stringWrite = new System.IO.StringWriter();
-
-                 System.Web.UI.HtmlTextWriter htmlWrite = new HtmlTextWriter(stringWrite);
-
-                 lblarea.RenderControl(htmlWrite);
-                 grdChurrasco.RenderControl(htmlWrite);
-                 Response.Write(stringWrite.ToString());
-                 Response.End();
-
-             }
+        protected void grdChurras_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
 
 
-         }
-         /// <summary>
-         /// Para nao dar Erro na Hora de Exportar....
-         /// </summary>
-         /// <param name="control"></param>
-         public override void VerifyRenderingInServerForm(Control control)
-         {
-             if (!exportando)
-             {
-                 base.VerifyRenderingInServerForm(control);
-             }
-         }
-        
+
+        }
+
+        protected void grdChurras_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+        }
+
+
+
+
+
+        protected void imgBtExcelFesta_Click(object sender, ImageClickEventArgs e)
+        {
+            if (grdReservaProgramadaFesta.Rows.Count > 0)
+            {
+                lblarea.Text = "Reserva do Salão de Festa - " + drpMeses.SelectedItem.Text + "/" + drpAno.Text;
+                exportando = true;
+                exportando = true;
+
+                Response.ClearContent();
+
+                Response.AddHeader("content-disposition", "attachment;filename=SalaoFesta" + drpMeses.SelectedItem.Text + "/" + drpAno.Text + ".xls");
+
+                Response.Charset = "";
+
+                // If you want the option to open the Excel file without saving than
+
+                // comment out the line below
+
+                Response.Cache.SetCacheability(HttpCacheability.NoCache);
+
+                Response.ContentType = "application/ms-excel";
+
+                Response.ContentEncoding = System.Text.Encoding.GetEncoding("Windows-1252");
+                Response.Charset = "ISO-8859-1";
+                EnableViewState = false;
+
+
+                System.IO.StringWriter stringWrite = new System.IO.StringWriter();
+
+                System.Web.UI.HtmlTextWriter htmlWrite = new HtmlTextWriter(stringWrite);
+
+                lblarea.RenderControl(htmlWrite);
+                grdReservaProgramadaFesta.RenderControl(htmlWrite);
+                Response.Write(stringWrite.ToString());
+                Response.End();
+
+            }
+
+        }
+
+        protected void imgBtExcelChurras_Click(object sender, ImageClickEventArgs e)
+        {
+
+
+            if (grdReservaProgramadaChurras.Rows.Count > 0)
+            {
+                lblarea.Text = "Reserva da Churrasqueira - " + drpMeses.SelectedItem.Text + "/" + drpAno.Text;
+                exportando = true;
+
+                Response.ClearContent();
+
+                Response.AddHeader("content-disposition", "attachment;filename=AreaChurrasco" + drpMeses.SelectedItem.Text + "/" + drpAno.Text + ".xls");
+
+                Response.Charset = "";
+
+                // If you want the option to open the Excel file without saving than
+
+                // comment out the line below
+                Response.ContentEncoding = System.Text.Encoding.GetEncoding("Windows-1252");
+                Response.Charset = "ISO-8859-1";
+                EnableViewState = false;
+
+                Response.Cache.SetCacheability(HttpCacheability.NoCache);
+
+                Response.ContentType = "application/ms-excel";
+
+                System.IO.StringWriter stringWrite = new System.IO.StringWriter();
+
+                System.Web.UI.HtmlTextWriter htmlWrite = new HtmlTextWriter(stringWrite);
+                lblarea.RenderControl(htmlWrite);
+                grdReservaProgramadaChurras.RenderControl(htmlWrite);
+                Response.Write(stringWrite.ToString());
+                Response.End();
+
+            }
+
+
+        }
+        /// <summary>
+        /// Para nao dar Erro na Hora de Exportar....
+        /// </summary>
+        /// <param name="control"></param>
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+            if (!exportando)
+            {
+                base.VerifyRenderingInServerForm(control);
+            }
+        }
+
+        protected void grdReservaProgramadaFesta_RowCreated(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                GridViewRow HeaderRow = new GridViewRow(1, 0, DataControlRowType.Header, DataControlRowState.Insert);
+                TableCell HeaderCell2 = new TableCell();
+                HeaderCell2.Text = "Salão de Festas " + this.lblMesAnoFesta.Text;
+                HeaderCell2.ColumnSpan = 5;
+                HeaderCell2.BackColor = Color.Blue;
+                
+                HeaderRow.Cells.Add(HeaderCell2);
+                grdReservaProgramadaFesta.Controls[0].Controls.AddAt(0, HeaderRow); 
+
+            }
+            
+
+        }
     }
 }

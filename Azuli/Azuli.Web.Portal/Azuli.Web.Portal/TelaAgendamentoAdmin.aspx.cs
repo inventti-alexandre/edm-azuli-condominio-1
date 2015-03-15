@@ -505,7 +505,7 @@ namespace Azuli.Web.Portal
 
                          if (emailReserva != string.Empty || emailReserva != "")
                          {
-                             oEnviaEmailCadastro.enviaSenha("Reserva realizada com sucesso para:", oApModel.apartamento + "-" + oApModel.bloco + "<b> No dia" + Session["dataReservaAdministrador"].ToString(), emailReserva, 1);
+                             oEnviaEmailCadastro.enviaSenha("Reserva realizada com sucesso para: Apto:" +oApModel.apartamento+ " Bloco: "+oApModel.bloco +"<br> Para o dia: " + Session["dataReservaAdministrador"].ToString(),"", emailReserva, 0);
                          }
 
                         
