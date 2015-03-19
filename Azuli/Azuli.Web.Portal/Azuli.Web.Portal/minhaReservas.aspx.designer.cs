@@ -13,6 +13,24 @@ namespace Azuli.Web.Portal {
     public partial class minhaReservas {
         
         /// <summary>
+        /// Fieldset1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Fieldset1;
+        
+        /// <summary>
+        /// dvReservaMes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvReservaMes;
+        
+        /// <summary>
         /// lblMes control.
         /// </summary>
         /// <remarks>
@@ -67,6 +85,15 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.DropDownList drpSalao;
         
         /// <summary>
+        /// lblTotalAreas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalAreas;
+        
+        /// <summary>
         /// dvFesta control.
         /// </summary>
         /// <remarks>
@@ -76,31 +103,22 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvFesta;
         
         /// <summary>
-        /// Image1 control.
+        /// grdReservaProgramadaFesta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.WebControls.GridView grdReservaProgramadaFesta;
         
         /// <summary>
-        /// lblMesAnoFesta control.
+        /// imgBtExcelFesta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMesAnoFesta;
-        
-        /// <summary>
-        /// grdReservaProgramadaFesta0 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdReservaProgramadaFesta0;
+        protected global::System.Web.UI.WebControls.ImageButton imgBtExcelFesta;
         
         /// <summary>
         /// dvChurrasco control.
@@ -112,24 +130,6 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvChurrasco;
         
         /// <summary>
-        /// Image2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image2;
-        
-        /// <summary>
-        /// lbMesAnoChurras control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbMesAnoChurras;
-        
-        /// <summary>
         /// grdReservaProgramadaChurras control.
         /// </summary>
         /// <remarks>
@@ -137,5 +137,14 @@ namespace Azuli.Web.Portal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdReservaProgramadaChurras;
+        
+        /// <summary>
+        /// imgBtExcelChurras control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgBtExcelChurras;
     }
 }

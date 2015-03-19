@@ -5,78 +5,16 @@
         {
             width: 982px;
         }
-        .style5
-        {
-            font-weight: bold;
-            font-size: medium;
-        }
-        .style6
-        {
-            font-size: 10pt;
-            font-weight: 700;
-        }
-        .style7
-        {
-            height: 26px;
-        }
-        .style8
-        {
-            font-weight: bold;
-            font-size: medium;
-            color: #FF0000;
-        }
-        .style9
-        {
-            color: #006600;
-        }
-        .style11
-        {
-            height: 45px;
-        }
-        .style12
-        {
-            color: #006600;
-            font-size: 10pt;
-        }
-        .style13
-        {
-            height: 26px;
-            width: 95px;
-        }
-        .style14
-        {
-            width: 95px;
-        }
-        .style15
-        {
-            height: 45px;
-            width: 95px;
-        }
         .style16
         {
             font-weight: bold;
-            font-size: 10pt;
+            font-size: 12pt;
         }
         .style17
         {
             font-weight: bold;
             font-size: 10pt;
             color: #0000FF;
-        }
-        .style18
-        {
-            border-botom: 2px solid #999999;
-            font-family: Verdana;
-            font-size: 10pt;
-            color: #666666;
-            border-radius: 1em;
-            height: 15px;
-            width: 982px;
-            border-left: 2px solid #999999;
-            border-right: 2px solid #999999;
-            padding: 5px;
-            background-color: #F0F0F0;
-            font-weight: bold;
         }
         #DvConfirma
         {
@@ -105,9 +43,18 @@
         {
             width: 114%;
         }
-        .style22
+        .style30
         {
-            width: 168px;
+            height: 45px;
+            width: 298px;
+        }
+        .style35
+        {
+            width: 328px;
+        }
+        .style36
+        {
+            width: 298px;
         }
         </style>
 </asp:Content>
@@ -117,7 +64,7 @@
     <center> <div id="dvPesquisaMorador" align="center" runat="server">
     
       <fieldset class="loginDisplayLegend">
-     <legend align="left" class="accordionContent">Confirmação de Pagamento Ou Cancelamento de Reservas:
+     <legend align="left" class="accordionContent">Cancelamento de Reservas:
           </legend>
 
 
@@ -133,129 +80,102 @@
           <br />
 
 
-          <table class="accordionContent">
+          <table class="GridView">
               <tr>
-                  <td class="style7" style="border-style: groove; border-width: thin">
+                  <td class="style35" style="border-style: groove; border-width: thin" 
+                      bgcolor="#FFFFCC">
                       <asp:Label ID="Label7" runat="server" CssClass="style16" Text="Bloco:"></asp:Label>
                       <asp:Label ID="lblBloco" runat="server" CssClass="style17"></asp:Label>
                       &nbsp;
-                      <asp:Label ID="Label8" runat="server" CssClass="style16" Text="Apartamento:"></asp:Label>
+                      <asp:Label ID="Label8" runat="server" CssClass="style16" Text="Apto.:"></asp:Label>
                       <asp:Label ID="lblApto" runat="server" CssClass="style17"></asp:Label>
                   </td>
-                  <td align="center" class="style7" 
+                 <%-- <td align="center" class="style7" 
                       style="border-style: groove; border-width: thin">
                       <asp:Label ID="lblPg" runat="server" CssClass="style16" Text="Pagamento"></asp:Label>
-                  </td>
-                  <td align="center" class="style7" 
-                      style="border-style: groove; border-width: thin">
+                  </td>--%>
+                  <td align="center" class="style36" 
+                      style="border-style: groove; border-width: thin" bgcolor="#FFFFCC">
                       <asp:Label ID="lblCancel" runat="server" CssClass="style16" Text="Cancelamento"></asp:Label>
                   </td>
-                  <td align="center" class="style13" 
+                  <%--<td align="center" class="style13" 
                       style="border-style: groove; border-width: thin">
                       <asp:Label ID="lblDiasAtraso" runat="server" CssClass="style16" 
                           Text="Dias em Atraso"></asp:Label>
-                  </td>
-                  <td align="center" class="style7" 
-                      style="border-style: groove; border-width: thin">
-                      <asp:Label ID="lblValor" runat="server" CssClass="style16" Text="Valor"></asp:Label>
-                  </td>
+                  </td>--%>
               </tr>
               <tr>
                   <td align="center" 
-                      style="border-left-style: groove; border-width: thin; border-bottom-style: groove;">
+                      
+                      style="border-left-style: groove; border-width: thin; border-bottom-style: groove;" 
+                      class="style35">
                       &nbsp;
                       <asp:Label ID="lblChurras" runat="server" CssClass="style16" 
                           Text="Churrasqueira"></asp:Label>
                   </td>
-                  <td align="center" 
+<%--                  <td align="center" 
                       style="border-right-style: groove; border-left-style: groove; border-width: thin; border-bottom-style: groove;">
                       <asp:Button ID="btnConfirmaChurras" runat="server" CssClass="botao" 
                           Text="Confirma Churrasqueira" BackColor="#006600" ForeColor="White" 
                           onclick="btnConfirmaChurras_Click" Height="29px" />
-                  </td>
-                  <td align="center" style="border-bottom-style: groove; border-width: thin">
+                  </td>--%>
+                  <td align="center" style="border-style: groove; border-width: thin" 
+                      class="style36">
                       <asp:Button ID="btnCancelarChurras" runat="server" CssClass="botao" 
-                          Text="Cancela Churraqueira" BackColor="#CC3300" ForeColor="White" 
+                          Text="Cancelar Churraqueira" BackColor="#CC3300" ForeColor="White" 
                           onclick="btnCancelarChurras_Click" Height="30px" />
                   </td>
-                  <td align="center" 
+<%--                  <td align="center" 
                       
                       style="border-left-style: groove; border-width: thin; border-bottom-style: groove;" 
                       class="style14">
                       <asp:Label ID="lblDiasAtrasoChurras" runat="server" CssClass="style8" Text="8"></asp:Label>
-                  </td>
-                  <td align="left" 
-                      
-                      style="border-right-style: groove; border-left-style: groove; border-bottom-style: groove;">
-                      <asp:Label ID="lblValorChurras" runat="server" CssClass="style6" 
-                          Text="R$ 30,00"></asp:Label>
-                  </td>
+                  </td>--%>
               </tr>
               <tr>
-                  <td style="border-width: thin; border-left-style: groove;" align="center">
+                  <td style="border-width: thin; border-left-style: groove;" align="center" 
+                      class="style35">
                       &nbsp;
                       <asp:Label ID="lblSalaoFesta" runat="server" CssClass="style16" 
                           Text="São de Festa"></asp:Label>
                   </td>
-                  <td align="center" 
+                 <%-- <td align="center" 
                       style="border-right-style: groove; border-left-style: groove; border-width: thin">
                       <asp:Button ID="btnConfirmaSalao" runat="server" CssClass="botao" 
                           Text="Confirma Salão de Festa" BackColor="#006600" ForeColor="White" 
                           onclick="btnConfirmaSalao_Click" Height="26px" />
-                  </td>
-                  <td align="Center">
+                  </td>--%>
+                  <td align="Center" class="style36" style="border-style: groove">
                       <asp:Button ID="btnCancelaFesta" runat="server" CssClass="botao" 
-                          Text="Cancela Festa" BackColor="#CC0000" ForeColor="White" 
+                          Text="Cancelar Festa" BackColor="#CC0000" ForeColor="White" 
                           onclick="btnCancelaFesta_Click" Height="26px" />
                   </td>
-                  <td align="Center" style="border-left-style: groove; border-width: thin" 
+<%--                  <td align="Center" style="border-left-style: groove; border-width: thin" 
                       class="style14">
                       <asp:Label ID="lblDiasAtrasoFesta" runat="server" CssClass="style8" Text="4"></asp:Label>
-                  </td>
-                  <td align="left" 
-                      style="border-right-style: groove; border-left-style: groove">
-                      &nbsp;<asp:Label ID="lblValorFesta" runat="server" CssClass="style6" 
-                          Text="R$ 40,00"></asp:Label>
-                  </td>
+                  </td>--%>
               </tr>
               <tr>
-                  <td style="border-top-style: groove; border-width: thin" class="style11">
+                  <td style="border-top-style: groove; border-width: thin" class="style35">
                       </td>
-                  <td style="border: thin groove #CCCCCC;" align="center" 
+                 <%-- <td style="border: thin groove #CCCCCC;" align="center" 
                       class="style11">
                       <asp:Button ID="btnConfirmALL" runat="server" CssClass="botao" Text="Confirma tudo" 
                           BackColor="#006600" ForeColor="White" Height="34px" 
                           style="font-size: 11pt" onclick="btnConfirmALL_Click" />
-                  </td>
+                  </td>--%>
                   <td style="border: thin groove #CCCCCC;" align="center" 
-                      class="style11">
-                      <asp:Button ID="btnCancelAll" runat="server" CssClass="botao" Text="Cancela Tudo" 
+                      class="style30">
+                      <asp:Button ID="btnCancelAll" runat="server" CssClass="botao" Text="Cancelar todos" 
                           BackColor="#CC0000" ForeColor="White" Height="36px" 
                           style="font-size: 11pt" onclick="btnCancelAll_Click" />
                   </td>
-                  <td style="border-style: groove; border-width: thin" class="style15">
-                      <asp:Label ID="lblDescDesconto" runat="server" CssClass="style9" Text="Desconto:" 
-                          style="font-weight: 700; font-size: 10pt"></asp:Label>
-                  </td>
-                  <td style="border-style: groove; border-width: thin" align="left" 
-                      class="style11">
-                      <asp:Label ID="lblDesconto" runat="server" CssClass="style12" 
-                          style="font-weight: 700; " Text="R$ 10,00"></asp:Label>
-                  </td>
               </tr>
               <tr>
-                  <td>
+                  <td class="style35">
                       &nbsp;</td>
-                  <td>
-                      &nbsp;</td>
-                  <td>
-                      &nbsp;</td>
-                  <td style="border-style: groove; border-width: thin" class="style14">
-                      <asp:Label ID="lblDestotal" runat="server" CssClass="style5" Text="Total:"></asp:Label>
-                  </td>
-                  <td style="border-style: groove; border-width: thin" align="left">
-                      <asp:Label ID="lblTotal" runat="server" CssClass="style6" Text="R$ 60,00"></asp:Label>
-                  </td>
+                  <td class="style36">
+                      </td>
               </tr>
           </table>
 

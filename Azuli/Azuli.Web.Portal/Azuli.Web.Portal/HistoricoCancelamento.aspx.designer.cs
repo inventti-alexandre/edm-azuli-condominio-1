@@ -10,7 +10,7 @@
 namespace Azuli.Web.Portal {
     
     
-    public partial class ReservaDetalhadaMoradores {
+    public partial class HistoricoCancelamento {
         
         /// <summary>
         /// Fieldset1 control.
@@ -67,84 +67,21 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.DropDownList drpAno;
         
         /// <summary>
-        /// lbSalao control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbSalao;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// drpSalao control.
+        /// SqlDataSourceCancelamento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpSalao;
-        
-        /// <summary>
-        /// lblTotalAreas control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotalAreas;
-        
-        /// <summary>
-        /// dvFesta control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvFesta;
-        
-        /// <summary>
-        /// grdReservaProgramadaFesta control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdReservaProgramadaFesta;
-        
-        /// <summary>
-        /// imgBtExcelFesta control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imgBtExcelFesta;
-        
-        /// <summary>
-        /// dvChurrasco control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvChurrasco;
-        
-        /// <summary>
-        /// grdReservaProgramadaChurras control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdReservaProgramadaChurras;
-        
-        /// <summary>
-        /// imgBtExcelChurras control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imgBtExcelChurras;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceCancelamento;
     }
 }

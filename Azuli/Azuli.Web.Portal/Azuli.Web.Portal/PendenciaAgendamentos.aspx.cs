@@ -107,8 +107,8 @@ namespace Azuli.Web.Portal
                           
                             lblBloco.Text = item.ap.bloco.ToString();
                             lblApto.Text = item.ap.apartamento.ToString();
-                            lblDiasAtrasoFesta.Text = item.qtdDiasPagamentoChurras.ToString();
-                            lblValorFesta.Text = "R$ " + item.valorReserva.ToString();
+                            //lblDiasAtrasoFesta.Text = item.qtdDiasPagamentoChurras.ToString();
+                            //lblValorFesta.Text = "R$ " + item.valorReserva.ToString();
                             valorFesta = item.valorReserva;
 
                         }
@@ -117,16 +117,16 @@ namespace Azuli.Web.Portal
                         {
                             lblBloco.Text = item.ap.bloco.ToString();
                             lblApto.Text = item.ap.apartamento.ToString();
-                            lblDiasAtrasoChurras.Text = item.qtdDiasPagamentoChurras.ToString();
-                            lblValorChurras.Text = "R$ " + item.valorReserva.ToString();
+                            //lblDiasAtrasoChurras.Text = item.qtdDiasPagamentoChurras.ToString();
+                            //lblValorChurras.Text = "R$ " + item.valorReserva.ToString();
                             valorChurras = item.valorReserva;
                         }
 
                         desconto = 20.00;
-                        lblDesconto.Text = "R$ 20,00";
+                        //lblDesconto.Text = "R$ 20,00";
 
 
-                        lblTotal.Text = "R$ " + Convert.ToString((valorFesta + valorChurras) - desconto);
+                        //lblTotal.Text = "R$ " + Convert.ToString((valorFesta + valorChurras) - desconto);
 
                     }
 
@@ -139,11 +139,11 @@ namespace Azuli.Web.Portal
                             showControllerFesta();
                             lblBloco.Text = item.ap.bloco.ToString();
                             lblApto.Text = item.ap.apartamento.ToString();
-                            lblDiasAtrasoFesta.Text = item.qtdDiasPagamentoChurras.ToString();
-                            lblValorFesta.Text = "R$ " + item.valorReserva.ToString();
+                            //lblDiasAtrasoFesta.Text = item.qtdDiasPagamentoChurras.ToString();
+                            //lblValorFesta.Text = "R$ " + item.valorReserva.ToString();
 
-                            lblTotal.Text = "R$ " + item.valorReserva.ToString();
-                            lblDesconto.Text = "R$ 00,00";
+                            //lblTotal.Text = "R$ " + item.valorReserva.ToString();
+                            //lblDesconto.Text = "R$ 00,00";
 
                         }
 
@@ -153,11 +153,11 @@ namespace Azuli.Web.Portal
                             showControllerChurras();
                             lblBloco.Text = item.ap.bloco.ToString();
                             lblApto.Text = item.ap.apartamento.ToString();
-                            lblDiasAtrasoChurras.Text = item.qtdDiasPagamentoChurras.ToString();
-                            lblValorChurras.Text = "R$ " +  item.valorReserva.ToString();
+                            //lblDiasAtrasoChurras.Text = item.qtdDiasPagamentoChurras.ToString();
+                            //lblValorChurras.Text = "R$ " +  item.valorReserva.ToString();
 
-                            lblTotal.Text = "R$ " + item.valorReserva.ToString();
-                            lblDesconto.Text = "R$ 00,00";
+                            //lblTotal.Text = "R$ " + item.valorReserva.ToString();
+                            //lblDesconto.Text = "R$ 00,00";
                         }
                     }
                     
@@ -181,10 +181,10 @@ namespace Azuli.Web.Portal
         {
            
             lblChurras.Visible = false;
-            btnConfirmaChurras.Visible = false;
-            btnCancelarChurras.Visible = false;
-            lblDiasAtrasoChurras.Visible = false;
-            lblValorChurras.Visible = false;
+            //btnConfirmaChurras.Visible = false;
+            //btnCancelarChurras.Visible = false;
+            //lblDiasAtrasoChurras.Visible = false;
+            //lblValorChurras.Visible = false;
 
 
         }
@@ -193,10 +193,10 @@ namespace Azuli.Web.Portal
         {
 
             lblChurras.Visible = true;
-            btnConfirmaChurras.Visible = true;
-            btnCancelarChurras.Visible = true;
-            lblDiasAtrasoChurras.Visible = true;
-            lblValorChurras.Visible = true;
+            //btnConfirmaChurras.Visible = true;
+            //btnCancelarChurras.Visible = true;
+            //lblDiasAtrasoChurras.Visible = true;
+            //lblValorChurras.Visible = true;
 
 
         }
@@ -206,10 +206,10 @@ namespace Azuli.Web.Portal
         {
 
             lblSalaoFesta.Visible = false;
-            btnConfirmaSalao.Visible = false;
-            btnCancelaFesta.Visible = false;
-            lblDiasAtrasoFesta.Visible = false;
-            lblValorFesta.Visible = false;
+            //btnConfirmaSalao.Visible = false;
+            //btnCancelaFesta.Visible = false;
+            //lblDiasAtrasoFesta.Visible = false;
+            //lblValorFesta.Visible = false;
 
 
         }
@@ -218,10 +218,10 @@ namespace Azuli.Web.Portal
         {
 
             lblSalaoFesta.Visible = true;
-            btnConfirmaSalao.Visible = true;
-            btnCancelaFesta.Visible = true;
-            lblDiasAtrasoFesta.Visible = true;
-            lblValorFesta.Visible = true;
+            //btnConfirmaSalao.Visible = true;
+            //btnCancelaFesta.Visible = true;
+            //lblDiasAtrasoFesta.Visible = true;
+            //lblValorFesta.Visible = true;
 
 
         }
@@ -230,17 +230,17 @@ namespace Azuli.Web.Portal
         public void showAll()
         {
             lblChurras.Visible = true;
-            btnConfirmaChurras.Visible = true;
+            //btnConfirmaChurras.Visible = true;
             btnCancelarChurras.Visible = true;
-            lblDiasAtrasoChurras.Visible = true;
-            lblValorChurras.Visible = true;
+            //lblDiasAtrasoChurras.Visible = true;
+            //lblValorChurras.Visible = true;
             lblSalaoFesta.Visible = true;
-            btnConfirmaSalao.Visible = true;
+            //btnConfirmaSalao.Visible = true;
             btnCancelaFesta.Visible = true;
-            lblDiasAtrasoFesta.Visible = true;
-            lblValorFesta.Visible = true;
+            //lblDiasAtrasoFesta.Visible = true;
+            //lblValorFesta.Visible = true;
             btnCancelAll.Visible = true;
-            btnConfirmALL.Visible = true;
+            //btnConfirmALL.Visible = true;
 
 
         }
@@ -248,17 +248,17 @@ namespace Azuli.Web.Portal
         public void hiddenAll()
         {
             lblChurras.Visible = false;
-            btnConfirmaChurras.Visible = false;
+            //btnConfirmaChurras.Visible = false;
             btnCancelarChurras.Visible = false;
-            lblDiasAtrasoChurras.Visible = false;
-            lblValorChurras.Visible = false;
+            //lblDiasAtrasoChurras.Visible = false;
+            //lblValorChurras.Visible = false;
             lblSalaoFesta.Visible = false;
-            btnConfirmaSalao.Visible = false;
+            //btnConfirmaSalao.Visible = false;
             btnCancelaFesta.Visible = false;
-            lblDiasAtrasoFesta.Visible = false;
-            lblValorFesta.Visible = false;
+            //lblDiasAtrasoFesta.Visible = false;
+            //lblValorFesta.Visible = false;
             btnCancelAll.Visible = false;
-            btnConfirmALL.Visible = false;
+            //btnConfirmALL.Visible = false;
 
 
         }

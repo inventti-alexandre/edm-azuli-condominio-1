@@ -8,13 +8,17 @@ using Azuli.Web.Business;
 using Azuli.Web.Model;
 using System.Text;
 using System.Drawing;
+using System.Globalization;
+using System.Threading;
 
 namespace Azuli.Web.Portal
 {
     public partial class consultaAgendamentoAdmin : Util.Base
     {
-        private Util.GridViewHelper helperChurras;
-        private Util.GridViewHelper helperFesta;   
+        decimal SomaChurraqueira = 0;
+        decimal TotalChurrasqueira = 0;
+        decimal TotalFesta = 0;
+        decimal SomaFesta = 0; 
         private List<int> mQuantities = new List<int>();
         DateTime data = DateTime.Now;
         AgendaBLL oAgenda = new AgendaBLL();
@@ -31,7 +35,14 @@ namespace Azuli.Web.Portal
             {
                 if (oUtil.validateSessionAdmin())
                 {
-                   
+
+
+                    CultureInfo CI = new CultureInfo("pt-PT");
+                    CI.DateTimeFormat.ShortDatePattern = "dd-MM-yyyy";
+
+                    Thread.CurrentThread.CurrentCulture = CI;
+                    Thread.CurrentThread.CurrentUICulture = CI;
+                    base.InitializeCulture();
 
                     hiddenControl();
                     preencheMeses();
@@ -39,6 +50,7 @@ namespace Azuli.Web.Portal
                     preencheAno();
                     consultaReserva();
 
+                 
                    
                    
 
@@ -85,6 +97,10 @@ namespace Azuli.Web.Portal
 
         private void consultaReserva()
         {
+            SomaChurraqueira = 0;
+            SomaFesta = 0;
+
+
             int ano = Convert.ToInt32(drpAno.SelectedItem.Value);
             int mes = Convert.ToInt32(drpMeses.SelectedIndex + 1);
 
@@ -150,10 +166,8 @@ namespace Azuli.Web.Portal
 
             }
 
+            lblTotalAreas.Text = "Valor total do mês: (Churrasqueira/Salão): R$ " + (SomaFesta + SomaChurraqueira).ToString("N2");
          
-
-     
-           
 
         }
 
@@ -304,6 +318,9 @@ namespace Azuli.Web.Portal
                 GridViewRow HeaderRow = new GridViewRow(1, 0, DataControlRowType.Header, DataControlRowState.Insert);
                 TableCell HeaderCell2 = new TableCell();
                 HeaderCell2.ForeColor = Color.White;
+                HeaderCell2.Font.Bold = true;
+                HeaderCell2.Font.Size = 12;
+                HeaderCell2.CssClass = "grid";
                 HeaderCell2.Text = "Salão de Festa - " + drpMeses.Text + "/"+ drpAno.Text;
                 HeaderCell2.ColumnSpan = 6;
                 HeaderCell2.BackColor = Color.Blue;
@@ -323,6 +340,8 @@ namespace Azuli.Web.Portal
                 GridViewRow HeaderRow = new GridViewRow(1, 0, DataControlRowType.Header, DataControlRowState.Insert);
                 TableCell HeaderCell2 = new TableCell();
                 HeaderCell2.ForeColor = Color.White;
+                HeaderCell2.Font.Bold = true;
+                HeaderCell2.Font.Size = 12;
                 HeaderCell2.Text = "Churrasqueira - " + drpMeses.Text + "/" + drpAno.Text;
                 HeaderCell2.ColumnSpan = 6;
                 HeaderCell2.BackColor = Color.Blue;
@@ -338,23 +357,37 @@ namespace Azuli.Web.Portal
 
         protected void grdReservaProgramadaFesta_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            decimal soma = 0;
-            decimal Total = 0;
-            
-            if (grdReservaProgramadaFesta.Rows.Count > 0)
+           
+            if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                foreach (GridViewRow row in grdReservaProgramadaFesta.Rows)
-                {
-                    if (e.Row.RowState == DataControlRowState.Normal)
-                    {
-                         Total = Convert.ToDecimal(grdReservaProgramadaFesta.DataKeys[row.RowIndex].Values["valorReserva"].ToString());
-                        soma += Total;
-                    }
-                }
-
-                ltValorSalaoFesta.Text = "Valor pago Salão de Festa: " + soma;
+                TotalFesta = Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "valorReserva")); //Convert.ToDecimal(grdReservaProgramadaFesta.DataKeys[row.RowIndex].Values["valorReserva"].ToString());
+                SomaFesta += TotalFesta;
+            }
+            if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                Label lbl = (Label)e.Row.FindControl("lbltotalFesta");
+                lbl.Text = "R$ " + SomaFesta.ToString("N2");
                 
             }
         }
+
+        protected void grdReservaProgramadaChurras_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                TotalChurrasqueira = Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "valorReserva")); //Convert.ToDecimal(grdReservaProgramadaFesta.DataKeys[row.RowIndex].Values["valorReserva"].ToString());
+                SomaChurraqueira += TotalChurrasqueira;
+            }
+            if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                Label lbl = (Label)e.Row.FindControl("lbltotalChurras");
+                lbl.Text = "R$ " + SomaChurraqueira.ToString("N2");
+
+            }
+
+        }
+
+        }
     }
-}
+

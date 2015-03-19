@@ -76,15 +76,6 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Label lblApto;
         
         /// <summary>
-        /// lblPg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPg;
-        
-        /// <summary>
         /// lblCancel control.
         /// </summary>
         /// <remarks>
@@ -92,24 +83,6 @@ namespace Azuli.Web.Portal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCancel;
-        
-        /// <summary>
-        /// lblDiasAtraso control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDiasAtraso;
-        
-        /// <summary>
-        /// lblValor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblValor;
         
         /// <summary>
         /// lblChurras control.
@@ -121,15 +94,6 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Label lblChurras;
         
         /// <summary>
-        /// btnConfirmaChurras control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnConfirmaChurras;
-        
-        /// <summary>
         /// btnCancelarChurras control.
         /// </summary>
         /// <remarks>
@@ -137,24 +101,6 @@ namespace Azuli.Web.Portal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancelarChurras;
-        
-        /// <summary>
-        /// lblDiasAtrasoChurras control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDiasAtrasoChurras;
-        
-        /// <summary>
-        /// lblValorChurras control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblValorChurras;
         
         /// <summary>
         /// lblSalaoFesta control.
@@ -166,15 +112,6 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Label lblSalaoFesta;
         
         /// <summary>
-        /// btnConfirmaSalao control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnConfirmaSalao;
-        
-        /// <summary>
         /// btnCancelaFesta control.
         /// </summary>
         /// <remarks>
@@ -184,33 +121,6 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.WebControls.Button btnCancelaFesta;
         
         /// <summary>
-        /// lblDiasAtrasoFesta control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDiasAtrasoFesta;
-        
-        /// <summary>
-        /// lblValorFesta control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblValorFesta;
-        
-        /// <summary>
-        /// btnConfirmALL control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnConfirmALL;
-        
-        /// <summary>
         /// btnCancelAll control.
         /// </summary>
         /// <remarks>
@@ -218,42 +128,6 @@ namespace Azuli.Web.Portal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancelAll;
-        
-        /// <summary>
-        /// lblDescDesconto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescDesconto;
-        
-        /// <summary>
-        /// lblDesconto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDesconto;
-        
-        /// <summary>
-        /// lblDestotal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDestotal;
-        
-        /// <summary>
-        /// lblTotal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotal;
         
         /// <summary>
         /// DvConfirma control.

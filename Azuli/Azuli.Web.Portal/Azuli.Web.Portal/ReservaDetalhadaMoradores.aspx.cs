@@ -7,12 +7,16 @@ using System.Web.UI.WebControls;
 using Azuli.Web.Business;
 using Azuli.Web.Model;
 using System.Text;
+using System.Drawing;
 
 namespace Azuli.Web.Portal
 {
     public partial class ReservaDetalhadaMoradores : Util.Base
     {
-        
+        decimal SomaChurraqueira = 0;
+        decimal TotalChurrasqueira = 0;
+        decimal TotalFesta = 0;
+        decimal SomaFesta = 0; 
         DateTime data = DateTime.Now;
         AgendaBLL oAgenda = new AgendaBLL();
         AgendaModel oAgendaModel = new AgendaModel();
@@ -75,6 +79,9 @@ namespace Azuli.Web.Portal
 
         private void consultaReserva()
         {
+               SomaChurraqueira = 0;
+               SomaFesta = 0;
+
               int ano=  Convert.ToInt32(drpAno.SelectedItem.Value);
               int mes = Convert.ToInt32(drpMeses.SelectedIndex + 1);
             
@@ -89,7 +96,7 @@ namespace Azuli.Web.Portal
                 grdReservaProgramadaFesta.DataSource = oAgenda.listaReservaDetalhadaFesta(ano, mes);
                 grdReservaProgramadaFesta.DataBind();
                
-                lblMesAnoFesta.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
+               // lblMesAnoFesta.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
             }
             else if (drpSalao.SelectedItem.Text == "Churrasqueira")
             {
@@ -99,7 +106,7 @@ namespace Azuli.Web.Portal
                 dvChurrasco.Visible = true;
                 dvFesta.Visible = false;
                 
-                lbMesAnoChurras.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
+               // lbMesAnoChurras.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
             }
             else if (drpSalao.SelectedItem.Value == "1")
             {
@@ -116,15 +123,17 @@ namespace Azuli.Web.Portal
               
                 dvFesta.Visible = true;
                 
-                lblMesAnoFesta.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
+                //lblMesAnoFesta.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
             
                 dvChurrasco.Visible = true;
                // grdAgendaMorador.DataSource = oAgenda.listaReservaDetalhadaFesta( ano, mes);
                // grdAgendaMorador.DataBind();
                 
-                lbMesAnoChurras.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
+                //lbMesAnoChurras.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
 
             }
+
+            lblTotalAreas.Text = "Valor total do mês: (Churrasqueira/Salão): R$ " + (SomaFesta + SomaChurraqueira).ToString("N2");
 
         }
 
@@ -265,6 +274,76 @@ namespace Azuli.Web.Portal
             if (!exportando)
             {
                 base.VerifyRenderingInServerForm(control);
+            }
+        }
+
+        protected void grdReservaProgramadaFesta_RowCreated(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                GridViewRow HeaderRow = new GridViewRow(1, 0, DataControlRowType.Header, DataControlRowState.Insert);
+                TableCell HeaderCell2 = new TableCell();
+                HeaderCell2.ForeColor = Color.White;
+                HeaderCell2.Font.Bold = true;
+                HeaderCell2.Font.Size = 12;
+                HeaderCell2.CssClass = "grid";
+                HeaderCell2.Text = "Salão de Festa - " + drpMeses.Text + "/" + drpAno.Text;
+                HeaderCell2.ColumnSpan = 6;
+                HeaderCell2.BackColor = Color.Blue;
+
+                HeaderRow.Cells.Add(HeaderCell2);
+                grdReservaProgramadaFesta.Controls[0].Controls.AddAt(0, HeaderRow);
+
+            }
+            
+        }
+
+        protected void grdReservaProgramadaFesta_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                TotalFesta = Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "valorReserva")); //Convert.ToDecimal(grdReservaProgramadaFesta.DataKeys[row.RowIndex].Values["valorReserva"].ToString());
+                SomaFesta += TotalFesta;
+            }
+            if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                Label lbl = (Label)e.Row.FindControl("lbltotalFesta");
+                lbl.Text = "R$ " + SomaFesta.ToString("N2");
+
+            }
+        }
+
+        protected void grdReservaProgramadaChurras_RowCreated(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                GridViewRow HeaderRow = new GridViewRow(1, 0, DataControlRowType.Header, DataControlRowState.Insert);
+                TableCell HeaderCell2 = new TableCell();
+                HeaderCell2.ForeColor = Color.White;
+                HeaderCell2.Font.Bold = true;
+                HeaderCell2.Font.Size = 12;
+                HeaderCell2.Text = "Churrasqueira - " + drpMeses.Text + "/" + drpAno.Text;
+                HeaderCell2.ColumnSpan = 6;
+                HeaderCell2.BackColor = Color.Blue;
+
+                HeaderRow.Cells.Add(HeaderCell2);
+                grdReservaProgramadaChurras.Controls[0].Controls.AddAt(0, HeaderRow);
+
+            }
+        }
+
+        protected void grdReservaProgramadaChurras_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                TotalChurrasqueira = Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "valorReserva")); //Convert.ToDecimal(grdReservaProgramadaFesta.DataKeys[row.RowIndex].Values["valorReserva"].ToString());
+                SomaChurraqueira += TotalChurrasqueira;
+            }
+            if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                Label lbl = (Label)e.Row.FindControl("lbltotalChurras");
+                lbl.Text = "R$ " + SomaChurraqueira.ToString("N2");
+
             }
         }
         

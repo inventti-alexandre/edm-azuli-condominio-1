@@ -55,7 +55,8 @@
                         <asp:MenuItem Text="Agendamentos" Value="Ocorrência">
                             <asp:MenuItem NavigateUrl="~/consultaAgendamentoAdmin.aspx" 
                                 Text="Agendamentos Realizados" Value="Realizados"></asp:MenuItem>
-                            <asp:MenuItem Text="Agendamentos Cancelados" Value="Cancelar Agendamentos"></asp:MenuItem>
+                            <asp:MenuItem Text="Agendamentos Cancelados" Value="Cancelar Agendamentos" 
+                                NavigateUrl="~/HistoricoCancelamento.aspx"></asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Circular" Value="Moradores">
                             <asp:MenuItem Text="Publicar Circular " 
@@ -75,16 +76,6 @@
                                 NavigateUrl="~/ConfigurarValorReserva.aspx">
                             </asp:MenuItem>
                             <asp:MenuItem Text="Dias para Cancelamentos" Value="Consultar Agendamentos">
-                            </asp:MenuItem>
-                        </asp:MenuItem>
-                        <asp:MenuItem Text="Relatórios Reservas" Value="Relatórios Reservas">
-                            <asp:MenuItem Text="Reservas Confirmadas por Período" 
-                                Value="Reservas Confirmadas por Período"></asp:MenuItem>
-                            <asp:MenuItem Text="Reservas Canceladas" Value="Reservas Canceladas">
-                            </asp:MenuItem>
-                            <asp:MenuItem Text="Reservas Pendentes" Value="Reservas Pendentes">
-                            </asp:MenuItem>
-                            <asp:MenuItem Text="Reservas Confirmadas" Value="Reservas Confirmadas">
                             </asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Gestão de Consumo de Água" Value="Conta de Água Azuli">

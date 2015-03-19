@@ -153,6 +153,7 @@
     <Content Include="GerarReciboAzuliAdm.aspx" />
     <Content Include="gerenciamentoMoradorAdm.aspx" />
     <Content Include="GerenciarClassificadoMorador.aspx" />
+    <Content Include="HistoricoCancelamento.aspx" />
     <Content Include="images\0ae1500.jpg" />
     <Content Include="images\add.png" />
     <Content Include="images\AmareloPendente.png" />
@@ -630,6 +631,13 @@
     <Compile Include="GerenciarClassificadoMorador.aspx.designer.cs">
       <DependentUpon>GerenciarClassificadoMorador.aspx</DependentUpon>
     </Compile>
+    <Compile Include="HistoricoCancelamento.aspx.cs">
+      <DependentUpon>HistoricoCancelamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HistoricoCancelamento.aspx.designer.cs">
+      <DependentUpon>HistoricoCancelamento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="integracaoWeb.aspx.cs">
       <DependentUpon>integracaoWeb.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -998,7 +1006,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>58914</DevelopmentServerPort>
+          <DevelopmentServerPort>22234</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

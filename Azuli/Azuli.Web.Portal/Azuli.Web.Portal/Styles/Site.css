@@ -112,7 +112,7 @@ first child of the left and right table columns */
     width: 1070px;
     background-color: #fff;
     margin: 5px auto 0px auto;
-    border: 0px solid #006DB6;
+   border: 1px solid #4884CD;
     height:auto;
     border-radius: 1em;
 
@@ -279,7 +279,7 @@ div.hideSkiplinkAdmin
     top: -4px;
     vertical-align:middle;
     right:-42px;
-    left: 42px;
+    left: 82px;
 }
 
 
