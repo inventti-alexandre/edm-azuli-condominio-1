@@ -406,7 +406,7 @@
                  </asp:TemplateField>
 
 
-                  <asp:TemplateField HeaderText="Data de PG">
+                  <asp:TemplateField HeaderText="Data de PG" Visible="false">
                      <EditItemTemplate>
                          <asp:TextBox ID="TextBox2" runat="server" Text='<%# Eval("dataConfirmacaoPagamento") %>'></asp:TextBox>
                      </EditItemTemplate>
@@ -417,7 +417,7 @@
                      <ItemStyle ForeColor="#006600" />
                  </asp:TemplateField>
 
-                  <asp:TemplateField HeaderText="PG feito em (Dias)">
+                  <asp:TemplateField HeaderText="PG feito em (Dias)" Visible="false">
                      <EditItemTemplate>
                          <asp:TextBox ID="TextBox2" runat="server" Text='<%# Eval("qtdDiasPagamentoFesta") %>'></asp:TextBox>
                      </EditItemTemplate>
@@ -481,7 +481,7 @@
                  </asp:TemplateField>
 
 
-                  <asp:TemplateField HeaderText="Data de PG">
+                  <asp:TemplateField HeaderText="Data de PG" Visible="false">
                      <EditItemTemplate>
                          <asp:TextBox ID="TextBox2" runat="server" Text='<%# Eval("dataConfirmacaoPagamento") %>'></asp:TextBox>
                      </EditItemTemplate>
@@ -491,7 +491,7 @@
                      <ItemStyle HorizontalAlign="Center" ForeColor="#006600" Width="120px" />
                  </asp:TemplateField>
 
-                  <asp:TemplateField HeaderText="PG foi feito em (Dias)">
+                  <asp:TemplateField HeaderText="PG foi feito em (Dias)" Visible="false">
                      <EditItemTemplate>
                          <asp:TextBox ID="TextBox2" runat="server" Text='<%# Eval("qtdDiasPagamentoChurras") %>'></asp:TextBox>
                      </EditItemTemplate>

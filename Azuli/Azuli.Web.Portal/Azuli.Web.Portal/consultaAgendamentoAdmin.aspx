@@ -46,7 +46,7 @@
     <div id="dvFesta" runat="server">
 
      <fieldset class="login">
-        <legend class="accordionContent">São de Festas -  <asp:Label ID="lblMesAnoFesta" runat="server" CssClass="FooterStyle"></asp:Label></legend> 
+        <legend class="accordionContent">Salão de Festas</legend> 
            <center><br />
      
           
@@ -55,7 +55,8 @@
                    AutoGenerateColumns="False" CssClass="gridl" 
                    EmptyDataText="Não existe reservas futuras para o Salão de festa" 
                    Font-Bold="False" Font-Size="Small" 
-                   onrowcreated="grdReservaProgramadaFesta_RowCreated">
+                   onrowcreated="grdReservaProgramadaFesta_RowCreated" 
+                   onrowdatabound="grdReservaProgramadaFesta_RowDataBound" DataKeyNames="valorReserva" ShowFooter="True">
                    <Columns>
                    
 
@@ -131,10 +132,21 @@
                     </ItemTemplate>
                     <ItemStyle HorizontalAlign="Center" />
                 </asp:TemplateField>
+
+                <asp:TemplateField HeaderText="Valor">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox13" runat="server" Text='<%# Bind("valorReserva") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label13" runat="server" Text='<%# Bind("valorReserva","{0:N2}") %>'></asp:Label>
+                    </ItemTemplate>
+                    <ItemStyle HorizontalAlign="Center" />
+                </asp:TemplateField>
                    </Columns>
                </asp:GridView>
                <br />
             <br />
+            <asp:Label ID="ltValorSalaoFesta" runat="server" CssClass="accordionContent"></asp:Label>
                <asp:ImageButton ID="imgBtExcelFesta" runat="server" 
                    ImageUrl="~/images/excel.png" onclick="imgBtExcelFesta_Click" Width="21px" />
             &nbsp;
@@ -143,7 +155,7 @@
     
        <div id="dvChurrasco" runat="server">
     <fieldset class="login">
-        <legend class="accordionContent">Área de Churrasco - <asp:Label ID="lbMesAnoChurras" runat="server" CssClass="FooterStyle"></asp:Label></legend>
+        <legend class="accordionContent">Área de Churrasco<asp:Label ID="lbMesAnoChurras" runat="server" CssClass="FooterStyle"></asp:Label></legend>
     <center>
     <br />
      
@@ -152,7 +164,7 @@
         <asp:GridView ID="grdReservaProgramadaChurras" runat="server" 
             AutoGenerateColumns="False" CssClass="gridl" 
             EmptyDataText="Não existe reservas futuras para churrasqueira" Font-Bold="True" 
-            Font-Size="Small">
+            Font-Size="Small" onrowcreated="grdReservaProgramadaChurras_RowCreated">
             <Columns>
 
                <asp:TemplateField HeaderText="Bloco">
@@ -216,12 +228,22 @@
                     </ItemTemplate>
                     <ItemStyle HorizontalAlign="Center" />
                 </asp:TemplateField>
+              
                 <asp:TemplateField HeaderText="Obs.:">
                     <EditItemTemplate>
                         <asp:TextBox ID="TextBox12" runat="server" Text='<%# Bind("observacao") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label12" runat="server" Text='<%# Bind("observacao") %>'></asp:Label>
+                    </ItemTemplate>
+                    <ItemStyle HorizontalAlign="Center" />
+                </asp:TemplateField>
+                  <asp:TemplateField HeaderText="Valor">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox13" runat="server" Text='<%# Bind("valorReserva") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label13" runat="server" Text='<%# Bind("valorReserva","{0:N2}") %>'></asp:Label>
                     </ItemTemplate>
                     <ItemStyle HorizontalAlign="Center" />
                 </asp:TemplateField>

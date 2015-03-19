@@ -905,9 +905,15 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Util\ConfiguracaoExcentesMinimo.cs" />
+    <Compile Include="Util\GridViewGroupList.cs" />
+    <Compile Include="Util\GridViewHelper.cs" />
+    <Compile Include="Util\GridViewSummary.cs" />
+    <Compile Include="Util\GridViewGroup.cs" />
+    <Compile Include="Util\GridViewSummaryList.cs" />
     <Compile Include="Util\ImportFileIntegrationWeb.cs" />
     <Compile Include="Util\NumeroPorExtenso.cs" />
     <Compile Include="Util\SendMail.cs" />
+    <Compile Include="Util\teste.cs" />
     <Compile Include="Util\Util.cs" />
     <Compile Include="videoajuda.aspx.cs">
       <DependentUpon>videoajuda.aspx</DependentUpon>

@@ -94,15 +94,6 @@ namespace Azuli.Web.Portal {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvFesta;
         
         /// <summary>
-        /// lblMesAnoFesta control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMesAnoFesta;
-        
-        /// <summary>
         /// grdReservaProgramadaFesta control.
         /// </summary>
         /// <remarks>
@@ -110,6 +101,15 @@ namespace Azuli.Web.Portal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdReservaProgramadaFesta;
+        
+        /// <summary>
+        /// ltValorSalaoFesta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ltValorSalaoFesta;
         
         /// <summary>
         /// imgBtExcelFesta control.

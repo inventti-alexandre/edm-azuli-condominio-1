@@ -13,7 +13,9 @@ namespace Azuli.Web.Portal
 {
     public partial class consultaAgendamentoAdmin : Util.Base
     {
-
+        private Util.GridViewHelper helperChurras;
+        private Util.GridViewHelper helperFesta;   
+        private List<int> mQuantities = new List<int>();
         DateTime data = DateTime.Now;
         AgendaBLL oAgenda = new AgendaBLL();
         AgendaModel oAgendaModel = new AgendaModel();
@@ -29,7 +31,7 @@ namespace Azuli.Web.Portal
             {
                 if (oUtil.validateSessionAdmin())
                 {
-
+                   
 
                     hiddenControl();
                     preencheMeses();
@@ -37,10 +39,17 @@ namespace Azuli.Web.Portal
                     preencheAno();
                     consultaReserva();
 
+                   
+                   
+
 
                 }
             }
+
+            
         }
+    
+
 
 
 
@@ -60,7 +69,7 @@ namespace Azuli.Web.Portal
         public void preencheAno()
         {
 
-            for (int ano = data.Year - 4; ano < 2015; ano++)
+            for (int ano = data.Year - 4; ano <= 2015; ano++)
             {
                 drpAno.Items.Add(ano.ToString());
 
@@ -88,44 +97,63 @@ namespace Azuli.Web.Portal
                 //grdAgendaMorador.DataBind();
 
                 grdReservaProgramadaFesta.DataSource = oAgenda.listaReservaDetalhadaFesta(ano, mes);
-                grdReservaProgramadaFesta.DataBind();
 
-                lblMesAnoFesta.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
+
+               
+             
+
+                grdReservaProgramadaFesta.DataBind();
+               
+
+              //  lblMesAnoFesta.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
             }
             else if (drpSalao.SelectedItem.Text == "Churrasqueira")
             {
 
                 grdReservaProgramadaChurras.DataSource = oAgenda.listaReservaDetalhadaChurrasco(ano, mes);
+               
+              
+
                 grdReservaProgramadaChurras.DataBind();
+               
                 dvChurrasco.Visible = true;
                 dvFesta.Visible = false;
 
-                lbMesAnoChurras.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
+              //  lbMesAnoChurras.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
             }
             else if (drpSalao.SelectedItem.Value == "1")
             {
 
                 grdReservaProgramadaFesta.DataSource = oAgenda.listaReservaDetalhadaFesta(ano, mes);
+               
                 grdReservaProgramadaFesta.DataBind();
+              
 
 
                 grdReservaProgramadaChurras.DataSource = oAgenda.listaReservaDetalhadaChurrasco(ano, mes);
+               
                 grdReservaProgramadaChurras.DataBind();
 
+            
                 // grdChurras.DataSource = oAgenda.listaReservaDetalhadaChurrasco(ano, mes);
                 // grdChurras.DataBind();
 
                 dvFesta.Visible = true;
 
-                lblMesAnoFesta.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
+               // lblMesAnoFesta.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
 
                 dvChurrasco.Visible = true;
                 // grdAgendaMorador.DataSource = oAgenda.listaReservaDetalhadaFesta( ano, mes);
                 // grdAgendaMorador.DataBind();
 
-                lbMesAnoChurras.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
+              //  lbMesAnoChurras.Text = drpMeses.SelectedItem.Text + " / " + drpAno.SelectedItem.Text;
 
             }
+
+         
+
+     
+           
 
         }
 
@@ -210,7 +238,7 @@ namespace Azuli.Web.Portal
 
                 System.Web.UI.HtmlTextWriter htmlWrite = new HtmlTextWriter(stringWrite);
 
-                lblarea.RenderControl(htmlWrite);
+                //lblarea.RenderControl(htmlWrite);
                 grdReservaProgramadaFesta.RenderControl(htmlWrite);
                 Response.Write(stringWrite.ToString());
                 Response.End();
@@ -248,7 +276,7 @@ namespace Azuli.Web.Portal
                 System.IO.StringWriter stringWrite = new System.IO.StringWriter();
 
                 System.Web.UI.HtmlTextWriter htmlWrite = new HtmlTextWriter(stringWrite);
-                lblarea.RenderControl(htmlWrite);
+              //  lblarea.RenderControl(htmlWrite);
                 grdReservaProgramadaChurras.RenderControl(htmlWrite);
                 Response.Write(stringWrite.ToString());
                 Response.End();
@@ -275,8 +303,9 @@ namespace Azuli.Web.Portal
             {
                 GridViewRow HeaderRow = new GridViewRow(1, 0, DataControlRowType.Header, DataControlRowState.Insert);
                 TableCell HeaderCell2 = new TableCell();
-                HeaderCell2.Text = "Salão de Festas " + this.lblMesAnoFesta.Text;
-                HeaderCell2.ColumnSpan = 5;
+                HeaderCell2.ForeColor = Color.White;
+                HeaderCell2.Text = "Salão de Festa - " + drpMeses.Text + "/"+ drpAno.Text;
+                HeaderCell2.ColumnSpan = 6;
                 HeaderCell2.BackColor = Color.Blue;
                 
                 HeaderRow.Cells.Add(HeaderCell2);
@@ -285,6 +314,47 @@ namespace Azuli.Web.Portal
             }
             
 
+        }
+
+        protected void grdReservaProgramadaChurras_RowCreated(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                GridViewRow HeaderRow = new GridViewRow(1, 0, DataControlRowType.Header, DataControlRowState.Insert);
+                TableCell HeaderCell2 = new TableCell();
+                HeaderCell2.ForeColor = Color.White;
+                HeaderCell2.Text = "Churrasqueira - " + drpMeses.Text + "/" + drpAno.Text;
+                HeaderCell2.ColumnSpan = 6;
+                HeaderCell2.BackColor = Color.Blue;
+
+                HeaderRow.Cells.Add(HeaderCell2);
+                grdReservaProgramadaChurras.Controls[0].Controls.AddAt(0, HeaderRow);
+
+            }
+            
+        }
+
+        
+
+        protected void grdReservaProgramadaFesta_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            decimal soma = 0;
+            decimal Total = 0;
+            
+            if (grdReservaProgramadaFesta.Rows.Count > 0)
+            {
+                foreach (GridViewRow row in grdReservaProgramadaFesta.Rows)
+                {
+                    if (e.Row.RowState == DataControlRowState.Normal)
+                    {
+                         Total = Convert.ToDecimal(grdReservaProgramadaFesta.DataKeys[row.RowIndex].Values["valorReserva"].ToString());
+                        soma += Total;
+                    }
+                }
+
+                ltValorSalaoFesta.Text = "Valor pago Salão de Festa: " + soma;
+                
+            }
         }
     }
 }
