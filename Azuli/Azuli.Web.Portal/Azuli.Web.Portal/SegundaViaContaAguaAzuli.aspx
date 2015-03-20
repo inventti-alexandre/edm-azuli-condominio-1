@@ -20,10 +20,11 @@
   
         <legend class="accordionContent">Consulta de 2ª via conta de Água: </legend>
         <br />
-        <asp:Label ID="lblConsultaAno" runat="server" CssClass="mainbodyTel" 
+        <asp:Label ID="lblConsultaAno" runat="server" CssClass="accordionContent" 
             Text="Mudar Ano de Consulta:"></asp:Label>
-        &nbsp;<asp:DropDownList ID="drpAno" runat="server" CssClass="FooterStyle" Height="26px" 
-            Width="123px" AutoPostBack="True" onselectedindexchanged="drpAno_SelectedIndexChanged" 
+        &nbsp;<asp:DropDownList ID="drpAno" runat="server" CssClass="menu" Height="26px" 
+            Width="123px" AutoPostBack="True" 
+            onselectedindexchanged="drpAno_SelectedIndexChanged" Font-Bold="True" 
            >
         </asp:DropDownList>
         <br />

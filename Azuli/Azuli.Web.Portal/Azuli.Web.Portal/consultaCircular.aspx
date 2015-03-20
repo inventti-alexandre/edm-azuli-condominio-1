@@ -9,23 +9,25 @@
   
         <legend class="accordionContent">Consulta de Publicações de Circulares: </legend>
         <br />
-        <asp:Label ID="lblConsultaAno" runat="server" CssClass="footer" 
-            Text="Mudar Ano de Consulta:"></asp:Label>
-        <asp:DropDownList ID="drpAno" runat="server" CssClass="FooterStyle" Height="26px" 
+        <asp:Label ID="lblConsultaAno" runat="server" CssClass="failureNotification"
+            Text="Ano de Consulta:"></asp:Label>
+        &nbsp;
+        <asp:DropDownList ID="drpAno" runat="server" CssClass="container" Height="26px" 
             Width="123px" AutoPostBack="True" 
-            onselectedindexchanged="drpAno_SelectedIndexChanged">
+            onselectedindexchanged="drpAno_SelectedIndexChanged" Font-Bold="True">
         </asp:DropDownList>
         <br />
         <br />
         
-         <center>   <asp:Label ID="lblMsg" runat="server" CssClass="failureNotification"></asp:Label></center>
+         <center>   <asp:Label ID="lblMsg" runat="server" CssClass="MasterMenu" 
+                 Font-Bold="True" Font-Size="Small"></asp:Label></center>
         
         <br />
 
         <div id="dvPublicacao" runat="server">
       <table width="100%" cellpadding="5" 
             style="background-color: White; border: Outset 2px Silver; text-align: center;" 
-            class="accordionContent">
+            class="dysplayLogin">
         
        
         <tr>

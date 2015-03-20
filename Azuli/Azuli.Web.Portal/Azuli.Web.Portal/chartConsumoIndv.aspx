@@ -68,7 +68,7 @@
                 {
                 type: 'line',
                 name: 'Minímo 10 M³',
-                data: [10, 10, 10, 10, 10,10],
+                data: [10, 10, 10, 10, 10,10,10,10,10,10,10,10],
                 marker: {
                 	lineWidth: -1,
                 	lineColor: Highcharts.getOptions().colors[1],

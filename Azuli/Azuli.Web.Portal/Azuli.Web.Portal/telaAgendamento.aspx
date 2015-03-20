@@ -83,34 +83,46 @@
                 </td>
             </table>
          
-            <table id="tbLegend" runat="server" align="center" class="accordionContent">
-                <tr class="style9">
-                    <td align="left" class="style32">
-                        <img alt="" class="style30" src="images/salaoFesta.jpg" />&nbsp;
-                        <asp:Label ID="lblSlfReservado" runat="server" Style="font-weight: 700; font-family: Calibri;
-                            font-size: 12pt;" Text="SF- Salão de Festa " ForeColor="#215E21" CssClass="style33"></asp:Label>
-                    </td>
-                    <td align="left" class="style33">
-                        <img alt="" class="style30" src="images/churrasco.jpg" />
-                        <asp:Label ID="Label5" runat="server" ForeColor="DarkRed" Style="font-family: Calibri;
-                            font-weight: 700; color: #8B0000; font-size: 12pt;" Text="CH -Churrasqueira "
-                            CssClass="style33"></asp:Label>
-                    </td>
-                </tr>
-                <tr class="style9">
-                    <td align="left" class="style31">
-                        <span>&nbsp;<asp:Label ID="lblPendentePg" runat="server" Style="font-weight: 700;
-                            font-family: Calibri; color: #000000; font-size: 12pt;" Text="(R) - Reservado"
-                            ForeColor="Black" CssClass="style33"></asp:Label>
-                        </span>
-                    </td>
-                    <td align="left">
-                        &nbsp;<asp:Label ID="Label4" runat="server" Style="font-weight: 700; font-family: Calibri;
-                            font-size: 12pt; color: #BCBCBC;" Text="(*) - Não Confirmado (Falta de Pagamento)"
-                            CssClass="style32"></asp:Label>
-                    </td>
-                </tr>
-            </table>
+            <table  id="tbLegend" runat="server" align="center" 
+                            class="accordionContent">
+                            <tr class="style9">
+                                <td align="center" class="">
+                                    <img alt="" class="style30" src="images/salaoFesta.jpg" />&nbsp;
+                                   
+                                </td>
+                                <td>
+                                 <asp:Label ID="lblSlfReservado" runat="server" 
+                                        style="font-weight: 700; font-family: Calibri; " 
+                                        Text="SF- Salão de Festa " ForeColor="#215E21" CssClass="style33"></asp:Label>
+                                </td>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                <td align="center" class="">
+                                
+                                    <img alt="" class="style30" src="images/churrasco.jpg" />
+                            
+                                </td>
+                                <td>
+                                        <asp:Label ID="Label5" 
+                                        runat="server" ForeColor="DarkRed" 
+                                        style="font-family: Calibri; font-weight: 700; color: #8B0000;" 
+                                        Text="CH -Churrasqueira " CssClass="style33"></asp:Label>
+                                </td>
+                            </tr>
+                             <%--<tr class="style9">
+                                <td align="center" class="style29">
+                                    <span>
+                                    &nbsp;<asp:Label ID="lblPendentePg" runat="server" 
+                                        style="font-weight: 700; font-family: Calibri; color: #000000;" 
+                                        Text="(R) - Reservado" ForeColor="Black" CssClass="style33"></asp:Label>
+                                    </span></td>
+                                <%--<td align="center">
+                                    &nbsp;<asp:Label 
+                                        ID="Label4" runat="server" 
+                                        style="font-weight: 700; font-family: Calibri; " 
+                                        Text="(*) - Não Confirmado (Falta de Pagamento)" CssClass="style32"></asp:Label>
+                                </td>--%>
+                           <%-- </tr>--%>--%>
+                        </table>
         </fieldset>
     </div>
     <!-- Módulo desativado no momento - Para aceitação Inicial 

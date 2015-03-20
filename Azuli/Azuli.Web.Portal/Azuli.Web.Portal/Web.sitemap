@@ -9,7 +9,9 @@
     <siteMapNode url="~/paginaInicialMoradores.aspx" title="Home" description="" >
     </siteMapNode>
 
-    <siteMapNode url="~/PerfilMorador.aspx" title="Meu Perfil" description="" >
+    <siteMapNode  title="Meu Perfil" description="" >
+      <siteMapNode url="~/PerfilMorador.aspx" title="Alterar Perfil" description="" />
+      <siteMapNode url="resetSenha.aspx" title="Alterar Senha" description=""  />
     </siteMapNode>
 
     <siteMapNode  title="Reservas" description="Reservas">
@@ -44,12 +46,6 @@
       <!--  <siteMapNode url="~/consultaBalancete.aspx" title="Balancete" description="Balancetes" /> -->
 
     </siteMapNode>
-
-
-
-    <siteMapNode url="resetSenha.aspx" title="Alterar Senha" description=""  />
-
-    
 
 
     <siteMapNode url="contato.aspx" title="Fale Conosco" description="" roles="" />
